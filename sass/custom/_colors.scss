@@ -41,3 +41,26 @@
 //$pre-bg: $base03;
 //$pre-border: darken($base02, 5);
 //$pre-color: $base1;
+
+$page-bg: #fff;
+$header-bg: #fff;
+
+$title_color: #000;
+$subtitle_color: #666;
+
+// Main Link Colors
+$link-color: #000;
+$link-color-hover: #666;
+$link-color-visited: adjust-color($link-color, $hue: 80, $lightness: -4);
+$link-color-active: adjust-color($link-color-hover, $lightness: -15);
+
+$nav-bg: #fff;
+$nav-border-bottom: #000;
+$nav-color: #000;
+$nav-color-hover: #666;
+$nav-border-left: #e6e6e6;
+$nav-border-right: #000;
+
+$footer-color: #000;
+$footer-bg: #fff;
+$footer-border-top: #000;

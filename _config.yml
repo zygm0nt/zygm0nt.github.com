@@ -3,9 +3,9 @@
 # ----------------------- #
 
 url: http://zygm0nt.github.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+title: Marcin bloguje
+subtitle: .impressions.memos.tech.
+author: Marcin Cylke
 simple_search: http://google.com/search
 description:
 
@@ -93,7 +93,7 @@ disqus_short_name:
 disqus_show_comment_count: false
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id: 
 
 # Facebook Like
 facebook_like: false
