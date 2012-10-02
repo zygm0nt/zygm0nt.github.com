@@ -1,0 +1,129 @@
+---
+layout: post
+title: "OVal - validate your models quickly and effortlessly!"
+date: 2011-07-14T08:25:19+00:00
+categories:
+- IT
+- Ogólne
+- Techblog
+- touk
+---
+
+<div class='post'>
+<p>Some time ago one of the projects at work required me to validate
+some Java POJOs. Theses were my model classes and I've been creating
+them from incoming WebService requests. One would say that XSD would be
+sufficient for the task, for parts of this validations - sure, it would.
+But there were some advanced rules XSD would not handle, or would render
+the schema document very complicated.</p>
+
+<p>Rules I needed to express were like:
+
+<ul>
+
+<li>person's <i>first_name</i> and <i>last_name</i> should be of appropriate length -
+between 2 and 20, and additionally one could pass a zero-length string
+just to remove the previous value</li>
+<li><i>state</i> field should consist only defined values - as in
+dictionary value - this one would be completable with XSD's
+enumerations, but would require often changing schema files and
+redistributing them to interested parties :(</li>
+</ul>
+
+<p>The library I've decided to use for this task is <a
+href="http://oval.sf.net">OVal</a> and it came out really nice! Read on
+to find out the details!</p>
+
+<EXCERPT>
+
+<p>Oval is quite mature library that allows POJO validation, but is not
+JSR303 (bean validation) implementation. It has converters that enable
+it to understand those annotations, but I'm not sure about the
+compatibility.</p>
+
+<p>I've tried only a subset of the available checks, among which
+were:</p>
+
+<ul>
+<li>NotNull</li>
+<li>NotEmpty</li>
+<li>Length</li>
+</ul>
+
+<p>There are many more, and their attributes give interesting ways to
+configure the validation process. But using them was rather easy and did
+not require to much brainstorming. What I really needed were custom
+checks. And in this area OVal shows it's strength. Implementing a check
+is really easy.</p>
+
+<p>I needed an annotation that would check a field against some values in
+a dictionary. If field's value was in the given set, than the validation
+would succeed, if not, an exception would be thrown. To accomplish this
+task it is required to implement two classes: annotation class and check
+class - called by the validation engine on a given field.</p>
+
+<p>Let's start with our new annotation:</p>
+
+<script
+src="https://gist.github.com/1077516.js?file=DictionaryValue.java"></script>
+
+In the above snippet I've defined a check-annotation, that would be used like
+this:
+
+<script
+src="https://gist.github.com/1077516.js?file=sample.java"></script>
+
+You can pass <i>file</i> - containing dictionary values for this field.
+There is also <i>message</i> field in the annotation which is an error
+message returned by the validation engine of failed check - pretty
+handy. And can be expressed in <i>.properties</i> file as:
+
+<script
+src="https://gist.github.com/1077516.js?file=validation.properties"></script>
+
+<p>Placeholder, like <i>context</i>, will be replaced with correct values supplied by the
+validation engine.</p>
+
+Annotating a field is not enough. It is also needed to create a validator
+for this kind of check. The name of the class is already defined in
+<i>DictionaryValue</i> annotation, it is called
+<i>DictionaryValueCheck</i> and I've done this check this way:
+
+<script
+src="https://gist.github.com/1077516.js?file=DictionaryValueCheck.java"></script>
+
+What this basically does is:
+<ol>
+<li>when <i>file</i> is set - read dictionary content from the file into
+map</li>
+<li>upon check request just lookup value in dictionary parsed from the
+input file</li>
+</ol>
+
+<p>And that's it!</p>
+
+<p>For me Oval is really great tool. With it at ones disposal it is extremely easy to create any
+imaginable validation you need. This library is really easy to use and
+offers lots of handy features.</p>
+
+<p>But perhaps I'm reinventing the wheel and all this can be done easily
+with some other library? Share Your opinion!</p>
+</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>Now that's a great question. I've forgotten to write about this, but OVal offers profiles, which you can disable or enable whenever you like. You set a profile for a specific annotation. In your case let's assume You have two operations: add and update. Your model has field annotated with @NotNull(profile=&quot;UPDATE&quot;), which means we don't want null values on it when updating. In _add_ operation you disable the profile called UPDATE, so the annotation is also disabled. When calling _update_ you enable the profile and the validation is performed. <br />
+<br />
+More on this here: http://oval.sourceforge.net/userguide.html#d4e561</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="">querial</a></div>
+<div class='content'>
+<p>Question:<br />
+Say, we have an object with a primary key, that is mandatory (in the database), but described as AUTOINCREMENT. When client sends new object data, the primary key is obviously null, but we need to validate it for not-nullity in other cases.<br />
+<br />
+Doea OVal handle variations / directions of validation?</p></div>
+</div>
+</div>

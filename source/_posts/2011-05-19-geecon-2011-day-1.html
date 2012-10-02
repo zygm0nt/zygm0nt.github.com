@@ -1,0 +1,195 @@
+---
+layout: post
+title: "Geecon 2011 - day 1"
+date: 2011-05-19T20:05:05+00:00
+categories:
+- IT
+- Ogólne
+- Techblog
+- touk
+---
+
+<div class='post'>
+<p>Last week's Java conference - <a href="http://2011.geecon.org">Geecon</a> was very
+interesting. It was well prepared, and gave an insight into the current
+Java related trends - concurrency, DSLs, polyglot programming. But not
+only that - there were also some pretty different talks from excellent
+speakers.</p>
+
+<p>
+The whole event took 4 days:
+</p>
+
+<ul>
+<li>University day (wednesday)</li>
+<li>2 regular conference days (Thursday + Friday) </li>
+<li>hacker garden (Sunday)</li>
+</ul>
+
+<p>
+I decided to attend only on Thursday and Friday - no time for more. Here
+is what interesting happened during those days.
+</p>
+
+<EXCERPT>
+
+<h1>Day 1</h2>
+
+<p>The morning got me unprepared. After hard enough, after work travel to
+Krakow on Wednesday, I wasn't in the best shape. However after arriving
+at the venue, being greeted with breakfast and refreshments I
+looked at the rest of the day with real hope.</p>
+
+<p>Since the schedule was tight - three parallel tracks of lecture, I
+had to choose, so bare in mind, that is my account of what I've seen and
+heard. Others may, of course, differ.</p>
+
+<h2>1. <a href="http://blogs.oracle.com/dannycoward/">Danny Coward</a> "Java SE: The Road Ahead"</h2>
+
+<p>Danny, being on <a href="http://www.oracle.com">Oracle</a> (considering being also former
+Sun's employee a plus) payroll, gave an insightful talk on new things to
+came in <a
+href="http://blogs.oracle.com/dannycoward/entry/channeling_java_se_7">Java 7</a>. He drew rather serious plans for Java 8.
+According to Danny, the main trends in today's Java ecosystem are:</p>
+
+<ul>
+<li>parallel programming</li>
+<li>language dynamics</li>
+</ul>
+
+<p>and he probably is right :) The great things to come with new
+versions of Java are:</p>
+
+<ul>
+<li>closures in Java (finally!)</li>
+<li>extending interfaces</li>
+<li>map, filter - functions for collections</li>
+<li>lambda expressions - thou in Java 8</li>
+</ul>
+<p>The talk itself was a nice keynote, but I doubt the road map for Java
+will be met in its full extent - the goals aren't that small.</p>
+
+<h2>2. <a href="http://www.springsource.com/people/jhoeller">Juergen Hoeller</a> "Enterprise Java in 2011"</h2>
+
+<p><a href="http://www.springsource.com/">Spring Source</a> as one of the sponsors sent Juergen to
+evangelize about the world of enterprise and Java's place in it :) He
+emphasized different kinds of deployment: WAR, cloud deployment - and
+the latter's rise of importance.</p>
+
+<p>He pointed out how outdated current application servers are - the
+usually lag ~3 years behind the main trends and developers' needs - good
+point! He proposed looking under the hood of now-popular cloud
+environments: <a href="http://code.google.com/appengine/">Google App
+Engine</a> or <a href="http://aws.amazon.com/ec2/">Amazon
+Elastic Cloud</a> to look for schemas in them, etc - I intend to listen
+to his advice.</p>
+
+<p>All in all this guy gave a great talk covering wide spectrum of
+technologies and not focusing on technical stuff too much.</p>
+
+<h2>3. <a href="http://www.javaspecialists.eu/contact.jsp">Heinz Kabutz</a> "Reflection madness"</h2>
+
+<p>Despite living on a Greek island, this guy showed also how to whack
+ones mind with <a
+href="http://download.oracle.com/javase/tutorial/reflect/">Java Reflection API</a>. Pure magic! Some
+highlights of his talk were:</p>
+<ul>
+<li>how to get <i>42 + 1 = 44</i></li>
+<li>get the size of an object</li>
+<li>get method caller's id</li>
+<li>add enum values dynamically</li>
+</ul>
+
+<p>With all this examples he pointed that using <i>SecurityManager</i>
+will prevent such nasty coding practices.</p>
+
+<p>Since he is an editor of <a
+href="http://www.javaspecialists.eu/">Javaspecialists.eu</a>
+newsletter, all the answers to problems presented in his talk (and many
+many more) can be found there. </p>
+<p>Well done, not to useful for me, nevertheless - interesting.</p>
+
+<h2>4. <a href="https://twitter.com/#!/mfiguiere">Michael Figuiere</a>,
+Cyrille Le Clere
+"NoSQL & Datagrid from developer perspective"</h2>
+<p>I don't know what to think of this talk. It consisted an introduction
+to NoSQL databases but also a bit of problem's description that can be
+encountered when dealing with them. Notable thoughts were on:</p>
+
+<ul>
+<li>creating a sharding ready data structure</li>
+<li>denormalization as a useful process for NoSQL DBs</li>
+<li>NoSQL usually means <b>no transactions</b></li>
+</ul>
+
+<h2>5. <A href="http://hamletdarcy.blogspot.com/">Hamlet D'Arcy</a> "New Ideas for old code"</h2>
+
+<p>Since a lot of developers (all?) have to deal with legacy code - one
+way or another, this talk was <i>a must</i>!</p>. The speaker shared
+some ideas on how to work with such code and remain sane. The talk was
+vivid, interesting and entertaining, well, and the notable thought? Here
+they are:</p>
+
+<ul>
+<li>51% rule - if you're not committing 51% of your time/your tasks into
+fixing your situation than the whole battle <b>is already lost</b>,</li>
+<li>read some good stuff!:<br/>
+    <ul>
+        <li><a
+href="http://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672">Martin Fowler's "Refactoring"</a></li>
+        <li><a
+href="http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=sr_1_1?s=books&ie=UTF8&qid=1305828015&sr=1-1">George C. Martin "Clean Code"</a></li>
+        <li><a href="http://chadfowler.com/2006/12/27/the-big-rewrite">Chad Fowler "Big Rewrites"</a> - and why they
+failed, what's wrong with them</li>
+    </ul>
+</li>
+<li>use static analysis - <a href="http://findbugs.sourceforge.net/">Find Bugz</a>, 
+pmc</li>
+<li><a href="http://en.wikipedia.org/wiki/Command-query_separation">query-command</a> - a method should be a query or a
+command:<br/>
+    <ul>
+        <li>query - returns sth</li>
+        <li>command - change the state of an object</li>
+    </ul>
+</li>
+<li>he also proposed <b>scratch refactoring</b><br/>
+    <ol>
+        <li>set a timer</li>
+        <li>tag your code</li>
+        <li><b>refactor without tests</b></li>
+        <li>step back and analyze</li>
+        <li>is it better? if not, revert</li>
+    </ol>
+</li></ul>
+
+<p>This was nice! - it assumed arriving at a project with no ( or
+little) tests.</p>
+
+<h2>6. Aslan Knutsen "Arquillian"</a></h2>
+
+<p>The last talk of that day was about some new library from JBoss that
+would allow to test your components with unit tests - test them in a
+destination container. The whole point of this library is to run the
+specific fragment of code as if it was build and deployed to some
+application server (let's say JBoss AS ;-) ). To be honest, I can't find
+much application for that - thou I'm not doing any serious work in JEE
+world.</p>
+
+<h2>Party</h2>
+
+<p>And the day ended. But there was sth else to do after the official
+part - party time! It took place at <a href="">Klub Pauza</a> on
+Floriańska street. It was a rather nice social event.</p>
+
+
+<p><i>... to be continued - stay tuned for part 2</i></p></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://blog.patryk-dobrowolski.eu">JedenPies</a></div>
+<div class='content'>
+<p>&quot;how to get 42 + 1 = 44&quot;?<br />
+Tutaj ;)<br />
+http://blog.patryk-dobrowolski.eu/2011/05/16/refleksja-moze-byc-niebezpieczna-zobacz-jak-zniszczyc-sobie/</p></div>
+</div>
+</div>

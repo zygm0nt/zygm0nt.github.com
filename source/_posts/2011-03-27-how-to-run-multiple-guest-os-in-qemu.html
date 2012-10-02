@@ -1,0 +1,27 @@
+---
+layout: post
+title: "How to run multiple guest OS in QEMU?"
+date: 2011-03-27T18:47:11+00:00
+categories:
+- IT
+- Ogólne
+- Techblog
+- touk
+---
+
+<div class='post'>
+This weekend I've been fiddling with <a href="http://www.qemu.org">QEMU</a>. I've installed <a href="http://openbsd.org">OpenBSD</a> on a single image and wanted to have two instances of it communicating via network. Installing the system was easy, but the networking setup was quite a pain. See how I did that...
+<EXCERPT>
+
+<p>To make QEMU instances communicate with each other I needed to plug them to a "network". That's why I've created a bridge to which Virtual Instances would connect to. I've used the following script:</p>
+
+<script src="https://gist.github.com/889357.js"> </script>
+
+<p>Then I just needed to start Qemu with this command line:</p>
+
+<script src="https://gist.github.com/889359.js"> </script>
+
+<p>Since I've set up bridge for Qemu instances, I've plugged <a href="http://en.wikipedia.org/wiki/TUN/TAP">TAP</a> interfaces into it. That's why I've needed to specify this in my qemu exec line. I've also added macaddress setting since both my instances were getting the same one.</p>
+
+<p>And that's all! It works like a charm. Now on to some harder things!</p></div>
+

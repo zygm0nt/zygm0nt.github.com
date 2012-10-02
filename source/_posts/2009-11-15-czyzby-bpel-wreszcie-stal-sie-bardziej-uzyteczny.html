@@ -1,0 +1,77 @@
+---
+layout: post
+title: "Czyżby BPEL wreszcie stał się bardziej użyteczny?"
+date: 2009-11-15T23:24:41+00:00
+categories:
+- IT
+- Ogólne
+---
+
+<div class='post'>
+<p>Nieee... to po prostu udało mi się uruchomić <em>BPEL Designera</em> - plugin<br />
+do Eclipse'a. Co prawda wymagało to grzebnięcia w źródłach, które nie<br />
+były aktualizowane już od dłuższego czasu. Zmiany polegały głównie na<br />
+poprawie zależności. Niemniej, plugin z wersją 3.5 Eclipse'a działa<br />
+sprawnie. W poprzednich wersjach miał tendencje do zacinania się, a<br />
+przyczyny tego nie udało mi się namierzyć.</p>
+<EXCERPT>
+<p><h3> A co to jest BPEL?</h3></p>
+
+<p>Business Process Expression Language. Czyli XML do<br />
+opisywania przepływu długotrwałych procesów w przedsiębiorstwie, itp.<br />
+Dużo bełkotu marketingowego sprowadzającego się do tego, że jest to<br />
+ciężki w obejściu twór, którego główną zaletą są:</p>
+
+<ul>
+<li>długotrwałe procesy właśnie - mogą trwać np. 100 dni, </li>
+<li>obsługa web serwisów oraz pokrewnych xml'owi technologii w sposób natywny.</li>
+</ul>
+
+<p>Wszystko to oczywiście musi działać w jakimś kontenerze. Ja akurat, ze<br />
+względu na miejsce pracy mam styczność z ODEO<br />
+(http://top.touk.pl/confluence/display/top/ODEO), które bazuje na Apache<br />
+ODE (http://ode.apache.org). Ot taki engine do uruchamiania procesów<br />
+biznesowych.</p>
+
+<p>Na ostatnim JUGu koledzy z pracy mieli nawet prezentację na temat<br />
+rozwiązań, których używamy - między nimi również ODEO:<br />
+http://top.touk.pl/confluence/display/top/BPEL+in+Practice</p>
+
+<p><h3>No ale wracając do pluginu</h3></p>
+
+<p>Jest on o tyle fajnym narzędziem - a przynajmniej powinien być, bo<br />
+pozwala na graficzne przedstawienie procesu, co powinno ułatwić jego<br />
+ogarnięcie. Oczywiście kwestia z którą można swobodnie polemizować ;-)</p>
+
+<p>Plugin nie jest też zdecydowanie doskonały, bo nie wszystko w nim<br />
+działa. A co w pluginie nie działa?</p>
+
+<ul>
+<li>edytowanie deploy.xml - otwierając pusty plik, otwiera się jakiś inny<br />
+:) bardzo dziwne</li>
+<li>są dziwne problemy z wizualizacją strzałek połączeń, np. jak na<br />
+screenie poniżej.</li>
+</ul>
+
+<p>Co mogłoby działać lepiej.</p>
+
+<ul>
+<li>zmiana orientacji diagramu - z pionowej na horyzontalną</li>
+<li>fajnie byłoby wiedzieć w którym miejscu grafu jesteśmy, czyli np.<br />
+wyświetlać nazwy activity czyli wartość atrybutu <em>name</em></li>
+</ul>
+
+<p>No cóż, żeby nie psioczyć, zamierzam te włąśnie wyżej wymienione rzeczy<br />
+poprawić. Zobaczymy co z tego wyjdzie :) W tej chwili projekt na<br />
+eclipse.org jest od dłuższego czasu nieaktywny (brak zmian w CVS oraz<br />
+postów na grubie projektu), a szkoda, bo to jedyna na tyle kompleksowa<br />
+implementacja narzędzia do BPELa. Oczywiście z tych open-source.</p>
+</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://blog.4zal.net">Zal</a></div>
+<div class='content'>
+<p>Ojej... Kumpel w ramach pracy magisterskiej robi edytor BPEL na potrzeby projektu grantowego. Coś mi się zdaje, iż niedługo i ja sam będę musiał się o to otrzeć.</p></div>
+</div>
+</div>

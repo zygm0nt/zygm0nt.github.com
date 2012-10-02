@@ -1,0 +1,129 @@
+---
+layout: post
+title: "Easier and nicer JMS"
+date: 2010-12-08T09:22:34+00:00
+categories:
+- IT
+- Ogólne
+- Techblog
+- touk
+---
+
+<div class='post'>
+<table border="0">
+<tr><td>
+<p>
+JMS seems like a hostile ground. It has all it's quirks and strange
+behaviours. A couple of defining standards plus esoteric brokers, queues
+and topics.
+</p>
+
+</td>
+<td><img src="http://blog.innovative-labs.com/blog/Screwdriver.jpg" width="150" /></td></tr></table>
+
+<p>
+At work, we mainly use open source Jms solutions, namely Apache
+ActiveMQ. This one is usually bundled with Apache Servicemix, as a
+message broker for this particular ESB. As there are some minor caveats
+in this scennerio, I'd like to describe here some guidelines for getting
+to running JMS queues.
+</p>
+<EXCERPT/>
+<p>
+Treat this post as a quick cheat sheet with the most common things about
+JMS I tend to forget :)
+</p>
+
+<p>
+Minor glitches encountered during work with embedded broker led to some
+thoughts about switching to external broker. This is how I configure SMX
+and AcviteMQ.
+</p>
+<p>
+Necessary steps:</p>
+<ul>
+<li> change <i>apache-servicemix/conf/servicemix.properties</i> <b>activemq.port</b>
+to sth else than standard, for example 61626</li>
+<li> change <i>apache-activemq/conf/activemq.xml</i> with this settings:
+ <ul>
+    <li> change port, the service listens on:
+
+<pre class="brush: xml">
+        <transportConnectors>
+            <transportConnector name="openwire" uri="tcp://localhost:61626"/>
+        </transportConnectors>
+</pre></li>
+    <li> setup separate JMX instance:
+<pre class="brush: xml">
+        <managementContext>
+            <managementContext createConnector="true" connectorPort="2011"/>
+        </managementContext>
+</pre></li>
+</ul>
+</li>
+<li> the nicest tool I found for browsing queues and topics is <a href="http://www.hermesjms.com">Hermes
+JMS</a>. Sample config, that connects Hermes to ActiveMQ instance is on
+the picture below:
+
+<img src="http://blog.innovative-labs.com/blog/easy_jms.png" width="550" alt="HermesJMS to ActiveMQ connection config"/>
+</li>
+<li> sending simple messages with Hermes is basic, but what if you need to
+set some headers, send bulk messages, etc. Easy, just use Hermes xml
+format. Look like this code snippet below and is rather self-explanatory:
+
+<pre class="brush: xml">
+<content>
+    <entry type="1">
+        <textMessage JMSDeliveryMode="2" JMSExpiration="0" JMSPriority="0" JMSRedelivered="false" JMSTimestamp="0">
+            <headerProperty name="caseId" type="java.lang.String" value="105"/>
+            <text><![CDATA[<message>
+  <event>
+    <case>
+      <CASE_ID>105</CASE_ID>
+      <EVENT>1235</EVENT>
+    </case>
+  </event>
+</message>]]></text>
+        </textMessage>
+    </entry>
+</content>
+</pre>
+</li>
+<li> since we use lots of <a href="http://camel.apache.org">Apache
+ Camel</a> to consume messages, here is a simple way to start broker in
+your tests:
+<ul>
+    <li> start a broker
+<pre class="brush: java">
+        BrokerService broker = new org.apache.activemq.broker.BrokerService();
+        broker.setBrokerName("AMQ-1");
+        broker.addConnector("tcp://localhost:51616");
+        broker.setPersistent(false);
+        broker.start();
+</pre>
+     Notice it has persistance disabled.
+</li>
+    <li> initialize Camel's JMS component:
+<pre class="brush: java">
+    ctx.removeComponent("jms");
+    ctx.addComponent("jms", ActiveMQComponent.activeMQComponent("tcp://localhost:51616"));
+</pre></li>
+    <li> if you want to pass messages to reference endpoints, (like <i>ref:input</i>), use this wrapper method:
+<pre class="brush: java">
+private JmsEndpoint createJmsEndpoint(String endpoint) throws JMSException {
+        ActiveMQComponent amqc = (ActiveMQComponent) ctx.getComponent("jms");
+        JmsEndpoint endp = JmsEndpoint.newInstance(new ActiveMQTopic(endpoint), amqc);
+        return endp;
+}
+
+createJmsEndpoint("ESB/XYZ")
+</pre>
+</li>
+</ul>
+</li>
+</ul>
+These are all the tricks I've got for now! But if you know some other
+good tools that handle JMS, feel free to comment!
+
+Got more advices, again, comment!
+</div>

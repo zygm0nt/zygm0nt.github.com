@@ -1,0 +1,84 @@
+---
+layout: post
+title: "Inteligentny mock w SoapUI"
+date: 2009-11-18T22:20:57+00:00
+categories:
+- IT
+- Ogólne
+---
+
+<div class='post'>
+<p>Któż z nas nie testował WebService'ów, a któż z nas nie używał do tego SoapUI :) Ok, z rzeczami oczywistymi dyskutować nie będę, ale przy okazji jednego projekciku okazało się, że fajnie by było gdyby mój mock potrafił zrobić coś więcej niż tylko odpowiedzieć na nadesłany komunikat.</p>
+<EXCERPT><p>Oczywiście sam SoapUI posiada dosyć spory wachlarz możliwości, bo może wysłać losowy request spośród wprowadzonych, lub wysyłać wedle sekwencji, itp.</p>
+
+<p>Problem w tym, że moim wysublimowanym życzeniem było aby korelować komunikaty określonego typu na podstawie jednego pola z XMLa - nazwijmy je polem "X". Jeśli w polu X przyszła wartość, której do tej pory nie widzieliśmy - odpowiedz jednym komunikatem, jeśli ta wartość już została przez nas odebrana (ostatnio :) ), to prześlij trochę inną odpowiedź.</p>
+
+<p>Na pomoc przyszedł mi wbudowany interpreter Grooviego, którym to można oskryptować kilka fragmentów aplikacji, między innymi tworzone MockService.</p>
+
+<p>No cóż, rozwiązaniem mojego problemu okazało się wrzucenie poniższego skryptu do "OnRequest" konkretnego WebService'u.</p>
+
+<code>
+<pre>
+import groovy.sql.Sql                                                                                                                                        
+import java.sql.*;
+
+def url = 'jdbc:oracle:thin:@localhost:1521:XE'
+def driver = 'oracle.jdbc.OracleDriver'
+def user = 'mnp_data' 
+def password = 'mnp_data'
+
+def sql = Sql.newInstance(url, user, password, driver)
+
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+
+def holder = groovyUtils.getXmlHolder( mockRequest.requestContent)
+
+holder.declareNamespace("xxx", "http://www.ftang.com/example")
+
+def props = mockRunner.mockService
+context.put('props', props);
+
+def _phoneNumber = holder.getNodeValue( "//xxx:number")
+log.error(_phoneNumber)
+
+if (_phoneNumber != null) {
+    if (context.phoneNumber != _phoneNumber) {
+        context.setProperty('phoneNumber', _phoneNumber)
+        context.setProperty('responseType', 0)
+    } else {
+        context.setProperty('responseType', 1)
+    }   
+    sql.eachRow("select * from cases where phone_number = ?", [_phoneNumber]) { 
+            log.error(it)
+            context.setProperty("caseId", it['case_id'])
+        }  
+}
+
+def _getPhoneNumber = { 
+    return props.getPropertyValue('phoneNumber')
+}
+context.setProperty("getPhoneNumber", _getPhoneNumber);
+
+def _getOpenCasesResponse = {
+    if(context.get('responseType')==1)
+        return "<getOpenCasesResponse/>";
+}
+
+context.setProperty("getOpenCasesResponse", _getOpenCasesResponse);
+</pre>
+</code>
+
+<p>Prawda, że proste? :)</p>
+
+<p>A czy Wy używacie grooviego? A może SoapUI?</p>
+</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="">Adams</a></div>
+<div class='content'>
+<p>No popatrz, używam SoapUI :) Z groov tego korzystalismy do generowania identyfikatorow, ktore nastepnie trafialy do komunikatow. <br />
+<br />
+Pozdrowienia od kolegi z akademika :)</p></div>
+</div>
+</div>

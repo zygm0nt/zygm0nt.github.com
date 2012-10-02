@@ -1,0 +1,72 @@
+---
+layout: post
+title: "Open Suse jest upośledzone!"
+date: 2009-09-20T14:45:13+00:00
+categories:
+- IT
+- Ogólne
+---
+
+<div class='post'>
+<p>Zarządzanie pakietami to droga przez mękę. Czemu? Proszę bardzo:</p>
+<p><code>marcin@byakshee:~&gt; sudo zypper install f-spot<br>
+Reading installed packages...<br>
+'f-spot' is already installed.<br>
+Nothing to do.</code></p>
+<p>ale już jakbym chciał upgrade paczki zrobić, to inna rozmowa:</p>
+<p><code>marcin@byakshee:~&gt; sudo zypper update f-spot<br>
+Reading installed packages...<br>
+Package 'f-spot' is not installed.<br>
+Nothing to do.</code><br></p>
+<p><br>
+Wniosek z tego taki, że jak raz zetkniesz się z apt-getem, to już nic nie będzie później odpowiednie :D A OpenSuse oczywiście odradzam.</p>
+<p></p>
+</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://a-patch.jogger.pl">a_patch</a></div>
+<div class='content'>
+<p>Apatitude ssie ;) Na moim NAS działa jakieś 80% wolniej niż apt-get. Zwłaszcza proces inicjacji.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://zapiski.mruwek.pl">mruwek</a></div>
+<div class='content'>
+<p>Zainstalowałem z lenistwa OpenSuse u mojej Miłości. Srodze się rozczarowałem. Ślimaczy się toto u Niej bardziej niż moje Gentoo, przy czym należy wspomnieć, że moja maszyna ma jakieś 7 lat więcej niż ta przez Nią aktualnie użytkowana.<br /><br />A poza tym apt-get jest przestarzały — „użyj mocy” i włącz aptitude.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>Nie korzystam z apt-geta na OpenSuse - takie wybiegi uznaję za jakieś akrobacje. Używam tylko YaST i zypper - no ale mam nadzieję, że korzystają z tej samej bazy pakietów :D albo że &quot;zypper install&quot; korzysta z tej samej co &quot;zypper update&quot; :)</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://epicweb.pl">Bartosz &quot;BTM&quot; Szczeciński</a></div>
+<div class='content'>
+<p>Oh, to nie wiem - administruje dwoma SuSE (jeden czysty SuSE, jeden OpenSuse) i poza marudzeniem na UBER WOLNE YaST problemów nie miałem.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://pawel-ciupak.jogger.pl">Paweł Ciupak</a></div>
+<div class='content'>
+<p>Raczej nie sądzę – ja też się z tym problemem w openSUSE spotkałem niegdyś, i zawsze on występował, nieważne jak paczka została zainstalowana.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://epicweb.pl">Bartosz &quot;BTM&quot; Szczeciński</a></div>
+<div class='content'>
+<p>Tu się nie sprzeczam, bo mnie zawsze YaST boli - ale może właśnie dlatego, że pakiet był instalowany przez czysty apt-get teraz są problemy z paczką?</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://pawel-ciupak.jogger.pl">Paweł Ciupak</a></div>
+<div class='content'>
+<p>Ma, ale jest szitowe – zawsze po instalacji czegokolwiek przez 5 minut musi się wałkować jakieś SuSEconfig, nie wiadomo po co.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://epicweb.pl">BTM</a></div>
+<div class='content'>
+<p>A ten - OpenSuse nie ma zarządzania przez yast?</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://pawel-ciupak.jogger.pl">Paweł Ciupak</a></div>
+<div class='content'>
+<p>Cóż, pozostaje mi się z tą opinią zgodzić. Używałem niegdyś openSUSE, i muszę przyznać, że zarządzanie pakietami w nim jest do dupy – a to problemy z apgrejdowaniem, a to konieczność żonglerki repozytoriami, a to pakiety z powycinanymi niektórymi funkcjonalnościami (bo patenty), a to całkowicie niepotrzebne i zbędne zależności… Ech.</p></div>
+</div>
+</div>

@@ -1,0 +1,127 @@
+---
+layout: post
+title: "Hadoop for Enterprises"
+date: 2012-06-18T09:08:09+00:00
+categories:
+- IT
+- Ogólne
+- Techblog
+- touk
+---
+
+<div class='post'>
+<p>Hadoop's usage as a big data processing framework gains a lot of attention lately. Now, not only big players see, that they can embrace the data their sites or products are generating and develop their businesses on it. For that to happen two things are needed: the data itself and means of processing really big amounts of it.  </p>
+
+<p><span class="image-wrap" style=""><img src="http://blog.innovative-labs.com/blog/3488314950_453466f762_b.jpg" style="border: 0px solid black; width: 400px;" /></span></p>
+
+<p>Gathering data is relatively easy. These are not necessarily structured data, you don't need to plan their usage at first. Just start collecting them and than you may experiment with their potential usage. If they'll come out as useless rubbish - deleting them won't be hard <img class="emoticon" src="/confluence/images/icons/emoticons/smile.gif" height="20" width="20" align="absmiddle" alt="" border="0"/> But imagine the values it may contribute to your business:</p>
+
+<ul>
+	<li>faster services - working on optimized data</li>
+	<li>more clients - because of more relevant search results</li>
+	<li>happy clients - your service can "read their minds" <img class="emoticon" src="/confluence/images/icons/emoticons/smile.gif" height="20" width="20" align="absmiddle" alt="" border="0"/></li>
+	<li>etc.</li>
+</ul>
+
+
+<p>There are many companies that utilize Hadoop ecosystem for their own needs. You can read about some of them here: <a href="http://wiki.apache.org/hadoop/PoweredBy" class="external-link" rel="nofollow">http://wiki.apache.org/hadoop/PoweredBy</a> But since that page lacks insight into specific applications of Hadoop I've tried to delve into<br/>
+details of how Hadoop helped tame some companies' big data sets.</p>
+
+<EXCERPT>
+
+<h2><a name="test-Facebook"></a>Facebook</h2>
+
+<p>Being a social network provider, a widely used one, they require no introduction. However if you've lived under a rock for last couple years just visit their website <a href="http://facebook.com" class="external-link" rel="nofollow">http://facebook.com</a></p>
+
+<p>Their main usage is data warehousing. Since they require to be able to access the data fast and reliably they had a need for real-time querying of their huge, and always growing data set. Their switch from MySQL databases was required due to the increasing workloads they experienced with standard databases. What they got "out of the box" with Hadoop was all the benefits of distributed file system (HDFS features). They expanded the ideas behind that even further and implemented truly Highly Available file system without Single Point of Failure.</p>
+
+<p>Facebook has 3 interesting usage scenarios in which Hadoop plays a major role:</p>
+
+<ul>
+	<li>Titan - is Facebook's messaging system. It processes messages exchanged between users. Ensures that it happens fast and without glitches. Here Hadoop is used mainly as a huge, unlimited storage.</li>
+	<li>Puma - Facebook Insights - a tool providing page statistics for  advanced Facebook users. Based on streams of data (clicks, likes, shares, comments and impressions) it graphs those data and makes it available near instantly.</li>
+	<li>ODS - Operational Data Store - which stores Facebook's internal metrics - collections of OS and cluster health metrics. And it facilitates multiple accounting solutions.</li>
+</ul>
+
+
+<h2><a name="test-Twitter"></a>Twitter</h2>
+
+<p>This popular micro-blogging platform, where you can register your account and follow friends and celebrities for their micro-messages does some pretty interesting things with their Hadoop cluster.</p>
+
+<p>One of their motivations is to speed up their web-page's functionality. That is why the compute users' friendships in Twitter's social graph with Hadoop. Using connections between users they calculate their relationship to each other and estimate groups of users.</p>
+
+<p>Since this service's users generate lots of content, the company conducts researches based on natural language processing. They probe what could be told about a user from his tweets. They use tweets' contents for advertisement purpose, trends analysis and many more.</p>
+
+<p>From tweets and user's behaviours they characterise usage scenarios. Also, they gather usage statistics, like number of searches daily, number of tweets. Based on this seemingly irrelevant data they run comparisons of different types of users. Twitter analyzes data to determine whether mobile users, users who use third party clients or power users use Twitter differently from average users. Of course theses seem like really specific applications but nevertheless they are very original and base on the data that Twitter has been gathering for some time now. </p>
+
+<h2><a name="test-EBay"></a>EBay</h2>
+
+<p>Being the biggest auctioning site on the Internet, EBay uses Hadoop processing for increasing search relevance based on click-stream data, user data. This seems pretty obvious, considering their area of operation.</p>
+
+<p>However the also have one other interesting thing - they try hard to automatically fill auctioned objects' metadata, based on the descriptions and other data provided by users. They employ data mining approach for this tasks and judging from their constant growth it seems to work <img class="emoticon" src="/confluence/images/icons/emoticons/smile.gif" height="20" width="20" align="absmiddle" alt="" border="0"/></p>
+
+<h2><a name="test-LinkedIn"></a>LinkedIn</h2>
+
+<p>Social network for professionals, thou a lot smaller than Facebook. Based on click-streams they discover relations between users. All the data concerning latest visits on your profile or people you may know from other places - this comes from Hadoop based analysis of those clicks people make all the time on their sites.</p>
+
+<p>Also a very neat feature, called InMaps (<a href="http://inmaps.linkedinlabs.com/" class="external-link" rel="nofollow">http://inmaps.linkedinlabs.com/</a>) analyse declared schools and companies and generates data for graph with clustered friends of yours.</p>
+
+<h2><a name="test-Last.fm"></a>Last.fm</h2>
+
+<p>This on-line radio site, praised by many for its invaluable recommendations' system seems like a rather small and simple service. But behind the facade of simple web page there are lots of data being processed, so that their services could match a certain level of perfection.</p>
+
+<p>Such large volume of their data comes from scrobbles. Each users of their service listening to a song generates a note about this fact - called scrobble. Based on that and user profiles they calculate global band popularity charts, maps of bands' popularity and many more usage statistics and timeline charts.</p>
+
+<p><span class="image-wrap" style=""><img src="http://blog.innovative-labs.com/blog/7346959440_71648c9fe7_b.jpg" style="border: 0px solid black; width: 400px;" /></span></p>
+
+<h2><a name="test-Conclusion"></a>Conclusion</h2>
+
+<p>They just try to detect and trace new patterns in seemingly chaotic data sets. Perhaps you could also do the same? Analyze your data and expand your business value?</p></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://www.wedding-cake-decorations.net">wedding cake decorations</a></div>
+<div class='content'>
+<p>We stumbled over here from a different web address and thought I might check things out.<br />
+I like what I see so i am just following you.<br />
+Look forward to checking out your web page yet again.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.car-floor-mats.net">rubber floor mats</a></div>
+<div class='content'>
+<p>I like what you guys are up too. This type of clever work and reporting!<br />
+<br />
+Keep up the awesome works guys I've added you guys to my own blogroll.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.bispioner.ru/phpBB3/memberlist.php?mode=viewprofile&amp;u=119586">Svayambhut Ghosh</a></div>
+<div class='content'>
+<p>Greetings from Florida! I'm bored at work so I decided to browse your site on my iphone during lunch break. I enjoy the info you present here and can't wait to take a look <br />
+when I get home. I'm surprised at how quick your blog loaded on my cell phone .. I'm not even using WIFI, just 3G .<br />
+. Anyways, very good site!</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.salethenorthfacejackets.com">north face jackets</a></div>
+<div class='content'>
+<p>Comfortableness &lt;a href=&quot;http://www.salethenorthfacejackets.com&quot;&gt;north face jackets&lt;/a&gt;<br />
+is crucial when they get it that will &lt;a href=&quot;http://www.salethenorthfacejackets.com&quot;&gt;north face outlet&lt;/a&gt; get the best school bags pertaining to going camping &lt;a href=&quot;http://www.salethenorthfacejackets.com&quot;&gt;north face sale&lt;/a&gt;. Your easiest guarantee in the case of even larger delivers has become One with an inner metal framework, one that can wind &lt;a href=&quot;http://www.salethenorthfacejackets.com&quot;&gt;cheap north face&lt;/a&gt; up being aligned to help you appropriately fit your &lt;a href=&quot;http://www.salethenorthfacejackets.com/the-north-face-women-1&quot;&gt;north face women&lt;/a&gt; body. They should be now have http://www.salethenorthfacejackets.com secure which were wholly flexible, because essentially in the form of midsection belt to get more aid.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.plants-for-sale.com">plants sale</a></div>
+<div class='content'>
+<p>I never imagined how much stuff there was out there <br />
+on this! Thanks for making it easy to get the picture</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.facebook.com/profile.php?id=100003406472249">gWgVcetqzVZukd</a></div>
+<div class='content'>
+<p>What Programming Languages Do Jobs Require? | Regular Geek  regulargeek.com/2009/07/21/what-programming-languages-do-jobs-require   view page   cahecd  As a software engineer, you need to keep your skills sharp and current. This is a general requirement of the job. In addition to this, in the current economy you do not want to be without a job. Obviously, this means learning more about what your current company uses for all of its development. What if you do not have a job or you are looking to leave? What technologies or programming languages should you be looking into?   From the page</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://businesses.wickedlocal.com/MA-Westford/Computer-Service-and-Repair/15">computer pc repair</a></div>
+<div class='content'>
+<p>Howdy are using Wordpress for your site platform? I'm new to the blog world but I'm trying to <br />
+get started and create my own. Do you need any coding expertise to make your own <br />
+blog? Any help would be greatly appreciated!</p></div>
+</div>
+</div>

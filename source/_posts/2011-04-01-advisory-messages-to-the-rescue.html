@@ -1,0 +1,95 @@
+---
+layout: post
+title: "Advisory Messages to the rescue"
+date: 2011-04-01T09:16:59+00:00
+categories:
+- IT
+- Ogólne
+- Techblog
+- touk
+---
+
+<div class='post'>
+<p>
+The most crucial part of software development is testing. It should
+ensure us, that our code is correct, works according to given specs,
+etc. There are many kinds of tests: unit tests, integration, functional.
+In general you should try to test the smallest possible subset of your
+code and be able to check the state of the objects after the test.
+</p><p>
+This seems as rather easy task, but what if you have an integration
+end-to-end test to perform? In most cases asserting state in integration
+test is rather hard due to multiple systems interoperability. Let's
+focus on a specific situation.
+</p>
+<EXCERPT>
+<p>
+What I needed to do the other day was write some integration test for
+Jms based system. The processing pipeline is easy:
+<ul>
+<li> fetch object from DB</li>
+<li> process it</li>
+<li> publish on JMS</li>
+</ul>
+</p><p>
+some other system (X-system) polls JMS:
+<ul>
+<li> if message is found</li>
+<li> fetch it (message disappears from the JMS queue)</li>
+<li> do sth with it</li>
+</p><p>
+Looks simple but since I didn't have any sane access to the X-system I
+wanted to be sure that my object was actually put into the queue. It was
+not acceptable to subscribe to the queue and fetch that object in my
+test - it would dusrupt the flow of the whole process.
+</p><p>
+Fortunately I've been using <a
+href="http://activemq.apache.org">ActiveMQ</a> and since it offers a
+thing called <a
+href="http://activemq.apache.org/advisory-message.html">Advisory
+Messages</a> I've decided to use just them.
+</p><p>
+What are advisory messages? They are a set of administrative messages
+that are generated on a specific event, like message consumption,
+message delivery, topic destruction, and many more. Each type of message
+is delivered to a separate topic - prefixed with 
+<strong>ActiveMQ.Advisory</strong>. Since generation of such messages
+may be an overhead in production systems these features are turned off
+by default. You need to enable specific type of
+advisory message for a specific jms destination. You can do this with
+ths configuration change to <strong>activemq.xml</strong>
+</p>
+<script src="https://gist.github.com/897141.js"> </script>
+<p>
+As you can see, I've specified which advisories I want enabled. The full
+list of available advisories can be found <a
+href="http://activemq.apache.org/advisory-message.html">here</a>.
+</p><p>
+Since I wanted to read messages from that topic I've added the following
+configuration to my spring context - there is one destination bean for
+inserting messages and one bean for advisory topic.
+</p>
+<script src="https://gist.github.com/897150.js"> </script>
+<p>
+Thanks to this configuration I've been able to check that my message was
+actually delivered to the queue. There've been no need to worry about
+race conditions in consuming the message from original queue - if the
+X-system read the message, I'd be unable to determine if it has ever
+been in JMS at all.
+</p><p>
+What's not so nice about that:
+<ul>
+<li> advisory messages can be thought of as counters rather than debugging
+  information</li>
+<li> they don't contain any data that would allow us to match advisory
+  message to the original message - thou you could correlate by
+  timestamp</li>
+</ul>
+</p>
+<p>
+All in all, it's a good tool to have! But perhaps you have some other
+thoughts on this subject? How do you test JMS?
+</p></div>
+<h2>Comments</h2>
+<div class='comments'>
+</div>
