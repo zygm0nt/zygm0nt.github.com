@@ -21,13 +21,13 @@ However if you want to add some JDBC drivers, and happen to be using SoapUI vers
 An error occured [oracle/jdbc/Driver], see error log for details
 java.lang.NoClassDefFoundError: oracle/jdbc/Driver
 </pre>
-</p>
+</p> 
 
 <p>
 If so, try registering your drivers with <b>registerJdbcDriver</b> function, like I did in this snippet of code:
 </p>
-<script
-src="https://gist.github.com/1333768.js?file=jdbc-soapui.groovy"></script>
+{% gist 1333768 jdbc-soapui.groovy %}
+
 
 <p>What a crappy thing!</p></div>
 <h2>Comments</h2>

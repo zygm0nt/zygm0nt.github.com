@@ -59,7 +59,7 @@ by default. You need to enable specific type of
 advisory message for a specific jms destination. You can do this with
 ths configuration change to <strong>activemq.xml</strong>
 </p>
-<script src="https://gist.github.com/897141.js"> </script>
+{% gist 897141 %}
 <p>
 As you can see, I've specified which advisories I want enabled. The full
 list of available advisories can be found <a
@@ -69,7 +69,7 @@ Since I wanted to read messages from that topic I've added the following
 configuration to my spring context - there is one destination bean for
 inserting messages and one bean for advisory topic.
 </p>
-<script src="https://gist.github.com/897150.js"> </script>
+{% gist 897150 %}
 <p>
 Thanks to this configuration I've been able to check that my message was
 actually delivered to the queue. There've been no need to worry about

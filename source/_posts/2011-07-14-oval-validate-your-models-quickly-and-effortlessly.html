@@ -64,22 +64,19 @@ class - called by the validation engine on a given field.</p>
 
 <p>Let's start with our new annotation:</p>
 
-<script
-src="https://gist.github.com/1077516.js?file=DictionaryValue.java"></script>
+{% gist 1077516 DictionaryValue.java %} 
 
 In the above snippet I've defined a check-annotation, that would be used like
 this:
 
-<script
-src="https://gist.github.com/1077516.js?file=sample.java"></script>
+{% gist 1077516 sample.java %} 
 
 You can pass <i>file</i> - containing dictionary values for this field.
 There is also <i>message</i> field in the annotation which is an error
 message returned by the validation engine of failed check - pretty
 handy. And can be expressed in <i>.properties</i> file as:
 
-<script
-src="https://gist.github.com/1077516.js?file=validation.properties"></script>
+{% gist 1077516 validation.properties %} 
 
 <p>Placeholder, like <i>context</i>, will be replaced with correct values supplied by the
 validation engine.</p>
@@ -89,8 +86,7 @@ for this kind of check. The name of the class is already defined in
 <i>DictionaryValue</i> annotation, it is called
 <i>DictionaryValueCheck</i> and I've done this check this way:
 
-<script
-src="https://gist.github.com/1077516.js?file=DictionaryValueCheck.java"></script>
+{% gist 1077516 DictionaryValueCheck.java %}
 
 What this basically does is:
 <ol>
