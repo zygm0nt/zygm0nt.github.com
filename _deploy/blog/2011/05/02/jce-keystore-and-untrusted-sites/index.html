@@ -1,0 +1,549 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>JCE keystore and untrusted sites - Marcin bloguje</title>
+  <meta name="author" content="Marcin Cylke">
+
+  
+  <meta name="description" content="Recently at work I was in need of connecting to a web service exposed via HTTPS. I&#8217;ve been doing this from inside Servicemix 3.3.1, which may &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://zygm0nt.github.com/blog/2011/05/02/jce-keystore-and-untrusted-sites">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Marcin bloguje" type="application/atom+xml">
+  <!-- font-family: 'Knewave', cursive; -->
+<link href='http://fonts.googleapis.com/css?family=Knewave' rel='stylesheet' type='text/css'>
+<!-- font-family: 'Cantata One', serif; -->
+<link href='http://fonts.googleapis.com/css?family=Cantata+One' rel='stylesheet' type='text/css'>
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1>
+      <a href="/">Marcin bloguje</a>
+      
+        <span>.impressions.memos.tech.</span>
+      
+  </h1>
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:zygm0nt.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Home</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">JCE Keystore and Untrusted Sites</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-02T17:03:38+02:00" pubdate data-updated="true">May 2<span>nd</span>, 2011</time>
+        
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+<p>Recently at work I was in need of connecting to a web service exposed via
+HTTPS. I&#8217;ve been doing this from inside <a href="http://servicemix.apache.org/home.html">Servicemix 3.3.1</a>, which may seem
+a bit inhibiting, but that was a requirement. Nevertheless I&#8217;ve been
+trying my luck with the included <em>servicemix-http-2008.01</em>
+component. I&#8217;ve created a simple <a
+href="http://servicemix.apache.org/working-with-service-units.html">Service
+Unit</a> using that component and made connection attempt.
+Unfortunately I&#8217;ve encountered issues with the SSL conversation
+negotiation. I had to dig deeper into the <em>servicemix-http</em> code
+to find out these had something to do with my <a
+href="https://secure.wikimedia.org/wikipedia/en/wiki/Java_Cryptography_Extension">JCE</a>
+keystore. Read more to find out what happened!</p>
+<EXCERPT>
+<p>Ok, so I had my <em>xbean.xml</em> for http component looking like
+this:</p>
+
+<div><script src='https://gist.github.com/951474.js?file=servicemix-http-xbean.xml'></script>
+<noscript><pre><code>&lt;beans xmlns:http=&quot;http://servicemix.apache.org/http/1.0&quot;
+       xmlns:my=&quot;http://example.pl/abc&quot;&gt;
+
+                &lt;http:endpoint
+                          endpoint=&quot;default&quot;
+                          locationURI=&quot;https://abc.host.pl&quot;
+                          role=&quot;provider&quot;
+                          service=&quot;my:service-1&quot;
+                          soap=&quot;true&quot;
+                          soapVersion=&quot;1.1&quot;&gt;
+                    &lt;http:ssl&gt;
+                             &lt;http:sslParameters
+                                         keyStore=&quot;classpath:keystore.jks&quot;
+                                         keyStorePassword=&quot;servicemix&quot;/&gt;
+                    &lt;/http:ssl&gt;
+                &lt;/http:endpoint&gt;            
+&lt;/beans&gt;</code></pre></noscript></div>
+
+
+
+<p>As you can see this is a proxy adapter to some outside service
+exposed via secured HTTP protocol. Since it&#8217;s <em>HTTPS</em> I&#8217;ve
+specified some SSL parameters. It was sufficient in my case to just pass
+the keystore file and it&#8217;s password.</p>
+
+<p>I&#8217;ve created my <em>keystore.jks</em> file in <em>smx_home/conf</em>
+with password <em>servicemix</em> in the following manner:</p>
+
+<div><script src='https://gist.github.com/951459.js?file=create_keystore.sh'></script>
+<noscript><pre><code>keytool -genkey -alias alias -keyalg RSA -keysize 1024 -dname &quot;CN=Marcin Cylke, OU=Java Security, O=ABC, c=PL&quot; -keypass secret_pass -storepass secret_pass -KeyStore /tmp/new</code></pre></noscript></div>
+
+
+<p>You can see what&#8217;s in this file with this command:</p>
+
+<div><script src='https://gist.github.com/951459.js?file=list_keys.sh'></script>
+<noscript><pre><code>keytool -list -v -KeyStore keystore.jks</code></pre></noscript></div>
+
+
+<p>At this point I thought, that having a configured keystore and my
+component would suffice. Wrong! As soon as I&#8217;ve tried to connect to the
+external service I got an exception:</p>
+
+<div><script src='https://gist.github.com/951458.js?file=untrusted_key_error.java'></script>
+<noscript><pre><code>javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+    at com.sun.net.ssl.internal.ssl.Alerts.getSSLException(Alerts.java:174)
+    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1623)
+    at com.sun.net.ssl.internal.ssl.Handshaker.fatalSE(Handshaker.java:198)
+    at com.sun.net.ssl.internal.ssl.Handshaker.fatalSE(Handshaker.java:192)
+    at com.sun.net.ssl.internal.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1074)
+    at com.sun.net.ssl.internal.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:128)
+    at com.sun.net.ssl.internal.ssl.Handshaker.processLoop(Handshaker.java:529)
+    at com.sun.net.ssl.internal.ssl.Handshaker.process_record(Handshaker.java:465)
+    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:884)
+    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1120)
+    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.writeRecord(SSLSocketImpl.java:623)
+    at com.sun.net.ssl.internal.ssl.AppOutputStream.write(AppOutputStream.java:59)
+    at java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:65)
+    at java.io.BufferedOutputStream.flush(BufferedOutputStream.java:123)
+    at java.io.FilterOutputStream.flush(FilterOutputStream.java:123)
+    at org.apache.commons.httpclient.methods.EntityEnclosingMethod.writeRequestBody(EntityEnclosingMethod.java:502)
+    at org.apache.commons.httpclient.HttpMethodBase.writeRequest(HttpMethodBase.java:1973)
+    at org.apache.commons.httpclient.HttpMethodBase.execute(HttpMethodBase.java:993)
+    at org.apache.commons.httpclient.HttpMethodDirector.executeWithRetry(HttpMethodDirector.java:397)
+    at org.apache.commons.httpclient.HttpMethodDirector.executeMethod(HttpMethodDirector.java:170)
+    at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:396)
+    at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:346)
+    at org.apache.servicemix.http.processors.ProviderProcessor.process(ProviderProcessor.java:167)
+    at org.apache.servicemix.soap.SoapEndpoint.process(SoapEndpoint.java:368)
+    at org.apache.servicemix.common.AsyncBaseLifeCycle.doProcess(AsyncBaseLifeCycle.java:600)
+    at org.apache.servicemix.common.AsyncBaseLifeCycle.processExchange(AsyncBaseLifeCycle.java:554)
+    at org.apache.servicemix.common.AsyncBaseLifeCycle.onMessageExchange(AsyncBaseLifeCycle.java:510)
+    at org.apache.servicemix.common.SyncLifeCycleWrapper.onMessageExchange(SyncLifeCycleWrapper.java:60)
+    at org.apache.servicemix.jbi.messaging.DeliveryChannelImpl.processInBound(DeliveryChannelImpl.java:620)
+    at org.apache.servicemix.jbi.nmr.flow.AbstractFlow.doRouting(AbstractFlow.java:172)
+    at org.apache.servicemix.jbi.nmr.flow.seda.SedaFlow.doRouting(SedaFlow.java:168)
+    at org.apache.servicemix.jbi.nmr.flow.seda.SedaQueue$1.run(SedaQueue.java:134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+    at java.lang.Thread.run(Thread.java:619)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+    at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:294)
+    at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:200)
+    at sun.security.validator.Validator.validate(Validator.java:218)
+    at com.sun.net.ssl.internal.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:126)
+    at com.sun.net.ssl.internal.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:209)
+    at com.sun.net.ssl.internal.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:249)
+    at com.sun.net.ssl.internal.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1053)
+    ... 30 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+    at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:174)
+    at java.security.cert.CertPathBuilder.build(CertPathBuilder.java:238)
+    at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:289)
+    ... 36 more
+</code></pre></noscript></div>
+
+
+<p>Hmmm.. this looks pretty nasty, but it&#8217;s not that bad. As one can
+read <a
+href="http://blogs.sun.com/gc/entry/unable_to_find_valid_certification">here</a>,
+it&#8217;s associated with the other site&#8217;s having an untrusted (unsigned)
+certificate. Assuming you actually trust the other end of the
+communication and this situation is ok for you, you should add the
+servers certificate to your keystore. The previously mentioned link
+contained a little java class that would do just that. You can find it
+here (original code) <a
+href="http://blogs.sun.com/andreas/resource/InstallCert.java">InstallCert.java</a>
+or you can look into my slightly changed version here <a
+href="https://gist.github.com/951492">at github</a>.</p>
+
+<p>You should call it as follows, assuming that file
+<em>keystore.jks</em> is in the current directory:</p>
+
+<script
+src="https://gist.github.com/951459.js?file=add_untrusted_key.sh"></script>
+
+<p>What you&#8217;ll probably see, when you execute this app is this:</p>
+
+<div><script src='https://gist.github.com/951458.js?file=add_untrusted_cert.sh'></script>
+<noscript><pre><code>mcl@correspondence:~/Desktop$ java InstallCert abc.host.pl keystore_pass
+Loading KeyStore keystore.jks...
+Opening connection to abc.host.pl:443...
+Starting SSL handshake...
+
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+    at com.sun.net.ssl.internal.ssl.Alerts.getSSLException(Alerts.java:174)
+    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1623)
+    at com.sun.net.ssl.internal.ssl.Handshaker.fatalSE(Handshaker.java:198)
+    at com.sun.net.ssl.internal.ssl.Handshaker.fatalSE(Handshaker.java:192)
+    at com.sun.net.ssl.internal.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1074)
+    at com.sun.net.ssl.internal.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:128)
+    at com.sun.net.ssl.internal.ssl.Handshaker.processLoop(Handshaker.java:529)
+    at com.sun.net.ssl.internal.ssl.Handshaker.process_record(Handshaker.java:465)
+    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:884)
+    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1120)
+    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1147)
+    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1131)
+    at InstallCert.main(InstallCert.java:82)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+    at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:294)
+    at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:200)
+    at sun.security.validator.Validator.validate(Validator.java:218)
+    at com.sun.net.ssl.internal.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:126)
+    at com.sun.net.ssl.internal.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:209)
+    at InstallCert$SavingTrustManager.checkServerTrusted(InstallCert.java:177)
+    at com.sun.net.ssl.internal.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1066)
+    ... 8 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+    at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:174)
+    at java.security.cert.CertPathBuilder.build(CertPathBuilder.java:238)
+    at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:289)
+    ... 14 more
+
+Server sent 1 certificate(s):
+
+ 1 Subject CN=abc.host.pl, OU=IT, O=Tytus De z o.o., L=Lubien, ST=Wielkopolskie, C=PL
+   Issuer  CN=abc.host.pl, OU=IT, O=Tytus De z o.o., L=Lubien, ST=Wielkopolskie, C=PL
+   sha1    18 20 0f 4d 75 05 4b 38 61 fc 62 ba 03 0d 28 8c 50 8f e4 bd 
+   md5     19 cc d0 aa 6d 25 4f 05 d7 c8 40 0c 14 7b 90 a2 
+
+Enter certificate to add to trusted keystore or 'q' to quit: [1]
+1
+
+[
+[
+  Version: V3
+  Subject: CN=abc.host.pl, OU=IT, O=Tytus De z o.o., L=Lubien, ST=Wielkopolskie, C=PL
+  Signature Algorithm: SHA1withRSA, OID = 1.2.840.113549.1.1.5
+
+  Key:  Sun RSA public key, 1024 bits
+  modulus: 132273155309282144973195320716811175193976134222571452308768552101191894740218986214811429267243902443501737048442287069471714463675362773263911735240842200098922910391008625926103368536307544892982972025285316457425020882189531886424398004920996956401109864350477607702600482953541993347423082215862581179547
+  public exponent: 65537
+  Validity: [From: Mon Nov 30 14:06:24 CET 2009,
+               To: Thu Nov 28 14:06:24 CET 2019]
+  Issuer:  CN=abc.host.pl, OU=IT, O=Tytus De z o.o., L=Lubien, ST=Wielkopolskie, C=PL
+  SerialNumber: [    00]
+
+]
+  Algorithm: [SHA1withRSA]
+  Signature:
+0000: 40 75 D4 B0 85 D1 34 DE   09 24 3C BC 72 46 B2 E0  @u....4..$&lt;.rF..
+0010: 18 15 84 DD A2 EB BA 5A   9F E3 5C F0 8F 53 60 EC  .......Z..\..S`.
+0020: 2C 5D CB C1 EE C3 3A 65   CF 9B 6C E5 FC 01 DD 05  ,]....:e..l.....
+0030: EA DC 66 BF FB 91 02 BC   39 77 CB 34 BC 7F 0B 23  ..f.....9w.4...#
+0040: 40 C9 85 B3 2A 2A 20 AE   74 B0 C9 FB 47 5F B3 88  @...** .t...G_..
+0050: E4 5E 6D 24 2F C0 43 9D   69 D5 69 4D 76 31 0A 62  .^m$/.C.i.iMv1.b
+0060: 1A C1 25 FB 14 41 06 0E   9F A8 D1 75 DD B8 B2 B2  ..%..A.....u....
+0070: 1D BF 90 11 69 18 9A C8   D5 AA 5D 26 6B 1C FB B0  ....i.....]&amp;k...
+
+]</code></pre></noscript></div>
+
+
+<p>Please note that there is a prompt (<em>Enter certificate to add to
+trusted keystore&#8230;</em>) in which you can enter the certificate number
+you wish to add to your keystore.</p>
+
+<p>After all those steps my request got through and I could happily
+query HTTPS service as long as I wanted to! Great!</p>
+
+<h2>Possible problems</h2>
+
+<p>In my search for this problem&#8217;s solution I&#8217;ve encountered this kind
+of exception:</p>
+
+<div><script src='https://gist.github.com/951458.js?file=keystore_key_error.java'></script>
+<noscript><pre><code>java.lang.Exception: java.security.UnrecoverableKeyException: Cannot recover key
+        at org.apache.servicemix.http.processors.ConsumerProcessor.process(ConsumerProcessor.java:216)
+        at org.apache.servicemix.http.HttpBridgeServlet.doPost(HttpBridgeServlet.java:71)
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:617)
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:690)
+        at org.mortbay.jetty.servlet.ServletHolder.handle(ServletHolder.java:502)
+        at org.mortbay.jetty.servlet.ServletHandler.handle(ServletHandler.java:363)
+        at org.mortbay.jetty.handler.ContextHandler.handle(ContextHandler.java:757)
+        at org.mortbay.jetty.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:206)
+        at org.mortbay.jetty.handler.HandlerCollection.handle(HandlerCollection.java:114)
+        at org.mortbay.jetty.handler.HandlerWrapper.handle(HandlerWrapper.java:152)
+        at org.mortbay.jetty.Server.handle(Server.java:324)
+        at org.mortbay.jetty.HttpConnection.handleRequest(HttpConnection.java:502)
+        at org.mortbay.jetty.HttpConnection.handle(HttpConnection.java:371)
+        at org.mortbay.io.nio.SelectChannelEndPoint.run(SelectChannelEndPoint.java:409)
+        at org.mortbay.jetty.nio.SelectChannelConnector$RetryContinuation.run(SelectChannelConnector.java:525)
+        at org.mortbay.thread.BoundedThreadPool$PoolThread.run(BoundedThreadPool.java:451)
+Caused by: java.security.UnrecoverableKeyException: Cannot recover key
+        at sun.security.provider.KeyProtector.recover(KeyProtector.java:311)
+        at sun.security.provider.JavaKeyStore.engineGetKey(JavaKeyStore.java:121)
+        at sun.security.provider.JavaKeyStore$JKS.engineGetKey(JavaKeyStore.java:38)
+        at java.security.KeyStore.getKey(KeyStore.java:763)
+        at com.sun.net.ssl.internal.ssl.SunX509KeyManagerImpl.&lt;init&gt;(SunX509KeyManagerImpl.java:113)
+        at com.sun.net.ssl.internal.ssl.KeyManagerFactoryImpl$SunX509.engineInit(KeyManagerFactoryImpl.java:48)
+        at javax.net.ssl.KeyManagerFactory.init(KeyManagerFactory.java:239)
+        at org.apache.servicemix.http.processors.CommonsHttpSSLSocketFactory.createUnmanagedFactory(CommonsHttpSSLSocketFactory.java:117)
+        at org.apache.servicemix.http.processors.CommonsHttpSSLSocketFactory.&lt;init&gt;(CommonsHttpSSLSocketFactory.java:50)
+        at org.apache.servicemix.http.processors.ProviderProcessor.getHostConfiguration(ProviderProcessor.java:276)
+        at org.apache.servicemix.http.processors.ProviderProcessor.process(ProviderProcessor.java:167)
+        at org.apache.servicemix.soap.SoapEndpoint.process(SoapEndpoint.java:368)
+        at org.apache.servicemix.common.AsyncBaseLifeCycle.doProcess(AsyncBaseLifeCycle.java:600)
+        at org.apache.servicemix.common.AsyncBaseLifeCycle.processExchange(AsyncBaseLifeCycle.java:554)
+        at org.apache.servicemix.common.AsyncBaseLifeCycle.onMessageExchange(AsyncBaseLifeCycle.java:510)
+        at org.apache.servicemix.common.SyncLifeCycleWrapper.onMessageExchange(SyncLifeCycleWrapper.java:60)
+        at org.apache.servicemix.jbi.messaging.DeliveryChannelImpl.processInBound(DeliveryChannelImpl.java:620)
+        at org.apache.servicemix.jbi.nmr.flow.AbstractFlow.doRouting(AbstractFlow.java:172)
+        at org.apache.servicemix.jbi.nmr.flow.seda.SedaFlow.doRouting(SedaFlow.java:168)
+        at org.apache.servicemix.jbi.nmr.flow.seda.SedaQueue$1.run(SedaQueue.java:134)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+        at java.lang.Thread.run(Thread.java:619)
+</code></pre></noscript></div>
+
+
+<p>A little googling led me to this <a
+href="http://stackoverflow.com">StackOverflow</a> <a
+href="http://stackoverflow.com/questions/4926290/java-keystore-and-password-settings">question</a>.</p>
+
+<p>It seems that you cannot have multiple keys with different passwords
+in the same keystore and use <a
+href="http://download.oracle.com/javase/6/docs/api/javax/net/ssl/KeyManagerFactory.html">KeyManagerFactory</a> class. Oh
+well&#8230;</p>.
+
+<h2>Ending</h2>
+
+<p>To sum up, the solution given works, but in my opinion using the
+<em>InstallCert.java</em> app is rather dirty. I&#8217;ve been wondering, do
+you know other ways of doing that thing?</p>
+
+</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Marcin Cylke</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-02T17:03:38+02:00" pubdate data-updated="true">May 2<span>nd</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/it/'>IT</a>, <a class='category' href='/blog/categories/ogólne/'>Ogólne</a>, <a class='category' href='/blog/categories/techblog/'>Techblog</a>, <a class='category' href='/blog/categories/touk/'>touk</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zygm0nt.github.com/blog/2011/05/02/jce-keystore-and-untrusted-sites/" data-via="zygm0nt" data-counturl="http://zygm0nt.github.com/blog/2011/05/02/jce-keystore-and-untrusted-sites/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/04/01/advisory-messages-to-the-rescue/" title="Previous Post: Advisory Messages to the rescue">&laquo; Advisory Messages to the rescue</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/05/19/geecon-2011-day-1/" title="Next Post: Geecon 2011 - day 1">Geecon 2011 - day 1 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section class="first odd">
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/06/18/hadoop-for-enterprises/">Hadoop for Enterprises</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/02/soapui-ext-libs-and-its-weirdness/">SoapUI ext libs and its weirdness</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/09/21/what-is-nosql-good-for/">What is NoSQL good for?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/08/23/5-best-things-to-do-with-your-kindle/">5 best things to do with your Kindle</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/08/08/great-many-ways-to-enjoy-life/">Great many ways to enjoy life!</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/zygm0nt">@zygm0nt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'zygm0nt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section class="even">
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("zygm0nt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/zygm0nt" class="twitter-follow-button" data-show-count="false">Follow @zygm0nt</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Marcin Cylke -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/gluttony/object-octopress-theme">Object</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

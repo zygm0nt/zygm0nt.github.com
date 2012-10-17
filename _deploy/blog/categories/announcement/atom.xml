@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: announcement | Marcin bloguje]]></title>
+  <link href="http://zygm0nt.github.com/blog/categories/announcement/atom.xml" rel="self"/>
+  <link href="http://zygm0nt.github.com/"/>
+  <updated>2012-10-17T08:55:01+02:00</updated>
+  <id>http://zygm0nt.github.com/</id>
+  <author>
+    <name><![CDATA[Marcin Cylke]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Here cometh English :)]]></title>
+    <link href="http://zygm0nt.github.com/blog/2010/04/10/here-cometh-english/"/>
+    <updated>2010-04-10T00:00:00+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2010/04/10/here-cometh-english</id>
+    <content type="html"><![CDATA[<div class='post'>
+From this day on, this blog will contain only posts in English.</div>
+
+]]></content>
+  </entry>
+  
+</feed>
