@@ -1,0 +1,2589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Marcin bloguje]]> - TouK</title>
+  <link href="http://zygm0nt.github.com/atom.xml" rel="self"/>
+  <link href="http://zygm0nt.github.com/"/>
+  <updated>2012-10-22T20:38:54+02:00</updated>
+  <id>http://zygm0nt.github.com/</id>
+  <author>
+    <name><![CDATA[Marcin Cylke]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hadoop for Enterprises]]></title>
+    <link href="http://zygm0nt.github.com/blog/2012/06/18/hadoop-for-enterprises/"/>
+    <updated>2012-06-18T11:08:09+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2012/06/18/hadoop-for-enterprises</id>
+    <content type="html"><![CDATA[<div class='post'>
+<p>Hadoop&#8217;s usage as a big data processing framework gains a lot of attention lately. Now, not only big players see, that they can embrace the data their sites or products are generating and develop their businesses on it. For that to happen two things are needed: the data itself and means of processing really big amounts of it.  </p>
+
+<p><span class="image-wrap" style=""><img src="http://blog.innovative-labs.com/blog/3488314950_453466f762_b.jpg" style="border: 0px solid black; width: 400px;" /></span></p>
+
+<p>Gathering data is relatively easy. These are not necessarily structured data, you don&#8217;t need to plan their usage at first. Just start collecting them and than you may experiment with their potential usage. If they&#8217;ll come out as useless rubbish - deleting them won&#8217;t be hard <img class="emoticon" src="http://zygm0nt.github.com/confluence/images/icons/emoticons/smile.gif" height="20" width="20" align="absmiddle" alt="" border="0"/> But imagine the values it may contribute to your business:</p>
+
+<ul>
+	<li>faster services - working on optimized data</li>
+	<li>more clients - because of more relevant search results</li>
+	<li>happy clients - your service can &#8220;read their minds&#8221; <img class="emoticon" src="http://zygm0nt.github.com/confluence/images/icons/emoticons/smile.gif" height="20" width="20" align="absmiddle" alt="" border="0"/></li>
+	<li>etc.</li>
+</ul>
+
+
+<p>There are many companies that utilize Hadoop ecosystem for their own needs. You can read about some of them here: <a href="http://wiki.apache.org/hadoop/PoweredBy" class="external-link" rel="nofollow">http://wiki.apache.org/hadoop/PoweredBy</a> But since that page lacks insight into specific applications of Hadoop I&#8217;ve tried to delve into<br/>
+details of how Hadoop helped tame some companies&#8217; big data sets.</p>
+
+<EXCERPT>
+
+<h2><a name="test-Facebook"></a>Facebook</h2>
+
+<p>Being a social network provider, a widely used one, they require no introduction. However if you&#8217;ve lived under a rock for last couple years just visit their website <a href="http://facebook.com" class="external-link" rel="nofollow">http://facebook.com</a></p>
+
+<p>Their main usage is data warehousing. Since they require to be able to access the data fast and reliably they had a need for real-time querying of their huge, and always growing data set. Their switch from MySQL databases was required due to the increasing workloads they experienced with standard databases. What they got &#8220;out of the box&#8221; with Hadoop was all the benefits of distributed file system (HDFS features). They expanded the ideas behind that even further and implemented truly Highly Available file system without Single Point of Failure.</p>
+
+<p>Facebook has 3 interesting usage scenarios in which Hadoop plays a major role:</p>
+
+<ul>
+	<li>Titan - is Facebook&#8217;s messaging system. It processes messages exchanged between users. Ensures that it happens fast and without glitches. Here Hadoop is used mainly as a huge, unlimited storage.</li>
+	<li>Puma - Facebook Insights - a tool providing page statistics for  advanced Facebook users. Based on streams of data (clicks, likes, shares, comments and impressions) it graphs those data and makes it available near instantly.</li>
+	<li>ODS - Operational Data Store - which stores Facebook&#8217;s internal metrics - collections of OS and cluster health metrics. And it facilitates multiple accounting solutions.</li>
+</ul>
+
+
+<h2><a name="test-Twitter"></a>Twitter</h2>
+
+<p>This popular micro-blogging platform, where you can register your account and follow friends and celebrities for their micro-messages does some pretty interesting things with their Hadoop cluster.</p>
+
+<p>One of their motivations is to speed up their web-page&#8217;s functionality. That is why the compute users&#8217; friendships in Twitter&#8217;s social graph with Hadoop. Using connections between users they calculate their relationship to each other and estimate groups of users.</p>
+
+<p>Since this service&#8217;s users generate lots of content, the company conducts researches based on natural language processing. They probe what could be told about a user from his tweets. They use tweets&#8217; contents for advertisement purpose, trends analysis and many more.</p>
+
+<p>From tweets and user&#8217;s behaviours they characterise usage scenarios. Also, they gather usage statistics, like number of searches daily, number of tweets. Based on this seemingly irrelevant data they run comparisons of different types of users. Twitter analyzes data to determine whether mobile users, users who use third party clients or power users use Twitter differently from average users. Of course theses seem like really specific applications but nevertheless they are very original and base on the data that Twitter has been gathering for some time now. </p>
+
+<h2><a name="test-EBay"></a>EBay</h2>
+
+<p>Being the biggest auctioning site on the Internet, EBay uses Hadoop processing for increasing search relevance based on click-stream data, user data. This seems pretty obvious, considering their area of operation.</p>
+
+<p>However the also have one other interesting thing - they try hard to automatically fill auctioned objects&#8217; metadata, based on the descriptions and other data provided by users. They employ data mining approach for this tasks and judging from their constant growth it seems to work <img class="emoticon" src="http://zygm0nt.github.com/confluence/images/icons/emoticons/smile.gif" height="20" width="20" align="absmiddle" alt="" border="0"/></p>
+
+<h2><a name="test-LinkedIn"></a>LinkedIn</h2>
+
+<p>Social network for professionals, thou a lot smaller than Facebook. Based on click-streams they discover relations between users. All the data concerning latest visits on your profile or people you may know from other places - this comes from Hadoop based analysis of those clicks people make all the time on their sites.</p>
+
+<p>Also a very neat feature, called InMaps (<a href="http://inmaps.linkedinlabs.com/" class="external-link" rel="nofollow">http://inmaps.linkedinlabs.com/</a>) analyse declared schools and companies and generates data for graph with clustered friends of yours.</p>
+
+<h2><a name="test-Last.fm"></a>Last.fm</h2>
+
+<p>This on-line radio site, praised by many for its invaluable recommendations&#8217; system seems like a rather small and simple service. But behind the facade of simple web page there are lots of data being processed, so that their services could match a certain level of perfection.</p>
+
+<p>Such large volume of their data comes from scrobbles. Each users of their service listening to a song generates a note about this fact - called scrobble. Based on that and user profiles they calculate global band popularity charts, maps of bands&#8217; popularity and many more usage statistics and timeline charts.</p>
+
+<p><span class="image-wrap" style=""><img src="http://blog.innovative-labs.com/blog/7346959440_71648c9fe7_b.jpg" style="border: 0px solid black; width: 400px;" /></span></p>
+
+<h2><a name="test-Conclusion"></a>Conclusion</h2>
+
+<p>They just try to detect and trace new patterns in seemingly chaotic data sets. Perhaps you could also do the same? Analyze your data and expand your business value?</p></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://www.wedding-cake-decorations.net">wedding cake decorations</a></div>
+<div class='content'>
+<p>We stumbled over here from a different web address and thought I might check things out.<br />
+I like what I see so i am just following you.<br />
+Look forward to checking out your web page yet again.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.car-floor-mats.net">rubber floor mats</a></div>
+<div class='content'>
+<p>I like what you guys are up too. This type of clever work and reporting!<br />
+<br />
+Keep up the awesome works guys I&#8217;ve added you guys to my own blogroll.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.bispioner.ru/phpBB3/memberlist.php?mode=viewprofile&amp;u=119586">Svayambhut Ghosh</a></div>
+<div class='content'>
+<p>Greetings from Florida! I&#8217;m bored at work so I decided to browse your site on my iphone during lunch break. I enjoy the info you present here and can&#8217;t wait to take a look <br />
+when I get home. I&#8217;m surprised at how quick your blog loaded on my cell phone .. I&#8217;m not even using WIFI, just 3G .<br />
+. Anyways, very good site!</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.salethenorthfacejackets.com">north face jackets</a></div>
+<div class='content'>
+<p>Comfortableness &lt;a href=&quot;http://www.salethenorthfacejackets.com&quot;&gt;north face jackets&lt;/a&gt;<br />
+is crucial when they get it that will &lt;a href=&quot;http://www.salethenorthfacejackets.com&quot;&gt;north face outlet&lt;/a&gt; get the best school bags pertaining to going camping &lt;a href=&quot;http://www.salethenorthfacejackets.com&quot;&gt;north face sale&lt;/a&gt;. Your easiest guarantee in the case of even larger delivers has become One with an inner metal framework, one that can wind &lt;a href=&quot;http://www.salethenorthfacejackets.com&quot;&gt;cheap north face&lt;/a&gt; up being aligned to help you appropriately fit your &lt;a href=&quot;http://www.salethenorthfacejackets.com/the-north-face-women-1&quot;&gt;north face women&lt;/a&gt; body. They should be now have http://www.salethenorthfacejackets.com secure which were wholly flexible, because essentially in the form of midsection belt to get more aid.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.plants-for-sale.com">plants sale</a></div>
+<div class='content'>
+<p>I never imagined how much stuff there was out there <br />
+on this! Thanks for making it easy to get the picture</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.facebook.com/profile.php?id=100003406472249">gWgVcetqzVZukd</a></div>
+<div class='content'>
+<p>What Programming Languages Do Jobs Require? | Regular Geek  regulargeek.com/2009/07/21/what-programming-languages-do-jobs-require   view page   cahecd  As a software engineer, you need to keep your skills sharp and current. This is a general requirement of the job. In addition to this, in the current economy you do not want to be without a job. Obviously, this means learning more about what your current company uses for all of its development. What if you do not have a job or you are looking to leave? What technologies or programming languages should you be looking into?   From the page</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://businesses.wickedlocal.com/MA-Westford/Computer-Service-and-Repair/15">computer pc repair</a></div>
+<div class='content'>
+<p>Howdy are using Wordpress for your site platform? I&#8217;m new to the blog world but I&#8217;m trying to <br />
+get started and create my own. Do you need any coding expertise to make your own <br />
+blog? Any help would be greatly appreciated!</p></div>
+</div>
+</div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[SoapUI ext libs and its weirdness]]></title>
+    <link href="http://zygm0nt.github.com/blog/2011/11/02/soapui-ext-libs-and-its-weirdness/"/>
+    <updated>2011-11-02T16:32:15+01:00</updated>
+    <id>http://zygm0nt.github.com/blog/2011/11/02/soapui-ext-libs-and-its-weirdness</id>
+    <content type="html"><![CDATA[<div class='post'>
+<p>Suppose you want to add some additional jars to your SoapUI installation. It all should work ok if you put them in <b>bin/ext</b> directory. It is scanned at startup, and jars found there are automatically added to classpath.
+</p>
+
+<p>
+However if you want to add some JDBC drivers, and happen to be using SoapUI version higher than 3.5.1 it is a bit more tricky.
+</p>
+<p>You may face this NoClassDefFoundError:<br/>
+
+<pre>
+An error occured [oracle/jdbc/Driver], see error log for details
+java.lang.NoClassDefFoundError: oracle/jdbc/Driver
+</pre>
+</p> 
+
+<p>
+If so, try registering your drivers with <b>registerJdbcDriver</b> function, like I did in this snippet of code:
+</p>
+<div><script src='https://gist.github.com/1333768.js?file=jdbc-soapui.groovy'></script>
+<noscript><pre><code>if (context.sql == null) {
+	def driver = 'oracle.jdbc.OracleDriver'
+	com.eviware.soapui.support.GroovyUtils.registerJdbcDriver( driver )
+	def sql = Sql.newInstance('jdbc:oracle:thin:' + dbUri, driver)
+	context.setProperty('sql', sql)
+}</code></pre></noscript></div>
+
+
+
+<p>What a crappy thing!</p></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://podzastaw.org">Kelli</a></div>
+<div class='content'>
+<p>You can definitely see your expertise in the work you write.<br />
+The world hopes for more passionate writers such as you who are not afraid to <br />
+say how they believe. Always go after your heart.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.052b.com">Buford</a></div>
+<div class='content'>
+<p>It&#8217;s going to be end of mine day, however before finish I am reading this fantastic paragraph to increase my experience.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.hotelfocus.com.pl">Chandra</a></div>
+<div class='content'>
+<p>My family every time say that I am wasting my time <br />
+here at net, except I know I am getting knowledge every day by reading such pleasant articles.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.wayn.com/waynblog.html?wci=viewentry&amp;entry_key=265563">Florene</a></div>
+<div class='content'>
+<p>Thanks , I&#8217;ve just been looking for info approximately this topic for a long time and yours is the greatest I have found out till now. But, what concerning the bottom line? Are you positive in regards to the source?</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.hotelbookingwebsite.net">Myron</a></div>
+<div class='content'>
+<p>Nice post. I was checking continuously this blog and I am impressed!<br />
+Extremely helpful information specially the last part <br />
+:) I care for such information much. I was looking for this <br />
+particular info for a long time. Thank you and best of luck.</p></div>
+</div>
+</div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[What is NoSQL good for?]]></title>
+    <link href="http://zygm0nt.github.com/blog/2011/09/21/what-is-nosql-good-for/"/>
+    <updated>2011-09-21T23:12:34+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2011/09/21/what-is-nosql-good-for</id>
+    <content type="html"><![CDATA[<div class='post'>
+<b>&#8230; or how I ended up writing a CouchDB proof of concept app?</b>
+
+<p>Once upon a time I set out on a journey to discover the NoSQL land.
+I&#8217;ve decided that doing simple queries wouldn&#8217;t be interesting enough.
+That&#8217;s why I&#8217;ve chose to create an app that would be based on some NoSQL
+database.</p>
+
+<p>
+The main idea was to create an app, that would dynamically update itself
+with geographic data flowing in. Since there are myriads of geo-data
+that are available on the internet, you can pick your favorite one and
+load them into your SQL database of choice.
+</p>
+
+<EXCERPT>
+<p>
+In my case the primary source of data was a proprietary database, or more specifically - one table in it continuously updated with new data. To make that
+data visible on my map I needed to:
+</p>
+
+<ul>
+<li> buffer the huge amount of those records - so as not to overhoul
+other services with large traffic, and not to flood the frontend</li>
+<li> convert then to my representation</li>
+<li> display them - have presentation layer in a browser - since
+browser-based frontend was the easiest and fastest to develop</li>
+</ul>
+
+<p>
+The idea of the front-end HTML page was to show new points on the map.
+From the moment of opening the page records that appear in database
+table should be shown interactively on the screen.
+</p>
+
+<h2>Toys used</h2>
+
+<p>
+For the first step I chose to use RabbitMQ broker. A queue on the broker would receive messages - one message per database table&#8217;s row.
+Then I&#8217;d use some simple groovy middle ware to convert the data to appropriate format and put it onto another db - this time db specific
+to my app. 
+</p>
+
+<p>
+You may ask why incorporate another database. It would be
+good for separating environments - assuming the original data contains
+some vulnerable content that should be anatomised, or we just don&#8217;t feel
+comfortable exposing the whole database of some XYZ-system just to have
+access to its one table.
+</p>
+
+<p>
+Since for my presentation layer I chose HTML+JS without any application server-based back-end I&#8217;ve decided on CouchDB . This seemed like
+a perfect match for this scenario. Why? - ease of use, REST API, with JSON responses - just great for interacting with my simple front-end.
+</p>
+
+<p>
+The flow of things was as shown on the image below:
+</p>
+
+<IMG src="http://blog.innovative-labs.com/blog/gmapper.png"
+alt="diagram"/>
+
+<h2>Avro - for the beginning</h2>
+<p>
+As you can see, I&#8217;ve chosen JSON as my data-format. I&#8217;ve been considering
+<a href="http://avro.apache.org">Apache Avro</a> in the first place but
+using it was a real pain in the ass. Avro itself is used in <a
+href="http://hadoop.apache.org">Apache Hadoop</a> as a serialization
+layer, so it would seem OK, but it has virtually <em>no
+documentation</em>. But once you tear through the unintuitive interface
+and manage to handle all those unthinkable exceptions you get a few pros
+for this library. It&#8217;s great in that it does not require code generation - I
+like it being made on the fly. It also offers sending data in binary
+format, which was not necessary, but never the less is a nice feature.
+</p>
+
+<p>
+What I certainly didn&#8217;t like about it was its orientation on the files
+rather than chunks of data - so it was not so obvious how should I send
+data through the wire. 
+</p>
+
+<p>
+Than I found out it can produce JSON output, which would work for me,
+except the output could not have been parsed by other JSON libraries :)
+(<a
+href="http://stackoverflow.com/questions/5375243/jcouchdb-svenson-unable-to-parse-json-string">I&#8217;ve
+asked on stackoverflow about that, but with no luck</a>). 
+</p>
+
+<p>If my whining haven&#8217;t put you back and still would like to see how to use Avro, try this unit
+test in project&#8217;s GitHub repo: <a
+href="https://github.com/zygm0nt/gmapped/blob/master/feeder/src/test/groovy/pl/ftang/example/feeder/avro/AvroSimpleTest.groovy">AvroSimpleTest.groovy</a>
+</p>
+
+
+<h2>Svenson</h2>
+
+<p>
+I&#8217;ve dropped Avro in favour of a simple JSON lib called (<a
+href="http://code.google.com/p/svenson/">Svenson</a> and that was
+painless. The only thing I was forced to do was create my model class in
+Java - the rest of the project is written in Groovy. I&#8217;ve no idea why
+was that necessary, and didn&#8217;t want to look into it.
+</p>
+
+<h2>RabbitMQ</h2>
+
+<p>
+Further on the way is <a href="http://www.rabbitmq.com/">RabbitMQ</a>, to which records are filled by a feeding
+middle-ware written in Groovy. Since I use <a
+href="http://activemq.apache.org">ActiveMQ</a> on a day-to-day basis,
+I&#8217;ve decided to try something new. This broker is a really nice piece of
+software. Being written in Erlang makes it really fast. What&#8217;s more it
+has some extensive capabilities and is easy to approach for anyone
+similar with messaging (JMS and friends). For such a lightweight product
+it is really powerful - implements AMQP! 
+</p>
+
+<h2>CouchDB</h2>
+
+<p>
+From the broker&#8217;s queue messages are again fetched by a middle-ware just
+to be put into <a href="http://couchdb.apache.org/">CouchDB</a> view.
+This database is also written in Erlang. It&#8217;s very reliable, however the
+way it handles refreshing view isn&#8217;t the most pleasant one -
+performance-wise. 
+</p>
+
+<p>
+Word of advice - if you&#8217;re on Debian derivative, be cautious with
+apt-repository version. It&#8217;s rather _ancient_. Also remember to add
+<b>allow_jsonp = true</b> to you config file
+<i>/opt/couchbase/etc/couchdb/local.ini</i>. It&#8217;s not enabled by
+default, and not having this set would result with empty responses from
+the CouchDB server.</p>
+
+<p>The problem here is, that the browser doesn&#8217;t allow quering a web server with hostname other than the one the script originates.
+ More on this case <a
+href="http://stackoverflow.com/questions/3386679/connection-ajax-couchdb-and-javascript">here</a>. Seems like my problem could be overcame by changing url in index.html and hostname couchdb listens on to the same address.
+</p>
+
+<p>
+I&#8217;ve also created a view, that would expose an event by key: <a
+href="https://github.com/zygm0nt/gmapped/blame/master/couchdb/by_date_view.js">view
+code</a>
+</p>
+
+<h2>Presenting the dots</h2>
+
+<p>
+As a back-end I&#8217;ve done some JQuery based AJAX calls - nothing too
+fancy. All things necessary for presentation layer are in <a
+href="https://github.com/zygm0nt/gmapped/blob/master/index.html">this
+file</a>.
+</p>
+
+<h2>Things to consider</h2>
+
+<p>
+Please bear in mind that this whole application is rather a playground,
+not a full-fledged project!! After creating all the parts I have some
+doubts about some architectural decisions I made. I don&#8217;t think the
+security have been taken into account seriously enough. Also scalability
+was never an issue ;-)
+</p>
+
+<p>
+If you have some thoughts about any of the aspects mentioned in this
+post, please feel free to comment or contact me directly :)
+</p>
+
+<p>
+
+And also you may try the application by yourself - it&#8217;s on the <a
+href="https://github.com/zygm0nt/gmapped">GitHub</a>.
+</p></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>@Piotrek, here is a link to JIRA ticket concerning this feature. I think it is being discussed ATM: https://issues.apache.org/jira/browse/COUCHDB-431</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://blog.koszulinski.pl">Piotrek Reinmar Koszuliński</a></div>
+<div class='content'>
+<p>About Same Origin Policy - now there&#8217;s Cross Origin Resource Sharing available in most of common browsers. It should help You if CouchDB has support for it.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>@klausa, thanks for your advice. I&#8217;ve made some changes to the post.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://klausa.jogger.pl">klausa</a></div>
+<div class='content'>
+<p>&gt;The main idea was to create an app, that would dynamically update itself with geographic data flowing in. <br />
+<br />
+Not to nitpick, but that doesn&#8217;t seem like an idea for app. I think you should explain what that displayed data is here.  If you moved your &#8216;Presenting the dots&#8217; paragraph just above &#8216;Toys used&#8217;, it would be clear what do you wanted to do with this app.<br />
+<br />
+&gt;Also remember to add allow_jsonp = true to you config file /opt/couchbase/etc/couchdb/local.ini.<br />
+<br />
+I think you should explain what that option *really* does.<br />
+<br />
+Other than that, nice post!</p></div>
+</div>
+</div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[OVal - validate your models quickly and effortlessly!]]></title>
+    <link href="http://zygm0nt.github.com/blog/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/"/>
+    <updated>2011-07-14T10:25:19+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2011/07/14/oval-validate-your-models-quickly-and-effortlessly</id>
+    <content type="html"><![CDATA[<div class='post'>
+<p>Some time ago one of the projects at work required me to validate
+some Java POJOs. Theses were my model classes and I&#8217;ve been creating
+them from incoming WebService requests. One would say that XSD would be
+sufficient for the task, for parts of this validations - sure, it would.
+But there were some advanced rules XSD would not handle, or would render
+the schema document very complicated.</p>
+
+<p>Rules I needed to express were like:
+
+<ul>
+
+<li>person&#8217;s <i>first_name</i> and <i>last_name</i> should be of appropriate length -
+between 2 and 20, and additionally one could pass a zero-length string
+just to remove the previous value</li>
+<li><i>state</i> field should consist only defined values - as in
+dictionary value - this one would be completable with XSD&#8217;s
+enumerations, but would require often changing schema files and
+redistributing them to interested parties :(</li>
+</ul>
+
+<p>The library I&#8217;ve decided to use for this task is <a
+href="http://oval.sf.net">OVal</a> and it came out really nice! Read on
+to find out the details!</p>
+
+<EXCERPT>
+
+<p>Oval is quite mature library that allows POJO validation, but is not
+JSR303 (bean validation) implementation. It has converters that enable
+it to understand those annotations, but I&#8217;m not sure about the
+compatibility.</p>
+
+<p>I&#8217;ve tried only a subset of the available checks, among which
+were:</p>
+
+<ul>
+<li>NotNull</li>
+<li>NotEmpty</li>
+<li>Length</li>
+</ul>
+
+<p>There are many more, and their attributes give interesting ways to
+configure the validation process. But using them was rather easy and did
+not require to much brainstorming. What I really needed were custom
+checks. And in this area OVal shows it&#8217;s strength. Implementing a check
+is really easy.</p>
+
+<p>I needed an annotation that would check a field against some values in
+a dictionary. If field&#8217;s value was in the given set, than the validation
+would succeed, if not, an exception would be thrown. To accomplish this
+task it is required to implement two classes: annotation class and check
+class - called by the validation engine on a given field.</p>
+
+<p>Let&#8217;s start with our new annotation:</p>
+
+<div><script src='https://gist.github.com/1077516.js?file=DictionaryValue.java'></script>
+<noscript><pre><code>import net.sf.oval.configuration.annotation.Constraint;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.FIELD, ElementType.PARAMETER, ElementType.METHOD})
+@Constraint(checkWith = DictionaryValueCheck.class)
+public @interface DictionaryValue {
+    /**
+     * message to be used for the ConstraintsViolatedException
+     *
+     * @see ConstraintsViolatedException
+     */
+    String message() default &quot;constraint.DictionaryValue.violated&quot;;
+
+    String file();
+}</code></pre></noscript></div>
+ 
+
+In the above snippet I&#8217;ve defined a check-annotation, that would be used like
+this:
+
+<div><script src='https://gist.github.com/1077516.js?file=sample.java'></script>
+<noscript><pre><code>public class Address {
+        ....
+	@DictionaryValue(file = &quot;/validation/voivodeship.txt&quot;) String state;
+        ....
+}</code></pre></noscript></div>
+ 
+
+You can pass <i>file</i> - containing dictionary values for this field.
+There is also <i>message</i> field in the annotation which is an error
+message returned by the validation engine of failed check - pretty
+handy. And can be expressed in <i>.properties</i> file as:
+
+<div><script src='https://gist.github.com/1077516.js?file=validation.properties'></script>
+<noscript><pre><code>constraint.DictionaryValue.violated={context} is not among allowed dictionary values</code></pre></noscript></div>
+ 
+
+<p>Placeholder, like <i>context</i>, will be replaced with correct values supplied by the
+validation engine.</p>
+
+Annotating a field is not enough. It is also needed to create a validator
+for this kind of check. The name of the class is already defined in
+<i>DictionaryValue</i> annotation, it is called
+<i>DictionaryValueCheck</i> and I&#8217;ve done this check this way:
+
+<div><script src='https://gist.github.com/1077516.js?file=DictionaryValueCheck.java'></script>
+<noscript><pre><code>import net.sf.oval.Validator;
+import net.sf.oval.configuration.annotation.AbstractAnnotationCheck;
+import net.sf.oval.context.OValContext;
+import net.sf.oval.exception.OValException;
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Pattern;
+
+public class DictionaryValueCheck extends AbstractAnnotationCheck&lt;DictionaryValue&gt; {
+
+    private Log log = LogFactory.getLog(DictionaryValueCheck.class);
+
+    private String file;
+
+    Map&lt;String, String&gt; dictionary;
+
+    @Override
+	public void configure(final DictionaryValue constraintAnnotation) {
+		super.configure(constraintAnnotation);
+		setFile(constraintAnnotation.file());
+	}
+
+    private void setFile(String file) {
+        this.file = file;
+        dictionary = loadDictionaryFrom(file);
+        requireMessageVariablesRecreation();
+    }
+
+    private Map&lt;String, String&gt; loadDictionaryFrom(String file) {
+        String fileStr;
+        Map&lt;String, String&gt; map = new HashMap&lt;String, String&gt;();
+        try {
+            fileStr = IOUtils.toString(this.getClass().getResourceAsStream(file));
+        } catch (IOException e) {
+            log.error(&quot;Error loading file: &quot;, e);
+            return map;
+        }
+        for (String line : fileStr.split(&quot;\n&quot;)) {
+            if (line.trim().length() == 0)
+                continue;
+            String[] tokens = line.split(&quot; &quot;, 2); // we want 2 substrings max
+            if (tokens.length == 2)
+                map.put(tokens[0], tokens[1]);
+            if (tokens.length == 1)
+                map.put(tokens[0], null);
+        }
+        return map;
+    }
+
+    public boolean isSatisfied(Object validatedObject, Object valueToValidate, OValContext context, Validator validator) throws OValException {
+        if (valueToValidate == null)
+            return true;
+        return dictionary.containsKey(valueToValidate);
+    }
+}
+</code></pre></noscript></div>
+
+
+What this basically does is:
+<ol>
+<li>when <i>file</i> is set - read dictionary content from the file into
+map</li>
+<li>upon check request just lookup value in dictionary parsed from the
+input file</li>
+</ol>
+
+<p>And that&#8217;s it!</p>
+
+<p>For me Oval is really great tool. With it at ones disposal it is extremely easy to create any
+imaginable validation you need. This library is really easy to use and
+offers lots of handy features.</p>
+
+<p>But perhaps I&#8217;m reinventing the wheel and all this can be done easily
+with some other library? Share Your opinion!</p>
+</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>Now that&#8217;s a great question. I&#8217;ve forgotten to write about this, but OVal offers profiles, which you can disable or enable whenever you like. You set a profile for a specific annotation. In your case let&#8217;s assume You have two operations: add and update. Your model has field annotated with @NotNull(profile=&quot;UPDATE&quot;), which means we don&#8217;t want null values on it when updating. In _add_ operation you disable the profile called UPDATE, so the annotation is also disabled. When calling _update_ you enable the profile and the validation is performed. <br />
+<br />
+More on this here: http://oval.sourceforge.net/userguide.html#d4e561</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="">querial</a></div>
+<div class='content'>
+<p>Question:<br />
+Say, we have an object with a primary key, that is mandatory (in the database), but described as AUTOINCREMENT. When client sends new object data, the primary key is obviously null, but we need to validate it for not-nullity in other cases.<br />
+<br />
+Doea OVal handle variations / directions of validation?</p></div>
+</div>
+</div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Geecon 2011 - day 2]]></title>
+    <link href="http://zygm0nt.github.com/blog/2011/05/22/geecon-2011-day-2/"/>
+    <updated>2011-05-22T18:39:31+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2011/05/22/geecon-2011-day-2</id>
+    <content type="html"><![CDATA[<div class='post'>
+<p>And now for part 2 of my visit to Geecon 2011!</p>
+<EXCERPT>
+<h2>1. <a href="http://jim.webber.name/">Jim Webber</a> &#8220;Revisiting SOA for the 21st
+century&#8221;</h2>
+
+<p>Now this was awesome! Jim Webber, a former <a
+href="http://www.thoughtworks.com/">ThoughtWorks</a> employee, now
+Neo4j evangelist (in <a href="http://neotechnology.com/">Neotechnology</a>) described his views
+on how SOA should look - according to him. This was presented
+previously, on other occasions as his &#8220;Guerilla SOA&#8221; talk - generally he
+advocated for REST based services, loose contracts (stating that WSDLs
+are too verbose and code generation is evil).</p>
+
+<p>Jim mentioned Martin Fowler&#8217;s article on integration databases but I
+couldn&#8217;t find it anywhere - thou the topic looks interesting. He also
+recommended <a
+href="http://en.wikipedia.org/wiki/Behavior_Driven_Development">BDD</a> and exposing tests on the web for the end
+user to use them as early as possible.</p>
+
+<p> One big point he made his case with was <b>not relying on enterprise
+software</b>. Simple tools can do much better job. He compared
+implementing Web Services security (Secured SOAP over HTTP over TCP IP)
+to REST based service accessed through <i>HTTPS</i> - basic and easily
+testable with tools like <a href="http://curl.haxx.se/">curl</a>.</p>
+
+<p>Great talk. One of the best!</p>
+
+<h2>2. <a href="http://blog.staffannoteberg.com/">Staffan Noteberg</a> &#8220;Regex - the future
+programming&#8221;</h2>
+
+<p>I must confess, that this did not go too well. The whole talk was
+well prepared and laid out but it lacked depth. It was pretty basic
+introduction to regex. From the presentation&#8217;s subject I was rather
+prepared for some novel uses of regex - like for example: showing how to
+filter big volume of data with simple regex or sth.</p>
+
+<p>But the talk was fun, Staffan is a good speaker. He is also an author
+of <a href="http://www.pomodorotechnique.com/"> pomodoro technique</a> book - I intend to read sth abut
+this technique and this may be a nice start</p>
+
+<h2>3. Bartosz Kowalewski &#8220;Is OSGI ready for wide
+adoption?&#8221;</h2>
+
+<p>If it comes to titles I tend to rely on them pretty heavily, however
+strange it may seem. This time I also did - and the whole talk did not
+give me a definitive answer to the stated question.</p>
+
+<p>Sure, the presentation was informative, but it described some OSGI
+specific, quite low level stuff. Of course, if you want to use OSGI -
+even by leveraging application server with OSGI under the hood - you
+should know a fair bit about the technology itself. Even thou the AS
+does a good job of hiding OSGI container specifics from the developer,
+in case of problems it&#8217;s better to be well informed. All in all - the
+talk gave too little information for me.</p>
+
+<h2>4. <a href="http://www.jetbrains.com/company/people/Pech_Vaclav.html">Vaclav Pech</a> &#8220;Pick low hanging fruit&#8221;</h2>
+
+<p><b>&#8220;Parallelism is not hard, multithreading is&#8221;</b> - this was the
+key sentence of the presentation. The speaker showed how to introduce
+concurrency into normal java/groovy code by sprinkling it with
+concurrency powder. Easy enough! With <a
+href="http://gpars.codehaus.org/">GPars</a> library he
+showed:</p>
+
+<ul>
+<li>running processing tasks with thread pools</li>
+<li>testing concurrent code</li>
+<li>Fork/join Thread Pool - multiple thread queues (note to self:
+fork/join is good for hierarchical problems)</li>
+<li>low-hanging fruits:<br>
+
+    <ul>
+    <li>async calculations</li>
+    <li>fork/join</li>
+    <li>dataflow</li>
+    <li>parallel collection processing</li>
+    </ul>
+</li>
+<li>Actors are great - use <a
+href="http://gpars.codehaus.org/">GPars</a> or <a href="http://akka.io/">Akka</a>,
+is sufficient to use <i>@ActiveMethod</i> and <i>@ActiveObject</i>
+annotations and Actors are usable in OO-world</li>
+</ul>
+</p>
+
+<p> Good talk, well received!</p>
+
+<h2>5. <a href="http://www.linkedin.com/in/antonarhipov">Anton Arhipov</a> &#8220;Bytecode for discriminating
+developers&#8221;</h2>
+
+<p>Technical introduction to the world of bytecode, jvm specification
+details. I&#8217;ve drifted away to some other topics - really - can&#8217;t recall
+what this was all about.</p>
+
+<h2>6. <a href="http://jroller.com/aalmiray/">Andreas Almiray</a> &#8220;Polyglot Programming&#8221;</h2>
+
+<p>This was a nice talk covering Groovy, Scala and Closure. The whole
+point of it was to show how cool it is to play with emerging JVM
+languages. They are not only fun but also useful. What&#8217;s more, they
+bring freshness to java world, injecting it with some new paradigms and
+methodologies. It is easier to incorporate new ideas into younger JVM
+languages than to the mature Java.</p>
+
+<h2>7. <a href="http://jim.webber.name/">Jim Webber</a> &#8220;A pragmatic introduction to
+Neo4j&#8221;</h2>
+
+<p>And Jim Webber again, this time with some <a href="http://neo4j.org/">Neo4j</a> evangelism. First
+came some taxonomy information on NoSQL databases (Not Only SQL) as a
+whole - than some specific examples of problems solvable with graph
+databases - and Neo4j is a graph database. </p>
+
+<p> Main points of Jim&#8217;s talk were:
+<ul>
+<li>sharding a database is important for scalability</li>
+<li>series data - should be OK to use Neo4j as their storage</li>
+</ul>
+
+<h2>Conclusion</h2>
+
+<p>These were all the sessions I attended. On Saturday there was a
+Hacker-garden, but neither I had time nor will to stay - the topics were
+very interesting and I&#8217;d definitely like to experience such an event,
+but after 2 days of continuous talks I was rather tired.</p>
+
+<p>To sum up, 2011&#8217;s Geecon was a great experience, with lots of
+interesting talks and lots of new inspirations. Keep up the good work
+guys!</p></div>
+<h2>Comments</h2>
+<div class='comments'>
+</div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Geecon 2011 - day 1]]></title>
+    <link href="http://zygm0nt.github.com/blog/2011/05/19/geecon-2011-day-1/"/>
+    <updated>2011-05-19T22:05:05+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2011/05/19/geecon-2011-day-1</id>
+    <content type="html"><![CDATA[<div class='post'>
+<p>Last week&#8217;s Java conference - <a href="http://2011.geecon.org">Geecon</a> was very
+interesting. It was well prepared, and gave an insight into the current
+Java related trends - concurrency, DSLs, polyglot programming. But not
+only that - there were also some pretty different talks from excellent
+speakers.</p>
+
+<p>
+The whole event took 4 days:
+</p>
+
+<ul>
+<li>University day (wednesday)</li>
+<li>2 regular conference days (Thursday + Friday) </li>
+<li>hacker garden (Sunday)</li>
+</ul>
+
+<p>
+I decided to attend only on Thursday and Friday - no time for more. Here
+is what interesting happened during those days.
+</p>
+
+<EXCERPT>
+
+<h1>Day 1</h2>
+
+<p>The morning got me unprepared. After hard enough, after work travel to
+Krakow on Wednesday, I wasn&#8217;t in the best shape. However after arriving
+at the venue, being greeted with breakfast and refreshments I
+looked at the rest of the day with real hope.</p>
+
+<p>Since the schedule was tight - three parallel tracks of lecture, I
+had to choose, so bare in mind, that is my account of what I&#8217;ve seen and
+heard. Others may, of course, differ.</p>
+
+<h2>1. <a href="http://blogs.oracle.com/dannycoward/">Danny Coward</a> &#8220;Java SE: The Road Ahead&#8221;</h2>
+
+<p>Danny, being on <a href="http://www.oracle.com">Oracle</a> (considering being also former
+Sun&#8217;s employee a plus) payroll, gave an insightful talk on new things to
+came in <a
+href="http://blogs.oracle.com/dannycoward/entry/channeling_java_se_7">Java 7</a>. He drew rather serious plans for Java 8.
+According to Danny, the main trends in today&#8217;s Java ecosystem are:</p>
+
+<ul>
+<li>parallel programming</li>
+<li>language dynamics</li>
+</ul>
+
+<p>and he probably is right :) The great things to come with new
+versions of Java are:</p>
+
+<ul>
+<li>closures in Java (finally!)</li>
+<li>extending interfaces</li>
+<li>map, filter - functions for collections</li>
+<li>lambda expressions - thou in Java 8</li>
+</ul>
+<p>The talk itself was a nice keynote, but I doubt the road map for Java
+will be met in its full extent - the goals aren&#8217;t that small.</p>
+
+<h2>2. <a href="http://www.springsource.com/people/jhoeller">Juergen Hoeller</a> &#8220;Enterprise Java in 2011&#8221;</h2>
+
+<p><a href="http://www.springsource.com/">Spring Source</a> as one of the sponsors sent Juergen to
+evangelize about the world of enterprise and Java&#8217;s place in it :) He
+emphasized different kinds of deployment: WAR, cloud deployment - and
+the latter&#8217;s rise of importance.</p>
+
+<p>He pointed out how outdated current application servers are - the
+usually lag ~3 years behind the main trends and developers&#8217; needs - good
+point! He proposed looking under the hood of now-popular cloud
+environments: <a href="http://code.google.com/appengine/">Google App
+Engine</a> or <a href="http://aws.amazon.com/ec2/">Amazon
+Elastic Cloud</a> to look for schemas in them, etc - I intend to listen
+to his advice.</p>
+
+<p>All in all this guy gave a great talk covering wide spectrum of
+technologies and not focusing on technical stuff too much.</p>
+
+<h2>3. <a href="http://www.javaspecialists.eu/contact.jsp">Heinz Kabutz</a> &#8220;Reflection madness&#8221;</h2>
+
+<p>Despite living on a Greek island, this guy showed also how to whack
+ones mind with <a
+href="http://download.oracle.com/javase/tutorial/reflect/">Java Reflection API</a>. Pure magic! Some
+highlights of his talk were:</p>
+<ul>
+<li>how to get <i>42 + 1 = 44</i></li>
+<li>get the size of an object</li>
+<li>get method caller&#8217;s id</li>
+<li>add enum values dynamically</li>
+</ul>
+
+<p>With all this examples he pointed that using <i>SecurityManager</i>
+will prevent such nasty coding practices.</p>
+
+<p>Since he is an editor of <a
+href="http://www.javaspecialists.eu/">Javaspecialists.eu</a>
+newsletter, all the answers to problems presented in his talk (and many
+many more) can be found there. </p>
+<p>Well done, not to useful for me, nevertheless - interesting.</p>
+
+<h2>4. <a href="https://twitter.com/#!/mfiguiere">Michael Figuiere</a>,
+Cyrille Le Clere
+&#8220;NoSQL & Datagrid from developer perspective&#8221;</h2>
+<p>I don&#8217;t know what to think of this talk. It consisted an introduction
+to NoSQL databases but also a bit of problem&#8217;s description that can be
+encountered when dealing with them. Notable thoughts were on:</p>
+
+<ul>
+<li>creating a sharding ready data structure</li>
+<li>denormalization as a useful process for NoSQL DBs</li>
+<li>NoSQL usually means <b>no transactions</b></li>
+</ul>
+
+<h2>5. <A href="http://hamletdarcy.blogspot.com/">Hamlet D&#8217;Arcy</a> &#8220;New Ideas for old code&#8221;</h2>
+
+<p>Since a lot of developers (all?) have to deal with legacy code - one
+way or another, this talk was <i>a must</i>!</p>. The speaker shared
+some ideas on how to work with such code and remain sane. The talk was
+vivid, interesting and entertaining, well, and the notable thought? Here
+they are:</p>
+
+<ul>
+<li>51% rule - if you&#8217;re not committing 51% of your time/your tasks into
+fixing your situation than the whole battle <b>is already lost</b>,</li>
+<li>read some good stuff!:<br/>
+    <ul>
+        <li><a
+href="http://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672">Martin Fowler&#8217;s &#8220;Refactoring&#8221;</a></li>
+        <li><a
+href="http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=sr_1_1?s=books&ie=UTF8&qid=1305828015&sr=1-1">George C. Martin &#8220;Clean Code&#8221;</a></li>
+        <li><a href="http://chadfowler.com/2006/12/27/the-big-rewrite">Chad Fowler &#8220;Big Rewrites&#8221;</a> - and why they
+failed, what&#8217;s wrong with them</li>
+    </ul>
+</li>
+<li>use static analysis - <a href="http://findbugs.sourceforge.net/">Find Bugz</a>, 
+pmc</li>
+<li><a href="http://en.wikipedia.org/wiki/Command-query_separation">query-command</a> - a method should be a query or a
+command:<br/>
+    <ul>
+        <li>query - returns sth</li>
+        <li>command - change the state of an object</li>
+    </ul>
+</li>
+<li>he also proposed <b>scratch refactoring</b><br/>
+    <ol>
+        <li>set a timer</li>
+        <li>tag your code</li>
+        <li><b>refactor without tests</b></li>
+        <li>step back and analyze</li>
+        <li>is it better? if not, revert</li>
+    </ol>
+</li></ul>
+
+<p>This was nice! - it assumed arriving at a project with no ( or
+little) tests.</p>
+
+<h2>6. Aslan Knutsen &#8220;Arquillian&#8221;</a></h2>
+
+<p>The last talk of that day was about some new library from JBoss that
+would allow to test your components with unit tests - test them in a
+destination container. The whole point of this library is to run the
+specific fragment of code as if it was build and deployed to some
+application server (let&#8217;s say JBoss AS ;-) ). To be honest, I can&#8217;t find
+much application for that - thou I&#8217;m not doing any serious work in JEE
+world.</p>
+
+<h2>Party</h2>
+
+<p>And the day ended. But there was sth else to do after the official
+part - party time! It took place at <a href="">Klub Pauza</a> on
+Floriańska street. It was a rather nice social event.</p>
+
+
+<p><i>&#8230; to be continued - stay tuned for part 2</i></p></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://blog.patryk-dobrowolski.eu">JedenPies</a></div>
+<div class='content'>
+<p>&quot;how to get 42 + 1 = 44&quot;?<br />
+Tutaj ;)<br />
+http://blog.patryk-dobrowolski.eu/2011/05/16/refleksja-moze-byc-niebezpieczna-zobacz-jak-zniszczyc-sobie/</p></div>
+</div>
+</div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[JCE keystore and untrusted sites]]></title>
+    <link href="http://zygm0nt.github.com/blog/2011/05/02/jce-keystore-and-untrusted-sites/"/>
+    <updated>2011-05-02T17:03:38+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2011/05/02/jce-keystore-and-untrusted-sites</id>
+    <content type="html"><![CDATA[<div class='post'>
+<p>Recently at work I was in need of connecting to a web service exposed via
+HTTPS. I&#8217;ve been doing this from inside <a href="http://servicemix.apache.org/home.html">Servicemix 3.3.1</a>, which may seem
+a bit inhibiting, but that was a requirement. Nevertheless I&#8217;ve been
+trying my luck with the included <em>servicemix-http-2008.01</em>
+component. I&#8217;ve created a simple <a
+href="http://servicemix.apache.org/working-with-service-units.html">Service
+Unit</a> using that component and made connection attempt.
+Unfortunately I&#8217;ve encountered issues with the SSL conversation
+negotiation. I had to dig deeper into the <em>servicemix-http</em> code
+to find out these had something to do with my <a
+href="https://secure.wikimedia.org/wikipedia/en/wiki/Java_Cryptography_Extension">JCE</a>
+keystore. Read more to find out what happened!</p>
+<EXCERPT>
+<p>Ok, so I had my <em>xbean.xml</em> for http component looking like
+this:</p>
+
+<div><script src='https://gist.github.com/951474.js?file=servicemix-http-xbean.xml'></script>
+<noscript><pre><code>&lt;beans xmlns:http=&quot;http://servicemix.apache.org/http/1.0&quot;
+       xmlns:my=&quot;http://example.pl/abc&quot;&gt;
+
+                &lt;http:endpoint
+                          endpoint=&quot;default&quot;
+                          locationURI=&quot;https://abc.host.pl&quot;
+                          role=&quot;provider&quot;
+                          service=&quot;my:service-1&quot;
+                          soap=&quot;true&quot;
+                          soapVersion=&quot;1.1&quot;&gt;
+                    &lt;http:ssl&gt;
+                             &lt;http:sslParameters
+                                         keyStore=&quot;classpath:keystore.jks&quot;
+                                         keyStorePassword=&quot;servicemix&quot;/&gt;
+                    &lt;/http:ssl&gt;
+                &lt;/http:endpoint&gt;            
+&lt;/beans&gt;</code></pre></noscript></div>
+
+
+
+<p>As you can see this is a proxy adapter to some outside service
+exposed via secured HTTP protocol. Since it&#8217;s <em>HTTPS</em> I&#8217;ve
+specified some SSL parameters. It was sufficient in my case to just pass
+the keystore file and it&#8217;s password.</p>
+
+<p>I&#8217;ve created my <em>keystore.jks</em> file in <em>smx_home/conf</em>
+with password <em>servicemix</em> in the following manner:</p>
+
+<div><script src='https://gist.github.com/951459.js?file=create_keystore.sh'></script>
+<noscript><pre><code>keytool -genkey -alias alias -keyalg RSA -keysize 1024 -dname &quot;CN=Marcin Cylke, OU=Java Security, O=ABC, c=PL&quot; -keypass secret_pass -storepass secret_pass -KeyStore /tmp/new</code></pre></noscript></div>
+
+
+<p>You can see what&#8217;s in this file with this command:</p>
+
+<div><script src='https://gist.github.com/951459.js?file=list_keys.sh'></script>
+<noscript><pre><code>keytool -list -v -KeyStore keystore.jks</code></pre></noscript></div>
+
+
+<p>At this point I thought, that having a configured keystore and my
+component would suffice. Wrong! As soon as I&#8217;ve tried to connect to the
+external service I got an exception:</p>
+
+<div><script src='https://gist.github.com/951458.js?file=untrusted_key_error.java'></script>
+<noscript><pre><code>javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+    at com.sun.net.ssl.internal.ssl.Alerts.getSSLException(Alerts.java:174)
+    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1623)
+    at com.sun.net.ssl.internal.ssl.Handshaker.fatalSE(Handshaker.java:198)
+    at com.sun.net.ssl.internal.ssl.Handshaker.fatalSE(Handshaker.java:192)
+    at com.sun.net.ssl.internal.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1074)
+    at com.sun.net.ssl.internal.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:128)
+    at com.sun.net.ssl.internal.ssl.Handshaker.processLoop(Handshaker.java:529)
+    at com.sun.net.ssl.internal.ssl.Handshaker.process_record(Handshaker.java:465)
+    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:884)
+    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1120)
+    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.writeRecord(SSLSocketImpl.java:623)
+    at com.sun.net.ssl.internal.ssl.AppOutputStream.write(AppOutputStream.java:59)
+    at java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:65)
+    at java.io.BufferedOutputStream.flush(BufferedOutputStream.java:123)
+    at java.io.FilterOutputStream.flush(FilterOutputStream.java:123)
+    at org.apache.commons.httpclient.methods.EntityEnclosingMethod.writeRequestBody(EntityEnclosingMethod.java:502)
+    at org.apache.commons.httpclient.HttpMethodBase.writeRequest(HttpMethodBase.java:1973)
+    at org.apache.commons.httpclient.HttpMethodBase.execute(HttpMethodBase.java:993)
+    at org.apache.commons.httpclient.HttpMethodDirector.executeWithRetry(HttpMethodDirector.java:397)
+    at org.apache.commons.httpclient.HttpMethodDirector.executeMethod(HttpMethodDirector.java:170)
+    at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:396)
+    at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:346)
+    at org.apache.servicemix.http.processors.ProviderProcessor.process(ProviderProcessor.java:167)
+    at org.apache.servicemix.soap.SoapEndpoint.process(SoapEndpoint.java:368)
+    at org.apache.servicemix.common.AsyncBaseLifeCycle.doProcess(AsyncBaseLifeCycle.java:600)
+    at org.apache.servicemix.common.AsyncBaseLifeCycle.processExchange(AsyncBaseLifeCycle.java:554)
+    at org.apache.servicemix.common.AsyncBaseLifeCycle.onMessageExchange(AsyncBaseLifeCycle.java:510)
+    at org.apache.servicemix.common.SyncLifeCycleWrapper.onMessageExchange(SyncLifeCycleWrapper.java:60)
+    at org.apache.servicemix.jbi.messaging.DeliveryChannelImpl.processInBound(DeliveryChannelImpl.java:620)
+    at org.apache.servicemix.jbi.nmr.flow.AbstractFlow.doRouting(AbstractFlow.java:172)
+    at org.apache.servicemix.jbi.nmr.flow.seda.SedaFlow.doRouting(SedaFlow.java:168)
+    at org.apache.servicemix.jbi.nmr.flow.seda.SedaQueue$1.run(SedaQueue.java:134)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+    at java.lang.Thread.run(Thread.java:619)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+    at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:294)
+    at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:200)
+    at sun.security.validator.Validator.validate(Validator.java:218)
+    at com.sun.net.ssl.internal.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:126)
+    at com.sun.net.ssl.internal.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:209)
+    at com.sun.net.ssl.internal.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:249)
+    at com.sun.net.ssl.internal.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1053)
+    ... 30 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+    at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:174)
+    at java.security.cert.CertPathBuilder.build(CertPathBuilder.java:238)
+    at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:289)
+    ... 36 more
+</code></pre></noscript></div>
+
+
+<p>Hmmm.. this looks pretty nasty, but it&#8217;s not that bad. As one can
+read <a
+href="http://blogs.sun.com/gc/entry/unable_to_find_valid_certification">here</a>,
+it&#8217;s associated with the other site&#8217;s having an untrusted (unsigned)
+certificate. Assuming you actually trust the other end of the
+communication and this situation is ok for you, you should add the
+servers certificate to your keystore. The previously mentioned link
+contained a little java class that would do just that. You can find it
+here (original code) <a
+href="http://blogs.sun.com/andreas/resource/InstallCert.java">InstallCert.java</a>
+or you can look into my slightly changed version here <a
+href="https://gist.github.com/951492">at github</a>.</p>
+
+<p>You should call it as follows, assuming that file
+<em>keystore.jks</em> is in the current directory:</p>
+
+<script
+src="https://gist.github.com/951459.js?file=add_untrusted_key.sh"></script>
+
+<p>What you&#8217;ll probably see, when you execute this app is this:</p>
+
+<div><script src='https://gist.github.com/951458.js?file=add_untrusted_cert.sh'></script>
+<noscript><pre><code>mcl@correspondence:~/Desktop$ java InstallCert abc.host.pl keystore_pass
+Loading KeyStore keystore.jks...
+Opening connection to abc.host.pl:443...
+Starting SSL handshake...
+
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+    at com.sun.net.ssl.internal.ssl.Alerts.getSSLException(Alerts.java:174)
+    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1623)
+    at com.sun.net.ssl.internal.ssl.Handshaker.fatalSE(Handshaker.java:198)
+    at com.sun.net.ssl.internal.ssl.Handshaker.fatalSE(Handshaker.java:192)
+    at com.sun.net.ssl.internal.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1074)
+    at com.sun.net.ssl.internal.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:128)
+    at com.sun.net.ssl.internal.ssl.Handshaker.processLoop(Handshaker.java:529)
+    at com.sun.net.ssl.internal.ssl.Handshaker.process_record(Handshaker.java:465)
+    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:884)
+    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1120)
+    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1147)
+    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1131)
+    at InstallCert.main(InstallCert.java:82)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+    at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:294)
+    at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:200)
+    at sun.security.validator.Validator.validate(Validator.java:218)
+    at com.sun.net.ssl.internal.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:126)
+    at com.sun.net.ssl.internal.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:209)
+    at InstallCert$SavingTrustManager.checkServerTrusted(InstallCert.java:177)
+    at com.sun.net.ssl.internal.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1066)
+    ... 8 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+    at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:174)
+    at java.security.cert.CertPathBuilder.build(CertPathBuilder.java:238)
+    at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:289)
+    ... 14 more
+
+Server sent 1 certificate(s):
+
+ 1 Subject CN=abc.host.pl, OU=IT, O=Tytus De z o.o., L=Lubien, ST=Wielkopolskie, C=PL
+   Issuer  CN=abc.host.pl, OU=IT, O=Tytus De z o.o., L=Lubien, ST=Wielkopolskie, C=PL
+   sha1    18 20 0f 4d 75 05 4b 38 61 fc 62 ba 03 0d 28 8c 50 8f e4 bd 
+   md5     19 cc d0 aa 6d 25 4f 05 d7 c8 40 0c 14 7b 90 a2 
+
+Enter certificate to add to trusted keystore or 'q' to quit: [1]
+1
+
+[
+[
+  Version: V3
+  Subject: CN=abc.host.pl, OU=IT, O=Tytus De z o.o., L=Lubien, ST=Wielkopolskie, C=PL
+  Signature Algorithm: SHA1withRSA, OID = 1.2.840.113549.1.1.5
+
+  Key:  Sun RSA public key, 1024 bits
+  modulus: 132273155309282144973195320716811175193976134222571452308768552101191894740218986214811429267243902443501737048442287069471714463675362773263911735240842200098922910391008625926103368536307544892982972025285316457425020882189531886424398004920996956401109864350477607702600482953541993347423082215862581179547
+  public exponent: 65537
+  Validity: [From: Mon Nov 30 14:06:24 CET 2009,
+               To: Thu Nov 28 14:06:24 CET 2019]
+  Issuer:  CN=abc.host.pl, OU=IT, O=Tytus De z o.o., L=Lubien, ST=Wielkopolskie, C=PL
+  SerialNumber: [    00]
+
+]
+  Algorithm: [SHA1withRSA]
+  Signature:
+0000: 40 75 D4 B0 85 D1 34 DE   09 24 3C BC 72 46 B2 E0  @u....4..$&lt;.rF..
+0010: 18 15 84 DD A2 EB BA 5A   9F E3 5C F0 8F 53 60 EC  .......Z..\..S`.
+0020: 2C 5D CB C1 EE C3 3A 65   CF 9B 6C E5 FC 01 DD 05  ,]....:e..l.....
+0030: EA DC 66 BF FB 91 02 BC   39 77 CB 34 BC 7F 0B 23  ..f.....9w.4...#
+0040: 40 C9 85 B3 2A 2A 20 AE   74 B0 C9 FB 47 5F B3 88  @...** .t...G_..
+0050: E4 5E 6D 24 2F C0 43 9D   69 D5 69 4D 76 31 0A 62  .^m$/.C.i.iMv1.b
+0060: 1A C1 25 FB 14 41 06 0E   9F A8 D1 75 DD B8 B2 B2  ..%..A.....u....
+0070: 1D BF 90 11 69 18 9A C8   D5 AA 5D 26 6B 1C FB B0  ....i.....]&amp;k...
+
+]</code></pre></noscript></div>
+
+
+<p>Please note that there is a prompt (<em>Enter certificate to add to
+trusted keystore&#8230;</em>) in which you can enter the certificate number
+you wish to add to your keystore.</p>
+
+<p>After all those steps my request got through and I could happily
+query HTTPS service as long as I wanted to! Great!</p>
+
+<h2>Possible problems</h2>
+
+<p>In my search for this problem&#8217;s solution I&#8217;ve encountered this kind
+of exception:</p>
+
+<div><script src='https://gist.github.com/951458.js?file=keystore_key_error.java'></script>
+<noscript><pre><code>java.lang.Exception: java.security.UnrecoverableKeyException: Cannot recover key
+        at org.apache.servicemix.http.processors.ConsumerProcessor.process(ConsumerProcessor.java:216)
+        at org.apache.servicemix.http.HttpBridgeServlet.doPost(HttpBridgeServlet.java:71)
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:617)
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:690)
+        at org.mortbay.jetty.servlet.ServletHolder.handle(ServletHolder.java:502)
+        at org.mortbay.jetty.servlet.ServletHandler.handle(ServletHandler.java:363)
+        at org.mortbay.jetty.handler.ContextHandler.handle(ContextHandler.java:757)
+        at org.mortbay.jetty.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:206)
+        at org.mortbay.jetty.handler.HandlerCollection.handle(HandlerCollection.java:114)
+        at org.mortbay.jetty.handler.HandlerWrapper.handle(HandlerWrapper.java:152)
+        at org.mortbay.jetty.Server.handle(Server.java:324)
+        at org.mortbay.jetty.HttpConnection.handleRequest(HttpConnection.java:502)
+        at org.mortbay.jetty.HttpConnection.handle(HttpConnection.java:371)
+        at org.mortbay.io.nio.SelectChannelEndPoint.run(SelectChannelEndPoint.java:409)
+        at org.mortbay.jetty.nio.SelectChannelConnector$RetryContinuation.run(SelectChannelConnector.java:525)
+        at org.mortbay.thread.BoundedThreadPool$PoolThread.run(BoundedThreadPool.java:451)
+Caused by: java.security.UnrecoverableKeyException: Cannot recover key
+        at sun.security.provider.KeyProtector.recover(KeyProtector.java:311)
+        at sun.security.provider.JavaKeyStore.engineGetKey(JavaKeyStore.java:121)
+        at sun.security.provider.JavaKeyStore$JKS.engineGetKey(JavaKeyStore.java:38)
+        at java.security.KeyStore.getKey(KeyStore.java:763)
+        at com.sun.net.ssl.internal.ssl.SunX509KeyManagerImpl.&lt;init&gt;(SunX509KeyManagerImpl.java:113)
+        at com.sun.net.ssl.internal.ssl.KeyManagerFactoryImpl$SunX509.engineInit(KeyManagerFactoryImpl.java:48)
+        at javax.net.ssl.KeyManagerFactory.init(KeyManagerFactory.java:239)
+        at org.apache.servicemix.http.processors.CommonsHttpSSLSocketFactory.createUnmanagedFactory(CommonsHttpSSLSocketFactory.java:117)
+        at org.apache.servicemix.http.processors.CommonsHttpSSLSocketFactory.&lt;init&gt;(CommonsHttpSSLSocketFactory.java:50)
+        at org.apache.servicemix.http.processors.ProviderProcessor.getHostConfiguration(ProviderProcessor.java:276)
+        at org.apache.servicemix.http.processors.ProviderProcessor.process(ProviderProcessor.java:167)
+        at org.apache.servicemix.soap.SoapEndpoint.process(SoapEndpoint.java:368)
+        at org.apache.servicemix.common.AsyncBaseLifeCycle.doProcess(AsyncBaseLifeCycle.java:600)
+        at org.apache.servicemix.common.AsyncBaseLifeCycle.processExchange(AsyncBaseLifeCycle.java:554)
+        at org.apache.servicemix.common.AsyncBaseLifeCycle.onMessageExchange(AsyncBaseLifeCycle.java:510)
+        at org.apache.servicemix.common.SyncLifeCycleWrapper.onMessageExchange(SyncLifeCycleWrapper.java:60)
+        at org.apache.servicemix.jbi.messaging.DeliveryChannelImpl.processInBound(DeliveryChannelImpl.java:620)
+        at org.apache.servicemix.jbi.nmr.flow.AbstractFlow.doRouting(AbstractFlow.java:172)
+        at org.apache.servicemix.jbi.nmr.flow.seda.SedaFlow.doRouting(SedaFlow.java:168)
+        at org.apache.servicemix.jbi.nmr.flow.seda.SedaQueue$1.run(SedaQueue.java:134)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+        at java.lang.Thread.run(Thread.java:619)
+</code></pre></noscript></div>
+
+
+<p>A little googling led me to this <a
+href="http://stackoverflow.com">StackOverflow</a> <a
+href="http://stackoverflow.com/questions/4926290/java-keystore-and-password-settings">question</a>.</p>
+
+<p>It seems that you cannot have multiple keys with different passwords
+in the same keystore and use <a
+href="http://download.oracle.com/javase/6/docs/api/javax/net/ssl/KeyManagerFactory.html">KeyManagerFactory</a> class. Oh
+well&#8230;</p>.
+
+<h2>Ending</h2>
+
+<p>To sum up, the solution given works, but in my opinion using the
+<em>InstallCert.java</em> app is rather dirty. I&#8217;ve been wondering, do
+you know other ways of doing that thing?</p>
+
+</div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Advisory Messages to the rescue]]></title>
+    <link href="http://zygm0nt.github.com/blog/2011/04/01/advisory-messages-to-the-rescue/"/>
+    <updated>2011-04-01T11:16:59+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2011/04/01/advisory-messages-to-the-rescue</id>
+    <content type="html"><![CDATA[<div class='post'>
+<p>
+The most crucial part of software development is testing. It should
+ensure us, that our code is correct, works according to given specs,
+etc. There are many kinds of tests: unit tests, integration, functional.
+In general you should try to test the smallest possible subset of your
+code and be able to check the state of the objects after the test.
+</p><p>
+This seems as rather easy task, but what if you have an integration
+end-to-end test to perform? In most cases asserting state in integration
+test is rather hard due to multiple systems interoperability. Let&#8217;s
+focus on a specific situation.
+</p>
+<EXCERPT>
+<p>
+What I needed to do the other day was write some integration test for
+Jms based system. The processing pipeline is easy:
+<ul>
+<li> fetch object from DB</li>
+<li> process it</li>
+<li> publish on JMS</li>
+</ul>
+</p><p>
+some other system (X-system) polls JMS:
+<ul>
+<li> if message is found</li>
+<li> fetch it (message disappears from the JMS queue)</li>
+<li> do sth with it</li>
+</p><p>
+Looks simple but since I didn&#8217;t have any sane access to the X-system I
+wanted to be sure that my object was actually put into the queue. It was
+not acceptable to subscribe to the queue and fetch that object in my
+test - it would dusrupt the flow of the whole process.
+</p><p>
+Fortunately I&#8217;ve been using <a
+href="http://activemq.apache.org">ActiveMQ</a> and since it offers a
+thing called <a
+href="http://activemq.apache.org/advisory-message.html">Advisory
+Messages</a> I&#8217;ve decided to use just them.
+</p><p>
+What are advisory messages? They are a set of administrative messages
+that are generated on a specific event, like message consumption,
+message delivery, topic destruction, and many more. Each type of message
+is delivered to a separate topic - prefixed with 
+<strong>ActiveMQ.Advisory</strong>. Since generation of such messages
+may be an overhead in production systems these features are turned off
+by default. You need to enable specific type of
+advisory message for a specific jms destination. You can do this with
+ths configuration change to <strong>activemq.xml</strong>
+</p>
+<div><script src='https://gist.github.com/897141.js?file='></script>
+<noscript><pre><code>        &lt;destinationPolicy&gt;
+            &lt;policyMap&gt;
+              &lt;policyEntries&gt;
+                &lt;policyEntry queue=&quot;my/test/queue&quot; advisoryForDelivery=&quot;true&quot; advisoryForConsumed=&quot;true&quot;/&gt;                                                   
+                &lt;policyEntry topic=&quot;&gt;&quot; producerFlowControl=&quot;true&quot; memoryLimit=&quot;1mb&quot;&gt;
+                  &lt;pendingSubscriberPolicy&gt;
+                    &lt;vmCursor /&gt;
+                  &lt;/pendingSubscriberPolicy&gt;
+                &lt;/policyEntry&gt;
+              &lt;/policyEntries&gt;
+            &lt;/policyMap&gt;
+        &lt;/destinationPolicy&gt;
+</code></pre></noscript></div>
+
+<p>
+As you can see, I&#8217;ve specified which advisories I want enabled. The full
+list of available advisories can be found <a
+href="http://activemq.apache.org/advisory-message.html">here</a>.
+</p><p>
+Since I wanted to read messages from that topic I&#8217;ve added the following
+configuration to my spring context - there is one destination bean for
+inserting messages and one bean for advisory topic.
+</p>
+<div><script src='https://gist.github.com/897150.js?file='></script>
+<noscript><pre><code>    &lt;bean id=&quot;testQueue&quot; class=&quot;org.apache.activemq.command.ActiveMQQueue&quot; autowire=&quot;constructor&quot;&gt;
+        &lt;constructor-arg value=&quot;my/test/queue&quot; /&gt;
+    &lt;/bean&gt;
+
+    &lt;bean id=&quot;deliveredToTestQueueAdvisory&quot; class=&quot;org.apache.activemq.command.ActiveMQTopic&quot; autowire=&quot;constructor&quot;&gt;
+        &lt;constructor-arg value=&quot;ActiveMQ.Advisory.MessageDelivered.Queue.my/test/queue&quot; /&gt;
+    &lt;/bean&gt;
+</code></pre></noscript></div>
+
+<p>
+Thanks to this configuration I&#8217;ve been able to check that my message was
+actually delivered to the queue. There&#8217;ve been no need to worry about
+race conditions in consuming the message from original queue - if the
+X-system read the message, I&#8217;d be unable to determine if it has ever
+been in JMS at all.
+</p><p>
+What&#8217;s not so nice about that:
+<ul>
+<li> advisory messages can be thought of as counters rather than debugging
+  information</li>
+<li> they don&#8217;t contain any data that would allow us to match advisory
+  message to the original message - thou you could correlate by
+  timestamp</li>
+</ul>
+</p>
+<p>
+All in all, it&#8217;s a good tool to have! But perhaps you have some other
+thoughts on this subject? How do you test JMS?
+</p></div>
+<h2>Comments</h2>
+<div class='comments'>
+</div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to run multiple guest OS in QEMU?]]></title>
+    <link href="http://zygm0nt.github.com/blog/2011/03/27/how-to-run-multiple-guest-os-in-qemu/"/>
+    <updated>2011-03-27T20:47:11+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2011/03/27/how-to-run-multiple-guest-os-in-qemu</id>
+    <content type="html"><![CDATA[<div class='post'>
+This weekend I&#8217;ve been fiddling with <a href="http://www.qemu.org">QEMU</a>. I&#8217;ve installed <a href="http://openbsd.org">OpenBSD</a> on a single image and wanted to have two instances of it communicating via network. Installing the system was easy, but the networking setup was quite a pain. See how I did that&#8230;
+<EXCERPT>
+
+<p>To make QEMU instances communicate with each other I needed to plug them to a &#8220;network&#8221;. That&#8217;s why I&#8217;ve created a bridge to which Virtual Instances would connect to. I&#8217;ve used the following script:</p>
+
+<div><script src='https://gist.github.com/889357.js?file='></script>
+<noscript><pre><code>#!/bin/bash                                                                                                                                                 
+# 1st, release all DHCP address and remove all IP address associated
+# with the original eth0
+#/sbin/dhcpcd -k
+kill `pidof dhclient`
+/sbin/ip addr flush eth0
+# then take the interface down so we can rename it
+/sbin/ip link set eth0 down
+# now rename the original eth0 to reth0 (Real ETH0)
+nameif reth0 00:24:81:43:61:5b
+# OK, bring the same interface (with new name though) back up
+/sbin/ip link set reth0 up
+# 2nd let's create a bridge called eth0 so other programs think they are
+# talking to the same old interface (actually they will talk to the
+# bridge which is a clone of the original eth0 - with name MAC addr)
+/usr/sbin/brctl addbr eth0
+# then add both origianl eth0 and tap1 device to the bridge
+/sbin/brctl addif eth0 tap1
+/usr/sbin/brctl addif eth0 reth0
+echo &quot;showing bridge mac addresses&quot;
+/usr/sbin/brctl showmacs eth0
+# 3rd, we need to bring the newly created bridge UP
+/sbin/ip link set eth0 up
+# 4th, renew the DHCP address if possible
+#/sbin/dhcpcd -n
+dhclient eth0
+/sbin/ip addr show
+</code></pre></noscript></div>
+
+
+<p>Then I just needed to start Qemu with this command line:</p>
+
+<div><script src='https://gist.github.com/889359.js?file='></script>
+<noscript><pre><code>sudo qemu openbsd-4.7.img  -net tap -net nic,macaddr=52:54:00:12:34:57,model=ne2k_pci</code></pre></noscript></div>
+ 
+
+<p>Since I&#8217;ve set up bridge for Qemu instances, I&#8217;ve plugged <a href="http://en.wikipedia.org/wiki/TUN/TAP">TAP</a> interfaces into it. That&#8217;s why I&#8217;ve needed to specify this in my qemu exec line. I&#8217;ve also added macaddress setting since both my instances were getting the same one.</p>
+
+<p>And that&#8217;s all! It works like a charm. Now on to some harder things!</p></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Me on Hadoop on Parleys]]></title>
+    <link href="http://zygm0nt.github.com/blog/2011/03/20/me-on-hadoop-on-parleys/"/>
+    <updated>2011-03-20T20:35:39+01:00</updated>
+    <id>http://zygm0nt.github.com/blog/2011/03/20/me-on-hadoop-on-parleys</id>
+    <content type="html"><![CDATA[<div class='post'>
+<p>Finally I&#8217;ve managed to import my <a href="http://mcl.jogger.pl/2011/02/17/hadoop-on-warsaw-jug/">WarJUG presentation</a> to parleys.com. See for yourself :)
+</p>
+<EXCERPT>
+
+<object width="474" height="443">
+  <param name="movie" value="http://www.parleys.com/share/parleysshare2.swf?pageId=2316"/>
+  <param name="allowFullScreen" value="true"/>
+  <param name="pageId" value="2316"/>
+  <embed src="http://www.parleys.com/share/parleysshare2.swf?pageId=2316" type="application/x-shockwave-flash" allowfullscreen="true" width="474" height="443"/>
+</object>
+
+<p>
+If you&#8217;ve got problems with opening the parleys&#8217; version try the ones uploaded to youtube.
+</p>
+<p>
+Here is part 1:
+</p>
+<object width="425" height="344"><param name="movie"                            
+value="http://www.youtube.com/v/oUFUhZtsUFI?hl=en&fs=1"></param><param
+name="allowFullScreen" value="true"></param><param
+name="allowscriptaccess" value="always"></param><embed
+src="http://www.youtube.com/v/oUFUhZtsUFI?hl=en&fs=1"
+type="application/x-shockwave-flash" allowscriptaccess="always"
+allowfullscreen="true" width="425" height="344"></embed></object>
+
+<p>And here is part 2:</p>
+
+<object width="425" height="344"><param name="movie"
+value="http://www.youtube.com/v/LqhmOHXaQEU?hl=en&fs=1"></param><param
+name="allowFullScreen" value="true"></param><param
+name="allowscriptaccess" value="always"></param><embed
+src="http://www.youtube.com/v/LqhmOHXaQEU?hl=en&fs=1"
+type="application/x-shockwave-flash" allowscriptaccess="always"
+allowfullscreen="true" width="425" height="344"></embed></object>
+
+</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://sigvatr.jogger.pl">Sigvatr</a></div>
+<div class='content'>
+<p>I&#8217;m sorry, but I don&#8217;t understand  Polish :P</p></div>
+</div>
+</div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[After WarJUG]]></title>
+    <link href="http://zygm0nt.github.com/blog/2011/02/23/after-warjug/"/>
+    <updated>2011-02-23T14:22:04+01:00</updated>
+    <id>http://zygm0nt.github.com/blog/2011/02/23/after-warjug</id>
+    <content type="html"><![CDATA[<div class='post'>
+<p>Some time ago I&#8217;d written about my <a href="http://mcl.jogger.pl/2011/02/17/hadoop-on-warsaw-jug/">arsaw JUG presentation</a>. I finally presented the the topic yesterday.</p>
+
+<p>I must say I&#8217;m fairly content with my yesterday&#8217;s presentation :) Here are some slides and as soon as the video will be available I&#8217;ll post it here too.</p>
+
+<div style="width:425px" id="__ss_7026758"><strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/zygm0nt/hadoop-i-okolice" title="Hadoop i okolice">Hadoop i okolice</a></strong><object id="__sse7026758" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=touktemplate-110223021208-phpapp02&stripped_title=hadoop-i-okolice&userName=zygm0nt" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed name="__sse7026758" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=touktemplate-110223021208-phpapp02&stripped_title=hadoop-i-okolice&userName=zygm0nt" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object><div style="padding:5px 0 12px">View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/zygm0nt">zygm0nt</a>.</div></div></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://sigvatr.jogger.pl">Sigvatr</a></div>
+<div class='content'>
+<p>Czyli napisałeś ładny post po angielsku, tylko po to, by zaprosić do obejrzenia prezentacji po polsku?<br />
+<br />
+(przepraszam, ale mój angielski jest za słaby na pisanie w nim)</p></div>
+</div>
+</div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[JMS redelivery with ActiveMQ and Servicemix]]></title>
+    <link href="http://zygm0nt.github.com/blog/2011/01/17/jms-redelivery-with-activemq-and-servicemix/"/>
+    <updated>2011-01-17T09:56:29+01:00</updated>
+    <id>http://zygm0nt.github.com/blog/2011/01/17/jms-redelivery-with-activemq-and-servicemix</id>
+    <content type="html"><![CDATA[<div class='post'>
+<p>
+The other day I felt a compelling need to implement a JMS redelivery
+scenario. The exact scenario I&#8217;d been trying to handle was:
+</p>
+
+<ol>
+<li>my message is in an ActiveMQ queue or topic</li>
+<li>its processing fails, because of some exception - ie. database
+access exception due to server nonavailability</li>
+<li>since we get an exception, the message is not handled properly, we
+may want to retry processing attempt some time later</li>
+<li>of course, for the redelivery to happen we need the message to stay
+in the ActiveMQ queue - fetching messages from the queue will be stopped
+until the redelivery succeeds or expires</li>
+</ol>
+
+See how this can be done after the jump :)
+
+<EXCERPT/>
+
+<p>
+For this to happen, I&#8217;ve tried implementing Apache Camel route, but as
+it turns out, Camel fails to deliver facilities for exact JMS
+redelivery. It is possible to set JMS connection in <i>transacted</i>
+mode, but the redeliveries happen one after another and fixed times.
+</p>
+
+<p>
+What I&#8217;ve ended up doing was implement a servicemix-jms endpoint. I&#8217;ve
+used this configuration for it:
+</p>
+<pre class="brush: xml">
+<jms:endpoint service="ts:WorkflowConsumerService"
+                  endpoint="default"
+                  targetService="ts:WorkflowConsumerCamelService"
+                  targetEndpoint="default"
+                  role="consumer"
+                  processorName="jca"
+                  connectionFactory="#connectionFactory"
+                  resourceAdapter="#ra"
+                  activationSpec="#activationSpec"
+                  bootstrapContext="#bootstrapContext"
+                  synchronous="true"
+                  rollbackOnError="true"
+                  wsdlResource="classpath:LeadManagement.wsdl"
+                  defaultMep="http://www.w3.org/2004/08/wsdl/in-only"/>
+
+    <bean name="connectionFactory" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiName">
+            <value>activemq/connectionFactory</value>
+        </property>
+    </bean>
+
+    <bean name="ra" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiName">
+            <value>activemq/resourceAdapter</value>
+        </property>
+    </bean>
+
+    <bean id="activationSpec" class="org.apache.activemq.ra.ActiveMQActivationSpec">
+        <property name="destination" value="example/C"/>
+        <property name="destinationType" value="javax.jms.Queue"/>
+        <property name="maximumRedeliveries" value="10"/>
+        <property name="initialRedeliveryDelay" value="10000"/>
+    </bean>
+
+    <jee:jndi-lookup id="bootstrapContext" jndi-name="java:comp/env/smx/BootstrapContext">
+    </jee:jndi-lookup>
+</pre>
+<p>
+As you can see, we lookup a couple of things in JNDI registry, so you need to 
+have them configured on the Servicemix side - a sample config presented 
+farther in this entry. 
+</p><p>
+The bean responsible for configuring redelivery settings is <b>activationSpec</b>.
+You can set various things with it, like:
+</p>
+<ul>
+<li>initial redelivery delay</li>
+<li>maximum number of redeliveries</li>
+<li>backoff multiplier</li>
+<li>&#8230;</li>
+</ul>
+<p>
+What is really important in <i>jms:endpoint</i> config for this to work are:</p>
+<ul>
+<li><i>processorName=&#8221;jca&#8221;</i></li>
+<li><i>rollbackOnError=&#8221;true&#8221;</i></li>
+</ul>
+<p>
+Servicemix should have the following entries in its jndi registry:
+</p>
+<pre class="brush: xml">
+         <entry key="activemq/resourceAdapter" value-ref="activemqRA" />
+
+         <entry key="activemq/connectionFactory" value-ref="activemqCF" />
+
+(...) 
+<!-- namespaces:-->
+       xmlns:jencks="http://jencks.org/2.0"
+       xmlns:amqra="http://activemq.apache.org/schema/ra" -->
+
+          <amqra:resourceAdapter
+                  id="activemqRA"
+                  serverUrl="${activemq.url}" />
+          <amqra:managedConnectionFactory
+                  id="activemqMCF"
+                  resourceAdapter="#activemqRA" />
+          <jencks:connectionFactory
+                  id="activemqCF"
+                  managedConnectionFactory="#activemqMCF"
+                  connectionManager="#connectionManager" />
+</pre>
+
+<p>
+When the redeliveries are exhausted, message is routed to global Dead Letter Queue
+called ActiveMQ.DLQ. Since this is a single bag for all the failed messages
+from all queues, you may want to configure this aspect differently. For example
+you can tell ActiveMQ to create a single DLQ for each queue. Use this config 
+to achieve it - the changes should be made to Broker configuration.
+</p>
+<pre class="brush: xml">
+<broker...>
+  <destinationPolicy>
+    <policyMap>
+      <policyEntries>
+        <!-- Set the following policy on all queues using the '>' wildcard -->
+        <policyEntry queue=">">
+          <deadLetterStrategy>
+            <!--
+              Use the prefix 'DLQ.' for the destination name, and make
+              the DLQ a queue rather than a topic
+            -->
+            <individualDeadLetterStrategy
+              queuePrefix="DLQ." useQueueForQueueMessages="true" />
+          </deadLetterStrategy>
+        </policyEntry>
+      </policyEntries>
+    </policyMap>
+  </destinationPolicy>
+  ...
+</broker>
+</pre>
+<p>
+More on the subject of redelivieries in ActiveMQ can be found at <a href="http://activemq.apache.org/message-redelivery-and-dlq-handling.html">http://activemq.apache.org/message-redelivery-and-dlq-handling.html</a>.
+</p></div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Easier and nicer JMS]]></title>
+    <link href="http://zygm0nt.github.com/blog/2010/12/08/easier-and-nicer-jms/"/>
+    <updated>2010-12-08T10:22:34+01:00</updated>
+    <id>http://zygm0nt.github.com/blog/2010/12/08/easier-and-nicer-jms</id>
+    <content type="html"><![CDATA[<div class='post'>
+<table border="0">
+<tr><td>
+<p>
+JMS seems like a hostile ground. It has all it&#8217;s quirks and strange
+behaviours. A couple of defining standards plus esoteric brokers, queues
+and topics.
+</p>
+
+</td>
+<td><img src="http://blog.innovative-labs.com/blog/Screwdriver.jpg" width="150" /></td></tr></table>
+
+<p>
+At work, we mainly use open source Jms solutions, namely Apache
+ActiveMQ. This one is usually bundled with Apache Servicemix, as a
+message broker for this particular ESB. As there are some minor caveats
+in this scennerio, I&#8217;d like to describe here some guidelines for getting
+to running JMS queues.
+</p>
+<EXCERPT/>
+<p>
+Treat this post as a quick cheat sheet with the most common things about
+JMS I tend to forget :)
+</p>
+
+<p>
+Minor glitches encountered during work with embedded broker led to some
+thoughts about switching to external broker. This is how I configure SMX
+and AcviteMQ.
+</p>
+<p>
+Necessary steps:</p>
+<ul>
+<li> change <i>apache-servicemix/conf/servicemix.properties</i> <b>activemq.port</b>
+to sth else than standard, for example 61626</li>
+<li> change <i>apache-activemq/conf/activemq.xml</i> with this settings:
+ <ul>
+    <li> change port, the service listens on:
+
+<pre class="brush: xml">
+        <transportConnectors>
+            <transportConnector name="openwire" uri="tcp://localhost:61626"/>
+        </transportConnectors>
+</pre></li>
+    <li> setup separate JMX instance:
+<pre class="brush: xml">
+        <managementContext>
+            <managementContext createConnector="true" connectorPort="2011"/>
+        </managementContext>
+</pre></li>
+</ul>
+</li>
+<li> the nicest tool I found for browsing queues and topics is <a href="http://www.hermesjms.com">Hermes
+JMS</a>. Sample config, that connects Hermes to ActiveMQ instance is on
+the picture below:
+
+<img src="http://blog.innovative-labs.com/blog/easy_jms.png" width="550" alt="HermesJMS to ActiveMQ connection config"/>
+</li>
+<li> sending simple messages with Hermes is basic, but what if you need to
+set some headers, send bulk messages, etc. Easy, just use Hermes xml
+format. Look like this code snippet below and is rather self-explanatory:
+
+<pre class="brush: xml">
+<content>
+    <entry type="1">
+        <textMessage JMSDeliveryMode="2" JMSExpiration="0" JMSPriority="0" JMSRedelivered="false" JMSTimestamp="0">
+            <headerProperty name="caseId" type="java.lang.String" value="105"/>
+            <text>&lt;![CDATA[<message>
+  <event>
+    <case>
+      <CASE_ID>105</CASE_ID>
+      <EVENT>1235</EVENT>
+    </case>
+  </event>
+</message>]]&gt;</text>
+        </textMessage>
+    </entry>
+</content>
+</pre>
+</li>
+<li> since we use lots of <a href="http://camel.apache.org">Apache
+ Camel</a> to consume messages, here is a simple way to start broker in
+your tests:
+<ul>
+    <li> start a broker
+<pre class="brush: java">
+        BrokerService broker = new org.apache.activemq.broker.BrokerService();
+        broker.setBrokerName("AMQ-1");
+        broker.addConnector("tcp://localhost:51616");
+        broker.setPersistent(false);
+        broker.start();
+</pre>
+     Notice it has persistance disabled.
+</li>
+    <li> initialize Camel&#8217;s JMS component:
+<pre class="brush: java">
+    ctx.removeComponent("jms");
+    ctx.addComponent("jms", ActiveMQComponent.activeMQComponent("tcp://localhost:51616"));
+</pre></li>
+    <li> if you want to pass messages to reference endpoints, (like <i>ref:input</i>), use this wrapper method:
+<pre class="brush: java">
+private JmsEndpoint createJmsEndpoint(String endpoint) throws JMSException {
+        ActiveMQComponent amqc = (ActiveMQComponent) ctx.getComponent("jms");
+        JmsEndpoint endp = JmsEndpoint.newInstance(new ActiveMQTopic(endpoint), amqc);
+        return endp;
+}
+
+createJmsEndpoint("ESB/XYZ")
+</pre>
+</li>
+</ul>
+</li>
+</ul>
+These are all the tricks I&#8217;ve got for now! But if you know some other
+good tools that handle JMS, feel free to comment!
+
+Got more advices, again, comment!
+</div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Schematron to the rescue!]]></title>
+    <link href="http://zygm0nt.github.com/blog/2010/10/21/schematron-to-the-rescue/"/>
+    <updated>2010-10-21T10:40:37+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2010/10/21/schematron-to-the-rescue</id>
+    <content type="html"><![CDATA[<div class='post'>
+<table border="0">
+<tr><td>
+<p>In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be solved with it - the standardization processes is there for some reason. But that happens only in ideal
+world, which we&#8217;re not living in. </p></td> <td><img src="http://blog.innovative-labs.com/blog/simpson_schematron.png" width="100"/>
+</td></tr></table>
+
+<p>In ideal world, when dealing with XML instances you&#8217;d be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal  definition language to declare your data structure. With that you get rigid rules as to how XML documents should look like. There doesn&#8217;t seem to be much space to deviate from specs. Well, in fact there is.</p>
+
+<EXCERPT/>
+
+<p>The main problem of XML, aside its verbosity, is the inability to create concise rules for the input or output document as a whole. Perhaps it&#8217;s a nice feature, because XML Schema should only be used to describe a data structure, not to infer business rules on it. Perhaps not. Nevertheless it&#8217;s not what I needed in one of the projects I&#8217;ve worked on.</p>
+
+<p>My need was to actually check the business validity of such documents. This was used in a Web Service environment, a pretty stupid WS, which sole role was to fetch data from database and pack it into appropriate XML structures. Errors might occur in database&#8217;s views or in WS - as usual. They might be data multiplication or appearance of some elements while they shouldn&#8217;t. Resulting documents were correctly validated with the xml schema, but the result was simply wrong from the business point of view.</p>
+
+<p>What I needed an XML formalization language, an ability to write rules that would assert some rules, report on not meeting stated rules. I was in need of a tool to write business rules to tame such XML entities.</p>
+
+<p>The simplest way I found to solve this was to use <a href="http://www.schematron.com/">Schematron!</a> - &#8220;a language for making assertions about patterns found in XML documents&#8221;. This neat tool is a set of XSL templates, that you use in conjunction with a rule set on documents to check. As a result of the check you get another XML document with test assertions - whether failed or succeeded.</p>
+
+<p>With Schematron you write a set of rules you expect the document to assert, than you use Schematron XSL template to produce XSL rules specific for your case. Now you only need to use newly generated XSL rules template on your XML document to check rules compliance. Easy, if not, check the diagram below.</p>
+
+
+<img src="http://blog.innovative-labs.com/blog/schematron_flow.png"
+width="600"/>
+
+<h2>How does it look?</h2>
+
+The rules&#8217; file may look like this:
+
+<pre class="brush: xml">
+<?xml version="1.0" encoding="iso-8859-1"?>
+<iso:schema    xmlns="http://purl.oclc.org/dsdl/schematron" 
+           xmlns:iso="http://purl.oclc.org/dsdl/schematron" 
+           xmlns:sch="http://www.ascc.net/xml/schematron"
+           xmlns:dp ="http://www.dpawson.co.uk/ns#"
+           xmlns:pc="http://example.com/pc/type"
+           queryBinding='xslt2'
+           schemaVersion="ISO19757-3">
+  <iso:title>TouK Schematron test harness</iso:title>
+
+  <iso:ns prefix="pc" uri="http://example.com/pc/types" />  
+
+
+<iso:pattern id="pc.getMigrationOffers">
+  <iso:title>checking GetMigrationOffers</iso:title>
+  <iso:rule context="pc:getMigrationOffersResponse">
+    <iso:report test="true()">Report date.<iso:value-of select="current-dateTime()"/></iso:report>
+    <iso:assert test="count(//@offerId[. = current()/@offerId]) = 1" >Unique offers allowed.</iso:assert>
+    <iso:assert test="count(//@asb) = 1">Each offer has to have an @abc attribute </iso:assert>
+  </iso:rule>
+  <iso:rule context="pc:offer">
+    <iso:assert test="count(pc:tariff) = 1">Each offer has to have a tariff</iso:assert>
+    <iso:assert test="count(pc:offerPromotion) = 1">Each offer has to have a promotion</iso:assert>
+  </iso:rule>
+</iso:pattern>
+
+<iso:pattern id="pc.getAllPhones">
+  <iso:title>checking GetAllPhones</iso:title>
+  <iso:rule context="pc:tac">
+    <iso:assert test="count(parent::node()/pc:tac[. = current()]) = 1">
+        TACs should be unique. TAC: <iso:value-of select="."/>, 
+        handsetId: <iso:value-of select="parent::node()/@handsetId"/>
+        offerId: <iso:value-of select="parent::node()/@offerId"/>
+    </iso:assert>
+  </iso:rule>
+</iso:pattern>
+
+</iso:schema>
+</pre>
+
+<p>Here we see two rules, one named <b>getMigrationOffers</b> and the other <b>getAllPhones</b>. The rules - mainly their asserts seem pretty self explanatory, but for the sake of completeness I&#8217;ll describe the rules for <b>getAllPhones</b>.</p>
+
+<p>There is one rule, which checks the uniqueness of <b>tac</b> elements. This rule tries to ensure that each handset should have a list of unique tac elements as its children. However there may appear tac elements of the same value in different handset elements.</p>
+
+<p>Given an input XML in the form of:</p>
+
+<pre class="brush: xml">
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+   <soap:Body>
+      <getAllPhonesResponse xmlns="http://example.com/pc/types">
+         <handset endDate="2010-12-31T00:00:00.000+01:00" grossPrice="399" handsetId="95" isAllPhones="true" isPhone="true" manufacturer="SonyEricsson " materialSymbol="TE-SE-XW980-NS1-00" name=" Sony Ericsson W980, Open Market 48H" netPrice="327.04" offerId="103021" priceListId="5912" startDate="2010-03-22T00:00:00.000+01:00">
+            <tac>12028006</tac>
+            <tac>20070705</tac>
+            <tac>35535302</tac>
+            <tac>01216100</tac>
+            <tac>01216100</tac>
+         </handset>
+         <handset endDate="2010-12-31T00:00:00.000+01:00" grossPrice="399" handsetId="95" isAllPhones="true" isPhone="true" manufacturer="SonyEricsson " materialSymbol="TE-SE-XW980-NS1-00" name=" Sony Ericsson W980, Open Market 48H" netPrice="327.04" offerId="103056" priceListId="5912" startDate="2010-03-22T00:00:00.000+01:00">
+            <tac>12028006</tac>
+            <tac>20070705</tac>
+            <tac>35535302</tac>
+            <tac>01216100</tac>
+         </handset>
+         <handset endDate="2010-12-31T00:00:00.000+01:00" grossPrice="399" handsetId="95" isAllPhones="true" isPhone="true" manufacturer="SonyEricsson " materialSymbol="TE-SE-XW980-NS1-00" name=" Sony Ericsson W980, Open Market 48H" netPrice="327.04" offerId="103032" priceListId="5912" startDate="2010-03-22T00:00:00.000+01:00">
+            <tac>12028006</tac>
+            <tac>20070705</tac>
+            <tac>35535302</tac>
+            <tac>01216100</tac>
+         </handset>
+       </getAllPhonesResponse>
+   </soap:Body>
+</soap:Envelope>
+</pre>
+
+And passing those two files through the processing pipeline you get a report:
+
+<pre class="brush: xml">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svrl:schematron-output xmlns:schold="http://www.ascc.net/xml/schematron"
+                        xmlns:iso="http://purl.oclc.org/dsdl/schematron"
+                        xmlns:saxon="http://saxon.sf.net/"
+                        xmlns:pc="http://example.com/pc/types"
+                        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+                        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        title="TouK Schematron test harness"
+                        schemaVersion="ISO19757-3">
+    
+   <svrl:ns-prefix-in-attribute-values uri="http://example.com/pc/types" prefix="pc"/>
+   <svrl:active-pattern document="file:/tmp/schematron/getAllPhones.xml" id="pc.getMigrationOffers"
+                        name="checking GetMigrationOffers"/>
+   <svrl:active-pattern document="file:/tmp/schematron/getAllPhones.xml" id="pc.getAllPhones"
+                        name="checking GetAllPhones"/>
+   <svrl:fired-rule context="pc:tac"/>
+   <svrl:fired-rule context="pc:tac"/>
+   <svrl:fired-rule context="pc:tac"/>
+   <svrl:fired-rule context="pc:tac"/>
+   <svrl:failed-assert test="count(parent::node()/pc:tac[. = current()]) = 1"
+                       location="/*:Envelope[namespace-uri()='http://www.w3.org/2003/05/soap-envelope'][1]/*:Body[namespace-uri()='http://www.w3.org/2003/05/soap-envelope'][1]/*:getAllPhonesResponse[namespace-uri()='http://example.com/pc/types'][1]/*:handset[namespace-uri()='http://example.com/pc/types'][1]/*:tac[namespace-uri()='http://example.com/pc/types'][4]">
+      <svrl:text>
+        TACs should be unique. TAC: 01216100, 
+        handsetId: 95
+        offerId: 103021</svrl:text>
+   </svrl:failed-assert>
+   <svrl:fired-rule context="pc:tac"/>
+   <svrl:failed-assert test="count(parent::node()/pc:tac[. = current()]) = 1"
+                       location="/*:Envelope[namespace-uri()='http://www.w3.org/2003/05/soap-envelope'][1]/*:Body[namespace-uri()='http://www.w3.org/2003/05/soap-envelope'][1]/*:getAllPhonesResponse[namespace-uri()='http://example.com/pc/types'][1]/*:handset[namespace-uri()='http://example.com/pc/types'][1]/*:tac[namespace-uri()='http://example.com/pc/types'][5]">
+      <svrl:text>
+        TACs should be unique. TAC: 01216100, 
+        handsetId: 95
+        offerId: 103021</svrl:text>
+   </svrl:failed-assert>
+   <svrl:fired-rule context="pc:tac"/>
+   <svrl:fired-rule context="pc:tac"/>
+   <svrl:fired-rule context="pc:tac"/>
+   <svrl:fired-rule context="pc:tac"/>
+[...]
+</svrl:schematron-output>
+</pre>
+
+<p>After running the validation, the report presents us with the result. It shows that there are actually non-unique tacs. Unfortunately the rule itself is not so optimal, as it is executed for each tac node. The better case would be to create a rule operating only on groups of tacs - having a rule for each handset&#8217;s tacs would be much better.
+
+<h2>Performance consideration</h2>
+
+<p>As you may have seen, Schematron gives quite a potential, if it comes to rules building - maybe not the easiest to comprehend, since written with XPath, but good enough.</p>
+
+<p>However, with all the XML processing involved in the process, it may take some considerable amount of time to execute such validations. For example, processing rules for file <b>getMigrationOffers.xml</b> takes about 2.296s - the file has 82 offer elements, which the rules operate on. But validating the other file, <b>getAllPhones.xml</b> takes 5.324s, with 3113 tac elements, and the rule iterating all of them.</p>
+
+<p>This overhead is too much in most of the situations. That&#8217;s why this solution is rather not for use in normal execution pipeline - it would be unwise to put Schematron to check each request, thus entangle it into my Web Services normal flow.</p>
+
+<p>What may be more desirable is to deploy a continuous integration server, with a project querying such Web Service and checking the rules in this manner.</p>
+
+<h2>Conclusion</h2>
+
+<p>So, what&#8217;s so great about having one XML generate another XML? Perhaps nothing, I think it would took just about a day to write some shell, python, &lt;other text processing tool&gt; that would perform equally (or even better). However, we loose technology homogeneity, and employ some other environments, not specific to our primary target platform, and that seems bad. Of course using some powerful text processing tool to impose the same rules might be much more efficient, thou less coherent.</p>
+
+<p>What is your approach to such situations? Have you used Schematron or any other similar tool?</p>
+
+<p><font size="-2">Code for this example is available on GitHub - <a
+href="http://github.com/zygm0nt/schematron-example">http://github.com/zygm0nt/schematron-example</a>.</font></p></div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Complex flows with Apache Camel]]></title>
+    <link href="http://zygm0nt.github.com/blog/2010/08/26/complex-flows-with-apache-camel/"/>
+    <updated>2010-08-26T22:23:52+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2010/08/26/complex-flows-with-apache-camel</id>
+    <content type="html"><![CDATA[<div class='post'>
+<p>
+At work, we&#8217;re mainly integrating services and systems, and since we&#8217;re on a constant lookout for new, better
+technologies, ways to do things easier, make them more sustainable, we&#8217;re trying to 
+</p>
+<p>
+Usually we use <a href="http://camel.apache.org">Apache Camel</a> for this task, which is a Swiss-knife for 
+integration engineer. What&#8217;s more, this tools corresponds well with our approach to integration solutions:
+</p>
+<ul>
+<li> try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits,
+<li> don&#8217;t convert XML into Java classes back and forth and be worried with problems like XML conversion,
+<li> try to get a simple flow of the process.
+</ul>
+
+<p>
+However, at first sight Apache Camel seems to have some drawbacks mainly
+in the area of  practical solutions ;-).
+It&#8217;s very handy tool if you need to use it as a pipeline with some marginal processing of 
+the data that passes through it. It gets a lot harder to wrap your head around if you consider some 
+branching and intermediate calls to external services. This may be tricky to write properly in Camel&#8217;s DSL.
+</p>
+<p>
+Here is a simple pipeline example:
+</p>
+<img src="http://blog.innovative-labs.com/blog/simple_flow.png" width="600"/>
+<p>
+And here the exact scenario we&#8217;re discussing:
+</p>
+<img src="http://blog.innovative-labs.com/blog/branched_flow.png" width="600"/>
+
+<p>
+What I&#8217;d like to show is the solution to this problem. Well, if you&#8217;re using a recent version of Camel 
+this may be easier, a little different, but should still more-or-less
+work this way. This code is written for 
+Apache Camel 1.4 - a rather antic version, but that&#8217;s what we&#8217;re forced to use. Oh, well.
+</p>
+
+<p>
+Ok, enough whining!
+</p>
+<p>
+So, I create a test class to illustrate the case. The route defined in <b>TestRouter</b> class is responsible for:
+</p>
+
+<ol>
+<li> receiving input
+<li> setting exchange property to a given xpath, which effectively is the name of the first XML element in the input stream
+<li> than, the input data is sent to three different external services, each of them replies with some fictional data - notice routes <b>a</b>, <b>b</b> and <b>c</b>.  The <b>SimpleContentSetter</b> processor is just for responding with a given text.
+<li> the response from all three services is somehow processed by <b>RequestEnricher</b> bean, which is described below
+<li> eventually the exchange is logged in specified category
+</ol>
+
+<p>
+Here is some code for this:
+</p>
+
+<pre class="brush: java">
+public class SimpleTest {
+    public void setUp() throws Exception {
+        TestRouter tr = new TestRouter();
+        ctx.addRoutes(tr);
+    }
+
+    @Test
+    public void shouldCheck() throws Exception {
+        ctx.createProducerTemplate().send("direct:in", getInOut("&lt;a/&gt;"));
+    }
+
+
+    class TestRouter extends RouteBuilder {
+
+        public void configure() throws Exception {
+
+            ((ProcessorType&lt;ProcessorType&gt;)from("direct:in")
+            .setProperty("operation").xpath("local-name(/*)", String.class)
+            .multicast(new MergeAggregationStrategy())
+                .to("direct:a", "direct:b", "direct:c")
+            .end()
+            .setBody().simple("<wrap>${in.body}</wrap>"))
+            .bean(RequestEnricher.class, "enrich")
+            .to("log:pl.touk.debug");
+            
+            from("direct:a").process(new SimpleContentSetter("&lt;aaaa/&gt;"));
+            from("direct:b").process(new SimpleContentSetter("&lt;bbbb param1=\"1\" param2=\"2\" param3=\"3\"/&gt;"));
+            from("direct:c").process(new SimpleContentSetter("&lt;cccc/&gt;"));
+        }
+    }
+}
+</pre>
+
+<p>
+What&#8217;s unusual in this code is the fact, that what normally Camel does when you write a piece of DSL like:
+</p>
+
+<pre class="brush: java">
+	.to("direct:a", "direct:b", "direct:c")
+</pre>
+
+<p>
+is pass input to service <b>a</b>, than <b>a</b>&#8217;s output gets passed to <b>b</b>, becomes it&#8217;s input, than
+<b>b</b>&#8217;s output becomes <b>c</b>&#8217;s input. The problem being, you loose the output from <b>a</b> and <b>b</b>, 
+not mentioning that you might want to send the same input to all three services.
+</p>
+
+<p>
+That&#8217;s where a little tool called <i>multicast()</i> comes in handy. It offers you the ability to aggregate 
+the outputs of those services. You may even create an <b>AggregationStrategy</b> that will do it the way you like. 
+Below class, <b>MergeAggregationStrategy</b> does exactly that kind of work - it joins outputs from all three 
+services. A lot of info about proper use of <b>AggregationStrategy</b>-ies can be found in 
+<a href="http://tmielke.blogspot.com/2009/01/using-camel-aggregator-correctly.html">this post by Torsten Mielke.</a> 
+</p>
+
+<pre class="brush: java">
+public class MergeAggregationStrategy implements AggregationStrategy {
+
+	public Exchange aggregate(Exchange oldExchange, Exchange newExchange) {
+		if (oldExchange.isFailed()) {
+			return oldExchange;
+		}
+		transformMessage(oldExchange.getIn(), newExchange.getIn());
+		transformMessage(oldExchange.getOut(), newExchange.getOut());
+		return newExchange;
+	}
+	
+	private void transformMessage(Message oldM, Message newM) {
+		String oldBody = oldM.getBody(String.class);
+		String newBody = newM.getBody(String.class);
+		newM.setBody(oldBody + newBody);
+	}
+	
+}
+</pre>
+
+<p>
+However nice this may look (or not), what you&#8217;re left with is a mix of multiple XMLs. Normally this 
+won&#8217;t do you much good. Better thing to do is to parse this output in some way. What we&#8217;re using for this 
+is a Groovy :). Which is great for the task of parsing XML. A lot less verbose than ordinary Java.
+</p>
+
+<p>
+Let&#8217;s assume a scenario, that the aggregated output, currently looking like this:
+</p>
+
+<pre class="brush: xml">
+	<aaaa></aaaa>
+	<bbbb></bbbb>
+	<cccc></cccc>
+</pre>
+
+<p>
+is to be processed with the following steps in mind:
+</p>
+
+<ul>
+<li> use <i>&lt;aaaa/&gt;</i> as the result element
+<li> use attributes <i>param1</i>, <i>param2</i>, <i>param3</i> from element <i>&lt;bbbb/&gt;</i> and add it to result element <i>&lt;aaaa/&gt;</i>
+</ul>
+
+<pre class="brush: groovy">
+public class RequestEnricher {
+	
+	public String enrich(@Property(name = "operation") String operation, Exchange ex) {
+		
+		use(DOMCategory) {
+			def dhl = new groovy.xml.Namespace("http://example.com/common/dhl/schema", 'dhl')
+			def pc = new groovy.xml.Namespace("http://example.com/pc/types", 'pc')
+			def doc = new XmlParser().parseText(ex.in.body)
+			
+			def pcRequest   = doc."aaaa"[0]
+			
+			["param1", "param2", "param3"].each() {
+				def node = doc.'**'[("" + it)][0]
+				if (node)
+					pcRequest['@' + it] = node.text()
+			}
+			
+			gNodeListToString([pcRequest])
+		}
+		
+	}
+	
+	String gNodeListToString(list) {
+		StringBuilder sb = new StringBuilder();
+		list.each { listItem -&gt;
+			StringWriter sw = new StringWriter();
+			new XmlNodePrinter(new PrintWriter(sw)).print(listItem)
+			sb.append(sw.toString());
+		}
+		return sb.toString();
+	}
+	
+}
+</pre>
+
+<p>
+What we&#8217;re doing here, especially the last line of <b>enrich</b> method is the conversion to String. There are
+some problems for Camel if we spit out Groovy objects. The rest is just some Groovy specific ways of manipulating XML.
+But looking into <b>enrich</b> method&#8217;s parameters, there is <i>@Property</i> annotation used, which binds the property
+assigned earlier in a router code to one of the arguments. That is really cool feature and there are more such annotations:
+</p> 
+
+<ul>
+<li> <i>@XPath</i>
+<li> <i>@Header</i>
+<li> <i>@Headers</i> and <i>@Properties</i> - gives whole maps of properties or headers
+</ul>
+
+<p>This pretty much concludes the subject :) Have fun, and if in doubt,
+leave a comment with your question!</p></div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Meetbsd 2010]]></title>
+    <link href="http://zygm0nt.github.com/blog/2010/08/19/meetbsd-2010/"/>
+    <updated>2010-08-19T00:16:25+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2010/08/19/meetbsd-2010</id>
+    <content type="html"><![CDATA[<div class='post'>
+<p>
+Some time ago, I&#8217;ve attended <a href="http://meetbsd.org/">MeetBSD</a>
+conference in Kraków. This BSD event is held yearly in either Warsaw, or
+Kraków. Due to relatively small group of people that registered there
+was only one track, which had both good and bad sides - you didn&#8217;t have
+to choose from myriads of lectures, but there was no way to skip boring
+ones either. Well, I guess this kind of niche conference - about
+operating system :) - will not attract bigger attention.</p>
+
+<center><a href="http://blog.innovative-labs.com/blog/DSC06777.JPG"><img
+src="http://blog.innovative-labs.com/blog/DSC06777.JPG" width="350"
+border="0"/></a></center>
+
+<EXCERPT/>
+
+<h3>DAY 1</h3>
+
+<p>It took place on 2nd-3rd of July, 2010, so this
+review is rather dated :) However, I&#8217;d like to keep this as reminder.
+I&#8217;ve arrived to the conference site, which was located in building of
+the <a
+href="http://www.ii.uj.edu.pl/index.php?page=lokalizacja-instytutu&hl=pol">Faculty of Mathematics and Computer Science</a>
+a few minutes after the official start of the conference. I had been
+traveling from Warsaw the same day, and the only train that would not
+require me to get up at some night hour would arrive a bit too late. Oh
+well :)
+</p>
+
+<p>
+I grabbed a tea and some biscuits and entered the series of lectures.
+</p>
+
+<p>
+The first thing to listen to was a <b>Welcome intro</b> - quite nice
+one. Conducted by a guy from Cisco (AFAIK). He was talking about the
+opportunities for Kraków and how it will become a Polish Silicon Valley
+in near future, etc. Actually I don&#8217;t share his believes but the talk
+was ok. 
+</p>
+
+<p>
+Then came Dru Lavigne with some insight into <b>BSD Certification</b>
+program. Actually, does anybody use this? Come one. Do we really need
+another certification process? I for sure don&#8217;t see the need, especially
+for the BSD community.  However the trend is good, may help popularize
+BSDs among enterprise leaders, because if something is certified, than
+it can be used in big enterprises, right? :)
+</p></p>
+
+<p>
+Sławek Żak talked about <b>NoSQL</b>. Although the talk gave a bit of
+info about what the idea is and how does it compare to normal DBs, I did
+not find his presentation entertaining. In my opinion, there was not
+enough emphasis on the difference in usage for such databases. The talk
+about NoSQL I&#8217;d attended on <a
+href="http://mcl.jogger.pl/2010/06/27/javarsovia-2010/">Javarsovia</a> was a lot better.
+</p>
+
+<p>
+Next talk, presented by Attilio Rao was very, very technical. It was
+about &#8220;VFS/Vnode interface in FreeBSD&#8221;. It was rather an API
+presentation, and introduction on how to implement an FS in FreeBSD
+infrastructure, than a conference talk. This kind of presentation would
+be good suited for FreeBSD kernel developers not sysadmins.
+</p>
+<p>
+Jakub Klama&#8217;s talk on the process of <b>porting FreeBSD to Da Vinci</b>
+embedded system was interesting. It had some photos of the board,
+tackled a few technical corners, but caught my attention. Well done!
+</p>
+<p>
+Out guy among FreeBSD hackers - Paweł Jakub Dawidek - gave speech about
+<b>HAST - High Availability STorage</b>. In other words he implemented
+<a href="http://www.drbd.org/">DRBD</a> for FreeBSD. Sadly, for me this
+is just catching up with what Linux has in mainline since 2.6.33 (it was
+working very well even before that). It&#8217;s not so feature rich as DRBD,
+but the project is slowly maturing.  Nevertheless, it&#8217;s good to finally have this on board.
+</p>
+<p>
+Then an inconspicuous guy come onto the stage. Came from Bulgaria, named
+Nikolay Aleksandrov, that guy gave a talk titled <b>Developing high
+speed FreeBSD</b>. And the subject was astounding. He works for a major
+Bulgarian ISP and due to lack of cash to buy some serious networking
+gear, he wrote a FreeBSD extension that would sit in-between network
+adapter and the kernel and do all the hard work like routing, VLANs, and
+more. His goal was to make it lighting fast, and as far as his results
+showed, he succeeded. This talk was really amazing, he did what would
+normally take hundreds of thousands of dollars - in cash and skills - in
+his free time, or at least as a pet project.
+</p>
+
+<h3>DAY 2</h3>
+
+<p>
+Well, I&#8217;d skipped the first lecture of the day, because of laziness ;)
+</p>
+
+<p>
+Had decide to pack myself and arrive to listen about <b>what can freebsd
+borrow from AIX</b>. Jan Srzednicki talked about some nice tools from
+the AIX world. He proposed that adding an educational, console-based
+tool for conducting basic (and even not so basic) tasks, would encourage
+people to learn the system. I think it would work. However the rest of
+his ideas weren&#8217;t good enough - at least not for me.
+</p>
+
+<p>
+Next thing in line was <b>The new USB stack</b>. Interesting talk about
+new USB stack development, conducted by Hans Petter Selasky.
+  This guy was really passionate about USB things ;-)</p>
+
+<p>
+Martin Matuska presented his set of shell scripts that allow to create
+<b>mfsBSD</b> - an in-memory FreeBSD install. Since I&#8217;m already doing
+this kind of things with <a href="http://openbsd.org">OpenBSD</a>, the talk was entertaining.  
+</p>
+
+<p>
+Marcko Zec and <b>Network stack virtualization</b>. This was about
+extending FreeBSD to be able to create  lots of compartmentalized
+environments with their own network stacks. As noted in the
+presentation: the solution still has problems with
+  graceful shutdown of the stack. Still not stable enough - but very
+  promising.
+</p>
+
+<p>The closing presentation, given by Warner Losh (<b>very</b>
+knowledgeable guy behing <a
+href="http://bsdimp.blogspot.com">bsdimp.blogspot.com</a>) on the
+subject <b>Using FreeBSD in a commercial settings</b>. The talk was not
+what I&#8217;ve expected, but nevertheless was very interesting. It was about
+branching and merging back changes in case of using FreeBSD as a base
+for some commercial products. This could be easily applied to any other
+Open Source project. Warner described possible strategies for branching
+and performing merges, he noted also pros and cons of all the described
+solutions.
+</p>
+
+<p>
+All in all, that was a fun time. Even thou I don&#8217;t use any BSD as my
+primary system at this time, and my BSD skills are a bit rusty, the
+talks were nice enough :) for a hobbist like me.</p>
+</div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Generic Enum converter for iBatis]]></title>
+    <link href="http://zygm0nt.github.com/blog/2010/06/28/generic-enum-converter-for-ibatis/"/>
+    <updated>2010-06-28T22:40:34+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2010/06/28/generic-enum-converter-for-ibatis</id>
+    <content type="html"><![CDATA[<div class='post'>
+<p>My goal was to create a simple, extensible Enum converter that would work with <a href="http://www.mybatis.org/">iBatis</a>. This seems like a trivial problem, but took me a while to find a proper solution.</p>
+<EXCERPT><p>
+There were some additional preconditions:
+</p>
+
+<ul>
+<li>all given Enums are jaxb generated objects - but any standard Java Enum should work</li>
+<li>conversion was 1-to-1, no special conditions and processing
+</ul>
+
+<p>The example Enum for this problem looks like this one (copy&amp;paste from jaxb generated source):</p>
+
+<pre>
+@XmlType(name ="ServiceType") 
+@XmlEnum
+public enum ServiceType {
+
+    @XmlEnumValue("stationary")
+    STATIONARY("stationary"),
+    @XmlEnumValue("mobile")
+    MOBILE("mobile");
+    private final String value;
+
+    ServiceType(String v) {
+        value = v;
+    }
+
+    public String value() {
+        return value;
+    }
+
+    public static ServiceType fromValue(String v) {
+        for (ServiceType c: ServiceType.values()) {
+            if (c.value.equals(v)) {
+                return c;
+            }
+        }
+        throw new IllegalArgumentException(v);
+    }
+
+}
+</pre>
+
+<p>
+&#8220;No big deal&#8221;, you say. I beg to differ. What I wanted to achieve was a simple construction which would look like this when used for another Enum (CommonEnumTypeHandler is the name of my generic converter):
+</p>
+
+<pre>
+public class ServiceTypeHandler extends CommonEnumTypeHandler<ServiceType> { }
+</pre>
+
+<p>Unfortunately due to the fact, that Java does not have reified generics, which is described in <a href="http://stackoverflow.com/questions/1927789/why-should-i-care-that-java-doesnt-have-reified-generics">multiple</a> <a href="http://gafter.blogspot.com/2006/12/super-type-tokens.html">places</a>, I had to stick with passing through a Class type of my enum. So it looks like this:</p>
+
+<pre>
+public class ServiceTypeHandler extends CommonEnumTypeHandler<ServiceType> {
+
+    public ServiceTypeHandler() {
+        super(ServiceType.class);
+    }
+}
+</pre>
+
+<p>My final class has to look like this one below:</p>
+
+<pre>
+import java.sql.SQLException;
+
+import com.ibatis.sqlmap.client.extensions.ParameterSetter;
+import com.ibatis.sqlmap.client.extensions.ResultGetter;
+import com.ibatis.sqlmap.client.extensions.TypeHandlerCallback;
+
+public abstract class CommonEnumTypeHandler<T extends Enum> implements TypeHandlerCallback {
+
+    Class<T> enumClass;
+
+    public CommonEnumTypeHandler(Class<T> clazz) {
+        this.enumClass = clazz;
+    }
+
+    public void setParameter(ParameterSetter ps, Object o) throws SQLException {
+        if (o.getClass().isAssignableFrom(enumClass)) {
+            ps.setString(((T) o).name().toUpperCase());
+        } else
+            throw new SQLException("Excpected " + enumClass + " object than: " + o);
+    }
+
+    public Object getResult(ResultGetter rs) throws SQLException {
+        Object o = valueOf(rs.getString());
+        if (o == null)
+            throw new SQLException("Unknown parameter type: " + rs.getString());
+        return o;
+    }
+
+    public Object valueOf(String s) {
+        return Enum.valueOf(enumClass, s.toUpperCase());
+    }
+}
+</pre>
+</div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Javarsovia 2010]]></title>
+    <link href="http://zygm0nt.github.com/blog/2010/06/27/javarsovia-2010/"/>
+    <updated>2010-06-27T17:08:43+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2010/06/27/javarsovia-2010</id>
+    <content type="html"><![CDATA[<div class='post'>
+<p>This year&#8217;s <a href="http://javarsovia.pl/">Javarsovia</a> conference took place on 26th june. It was held at Centrum Konferencyjno-Kongresowe,  Bobrowiecka Street,  Warsaw.</p>
+
+<p>First of all - the organization was very nice. Everything seemed smooth, maybe with the exception of conference registration, it was simply overcrowded.
+The agenda was split into four tracks, each hour 4 different presentations were given in different halls. So you just had to choose which one to attend. My path through the conference is described below, together with my views on each of the presentations I attended.</p>
+
+<p><p><br />
+The introductory speech conducted by Mateusz Zięba and some other guy from WarJUG, that I can&#8217;t seem remember. The speech was very entertaining.  Guys did really good job with creating the appropriate atmosphere for the rest of the conference.</p></p>
+
+<p>Jakub Nabrdalik (TouK) with his &#8220;How not to bio-degrade your code&#8221;  was like the biggest event of the conference - held on the biggest hall of the building, with lots and lots of people attending. The audience was vivid and responded to Jakub&#8217;s ideas with applause. He played us all very well.</p>
+
+<p>&#8220;From request to response&#8221; by Jarosław Błąd bored me to death. It wasn&#8217;t interesting at all to listen about technical details of request handling by all layers of the JEE stack. - like http server, communication with Java app server, kinds of threads in the latter and the likes. What this presentation <b>should</b> have been about were personal views and opinions on other technologies, frameworks - Jarek started to tackle in Q&A section of his speech - that was the real meat!
+</p>
+
+<p>&#8220;Code refactoring&#8221; by Piotr Jagielski - overally good, but due to lots of agile, TDD, etc stuff present in the agenda - I kind of lost interest in that particular one.
+</p>
+
+<p>Fortunately dinner came to aid. With my vital forces rejuvenated by means of lasagne my mind&#8217;s comprehension skills were back to normal.
+</p>
+
+<p>That allowed me to enjoy Wiktor Gworek&#8217;s presentation about Google&#8217;s style of Java coding. It was worth attending. Thou seamed mainly like a <a href="http://code.google.com/p/guava-libraries/">Google Guava</a> introduction - it gave a really fast presentation of Java concepts, how you can beautify your code and give you joy from what you write and create in your normal work day.
+</p>
+
+<p>&#8220;Routes of camel riding&#8221; by Maciek Próchniak - a solid does of technical knowledge by another colleague from TouK. Good one - thou didn&#8217;t get much attention from the public. In fact the topic might have been a little misleading, but still the presentation went out well.
+</p>
+
+<p>What Jarek Pałka did with his NoSQL talk wasn&#8217;t ground breaking, but funny enough and entertaining for the finishing act of this conference. For me some moments of his speech were rather enlightening - NoSQL dbs are actually used in some serious real world scenarios! Nice. This presentation gave an insight into one of such DBs - <a href="http://neo4j.org/">Neo4j</a>, a graph handling DB. Left me with a sense of incompleteness - there was no comparison with other NoSQL products, but this is only an encouragement for me to delve deeper into this subject.
+</p>
+
+<p>All in all, the conference was a big success, with lots of good talks, meeting friends, talking, listening. Around 650 people were on site, I hope the next one will be even bigger! Please bear in mind that the talks presented by me were only the fourth part of all the talks! AFAIK all of them will be available in video form some time after the conference - perhaps some video editing has to be done, it&#8217;s not always youtube you are targeting ;-)</p>
+
+<p>Oh, and I didn&#8217;t win any small laptops, ipods, books, vouchers - crap. Maybe next year ;-)</p>
+</div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Eclipse ecosystem]]></title>
+    <link href="http://zygm0nt.github.com/blog/2010/05/07/eclipse-ecosystem/"/>
+    <updated>2010-05-07T11:55:59+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2010/05/07/eclipse-ecosystem</id>
+    <content type="html"><![CDATA[<div class='post'>
+<p>Do you use Eclipse? Or perhaps you use other IDE but would like to try
+&#8220;the big E&#8221;? Well, that&#8217;s OK, and completely understandable, because
+Eclipse is actually a great, versatile tool. But Eclipse is not just an
+IDE, in fact it is a comp let, extensible platform. What&#8217;s even more
+important, there are tones of valuable Eclipse-related projects gathered
+around the platform.</p>
+<EXCERPT><p>Yes, there are lots. Some are good, some are bad, but the usual, stock
+ones, signed by Eclipse, are worth taking a closer look. They&#8217;re not a
+mere innovation to the way we write code with an IDE. Those tools
+provide new ways to _create_ our code. </p>
+
+<p>Consider Eclipse just a foundation for better things to come. Having
+Equinox OSGI container underneath it is fully modular ecosystem, that
+allows multiple bundles (in which we pack the plug-ins) coexist, and
+benefit from each others functionalities. Not dwelling on details of
+OSGI, it gives us a simple extensible platform to play with.</p>
+
+<p>That in fact is great, because out of piles of Eclipse components you
+can build your own component base, and thus create a basis for your own
+solution. Since Eclipse is extensible you can extend the IDE&#8217;s
+workbench, by implementing plug-ins, or you can choose to implement a
+standalone application, that is based on RCP (Rich Client Platform)
+concept. And there are really big apps written with this in mind, like
+IBM&#8217;s Lotus Suite, totally based on Eclipse - and pretty neat also.</p>
+
+<p>Well, that looks nice, but who writes so much code these days, who
+wants to create all the domain classes and GUI stuff by hand crafted
+api interfaces? Nope, one no longer have to go this path, just try
+Eclipse EMF sub-project, which offers model driven development practices,
+and whole bunch of code generation plug-ins will come to aid you. Using
+EMF you can create your domain model in just a few clicks, or import it
+from your existing java interfaces - actually you can use a couple more
+ways to do this. Having an EMF model you are just a few clicks from
+generating a working, domain editor, that would serve as a sandbox for
+your ideas about the domain you&#8217;re implementing, or it can be used right
+away in your new shiny web application. </p>
+
+<p>Another few clicks and you get free model persistence with Hibernate, or
+other ORM framework. And this really works.</p> 
+
+<p>Since it would be nice to present things to end users you could generate
+some basic graphic editor, of course Eclipse supports that. But who uses
+thick clients today? Be serious, right? If you want something
+web-enabled, you don&#8217;t have to move your skills from the Eclipse
+ecosystem, just try out Eclipse RAP and have your Eclipse application in
+your browser via some serious Javascript voodoo magic - like on-the-fly
+converters. Of course other popular frameworks are allowed :)</p>
+
+<p>What is most important here, is the constant use of the same tools,
+developing subsequent stages of the app don&#8217;t require you to switch
+skills. It&#8217;s Java all way up to this place.</p>
+
+<p>And it gets more interesting when you dive deeper and deeper into this
+rich and flourishing community. Some examples of the vastness of the
+platform may be:</p>
+
+<ul>
+<li> Swordfish - SOA solution, with BAM (Business Activity Monitoring)
+implemented<li>
+<li> XText - enables you to write a simple (or not) DSLs for your apps</li>
+<li> E4 - next gen Eclipse IDE, with many great ideas in it</li>
+</ul>
+
+<p>Of course, the whole picture gets a bit blurry if you consider more
+technical details, there is not so much ease of use or scalability, etc,
+as you might expected. The whole Eclipse ecosystem may not be suitable
+for all your applications, but it may be for some. Or perhaps it is
+suitable for only a couple stages in your current project? </p>
+
+<p>Let this be just a simple introduction to the rich Eclipse Community
+projects. With next iterations of this cycle I&#8217;d like to describe more
+in-depth details of the Eclipse framework, and various usage scenarios
+for Eclipse projects. Stay tuned!
+</p>
+</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="">Marcin</a></div>
+<div class='content'>
+<p>Nope, I meant http://eclipse.org<br />
+<br />
+IDE as in Integrated Development Environment</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.africangamesafari.com/pl.html">africarpa</a></div>
+<div class='content'>
+<p>Hi Marcin, just tell us please what the hell is Eclipse ecosystem.<br />
+Where we can get it?<br />
+IDE you mean Integrated Drive Electronics?</p></div>
+</div>
+</div>
+]]></content>
+  </entry>
+  
+</feed>

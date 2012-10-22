@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Easier and nicer JMS - Marcin bloguje</title>
+  <meta name="author" content="Marcin Cylke">
+
+  
+  <meta name="description" content="JMS seems like a hostile ground. It has all it&#8217;s quirks and strange behaviours. A couple of defining standards plus esoteric brokers, queues &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://zygm0nt.github.com/blog/2010/12/08/easier-and-nicer-jms/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Marcin bloguje" type="application/atom+xml">
+  <!-- font-family: 'Knewave', cursive; -->
+<link href='http://fonts.googleapis.com/css?family=Knewave' rel='stylesheet' type='text/css'>
+<!-- font-family: 'Cantata One', serif; -->
+<link href='http://fonts.googleapis.com/css?family=Cantata+One' rel='stylesheet' type='text/css'>
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1>
+      <a href="/">Marcin bloguje</a>
+      
+        <span>.impressions.memos.tech.</span>
+      
+  </h1>
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:zygm0nt.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Home</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Easier and Nicer JMS</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-08T10:22:34+01:00" pubdate data-updated="true">Dec 8<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+<table border="0">
+<tr><td>
+<p>
+JMS seems like a hostile ground. It has all it&#8217;s quirks and strange
+behaviours. A couple of defining standards plus esoteric brokers, queues
+and topics.
+</p>
+
+</td>
+<td><img src="http://blog.innovative-labs.com/blog/Screwdriver.jpg" width="150" /></td></tr></table>
+
+<p>
+At work, we mainly use open source Jms solutions, namely Apache
+ActiveMQ. This one is usually bundled with Apache Servicemix, as a
+message broker for this particular ESB. As there are some minor caveats
+in this scennerio, I&#8217;d like to describe here some guidelines for getting
+to running JMS queues.
+</p>
+<EXCERPT/>
+<p>
+Treat this post as a quick cheat sheet with the most common things about
+JMS I tend to forget :)
+</p>
+
+<p>
+Minor glitches encountered during work with embedded broker led to some
+thoughts about switching to external broker. This is how I configure SMX
+and AcviteMQ.
+</p>
+<p>
+Necessary steps:</p>
+<ul>
+<li> change <i>apache-servicemix/conf/servicemix.properties</i> <b>activemq.port</b>
+to sth else than standard, for example 61626</li>
+<li> change <i>apache-activemq/conf/activemq.xml</i> with this settings:
+ <ul>
+    <li> change port, the service listens on:
+
+<pre class="brush: xml">
+        <transportConnectors>
+            <transportConnector name="openwire" uri="tcp://localhost:61626"/>
+        </transportConnectors>
+</pre></li>
+    <li> setup separate JMX instance:
+<pre class="brush: xml">
+        <managementContext>
+            <managementContext createConnector="true" connectorPort="2011"/>
+        </managementContext>
+</pre></li>
+</ul>
+</li>
+<li> the nicest tool I found for browsing queues and topics is <a href="http://www.hermesjms.com">Hermes
+JMS</a>. Sample config, that connects Hermes to ActiveMQ instance is on
+the picture below:
+
+<img src="http://blog.innovative-labs.com/blog/easy_jms.png" width="550" alt="HermesJMS to ActiveMQ connection config"/>
+</li>
+<li> sending simple messages with Hermes is basic, but what if you need to
+set some headers, send bulk messages, etc. Easy, just use Hermes xml
+format. Look like this code snippet below and is rather self-explanatory:
+
+<pre class="brush: xml">
+<content>
+    <entry type="1">
+        <textMessage JMSDeliveryMode="2" JMSExpiration="0" JMSPriority="0" JMSRedelivered="false" JMSTimestamp="0">
+            <headerProperty name="caseId" type="java.lang.String" value="105"/>
+            <text><![CDATA[<message>
+  <event>
+    <case>
+      <CASE_ID>105</CASE_ID>
+      <EVENT>1235</EVENT>
+    </case>
+  </event>
+</message>]]></text>
+        </textMessage>
+    </entry>
+</content>
+</pre>
+</li>
+<li> since we use lots of <a href="http://camel.apache.org">Apache
+ Camel</a> to consume messages, here is a simple way to start broker in
+your tests:
+<ul>
+    <li> start a broker
+<pre class="brush: java">
+        BrokerService broker = new org.apache.activemq.broker.BrokerService();
+        broker.setBrokerName("AMQ-1");
+        broker.addConnector("tcp://localhost:51616");
+        broker.setPersistent(false);
+        broker.start();
+</pre>
+     Notice it has persistance disabled.
+</li>
+    <li> initialize Camel&#8217;s JMS component:
+<pre class="brush: java">
+    ctx.removeComponent("jms");
+    ctx.addComponent("jms", ActiveMQComponent.activeMQComponent("tcp://localhost:51616"));
+</pre></li>
+    <li> if you want to pass messages to reference endpoints, (like <i>ref:input</i>), use this wrapper method:
+<pre class="brush: java">
+private JmsEndpoint createJmsEndpoint(String endpoint) throws JMSException {
+        ActiveMQComponent amqc = (ActiveMQComponent) ctx.getComponent("jms");
+        JmsEndpoint endp = JmsEndpoint.newInstance(new ActiveMQTopic(endpoint), amqc);
+        return endp;
+}
+
+createJmsEndpoint("ESB/XYZ")
+</pre>
+</li>
+</ul>
+</li>
+</ul>
+These are all the tricks I&#8217;ve got for now! But if you know some other
+good tools that handle JMS, feel free to comment!
+
+Got more advices, again, comment!
+</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Marcin Cylke</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-08T10:22:34+01:00" pubdate data-updated="true">Dec 8<span>th</span>, 2010</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/it/'>IT</a>, <a class='category' href='/blog/categories/ogólne/'>Ogólne</a>, <a class='category' href='/blog/categories/techblog/'>Techblog</a>, <a class='category' href='/blog/categories/touk/'>touk</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zygm0nt.github.com/blog/2010/12/08/easier-and-nicer-jms/" data-via="zygm0nt" data-counturl="http://zygm0nt.github.com/blog/2010/12/08/easier-and-nicer-jms/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2010/11/06/best-pigsticking-ever/" title="Previous Post: Best pigsticking, EVER!">&laquo; Best pigsticking, EVER!</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2010/12/10/ku-pamieci-o-top-postingu/" title="Next Post: Ku pamięci - o top-postingu">Ku pamięci - o top-postingu &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/10/18/raspberry-pi/">raspberry-pi</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/18/hadoop-for-enterprises/">Hadoop for Enterprises</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/02/soapui-ext-libs-and-its-weirdness/">SoapUI ext libs and its weirdness</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/09/21/what-is-nosql-good-for/">What is NoSQL good for?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/08/23/5-best-things-to-do-with-your-kindle/">5 best things to do with your Kindle</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/zygm0nt">@zygm0nt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'zygm0nt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("zygm0nt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/zygm0nt" class="twitter-follow-button" data-show-count="false">Follow @zygm0nt</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Marcin Cylke -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/gluttony/object-octopress-theme">Object</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

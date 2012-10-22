@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Eclipse ecosystem - Marcin bloguje</title>
+  <meta name="author" content="Marcin Cylke">
+
+  
+  <meta name="description" content="Do you use Eclipse? Or perhaps you use other IDE but would like to try
+&#8220;the big E&#8221;? Well, that&#8217;s OK, and completely understandable &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://zygm0nt.github.com/blog/2010/05/07/eclipse-ecosystem/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Marcin bloguje" type="application/atom+xml">
+  <!-- font-family: 'Knewave', cursive; -->
+<link href='http://fonts.googleapis.com/css?family=Knewave' rel='stylesheet' type='text/css'>
+<!-- font-family: 'Cantata One', serif; -->
+<link href='http://fonts.googleapis.com/css?family=Cantata+One' rel='stylesheet' type='text/css'>
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1>
+      <a href="/">Marcin bloguje</a>
+      
+        <span>.impressions.memos.tech.</span>
+      
+  </h1>
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:zygm0nt.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Home</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Eclipse Ecosystem</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-07T11:55:59+02:00" pubdate data-updated="true">May 7<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+<p>Do you use Eclipse? Or perhaps you use other IDE but would like to try
+&#8220;the big E&#8221;? Well, that&#8217;s OK, and completely understandable, because
+Eclipse is actually a great, versatile tool. But Eclipse is not just an
+IDE, in fact it is a comp let, extensible platform. What&#8217;s even more
+important, there are tones of valuable Eclipse-related projects gathered
+around the platform.</p>
+<EXCERPT><p>Yes, there are lots. Some are good, some are bad, but the usual, stock
+ones, signed by Eclipse, are worth taking a closer look. They&#8217;re not a
+mere innovation to the way we write code with an IDE. Those tools
+provide new ways to _create_ our code. </p>
+
+<p>Consider Eclipse just a foundation for better things to come. Having
+Equinox OSGI container underneath it is fully modular ecosystem, that
+allows multiple bundles (in which we pack the plug-ins) coexist, and
+benefit from each others functionalities. Not dwelling on details of
+OSGI, it gives us a simple extensible platform to play with.</p>
+
+<p>That in fact is great, because out of piles of Eclipse components you
+can build your own component base, and thus create a basis for your own
+solution. Since Eclipse is extensible you can extend the IDE&#8217;s
+workbench, by implementing plug-ins, or you can choose to implement a
+standalone application, that is based on RCP (Rich Client Platform)
+concept. And there are really big apps written with this in mind, like
+IBM&#8217;s Lotus Suite, totally based on Eclipse - and pretty neat also.</p>
+
+<p>Well, that looks nice, but who writes so much code these days, who
+wants to create all the domain classes and GUI stuff by hand crafted
+api interfaces? Nope, one no longer have to go this path, just try
+Eclipse EMF sub-project, which offers model driven development practices,
+and whole bunch of code generation plug-ins will come to aid you. Using
+EMF you can create your domain model in just a few clicks, or import it
+from your existing java interfaces - actually you can use a couple more
+ways to do this. Having an EMF model you are just a few clicks from
+generating a working, domain editor, that would serve as a sandbox for
+your ideas about the domain you&#8217;re implementing, or it can be used right
+away in your new shiny web application. </p>
+
+<p>Another few clicks and you get free model persistence with Hibernate, or
+other ORM framework. And this really works.</p> 
+
+<p>Since it would be nice to present things to end users you could generate
+some basic graphic editor, of course Eclipse supports that. But who uses
+thick clients today? Be serious, right? If you want something
+web-enabled, you don&#8217;t have to move your skills from the Eclipse
+ecosystem, just try out Eclipse RAP and have your Eclipse application in
+your browser via some serious Javascript voodoo magic - like on-the-fly
+converters. Of course other popular frameworks are allowed :)</p>
+
+<p>What is most important here, is the constant use of the same tools,
+developing subsequent stages of the app don&#8217;t require you to switch
+skills. It&#8217;s Java all way up to this place.</p>
+
+<p>And it gets more interesting when you dive deeper and deeper into this
+rich and flourishing community. Some examples of the vastness of the
+platform may be:</p>
+
+<ul>
+<li> Swordfish - SOA solution, with BAM (Business Activity Monitoring)
+implemented<li>
+<li> XText - enables you to write a simple (or not) DSLs for your apps</li>
+<li> E4 - next gen Eclipse IDE, with many great ideas in it</li>
+</ul>
+
+<p>Of course, the whole picture gets a bit blurry if you consider more
+technical details, there is not so much ease of use or scalability, etc,
+as you might expected. The whole Eclipse ecosystem may not be suitable
+for all your applications, but it may be for some. Or perhaps it is
+suitable for only a couple stages in your current project? </p>
+
+<p>Let this be just a simple introduction to the rich Eclipse Community
+projects. With next iterations of this cycle I&#8217;d like to describe more
+in-depth details of the Eclipse framework, and various usage scenarios
+for Eclipse projects. Stay tuned!
+</p>
+</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="">Marcin</a></div>
+<div class='content'>
+<p>Nope, I meant http://eclipse.org<br />
+<br />
+IDE as in Integrated Development Environment</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.africangamesafari.com/pl.html">africarpa</a></div>
+<div class='content'>
+<p>Hi Marcin, just tell us please what the hell is Eclipse ecosystem.<br />
+Where we can get it?<br />
+IDE you mean Integrated Drive Electronics?</p></div>
+</div>
+</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Marcin Cylke</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-07T11:55:59+02:00" pubdate data-updated="true">May 7<span>th</span>, 2010</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/it/'>IT</a>, <a class='category' href='/blog/categories/ogólne/'>Ogólne</a>, <a class='category' href='/blog/categories/techblog/'>Techblog</a>, <a class='category' href='/blog/categories/touk/'>touk</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zygm0nt.github.com/blog/2010/05/07/eclipse-ecosystem/" data-via="zygm0nt" data-counturl="http://zygm0nt.github.com/blog/2010/05/07/eclipse-ecosystem/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2010/04/25/dmesg-z-openbsd-sgi/" title="Previous Post: Dmesg z Openbsd/sgi">&laquo; Dmesg z Openbsd/sgi</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2010/06/10/osnews-com-hobby-projects/" title="Next Post: osnews.com - hobby projects">osnews.com - hobby projects &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/10/18/raspberry-pi/">raspberry-pi</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/18/hadoop-for-enterprises/">Hadoop for Enterprises</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/02/soapui-ext-libs-and-its-weirdness/">SoapUI ext libs and its weirdness</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/09/21/what-is-nosql-good-for/">What is NoSQL good for?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/08/23/5-best-things-to-do-with-your-kindle/">5 best things to do with your Kindle</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/zygm0nt">@zygm0nt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'zygm0nt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("zygm0nt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/zygm0nt" class="twitter-follow-button" data-show-count="false">Follow @zygm0nt</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Marcin Cylke -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/gluttony/object-octopress-theme">Object</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

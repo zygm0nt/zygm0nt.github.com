@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ogólne | Marcin bloguje]]></title>
+  <link href="http://zygm0nt.github.com/blog/categories/ogólne/atom.xml" rel="self"/>
+  <link href="http://zygm0nt.github.com/"/>
+  <updated>2012-10-22T20:38:54+02:00</updated>
+  <id>http://zygm0nt.github.com/</id>
+  <author>
+    <name><![CDATA[Marcin Cylke]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hadoop for Enterprises]]></title>
+    <link href="http://zygm0nt.github.com/blog/2012/06/18/hadoop-for-enterprises/"/>
+    <updated>2012-06-18T11:08:09+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2012/06/18/hadoop-for-enterprises</id>
+    <content type="html"><![CDATA[<div class='post'>
+<p>Hadoop's usage as a big data processing framework gains a lot of attention lately. Now, not only big players see, that they can embrace the data their sites or products are generating and develop their businesses on it. For that to happen two things are needed: the data itself and means of processing really big amounts of it.  </p>
+
+<p><span class="image-wrap" style=""><img src="http://blog.innovative-labs.com/blog/3488314950_453466f762_b.jpg" style="border: 0px solid black; width: 400px;" /></span></p>
+
+<p>Gathering data is relatively easy. These are not necessarily structured data, you don't need to plan their usage at first. Just start collecting them and than you may experiment with their potential usage. If they'll come out as useless rubbish - deleting them won't be hard <img class="emoticon" src="http://zygm0nt.github.com/confluence/images/icons/emoticons/smile.gif" height="20" width="20" align="absmiddle" alt="" border="0"/> But imagine the values it may contribute to your business:</p>
+
+<ul>
+    <li>faster services - working on optimized data</li>
+    <li>more clients - because of more relevant search results</li>
+    <li>happy clients - your service can "read their minds" <img class="emoticon" src="http://zygm0nt.github.com/confluence/images/icons/emoticons/smile.gif" height="20" width="20" align="absmiddle" alt="" border="0"/></li>
+    <li>etc.</li>
+</ul>
+
+
+<p>There are many companies that utilize Hadoop ecosystem for their own needs. You can read about some of them here: <a href="http://wiki.apache.org/hadoop/PoweredBy" class="external-link" rel="nofollow">http://wiki.apache.org/hadoop/PoweredBy</a> But since that page lacks insight into specific applications of Hadoop I've tried to delve into<br/>
+details of how Hadoop helped tame some companies' big data sets.</p>
+
+<EXCERPT>
+
+<h2><a name="test-Facebook"></a>Facebook</h2>
+
+<p>Being a social network provider, a widely used one, they require no introduction. However if you've lived under a rock for last couple years just visit their website <a href="http://facebook.com" class="external-link" rel="nofollow">http://facebook.com</a></p>
+
+<p>Their main usage is data warehousing. Since they require to be able to access the data fast and reliably they had a need for real-time querying of their huge, and always growing data set. Their switch from MySQL databases was required due to the increasing workloads they experienced with standard databases. What they got "out of the box" with Hadoop was all the benefits of distributed file system (HDFS features). They expanded the ideas behind that even further and implemented truly Highly Available file system without Single Point of Failure.</p>
+
+<p>Facebook has 3 interesting usage scenarios in which Hadoop plays a major role:</p>
+
+<ul>
+    <li>Titan - is Facebook's messaging system. It processes messages exchanged between users. Ensures that it happens fast and without glitches. Here Hadoop is used mainly as a huge, unlimited storage.</li>
+    <li>Puma - Facebook Insights - a tool providing page statistics for  advanced Facebook users. Based on streams of data (clicks, likes, shares, comments and impressions) it graphs those data and makes it available near instantly.</li>
+    <li>ODS - Operational Data Store - which stores Facebook's internal metrics - collections of OS and cluster health metrics. And it facilitates multiple accounting solutions.</li>
+</ul>
+
+
+<h2><a name="test-Twitter"></a>Twitter</h2>
+
+<p>This popular micro-blogging platform, where you can register your account and follow friends and celebrities for their micro-messages does some pretty interesting things with their Hadoop cluster.</p>
+
+<p>One of their motivations is to speed up their web-page's functionality. That is why the compute users' friendships in Twitter's social graph with Hadoop. Using connections between users they calculate their relationship to each other and estimate groups of users.</p>
+
+<p>Since this service's users generate lots of content, the company conducts researches based on natural language processing. They probe what could be told about a user from his tweets. They use tweets' contents for advertisement purpose, trends analysis and many more.</p>
+
+<p>From tweets and user's behaviours they characterise usage scenarios. Also, they gather usage statistics, like number of searches daily, number of tweets. Based on this seemingly irrelevant data they run comparisons of different types of users. Twitter analyzes data to determine whether mobile users, users who use third party clients or power users use Twitter differently from average users. Of course theses seem like really specific applications but nevertheless they are very original and base on the data that Twitter has been gathering for some time now. </p>
+
+<h2><a name="test-EBay"></a>EBay</h2>
+
+<p>Being the biggest auctioning site on the Internet, EBay uses Hadoop processing for increasing search relevance based on click-stream data, user data. This seems pretty obvious, considering their area of operation.</p>
+
+<p>However the also have one other interesting thing - they try hard to automatically fill auctioned objects' metadata, based on the descriptions and other data provided by users. They employ data mining approach for this tasks and judging from their constant growth it seems to work <img class="emoticon" src="http://zygm0nt.github.com/confluence/images/icons/emoticons/smile.gif" height="20" width="20" align="absmiddle" alt="" border="0"/></p>
+
+<h2><a name="test-LinkedIn"></a>LinkedIn</h2>
+
+<p>Social network for professionals, thou a lot smaller than Facebook. Based on click-streams they discover relations between users. All the data concerning latest visits on your profile or people you may know from other places - this comes from Hadoop based analysis of those clicks people make all the time on their sites.</p>
+
+<p>Also a very neat feature, called InMaps (<a href="http://inmaps.linkedinlabs.com/" class="external-link" rel="nofollow">http://inmaps.linkedinlabs.com/</a>) analyse declared schools and companies and generates data for graph with clustered friends of yours.</p>
+
+<h2><a name="test-Last.fm"></a>Last.fm</h2>
+
+<p>This on-line radio site, praised by many for its invaluable recommendations' system seems like a rather small and simple service. But behind the facade of simple web page there are lots of data being processed, so that their services could match a certain level of perfection.</p>
+
+<p>Such large volume of their data comes from scrobbles. Each users of their service listening to a song generates a note about this fact - called scrobble. Based on that and user profiles they calculate global band popularity charts, maps of bands' popularity and many more usage statistics and timeline charts.</p>
+
+<p><span class="image-wrap" style=""><img src="http://blog.innovative-labs.com/blog/7346959440_71648c9fe7_b.jpg" style="border: 0px solid black; width: 400px;" /></span></p>
+
+<h2><a name="test-Conclusion"></a>Conclusion</h2>
+
+<p>They just try to detect and trace new patterns in seemingly chaotic data sets. Perhaps you could also do the same? Analyze your data and expand your business value?</p></div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://www.wedding-cake-decorations.net">wedding cake decorations</a></div>
+<div class='content'>
+<p>We stumbled over here from a different web address and thought I might check things out.<br />
+I like what I see so i am just following you.<br />
+Look forward to checking out your web page yet again.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.car-floor-mats.net">rubber floor mats</a></div>
+<div class='content'>
+<p>I like what you guys are up too. This type of clever work and reporting!<br />
+<br />
+Keep up the awesome works guys I've added you guys to my own blogroll.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.bispioner.ru/phpBB3/memberlist.php?mode=viewprofile&amp;u=119586">Svayambhut Ghosh</a></div>
+<div class='content'>
+<p>Greetings from Florida! I'm bored at work so I decided to browse your site on my iphone during lunch break. I enjoy the info you present here and can't wait to take a look <br />
+when I get home. I'm surprised at how quick your blog loaded on my cell phone .. I'm not even using WIFI, just 3G .<br />
+. Anyways, very good site!</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.salethenorthfacejackets.com">north face jackets</a></div>
+<div class='content'>
+<p>Comfortableness &lt;a href=&quot;http://www.salethenorthfacejackets.com&quot;&gt;north face jackets&lt;/a&gt;<br />
+is crucial when they get it that will &lt;a href=&quot;http://www.salethenorthfacejackets.com&quot;&gt;north face outlet&lt;/a&gt; get the best school bags pertaining to going camping &lt;a href=&quot;http://www.salethenorthfacejackets.com&quot;&gt;north face sale&lt;/a&gt;. Your easiest guarantee in the case of even larger delivers has become One with an inner metal framework, one that can wind &lt;a href=&quot;http://www.salethenorthfacejackets.com&quot;&gt;cheap north face&lt;/a&gt; up being aligned to help you appropriately fit your &lt;a href=&quot;http://www.salethenorthfacejackets.com/the-north-face-women-1&quot;&gt;north face women&lt;/a&gt; body. They should be now have http://www.salethenorthfacejackets.com secure which were wholly flexible, because essentially in the form of midsection belt to get more aid.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.plants-for-sale.com">plants sale</a></div>
+<div class='content'>
+<p>I never imagined how much stuff there was out there <br />
+on this! Thanks for making it easy to get the picture</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.facebook.com/profile.php?id=100003406472249">gWgVcetqzVZukd</a></div>
+<div class='content'>
+<p>What Programming Languages Do Jobs Require? | Regular Geek  regulargeek.com/2009/07/21/what-programming-languages-do-jobs-require   view page   cahecd  As a software engineer, you need to keep your skills sharp and current. This is a general requirement of the job. In addition to this, in the current economy you do not want to be without a job. Obviously, this means learning more about what your current company uses for all of its development. What if you do not have a job or you are looking to leave? What technologies or programming languages should you be looking into?   From the page</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://businesses.wickedlocal.com/MA-Westford/Computer-Service-and-Repair/15">computer pc repair</a></div>
+<div class='content'>
+<p>Howdy are using Wordpress for your site platform? I'm new to the blog world but I'm trying to <br />
+get started and create my own. Do you need any coding expertise to make your own <br />
+blog? Any help would be greatly appreciated!</p></div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[SoapUI ext libs and its weirdness]]></title>
+    <link href="http://zygm0nt.github.com/blog/2011/11/02/soapui-ext-libs-and-its-weirdness/"/>
+    <updated>2011-11-02T16:32:15+01:00</updated>
+    <id>http://zygm0nt.github.com/blog/2011/11/02/soapui-ext-libs-and-its-weirdness</id>
+    <content type="html"><![CDATA[<div class='post'>
+<p>Suppose you want to add some additional jars to your SoapUI installation. It all should work ok if you put them in <b>bin/ext</b> directory. It is scanned at startup, and jars found there are automatically added to classpath.
+</p>
+
+<p>
+However if you want to add some JDBC drivers, and happen to be using SoapUI version higher than 3.5.1 it is a bit more tricky.
+</p>
+<p>You may face this NoClassDefFoundError:<br/>
+
+<pre>
+An error occured [oracle/jdbc/Driver], see error log for details
+java.lang.NoClassDefFoundError: oracle/jdbc/Driver
+</pre>
+</p> 
+
+<p>
+If so, try registering your drivers with <b>registerJdbcDriver</b> function, like I did in this snippet of code:
+</p>
+<div><script src='https://gist.github.com/1333768.js?file=jdbc-soapui.groovy'></script>
+<noscript><pre><code>if (context.sql == null) {
+	def driver = 'oracle.jdbc.OracleDriver'
+	com.eviware.soapui.support.GroovyUtils.registerJdbcDriver( driver )
+	def sql = Sql.newInstance('jdbc:oracle:thin:' + dbUri, driver)
+	context.setProperty('sql', sql)
+}</code></pre></noscript></div>
+
+
+
+<p>What a crappy thing!</p></div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://podzastaw.org">Kelli</a></div>
+<div class='content'>
+<p>You can definitely see your expertise in the work you write.<br />
+The world hopes for more passionate writers such as you who are not afraid to <br />
+say how they believe. Always go after your heart.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.052b.com">Buford</a></div>
+<div class='content'>
+<p>It's going to be end of mine day, however before finish I am reading this fantastic paragraph to increase my experience.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.hotelfocus.com.pl">Chandra</a></div>
+<div class='content'>
+<p>My family every time say that I am wasting my time <br />
+here at net, except I know I am getting knowledge every day by reading such pleasant articles.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.wayn.com/waynblog.html?wci=viewentry&amp;entry_key=265563">Florene</a></div>
+<div class='content'>
+<p>Thanks , I've just been looking for info approximately this topic for a long time and yours is the greatest I have found out till now. But, what concerning the bottom line? Are you positive in regards to the source?</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.hotelbookingwebsite.net">Myron</a></div>
+<div class='content'>
+<p>Nice post. I was checking continuously this blog and I am impressed!<br />
+Extremely helpful information specially the last part <br />
+:) I care for such information much. I was looking for this <br />
+particular info for a long time. Thank you and best of luck.</p></div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[What is NoSQL good for?]]></title>
+    <link href="http://zygm0nt.github.com/blog/2011/09/21/what-is-nosql-good-for/"/>
+    <updated>2011-09-21T23:12:34+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2011/09/21/what-is-nosql-good-for</id>
+    <content type="html"><![CDATA[<div class='post'>
+<b>... or how I ended up writing a CouchDB proof of concept app?</b>
+
+<p>Once upon a time I set out on a journey to discover the NoSQL land.
+I've decided that doing simple queries wouldn't be interesting enough.
+That's why I've chose to create an app that would be based on some NoSQL
+database.</p>
+
+<p>
+The main idea was to create an app, that would dynamically update itself
+with geographic data flowing in. Since there are myriads of geo-data
+that are available on the internet, you can pick your favorite one and
+load them into your SQL database of choice.
+</p>
+
+<EXCERPT>
+<p>
+In my case the primary source of data was a proprietary database, or more specifically - one table in it continuously updated with new data. To make that
+data visible on my map I needed to:
+</p>
+
+<ul>
+<li> buffer the huge amount of those records - so as not to overhoul
+other services with large traffic, and not to flood the frontend</li>
+<li> convert then to my representation</li>
+<li> display them - have presentation layer in a browser - since
+browser-based frontend was the easiest and fastest to develop</li>
+</ul>
+
+<p>
+The idea of the front-end HTML page was to show new points on the map.
+From the moment of opening the page records that appear in database
+table should be shown interactively on the screen.
+</p>
+
+<h2>Toys used</h2>
+
+<p>
+For the first step I chose to use RabbitMQ broker. A queue on the broker would receive messages - one message per database table's row.
+Then I'd use some simple groovy middle ware to convert the data to appropriate format and put it onto another db - this time db specific
+to my app. 
+</p>
+
+<p>
+You may ask why incorporate another database. It would be
+good for separating environments - assuming the original data contains
+some vulnerable content that should be anatomised, or we just don't feel
+comfortable exposing the whole database of some XYZ-system just to have
+access to its one table.
+</p>
+
+<p>
+Since for my presentation layer I chose HTML+JS without any application server-based back-end I've decided on CouchDB . This seemed like
+a perfect match for this scenario. Why? - ease of use, REST API, with JSON responses - just great for interacting with my simple front-end.
+</p>
+
+<p>
+The flow of things was as shown on the image below:
+</p>
+
+<IMG src="http://blog.innovative-labs.com/blog/gmapper.png"
+alt="diagram"/>
+
+<h2>Avro - for the beginning</h2>
+<p>
+As you can see, I've chosen JSON as my data-format. I've been considering
+<a href="http://avro.apache.org">Apache Avro</a> in the first place but
+using it was a real pain in the ass. Avro itself is used in <a
+href="http://hadoop.apache.org">Apache Hadoop</a> as a serialization
+layer, so it would seem OK, but it has virtually <em>no
+documentation</em>. But once you tear through the unintuitive interface
+and manage to handle all those unthinkable exceptions you get a few pros
+for this library. It's great in that it does not require code generation - I
+like it being made on the fly. It also offers sending data in binary
+format, which was not necessary, but never the less is a nice feature.
+</p>
+
+<p>
+What I certainly didn't like about it was its orientation on the files
+rather than chunks of data - so it was not so obvious how should I send
+data through the wire. 
+</p>
+
+<p>
+Than I found out it can produce JSON output, which would work for me,
+except the output could not have been parsed by other JSON libraries :)
+(<a
+href="http://stackoverflow.com/questions/5375243/jcouchdb-svenson-unable-to-parse-json-string">I've
+asked on stackoverflow about that, but with no luck</a>). 
+</p>
+
+<p>If my whining haven't put you back and still would like to see how to use Avro, try this unit
+test in project's GitHub repo: <a
+href="https://github.com/zygm0nt/gmapped/blob/master/feeder/src/test/groovy/pl/ftang/example/feeder/avro/AvroSimpleTest.groovy">AvroSimpleTest.groovy</a>
+</p>
+
+
+<h2>Svenson</h2>
+
+<p>
+I've dropped Avro in favour of a simple JSON lib called (<a
+href="http://code.google.com/p/svenson/">Svenson</a> and that was
+painless. The only thing I was forced to do was create my model class in
+Java - the rest of the project is written in Groovy. I've no idea why
+was that necessary, and didn't want to look into it.
+</p>
+
+<h2>RabbitMQ</h2>
+
+<p>
+Further on the way is <a href="http://www.rabbitmq.com/">RabbitMQ</a>, to which records are filled by a feeding
+middle-ware written in Groovy. Since I use <a
+href="http://activemq.apache.org">ActiveMQ</a> on a day-to-day basis,
+I've decided to try something new. This broker is a really nice piece of
+software. Being written in Erlang makes it really fast. What's more it
+has some extensive capabilities and is easy to approach for anyone
+similar with messaging (JMS and friends). For such a lightweight product
+it is really powerful - implements AMQP! 
+</p>
+
+<h2>CouchDB</h2>
+
+<p>
+From the broker's queue messages are again fetched by a middle-ware just
+to be put into <a href="http://couchdb.apache.org/">CouchDB</a> view.
+This database is also written in Erlang. It's very reliable, however the
+way it handles refreshing view isn't the most pleasant one -
+performance-wise. 
+</p>
+
+<p>
+Word of advice - if you're on Debian derivative, be cautious with
+apt-repository version. It's rather _ancient_. Also remember to add
+<b>allow_jsonp = true</b> to you config file
+<i>/opt/couchbase/etc/couchdb/local.ini</i>. It's not enabled by
+default, and not having this set would result with empty responses from
+the CouchDB server.</p>
+
+<p>The problem here is, that the browser doesn't allow quering a web server with hostname other than the one the script originates.
+ More on this case <a
+href="http://stackoverflow.com/questions/3386679/connection-ajax-couchdb-and-javascript">here</a>. Seems like my problem could be overcame by changing url in index.html and hostname couchdb listens on to the same address.
+</p>
+
+<p>
+I've also created a view, that would expose an event by key: <a
+href="https://github.com/zygm0nt/gmapped/blame/master/couchdb/by_date_view.js">view
+code</a>
+</p>
+
+<h2>Presenting the dots</h2>
+
+<p>
+As a back-end I've done some JQuery based AJAX calls - nothing too
+fancy. All things necessary for presentation layer are in <a
+href="https://github.com/zygm0nt/gmapped/blob/master/index.html">this
+file</a>.
+</p>
+
+<h2>Things to consider</h2>
+
+<p>
+Please bear in mind that this whole application is rather a playground,
+not a full-fledged project!! After creating all the parts I have some
+doubts about some architectural decisions I made. I don't think the
+security have been taken into account seriously enough. Also scalability
+was never an issue ;-)
+</p>
+
+<p>
+If you have some thoughts about any of the aspects mentioned in this
+post, please feel free to comment or contact me directly :)
+</p>
+
+<p>
+
+And also you may try the application by yourself - it's on the <a
+href="https://github.com/zygm0nt/gmapped">GitHub</a>.
+</p></div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>@Piotrek, here is a link to JIRA ticket concerning this feature. I think it is being discussed ATM: https://issues.apache.org/jira/browse/COUCHDB-431</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://blog.koszulinski.pl">Piotrek Reinmar Koszuliński</a></div>
+<div class='content'>
+<p>About Same Origin Policy - now there's Cross Origin Resource Sharing available in most of common browsers. It should help You if CouchDB has support for it.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>@klausa, thanks for your advice. I've made some changes to the post.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://klausa.jogger.pl">klausa</a></div>
+<div class='content'>
+<p>&gt;The main idea was to create an app, that would dynamically update itself with geographic data flowing in. <br />
+<br />
+Not to nitpick, but that doesn't seem like an idea for app. I think you should explain what that displayed data is here.  If you moved your 'Presenting the dots' paragraph just above 'Toys used', it would be clear what do you wanted to do with this app.<br />
+<br />
+&gt;Also remember to add allow_jsonp = true to you config file /opt/couchbase/etc/couchdb/local.ini.<br />
+<br />
+I think you should explain what that option *really* does.<br />
+<br />
+Other than that, nice post!</p></div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[5 best things to do with your Kindle]]></title>
+    <link href="http://zygm0nt.github.com/blog/2011/08/23/5-best-things-to-do-with-your-kindle/"/>
+    <updated>2011-08-23T00:19:14+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2011/08/23/5-best-things-to-do-with-your-kindle</id>
+    <content type="html"><![CDATA[<div class='post'>
+
+
+<p>
+I bought a Kindle (3rd generation, Wi-Fi only) some time ago - like half
+a year ago. Read some
+books, done some web-browsing (awful, quite unpleasant). Gradually I
+became more and more curious of other things possible to achieve with
+this slate-looking piece of tech. These are my thoughts and ideas.
+</p>
+
+<p>
+Got a Kindle? Use it every day? Feel like modding or extending your ways
+of usage? Great! Read on, and share your thoughts in comments!
+</p>
+
+<EXCERPT>
+
+<ol>
+
+<li>
+Readability! - This web app is great! Generally this is a simple plug-in
+for your browser that will show a little button somewhere on the
+toolbar, and if you click it, the page you're reading now will be
+transformed into nice and sleek content-only page. Look on the screen
+below:<br/>
+
+<a href="http://blog.innovative-labs.com/blog/readability_effect.png"><img border="0"
+src="http://blog.innovative-labs.com/blog/readability_effect_small.png"/></a>
+<br/>
+
+This plug-ins additional function is sending to Kindle account. That's
+the nicest way to read those loads of RSS-sources articles :) The only
+limitation is that graphics won't be included if resulting file would
+exceed allowed size of kindle documents - that's 2MB AFAIR.
+
+<br/>
+
+<img src="http://blog.innovative-labs.com/blog/readability_menu.png"/>
+
+</li>
+
+
+<li>
+<b>Install some hacks!</b> - be that serious hacks or rather some simple
+software modifications:
+
+<ul>
+    <li>read all book formats with Calibre - <a
+href="http://www.hacktheday.com/quick-simple-guide-hacking-kindle-nook-ebooks/">link</a></li>
+    <li>play Zork on a Kindle!!! - <a
+href="http://poptunes.org/howto-hack-your-kindle-to-run-zork-and-change-screensavers">link</a></li>
+    <li>alternative Kindle keyboard - <a
+href="http://hackaday.com/2011/07/28/frankenkindle-building-an-alternate-kindle-keyboard/">link</a></li>
+    <li>custom fonts - <a
+href="http://www.mobileread.com/forums/showthread.php?t=88004">link</a></li>
+
+</ul>
+
+</li>
+
+<li><b>Install custom screen-savers</b> - <a
+href="http://wiki.mobileread.com/wiki/Kindle_Screen_Saver_Hack_for_all_2.x_and_3.x_Kindles">do
+this</a> 
+to be able to install your own images. ...because you've always wanted
+to have some other things on screen when your kindle is in standby mode. Of
+course, the original screen-savers look great, but there are only few.
+Installing this hack gave me an opportunity to have a multitude of new
+images. Now my Kindle looks even better!</li>
+
+<li><b>Try out Chinese kindle software - <a
+href="http://www.duokan.com/forum/thread-16541-1-1.html">doukan.com</a></b> -  As a matter
+of fact, I haven't installed that software yet. It doesn't look good
+enough for me, and has some minor problems. However this is great, that
+there is actually some other option - I'm not forced to use the official
+firmware. And this distribution has many nice features like PDF reflow.</li>
+
+<li><b>Enable Chinese fonts support on your kindle</b> - damn! I'd like
+a simple, step by step tutorial on how to set up chinese fonts on a
+kindle. I'd like to put some font file on my device, fire some
+chinese book and be able to see the actual characters..</li>
+
+<li><b>Programming for Kindle</b> - with <a
+href="http://www.amazon.com/kdk">Kindle Official SDK</a> - well, not
+quite! - unfortunately this is reserved only for the Chosen Ones. I've
+applied for the SDK but they
+haven't sent me my developer key yet, and it's been ~2 months. This is
+not "being supportive" or "supporting the community".</li>
+
+</ol>
+
+<p>
+And how do You use your Kindle? Perhaps you're doing some serious, crazy
+things with it? Share your thoughts!</p></div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="">Hoppke</a></div>
+<div class='content'>
+<p>Zgłosiłem się po kindlowe SDK prawie rok temu i niiic, cisza. Widać nie jestem dość cool, by dać mi tę zabawkę do ręki :)<br />
+<br />
+Co do książek, to fakt, DRM wszędzie. Ale DRM w ebookach działa jak każdy inny (czyli marnie -- da się zdjąć DRM Empiku, Amazona, itp.), więc użytkownik z odrobiną zacięcia da radę.<br />
+<br />
+PS. Mój kindel  postanowił wyzionąć ducha jakoś w zeszłym tygodniu, na 10 dni przed upływem gwarancji. Kindle znajomej padł ciut (tydzień-dwa?) wcześniej. Amazon bez szemrania wysyła nowe, ale... nie sposób oprzeć mi się uczuciu, że te urządzonka były obliczone na rok życia. A przynajmniej pierwsza seria z preorderów, obecne są (mam nadzieję) już trwalsze.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://pecet.jogger.pl">pecet</a></div>
+<div class='content'>
+<p>Dzięki za odpowiedzi :)</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="">moher</a></div>
+<div class='content'>
+<p>Też kupowałem kindle ~6 m-cy temu więc się wtrącę:<br />
+<br />
+Ad  1. Ja kupowałem bezpośrednio w Amazonie i nie zapłaciłem VAT-u (OIDP cła na elektronikę z USA nie ma).<br />
+Ad 2.  Przeglądarka IMHO z JS radzi sobie całkiem dobrze, ale jest cholernie wolna i nawigacja jest niewygodna.<br />
+Ad 3.  Domyślnie tylko WPA2-PSK, ale jest tam nomalny wpa supplicant więc można edytować sobie konfig i szaleć.<br />
+Ad 4. Ja całkiem sporo czytam i ładuje raz na miesiąc, może minimalnie częściej.<br />
+Ad 5. Można kupować z Amazona, ja kupuje z Amazon UK, bo kiedy konfigurowałem Kindle to miał niższe ceny książek. Co do DRM to obsługuje tylko swój DRM (czyba azw, czyli mobi + Amazonowy DRM),  z innych trzeba zdjąć DRM i skonwertować na obsługiwany format (Calibre rulez!).</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>Okej, no więc po koleji:<br />
+<br />
+1. Kupowałem bezpośrednio na Amazon - tyle że na amerykańskim, bo tylko z tamtego ślą Kindle do Polski. Uważam, że to jest najtańsza możliwa opcja. Cło opłaca Amazon, Ty niczym się nie przejmujesz, wszystko jest zrobione za Ciebie. Cała impreza kosztowała mnie coś koło 400zł (Kindle 3 wifi only). Z tego co widziałem to na Allegro jest zdecydowanie drożej.<br />
+<br />
+2. Przeglądanie stron na Kindlu to tylko w razie naprawdę dużej potrzeby. Mi się nie podoba, wyświetlacz jest na tyle mało responsywny, że swobodne surfowanie po sieci jest niewykonalne. Jak musisz koniecznie coś sprawdzić, to sprawdzisz, ale dla przyjemności to raczej w ten sposób się tego nie robi ;-)<br />
+<br />
+3. Nie mam dostępu do WPA2 z Radiusem. Używam na WPA2 z PSK - i działa bez zarzutu. Może pogooglaj gdzieś? <br />
+<br />
+4. To prawda, trzyma miesiąc, tylko trzeba pamiętać żeby Wi-Fi wyłączać, bo nawet na standbaju zrzera baterię.<br />
+<br />
+5. W Polsce można bez problemu kupować książki z Amazona (nadal, przez Wifi, bo przez 3G to nie wiem). Co do Polskich sklepów, to o ile oferują wspierane przez Kindla formaty, to nie powinno być problemu. Ja osobiście raczej mało książek kupuję na Kindla - korzystam z ogólno dostępnej klasyki + mam osobno kupione PDFy itp. Generalnie nie przeczytasz żadnych książek w pub'ach ani tym podobnych formatach. Aczkolwiek są na to haki (między innymi chinski software, o którym pisałem).<br />
+<br />
+W każdym razie polecam zakup, bo naprawdę warto - chyba że wolałbyś coś w stylu IPada (kolory, łatwe surfowanie), to wtedy Kindle nie jest dla Ciebie :)</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://pecet.jogger.pl">pecet</a></div>
+<div class='content'>
+<p>Sorry że po polsku, ale przymierzam się do kupna Kindla, i mam parę pytań, wybacz jeśli zaśmiecam ci notkę:<br />
+<br />
+1. Gdzie kupowałeś bezpośrednio na Amazonie czy przez pośrednika z Allegro, jak z cłem i innymi podatkami? <br />
+2. Przeglądarka w Kindle 3 podobno na webkicie, jak w praktyce, dobrze sobie radzi ze stronami, co z JSem?<br />
+3. WiFi obsługuje szyfrowanie WPA2 korporacyjne z serwerem RADIUS, czy tylko wersję WPA2 z PSK?<br />
+4. Jak z bateryjką, słyszałem że miesiąc daje rady, prawda to?<br />
+5. Można w Polandii kupować w Amazonie książki do Kindla? Są jakieś polskie sklepy z polskimi legalnymi ksiażkami, które później bez problemów wrzucę do Kindla, czy przez DRM nie da rady?</p></div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Great many ways to enjoy life!]]></title>
+    <link href="http://zygm0nt.github.com/blog/2011/08/08/great-many-ways-to-enjoy-life/"/>
+    <updated>2011-08-08T00:44:39+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2011/08/08/great-many-ways-to-enjoy-life</id>
+    <content type="html"><![CDATA[<div class='post'>
+This looks like a very nice art+video project. Look at those clips:
+
+
+<ol>
+
+<li><p><a href="http://vimeo.com/27243869">EAT</a> from <a href="http://vimeo.com/rickmereki">Rick Mereki</a> on <a href="http://vimeo.com">Vimeo</a>.</p><br/>
+<iframe src="http://player.vimeo.com/video/27243869?color=ffffff" width="400" height="225" frameborder="0"></iframe>
+</li>
+
+<li><p><a href="http://vimeo.com/27244727">LEARN</a> from <a href="http://vimeo.com/rickmereki">Rick Mereki</a> on <a href="http://vimeo.com">Vimeo</a>.</p><br/>
+
+<iframe src="http://player.vimeo.com/video/27244727?color=ffffff" width="400" height="225" frameborder="0"></iframe>
+</li>
+
+<li><p><a href="http://vimeo.com/27246366">MOVE</a> from <a href="http://vimeo.com/rickmereki">Rick Mereki</a> on <a href="http://vimeo.com">Vimeo</a>.</p><br/>
+<iframe src="http://player.vimeo.com/video/27246366?color=ffffff" width="400" height="225" frameborder="0"></iframe>
+</li>
+
+</ol></div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>
