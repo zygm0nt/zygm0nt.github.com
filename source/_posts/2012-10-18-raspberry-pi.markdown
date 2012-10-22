@@ -32,7 +32,7 @@ Here are just a bunch of them:
 * [UberFridge](http://www.elcojacobs.com/uberfridge/) - for all the
   brewers in the world :)
 * SOHO server 
-* a supercomputer - [cluster out of R-Pi] (http://www.southampton.ac.uk/mediacentre/features/raspberry_pi_supercomputer.shtml)
+* a supercomputer - [cluster out of R-Pi](http://www.southampton.ac.uk/mediacentre/features/raspberry_pi_supercomputer.shtml)
 * Arcade Cabinet - [custom build gaming rig](http://www.raspberrypi.org/phpBB3/viewtopic.php?f=9&t=1814)
 * Hand-held emulation machine - [R-Pi on the go](http://www.raspberrypi.org/phpBB3/viewtopic.php?f=9&t=4570)
 * sending R-Pi to [the edge of Space](http://www.raspberrypi.org/phpBB3/viewtopic.php?f=9&t=2059)
