@@ -9,7 +9,7 @@
   <meta name="author" content="Marcin Cylke">
 
   
-  <meta name="description" content="In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be &hellip;">
+  <meta name="description" content="This looks like the best pigsticking ever! Look at that little girl! The blood, butcher&#8217;s knife, and child&#8217;s soother :) Photo from Jamie &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +84,50 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2010/11/06/best-pigsticking-ever/">Best Pigsticking, EVER!</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-06T20:41:28+01:00" pubdate data-updated="true">Nov 6<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<p>This looks like the best pigsticking ever! Look at that little girl! The blood, butcher&#8217;s knife, and child&#8217;s soother :)</p>
+
+
+<center><img src="http://blog.innovative-labs.com/blog/DSC_0872.JPG" width="400"/></center>
+
+<font size="-2">Photo from Jamie Oliver&#8217;s cookbook, &#8220;Jamie&#8217;s Italy&#8221;. Available on <a href="http://www.amazon.com/Jamies-Italy-Jamie-Oliver/dp/1401301959/ref=sr_1_1?ie=UTF8&s=books&qid=1289068802&sr=8-1">Amazon</a>.</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1424,140 +1468,6 @@ IDE you mean Integrated Drive Electronics?</p></div>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2010/04/25/dmesg-z-openbsd-sgi/">Dmesg Z Openbsd/sgi</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-04-25T14:20:34+02:00" pubdate data-updated="true">Apr 25<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<p>Wracając do starego tematu OpenBSD na moim SGI O2, postanowiłem lekko odświeżyć tą maszynę. Dostałą uaktualnienie małe. Przysiedziałem również nad dostosowaniem systemu do swoich potrzeb, instalacji potrzebnego softu itp.</p>
-<EXCERPT><p>Na początek <code>dmesg</code> z działąjącego systemu:</p>
-
-<pre>
-[ using 433608 bytes of bsd ELF symbol table ]
-Copyright (c) 1982, 1986, 1989, 1991, 1993
-    The Regents of the University of California.  All rights reserved.
-Copyright (c) 1995-2009 OpenBSD. All rights reserved.  http://www.OpenBSD.org
-
-OpenBSD 4.6-current (GENERIC-IP32) #49: Fri Jul 31 05:07:50 MDT 2009
-    deraadt@sgi.openbsd.org:/usr/src/sys/arch/sgi/compile/GENERIC-IP32
-real mem = 67108864 (64MB)
-rsvd mem = 7020544 (6MB)
-avail mem = 40771584 (38MB)
-mainbus0 at root
-cpu0 at mainbus0: MIPS R5000 CPU rev 2.1 180 MHz with R5000 based FPC rev 1.0
-cpu0: cache L1-I 32KB D 32KB 2 way, L2 512KB direct
-clock0 at mainbus0: ticker on int5 using count register
-macebus0 at mainbus0: crime rev 10.1
-macepcibr0 at macebus0: mace rev 1, host system O2
-pci0 at macepcibr0 bus 0
-ahc0 at pci0 dev 1 function 0 "Adaptec AIC-7880" rev 0x00: irq 9
-ahc0: Host Adapter Bios disabled.  Using default SCSI device parameters
-scsibus0 at ahc0: 16 targets, initiator 7
-sd0 at scsibus0 targ 1 lun 0: <SGI, IBM DCHS04Y, 3030> SCSI2 0/direct fixed
-sd0: 4340MB, 512 bytes/sec, 8888543 sec total
-cd0 at scsibus0 targ 4 lun 0: <TOSHIBA, CD-ROM XM-5401TA, 3605> SCSI2 5/cdrom removable
-ahc1 at pci0 dev 2 function 0 "Adaptec AIC-7880" rev 0x00: irq 10
-ahc1: Host Adapter Bios disabled.  Using default SCSI device parameters
-scsibus1 at ahc1: 16 targets, initiator 7
-dsrtc0 at macebus0: DS1687
-com0 at macebus0 base 0x00390000 irq 5: ns16550a, 16 byte fifo
-com1 at macebus0 base 0x00398000 irq 5: ns16550a, 16 byte fifo
-mec0 at macebus0 base 0x00280000 irq 4: MAC-110 rev 1, address 08:00:69:0c:98:fb
-nsphy0 at mec0 phy 11: DP83840 10/100 PHY, rev. 0
-mavb0 at macebus0 base 0x00300000 irq 7: AD1843 rev 1
-audio0 at mavb0
-mkbc0 at macebus0 base 0x00320000 irq 6
-pckbd0 at mkbc0 (kbd slot)
-wskbd0 at pckbd0: console keyboard
-power0 at macebus0 irq 6
-gbe0 at mainbus0: rev 1, 8MB, 1280x1024 at 8 bits
-wsdisplay0 at gbe0 mux 1: console (std, vt100 emulation), using wskbd0
-wsdisplay0: screen 1 added (std, vt100 emulation)
-softraid0 at root
-ahc0: target 1 using 16bit transfers
-ahc0: target 1 synchronous at 20.0MHz, offset = 0x8
-boot device: sd0
-root on sd0a swap on sd0b dump on sd0b
-</pre>
-
-<p>Niby działa dobrze, z kilkoma wyjątkami:</p>
-
-<ul>
-<li> nie udało mi się uruchomić Xów z działającą myszką. To dlatego, że nie wiem jakie użądzenie powinienem utworzyć w /dev i jakie wpisać do xorg.conf</li>
-<li> pakiety binarne są dostępne w architekturze <code>mips64</code> - co nie jest całkiem intuicyjne, ale działa :)</li>
-<li>coś jest na rzeczy z przełączaniem wirtualnych screenów w konsoli - nie działa CTRL+ALT+F? i nie wiem dlaczego, a wszelkie googlanie nie daje zadowalających efektów</li>
-</ul>
-
-<p>Jak narazie zainstalowałem podstawowe utilki ułatwiające pracę na konsoli - screen, vim, elinks, etc. Czas na zabawę z <code>pf</code> :)</p>
-</div>
-<h2>Comments</h2>
-<div class='comments'>
-<div class='comment'>
-<div class='author'><a href="http://mcl.jogger.pl">Marcin Cylke</a></div>
-<div class='content'>
-<p>@pecet, czemu nie zapytasz &quot;po co sgi o2?&quot; przecież to też wydaje się pozbawione logiki :)<br />
-<br />
-A jeśli chodzi o OpenBSD - czy ogólnie inne BSD, to może warto najpierw coś o nich przeczytać i dowiedzieć się co to jest, i czemu niektórym się to może przydać, zamiast od razu flame&#8217;ować.</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://mt3o.jogger.pl">mt3o</a></div>
-<div class='content'>
-<p>@Pecet: Po to samo, po co na starym kompie ja zainstalowałem FBSD: aby poznać coś nowego. Linux nie zjadł wszystkich rozumów.</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://pecet.jogger.pl">pecet</a></div>
-<div class='content'>
-<p>Ale czemu BSD, po co się męczyć Linux stał się użyteczny ostatnimi latami, i obsługuje coraz więcej sprzętu, więc &quot;hakerzy&quot; go już nie lubią?</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://mcl.jogger.pl">Marcin Cylke</a></div>
-<div class='content'>
-<p>No co Ty? :) przecież z jakiegoś powodu zainstalowałem właśnie OpenBSD :) nie po to żeby od razu przy jakiejś trudności się go pozbywać. Choć chętnie spróbowałbym teraz jak działa IRIX na tym sprzęcie.</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://red.jogger.pl">red</a></div>
-<div class='content'>
-<p>Pecet: robisz się trochę nudny.</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://pecet.jogger.pl">pecet</a></div>
-<div class='content'>
-<p>Zainstaluj Gentoo</p></div>
-</div>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -1575,6 +1485,10 @@ A jeśli chodzi o OpenBSD - czy ogólnie inne BSD, to może warto najpierw coś 
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/10/30/hadoop-ha/">Hadoop HA setup</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/10/18/raspberry-pi/">raspberry-pi</a>
       </li>
     
@@ -1588,10 +1502,6 @@ A jeśli chodzi o OpenBSD - czy ogólnie inne BSD, to może warto najpierw coś 
     
       <li class="post">
         <a href="/blog/2011/09/21/what-is-nosql-good-for/">What is NoSQL good for?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/08/23/5-best-things-to-do-with-your-kindle/">5 best things to do with your Kindle</a>
       </li>
     
   </ul>
