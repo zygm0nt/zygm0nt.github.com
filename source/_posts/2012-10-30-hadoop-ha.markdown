@@ -52,7 +52,7 @@ Find out how to configure those on your cluster.
 Shared edits directory solution
 ------------------------------
 
-![Hadoop HA - NFS based edits share][http://blog.innovative-labs.com/blog/hadoop_ha-nfs.png]
+![Hadoop HA - NFS based edits share](http://blog.innovative-labs.com/blog/hadoop_ha-nfs.png)
 
 For this kind of setup, there is an assumption, that in a cluster exists
 a shared storage directory. It should be deployed using some kind of
@@ -77,7 +77,7 @@ maintain.
 Quorum based solution
 --------------------
 
-![Hadoop HA - Quorum based edits share][http://blog.innovative-labs.com/blog/hadoop_ha-quorum.png]
+![Hadoop HA - Quorum based edits share](http://blog.innovative-labs.com/blog/hadoop_ha-quorum.png)
 
 With the release of CDH 4.1.0 we are now able to use a much better
 integrated solution called JournalNode. Now all the updates are
