@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ha | Marcin bloguje]]></title>
   <link href="http://zygm0nt.github.com/blog/categories/ha/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2012-10-30T12:45:20+01:00</updated>
+  <updated>2012-10-30T12:49:45+01:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -60,7 +60,7 @@ on sharing edits directory. Than, with CDH 4.1 came quorum based solution.</p>
 
 <h2>Shared edits directory solution</h2>
 
-<p>![Hadoop HA - NFS based edits share][http://blog.innovative-labs.com/blog/hadoop_ha-nfs.png]</p>
+<p><img src="http://blog.innovative-labs.com/blog/hadoop_ha-nfs.png" alt="Hadoop HA - NFS based edits share" /></p>
 
 <p>For this kind of setup, there is an assumption, that in a cluster exists
 a shared storage directory. It should be deployed using some kind of
@@ -151,7 +151,7 @@ maintain.</p>
 
 <h2>Quorum based solution</h2>
 
-<p>![Hadoop HA - Quorum based edits share][http://blog.innovative-labs.com/blog/hadoop_ha-quorum.png]</p>
+<p><img src="http://blog.innovative-labs.com/blog/hadoop_ha-quorum.png" alt="Hadoop HA - Quorum based edits share" /></p>
 
 <p>With the release of CDH 4.1.0 we are now able to use a much better
 integrated solution called JournalNode. Now all the updates are
