@@ -9,7 +9,8 @@
   <meta name="author" content="Marcin Cylke">
 
   
-  <meta name="description" content="Wracając do starego tematu OpenBSD na moim SGI O2, postanowiłem lekko odświeżyć tą maszynę. Dostałą uaktualnienie małe. Przysiedziałem również nad &hellip;">
+  <meta name="description" content="Do you use Eclipse? Or perhaps you use other IDE but would like to try
+&#8220;the big E&#8221;? Well, that&#8217;s OK, and completely understandable &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +85,136 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2010/05/07/eclipse-ecosystem/">Eclipse Ecosystem</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-07T11:55:59+02:00" pubdate data-updated="true">May 7<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<p>Do you use Eclipse? Or perhaps you use other IDE but would like to try
+&#8220;the big E&#8221;? Well, that&#8217;s OK, and completely understandable, because
+Eclipse is actually a great, versatile tool. But Eclipse is not just an
+IDE, in fact it is a comp let, extensible platform. What&#8217;s even more
+important, there are tones of valuable Eclipse-related projects gathered
+around the platform.</p>
+<EXCERPT><p>Yes, there are lots. Some are good, some are bad, but the usual, stock
+ones, signed by Eclipse, are worth taking a closer look. They&#8217;re not a
+mere innovation to the way we write code with an IDE. Those tools
+provide new ways to _create_ our code. </p>
+
+<p>Consider Eclipse just a foundation for better things to come. Having
+Equinox OSGI container underneath it is fully modular ecosystem, that
+allows multiple bundles (in which we pack the plug-ins) coexist, and
+benefit from each others functionalities. Not dwelling on details of
+OSGI, it gives us a simple extensible platform to play with.</p>
+
+<p>That in fact is great, because out of piles of Eclipse components you
+can build your own component base, and thus create a basis for your own
+solution. Since Eclipse is extensible you can extend the IDE&#8217;s
+workbench, by implementing plug-ins, or you can choose to implement a
+standalone application, that is based on RCP (Rich Client Platform)
+concept. And there are really big apps written with this in mind, like
+IBM&#8217;s Lotus Suite, totally based on Eclipse - and pretty neat also.</p>
+
+<p>Well, that looks nice, but who writes so much code these days, who
+wants to create all the domain classes and GUI stuff by hand crafted
+api interfaces? Nope, one no longer have to go this path, just try
+Eclipse EMF sub-project, which offers model driven development practices,
+and whole bunch of code generation plug-ins will come to aid you. Using
+EMF you can create your domain model in just a few clicks, or import it
+from your existing java interfaces - actually you can use a couple more
+ways to do this. Having an EMF model you are just a few clicks from
+generating a working, domain editor, that would serve as a sandbox for
+your ideas about the domain you&#8217;re implementing, or it can be used right
+away in your new shiny web application. </p>
+
+<p>Another few clicks and you get free model persistence with Hibernate, or
+other ORM framework. And this really works.</p> 
+
+<p>Since it would be nice to present things to end users you could generate
+some basic graphic editor, of course Eclipse supports that. But who uses
+thick clients today? Be serious, right? If you want something
+web-enabled, you don&#8217;t have to move your skills from the Eclipse
+ecosystem, just try out Eclipse RAP and have your Eclipse application in
+your browser via some serious Javascript voodoo magic - like on-the-fly
+converters. Of course other popular frameworks are allowed :)</p>
+
+<p>What is most important here, is the constant use of the same tools,
+developing subsequent stages of the app don&#8217;t require you to switch
+skills. It&#8217;s Java all way up to this place.</p>
+
+<p>And it gets more interesting when you dive deeper and deeper into this
+rich and flourishing community. Some examples of the vastness of the
+platform may be:</p>
+
+<ul>
+<li> Swordfish - SOA solution, with BAM (Business Activity Monitoring)
+implemented<li>
+<li> XText - enables you to write a simple (or not) DSLs for your apps</li>
+<li> E4 - next gen Eclipse IDE, with many great ideas in it</li>
+</ul>
+
+<p>Of course, the whole picture gets a bit blurry if you consider more
+technical details, there is not so much ease of use or scalability, etc,
+as you might expected. The whole Eclipse ecosystem may not be suitable
+for all your applications, but it may be for some. Or perhaps it is
+suitable for only a couple stages in your current project? </p>
+
+<p>Let this be just a simple introduction to the rich Eclipse Community
+projects. With next iterations of this cycle I&#8217;d like to describe more
+in-depth details of the Eclipse framework, and various usage scenarios
+for Eclipse projects. Stay tuned!
+</p>
+</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="">Marcin</a></div>
+<div class='content'>
+<p>Nope, I meant http://eclipse.org<br />
+<br />
+IDE as in Integrated Development Environment</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.africangamesafari.com/pl.html">africarpa</a></div>
+<div class='content'>
+<p>Hi Marcin, just tell us please what the hell is Eclipse ecosystem.<br />
+Where we can get it?<br />
+IDE you mean Integrated Drive Electronics?</p></div>
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -951,95 +1082,6 @@ implementacja narzędzia do BPELa. Oczywiście z tych open-source.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2009/11/13/solaris-w-tr/">Solaris W TR</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-11-13T09:51:17+01:00" pubdate data-updated="true">Nov 13<span>th</span>, 2009</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<p>Wczoraj byłem w TR (http://www.trwarszawa.pl/). Na wejściówki, po<br />
-taniości. Obejrzałem spektakl Solaris, bo to Lem, bo znam, bo jako jedną<br />
-z niewielu rzeczy Lema czytałem. Powody były.</p>
-
-<p>Wrażenia? Bardzo fajnie się oglądało. Problem jedynie w tym, że z<br />
-wydawałoby się dosyć prostej fabularnie książki zrobiono spektakl,<br />
-którego nie da się w całości zrozumieć z powodu niedopowiedzeń. Czy to<br />
-jest domena nowoczesnych interpretacji teatralnych??</p>
-</div>
-<h2>Comments</h2>
-<div class='comments'>
-<div class='comment'>
-<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
-<div class='content'>
-<p>@Biały, tak, faktycznie. Ale ostatecznie na prawdę nie wyszło to tak źle. Akurat te aspekty, które wspomniałeś były ciekawie przedstawione.</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://blog.rczajka.pl">Biały</a></div>
-<div class='content'>
-<p>Moim zdaniem „Solaris” jest książką, która absolutnie nie nadaje się do wystawiania, kręcenia filmów, itp. To znaczy – chętnie bym w sumie zobaczył, co można zrobić z tym w teatrze, ale na pewno nie da się tego zrobić „wprost” – po prostu pokazując fabułę. Sęk w tym, że w „Solaris” wszystko, co istotne, pozostaje niewypowiedziane. Przede wszystkim kluczowe pytanie książki: jak bardzo w swoim widzeniu świata jesteśmy ograniczeni przez swoją zwierzęcą naturę i ludzką, uwarunkowaną ziemskim życiem psychologię? Do jakiego stopnia możemy rzeczywiście poznać i zrozumieć coś nowego, a do jakiego w spotkaniu z czymś nowym i obcym możemy tylko powielać swoje stare wzorce i uprzedzenia, próbując jakoś poupychać świat w niezbyt adekwatny zestaw pojęć?</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://notatki.jogger.pl">katafrakt</a></div>
-<div class='content'>
-<p>Heh, jeśli mam być szczery to w tej chwili nie pamiętam ani skąd wizyta, ani kim byli biegający ludzie ;) Zresztą to teatr - wszystkiego się można spodziewać, ale nie tego, że będzie to prosta opowiastka z prostą fabułą.</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
-<div class='content'>
-<p>@katafrakt, ale zrozumienie fabuły na pewno pomogłoby w odbiorze reszty. Przedstawienie przemilczało kwestie takie jak: skąd ta wizyta w pobliżu planety, kim są ci biegający po stacji ludzie, itp.<br />
-<br />
-Oczywiście jak ktoś czytał książkę, to zrozumiał ;-) ale jednak nie o to do końca chodzi.</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://notatki.jogger.pl">katafrakt</a></div>
-<div class='content'>
-<p>Tyle że w Solaris raczej nie o &quot;zrozumienie fabuły&quot; chodziło, ztcp ;)</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
-<div class='content'>
-<p>A co? nie zrozumiałeś fabuły? Moim zdaniem to akurat łatwizna, w samej książce można się doszukiwać różnych psychologicznych motywów działania ludzi na stacji. To tak IMHO.</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://blag.dodecki.net">Dodek</a></div>
-<div class='content'>
-<p>&gt;  że z wydawałoby się dosyć prostej fabularnie książki<br />
-<br />
-czo</p></div>
-</div>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/5/">&larr; Older</a>
@@ -1057,6 +1099,10 @@ czo</p></div>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/11/26/whug-8-beyond-hadoop/">WHUG 8. Beyond Hadoop - checking other options</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/10/30/hadoop-ha/">Hadoop HA setup</a>
       </li>
     
@@ -1070,10 +1116,6 @@ czo</p></div>
     
       <li class="post">
         <a href="/blog/2011/11/02/soapui-ext-libs-and-its-weirdness/">SoapUI ext libs and its weirdness</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/09/21/what-is-nosql-good-for/">What is NoSQL good for?</a>
       </li>
     
   </ul>

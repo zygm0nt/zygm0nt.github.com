@@ -4,7 +4,7 @@
   <title><![CDATA[Category: hadoop | Marcin bloguje]]></title>
   <link href="http://zygm0nt.github.com/blog/categories/hadoop/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2012-10-30T12:49:45+01:00</updated>
+  <updated>2012-11-26T09:28:14+01:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -12,6 +12,32 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[WHUG 8. Beyond Hadoop - checking other options]]></title>
+    <link href="http://zygm0nt.github.com/blog/2012/11/26/whug-8-beyond-hadoop/"/>
+    <updated>2012-11-26T09:11:00+01:00</updated>
+    <id>http://zygm0nt.github.com/blog/2012/11/26/whug-8-beyond-hadoop</id>
+    <content type="html"><![CDATA[<p>W najbliższy czwartek - czyli 29.11.2012 - poprowadzę prezentację w
+ramach Warsaw Hadoop User Group. Swoją obecność można odklinąć tu
+http://www.meetup.com/warsaw-hug/</p>
+
+<p>A o czym będę mówił? Przeklejka ze strony WHUG:</p>
+
+<blockquote><p>Marcin skupi się na współpracy ekosystemu Hadoopa z innymi narzędziami.
+Pokaże jak prosto i wygodnie przetwarzać grafy i jak stosować podejście
+Big Data, w czasie rzeczywistym. Poruszy również temat łatwiejszego
+tworzenia algorytmów Map-Reduce</p>
+
+<p>Będzie to nieco mniej technicza (ale wciąż praktyczna) wycieczka po
+obrzeżach tematyki, która jest zwykle poruszana w połączeniu z
+Hadoop-em.</p>
+
+<p>Prezentacja będzie dotyczyć narzędzi takich jak Cascading, Storm, Titan.</p></blockquote>
+
+<p>Zapraszam!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Hadoop HA setup]]></title>
