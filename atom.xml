@@ -4,7 +4,7 @@
   <title><![CDATA[Marcin bloguje]]></title>
   <link href="http://zygm0nt.github.com/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2012-11-26T09:28:14+01:00</updated>
+  <updated>2012-11-30T22:22:05+01:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[After WHUG meeting]]></title>
+    <link href="http://zygm0nt.github.com/blog/2012/11/30/after-whug/"/>
+    <updated>2012-11-30T22:20:00+01:00</updated>
+    <id>http://zygm0nt.github.com/blog/2012/11/30/after-whug</id>
+    <content type="html"><![CDATA[<p>Here are the slides from the talk a gave yesterday. If you have any
+questions, please ask.</p>
+
+<script async class="speakerdeck-embed"
+data-id="cc18d5601d60013059a31231381554d7" data-ratio="1.33333333333333"
+src="http://zygm0nt.github.com//speakerdeck.com/assets/embed.js"></script>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[WHUG 8. Beyond Hadoop - checking other options]]></title>
@@ -2340,20 +2355,6 @@ to achieve it - the changes should be made to Broker configuration.
 <p>
 More on the subject of redelivieries in ActiveMQ can be found at <a href="http://activemq.apache.org/message-redelivery-and-dlq-handling.html">http://activemq.apache.org/message-redelivery-and-dlq-handling.html</a>.
 </p></div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Ku pamięci - o top-postingu]]></title>
-    <link href="http://zygm0nt.github.com/blog/2010/12/10/ku-pamieci-o-top-postingu/"/>
-    <updated>2010-12-10T15:25:45+01:00</updated>
-    <id>http://zygm0nt.github.com/blog/2010/12/10/ku-pamieci-o-top-postingu</id>
-    <content type="html"><![CDATA[<div class='post'>
-<p>W celu niezagubienia i posiadaniu argumentu w przeróżnych dyskusjach:</p>
-
-<a href="http://idallen.com/topposting.html">http://idallen.com/topposting.html</a>
-
-</div>
 ]]></content>
   </entry>
   

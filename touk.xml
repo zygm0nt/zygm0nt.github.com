@@ -4,7 +4,7 @@
   <title><![CDATA[Marcin bloguje]]> - TouK</title>
   <link href="http://zygm0nt.github.com/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2012-11-26T09:28:14+01:00</updated>
+  <updated>2012-11-30T22:22:05+01:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[After WHUG meeting]]></title>
+    <link href="http://zygm0nt.github.com/blog/2012/11/30/after-whug/"/>
+    <updated>2012-11-30T22:20:00+01:00</updated>
+    <id>http://zygm0nt.github.com/blog/2012/11/30/after-whug</id>
+    <content type="html"><![CDATA[<p>Here are the slides from the talk a gave yesterday. If you have any
+questions, please ask.</p>
+
+<script async class="speakerdeck-embed"
+data-id="cc18d5601d60013059a31231381554d7" data-ratio="1.33333333333333"
+src="http://zygm0nt.github.com//speakerdeck.com/assets/embed.js"></script>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[WHUG 8. Beyond Hadoop - checking other options]]></title>
@@ -2731,47 +2746,6 @@ public abstract class CommonEnumTypeHandler<T extends Enum> implements TypeHandl
     }
 }
 </pre>
-</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Javarsovia 2010]]></title>
-    <link href="http://zygm0nt.github.com/blog/2010/06/27/javarsovia-2010/"/>
-    <updated>2010-06-27T17:08:43+02:00</updated>
-    <id>http://zygm0nt.github.com/blog/2010/06/27/javarsovia-2010</id>
-    <content type="html"><![CDATA[<div class='post'>
-<p>This year&#8217;s <a href="http://javarsovia.pl/">Javarsovia</a> conference took place on 26th june. It was held at Centrum Konferencyjno-Kongresowe,  Bobrowiecka Street,  Warsaw.</p>
-
-<p>First of all - the organization was very nice. Everything seemed smooth, maybe with the exception of conference registration, it was simply overcrowded.
-The agenda was split into four tracks, each hour 4 different presentations were given in different halls. So you just had to choose which one to attend. My path through the conference is described below, together with my views on each of the presentations I attended.</p>
-
-<p><p><br />
-The introductory speech conducted by Mateusz Zięba and some other guy from WarJUG, that I can&#8217;t seem remember. The speech was very entertaining.  Guys did really good job with creating the appropriate atmosphere for the rest of the conference.</p></p>
-
-<p>Jakub Nabrdalik (TouK) with his &#8220;How not to bio-degrade your code&#8221;  was like the biggest event of the conference - held on the biggest hall of the building, with lots and lots of people attending. The audience was vivid and responded to Jakub&#8217;s ideas with applause. He played us all very well.</p>
-
-<p>&#8220;From request to response&#8221; by Jarosław Błąd bored me to death. It wasn&#8217;t interesting at all to listen about technical details of request handling by all layers of the JEE stack. - like http server, communication with Java app server, kinds of threads in the latter and the likes. What this presentation <b>should</b> have been about were personal views and opinions on other technologies, frameworks - Jarek started to tackle in Q&A section of his speech - that was the real meat!
-</p>
-
-<p>&#8220;Code refactoring&#8221; by Piotr Jagielski - overally good, but due to lots of agile, TDD, etc stuff present in the agenda - I kind of lost interest in that particular one.
-</p>
-
-<p>Fortunately dinner came to aid. With my vital forces rejuvenated by means of lasagne my mind&#8217;s comprehension skills were back to normal.
-</p>
-
-<p>That allowed me to enjoy Wiktor Gworek&#8217;s presentation about Google&#8217;s style of Java coding. It was worth attending. Thou seamed mainly like a <a href="http://code.google.com/p/guava-libraries/">Google Guava</a> introduction - it gave a really fast presentation of Java concepts, how you can beautify your code and give you joy from what you write and create in your normal work day.
-</p>
-
-<p>&#8220;Routes of camel riding&#8221; by Maciek Próchniak - a solid does of technical knowledge by another colleague from TouK. Good one - thou didn&#8217;t get much attention from the public. In fact the topic might have been a little misleading, but still the presentation went out well.
-</p>
-
-<p>What Jarek Pałka did with his NoSQL talk wasn&#8217;t ground breaking, but funny enough and entertaining for the finishing act of this conference. For me some moments of his speech were rather enlightening - NoSQL dbs are actually used in some serious real world scenarios! Nice. This presentation gave an insight into one of such DBs - <a href="http://neo4j.org/">Neo4j</a>, a graph handling DB. Left me with a sense of incompleteness - there was no comparison with other NoSQL products, but this is only an encouragement for me to delve deeper into this subject.
-</p>
-
-<p>All in all, the conference was a big success, with lots of good talks, meeting friends, talking, listening. Around 650 people were on site, I hope the next one will be even bigger! Please bear in mind that the talks presented by me were only the fourth part of all the talks! AFAIK all of them will be available in video form some time after the conference - perhaps some video editing has to be done, it&#8217;s not always youtube you are targeting ;-)</p>
-
-<p>Oh, and I didn&#8217;t win any small laptops, ipods, books, vouchers - crap. Maybe next year ;-)</p>
 </div>
 ]]></content>
   </entry>
