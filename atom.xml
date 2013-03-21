@@ -4,7 +4,7 @@
   <title><![CDATA[Marcin bloguje]]></title>
   <link href="http://zygm0nt.github.com/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2012-11-30T22:22:05+01:00</updated>
+  <updated>2013-03-22T00:25:38+01:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -12,6 +12,188 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Operational problems with Zookeeper]]></title>
+    <link href="http://zygm0nt.github.com/blog/2013/03/21/zookeeper-tips/"/>
+    <updated>2013-03-21T23:56:00+01:00</updated>
+    <id>http://zygm0nt.github.com/blog/2013/03/21/zookeeper-tips</id>
+    <content type="html"><![CDATA[<p>This post is a summary of what has been presented by Kathleen Ting on
+StrangeLoop conference. You can watch the original here:
+<a href="http://www.infoq.com/presentations/Misconfiguration-ZooKeeper">http://www.infoq.com/presentations/Misconfiguration-ZooKeeper</a></p>
+
+<p>I&#8217;ve decided to put this selection here for quick reference.</p>
+
+<h2>Connection mismanagement</h2>
+
+<ul>
+<li><p>too many connections</p>
+
+<pre><code>  WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - Too many connections from /xx.x.xx.xxx - max is 60
+</code></pre></li>
+<li><p>running out of ZK connections?</p>
+
+<ul>
+<li>set <code>maxClientCnxns=200</code> in <code>zoo.cfg</code></li>
+</ul>
+</li>
+<li><p>HBase client leaking connections?</p>
+
+<ul>
+<li>fixed in HBASE-3777, HBASE-4773, HBASE-5466</li>
+<li>manually close connections</li>
+</ul>
+</li>
+<li><p>connection closes prematurely</p>
+
+<pre><code>  ERROR: org.apache.hadoop.hbase.ZooKeeperConnectionException: HBase is able to connect to ZooKeeper but the connection closes immediately.
+</code></pre></li>
+<li><p>in <code>hbase-site.xml</code> set <code>hbase.zookeeper.recoverable.waittime=30000ms</code></p></li>
+<li><p>pig hangs connecting to HBase</p>
+
+<pre><code>  WARN org.apache.zookeeper.ClientCnxn: Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect java.net.ConnectionException: Connection refused!
+</code></pre>
+
+<p>  <strong>CAUSE:</strong> location of ZK quorum is not known to Pig</p>
+
+<ul>
+<li>use Pig 10, which includes PIG-2115</li>
+<li>if there is an overlap between TaskTrackers and ZK quorum nodes
+
+<ul>
+<li>set <code>hbase.zookeeper.quorum</code> to final in <code>hbase-site.xml</code></li>
+<li>otherwise add <code>hbaze.zoopeeker.quorum=hadoophbasemaster.lan:2181</code> in <code>pig.properties</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Time mismanagement</h2>
+
+<ul>
+<li><p>client session timed out</p>
+
+<pre><code>  INFO org.apache.zookeeper.server.ZooKeeperServer: Expiring session &lt;id&gt;, timeout of 40000ms exceeded
+</code></pre>
+
+<ul>
+<li>ZK and HBase need the same session timeout values
+
+<ul>
+<li><code>zoo.cfg</code>: <code>maxSession=Timeout=180000</code></li>
+<li><code>hbase-site.xml</code>: <code>zookeeper.session.timeout=180000</code></li>
+</ul>
+</li>
+<li>don&#8217;t co-locate ZK with IO-intense DataNode or RegionServer</li>
+<li>specify right amount of heap and tune GC flags
+
+<ul>
+<li>turn on parallel/CMS/incremental GC</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>clients lose connections</p>
+
+<pre><code>  WARN org.apache.zookeeper.ClientCnxn - Session &lt;id&gt; for server &lt;name&gt;, unexpected error, closing socket connection and attempting reconnect java.io.IOException: Broken pipe
+</code></pre>
+
+<ul>
+<li>don&#8217;t use SSD drive for ZK transaction log</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Disk management</h2>
+
+<ul>
+<li><p>unable to load database - unable to run quorum server</p>
+
+<pre><code>  FATAL Unable to load database on disk !  java.io.IOException: Failed to process transaction type: 2 error: KeeperErrorCode = NoNode for &lt;file&gt; at org.apache.zookeeper.server.persistence.FileTxnSnapLog.restore(FileTxnSnapLog.java:152)!
+</code></pre>
+
+<ul>
+<li>archive and wipe <code>/var/zookeeper/version-2</code> if other two ZK servers
+are running</li>
+</ul>
+</li>
+<li><p>unable to load database - unreasonable length exception</p>
+
+<pre><code>  FATAL Unable to load database on disk java.io.IOException: Unreasonable length = 1048583 at org.apache.jute.BinaryInputArchive.readBuffer(BinaryInputArchive.java:100)
+</code></pre>
+
+<ul>
+<li>server allows a client to set data larger than the server can read from disk</li>
+<li>if a znode is not readable, increase <code>jute.maxbuffer</code>
+
+<ul>
+<li>look for <code>"Packet len &lt;xx&gt; is out of range"</code> in the client log</li>
+<li>increase it by 20%</li>
+<li>set in <code>JVMFLAGS="-Djute.maxbuffer=yy" bin/zkCli.sh</code></li>
+<li>fixed in ZOOKEEPER-1513</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>failure to follow leader</p>
+
+<pre><code>  WARN org.apache.zookeeper.server.quorum.Learner: Exception when following the leader java.net.SocketTimeoutException: Read timed out 
+</code></pre>
+
+  <strong>CAUSE:</strong>
+
+<ul>
+<li>disk IO contention, network issues</li>
+<li>ZK snapshot is too large (lots of ZK nodes)</li>
+</ul>
+
+
+<p>  <strong>SOLVE:</strong></p>
+
+<ul>
+<li>reduce IO contention by putting dataDir on dedicated spindle</li>
+<li>increase initLimit on all ZK servers and restart, see
+ZOOKEEPER-1521</li>
+<li>monitor network</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Best Practices</h2>
+
+<p><strong>DOs</strong></p>
+
+<ul>
+<li>separate spindles for dataDir &amp; dataLogDir</li>
+<li>allocate 3 or 5 ZK servers</li>
+<li>tune garbage collection</li>
+<li>run zkCleanup.sh script via cron</li>
+</ul>
+
+
+<p><strong>DON&#8217;Ts</strong></p>
+
+<ul>
+<li>dont&#8217; co-locate ZK with I/O intense DataNode or RegionServer</li>
+<li>don&#8217;t use SSD drive for ZK transaction log</li>
+</ul>
+
+
+<p>You may use Zookeeper as an observer - a non-voting member:</p>
+
+<ul>
+<li><p>in zoo.cfg</p>
+
+<pre><code>  peerType=observer
+</code></pre></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[After WHUG meeting]]></title>
@@ -2200,161 +2382,6 @@ acz nie próbowałem tego</p></div>
 Do you know that every time somebody mention Deus Ex, someone will reinstall it? ;]</p></div>
 </div>
 </div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[JMS redelivery with ActiveMQ and Servicemix]]></title>
-    <link href="http://zygm0nt.github.com/blog/2011/01/17/jms-redelivery-with-activemq-and-servicemix/"/>
-    <updated>2011-01-17T09:56:29+01:00</updated>
-    <id>http://zygm0nt.github.com/blog/2011/01/17/jms-redelivery-with-activemq-and-servicemix</id>
-    <content type="html"><![CDATA[<div class='post'>
-<p>
-The other day I felt a compelling need to implement a JMS redelivery
-scenario. The exact scenario I&#8217;d been trying to handle was:
-</p>
-
-<ol>
-<li>my message is in an ActiveMQ queue or topic</li>
-<li>its processing fails, because of some exception - ie. database
-access exception due to server nonavailability</li>
-<li>since we get an exception, the message is not handled properly, we
-may want to retry processing attempt some time later</li>
-<li>of course, for the redelivery to happen we need the message to stay
-in the ActiveMQ queue - fetching messages from the queue will be stopped
-until the redelivery succeeds or expires</li>
-</ol>
-
-See how this can be done after the jump :)
-
-<EXCERPT/>
-
-<p>
-For this to happen, I&#8217;ve tried implementing Apache Camel route, but as
-it turns out, Camel fails to deliver facilities for exact JMS
-redelivery. It is possible to set JMS connection in <i>transacted</i>
-mode, but the redeliveries happen one after another and fixed times.
-</p>
-
-<p>
-What I&#8217;ve ended up doing was implement a servicemix-jms endpoint. I&#8217;ve
-used this configuration for it:
-</p>
-<pre class="brush: xml">
-<jms:endpoint service="ts:WorkflowConsumerService"
-                  endpoint="default"
-                  targetService="ts:WorkflowConsumerCamelService"
-                  targetEndpoint="default"
-                  role="consumer"
-                  processorName="jca"
-                  connectionFactory="#connectionFactory"
-                  resourceAdapter="#ra"
-                  activationSpec="#activationSpec"
-                  bootstrapContext="#bootstrapContext"
-                  synchronous="true"
-                  rollbackOnError="true"
-                  wsdlResource="classpath:LeadManagement.wsdl"
-                  defaultMep="http://www.w3.org/2004/08/wsdl/in-only"/>
-
-    <bean name="connectionFactory" class="org.springframework.jndi.JndiObjectFactoryBean">
-        <property name="jndiName">
-            <value>activemq/connectionFactory</value>
-        </property>
-    </bean>
-
-    <bean name="ra" class="org.springframework.jndi.JndiObjectFactoryBean">
-        <property name="jndiName">
-            <value>activemq/resourceAdapter</value>
-        </property>
-    </bean>
-
-    <bean id="activationSpec" class="org.apache.activemq.ra.ActiveMQActivationSpec">
-        <property name="destination" value="example/C"/>
-        <property name="destinationType" value="javax.jms.Queue"/>
-        <property name="maximumRedeliveries" value="10"/>
-        <property name="initialRedeliveryDelay" value="10000"/>
-    </bean>
-
-    <jee:jndi-lookup id="bootstrapContext" jndi-name="java:comp/env/smx/BootstrapContext">
-    </jee:jndi-lookup>
-</pre>
-<p>
-As you can see, we lookup a couple of things in JNDI registry, so you need to 
-have them configured on the Servicemix side - a sample config presented 
-farther in this entry. 
-</p><p>
-The bean responsible for configuring redelivery settings is <b>activationSpec</b>.
-You can set various things with it, like:
-</p>
-<ul>
-<li>initial redelivery delay</li>
-<li>maximum number of redeliveries</li>
-<li>backoff multiplier</li>
-<li>&#8230;</li>
-</ul>
-<p>
-What is really important in <i>jms:endpoint</i> config for this to work are:</p>
-<ul>
-<li><i>processorName=&#8221;jca&#8221;</i></li>
-<li><i>rollbackOnError=&#8221;true&#8221;</i></li>
-</ul>
-<p>
-Servicemix should have the following entries in its jndi registry:
-</p>
-<pre class="brush: xml">
-         <entry key="activemq/resourceAdapter" value-ref="activemqRA" />
-
-         <entry key="activemq/connectionFactory" value-ref="activemqCF" />
-
-(...) 
-<!-- namespaces:-->
-       xmlns:jencks="http://jencks.org/2.0"
-       xmlns:amqra="http://activemq.apache.org/schema/ra" -->
-
-          <amqra:resourceAdapter
-                  id="activemqRA"
-                  serverUrl="${activemq.url}" />
-          <amqra:managedConnectionFactory
-                  id="activemqMCF"
-                  resourceAdapter="#activemqRA" />
-          <jencks:connectionFactory
-                  id="activemqCF"
-                  managedConnectionFactory="#activemqMCF"
-                  connectionManager="#connectionManager" />
-</pre>
-
-<p>
-When the redeliveries are exhausted, message is routed to global Dead Letter Queue
-called ActiveMQ.DLQ. Since this is a single bag for all the failed messages
-from all queues, you may want to configure this aspect differently. For example
-you can tell ActiveMQ to create a single DLQ for each queue. Use this config 
-to achieve it - the changes should be made to Broker configuration.
-</p>
-<pre class="brush: xml">
-<broker...>
-  <destinationPolicy>
-    <policyMap>
-      <policyEntries>
-        <!-- Set the following policy on all queues using the '>' wildcard -->
-        <policyEntry queue=">">
-          <deadLetterStrategy>
-            <!--
-              Use the prefix 'DLQ.' for the destination name, and make
-              the DLQ a queue rather than a topic
-            -->
-            <individualDeadLetterStrategy
-              queuePrefix="DLQ." useQueueForQueueMessages="true" />
-          </deadLetterStrategy>
-        </policyEntry>
-      </policyEntries>
-    </policyMap>
-  </destinationPolicy>
-  ...
-</broker>
-</pre>
-<p>
-More on the subject of redelivieries in ActiveMQ can be found at <a href="http://activemq.apache.org/message-redelivery-and-dlq-handling.html">http://activemq.apache.org/message-redelivery-and-dlq-handling.html</a>.
-</p></div>
 ]]></content>
   </entry>
   

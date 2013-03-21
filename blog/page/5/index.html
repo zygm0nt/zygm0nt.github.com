@@ -9,7 +9,7 @@
   <meta name="author" content="Marcin Cylke">
 
   
-  <meta name="description" content="Nieee&#8230; to po prostu udało mi się uruchomić BPEL Designera - plugin do Eclipse&#8217;a. Co prawda wymagało to grzebnięcia w źródłach, które nie &hellip;">
+  <meta name="description" content="Któż z nas nie testował WebService&#8217;ów, a któż z nas nie używał do tego SoapUI :) Ok, z rzeczami oczywistymi dyskutować nie będę, ale przy &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +84,118 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/11/18/inteligentny-mock-w-soapui/">Inteligentny Mock W SoapUI</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-18T23:20:57+01:00" pubdate data-updated="true">Nov 18<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<p>Któż z nas nie testował WebService&#8217;ów, a któż z nas nie używał do tego SoapUI :) Ok, z rzeczami oczywistymi dyskutować nie będę, ale przy okazji jednego projekciku okazało się, że fajnie by było gdyby mój mock potrafił zrobić coś więcej niż tylko odpowiedzieć na nadesłany komunikat.</p>
+<EXCERPT><p>Oczywiście sam SoapUI posiada dosyć spory wachlarz możliwości, bo może wysłać losowy request spośród wprowadzonych, lub wysyłać wedle sekwencji, itp.</p>
+
+<p>Problem w tym, że moim wysublimowanym życzeniem było aby korelować komunikaty określonego typu na podstawie jednego pola z XMLa - nazwijmy je polem &#8220;X&#8221;. Jeśli w polu X przyszła wartość, której do tej pory nie widzieliśmy - odpowiedz jednym komunikatem, jeśli ta wartość już została przez nas odebrana (ostatnio :) ), to prześlij trochę inną odpowiedź.</p>
+
+<p>Na pomoc przyszedł mi wbudowany interpreter Grooviego, którym to można oskryptować kilka fragmentów aplikacji, między innymi tworzone MockService.</p>
+
+<p>No cóż, rozwiązaniem mojego problemu okazało się wrzucenie poniższego skryptu do &#8220;OnRequest&#8221; konkretnego WebService&#8217;u.</p>
+
+<code>
+<pre>
+import groovy.sql.Sql                                                                                                                                        
+import java.sql.*;
+
+def url = 'jdbc:oracle:thin:@localhost:1521:XE'
+def driver = 'oracle.jdbc.OracleDriver'
+def user = 'mnp_data' 
+def password = 'mnp_data'
+
+def sql = Sql.newInstance(url, user, password, driver)
+
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+
+def holder = groovyUtils.getXmlHolder( mockRequest.requestContent)
+
+holder.declareNamespace("xxx", "http://www.ftang.com/example")
+
+def props = mockRunner.mockService
+context.put('props', props);
+
+def _phoneNumber = holder.getNodeValue( "//xxx:number")
+log.error(_phoneNumber)
+
+if (_phoneNumber != null) {
+    if (context.phoneNumber != _phoneNumber) {
+        context.setProperty('phoneNumber', _phoneNumber)
+        context.setProperty('responseType', 0)
+    } else {
+        context.setProperty('responseType', 1)
+    }   
+    sql.eachRow("select * from cases where phone_number = ?", [_phoneNumber]) { 
+            log.error(it)
+            context.setProperty("caseId", it['case_id'])
+        }  
+}
+
+def _getPhoneNumber = { 
+    return props.getPropertyValue('phoneNumber')
+}
+context.setProperty("getPhoneNumber", _getPhoneNumber);
+
+def _getOpenCasesResponse = {
+    if(context.get('responseType')==1)
+        return "<getOpenCasesResponse/>";
+}
+
+context.setProperty("getOpenCasesResponse", _getOpenCasesResponse);
+</pre>
+</code>
+
+<p>Prawda, że proste? :)</p>
+
+<p>A czy Wy używacie grooviego? A może SoapUI?</p>
+</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="">Adams</a></div>
+<div class='content'>
+<p>No popatrz, używam SoapUI :) Z groov tego korzystalismy do generowania identyfikatorow, ktore nastepnie trafialy do komunikatow. <br />
+<br />
+Pozdrowienia od kolegi z akademika :)</p></div>
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -818,53 +930,6 @@ Ja chciałem o czymś trochę innym. A mianowicie właśnie na Sycylii, konkretn
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2009/09/16/public-enemies/">Public Enemies</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-09-16T00:00:00+02:00" pubdate data-updated="true">Sep 16<span>th</span>, 2009</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-Na ten film czekałem dosyć długo. Może nie jakoś szczególnie, ale jednak zrobiło na mnie wrażenie, że kręci go Michael Mann. Że w rolach głównych sama śmietanka. Że o gangsterach. Zapowiadało się super.<br /><br />Film opowiada historię Johna Dillingera, który napadał na banki, rabował z klasą, uciekał z więzień. A wszystko to robił w złotych latach gangsterki w USA, czyli latach 20. Mamy tu wszystko co gangsterskie kino zawierać powinno. Jest dużo przemocy, romans, zajadły policjant ścigający Johna. Całość jest historią wejścia na szczyt i szbkiego końca Dillingera. Jego brawurowe skoki na banki zwróciły na siebie tak dużą uwagę, że stał się synonimem wroga publicznego numer jeden. Spowodowało to wydzielenie w FBI specjalnej jednostki, zmianę sposobu prowadzenia dochodzeń. I to wszystko właśnie jest pokazane w filmie. Bardzo zgrabnie i z sensem.<br /><br />Na uwagę zasługuje sposób kręcenia filmu. Bardzo naturalny obraz, kamera pracuje intensywnie śledząc bohaterów w momentach dynamicznych, ale potrafi &#8220;przystanąć&#8221; i objąć w ładny kadr dziewczynę Johna, graną przez Marion Cotillard.<br /><br />Na filmie nie zawiodłem się. Trzymał w napięciu i nie nudził. Cóż chcieć innego!<br /><br /><center><br /><a href="http://www.flickr.com/photos/zygm0nt/3937861236/" title="public-enemies by zygm0nt, on Flickr"><img src="http://farm4.static.flickr.com/3478/3937861236_c4fc7c99f2.jpg" width="500" height="333" alt="public-enemies" /></a><br /></center><br /><p>&nbsp;</p><br /><br /><br /><a href="http://www.imdb.com/title/tt1152836/">IMDB</a></div>
-<h2>Comments</h2>
-<div class='comments'>
-<div class='comment'>
-<div class='author'>Amandine</div>
-<div class='content'>
-Johnny! &lt;3<br /><br />Pozdrawiam<br />Amandine<br />filmdine.blogspot.com</div>
-</div>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/6/">&larr; Older</a>
@@ -882,6 +947,10 @@ Johnny! &lt;3<br /><br />Pozdrawiam<br />Amandine<br />filmdine.blogspot.com</di
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/21/zookeeper-tips/">Operational problems with Zookeeper</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/11/30/after-whug/">After WHUG meeting</a>
       </li>
     
@@ -895,10 +964,6 @@ Johnny! &lt;3<br /><br />Pozdrawiam<br />Amandine<br />filmdine.blogspot.com</di
     
       <li class="post">
         <a href="/blog/2012/10/18/raspberry-pi/">raspberry-pi</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/06/18/hadoop-for-enterprises/">Hadoop for Enterprises</a>
       </li>
     
   </ul>
@@ -960,7 +1025,7 @@ Johnny! &lt;3<br /><br />Pozdrawiam<br />Amandine<br />filmdine.blogspot.com</di
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2012 - Marcin Cylke -
+  Copyright &copy; 2013 - Marcin Cylke -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

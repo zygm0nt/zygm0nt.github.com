@@ -4,7 +4,7 @@
   <title><![CDATA[Category: java | Marcin bloguje]]></title>
   <link href="http://zygm0nt.github.com/blog/categories/java/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2012-11-30T22:22:05+01:00</updated>
+  <updated>2013-03-22T00:25:38+01:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -12,6 +12,188 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Operational problems with Zookeeper]]></title>
+    <link href="http://zygm0nt.github.com/blog/2013/03/21/zookeeper-tips/"/>
+    <updated>2013-03-21T23:56:00+01:00</updated>
+    <id>http://zygm0nt.github.com/blog/2013/03/21/zookeeper-tips</id>
+    <content type="html"><![CDATA[<p>This post is a summary of what has been presented by Kathleen Ting on
+StrangeLoop conference. You can watch the original here:
+<a href="http://www.infoq.com/presentations/Misconfiguration-ZooKeeper">http://www.infoq.com/presentations/Misconfiguration-ZooKeeper</a></p>
+
+<p>I've decided to put this selection here for quick reference.</p>
+
+<h2>Connection mismanagement</h2>
+
+<ul>
+<li><p>too many connections</p>
+
+<pre><code>  WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - Too many connections from /xx.x.xx.xxx - max is 60
+</code></pre></li>
+<li><p>running out of ZK connections?</p>
+
+<ul>
+<li>set <code>maxClientCnxns=200</code> in <code>zoo.cfg</code></li>
+</ul>
+</li>
+<li><p>HBase client leaking connections?</p>
+
+<ul>
+<li>fixed in HBASE-3777, HBASE-4773, HBASE-5466</li>
+<li>manually close connections</li>
+</ul>
+</li>
+<li><p>connection closes prematurely</p>
+
+<pre><code>  ERROR: org.apache.hadoop.hbase.ZooKeeperConnectionException: HBase is able to connect to ZooKeeper but the connection closes immediately.
+</code></pre></li>
+<li><p>in <code>hbase-site.xml</code> set <code>hbase.zookeeper.recoverable.waittime=30000ms</code></p></li>
+<li><p>pig hangs connecting to HBase</p>
+
+<pre><code>  WARN org.apache.zookeeper.ClientCnxn: Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect java.net.ConnectionException: Connection refused!
+</code></pre>
+
+<p>  <strong>CAUSE:</strong> location of ZK quorum is not known to Pig</p>
+
+<ul>
+<li>use Pig 10, which includes PIG-2115</li>
+<li>if there is an overlap between TaskTrackers and ZK quorum nodes
+
+<ul>
+<li>set <code>hbase.zookeeper.quorum</code> to final in <code>hbase-site.xml</code></li>
+<li>otherwise add <code>hbaze.zoopeeker.quorum=hadoophbasemaster.lan:2181</code> in <code>pig.properties</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Time mismanagement</h2>
+
+<ul>
+<li><p>client session timed out</p>
+
+<pre><code>  INFO org.apache.zookeeper.server.ZooKeeperServer: Expiring session &lt;id&gt;, timeout of 40000ms exceeded
+</code></pre>
+
+<ul>
+<li>ZK and HBase need the same session timeout values
+
+<ul>
+<li><code>zoo.cfg</code>: <code>maxSession=Timeout=180000</code></li>
+<li><code>hbase-site.xml</code>: <code>zookeeper.session.timeout=180000</code></li>
+</ul>
+</li>
+<li>don't co-locate ZK with IO-intense DataNode or RegionServer</li>
+<li>specify right amount of heap and tune GC flags
+
+<ul>
+<li>turn on parallel/CMS/incremental GC</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>clients lose connections</p>
+
+<pre><code>  WARN org.apache.zookeeper.ClientCnxn - Session &lt;id&gt; for server &lt;name&gt;, unexpected error, closing socket connection and attempting reconnect java.io.IOException: Broken pipe
+</code></pre>
+
+<ul>
+<li>don't use SSD drive for ZK transaction log</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Disk management</h2>
+
+<ul>
+<li><p>unable to load database - unable to run quorum server</p>
+
+<pre><code>  FATAL Unable to load database on disk !  java.io.IOException: Failed to process transaction type: 2 error: KeeperErrorCode = NoNode for &lt;file&gt; at org.apache.zookeeper.server.persistence.FileTxnSnapLog.restore(FileTxnSnapLog.java:152)!
+</code></pre>
+
+<ul>
+<li>archive and wipe <code>/var/zookeeper/version-2</code> if other two ZK servers
+are running</li>
+</ul>
+</li>
+<li><p>unable to load database - unreasonable length exception</p>
+
+<pre><code>  FATAL Unable to load database on disk java.io.IOException: Unreasonable length = 1048583 at org.apache.jute.BinaryInputArchive.readBuffer(BinaryInputArchive.java:100)
+</code></pre>
+
+<ul>
+<li>server allows a client to set data larger than the server can read from disk</li>
+<li>if a znode is not readable, increase <code>jute.maxbuffer</code>
+
+<ul>
+<li>look for <code>"Packet len &lt;xx&gt; is out of range"</code> in the client log</li>
+<li>increase it by 20%</li>
+<li>set in <code>JVMFLAGS="-Djute.maxbuffer=yy" bin/zkCli.sh</code></li>
+<li>fixed in ZOOKEEPER-1513</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>failure to follow leader</p>
+
+<pre><code>  WARN org.apache.zookeeper.server.quorum.Learner: Exception when following the leader java.net.SocketTimeoutException: Read timed out 
+</code></pre>
+
+  <strong>CAUSE:</strong>
+
+<ul>
+<li>disk IO contention, network issues</li>
+<li>ZK snapshot is too large (lots of ZK nodes)</li>
+</ul>
+
+
+<p>  <strong>SOLVE:</strong></p>
+
+<ul>
+<li>reduce IO contention by putting dataDir on dedicated spindle</li>
+<li>increase initLimit on all ZK servers and restart, see
+ZOOKEEPER-1521</li>
+<li>monitor network</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Best Practices</h2>
+
+<p><strong>DOs</strong></p>
+
+<ul>
+<li>separate spindles for dataDir &amp; dataLogDir</li>
+<li>allocate 3 or 5 ZK servers</li>
+<li>tune garbage collection</li>
+<li>run zkCleanup.sh script via cron</li>
+</ul>
+
+
+<p><strong>DON'Ts</strong></p>
+
+<ul>
+<li>dont' co-locate ZK with I/O intense DataNode or RegionServer</li>
+<li>don't use SSD drive for ZK transaction log</li>
+</ul>
+
+
+<p>You may use Zookeeper as an observer - a non-voting member:</p>
+
+<ul>
+<li><p>in zoo.cfg</p>
+
+<pre><code>  peerType=observer
+</code></pre></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Hadoop HA setup]]></title>

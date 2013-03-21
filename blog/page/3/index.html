@@ -9,8 +9,7 @@
   <meta name="author" content="Marcin Cylke">
 
   
-  <meta name="description" content="
-W celu niezagubienia i posiadaniu argumentu w przeróżnych dyskusjach: http://idallen.com/topposting.html ">
+  <meta name="description" content="The other day I felt a compelling need to implement a JMS redelivery scenario. The exact scenario I&#8217;d been trying to handle was: my message is &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,6 +84,190 @@ W celu niezagubienia i posiadaniu argumentu w przeróżnych dyskusjach: http://i
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2011/01/17/jms-redelivery-with-activemq-and-servicemix/">JMS Redelivery With ActiveMQ and Servicemix</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-01-17T09:56:29+01:00" pubdate data-updated="true">Jan 17<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<p>
+The other day I felt a compelling need to implement a JMS redelivery
+scenario. The exact scenario I&#8217;d been trying to handle was:
+</p>
+
+<ol>
+<li>my message is in an ActiveMQ queue or topic</li>
+<li>its processing fails, because of some exception - ie. database
+access exception due to server nonavailability</li>
+<li>since we get an exception, the message is not handled properly, we
+may want to retry processing attempt some time later</li>
+<li>of course, for the redelivery to happen we need the message to stay
+in the ActiveMQ queue - fetching messages from the queue will be stopped
+until the redelivery succeeds or expires</li>
+</ol>
+
+See how this can be done after the jump :)
+
+<EXCERPT/>
+
+<p>
+For this to happen, I&#8217;ve tried implementing Apache Camel route, but as
+it turns out, Camel fails to deliver facilities for exact JMS
+redelivery. It is possible to set JMS connection in <i>transacted</i>
+mode, but the redeliveries happen one after another and fixed times.
+</p>
+
+<p>
+What I&#8217;ve ended up doing was implement a servicemix-jms endpoint. I&#8217;ve
+used this configuration for it:
+</p>
+<pre class="brush: xml">
+<jms:endpoint service="ts:WorkflowConsumerService"
+                  endpoint="default"
+                  targetService="ts:WorkflowConsumerCamelService"
+                  targetEndpoint="default"
+                  role="consumer"
+                  processorName="jca"
+                  connectionFactory="#connectionFactory"
+                  resourceAdapter="#ra"
+                  activationSpec="#activationSpec"
+                  bootstrapContext="#bootstrapContext"
+                  synchronous="true"
+                  rollbackOnError="true"
+                  wsdlResource="classpath:LeadManagement.wsdl"
+                  defaultMep="http://www.w3.org/2004/08/wsdl/in-only"/>
+
+    <bean name="connectionFactory" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiName">
+            <value>activemq/connectionFactory</value>
+        </property>
+    </bean>
+
+    <bean name="ra" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiName">
+            <value>activemq/resourceAdapter</value>
+        </property>
+    </bean>
+
+    <bean id="activationSpec" class="org.apache.activemq.ra.ActiveMQActivationSpec">
+        <property name="destination" value="example/C"/>
+        <property name="destinationType" value="javax.jms.Queue"/>
+        <property name="maximumRedeliveries" value="10"/>
+        <property name="initialRedeliveryDelay" value="10000"/>
+    </bean>
+
+    <jee:jndi-lookup id="bootstrapContext" jndi-name="java:comp/env/smx/BootstrapContext">
+    </jee:jndi-lookup>
+</pre>
+<p>
+As you can see, we lookup a couple of things in JNDI registry, so you need to 
+have them configured on the Servicemix side - a sample config presented 
+farther in this entry. 
+</p><p>
+The bean responsible for configuring redelivery settings is <b>activationSpec</b>.
+You can set various things with it, like:
+</p>
+<ul>
+<li>initial redelivery delay</li>
+<li>maximum number of redeliveries</li>
+<li>backoff multiplier</li>
+<li>&#8230;</li>
+</ul>
+<p>
+What is really important in <i>jms:endpoint</i> config for this to work are:</p>
+<ul>
+<li><i>processorName=&#8221;jca&#8221;</i></li>
+<li><i>rollbackOnError=&#8221;true&#8221;</i></li>
+</ul>
+<p>
+Servicemix should have the following entries in its jndi registry:
+</p>
+<pre class="brush: xml">
+         <entry key="activemq/resourceAdapter" value-ref="activemqRA" />
+
+         <entry key="activemq/connectionFactory" value-ref="activemqCF" />
+
+(...) 
+<!-- namespaces:-->
+       xmlns:jencks="http://jencks.org/2.0"
+       xmlns:amqra="http://activemq.apache.org/schema/ra" -->
+
+          <amqra:resourceAdapter
+                  id="activemqRA"
+                  serverUrl="${activemq.url}" />
+          <amqra:managedConnectionFactory
+                  id="activemqMCF"
+                  resourceAdapter="#activemqRA" />
+          <jencks:connectionFactory
+                  id="activemqCF"
+                  managedConnectionFactory="#activemqMCF"
+                  connectionManager="#connectionManager" />
+</pre>
+
+<p>
+When the redeliveries are exhausted, message is routed to global Dead Letter Queue
+called ActiveMQ.DLQ. Since this is a single bag for all the failed messages
+from all queues, you may want to configure this aspect differently. For example
+you can tell ActiveMQ to create a single DLQ for each queue. Use this config 
+to achieve it - the changes should be made to Broker configuration.
+</p>
+<pre class="brush: xml">
+<broker...>
+  <destinationPolicy>
+    <policyMap>
+      <policyEntries>
+        <!-- Set the following policy on all queues using the '>' wildcard -->
+        <policyEntry queue=">">
+          <deadLetterStrategy>
+            <!--
+              Use the prefix 'DLQ.' for the destination name, and make
+              the DLQ a queue rather than a topic
+            -->
+            <individualDeadLetterStrategy
+              queuePrefix="DLQ." useQueueForQueueMessages="true" />
+          </deadLetterStrategy>
+        </policyEntry>
+      </policyEntries>
+    </policyMap>
+  </destinationPolicy>
+  ...
+</broker>
+</pre>
+<p>
+More on the subject of redelivieries in ActiveMQ can be found at <a href="http://activemq.apache.org/message-redelivery-and-dlq-handling.html">http://activemq.apache.org/message-redelivery-and-dlq-handling.html</a>.
+</p></div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1390,76 +1573,6 @@ Z tego co gdzieś tam czytałem, to nawet Apple wykorzystał kawałki kodu JS z 
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2010/06/27/javarsovia-2010/">Javarsovia 2010</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-06-27T17:08:43+02:00" pubdate data-updated="true">Jun 27<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<p>This year&#8217;s <a href="http://javarsovia.pl/">Javarsovia</a> conference took place on 26th june. It was held at Centrum Konferencyjno-Kongresowe,  Bobrowiecka Street,  Warsaw.</p>
-
-<p>First of all - the organization was very nice. Everything seemed smooth, maybe with the exception of conference registration, it was simply overcrowded.
-The agenda was split into four tracks, each hour 4 different presentations were given in different halls. So you just had to choose which one to attend. My path through the conference is described below, together with my views on each of the presentations I attended.</p>
-
-<p><p><br />
-The introductory speech conducted by Mateusz Zięba and some other guy from WarJUG, that I can&#8217;t seem remember. The speech was very entertaining.  Guys did really good job with creating the appropriate atmosphere for the rest of the conference.</p></p>
-
-<p>Jakub Nabrdalik (TouK) with his &#8220;How not to bio-degrade your code&#8221;  was like the biggest event of the conference - held on the biggest hall of the building, with lots and lots of people attending. The audience was vivid and responded to Jakub&#8217;s ideas with applause. He played us all very well.</p>
-
-<p>&#8220;From request to response&#8221; by Jarosław Błąd bored me to death. It wasn&#8217;t interesting at all to listen about technical details of request handling by all layers of the JEE stack. - like http server, communication with Java app server, kinds of threads in the latter and the likes. What this presentation <b>should</b> have been about were personal views and opinions on other technologies, frameworks - Jarek started to tackle in Q&A section of his speech - that was the real meat!
-</p>
-
-<p>&#8220;Code refactoring&#8221; by Piotr Jagielski - overally good, but due to lots of agile, TDD, etc stuff present in the agenda - I kind of lost interest in that particular one.
-</p>
-
-<p>Fortunately dinner came to aid. With my vital forces rejuvenated by means of lasagne my mind&#8217;s comprehension skills were back to normal.
-</p>
-
-<p>That allowed me to enjoy Wiktor Gworek&#8217;s presentation about Google&#8217;s style of Java coding. It was worth attending. Thou seamed mainly like a <a href="http://code.google.com/p/guava-libraries/">Google Guava</a> introduction - it gave a really fast presentation of Java concepts, how you can beautify your code and give you joy from what you write and create in your normal work day.
-</p>
-
-<p>&#8220;Routes of camel riding&#8221; by Maciek Próchniak - a solid does of technical knowledge by another colleague from TouK. Good one - thou didn&#8217;t get much attention from the public. In fact the topic might have been a little misleading, but still the presentation went out well.
-</p>
-
-<p>What Jarek Pałka did with his NoSQL talk wasn&#8217;t ground breaking, but funny enough and entertaining for the finishing act of this conference. For me some moments of his speech were rather enlightening - NoSQL dbs are actually used in some serious real world scenarios! Nice. This presentation gave an insight into one of such DBs - <a href="http://neo4j.org/">Neo4j</a>, a graph handling DB. Left me with a sense of incompleteness - there was no comparison with other NoSQL products, but this is only an encouragement for me to delve deeper into this subject.
-</p>
-
-<p>All in all, the conference was a big success, with lots of good talks, meeting friends, talking, listening. Around 650 people were on site, I hope the next one will be even bigger! Please bear in mind that the talks presented by me were only the fourth part of all the talks! AFAIK all of them will be available in video form some time after the conference - perhaps some video editing has to be done, it&#8217;s not always youtube you are targeting ;-)</p>
-
-<p>Oh, and I didn&#8217;t win any small laptops, ipods, books, vouchers - crap. Maybe next year ;-)</p>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -1477,6 +1590,10 @@ The introductory speech conducted by Mateusz Zięba and some other guy from WarJ
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/21/zookeeper-tips/">Operational problems with Zookeeper</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/11/30/after-whug/">After WHUG meeting</a>
       </li>
     
@@ -1490,10 +1607,6 @@ The introductory speech conducted by Mateusz Zięba and some other guy from WarJ
     
       <li class="post">
         <a href="/blog/2012/10/18/raspberry-pi/">raspberry-pi</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/06/18/hadoop-for-enterprises/">Hadoop for Enterprises</a>
       </li>
     
   </ul>
@@ -1555,7 +1668,7 @@ The introductory speech conducted by Mateusz Zięba and some other guy from WarJ
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2012 - Marcin Cylke -
+  Copyright &copy; 2013 - Marcin Cylke -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
