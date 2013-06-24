@@ -163,19 +163,7 @@ advisory message for a specific jms destination. You can do this with
 ths configuration change to <strong>activemq.xml</strong>
 </p>
 <div><script src='https://gist.github.com/897141.js?file='></script>
-<noscript><pre><code>        &lt;destinationPolicy&gt;
-            &lt;policyMap&gt;
-              &lt;policyEntries&gt;
-                &lt;policyEntry queue=&quot;my/test/queue&quot; advisoryForDelivery=&quot;true&quot; advisoryForConsumed=&quot;true&quot;/&gt;                                                   
-                &lt;policyEntry topic=&quot;&gt;&quot; producerFlowControl=&quot;true&quot; memoryLimit=&quot;1mb&quot;&gt;
-                  &lt;pendingSubscriberPolicy&gt;
-                    &lt;vmCursor /&gt;
-                  &lt;/pendingSubscriberPolicy&gt;
-                &lt;/policyEntry&gt;
-              &lt;/policyEntries&gt;
-            &lt;/policyMap&gt;
-        &lt;/destinationPolicy&gt;
-</code></pre></noscript></div>
+<noscript><pre><code></code></pre></noscript></div>
 
 <p>
 As you can see, I&#8217;ve specified which advisories I want enabled. The full
@@ -187,14 +175,7 @@ configuration to my spring context - there is one destination bean for
 inserting messages and one bean for advisory topic.
 </p>
 <div><script src='https://gist.github.com/897150.js?file='></script>
-<noscript><pre><code>    &lt;bean id=&quot;testQueue&quot; class=&quot;org.apache.activemq.command.ActiveMQQueue&quot; autowire=&quot;constructor&quot;&gt;
-        &lt;constructor-arg value=&quot;my/test/queue&quot; /&gt;
-    &lt;/bean&gt;
-
-    &lt;bean id=&quot;deliveredToTestQueueAdvisory&quot; class=&quot;org.apache.activemq.command.ActiveMQTopic&quot; autowire=&quot;constructor&quot;&gt;
-        &lt;constructor-arg value=&quot;ActiveMQ.Advisory.MessageDelivered.Queue.my/test/queue&quot; /&gt;
-    &lt;/bean&gt;
-</code></pre></noscript></div>
+<noscript><pre><code></code></pre></noscript></div>
 
 <p>
 Thanks to this configuration I&#8217;ve been able to check that my message was
@@ -282,6 +263,10 @@ thoughts on this subject? How do you test JMS?
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/06/23/zookeeper-curator/">Zookeeper + Curator = Distributed sync</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/21/zookeeper-tips/">Operational problems with Zookeeper</a>
       </li>
     
@@ -295,10 +280,6 @@ thoughts on this subject? How do you test JMS?
     
       <li class="post">
         <a href="/blog/2012/10/30/hadoop-ha/">Hadoop HA setup</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/10/18/raspberry-pi/">raspberry-pi</a>
       </li>
     
   </ul>

@@ -119,40 +119,13 @@ This weekend I&#8217;ve been fiddling with <a href="http://www.qemu.org">QEMU</a
 <p>To make QEMU instances communicate with each other I needed to plug them to a &#8220;network&#8221;. That&#8217;s why I&#8217;ve created a bridge to which Virtual Instances would connect to. I&#8217;ve used the following script:</p>
 
 <div><script src='https://gist.github.com/889357.js?file='></script>
-<noscript><pre><code>#!/bin/bash                                                                                                                                                 
-# 1st, release all DHCP address and remove all IP address associated
-# with the original eth0
-#/sbin/dhcpcd -k
-kill `pidof dhclient`
-/sbin/ip addr flush eth0
-# then take the interface down so we can rename it
-/sbin/ip link set eth0 down
-# now rename the original eth0 to reth0 (Real ETH0)
-nameif reth0 00:24:81:43:61:5b
-# OK, bring the same interface (with new name though) back up
-/sbin/ip link set reth0 up
-# 2nd let's create a bridge called eth0 so other programs think they are
-# talking to the same old interface (actually they will talk to the
-# bridge which is a clone of the original eth0 - with name MAC addr)
-/usr/sbin/brctl addbr eth0
-# then add both origianl eth0 and tap1 device to the bridge
-/sbin/brctl addif eth0 tap1
-/usr/sbin/brctl addif eth0 reth0
-echo &quot;showing bridge mac addresses&quot;
-/usr/sbin/brctl showmacs eth0
-# 3rd, we need to bring the newly created bridge UP
-/sbin/ip link set eth0 up
-# 4th, renew the DHCP address if possible
-#/sbin/dhcpcd -n
-dhclient eth0
-/sbin/ip addr show
-</code></pre></noscript></div>
+<noscript><pre><code></code></pre></noscript></div>
 
 
 <p>Then I just needed to start Qemu with this command line:</p>
 
 <div><script src='https://gist.github.com/889359.js?file='></script>
-<noscript><pre><code>sudo qemu openbsd-4.7.img  -net tap -net nic,macaddr=52:54:00:12:34:57,model=ne2k_pci</code></pre></noscript></div>
+<noscript><pre><code></code></pre></noscript></div>
  
 
 <p>Since I&#8217;ve set up bridge for Qemu instances, I&#8217;ve plugged <a href="http://en.wikipedia.org/wiki/TUN/TAP">TAP</a> interfaces into it. That&#8217;s why I&#8217;ve needed to specify this in my qemu exec line. I&#8217;ve also added macaddress setting since both my instances were getting the same one.</p>
@@ -222,6 +195,10 @@ dhclient eth0
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/06/23/zookeeper-curator/">Zookeeper + Curator = Distributed sync</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/21/zookeeper-tips/">Operational problems with Zookeeper</a>
       </li>
     
@@ -235,10 +212,6 @@ dhclient eth0
     
       <li class="post">
         <a href="/blog/2012/10/30/hadoop-ha/">Hadoop HA setup</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/10/18/raspberry-pi/">raspberry-pi</a>
       </li>
     
   </ul>
