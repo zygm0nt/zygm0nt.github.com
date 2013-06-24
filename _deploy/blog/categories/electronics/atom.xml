@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: electronics | Marcin bloguje]]></title>
+  <link href="http://zygm0nt.github.com/blog/categories/electronics/atom.xml" rel="self"/>
+  <link href="http://zygm0nt.github.com/"/>
+  <updated>2013-06-24T22:34:54+02:00</updated>
+  <id>http://zygm0nt.github.com/</id>
+  <author>
+    <name><![CDATA[Marcin Cylke]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[raspberry-pi]]></title>
+    <link href="http://zygm0nt.github.com/blog/2012/10/18/raspberry-pi/"/>
+    <updated>2012-10-18T23:16:00+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2012/10/18/raspberry-pi</id>
+    <content type="html"><![CDATA[<p>About a month ago I finally received my very own Raspberry Pi board!
+Don't know what that is? Here, read some at their
+<a href="http://www.raspberrypi.org/">website</a>.</p>
+
+<p>For the sake of completness let me just describe that as prototyping
+platform with ARM processor. It is really similar in concept to what
+Arduino is, except it has not that many extensions available (none? or
+very little, I've only found those on <a href="http://adafruit.com/">Adafruit</a>
+pages).</p>
+
+<p>So, here is the obligatory picture.</p>
+
+<p><img src="http://blog.innovative-labs.com/blog/raspberry-pi.jpg" alt="My very own R-Pi" /></p>
+
+<p>It can run a Linux distribution, so anyone familiar with that can have a
+go with this low-powered computer.</p>
+
+<p>The board itself is on the market for quite some time now. That's why
+there are lots of interesting resources and projects that you can do
+with that stuff.</p>
+
+<p>Here are just a bunch of them:</p>
+
+<ul>
+<li><a href="http://www.elcojacobs.com/uberfridge/">UberFridge</a> - for all the
+brewers in the world :)</li>
+<li>SOHO server</li>
+<li>a supercomputer - <a href="http://www.southampton.ac.uk/mediacentre/features/raspberry_pi_supercomputer.shtml">cluster out of R-Pi</a></li>
+<li>Arcade Cabinet - <a href="http://www.raspberrypi.org/phpBB3/viewtopic.php?f=9&amp;t=1814">custom build gaming rig</a></li>
+<li>Hand-held emulation machine - <a href="http://www.raspberrypi.org/phpBB3/viewtopic.php?f=9&amp;t=4570">R-Pi on the go</a></li>
+<li>sending R-Pi to <a href="http://www.raspberrypi.org/phpBB3/viewtopic.php?f=9&amp;t=2059">the edge of Space</a></li>
+<li>coffe machine - <a href="http://moccapi.blogspot.co.uk/">MoccaPi</a></li>
+<li>other projects on elinux - <a href="http://elinux.org/RPi_Projects">Elinux projects</a></li>
+<li>other projects on Hack-a-Day - <a href="http://hackaday.com/tag/raspberry-pi/">Hack-a-Day Raspberry Pi
+tags</a></li>
+</ul>
+
+
+<p>Do you also own R-Pi? Share what you plan to do with it.</p>
+]]></content>
+  </entry>
+  
+</feed>

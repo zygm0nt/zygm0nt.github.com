@@ -1,0 +1,1061 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Marcin bloguje</title>
+  <meta name="author" content="Marcin Cylke">
+
+  
+  <meta name="description" content="
+From this day on, this blog will contain only posts in English.
+">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://zygm0nt.github.com/blog/page/5/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Marcin bloguje" type="application/atom+xml">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-172194-10']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <div id="logo">
+  	<div id="logoLeft">{</div>
+  	<div id="logoText">mob</div>
+  	<div id="logoRight">}</div>
+  	<div class="clear"></div>
+  </div>
+  <h1><a href="/">Marcin bloguje</a></h1>
+  
+    <h2>.impressions.memos.tech.</h2>
+  
+  <div class="clear"></div>
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:zygm0nt.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2010/04/10/here-cometh-english/">Here Cometh English :)</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-04-10T00:00:00+02:00" pubdate data-updated="true">Apr 10<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+From this day on, this blog will contain only posts in English.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/11/18/inteligentny-mock-w-soapui/">Inteligentny Mock W SoapUI</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-18T23:20:57+01:00" pubdate data-updated="true">Nov 18<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<p>Któż z nas nie testował WebService&#8217;ów, a któż z nas nie używał do tego SoapUI :) Ok, z rzeczami oczywistymi dyskutować nie będę, ale przy okazji jednego projekciku okazało się, że fajnie by było gdyby mój mock potrafił zrobić coś więcej niż tylko odpowiedzieć na nadesłany komunikat.</p>
+<EXCERPT><p>Oczywiście sam SoapUI posiada dosyć spory wachlarz możliwości, bo może wysłać losowy request spośród wprowadzonych, lub wysyłać wedle sekwencji, itp.</p>
+
+<p>Problem w tym, że moim wysublimowanym życzeniem było aby korelować komunikaty określonego typu na podstawie jednego pola z XMLa - nazwijmy je polem &#8220;X&#8221;. Jeśli w polu X przyszła wartość, której do tej pory nie widzieliśmy - odpowiedz jednym komunikatem, jeśli ta wartość już została przez nas odebrana (ostatnio :) ), to prześlij trochę inną odpowiedź.</p>
+
+<p>Na pomoc przyszedł mi wbudowany interpreter Grooviego, którym to można oskryptować kilka fragmentów aplikacji, między innymi tworzone MockService.</p>
+
+<p>No cóż, rozwiązaniem mojego problemu okazało się wrzucenie poniższego skryptu do &#8220;OnRequest&#8221; konkretnego WebService&#8217;u.</p>
+
+<code>
+<pre>
+import groovy.sql.Sql                                                                                                                                        
+import java.sql.*;
+
+def url = 'jdbc:oracle:thin:@localhost:1521:XE'
+def driver = 'oracle.jdbc.OracleDriver'
+def user = 'mnp_data' 
+def password = 'mnp_data'
+
+def sql = Sql.newInstance(url, user, password, driver)
+
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+
+def holder = groovyUtils.getXmlHolder( mockRequest.requestContent)
+
+holder.declareNamespace("xxx", "http://www.ftang.com/example")
+
+def props = mockRunner.mockService
+context.put('props', props);
+
+def _phoneNumber = holder.getNodeValue( "//xxx:number")
+log.error(_phoneNumber)
+
+if (_phoneNumber != null) {
+    if (context.phoneNumber != _phoneNumber) {
+        context.setProperty('phoneNumber', _phoneNumber)
+        context.setProperty('responseType', 0)
+    } else {
+        context.setProperty('responseType', 1)
+    }   
+    sql.eachRow("select * from cases where phone_number = ?", [_phoneNumber]) { 
+            log.error(it)
+            context.setProperty("caseId", it['case_id'])
+        }  
+}
+
+def _getPhoneNumber = { 
+    return props.getPropertyValue('phoneNumber')
+}
+context.setProperty("getPhoneNumber", _getPhoneNumber);
+
+def _getOpenCasesResponse = {
+    if(context.get('responseType')==1)
+        return "<getOpenCasesResponse/>";
+}
+
+context.setProperty("getOpenCasesResponse", _getOpenCasesResponse);
+</pre>
+</code>
+
+<p>Prawda, że proste? :)</p>
+
+<p>A czy Wy używacie grooviego? A może SoapUI?</p>
+</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="">Adams</a></div>
+<div class='content'>
+<p>No popatrz, używam SoapUI :) Z groov tego korzystalismy do generowania identyfikatorow, ktore nastepnie trafialy do komunikatow. <br />
+<br />
+Pozdrowienia od kolegi z akademika :)</p></div>
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/11/16/czyzby-bpel-wreszcie-stal-sie-bardziej-uzyteczny/">Czyżby BPEL Wreszcie Stał Się Bardziej Użyteczny?</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-16T00:24:41+01:00" pubdate data-updated="true">Nov 16<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<p>Nieee&#8230; to po prostu udało mi się uruchomić <em>BPEL Designera</em> - plugin<br />
+do Eclipse&#8217;a. Co prawda wymagało to grzebnięcia w źródłach, które nie<br />
+były aktualizowane już od dłuższego czasu. Zmiany polegały głównie na<br />
+poprawie zależności. Niemniej, plugin z wersją 3.5 Eclipse&#8217;a działa<br />
+sprawnie. W poprzednich wersjach miał tendencje do zacinania się, a<br />
+przyczyny tego nie udało mi się namierzyć.</p>
+<EXCERPT>
+<p><h3> A co to jest BPEL?</h3></p>
+
+<p>Business Process Expression Language. Czyli XML do<br />
+opisywania przepływu długotrwałych procesów w przedsiębiorstwie, itp.<br />
+Dużo bełkotu marketingowego sprowadzającego się do tego, że jest to<br />
+ciężki w obejściu twór, którego główną zaletą są:</p>
+
+<ul>
+<li>długotrwałe procesy właśnie - mogą trwać np. 100 dni, </li>
+<li>obsługa web serwisów oraz pokrewnych xml&#8217;owi technologii w sposób natywny.</li>
+</ul>
+
+<p>Wszystko to oczywiście musi działać w jakimś kontenerze. Ja akurat, ze<br />
+względu na miejsce pracy mam styczność z ODEO<br />
+(http://top.touk.pl/confluence/display/top/ODEO), które bazuje na Apache<br />
+ODE (http://ode.apache.org). Ot taki engine do uruchamiania procesów<br />
+biznesowych.</p>
+
+<p>Na ostatnim JUGu koledzy z pracy mieli nawet prezentację na temat<br />
+rozwiązań, których używamy - między nimi również ODEO:<br />
+http://top.touk.pl/confluence/display/top/BPEL+in+Practice</p>
+
+<p><h3>No ale wracając do pluginu</h3></p>
+
+<p>Jest on o tyle fajnym narzędziem - a przynajmniej powinien być, bo<br />
+pozwala na graficzne przedstawienie procesu, co powinno ułatwić jego<br />
+ogarnięcie. Oczywiście kwestia z którą można swobodnie polemizować ;-)</p>
+
+<p>Plugin nie jest też zdecydowanie doskonały, bo nie wszystko w nim<br />
+działa. A co w pluginie nie działa?</p>
+
+<ul>
+<li>edytowanie deploy.xml - otwierając pusty plik, otwiera się jakiś inny<br />
+:) bardzo dziwne</li>
+<li>są dziwne problemy z wizualizacją strzałek połączeń, np. jak na<br />
+screenie poniżej.</li>
+</ul>
+
+<p>Co mogłoby działać lepiej.</p>
+
+<ul>
+<li>zmiana orientacji diagramu - z pionowej na horyzontalną</li>
+<li>fajnie byłoby wiedzieć w którym miejscu grafu jesteśmy, czyli np.<br />
+wyświetlać nazwy activity czyli wartość atrybutu <em>name</em></li>
+</ul>
+
+<p>No cóż, żeby nie psioczyć, zamierzam te włąśnie wyżej wymienione rzeczy<br />
+poprawić. Zobaczymy co z tego wyjdzie :) W tej chwili projekt na<br />
+eclipse.org jest od dłuższego czasu nieaktywny (brak zmian w CVS oraz<br />
+postów na grubie projektu), a szkoda, bo to jedyna na tyle kompleksowa<br />
+implementacja narzędzia do BPELa. Oczywiście z tych open-source.</p>
+</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://blog.4zal.net">Zal</a></div>
+<div class='content'>
+<p>Ojej&#8230; Kumpel w ramach pracy magisterskiej robi edytor BPEL na potrzeby projektu grantowego. Coś mi się zdaje, iż niedługo i ja sam będę musiał się o to otrzeć.</p></div>
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/11/13/solaris-w-tr/">Solaris W TR</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-13T09:51:17+01:00" pubdate data-updated="true">Nov 13<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<p>Wczoraj byłem w TR (http://www.trwarszawa.pl/). Na wejściówki, po<br />
+taniości. Obejrzałem spektakl Solaris, bo to Lem, bo znam, bo jako jedną<br />
+z niewielu rzeczy Lema czytałem. Powody były.</p>
+
+<p>Wrażenia? Bardzo fajnie się oglądało. Problem jedynie w tym, że z<br />
+wydawałoby się dosyć prostej fabularnie książki zrobiono spektakl,<br />
+którego nie da się w całości zrozumieć z powodu niedopowiedzeń. Czy to<br />
+jest domena nowoczesnych interpretacji teatralnych??</p>
+</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>@Biały, tak, faktycznie. Ale ostatecznie na prawdę nie wyszło to tak źle. Akurat te aspekty, które wspomniałeś były ciekawie przedstawione.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://blog.rczajka.pl">Biały</a></div>
+<div class='content'>
+<p>Moim zdaniem „Solaris” jest książką, która absolutnie nie nadaje się do wystawiania, kręcenia filmów, itp. To znaczy – chętnie bym w sumie zobaczył, co można zrobić z tym w teatrze, ale na pewno nie da się tego zrobić „wprost” – po prostu pokazując fabułę. Sęk w tym, że w „Solaris” wszystko, co istotne, pozostaje niewypowiedziane. Przede wszystkim kluczowe pytanie książki: jak bardzo w swoim widzeniu świata jesteśmy ograniczeni przez swoją zwierzęcą naturę i ludzką, uwarunkowaną ziemskim życiem psychologię? Do jakiego stopnia możemy rzeczywiście poznać i zrozumieć coś nowego, a do jakiego w spotkaniu z czymś nowym i obcym możemy tylko powielać swoje stare wzorce i uprzedzenia, próbując jakoś poupychać świat w niezbyt adekwatny zestaw pojęć?</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://notatki.jogger.pl">katafrakt</a></div>
+<div class='content'>
+<p>Heh, jeśli mam być szczery to w tej chwili nie pamiętam ani skąd wizyta, ani kim byli biegający ludzie ;) Zresztą to teatr - wszystkiego się można spodziewać, ale nie tego, że będzie to prosta opowiastka z prostą fabułą.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>@katafrakt, ale zrozumienie fabuły na pewno pomogłoby w odbiorze reszty. Przedstawienie przemilczało kwestie takie jak: skąd ta wizyta w pobliżu planety, kim są ci biegający po stacji ludzie, itp.<br />
+<br />
+Oczywiście jak ktoś czytał książkę, to zrozumiał ;-) ale jednak nie o to do końca chodzi.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://notatki.jogger.pl">katafrakt</a></div>
+<div class='content'>
+<p>Tyle że w Solaris raczej nie o &quot;zrozumienie fabuły&quot; chodziło, ztcp ;)</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>A co? nie zrozumiałeś fabuły? Moim zdaniem to akurat łatwizna, w samej książce można się doszukiwać różnych psychologicznych motywów działania ludzi na stacji. To tak IMHO.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://blag.dodecki.net">Dodek</a></div>
+<div class='content'>
+<p>&gt;  że z wydawałoby się dosyć prostej fabularnie książki<br />
+<br />
+czo</p></div>
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/09/25/love-some-kind-of-preview/"><p>Love - Some Kind of Preview&#8230;</p></a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-25T01:06:05+02:00" pubdate data-updated="true">Sep 25<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<p>Czytając mój ulubiony serwis o grach, czyli <a href="http://www.rockpapershotgun.com/">Rock-Paper-Shutgun</a> dowiedziałem się, że osobnik znany jako Eskil Steenberg wypuścił nieinteraktywne preview swojego &#8220;multiplayer experience&#8221; - <b>LOVE</b>.</p>
+<EXCERPT><p>O co tyle szumu? Wystarczy spojrzeć na to jak gra wygląda. Nie chodzi w tym o jakąś wypasioną grafikę, a o frajdę z gry. Eskil pisze swoją grę w pojedynkę. Idzie mu to naprawdę sprawnie. A zestaw narzędzi jakich używa wprawia mnie za każdym razem w podziw. Chodzi mi z grubsza o narzędzia pokroju Verse (<a href="http://www.quelsolaar.com/verse/">http://www.quelsolaar.com/verse/</a>), które to jest rozproszonym edytorem modeli 3D. Pozwala na współpracę wielu osób i do tego integruje się chociażby z Blenderem. A to tylko wierzchołek tej góry :) Całość wygląda niesamowicie innowacyjnie i imponująco.</p>
+
+<p>A wszystko to i wiele innych możecie znaleźć na stronie Eskila - <a href="http://news.quelsolaar.com">Quel Solaar</a>.</p>
+</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/09/22/demotywator-moj/">Demotywator Mój</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-22T23:59:20+02:00" pubdate data-updated="true">Sep 22<span>nd</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<p>Z dwa tygodnie temu zrobiłem fotkę. Nadawała się na demotywator. Moim zdaniem przynajmnie :)</p>
+<p>Umieściłem ją więc w serwisie odpowiednim - demotywatory.pl Raczej nie pieją ludzie z zachwytu, ale mam radochę i tak :D.</p>
+<p>Link do demotywatora - <a href="http://demotywatory.pl/190154/Bite-your-ass">LINK.</a></p>
+</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>@Voter101 - dzięki za słowa krytyki ;-)<br />
+<br />
+Jednak nadal dziwi mnie tak niesamowicie osobiste podejście do tego co ktoś sobie na blogu napisze. No ale trudno!<br />
+<br />
+A co do Twojej rady, żebym wracał do gimnazjum. Wydaje mi się, że ktoś tu tęskni za zeszłym rokiem, bo: <a href="http://voter101.jogger.pl/2009/09/08/liceum-nie-takie-straszne/"> http://voter101.jogger.pl/2009/09/08/liceum-nie-takie-straszne/</a><br />
+<br />
+:)</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="">Voter101</a></div>
+<div class='content'>
+<p>Marcinie Drogi, ten obrazek w białej ramce na czarnym tle z nieśmiesznym podpisem jest iście chujowy - że tak się wyrażę. Żal^2. Wracaj do gimnazjum, tam lubią takie obrazki w białej ramce, na czarnym tle!<br /><br />I teraz się pożal, że cię obraziłem. :) Nie było tego umieszczać na stronie głównej. Niestety społeczność joggera nie wybacza takich pomyłek. :D</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://pecet.jogger.pl">pecet</a></div>
+<div class='content'>
+<p>You forgot Poland.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://modrzew.jogger.pl">Modrzew</a></div>
+<div class='content'>
+<p>To nie jest demotywator.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://flegmatyk.jogger.pl">flegmatyk</a></div>
+<div class='content'>
+<p>W sumie, średnio śmieszne zdjęcie z kompletnie nieśmiesznym podpisem = demotywator!<br /><br />Sry, że tak brutalnie, ale moje podejście do wynalazku zwanego demotywatorami jest powszechnie znane ;)</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://zdaniemmagnesa.jogger.pl">Magnes</a></div>
+<div class='content'>
+<p>racja, nie przejmuj się definicjami ;) Kto by chciał, żeby demotywator demotywował ;)</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>He! biorąc sobie jakąś tam definicję demotywatora, to może i nie jest demotywator. Natomiast jak dla mnie, to wszystko jest na miejscu:<br /><br />* głupi tekst<br />* głupie zdjęcie<br />* czarne tło<br />* biała ramka :P<br /><br />Mniej definicji ludzie!</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="">ixi</a></div>
+<div class='content'>
+<p>Bo to nie jest demotywator&#8230;</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://pawel-ciupak.jogger.pl">Paweł Ciupak</a></div>
+<div class='content'>
+<p>Zaraz pewnie przyjdzie RioT i zacznie krzyczeć że to nie demotywator ;).</p></div>
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/09/20/ludzie-porzuccie-f-spot/">Ludzie! Porzućcie F-Spot!</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-20T19:57:33+02:00" pubdate data-updated="true">Sep 20<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<p>Dziś usiadłem do porządkowania zdjęć z wyjazdu wakacyjnego. Postanowiłem użyć do tego właśnie programu F-Spot. Wydawał się on odpowiedni. Zaimportował fotki, posortował według informacji EXIF. Schody zaczęły się w momencie edycji całej kolekcji.</p>
+<EXCERPT><p>Ze zdjęciami było trochę problemów, którymi chciałem się zająć:</p>
+<ul>
+<li>część trzeba było obrócić</li>
+<li>połowa była zrobiona na Nikonie, który nie miał ustawionej daty, tak więc ficzer sortowania po dacie z nagłówka EXIF wziął w łeb</li>
+</ul>
+<p>Tak więc chciałem poobracać fotki i uporządkować wedle czasu. Pierwsza czynność poszła w miarę łatwo. Druga była już lekko upierdliwa - np. Można zaznaczyć wszystkie fotki i otworzyć je w okienku do zmiany czasu, ale wtedy zapisywane są zmiany dopiero <b>po</b> wciśnięciu OK. Niby byłoby to fajne, <b>ale</b>, gdy ustawimy czas dla jednej fotki, to mamy taki oto wybór:</p>
+<p></p>
+<center><a href="http://www.flickr.com/photos/zygm0nt/3937697274/" title="fspot-fail by zygm0nt, on Flickr"><img src="http://farm3.static.flickr.com/2490/3937697274_743d0101e7.jpg" width="500" height="367" alt="fspot-fail"></a><br></center>
+<p>
+<p>Albo zastosujemy tą datę do wszystkich zdjęć, albo damy zdefiniowany krok pomiędzy zdjęciami. A jakbym chciał tylko częściowo skorzystać z tych opcji, albo jednocześnie, to co niby mam zrobić?? Może da się to zrobić jakoś inaczej, ale jest to w obecnej formie krańcowo nieintuicyjne. W rezultacie proces porządkowania to około 1h - przy 500 zdjęciach.</p>
+<p>Mając już posortowane fotki chciałem je zapisać do folderu. Jest przecież opcja &#8220;Export-&gt;Folder&#8221;, która dokładnie to robi. A ja lubię mieć fotki w folderach, a nie zarządzane wyłącznie jakąś dodatkową aplikacją. Niestety okazało się, że dostaję piękną wywrotkę F-Spota:</p>
+<p></p>
+<pre>
+<br>
+Stacktrace:
+
+  at (wrapper managed-to-native) Exif.ExifData.exif_data_save_data (System.Runtime.InteropServices.HandleRef,intptr&amp;,uint&amp;) &lt;0x00004&gt;
+  at (wrapper managed-to-native) Exif.ExifData.exif_data_save_data (System.Runtime.InteropServices.HandleRef,intptr&amp;,uint&amp;) &lt;0xffffffff&gt;
+  at Exif.ExifData.Save () &lt;0x0006c&gt;
+  at JpegHeader.SetExif (Exif.ExifData) &lt;0x00014&gt;
+  at FSpot.JpegFile.SaveMetaData (System.IO.Stream,System.IO.Stream) &lt;0x0004e&gt;
+  at FSpot.JpegFile.Save (Gdk.Pixbuf,System.IO.Stream) &lt;0x00149&gt;
+  at FSpot.Filters.ResizeFilter.Convert (FSpot.Filters.FilterRequest) &lt;0x001d1&gt;
+  at FSpot.Filters.FilterSet.Convert (FSpot.Filters.FilterRequest) &lt;0x000e6&gt;
+  at FSpotFolderExport.FolderGallery.ProcessImage (int,FSpot.Filters.FilterSet) &lt;0x0060a&gt;
+  at FSpotFolderExport.FolderExport.Upload () &lt;0x0050f&gt;
+  at (wrapper runtime-invoke) System.Object.runtime_invoke_void (object,intptr,intptr,intptr) &lt;0xffffffff&gt;
+</pre>
+<p>Aby nie czekać na poprawki i dochodzenie co i jak w samym programie postanowiłem obejść program i korzystając z informacji z bazy SQLite, wewnętrznie wykorzystywana baza F-Spota, sam uporządkowałem moje fotki w folderze.</p>
+<p>Jeśli komuś byłoby to kiedyś potrzebne, to korzystając z wersji 0.5.0.3 pomógł mi taki skrypcik:</p>
+<pre>
+#!/bin/sh
+for pair in `sqlite3 photos.db 'select * from photos' | awk -F\| '{ print $2 "|" $3}'`
+do
+    seconds=`echo $pair | awk -F\| '{print $1}'`
+    path=`echo $pair | awk -F\| '{print $2}' | sed -e 's/file:\/\///'`
+    photo_date=`date -d @$seconds +%F_%H:%M`
+    cp $path Desktop/Sycylia_09.2009/$photo_date.jpg
+    echo $photo_date $path
+done
+</pre>
+<p>No i ok, o ile pierwsze z moich zarzutów można jakoś ścierpieć i starać się wytłumaczyć (choćby tym, że ostatnio czytałem książkę &#8220;Designing interfaces&#8221; <a href="http://www.amazon.co.uk/Designing-Interfaces-Patterns-Effective-Interaction/dp/0596008031/ref=sr_1_1?ie=UTF8&amp;s=books&amp;qid=1253460887&amp;sr=8-1">(Amazon),</a> to już nie wyobrażam sobie jak można dopuścić do tego, żeby aplikacja wywalała się przy dosyć kluczowej - bo końcowej, operacji!</p>
+</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="">geeker</a></div>
+<div class='content'>
+<p>DigiKam i Gwenview oferują znacznie więcej, a tym samym są mniej zasobożerne od F-Spot. Jeśłi ktoś uparcie chce aplikację napisaną z użyciem gtk to polecam Shotwell:<br />
+<br />
+http://yorba.org/shotwell/</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.web-best.co.cc">Mr Web</a></div>
+<div class='content'>
+<p>Ja jestem zadowolony z F-spot na Mandriva Extreme 2</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://wcinacz.pl/">Wcinacz</a></div>
+<div class='content'>
+<p>Totalna załamka F-Spot :F</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="">Livio</a></div>
+<div class='content'>
+<p>Odnośnie pakietów i repozytoriów w openSUSE, to rzeczywiście jest tam niezły syf. Webowy klient Build Service powinien dorobić się jakiegoś interfejsu propozycji pakietów do oficjalnego repozytorium, które winno być jedno i powinno zawierać aktualizacje. Mniej do pobierania, większy porządek.<br /><br />Bo Contrib nie zdało egzaminu.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>@Jajcuś - racja, ale w jednym z wcześniejszych postów na tym blogu żaliłem się na system pakietowy openSuse, na którym to używałem tego f-spota.<br /><br />Ok, fakt jest faktem, powinienem dać szansę nowszej wersji.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://antywirusy.s69.info">Antywirusy</a></div>
+<div class='content'>
+<p>no brak jest alterntywy</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://blog.jajcus.net">Jajcuś</a></div>
+<div class='content'>
+<p>Wiesz… aktualna wersja f-spot to 0.6.1.2, a nie 0.5.0.3. <br />No i ja alternatywy dla F-Spot nie widzę… oglądałem różne alternatywy (czy Picassa, czy GThumb) i niestety, jak dla mnie nawet nie zbliżyło się użytecznością do tego, dalekiego od doskonałości, F-Spota.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="">Livio</a></div>
+<div class='content'>
+<p>Zamiast robić durne afery, zgłoś błąd&#8230;<br /><br />Wyobraź sobie, dla własnego komfortu psychicznego, co byłoby, gdyby każdy robił aferę ze znalezionego buga. Jogger musiałby zmienić nazwę na Bugger albo I&#8217;m-too-lazy-or-sth-to-file-a-bug.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://kaladan.jogger.pl">weosły kosiarz</a></div>
+<div class='content'>
+<p>Marcin: gthumb w niektórych wersjach ma BUG. Też to mam.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://a-patch.jogger.pl">a_patch</a></div>
+<div class='content'>
+<p>digiKam</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="">kmitko</a></div>
+<div class='content'>
+<p>Cóż mogę powiedzieć, SOA#1 :).</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>@kmitko: a czy trzeba zrobić coś specjalnego, żeby w gthumb, przy przeglądaniu folderów ze zdjęciami pokazały się te pliki? W tej chwili gdy wchodzę do zadanego katalogu nic nie pokazuje się, tak jakby był pusty. A nie jest :)</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="">kmitko</a></div>
+<div class='content'>
+<p>To już zależy od wymagań. Ja przerzuciłem się na gthumb — jest import zdjęć, prosta edycja, katalogi działające jak tagi i eksport do galerii html.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://blog.sebastiannowak.com">Seban</a></div>
+<div class='content'>
+<p>jeśli nie f-spot to co?</p></div>
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/09/20/open-suse-jest-uposledzone/">Open Suse Jest Upośledzone!</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-20T16:45:13+02:00" pubdate data-updated="true">Sep 20<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<p>Zarządzanie pakietami to droga przez mękę. Czemu? Proszę bardzo:</p>
+<p><code>marcin@byakshee:~&gt; sudo zypper install f-spot<br>
+Reading installed packages...<br>
+'f-spot' is already installed.<br>
+Nothing to do.</code></p>
+<p>ale już jakbym chciał upgrade paczki zrobić, to inna rozmowa:</p>
+<p><code>marcin@byakshee:~&gt; sudo zypper update f-spot<br>
+Reading installed packages...<br>
+Package 'f-spot' is not installed.<br>
+Nothing to do.</code><br></p>
+<p><br>
+Wniosek z tego taki, że jak raz zetkniesz się z apt-getem, to już nic nie będzie później odpowiednie :D A OpenSuse oczywiście odradzam.</p>
+<p></p>
+</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://a-patch.jogger.pl">a_patch</a></div>
+<div class='content'>
+<p>Apatitude ssie ;) Na moim NAS działa jakieś 80% wolniej niż apt-get. Zwłaszcza proces inicjacji.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://zapiski.mruwek.pl">mruwek</a></div>
+<div class='content'>
+<p>Zainstalowałem z lenistwa OpenSuse u mojej Miłości. Srodze się rozczarowałem. Ślimaczy się toto u Niej bardziej niż moje Gentoo, przy czym należy wspomnieć, że moja maszyna ma jakieś 7 lat więcej niż ta przez Nią aktualnie użytkowana.<br /><br />A poza tym apt-get jest przestarzały — „użyj mocy” i włącz aptitude.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>Nie korzystam z apt-geta na OpenSuse - takie wybiegi uznaję za jakieś akrobacje. Używam tylko YaST i zypper - no ale mam nadzieję, że korzystają z tej samej bazy pakietów :D albo że &quot;zypper install&quot; korzysta z tej samej co &quot;zypper update&quot; :)</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://epicweb.pl">Bartosz &quot;BTM&quot; Szczeciński</a></div>
+<div class='content'>
+<p>Oh, to nie wiem - administruje dwoma SuSE (jeden czysty SuSE, jeden OpenSuse) i poza marudzeniem na UBER WOLNE YaST problemów nie miałem.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://pawel-ciupak.jogger.pl">Paweł Ciupak</a></div>
+<div class='content'>
+<p>Raczej nie sądzę – ja też się z tym problemem w openSUSE spotkałem niegdyś, i zawsze on występował, nieważne jak paczka została zainstalowana.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://epicweb.pl">Bartosz &quot;BTM&quot; Szczeciński</a></div>
+<div class='content'>
+<p>Tu się nie sprzeczam, bo mnie zawsze YaST boli - ale może właśnie dlatego, że pakiet był instalowany przez czysty apt-get teraz są problemy z paczką?</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://pawel-ciupak.jogger.pl">Paweł Ciupak</a></div>
+<div class='content'>
+<p>Ma, ale jest szitowe – zawsze po instalacji czegokolwiek przez 5 minut musi się wałkować jakieś SuSEconfig, nie wiadomo po co.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://epicweb.pl">BTM</a></div>
+<div class='content'>
+<p>A ten - OpenSuse nie ma zarządzania przez yast?</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://pawel-ciupak.jogger.pl">Paweł Ciupak</a></div>
+<div class='content'>
+<p>Cóż, pozostaje mi się z tą opinią zgodzić. Używałem niegdyś openSUSE, i muszę przyznać, że zarządzanie pakietami w nim jest do dupy – a to problemy z apgrejdowaniem, a to konieczność żonglerki repozytoriami, a to pakiety z powycinanymi niektórymi funkcjonalnościami (bo patenty), a to całkowicie niepotrzebne i zbędne zależności… Ech.</p></div>
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/09/20/przydatne-programy-zdjeciowe/">Przydatne Programy Zdjęciowe</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-20T12:29:06+02:00" pubdate data-updated="true">Sep 20<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<p>Od dawna używam <a href="http://hugin.sourceforge.net/">hugina</a>, który doskonale nadaje się do sklejania wielu zdjęć w panoramę. Robi to doskonale, wygładza, koryguje, dopasowuje. Wystarczy wrzucić sekwencję zdjęć w odpowiedniej kolejności, a program załatwi wszystko za mnie. Miód!</p>
+<p>Dziś znalazłem natomiast programik o dziwnej conieco nazwie <a href="http://www.indii.org/software/tintii">tintii</a>. On z koleii służy do przerabiana zdjęc na czarnobiałe, zostawiając pewien obszar w kolorze. Robienie podobnej rzeczy w Gimpie nigdy nie wychodziło mi łatwo. Dzięki temu narzędziu wszystko idzie łatwo i przyjemnie!</p>
+<p>Polecam!</p>
+</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://www.facebook.com/profile.php?id=100003406472367">RAYmHPMbVDLDJIa</a></div>
+<div class='content'>
+<p>I had that 2 months ago. You can dlnoowad everything under the moon, it may not help. Save all your files on portable disks(Music, files, pics, etc.) Now, you need to reformat the disk. To do this, turn off computer.Turn back on, and then hit F10. Go to advanced options, Next, Yes, Yes. Your computer is good as new. Don&#8217;t forget to save those files because they will be gone once you reformat.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://antywirusy.s69.info">Antywirusy</a></div>
+<div class='content'>
+<p>Bardzo fajny to programik, polecam :0</p></div>
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/09/20/battlestar-galactica/">Battlestar Galactica</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-20T00:00:00+02:00" pubdate data-updated="true">Sep 20<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<p>Wszystko zaczęło się w 2005, kiedy to wypuszczony został pierwszy odcinek odświeżonego serialu Battlestar Galactica. Początkowo zapowiadał się po prostu remake serialu z lat 70. Jednak z czasem, gdy rozwijała się fabuła a kolejne odcinki puchły od mnogości bohaterów i ich różnorodności, serial stał się czymś nowym. Całkiem odrębnym.</p><br /><br /><p>Przez te lata pozwolił przeżyć z bohaterami zagładę planety Caprice, ucieczkę grupy 50 000 niedobitków, partyzancką walkę z przeważającymi siłami Cylonów. Gdy znaleziono nowy dom, oglądaliśmy ich zmagania z niegościnną planetą, a później z jażmę Cylonów, którzy jednak znaleźli ich i tam. Z czasem doszło do unii między ludźmi a Cylonami, aż w końcu&#8230;.</p><br /><br /><p>Nieee&#8230;. to by był zbyt duży spoiler. Sęk w tym, że właśnie skończyłem 4. sezon Battlestar Galactica, który rozstrzygnął masę rzeczy i zakończył całość. I jakkolwiek ckliwie i telenowelowo brzmi powyższe streszczenie, to wszystkim fanom scifi radzę zapoznać się z tą produkcją, bo naprawdę warto.</p><br /><br /><p>Wiele z tych postaci osiągnęło już status kultowy :D przynajmniej wśród osób oglądających serial!</p><br /><br /><center><br /><a href="http://www.flickr.com/photos/zygm0nt/3937926580/" title="Battlestar galactica - last supper by zygm0nt, on Flickr"><img src="http://farm3.static.flickr.com/2604/3937926580_74b6ac43d4.jpg" width="500" height="324" alt="Battlestar galactica - last supper" /></a></center><br /><br /><a href="http://www.imdb.com/title/tt0407362/">IMDB</a><br/><br /><a href="http://en.wikipedia.org/wiki/Battlestar_Galactica">Wikipedia</a></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/6/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/4/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/06/23/zookeeper-curator/">Zookeeper + Curator = Distributed sync</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/21/zookeeper-tips/">Operational problems with Zookeeper</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/30/after-whug/">After WHUG meeting</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/26/whug-8-beyond-hadoop/">WHUG 8. Beyond Hadoop - checking other options</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/30/hadoop-ha/">Hadoop HA setup</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/zygm0nt">@zygm0nt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'zygm0nt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("zygm0nt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/zygm0nt" class="twitter-follow-button" data-show-count="false">Follow @zygm0nt</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Marcin Cylke -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'marcinbloguje';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

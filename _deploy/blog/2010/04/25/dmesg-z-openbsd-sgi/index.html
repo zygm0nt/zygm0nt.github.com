@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Dmesg z Openbsd/sgi - Marcin bloguje</title>
+  <meta name="author" content="Marcin Cylke">
+
+  
+  <meta name="description" content="Wracając do starego tematu OpenBSD na moim SGI O2, postanowiłem lekko odświeżyć tą maszynę. Dostałą uaktualnienie małe. Przysiedziałem również nad &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://zygm0nt.github.com/blog/2010/04/25/dmesg-z-openbsd-sgi/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Marcin bloguje" type="application/atom+xml">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-172194-10']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <div id="logo">
+  	<div id="logoLeft">{</div>
+  	<div id="logoText">mob</div>
+  	<div id="logoRight">}</div>
+  	<div class="clear"></div>
+  </div>
+  <h1><a href="/">Marcin bloguje</a></h1>
+  
+    <h2>.impressions.memos.tech.</h2>
+  
+  <div class="clear"></div>
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:zygm0nt.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      
+        <h1 class="entry-title">Dmesg Z Openbsd/sgi</h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-04-25T14:20:34+02:00" pubdate data-updated="true">Apr 25<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+<p>Wracając do starego tematu OpenBSD na moim SGI O2, postanowiłem lekko odświeżyć tą maszynę. Dostałą uaktualnienie małe. Przysiedziałem również nad dostosowaniem systemu do swoich potrzeb, instalacji potrzebnego softu itp.</p>
+<EXCERPT><p>Na początek <code>dmesg</code> z działąjącego systemu:</p>
+
+<pre>
+[ using 433608 bytes of bsd ELF symbol table ]
+Copyright (c) 1982, 1986, 1989, 1991, 1993
+    The Regents of the University of California.  All rights reserved.
+Copyright (c) 1995-2009 OpenBSD. All rights reserved.  http://www.OpenBSD.org
+
+OpenBSD 4.6-current (GENERIC-IP32) #49: Fri Jul 31 05:07:50 MDT 2009
+    deraadt@sgi.openbsd.org:/usr/src/sys/arch/sgi/compile/GENERIC-IP32
+real mem = 67108864 (64MB)
+rsvd mem = 7020544 (6MB)
+avail mem = 40771584 (38MB)
+mainbus0 at root
+cpu0 at mainbus0: MIPS R5000 CPU rev 2.1 180 MHz with R5000 based FPC rev 1.0
+cpu0: cache L1-I 32KB D 32KB 2 way, L2 512KB direct
+clock0 at mainbus0: ticker on int5 using count register
+macebus0 at mainbus0: crime rev 10.1
+macepcibr0 at macebus0: mace rev 1, host system O2
+pci0 at macepcibr0 bus 0
+ahc0 at pci0 dev 1 function 0 "Adaptec AIC-7880" rev 0x00: irq 9
+ahc0: Host Adapter Bios disabled.  Using default SCSI device parameters
+scsibus0 at ahc0: 16 targets, initiator 7
+sd0 at scsibus0 targ 1 lun 0: <SGI, IBM DCHS04Y, 3030> SCSI2 0/direct fixed
+sd0: 4340MB, 512 bytes/sec, 8888543 sec total
+cd0 at scsibus0 targ 4 lun 0: <TOSHIBA, CD-ROM XM-5401TA, 3605> SCSI2 5/cdrom removable
+ahc1 at pci0 dev 2 function 0 "Adaptec AIC-7880" rev 0x00: irq 10
+ahc1: Host Adapter Bios disabled.  Using default SCSI device parameters
+scsibus1 at ahc1: 16 targets, initiator 7
+dsrtc0 at macebus0: DS1687
+com0 at macebus0 base 0x00390000 irq 5: ns16550a, 16 byte fifo
+com1 at macebus0 base 0x00398000 irq 5: ns16550a, 16 byte fifo
+mec0 at macebus0 base 0x00280000 irq 4: MAC-110 rev 1, address 08:00:69:0c:98:fb
+nsphy0 at mec0 phy 11: DP83840 10/100 PHY, rev. 0
+mavb0 at macebus0 base 0x00300000 irq 7: AD1843 rev 1
+audio0 at mavb0
+mkbc0 at macebus0 base 0x00320000 irq 6
+pckbd0 at mkbc0 (kbd slot)
+wskbd0 at pckbd0: console keyboard
+power0 at macebus0 irq 6
+gbe0 at mainbus0: rev 1, 8MB, 1280x1024 at 8 bits
+wsdisplay0 at gbe0 mux 1: console (std, vt100 emulation), using wskbd0
+wsdisplay0: screen 1 added (std, vt100 emulation)
+softraid0 at root
+ahc0: target 1 using 16bit transfers
+ahc0: target 1 synchronous at 20.0MHz, offset = 0x8
+boot device: sd0
+root on sd0a swap on sd0b dump on sd0b
+</pre>
+
+<p>Niby działa dobrze, z kilkoma wyjątkami:</p>
+
+<ul>
+<li> nie udało mi się uruchomić Xów z działającą myszką. To dlatego, że nie wiem jakie użądzenie powinienem utworzyć w /dev i jakie wpisać do xorg.conf</li>
+<li> pakiety binarne są dostępne w architekturze <code>mips64</code> - co nie jest całkiem intuicyjne, ale działa :)</li>
+<li>coś jest na rzeczy z przełączaniem wirtualnych screenów w konsoli - nie działa CTRL+ALT+F? i nie wiem dlaczego, a wszelkie googlanie nie daje zadowalających efektów</li>
+</ul>
+
+<p>Jak narazie zainstalowałem podstawowe utilki ułatwiające pracę na konsoli - screen, vim, elinks, etc. Czas na zabawę z <code>pf</code> :)</p>
+</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin Cylke</a></div>
+<div class='content'>
+<p>@pecet, czemu nie zapytasz &quot;po co sgi o2?&quot; przecież to też wydaje się pozbawione logiki :)<br />
+<br />
+A jeśli chodzi o OpenBSD - czy ogólnie inne BSD, to może warto najpierw coś o nich przeczytać i dowiedzieć się co to jest, i czemu niektórym się to może przydać, zamiast od razu flame&#8217;ować.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://mt3o.jogger.pl">mt3o</a></div>
+<div class='content'>
+<p>@Pecet: Po to samo, po co na starym kompie ja zainstalowałem FBSD: aby poznać coś nowego. Linux nie zjadł wszystkich rozumów.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://pecet.jogger.pl">pecet</a></div>
+<div class='content'>
+<p>Ale czemu BSD, po co się męczyć Linux stał się użyteczny ostatnimi latami, i obsługuje coraz więcej sprzętu, więc &quot;hakerzy&quot; go już nie lubią?</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin Cylke</a></div>
+<div class='content'>
+<p>No co Ty? :) przecież z jakiegoś powodu zainstalowałem właśnie OpenBSD :) nie po to żeby od razu przy jakiejś trudności się go pozbywać. Choć chętnie spróbowałbym teraz jak działa IRIX na tym sprzęcie.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://red.jogger.pl">red</a></div>
+<div class='content'>
+<p>Pecet: robisz się trochę nudny.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://pecet.jogger.pl">pecet</a></div>
+<div class='content'>
+<p>Zainstaluj Gentoo</p></div>
+</div>
+</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Marcin Cylke</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-04-25T14:20:34+02:00" pubdate data-updated="true">Apr 25<span>th</span>, 2010</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/it/'>IT</a>, <a class='category' href='/blog/categories/ogólne/'>Ogólne</a>, <a class='category' href='/blog/categories/techblog/'>Techblog</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zygm0nt.github.com/blog/2010/04/25/dmesg-z-openbsd-sgi/" data-via="zygm0nt" data-counturl="http://zygm0nt.github.com/blog/2010/04/25/dmesg-z-openbsd-sgi/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left articlenav" href="/blog/2010/04/22/unicode-w-pythonie/" title="Previous Post: Unicode w Pythonie">&laquo; Unicode w Pythonie</a>
+      
+      
+        <a class="basic-alignment right articlenav" href="/blog/2010/05/07/eclipse-ecosystem/" title="Next Post: Eclipse ecosystem">Eclipse ecosystem &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/06/23/zookeeper-curator/">Zookeeper + Curator = Distributed sync</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/21/zookeeper-tips/">Operational problems with Zookeeper</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/30/after-whug/">After WHUG meeting</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/26/whug-8-beyond-hadoop/">WHUG 8. Beyond Hadoop - checking other options</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/30/hadoop-ha/">Hadoop HA setup</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/zygm0nt">@zygm0nt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'zygm0nt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("zygm0nt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/zygm0nt" class="twitter-follow-button" data-show-count="false">Follow @zygm0nt</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Marcin Cylke -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'marcinbloguje';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

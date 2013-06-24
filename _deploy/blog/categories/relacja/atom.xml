@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: relacja | Marcin bloguje]]></title>
+  <link href="http://zygm0nt.github.com/blog/categories/relacja/atom.xml" rel="self"/>
+  <link href="http://zygm0nt.github.com/"/>
+  <updated>2013-06-24T22:34:54+02:00</updated>
+  <id>http://zygm0nt.github.com/</id>
+  <author>
+    <name><![CDATA[Marcin Cylke]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Geecon 2011 - day 2]]></title>
+    <link href="http://zygm0nt.github.com/blog/2011/05/22/geecon-2011-day-2/"/>
+    <updated>2011-05-22T18:39:31+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2011/05/22/geecon-2011-day-2</id>
+    <content type="html"><![CDATA[<div class='post'>
+<p>And now for part 2 of my visit to Geecon 2011!</p>
+<EXCERPT>
+<h2>1. <a href="http://jim.webber.name/">Jim Webber</a> "Revisiting SOA for the 21st
+century"</h2>
+
+<p>Now this was awesome! Jim Webber, a former <a
+href="http://www.thoughtworks.com/">ThoughtWorks</a> employee, now
+Neo4j evangelist (in <a href="http://neotechnology.com/">Neotechnology</a>) described his views
+on how SOA should look - according to him. This was presented
+previously, on other occasions as his "Guerilla SOA" talk - generally he
+advocated for REST based services, loose contracts (stating that WSDLs
+are too verbose and code generation is evil).</p>
+
+<p>Jim mentioned Martin Fowler's article on integration databases but I
+couldn't find it anywhere - thou the topic looks interesting. He also
+recommended <a
+href="http://en.wikipedia.org/wiki/Behavior_Driven_Development">BDD</a> and exposing tests on the web for the end
+user to use them as early as possible.</p>
+
+<p> One big point he made his case with was <b>not relying on enterprise
+software</b>. Simple tools can do much better job. He compared
+implementing Web Services security (Secured SOAP over HTTP over TCP IP)
+to REST based service accessed through <i>HTTPS</i> - basic and easily
+testable with tools like <a href="http://curl.haxx.se/">curl</a>.</p>
+
+<p>Great talk. One of the best!</p>
+
+<h2>2. <a href="http://blog.staffannoteberg.com/">Staffan Noteberg</a> "Regex - the future
+programming"</h2>
+
+<p>I must confess, that this did not go too well. The whole talk was
+well prepared and laid out but it lacked depth. It was pretty basic
+introduction to regex. From the presentation's subject I was rather
+prepared for some novel uses of regex - like for example: showing how to
+filter big volume of data with simple regex or sth.</p>
+
+<p>But the talk was fun, Staffan is a good speaker. He is also an author
+of <a href="http://www.pomodorotechnique.com/"> pomodoro technique</a> book - I intend to read sth abut
+this technique and this may be a nice start</p>
+
+<h2>3. Bartosz Kowalewski "Is OSGI ready for wide
+adoption?"</h2>
+
+<p>If it comes to titles I tend to rely on them pretty heavily, however
+strange it may seem. This time I also did - and the whole talk did not
+give me a definitive answer to the stated question.</p>
+
+<p>Sure, the presentation was informative, but it described some OSGI
+specific, quite low level stuff. Of course, if you want to use OSGI -
+even by leveraging application server with OSGI under the hood - you
+should know a fair bit about the technology itself. Even thou the AS
+does a good job of hiding OSGI container specifics from the developer,
+in case of problems it's better to be well informed. All in all - the
+talk gave too little information for me.</p>
+
+<h2>4. <a href="http://www.jetbrains.com/company/people/Pech_Vaclav.html">Vaclav Pech</a> "Pick low hanging fruit"</h2>
+
+<p><b>"Parallelism is not hard, multithreading is"</b> - this was the
+key sentence of the presentation. The speaker showed how to introduce
+concurrency into normal java/groovy code by sprinkling it with
+concurrency powder. Easy enough! With <a
+href="http://gpars.codehaus.org/">GPars</a> library he
+showed:</p>
+
+<ul>
+<li>running processing tasks with thread pools</li>
+<li>testing concurrent code</li>
+<li>Fork/join Thread Pool - multiple thread queues (note to self:
+fork/join is good for hierarchical problems)</li>
+<li>low-hanging fruits:<br>
+
+    <ul>
+    <li>async calculations</li>
+    <li>fork/join</li>
+    <li>dataflow</li>
+    <li>parallel collection processing</li>
+    </ul>
+</li>
+<li>Actors are great - use <a
+href="http://gpars.codehaus.org/">GPars</a> or <a href="http://akka.io/">Akka</a>,
+is sufficient to use <i>@ActiveMethod</i> and <i>@ActiveObject</i>
+annotations and Actors are usable in OO-world</li>
+</ul>
+</p>
+
+<p> Good talk, well received!</p>
+
+<h2>5. <a href="http://www.linkedin.com/in/antonarhipov">Anton Arhipov</a> "Bytecode for discriminating
+developers"</h2>
+
+<p>Technical introduction to the world of bytecode, jvm specification
+details. I've drifted away to some other topics - really - can't recall
+what this was all about.</p>
+
+<h2>6. <a href="http://jroller.com/aalmiray/">Andreas Almiray</a> "Polyglot Programming"</h2>
+
+<p>This was a nice talk covering Groovy, Scala and Closure. The whole
+point of it was to show how cool it is to play with emerging JVM
+languages. They are not only fun but also useful. What's more, they
+bring freshness to java world, injecting it with some new paradigms and
+methodologies. It is easier to incorporate new ideas into younger JVM
+languages than to the mature Java.</p>
+
+<h2>7. <a href="http://jim.webber.name/">Jim Webber</a> "A pragmatic introduction to
+Neo4j"</h2>
+
+<p>And Jim Webber again, this time with some <a href="http://neo4j.org/">Neo4j</a> evangelism. First
+came some taxonomy information on NoSQL databases (Not Only SQL) as a
+whole - than some specific examples of problems solvable with graph
+databases - and Neo4j is a graph database. </p>
+
+<p> Main points of Jim's talk were:
+<ul>
+<li>sharding a database is important for scalability</li>
+<li>series data - should be OK to use Neo4j as their storage</li>
+</ul>
+
+<h2>Conclusion</h2>
+
+<p>These were all the sessions I attended. On Saturday there was a
+Hacker-garden, but neither I had time nor will to stay - the topics were
+very interesting and I'd definitely like to experience such an event,
+but after 2 days of continuous talks I was rather tired.</p>
+
+<p>To sum up, 2011's Geecon was a great experience, with lots of
+interesting talks and lots of new inspirations. Keep up the good work
+guys!</p></div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Me on Hadoop on Parleys]]></title>
+    <link href="http://zygm0nt.github.com/blog/2011/03/20/me-on-hadoop-on-parleys/"/>
+    <updated>2011-03-20T20:35:39+01:00</updated>
+    <id>http://zygm0nt.github.com/blog/2011/03/20/me-on-hadoop-on-parleys</id>
+    <content type="html"><![CDATA[<div class='post'>
+<p>Finally I've managed to import my <a href="http://mcl.jogger.pl/2011/02/17/hadoop-on-warsaw-jug/">WarJUG presentation</a> to parleys.com. See for yourself :)
+</p>
+<EXCERPT>
+
+<object width="474" height="443">
+  <param name="movie" value="http://www.parleys.com/share/parleysshare2.swf?pageId=2316"/>
+  <param name="allowFullScreen" value="true"/>
+  <param name="pageId" value="2316"/>
+  <embed src="http://www.parleys.com/share/parleysshare2.swf?pageId=2316" type="application/x-shockwave-flash" allowfullscreen="true" width="474" height="443"/>
+</object>
+
+<p>
+If you've got problems with opening the parleys' version try the ones uploaded to youtube.
+</p>
+<p>
+Here is part 1:
+</p>
+<object width="425" height="344"><param name="movie"                            
+value="http://www.youtube.com/v/oUFUhZtsUFI?hl=en&fs=1"></param><param
+name="allowFullScreen" value="true"></param><param
+name="allowscriptaccess" value="always"></param><embed
+src="http://www.youtube.com/v/oUFUhZtsUFI?hl=en&fs=1"
+type="application/x-shockwave-flash" allowscriptaccess="always"
+allowfullscreen="true" width="425" height="344"></embed></object>
+
+<p>And here is part 2:</p>
+
+<object width="425" height="344"><param name="movie"
+value="http://www.youtube.com/v/LqhmOHXaQEU?hl=en&fs=1"></param><param
+name="allowFullScreen" value="true"></param><param
+name="allowscriptaccess" value="always"></param><embed
+src="http://www.youtube.com/v/LqhmOHXaQEU?hl=en&fs=1"
+type="application/x-shockwave-flash" allowscriptaccess="always"
+allowfullscreen="true" width="425" height="344"></embed></object>
+
+</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://sigvatr.jogger.pl">Sigvatr</a></div>
+<div class='content'>
+<p>I'm sorry, but I don't understand  Polish :P</p></div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Meetbsd 2010]]></title>
+    <link href="http://zygm0nt.github.com/blog/2010/08/19/meetbsd-2010/"/>
+    <updated>2010-08-19T00:16:25+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2010/08/19/meetbsd-2010</id>
+    <content type="html"><![CDATA[<div class='post'>
+<p>
+Some time ago, I've attended <a href="http://meetbsd.org/">MeetBSD</a>
+conference in Kraków. This BSD event is held yearly in either Warsaw, or
+Kraków. Due to relatively small group of people that registered there
+was only one track, which had both good and bad sides - you didn't have
+to choose from myriads of lectures, but there was no way to skip boring
+ones either. Well, I guess this kind of niche conference - about
+operating system :) - will not attract bigger attention.</p>
+
+<center><a href="http://blog.innovative-labs.com/blog/DSC06777.JPG"><img
+src="http://blog.innovative-labs.com/blog/DSC06777.JPG" width="350"
+border="0"/></a></center>
+
+<EXCERPT/>
+
+<h3>DAY 1</h3>
+
+<p>It took place on 2nd-3rd of July, 2010, so this
+review is rather dated :) However, I'd like to keep this as reminder.
+I've arrived to the conference site, which was located in building of
+the <a
+href="http://www.ii.uj.edu.pl/index.php?page=lokalizacja-instytutu&hl=pol">Faculty of Mathematics and Computer Science</a>
+a few minutes after the official start of the conference. I had been
+traveling from Warsaw the same day, and the only train that would not
+require me to get up at some night hour would arrive a bit too late. Oh
+well :)
+</p>
+
+<p>
+I grabbed a tea and some biscuits and entered the series of lectures.
+</p>
+
+<p>
+The first thing to listen to was a <b>Welcome intro</b> - quite nice
+one. Conducted by a guy from Cisco (AFAIK). He was talking about the
+opportunities for Kraków and how it will become a Polish Silicon Valley
+in near future, etc. Actually I don't share his believes but the talk
+was ok. 
+</p>
+
+<p>
+Then came Dru Lavigne with some insight into <b>BSD Certification</b>
+program. Actually, does anybody use this? Come one. Do we really need
+another certification process? I for sure don't see the need, especially
+for the BSD community.  However the trend is good, may help popularize
+BSDs among enterprise leaders, because if something is certified, than
+it can be used in big enterprises, right? :)
+</p></p>
+
+<p>
+Sławek Żak talked about <b>NoSQL</b>. Although the talk gave a bit of
+info about what the idea is and how does it compare to normal DBs, I did
+not find his presentation entertaining. In my opinion, there was not
+enough emphasis on the difference in usage for such databases. The talk
+about NoSQL I'd attended on <a
+href="http://mcl.jogger.pl/2010/06/27/javarsovia-2010/">Javarsovia</a> was a lot better.
+</p>
+
+<p>
+Next talk, presented by Attilio Rao was very, very technical. It was
+about "VFS/Vnode interface in FreeBSD". It was rather an API
+presentation, and introduction on how to implement an FS in FreeBSD
+infrastructure, than a conference talk. This kind of presentation would
+be good suited for FreeBSD kernel developers not sysadmins.
+</p>
+<p>
+Jakub Klama's talk on the process of <b>porting FreeBSD to Da Vinci</b>
+embedded system was interesting. It had some photos of the board,
+tackled a few technical corners, but caught my attention. Well done!
+</p>
+<p>
+Out guy among FreeBSD hackers - Paweł Jakub Dawidek - gave speech about
+<b>HAST - High Availability STorage</b>. In other words he implemented
+<a href="http://www.drbd.org/">DRBD</a> for FreeBSD. Sadly, for me this
+is just catching up with what Linux has in mainline since 2.6.33 (it was
+working very well even before that). It's not so feature rich as DRBD,
+but the project is slowly maturing.  Nevertheless, it's good to finally have this on board.
+</p>
+<p>
+Then an inconspicuous guy come onto the stage. Came from Bulgaria, named
+Nikolay Aleksandrov, that guy gave a talk titled <b>Developing high
+speed FreeBSD</b>. And the subject was astounding. He works for a major
+Bulgarian ISP and due to lack of cash to buy some serious networking
+gear, he wrote a FreeBSD extension that would sit in-between network
+adapter and the kernel and do all the hard work like routing, VLANs, and
+more. His goal was to make it lighting fast, and as far as his results
+showed, he succeeded. This talk was really amazing, he did what would
+normally take hundreds of thousands of dollars - in cash and skills - in
+his free time, or at least as a pet project.
+</p>
+
+<h3>DAY 2</h3>
+
+<p>
+Well, I'd skipped the first lecture of the day, because of laziness ;)
+</p>
+
+<p>
+Had decide to pack myself and arrive to listen about <b>what can freebsd
+borrow from AIX</b>. Jan Srzednicki talked about some nice tools from
+the AIX world. He proposed that adding an educational, console-based
+tool for conducting basic (and even not so basic) tasks, would encourage
+people to learn the system. I think it would work. However the rest of
+his ideas weren't good enough - at least not for me.
+</p>
+
+<p>
+Next thing in line was <b>The new USB stack</b>. Interesting talk about
+new USB stack development, conducted by Hans Petter Selasky.
+  This guy was really passionate about USB things ;-)</p>
+
+<p>
+Martin Matuska presented his set of shell scripts that allow to create
+<b>mfsBSD</b> - an in-memory FreeBSD install. Since I'm already doing
+this kind of things with <a href="http://openbsd.org">OpenBSD</a>, the talk was entertaining.  
+</p>
+
+<p>
+Marcko Zec and <b>Network stack virtualization</b>. This was about
+extending FreeBSD to be able to create  lots of compartmentalized
+environments with their own network stacks. As noted in the
+presentation: the solution still has problems with
+  graceful shutdown of the stack. Still not stable enough - but very
+  promising.
+</p>
+
+<p>The closing presentation, given by Warner Losh (<b>very</b>
+knowledgeable guy behing <a
+href="http://bsdimp.blogspot.com">bsdimp.blogspot.com</a>) on the
+subject <b>Using FreeBSD in a commercial settings</b>. The talk was not
+what I've expected, but nevertheless was very interesting. It was about
+branching and merging back changes in case of using FreeBSD as a base
+for some commercial products. This could be easily applied to any other
+Open Source project. Warner described possible strategies for branching
+and performing merges, he noted also pros and cons of all the described
+solutions.
+</p>
+
+<p>
+All in all, that was a fun time. Even thou I don't use any BSD as my
+primary system at this time, and my BSD skills are a bit rusty, the
+talks were nice enough :) for a hobbist like me.</p>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[6+ hour layover in Stockholm]]></title>
+    <link href="http://zygm0nt.github.com/blog/2010/08/13/6-hour-layover-in-stockholm/"/>
+    <updated>2010-08-13T00:22:01+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2010/08/13/6-hour-layover-in-stockholm</id>
+    <content type="html"><![CDATA[<div class='post'>
+<p>Last Monday, while coming home from Sweden, I had ~7h layover between my
+flights. Since <a href="http://www.arlanda.se/en/">Arlanda Airport</a> does not offer a lot to do, at least not
+for me and not for 7h, I had decided to go to Stockholm. This post sums
+up a few nice places, that I'd like to visit on my next trip there.</p>
+<EXCERPT><p>I took <a href="http://www.arlandaexpress.com/start.aspx">Arlanda
+Express</a>, fast train that takes you directly from the
+airport to Stockholm. On board, you travel with 200km/h in good enough
+conditions. The trains takes you near the Central station in 20 minutes,
+which is great! The main venue I planned to see was <a
+href="http://www.old-town-stockholm.com/">Gamla Stan</a>. All the
+attractions were also there, on the island.</p>
+
+<p>
+The first noteworthy place on the road was Christina's costume salon.
+Unfortunately closed on the day of my visit, however since it was
+recommended to me, and the place look interesting I plan on paying it
+another visit. This shop offers a lot of costumes, different sizes,
+themes. Website is: <a href="http://www.christinaschollin.com/">Shop's
+page</a></p>
+
+<table border="0">
+<tr>
+<td>
+<img
+src="http://maps.google.com/maps/api/staticmap?center=Storkyrkobrinken+11,+Stockholm,+Sverige&size=600x300&maptype=roadmap&markers=color:red|label:A|59.325766,18.067384&zoom=15&sensor=true"/></td>
+</tr>
+</table>
+
+<p>
+Seems like just a usual gift shop, but has this unique feeling, this
+Norsk spirit. Shop offers many fantastic gifts and souvenirs, but
+unfortunately they don't come cheap. Nevertheless, worth visiting and
+perhaps buying. Especially nice were little metal statues of Viking
+gods.
+<a href="http://www.handfaste.se/index.aspx?language=en"/>Handfaste - The Viking Shop</a>
+</p>
+
+<table border="0">
+<tr>
+<td>
+<img
+src="http://maps.google.com/maps/api/staticmap?center=59.323335,18.071903&zoom=17&markers=59.323335,18.071903&size=600x300&sensor=true"/></td>
+</tr>
+</table>
+
+<p>
+Neat little workshop, that does metal signs on request, from your
+design. Very good quality. Actually there are quite a few of such
+workshops nearby, but this may serve as a reminder.
+<a href="http://detlilleskyltmakeriet.se/">Det "lille" Skyltmakerie</a>
+</p>
+
+<table border="0">
+<tr>
+<td>
+<img
+src="http://maps.google.com/maps/api/staticmap?center=59.324668,18.072353&zoom=17&markers=59.324668,18.072353&size=600x300&sensor=true"/></td>
+</tr>
+</table>
+
+<p>
+Awesome sci-fi, fantasy bookshop. Lots of stuff, comics, books, dvds,
+collectibles, etc. I strolled into it when going back to the airport,
+that's why I had only around 5 minutes to look around. But the shop is
+definitely worth visiting. They offer English books among Swedish-lang
+ones, with 50:50 proportions in quantity.
+<a href="http://sfbok.se/">Science Fiction Bokhandeln</a>
+</p>
+
+<table border="0">
+<tr>
+<td>
+<img
+src="http://maps.google.com/maps/api/staticmap?center=59.324019,18.070613&zoom=16&markers=59.324019,18.070613&size=300x300&sensor=true"/></td>
+
+<td><a href="http://blog.innovative-labs.com/blog/DSCN4562.JPG"><img
+border="0"
+src="http://blog.innovative-labs.com/blog/thumbDSCN4562.JPG" alt="moja fotka"/></a></td>
+</tr>
+</table>
+
+<p>
+The darkest and best supplied metal shop I've ever seen - thou haven't
+seen many of such stores. Again, stumbled on it on my way to the airport,
+so had only around 5 minutes to look around, scan through t-shirts, etc
+:D
+<a href="http://www.soundpollution.se/"/>Sound Pollution</a>
+</p>
+
+<table border="0">
+<tr>
+<td>
+<img
+src="http://maps.google.com/maps/api/staticmap?center=59.324700,18.068320&zoom=17&markers=59.324700,18.068320&size=300x300&sensor=true"/></td>
+<td><a href="http://blog.innovative-labs.com/blog/DSCN4564.JPG"><img
+border="0"
+src="http://blog.innovative-labs.com/blog/thumbDSCN4564.JPG" alt="moja fotka"/></a></td>
+</tr>
+</table>
+
+<p>
+Some t-shirt shop, had also lots of underwear, dark costumes, etc. I
+think there may be more to it than I noticed.
+</p>
+
+<table border="0">
+<tr>
+<td>
+<img
+src="http://maps.google.com/maps/api/staticmap?center=59.324236,18.070247&zoom=15&markers=59.324236,18.070247&size=300x300&sensor=true"/></td>
+<td><a href="http://blog.innovative-labs.com/blog/DSCN4561.JPG"><img
+border="0"
+src="http://blog.innovative-labs.com/blog/thumbDSCN4561.JPG" alt="moja fotka"/></a></td>
+
+</tr>
+</table>
+
+<p>
+Unfortunately hadn't found this during my wandering. Will try next time: 
+<a href="http://robertasettels.com/">Roberta Settels shoes designs</a>
+</p>
+
+<table border="0">
+<tr>
+<td>
+<img
+src="http://maps.google.com/maps/api/staticmap?center=59.323753,18.071103&zoom=16&markers=59.323753,18.071103&size=600x300&sensor=true"/></td>
+</tr>
+</table>
+
+<p>
+Don't know the name of this packed with designer items place, but it was
+warm and cosy :) Prices were high and the utensils neat. Bore marks of
+"Swedish design school".
+</p>
+
+<table border="0">
+<tr>
+<td>
+<img
+src="http://maps.google.com/maps/api/staticmap?center=59.324183,18.071339&zoom=16&markers=59.324183,18.071339&size=300x300&sensor=true"/></td>
+<td><a href="http://blog.innovative-labs.com/blog/DSCN4507.JPG"><img
+border="0"
+src="http://blog.innovative-labs.com/blog/thumbDSCN4507.JPG" alt="moja fotka"/></a></td>
+
+
+</tr>
+</table>
+
+<p><font size="-2"></p>
+
+<p>Maps created with Google Maps Static API:
+
+<ul>
+<li><a
+href="http://gmaps-samples.googlecode.com/svn/trunk/simplewizard/makestaticmap.html">Generator</a></li>
+<li><a
+href="http://code.google.com/apis/maps/documentation/staticmaps/">API
+docs</a></li>
+</ul>
+
+Nice thing to use! Now I'm searching for a way to may the maps dynamic on
+click :)
+</p>
+
+<p></font></p>
+</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://lagom.jogger.pl">lagom</a></div>
+<div class='content'>
+<p>Så vackert är Stockholm i natt...</p></div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Javarsovia 2010]]></title>
+    <link href="http://zygm0nt.github.com/blog/2010/06/27/javarsovia-2010/"/>
+    <updated>2010-06-27T17:08:43+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2010/06/27/javarsovia-2010</id>
+    <content type="html"><![CDATA[<div class='post'>
+<p>This year's <a href="http://javarsovia.pl/">Javarsovia</a> conference took place on 26th june. It was held at Centrum Konferencyjno-Kongresowe,  Bobrowiecka Street,  Warsaw.</p>
+
+<p>First of all - the organization was very nice. Everything seemed smooth, maybe with the exception of conference registration, it was simply overcrowded.
+The agenda was split into four tracks, each hour 4 different presentations were given in different halls. So you just had to choose which one to attend. My path through the conference is described below, together with my views on each of the presentations I attended.</p>
+
+<p><p><br />
+The introductory speech conducted by Mateusz Zięba and some other guy from WarJUG, that I can't seem remember. The speech was very entertaining.  Guys did really good job with creating the appropriate atmosphere for the rest of the conference.</p></p>
+
+<p>Jakub Nabrdalik (TouK) with his "How not to bio-degrade your code"  was like the biggest event of the conference - held on the biggest hall of the building, with lots and lots of people attending. The audience was vivid and responded to Jakub's ideas with applause. He played us all very well.</p>
+
+<p>"From request to response" by Jarosław Błąd bored me to death. It wasn't interesting at all to listen about technical details of request handling by all layers of the JEE stack. - like http server, communication with Java app server, kinds of threads in the latter and the likes. What this presentation <b>should</b> have been about were personal views and opinions on other technologies, frameworks - Jarek started to tackle in Q&A section of his speech - that was the real meat!
+</p>
+
+<p>"Code refactoring" by Piotr Jagielski - overally good, but due to lots of agile, TDD, etc stuff present in the agenda - I kind of lost interest in that particular one.
+</p>
+
+<p>Fortunately dinner came to aid. With my vital forces rejuvenated by means of lasagne my mind's comprehension skills were back to normal.
+</p>
+
+<p>That allowed me to enjoy Wiktor Gworek's presentation about Google's style of Java coding. It was worth attending. Thou seamed mainly like a <a href="http://code.google.com/p/guava-libraries/">Google Guava</a> introduction - it gave a really fast presentation of Java concepts, how you can beautify your code and give you joy from what you write and create in your normal work day.
+</p>
+
+<p>"Routes of camel riding" by Maciek Próchniak - a solid does of technical knowledge by another colleague from TouK. Good one - thou didn't get much attention from the public. In fact the topic might have been a little misleading, but still the presentation went out well.
+</p>
+
+<p>What Jarek Pałka did with his NoSQL talk wasn't ground breaking, but funny enough and entertaining for the finishing act of this conference. For me some moments of his speech were rather enlightening - NoSQL dbs are actually used in some serious real world scenarios! Nice. This presentation gave an insight into one of such DBs - <a href="http://neo4j.org/">Neo4j</a>, a graph handling DB. Left me with a sense of incompleteness - there was no comparison with other NoSQL products, but this is only an encouragement for me to delve deeper into this subject.
+</p>
+
+<p>All in all, the conference was a big success, with lots of good talks, meeting friends, talking, listening. Around 650 people were on site, I hope the next one will be even bigger! Please bear in mind that the talks presented by me were only the fourth part of all the talks! AFAIK all of them will be available in video form some time after the conference - perhaps some video editing has to be done, it's not always youtube you are targeting ;-)</p>
+
+<p>Oh, and I didn't win any small laptops, ipods, books, vouchers - crap. Maybe next year ;-)</p>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>
