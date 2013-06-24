@@ -169,7 +169,7 @@ lock.release();
 </p><p class="c1"><span></span></p><p class="c8"><span>Basically this scenario needs ? steps:</span></p><p class="c8">
     <span>1. Service starts and registers its presence (</span><span class="c5"><a class="c0"
                                                                                    href="https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerAdvertiser.java#L44">https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerAdvertiser.java#L44</a></span><span>)</span><span>:</span>
-</p><p class="c1"><span></span></p><a href="#" name="1c67229d451cd2d82dddaf1fb12af1aed4a8ecb0"></a><a href="#"
+</p><p class="c1"><span></span></p><a href="#" name="1c67229d451cd2d82dddaf1fb12af1aed4a8ecb0"></a>
 
 <pre>
 <code>
@@ -183,7 +183,6 @@ ServiceDiscovery<WorkerMetadata> discovery = getDiscovery();
 
 </code>
 </pre>
-                                                                                                      name=&#8221;2&#8221;></a>
 <p class="c1"><span></span></p><p class="c8"><span>2. Another service - on another host or in another JVM on the same machine tries to discover who is implementing the service (</span><span
         class="c5"><a class="c0"
                       href="https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerFinder.java#L50">https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerFinder.java#L50</a></span><span>)</span><span>:</span>
@@ -199,7 +198,7 @@ instances = discovery.queryForInstances(serviceName);
 </p><p class="c1"><span></span></p><p class="c8"><span>In my example, the structure advertised by services looks like this (+ some getters and constructor - the rest is here: </span><span
         class="c5"><a class="c0"
                       href="https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/model/WorkerMetadata.java">https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/model/WorkerMetadata.java</a></span><span>):</span>
-</p><p class="c1"><span></span></p><a href="#" name="c0131478bfab43e60b5e077f3170a172a909d199"></a><a href="#"
+</p><p class="c1"><span></span></p><a href="#" name="c0131478bfab43e60b5e077f3170a172a909d199"></a>
 
 <pre>
 <code>
@@ -212,7 +211,6 @@ public final class WorkerMetadata {
 
 </code>
 </pre>
-                                                                                                      name=&#8221;4&#8221;></a>
 <p class="c1"><span></span></p><h2 class="c8"><a name="h.qvt6wa2m15sm"></a><span>Source code</span></h2><p
         class="c8"><span>The above recipes are available in Curator library (</span><span class="c5"><a class="c0"
                                                                                                         href="http://curator.incubator.apache.org/">http://curator.incubator.apache.org/</a></span><span>). Recipes&rsquo;

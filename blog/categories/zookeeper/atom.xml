@@ -4,7 +4,7 @@
   <title><![CDATA[Category: zookeeper | Marcin bloguje]]></title>
   <link href="http://zygm0nt.github.com/blog/categories/zookeeper/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2013-06-24T22:45:04+02:00</updated>
+  <updated>2013-06-24T22:47:23+02:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -162,7 +162,7 @@ lock.release();
                                                                                href="https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerAdvertiser.java#L44"&gt;https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerAdvertiser.java#L44&lt;/a&gt;&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;
 </code></pre>
 
-<p></p><p class="c1"><span></span></p><a href="#" name="1c67229d451cd2d82dddaf1fb12af1aed4a8ecb0"></a>&lt;a href="#"</p>
+<p></p><p class="c1"><span></span></p><a href="#" name="1c67229d451cd2d82dddaf1fb12af1aed4a8ecb0"></a></p>
 
 <pre>
 <code>
@@ -177,9 +177,6 @@ ServiceDiscovery<WorkerMetadata> discovery = getDiscovery();
 </code>
 </pre>
 
-
-<pre><code>                                                                                                  name="2"&gt;&lt;/a&gt;
-</code></pre>
 
 <p class="c1"><span></span></p>
 
@@ -223,7 +220,7 @@ instances = discovery.queryForInstances(serviceName);
 <p class="c1"><span></span></p>
 
 
-<p><a href="#" name="c0131478bfab43e60b5e077f3170a172a909d199"></a>&lt;a href="#"</p>
+<p><a href="#" name="c0131478bfab43e60b5e077f3170a172a909d199"></a></p>
 
 <pre>
 <code>
@@ -237,9 +234,6 @@ public final class WorkerMetadata {
 </code>
 </pre>
 
-
-<pre><code>                                                                                                  name="4"&gt;&lt;/a&gt;
-</code></pre>
 
 <p class="c1"><span></span></p>
 
