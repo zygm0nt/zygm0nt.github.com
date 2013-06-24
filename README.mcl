@@ -1,0 +1,15 @@
+So how does one start contributing to an existing Octopress blog (or
+yourself from a new computer)? What we want is the same setup as above,
+but not from scratch.
+
+$ git clone git@github.com:username/username.github.com.git
+$ cd username.github.com
+username.github.com$ git checkout source
+username.github.com$ mkdir _deploy
+username.github.com$ cd _deploy
+username.github.com/_deploy$ git init
+username.github.com/_deploy$ git remote add origin
+git@github.com:username/username.github.com.git
+username.github.com/_deploy$ git pull origin master
+username.github.com/_deploy$ cd ..
+username.github.com$
