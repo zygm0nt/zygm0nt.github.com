@@ -8,6 +8,7 @@ categories:
     - java
     - tips
     - hadoop
+    - touk
 ---
 
 This post is a summary of what has been presented by Kathleen Ting on
