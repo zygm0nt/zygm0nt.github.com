@@ -4,7 +4,7 @@
   <title><![CDATA[Marcin bloguje]]></title>
   <link href="http://zygm0nt.github.com/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2013-06-25T09:41:48+02:00</updated>
+  <updated>2013-06-25T11:17:22+02:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -18,7 +18,7 @@
     <link href="http://zygm0nt.github.com/blog/2013/06/23/zookeeper-curator/"/>
     <updated>2013-06-23T22:20:00+02:00</updated>
     <id>http://zygm0nt.github.com/blog/2013/06/23/zookeeper-curator</id>
-    <content type="html"><![CDATA[<p class="c8"><img height="300" src="assets/2013-06-24-zookeeper-curator.jpg"></p><p class="c1"><span></span></p><p class="c8">
+    <content type="html"><![CDATA[<p class="c8"><img height="300" src="http://zygm0nt.github.com/assets/2013-06-24-zookeeper-curator.jpg"></p><p class="c1"><span></span></p><p class="c8">
     <span>An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system&rsquo;s components. Since I had already a few separate components I didn&rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I&rsquo;ve decided to go that way with my solution.</span>
 </p><h2 class="c8"><a name="h.v629433u6utf"></a><span>What is Zookeeper?</span></h2><p class="c8"><span>Just a crude distributed synchronization framework. However, it implements Paxos-style algorithms (</span><span
         class="c5"><a class="c0" href="http://en.wikipedia.org/wiki/Paxos_(computer_science)">http://en.wikipedia.org/wiki/Paxos_(computer_science)</a></span><span>) to ensure no split-brain scenarios would occur. This is quite an important feature, since I don&rsquo;t have to care about that kind of problems while using this app. You just need to create an ensemble of a couple of its instances - to ensure high availability. It is basically a virtual filesystem, with files, directories and stuff. One could ask why another filesystem? Well this one is a rather special one, especially for distributed systems. The reason why creating all the locking algorithms on top of Zookeeper is easy is its Ephemeral Nodes - which are just files that exist as long as connection for them exists. After it disconnects - such file disappears. </span>
