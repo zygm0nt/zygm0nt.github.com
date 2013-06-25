@@ -4,7 +4,7 @@
   <title><![CDATA[Category: touk | Marcin bloguje]]></title>
   <link href="http://zygm0nt.github.com/blog/categories/touk/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2013-06-24T22:47:23+02:00</updated>
+  <updated>2013-06-25T09:41:48+02:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -12,6 +12,446 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Zookeeper + Curator = Distributed sync]]></title>
+    <link href="http://zygm0nt.github.com/blog/2013/06/23/zookeeper-curator/"/>
+    <updated>2013-06-23T22:20:00+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2013/06/23/zookeeper-curator</id>
+    <content type="html"><![CDATA[<p class="c8"><img height="300" src="assets/2013-06-24-zookeeper-curator.jpg"></p>
+
+
+<p class="c1"><span></span></p>
+
+
+<p class="c8">
+    <span>An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system&rsquo;s components. Since I had already a few separate components I didn&rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I&rsquo;ve decided to go that way with my solution.</span>
+</p>
+
+
+<h2 class="c8"><a name="h.v629433u6utf"></a><span>What is Zookeeper?</span></h2>
+
+
+<p class="c8"><span>Just a crude distributed synchronization framework. However, it implements Paxos-style algorithms (</span><span
+        class="c5"><a class="c0" href="http://en.wikipedia.org/wiki/Paxos_(computer_science)">http://en.wikipedia.org/wiki/Paxos_(computer_science)</a></span><span>) to ensure no split-brain scenarios would occur. This is quite an important feature, since I don&rsquo;t have to care about that kind of problems while using this app. You just need to create an ensemble of a couple of its instances - to ensure high availability. It is basically a virtual filesystem, with files, directories and stuff. One could ask why another filesystem? Well this one is a rather special one, especially for distributed systems. The reason why creating all the locking algorithms on top of Zookeeper is easy is its Ephemeral Nodes - which are just files that exist as long as connection for them exists. After it disconnects - such file disappears. </span>
+</p>
+
+
+<p class="c8"><span>With such paradigms in place it&rsquo;s fairly easy to create some high level algorithms for synchronization.</span>
+</p>
+
+
+<p class="c1"><span></span></p>
+
+
+<p class="c8"><span>Having that in place, it</span><span>&nbsp;can</span><span>&nbsp;safely integrate multiple services ensuring loose coupling in a distributed way.</span>
+</p>
+
+
+<p class="c1"><span></span></p>
+
+
+<h2 class="c8"><a name="h.ppqvt63vg53w"></a><span>Zookeeper from developer&rsquo;s POV</span>
+</h2>
+
+
+<p class="c8"><span>With all the base services for Zookeeper started, it seems there is nothing else, than just connect to it and start implementing necessary algorithms. Unfortunately, the API is quite basic and offers files and directories abstractions with the addition of different node type (file types) - ephemeral and sequence. It is also possible to watch a node for changes.</span>
+</p>
+
+
+<h2 class="c8"><a name="h.lgfultrxupbf"></a><span>Using bare Zookeeper is hard!</span></h2>
+
+
+<p class="c8"><span>Creating connections is tedious - and there is lots of things to take care of. Handling an established connection is hard - when establishing connection to ensemble, it&rsquo;s necessary to negotiate a session also. During the whole process a number of exceptions can occur - these are &ldquo;recoverable&rdquo;
+    exceptions, that can be gracefully handled and not break the connection.</span></p>
+
+
+<p class="c1"><span></span></p>
+
+
+<pre><code>    class="c8"&gt;&lt;span&gt;So, Zookeeper API is hard.&lt;/span&gt;&lt;/p&gt;&lt;p class="c1"&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class="c8"&gt;&lt;span&gt;Even if one is proficient with that API, then there come recipes. The reason for using Zookeeper is to be able to implement some more sophisticated algorithms on top of it. Unfortunately those aren&amp;rsquo;t trivial and it is again quite hard to implement them without bugs.&lt;/span&gt;
+</code></pre>
+
+<p></p><p class="c1"><span></span></p><p class="c8"><span>And since distributed systems are hard, why would anyone want another difficult to handle tool? </span>
+</p><p class="c1"><span></span></p><h2 class="c8"><a name="h.8n72xils1l1f"></a><span>Enter Curator</span></h2>&lt;p</p>
+
+<pre><code>    class="c8"&gt;&lt;span&gt;Happily, guys from Netflix implemented a nice abstraction for dealing with Zookeeper internals. They called it Curator and use it extensively in the company&amp;rsquo;s environment. Curator offers consistent API for Zookeeper&amp;rsquo;s functionality. It even implements a couple of recipes for distributed systems.&lt;/span&gt;
+</code></pre>
+
+<p></p><p class="c1"><span></span></p><h2 class="c8"><a name="h.k63iku7qitza"></a><span>File read/write</span></h2>&lt;p</p>
+
+<pre><code>    class="c8"&gt;&lt;span&gt;The basic use of Zookeeper is as a distributed configuration repository. For this scenario I only need read/write capabilities, to be able to write and read files from the Zookeeper filesystem. This code snippet writes a sample json to a file on ZK filesystem.&lt;/span&gt;
+</code></pre>
+
+<p></p><p class="c1"><span></span></p><a href="#" name="fb1072a0c295459e23a47b12e8c09952a5ab3768"></a>&lt;a href="#"</p>
+
+<pre><code>                                                                                                  name="0"&gt;&lt;/a&gt;
+</code></pre>
+
+<pre>
+<code>
+EnsurePath ensurePath = new EnsurePath(markerPath);
+ensurePath.ensure(client.getZookeeperClient());
+String json = “...”;
+if (client.checkExists().forPath(statusFile(core)) != null)
+     client.setData().forPath(statusFile(core), json.getBytes());
+else
+     client.create().forPath(statusFile(core), json.getBytes());
+
+</code>
+</pre>
+
+
+
+
+<p class="c1"><span></span></p>
+
+
+<h2 class="c8"><a name="h.ikl4cn73c5uw"></a><span>Distributed locking</span></h2>
+
+
+<p class="c8"><span>Having multiple systems there may be a need of using an exclusive lock for some resource, or perhaps some big system requires it&rsquo;s components to synchronize based on locks. This &ldquo;recipe&rdquo;
+    is an ideal match for those situations.</span></p>
+
+
+<p class="c1"><span></span></p>
+
+
+<pre><code>ref="#"
+                                                                                    name="b0329bbbf14b79ffaba1139881914aea887ef6a3"&gt;&lt;/a&gt;
+</code></pre>
+
+<p><a href="#" name="1"></a></p>
+
+<pre>
+<code>
+
+lock = new InterProcessSemaphoreMutex(client, lockPath);
+lock.acquire(5, TimeUnit.MINUTES);
+… do sth …
+lock.release();
+
+</code>
+</pre>
+
+
+
+
+<p class="c8"><span>&nbsp;(from </span><span class="c5"><a class="c0"
+                                                                   href="https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/LockingRemotely.java">https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/LockingRemotely.java</a></span><span>)</span>
+</p>
+
+
+<p class="c1"><span></span></p>
+
+
+<h2 class="c8"><a name="h.ck92kse5nam2"></a><span>Sevice Advertisement</span></h2>
+
+
+<p>&lt;p</p>
+
+<pre><code>    class="c8"&gt;&lt;span&gt;This is quite an interesting use case. With many small services on different servers it is not wise to exchange ip addresses and ports between them. When some of those services may go down, while other will try to replace them - the task gets even harder. &lt;/span&gt;
+</code></pre>
+
+<p></p><p class="c8"><span>That&rsquo;s why, with Zookeeper in place, it can be utilised as a registry of existing services.</span>
+</p><p class="c1"><span></span></p><p class="c8"><span>If a service starts, it registers into the ServiceRegistry, offering basic information, like it&rsquo;s purpose, role, address, and port. </span>
+</p><p class="c8"><span>Services that want to use a specific kind of service request an access to some instance. This way of configuring easily decouples services from their configuration.</span>
+</p><p class="c1"><span></span></p><p class="c8"><span>Basically this scenario needs ? steps:</span></p><p class="c8"></p>
+
+<pre><code>&lt;span&gt;1. Service starts and registers its presence (&lt;/span&gt;&lt;span class="c5"&gt;&lt;a class="c0"
+                                                                               href="https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerAdvertiser.java#L44"&gt;https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerAdvertiser.java#L44&lt;/a&gt;&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;
+</code></pre>
+
+<p></p><p class="c1"><span></span></p><a href="#" name="1c67229d451cd2d82dddaf1fb12af1aed4a8ecb0"></a></p>
+
+<pre>
+<code>
+
+ServiceDiscovery<WorkerMetadata> discovery = getDiscovery();
+            discovery.start();
+            ServiceInstance si = getInstance();
+            log.info(si);
+            discovery.registerService(si);
+
+
+</code>
+</pre>
+
+
+<p class="c1"><span></span></p>
+
+
+<p class="c8"><span>2. Another service - on another host or in another JVM on the same machine tries to discover who is implementing the service (</span><span
+        class="c5"><a class="c0"
+                      href="https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerFinder.java#L50">https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerFinder.java#L50</a></span><span>)</span><span>:</span>
+</p>
+
+
+<p class="c1"><span></span></p>
+
+
+<p><a href="#" name="0e430a074ab36c8eea3f84fae3d0cffb400dd281"></a>&lt;a href="#"</p>
+
+<pre><code>                                                                                                  name="3"&gt;&lt;/a&gt;
+</code></pre>
+
+<pre>
+<code>
+instances = discovery.queryForInstances(serviceName);
+</code>
+</pre>
+
+
+
+
+<p class="c8"><span>The whole concept here is ridiculously simple - the service advertising its presence just stores a file with its whereabouts. The service that is looking for service providers just look into specific directory and read stored definitions.</span>
+</p>
+
+
+<p class="c1"><span></span></p>
+
+
+<p class="c8"><span>In my example, the structure advertised by services looks like this (+ some getters and constructor - the rest is here: </span><span
+        class="c5"><a class="c0"
+                      href="https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/model/WorkerMetadata.java">https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/model/WorkerMetadata.java</a></span><span>):</span>
+</p>
+
+
+<p class="c1"><span></span></p>
+
+
+<p><a href="#" name="c0131478bfab43e60b5e077f3170a172a909d199"></a></p>
+
+<pre>
+<code>
+
+public final class WorkerMetadata {
+    private final UUID workerId;
+    private final String listenAddress;
+    private final int listenPort;
+}
+
+</code>
+</pre>
+
+
+<p class="c1"><span></span></p>
+
+
+<h2 class="c8"><a name="h.qvt6wa2m15sm"></a><span>Source code</span></h2>
+
+
+<p>&lt;p</p>
+
+<pre><code>    class="c8"&gt;&lt;span&gt;The above recipes are available in Curator library (&lt;/span&gt;&lt;span class="c5"&gt;&lt;a class="c0"
+                                                                                                    href="http://curator.incubator.apache.org/"&gt;http://curator.incubator.apache.org/&lt;/a&gt;&lt;/span&gt;&lt;span&gt;). Recipes&amp;rsquo;
+usage examples are in my github repo at &lt;/span&gt;&lt;span class="c5"&gt;&lt;a class="c0"
+                                                                   href="https://github.com/zygm0nt/curator-playground"&gt;https://github.com/zygm0nt/curator-playground&lt;/a&gt;&lt;/span&gt;
+</code></pre>
+
+<p></p><p class="c1"><span></span></p><h2 class="c8"><a name="h.o1zkosbrwpah"></a><span>Conclusion</span></h2>&lt;p</p>
+
+<pre><code>    class="c8"&gt;&lt;span&gt;If you&amp;rsquo;re in need of a reliable platform for exchanging data and managing synchronization, and you need to do it in a distributed fashion - just choose Zookeeper. Then add Curator for the ease of using it. Enjoy!&lt;/span&gt;
+</code></pre>
+
+<p></p><p class="c1"><span></span></p><p class="c1"><span></span></p></p>
+
+<hr><p class="c1"><span></span></p>
+
+
+<ol class="c13" start="1">
+    <li class="c7"><span>image comes from: </span><span class="c5"><a class="c0"
+                                                                      href="http://www.flickr.com/photos/jfgallery/2993361148">http://www.flickr.com/photos/jfgallery/2993361148</a></span>
+    </li>
+    <li class="c7"><span>all source code fragments taken from this repo: </span><span class="c5"><a class="c0"
+                                                                                                    href="https://github.com/zygm0nt/curator-playground">https://github.com/zygm0nt/curator-playground</a></span>
+    </li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Operational problems with Zookeeper]]></title>
+    <link href="http://zygm0nt.github.com/blog/2013/03/21/zookeeper-tips/"/>
+    <updated>2013-03-21T23:56:00+01:00</updated>
+    <id>http://zygm0nt.github.com/blog/2013/03/21/zookeeper-tips</id>
+    <content type="html"><![CDATA[<p>This post is a summary of what has been presented by Kathleen Ting on
+StrangeLoop conference. You can watch the original here:
+<a href="http://www.infoq.com/presentations/Misconfiguration-ZooKeeper">http://www.infoq.com/presentations/Misconfiguration-ZooKeeper</a></p>
+
+<p>I've decided to put this selection here for quick reference.</p>
+
+<h2>Connection mismanagement</h2>
+
+<ul>
+<li><p>too many connections</p>
+
+<pre><code>  WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - Too many connections from /xx.x.xx.xxx - max is 60
+</code></pre></li>
+<li><p>running out of ZK connections?</p>
+
+<ul>
+<li>set <code>maxClientCnxns=200</code> in <code>zoo.cfg</code></li>
+</ul>
+</li>
+<li><p>HBase client leaking connections?</p>
+
+<ul>
+<li>fixed in HBASE-3777, HBASE-4773, HBASE-5466</li>
+<li>manually close connections</li>
+</ul>
+</li>
+<li><p>connection closes prematurely</p>
+
+<pre><code>  ERROR: org.apache.hadoop.hbase.ZooKeeperConnectionException: HBase is able to connect to ZooKeeper but the connection closes immediately.
+</code></pre></li>
+<li><p>in <code>hbase-site.xml</code> set <code>hbase.zookeeper.recoverable.waittime=30000ms</code></p></li>
+<li><p>pig hangs connecting to HBase</p>
+
+<pre><code>  WARN org.apache.zookeeper.ClientCnxn: Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect java.net.ConnectionException: Connection refused!
+</code></pre>
+
+<p>  <strong>CAUSE:</strong> location of ZK quorum is not known to Pig</p>
+
+<ul>
+<li>use Pig 10, which includes PIG-2115</li>
+<li>if there is an overlap between TaskTrackers and ZK quorum nodes
+
+<ul>
+<li>set <code>hbase.zookeeper.quorum</code> to final in <code>hbase-site.xml</code></li>
+<li>otherwise add <code>hbaze.zoopeeker.quorum=hadoophbasemaster.lan:2181</code> in <code>pig.properties</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Time mismanagement</h2>
+
+<ul>
+<li><p>client session timed out</p>
+
+<pre><code>  INFO org.apache.zookeeper.server.ZooKeeperServer: Expiring session &lt;id&gt;, timeout of 40000ms exceeded
+</code></pre>
+
+<ul>
+<li>ZK and HBase need the same session timeout values
+
+<ul>
+<li><code>zoo.cfg</code>: <code>maxSession=Timeout=180000</code></li>
+<li><code>hbase-site.xml</code>: <code>zookeeper.session.timeout=180000</code></li>
+</ul>
+</li>
+<li>don't co-locate ZK with IO-intense DataNode or RegionServer</li>
+<li>specify right amount of heap and tune GC flags
+
+<ul>
+<li>turn on parallel/CMS/incremental GC</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>clients lose connections</p>
+
+<pre><code>  WARN org.apache.zookeeper.ClientCnxn - Session &lt;id&gt; for server &lt;name&gt;, unexpected error, closing socket connection and attempting reconnect java.io.IOException: Broken pipe
+</code></pre>
+
+<ul>
+<li>don't use SSD drive for ZK transaction log</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Disk management</h2>
+
+<ul>
+<li><p>unable to load database - unable to run quorum server</p>
+
+<pre><code>  FATAL Unable to load database on disk !  java.io.IOException: Failed to process transaction type: 2 error: KeeperErrorCode = NoNode for &lt;file&gt; at org.apache.zookeeper.server.persistence.FileTxnSnapLog.restore(FileTxnSnapLog.java:152)!
+</code></pre>
+
+<ul>
+<li>archive and wipe <code>/var/zookeeper/version-2</code> if other two ZK servers
+are running</li>
+</ul>
+</li>
+<li><p>unable to load database - unreasonable length exception</p>
+
+<pre><code>  FATAL Unable to load database on disk java.io.IOException: Unreasonable length = 1048583 at org.apache.jute.BinaryInputArchive.readBuffer(BinaryInputArchive.java:100)
+</code></pre>
+
+<ul>
+<li>server allows a client to set data larger than the server can read from disk</li>
+<li>if a znode is not readable, increase <code>jute.maxbuffer</code>
+
+<ul>
+<li>look for <code>"Packet len &lt;xx&gt; is out of range"</code> in the client log</li>
+<li>increase it by 20%</li>
+<li>set in <code>JVMFLAGS="-Djute.maxbuffer=yy" bin/zkCli.sh</code></li>
+<li>fixed in ZOOKEEPER-1513</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>failure to follow leader</p>
+
+<pre><code>  WARN org.apache.zookeeper.server.quorum.Learner: Exception when following the leader java.net.SocketTimeoutException: Read timed out 
+</code></pre>
+
+  <strong>CAUSE:</strong>
+
+<ul>
+<li>disk IO contention, network issues</li>
+<li>ZK snapshot is too large (lots of ZK nodes)</li>
+</ul>
+
+
+<p>  <strong>SOLVE:</strong></p>
+
+<ul>
+<li>reduce IO contention by putting dataDir on dedicated spindle</li>
+<li>increase initLimit on all ZK servers and restart, see
+ZOOKEEPER-1521</li>
+<li>monitor network</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Best Practices</h2>
+
+<p><strong>DOs</strong></p>
+
+<ul>
+<li>separate spindles for dataDir &amp; dataLogDir</li>
+<li>allocate 3 or 5 ZK servers</li>
+<li>tune garbage collection</li>
+<li>run zkCleanup.sh script via cron</li>
+</ul>
+
+
+<p><strong>DON'Ts</strong></p>
+
+<ul>
+<li>dont' co-locate ZK with I/O intense DataNode or RegionServer</li>
+<li>don't use SSD drive for ZK transaction log</li>
+</ul>
+
+
+<p>You may use Zookeeper as an observer - a non-voting member:</p>
+
+<ul>
+<li><p>in zoo.cfg</p>
+
+<pre><code>  peerType=observer
+</code></pre></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[After WHUG meeting]]></title>
@@ -312,211 +752,6 @@ good performance and fairly simple setup enable the users to easily
 start using Hadoop in HA setup.</p>
 
 <p>Are you using Hadoop with HA? What are your impressions?</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hadoop for Enterprises]]></title>
-    <link href="http://zygm0nt.github.com/blog/2012/06/18/hadoop-for-enterprises/"/>
-    <updated>2012-06-18T11:08:09+02:00</updated>
-    <id>http://zygm0nt.github.com/blog/2012/06/18/hadoop-for-enterprises</id>
-    <content type="html"><![CDATA[<div class='post'>
-<p>Hadoop's usage as a big data processing framework gains a lot of attention lately. Now, not only big players see, that they can embrace the data their sites or products are generating and develop their businesses on it. For that to happen two things are needed: the data itself and means of processing really big amounts of it.  </p>
-
-<p><span class="image-wrap" style=""><img src="http://blog.innovative-labs.com/blog/3488314950_453466f762_b.jpg" style="border: 0px solid black; width: 400px;" /></span></p>
-
-<p>Gathering data is relatively easy. These are not necessarily structured data, you don't need to plan their usage at first. Just start collecting them and than you may experiment with their potential usage. If they'll come out as useless rubbish - deleting them won't be hard <img class="emoticon" src="http://zygm0nt.github.com/confluence/images/icons/emoticons/smile.gif" height="20" width="20" align="absmiddle" alt="" border="0"/> But imagine the values it may contribute to your business:</p>
-
-<ul>
-    <li>faster services - working on optimized data</li>
-    <li>more clients - because of more relevant search results</li>
-    <li>happy clients - your service can "read their minds" <img class="emoticon" src="http://zygm0nt.github.com/confluence/images/icons/emoticons/smile.gif" height="20" width="20" align="absmiddle" alt="" border="0"/></li>
-    <li>etc.</li>
-</ul>
-
-
-<p>There are many companies that utilize Hadoop ecosystem for their own needs. You can read about some of them here: <a href="http://wiki.apache.org/hadoop/PoweredBy" class="external-link" rel="nofollow">http://wiki.apache.org/hadoop/PoweredBy</a> But since that page lacks insight into specific applications of Hadoop I've tried to delve into<br/>
-details of how Hadoop helped tame some companies' big data sets.</p>
-
-<EXCERPT>
-
-<h2><a name="test-Facebook"></a>Facebook</h2>
-
-<p>Being a social network provider, a widely used one, they require no introduction. However if you've lived under a rock for last couple years just visit their website <a href="http://facebook.com" class="external-link" rel="nofollow">http://facebook.com</a></p>
-
-<p>Their main usage is data warehousing. Since they require to be able to access the data fast and reliably they had a need for real-time querying of their huge, and always growing data set. Their switch from MySQL databases was required due to the increasing workloads they experienced with standard databases. What they got "out of the box" with Hadoop was all the benefits of distributed file system (HDFS features). They expanded the ideas behind that even further and implemented truly Highly Available file system without Single Point of Failure.</p>
-
-<p>Facebook has 3 interesting usage scenarios in which Hadoop plays a major role:</p>
-
-<ul>
-    <li>Titan - is Facebook's messaging system. It processes messages exchanged between users. Ensures that it happens fast and without glitches. Here Hadoop is used mainly as a huge, unlimited storage.</li>
-    <li>Puma - Facebook Insights - a tool providing page statistics for  advanced Facebook users. Based on streams of data (clicks, likes, shares, comments and impressions) it graphs those data and makes it available near instantly.</li>
-    <li>ODS - Operational Data Store - which stores Facebook's internal metrics - collections of OS and cluster health metrics. And it facilitates multiple accounting solutions.</li>
-</ul>
-
-
-<h2><a name="test-Twitter"></a>Twitter</h2>
-
-<p>This popular micro-blogging platform, where you can register your account and follow friends and celebrities for their micro-messages does some pretty interesting things with their Hadoop cluster.</p>
-
-<p>One of their motivations is to speed up their web-page's functionality. That is why the compute users' friendships in Twitter's social graph with Hadoop. Using connections between users they calculate their relationship to each other and estimate groups of users.</p>
-
-<p>Since this service's users generate lots of content, the company conducts researches based on natural language processing. They probe what could be told about a user from his tweets. They use tweets' contents for advertisement purpose, trends analysis and many more.</p>
-
-<p>From tweets and user's behaviours they characterise usage scenarios. Also, they gather usage statistics, like number of searches daily, number of tweets. Based on this seemingly irrelevant data they run comparisons of different types of users. Twitter analyzes data to determine whether mobile users, users who use third party clients or power users use Twitter differently from average users. Of course theses seem like really specific applications but nevertheless they are very original and base on the data that Twitter has been gathering for some time now. </p>
-
-<h2><a name="test-EBay"></a>EBay</h2>
-
-<p>Being the biggest auctioning site on the Internet, EBay uses Hadoop processing for increasing search relevance based on click-stream data, user data. This seems pretty obvious, considering their area of operation.</p>
-
-<p>However the also have one other interesting thing - they try hard to automatically fill auctioned objects' metadata, based on the descriptions and other data provided by users. They employ data mining approach for this tasks and judging from their constant growth it seems to work <img class="emoticon" src="http://zygm0nt.github.com/confluence/images/icons/emoticons/smile.gif" height="20" width="20" align="absmiddle" alt="" border="0"/></p>
-
-<h2><a name="test-LinkedIn"></a>LinkedIn</h2>
-
-<p>Social network for professionals, thou a lot smaller than Facebook. Based on click-streams they discover relations between users. All the data concerning latest visits on your profile or people you may know from other places - this comes from Hadoop based analysis of those clicks people make all the time on their sites.</p>
-
-<p>Also a very neat feature, called InMaps (<a href="http://inmaps.linkedinlabs.com/" class="external-link" rel="nofollow">http://inmaps.linkedinlabs.com/</a>) analyse declared schools and companies and generates data for graph with clustered friends of yours.</p>
-
-<h2><a name="test-Last.fm"></a>Last.fm</h2>
-
-<p>This on-line radio site, praised by many for its invaluable recommendations' system seems like a rather small and simple service. But behind the facade of simple web page there are lots of data being processed, so that their services could match a certain level of perfection.</p>
-
-<p>Such large volume of their data comes from scrobbles. Each users of their service listening to a song generates a note about this fact - called scrobble. Based on that and user profiles they calculate global band popularity charts, maps of bands' popularity and many more usage statistics and timeline charts.</p>
-
-<p><span class="image-wrap" style=""><img src="http://blog.innovative-labs.com/blog/7346959440_71648c9fe7_b.jpg" style="border: 0px solid black; width: 400px;" /></span></p>
-
-<h2><a name="test-Conclusion"></a>Conclusion</h2>
-
-<p>They just try to detect and trace new patterns in seemingly chaotic data sets. Perhaps you could also do the same? Analyze your data and expand your business value?</p></div>
-
-
-<h2>Comments</h2>
-
-
-<div class='comments'>
-<div class='comment'>
-<div class='author'><a href="http://www.wedding-cake-decorations.net">wedding cake decorations</a></div>
-<div class='content'>
-<p>We stumbled over here from a different web address and thought I might check things out.<br />
-I like what I see so i am just following you.<br />
-Look forward to checking out your web page yet again.</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://www.car-floor-mats.net">rubber floor mats</a></div>
-<div class='content'>
-<p>I like what you guys are up too. This type of clever work and reporting!<br />
-<br />
-Keep up the awesome works guys I've added you guys to my own blogroll.</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://www.bispioner.ru/phpBB3/memberlist.php?mode=viewprofile&amp;u=119586">Svayambhut Ghosh</a></div>
-<div class='content'>
-<p>Greetings from Florida! I'm bored at work so I decided to browse your site on my iphone during lunch break. I enjoy the info you present here and can't wait to take a look <br />
-when I get home. I'm surprised at how quick your blog loaded on my cell phone .. I'm not even using WIFI, just 3G .<br />
-. Anyways, very good site!</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://www.salethenorthfacejackets.com">north face jackets</a></div>
-<div class='content'>
-<p>Comfortableness &lt;a href=&quot;http://www.salethenorthfacejackets.com&quot;&gt;north face jackets&lt;/a&gt;<br />
-is crucial when they get it that will &lt;a href=&quot;http://www.salethenorthfacejackets.com&quot;&gt;north face outlet&lt;/a&gt; get the best school bags pertaining to going camping &lt;a href=&quot;http://www.salethenorthfacejackets.com&quot;&gt;north face sale&lt;/a&gt;. Your easiest guarantee in the case of even larger delivers has become One with an inner metal framework, one that can wind &lt;a href=&quot;http://www.salethenorthfacejackets.com&quot;&gt;cheap north face&lt;/a&gt; up being aligned to help you appropriately fit your &lt;a href=&quot;http://www.salethenorthfacejackets.com/the-north-face-women-1&quot;&gt;north face women&lt;/a&gt; body. They should be now have http://www.salethenorthfacejackets.com secure which were wholly flexible, because essentially in the form of midsection belt to get more aid.</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://www.plants-for-sale.com">plants sale</a></div>
-<div class='content'>
-<p>I never imagined how much stuff there was out there <br />
-on this! Thanks for making it easy to get the picture</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://www.facebook.com/profile.php?id=100003406472249">gWgVcetqzVZukd</a></div>
-<div class='content'>
-<p>What Programming Languages Do Jobs Require? | Regular Geek  regulargeek.com/2009/07/21/what-programming-languages-do-jobs-require   view page   cahecd  As a software engineer, you need to keep your skills sharp and current. This is a general requirement of the job. In addition to this, in the current economy you do not want to be without a job. Obviously, this means learning more about what your current company uses for all of its development. What if you do not have a job or you are looking to leave? What technologies or programming languages should you be looking into?   From the page</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://businesses.wickedlocal.com/MA-Westford/Computer-Service-and-Repair/15">computer pc repair</a></div>
-<div class='content'>
-<p>Howdy are using Wordpress for your site platform? I'm new to the blog world but I'm trying to <br />
-get started and create my own. Do you need any coding expertise to make your own <br />
-blog? Any help would be greatly appreciated!</p></div>
-</div>
-</div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[SoapUI ext libs and its weirdness]]></title>
-    <link href="http://zygm0nt.github.com/blog/2011/11/02/soapui-ext-libs-and-its-weirdness/"/>
-    <updated>2011-11-02T16:32:15+01:00</updated>
-    <id>http://zygm0nt.github.com/blog/2011/11/02/soapui-ext-libs-and-its-weirdness</id>
-    <content type="html"><![CDATA[<div class='post'>
-<p>Suppose you want to add some additional jars to your SoapUI installation. It all should work ok if you put them in <b>bin/ext</b> directory. It is scanned at startup, and jars found there are automatically added to classpath.
-</p>
-
-<p>
-However if you want to add some JDBC drivers, and happen to be using SoapUI version higher than 3.5.1 it is a bit more tricky.
-</p>
-<p>You may face this NoClassDefFoundError:<br/>
-
-<pre>
-An error occured [oracle/jdbc/Driver], see error log for details
-java.lang.NoClassDefFoundError: oracle/jdbc/Driver
-</pre>
-</p> 
-
-<p>
-If so, try registering your drivers with <b>registerJdbcDriver</b> function, like I did in this snippet of code:
-</p>
-<div><script src='https://gist.github.com/1333768.js?file=jdbc-soapui.groovy'></script>
-<noscript><pre><code>if (context.sql == null) {
-	def driver = 'oracle.jdbc.OracleDriver'
-	com.eviware.soapui.support.GroovyUtils.registerJdbcDriver( driver )
-	def sql = Sql.newInstance('jdbc:oracle:thin:' + dbUri, driver)
-	context.setProperty('sql', sql)
-}</code></pre></noscript></div>
-
-
-
-<p>What a crappy thing!</p></div>
-
-
-<h2>Comments</h2>
-
-
-<div class='comments'>
-<div class='comment'>
-<div class='author'><a href="http://podzastaw.org">Kelli</a></div>
-<div class='content'>
-<p>You can definitely see your expertise in the work you write.<br />
-The world hopes for more passionate writers such as you who are not afraid to <br />
-say how they believe. Always go after your heart.</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://www.052b.com">Buford</a></div>
-<div class='content'>
-<p>It's going to be end of mine day, however before finish I am reading this fantastic paragraph to increase my experience.</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://www.hotelfocus.com.pl">Chandra</a></div>
-<div class='content'>
-<p>My family every time say that I am wasting my time <br />
-here at net, except I know I am getting knowledge every day by reading such pleasant articles.</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://www.wayn.com/waynblog.html?wci=viewentry&amp;entry_key=265563">Florene</a></div>
-<div class='content'>
-<p>Thanks , I've just been looking for info approximately this topic for a long time and yours is the greatest I have found out till now. But, what concerning the bottom line? Are you positive in regards to the source?</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://www.hotelbookingwebsite.net">Myron</a></div>
-<div class='content'>
-<p>Nice post. I was checking continuously this blog and I am impressed!<br />
-Extremely helpful information specially the last part <br />
-:) I care for such information much. I was looking for this <br />
-particular info for a long time. Thank you and best of luck.</p></div>
-</div>
-</div>
-
 ]]></content>
   </entry>
   
