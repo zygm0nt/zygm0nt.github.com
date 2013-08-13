@@ -9,26 +9,22 @@ categories:
     - storm
 ---
 I've been reading through storm-users Google Group recently. This
-resolution was heavily inspired by Adam Kawa's post ["Football zero,
-Apache Pig hero"][1]. Since I've encountered a lot of insightful and very interesting
-information I've decided to describe some of those in this post.
+resolution was heavily inspired by Adam Kawa's post ["Football zero, Apache Pig hero"][1]. Since I've encountered a lot of insightful and very interesting information I've decided to describe some of those in this post.
 
 <!-- more -->
 
 - nimbus will work in HA mode - There's a pull request open for it already... but some
 recent work (distributing topology files via Bittorrent) will greatly
 simplify the implementation. Once the Bittorrent work is done we'll look
-at reworking the HA pull request. (storm’s pull request
-https://github.com/nathanmarz/storm/pull/629)
+at reworking the HA pull request. ([storm’s pull request][7])
 
 - pig on storm - Pig on Trident would be a cool and welcome project. Join
 and groupBy have very clear semantics there, as those concepts exist
 directly in Trident. The extensions needed to Pig are the concept of
 incremental, persistent state across batches (mirroring those concepts
-in Trident). The proposal is here: 
-(https://cwiki.apache.org/confluence/display/PIG/Pig+on+Storm+Proposal)
+in Trident). You can read a complete [proposal][5].
 
-- implementing topologies in pure python (https://github.com/AirSage/Petrel) 
+- implementing topologies in pure python with [petrel][6] looks like this: 
 
 >     class Bolt(storm.BasicBolt):
 >         def initialize(self, conf, context):
@@ -43,7 +39,7 @@ in Trident). The proposal is here:
 >     if __name__ == "__main__":
 >         Bolt().run()
 
-- Fliptop is happy with storm - see their presentation here http://www.slideshare.net/robbiecheng/lesson-learned-of-twitter-storm
+- Fliptop is happy with storm - see their presentation [here][4]
 
 - topology metrics in 0.9.0: The new metrics feature allows you to collect
 arbitrarily custom metrics over fixed windows. Those metrics are
@@ -69,4 +65,8 @@ That's all for this day - however, I'll keep on reading through storm-users, so 
   [1]: http://hakunamapdata.com/football-zero-apache-pig-hero-the-essence-from-hundreds-of-posts-from-apache-pig-user-mailing-list/
   [2]: https://github.com/nathanmarz/storm/blob/master/storm-core/src/jvm/backtype/storm/metric/api/IMetricsConsumer.java
   [3]: https://github.com/nathanmarz/storm/blob/master/storm-core/src/jvm/backtype/storm/Config.java#L473
+  [4]: http://www.slideshare.net/robbiecheng/lesson-learned-of-twitter-storm
+  [5]: https://cwiki.apache.org/confluence/display/PIG/Pig+on+Storm+Proposal
+  [6]: https://github.com/AirSage/Petrel
+  [7]: https://github.com/nathanmarz/storm/pull/629
 
