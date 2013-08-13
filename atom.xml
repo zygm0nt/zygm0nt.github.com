@@ -4,7 +4,7 @@
   <title><![CDATA[Marcin bloguje]]></title>
   <link href="http://zygm0nt.github.com/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2013-08-13T20:21:49+02:00</updated>
+  <updated>2013-08-13T20:26:05+02:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -19,9 +19,7 @@
     <updated>2013-08-12T22:26:00+02:00</updated>
     <id>http://zygm0nt.github.com/blog/2013/08/12/recently-at-storm-users</id>
     <content type="html"><![CDATA[<p>I&#8217;ve been reading through storm-users Google Group recently. This
-resolution was heavily inspired by Adam Kawa&#8217;s post <a href="http://hakunamapdata.com/football-zero-apache-pig-hero-the-essence-from-hundreds-of-posts-from-apache-pig-user-mailing-list/">&#8220;Football zero,
-Apache Pig hero&#8221;</a>. Since I&#8217;ve encountered a lot of insightful and very interesting
-information I&#8217;ve decided to describe some of those in this post.</p>
+resolution was heavily inspired by Adam Kawa&#8217;s post <a href="http://hakunamapdata.com/football-zero-apache-pig-hero-the-essence-from-hundreds-of-posts-from-apache-pig-user-mailing-list/">&#8220;Football zero, Apache Pig hero&#8221;</a>. Since I&#8217;ve encountered a lot of insightful and very interesting information I&#8217;ve decided to describe some of those in this post.</p>
 
 <!-- more -->
 
@@ -30,15 +28,13 @@ information I&#8217;ve decided to describe some of those in this post.</p>
 <li><p>nimbus will work in HA mode - There&#8217;s a pull request open for it already&#8230; but some
 recent work (distributing topology files via Bittorrent) will greatly
 simplify the implementation. Once the Bittorrent work is done we&#8217;ll look
-at reworking the HA pull request. (storm’s pull request
-https://github.com/nathanmarz/storm/pull/629)</p></li>
+at reworking the HA pull request. (<a href="https://github.com/nathanmarz/storm/pull/629">storm’s pull request</a>)</p></li>
 <li><p>pig on storm - Pig on Trident would be a cool and welcome project. Join
 and groupBy have very clear semantics there, as those concepts exist
 directly in Trident. The extensions needed to Pig are the concept of
 incremental, persistent state across batches (mirroring those concepts
-in Trident). The proposal is here:
-(https://cwiki.apache.org/confluence/display/PIG/Pig+on+Storm+Proposal)</p></li>
-<li><p>implementing topologies in pure python (https://github.com/AirSage/Petrel)</p></li>
+in Trident). You can read a complete <a href="https://cwiki.apache.org/confluence/display/PIG/Pig+on+Storm+Proposal">proposal</a>.</p></li>
+<li><p>implementing topologies in pure python with <a href="https://github.com/AirSage/Petrel">petrel</a> looks like this:</p></li>
 </ul>
 
 
@@ -57,7 +53,7 @@ if __name__ == "__main__":
 </code></pre></blockquote>
 
 <ul>
-<li><p>Fliptop is happy with storm - see their presentation here http://www.slideshare.net/robbiecheng/lesson-learned-of-twitter-storm</p></li>
+<li><p>Fliptop is happy with storm - see their presentation <a href="http://www.slideshare.net/robbiecheng/lesson-learned-of-twitter-storm">here</a></p></li>
 <li><p>topology metrics in 0.9.0: The new metrics feature allows you to collect
 arbitrarily custom metrics over fixed windows. Those metrics are
 exported to a metrics stream that you can consume by implementing
