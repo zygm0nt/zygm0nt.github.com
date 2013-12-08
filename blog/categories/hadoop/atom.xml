@@ -4,7 +4,7 @@
   <title><![CDATA[Category: hadoop | Marcin bloguje]]></title>
   <link href="http://zygm0nt.github.com/blog/categories/hadoop/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2013-08-13T20:26:05+02:00</updated>
+  <updated>2013-12-08T22:13:20+01:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -12,6 +12,68 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Simple HBase ORM]]></title>
+    <link href="http://zygm0nt.github.com/blog/2013/12/08/simple-hbase-orm/"/>
+    <updated>2013-12-08T21:08:00+01:00</updated>
+    <id>http://zygm0nt.github.com/blog/2013/12/08/simple-hbase-orm</id>
+    <content type="html"><![CDATA[<p>When dealing with data stored in HBase, you are quick to come to a
+conclusion, that it is extremaly inconvenient to reach to it
+via HBase native API. It is very verbose and you always need to convert
+between bytes and simple types - a pain.</p>
+
+<p>While I was working on a project of mine, I thought, why not to easy
+those pains and fetch real objects from HBase.</p>
+
+<p>And that's how this simplistic, hackish ORM came to life. It is no match
+for projects like <a href="https://github.com/impetus-opensource/Kundera">Kundera</a>
+(a JPA compliant solution), or <a href="https://code.google.com/p/n-orm/">n-orm</a>. Nevertheless, it just suits my needs :)</p>
+
+<!-- more -->
+
+
+<p>Project sources are hosted on GitHub: <a href="https://github.com/zygm0nt/hbase-annotations">https://github.com/zygm0nt/hbase-annotations</a></p>
+
+<p>To make use of this, you need to have an entity class with annotations:
+- @Column - with argument specifying column family and column name, ie.
+  @Column("cf:column-name")
+- @Id - will store row key in this property,
+- and optionaly @Value - for Spring Expression Language, in case you
+  need to perform some extraction on the value.</p>
+
+<p><em>Annotations should be on setter methods.</em></p>
+
+<p>Now you have your model annotated and ready to be fetched from HBase.</p>
+
+<p>The actual work is done with a service class, that should extend class
+<a href="https://github.com/zygm0nt/hbase-annotations/blob/master/src/main/java/pl/touk/hadoop/hbase/BaseHadoopInteraction.java">BaseHadoopInteraction</a> just as class
+<a href="https://github.com/zygm0nt/hbase-annotations/blob/master/src/test/java/pl/touk/hadoop/hbase/SampleHBaseClient.java">SimpleHBaseClient</a> does.</p>
+
+<p>Then it is possible to just call:</p>
+
+<script src="https://gist.github.com/zygm0nt/7863407.js"></script>
+
+
+<p>Note that there are more methods you can use on BaseHadoopInteraction.
+You can also do:
+- scan
+- scan with key ranges
+- delete</p>
+
+<p>What you won't get from this simple ORM is:
+- automatic object updating,
+- nested objects,
+- saving to HBase - 'cause I didn't have a need for that,</p>
+
+<p>Hope you'll find this piece of code useful. If you see room for
+improvements while staying in project's scope - please drop me a
+message.</p>
+
+<p>And if you are searching for a full-fledged ORM solution for interacting with HBase, just head
+straight to Kundera project website :)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Zookeeper + Curator = Distributed sync]]></title>
@@ -491,267 +553,6 @@ Hadoop-em.</p>
 <p>Prezentacja będzie dotyczyć narzędzi takich jak Cascading, Storm, Titan.</p></blockquote>
 
 <p>Zapraszam!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hadoop HA setup]]></title>
-    <link href="http://zygm0nt.github.com/blog/2012/10/30/hadoop-ha/"/>
-    <updated>2012-10-30T12:40:00+01:00</updated>
-    <id>http://zygm0nt.github.com/blog/2012/10/30/hadoop-ha</id>
-    <content type="html"><![CDATA[<p>With the advent of Hadoop's 2.x version, there finally is a working
-High-Availability solution. Even two of those. Now it really is easy to
-configure and use those solutions. It no longer require external
-components, like
-<a href="http://blog.cloudera.com/blog/2009/07/hadoop-ha-configuration/">DRBD</a>.
-It all is just neatly packed into Cloudera Hadoop distribution - the
-precursor of this solution.</p>
-
-<p>Read on to find out how to use it.</p>
-
-<!-- more -->
-
-
-<p>The most important weakness of previous Hadoop releases was the
-single-point-of-failure, which happend to be NameNode. NameNode as a key
-component of every Hadoop cluster, is responsible for managing
-filesystem namespace information and block location. Loosing its data results in loosing all the data
-stored on DataNodes. HDFS is no longer able to reach for specific files,
-or its blocks. This renders your cluster inoperable.</p>
-
-<p>So it is crucial to be able to detect and counter problems with NameNode.
-The most desirable behavior is to have a hot backup, that would ensure
-a no-downtime cluster operation. To achieve this, the second NameNode
-need to have up-to-date information on filesystem metadata and it needs
-to be also up and running. Starting NameNode with existing set of data
-may easily take many minutes to parse the actual filesystem state.</p>
-
-<p>Previously used solution - depoying SecondaryNameNode - was somewhat
-flawed. It took long time to recover after failure. It was not a
-hot-backup solution, which also added to the problem. Some other
-solution was required.</p>
-
-<p>So, what needed to be made redundant is the edits dir contents and
-sending block location maps from each of the DataNodes to NameNodes -
-in case of HA deployment - to both NameNodes. This was accomplished in
-two steps. The first one with the release of CDH 4 beta - solution based
-on sharing edits directory. Than, with CDH 4.1 came quorum based solution.</p>
-
-<p>Find out how to configure those on your cluster.</p>
-
-<h2>Shared edits directory solution</h2>
-
-<p><img src="http://blog.innovative-labs.com/blog/hadoop_ha-nfs.png" alt="Hadoop HA - NFS based edits share" /></p>
-
-<p>For this kind of setup, there is an assumption, that in a cluster exists
-a shared storage directory. It should be deployed using some kind of
-network-based filesystem. You could try with NFS or GlusterFS.</p>
-
-<p><div><script src='https://gist.github.com/3958555.js?file=core-site.xml'></script>
-<noscript><pre><code>&lt;property&gt;
-  &lt;name&gt;fs.default.name/name&gt;
-  &lt;value&gt;hdfs://example-cluster&lt;/value&gt;
-&lt;/property&gt;</code></pre></noscript></div>
-</p>
-
-<p><div><script src='https://gist.github.com/3958555.js?file=hdfs-site.xml'></script>
-<noscript><pre><code>&lt;!-- common server name --&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.nameservices&lt;/name&gt;
-  &lt;value&gt;example-cluster&lt;/value&gt;
-&lt;/property&gt;
-
-&lt;!-- HA configuration --&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.ha.namenodes.example-cluster&lt;/name&gt;
-  &lt;value&gt;nn1,nn2&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.namenode.rpc-address.example-cluster.nn1&lt;/name&gt;
-  &lt;value&gt;master1:8020&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.namenode.rpc-address.example-cluster.nn2&lt;/name&gt;
-  &lt;value&gt;master2:8020&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.namenode.http-address.example-cluster.nn1&lt;/name&gt;
-  &lt;value&gt;0.0.0.0:50070&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.namenode.http-address.example-cluster.nn2&lt;/name&gt;
-  &lt;value&gt;0.0.0.0:50070&lt;/value&gt;
-&lt;/property&gt;
-
-&lt;!-- Storage for edits' files --&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.namenode.shared.edits.dir&lt;/name&gt;
-  &lt;value&gt;file:///mnt/filer1/dfs/ha-name-dir-shared&lt;/value&gt;
-&lt;/property&gt;
-
-&lt;!-- Client failover --&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.client.failover.proxy.provider.example-cluster&lt;/name&gt;
-  &lt;value&gt;org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider&lt;/value&gt;
-&lt;/property&gt;
-
-&lt;!-- Fencing configuration --&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.ha.fencing.methods&lt;/name&gt;
-  &lt;value&gt;sshfence&lt;/value&gt;
-&lt;/property&gt;
- &lt;property&gt;
-  &lt;name&gt;dfs.ha.fencing.ssh.private-key-files&lt;/name&gt;
-  &lt;value&gt;/home/user/.ssh/id_dsa&lt;/value&gt;
-&lt;/property&gt;
-
-
-&lt;!-- Automatic failover configuration --&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.ha.automatic-failover.enabled&lt;/name&gt;
-  &lt;value&gt;true&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-  &lt;name&gt;ha.zookeeper.quorum&lt;/name&gt;
-  &lt;value&gt;zk1:2181,zk2:2181,zk3:2181&lt;/value&gt;
-&lt;/property&gt;
-</code></pre></noscript></div>
-</p>
-
-<p>This setup is quite OK, as long as you're comfortable with maintaining a
-separate service (network storage) for handling the HA state. It seems
-error prone to me, because it adds another service which high
-availability should be ensured. NFS seems to be a bad choice here,
-because AFAIK it does not offer HA out of the box.</p>
-
-<p>On the other hand, we have GlusterFS, which is a distributed filesystem,
-you can deploy on multiple bricks and increase the replication level.</p>
-
-<p>Nevertheless, it still brings additional burden of another service to
-maintain.</p>
-
-<h2>Quorum based solution</h2>
-
-<p><img src="http://blog.innovative-labs.com/blog/hadoop_ha-quorum.png" alt="Hadoop HA - Quorum based edits share" /></p>
-
-<p>With the release of CDH 4.1.0 we are now able to use a much better
-integrated solution called JournalNode. Now all the updates are
-synchronized through a JournalNode. Each JournalNode have the same data
-and all the NameNodes are able to recive filesystem state updates from
-that daemons.</p>
-
-<p>This solution is much more consistent with Hadoop ecosystem.</p>
-
-<p>Please note, that the config is almost identical to the one needed for
-shared edits directory solution. The only difference is the value for
-<em>dfs.namenode.shared.edits.dir</em>. This now points to all the journal
-nodes deployed in our cluster.</p>
-
-<p><div><script src='https://gist.github.com/3973262.js?file=core-site.xml'></script>
-<noscript><pre><code>&lt;property&gt;
-  &lt;name&gt;fs.default.name/name&gt;
-  &lt;value&gt;hdfs://example-cluster&lt;/value&gt;
-&lt;/property&gt;</code></pre></noscript></div>
-</p>
-
-<p><div><script src='https://gist.github.com/3973262.js?file=hdfs-site.xml'></script>
-<noscript><pre><code>&lt;!-- common server name --&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.nameservices&lt;/name&gt;
-  &lt;value&gt;example-cluster&lt;/value&gt;
-&lt;/property&gt;
-
-&lt;!-- HA configuration --&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.ha.namenodes.example-cluster&lt;/name&gt;
-  &lt;value&gt;nn1,nn2&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.namenode.rpc-address.example-cluster.nn1&lt;/name&gt;
-  &lt;value&gt;master1:8020&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.namenode.rpc-address.example-cluster.nn2&lt;/name&gt;
-  &lt;value&gt;master2:8020&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.namenode.http-address.example-cluster.nn1&lt;/name&gt;
-  &lt;value&gt;0.0.0.0:50070&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.namenode.http-address.example-cluster.nn2&lt;/name&gt;
-  &lt;value&gt;0.0.0.0:50070&lt;/value&gt;
-&lt;/property&gt;
-
-&lt;!-- Storage for edits' files --&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.namenode.shared.edits.dir&lt;/name&gt;
-  &lt;value&gt;qjournal://node1:8485;node2:8485;node3:8485/example-cluster&lt;/value&gt;
-&lt;/property&gt;
-
-&lt;!-- Client failover --&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.client.failover.proxy.provider.example-cluster&lt;/name&gt;
-  &lt;value&gt;org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider&lt;/value&gt;
-&lt;/property&gt;
-
-&lt;!-- Fencing configuration --&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.ha.fencing.methods&lt;/name&gt;
-  &lt;value&gt;sshfence&lt;/value&gt;
-&lt;/property&gt;
- &lt;property&gt;
-  &lt;name&gt;dfs.ha.fencing.ssh.private-key-files&lt;/name&gt;
-  &lt;value&gt;/home/user/.ssh/id_dsa&lt;/value&gt;
-&lt;/property&gt;
-
-
-&lt;!-- Automatic failover configuration --&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.ha.automatic-failover.enabled&lt;/name&gt;
-  &lt;value&gt;true&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-  &lt;name&gt;ha.zookeeper.quorum&lt;/name&gt;
-  &lt;value&gt;zk1:2181,zk2:2181,zk3:2181&lt;/value&gt;
-&lt;/property&gt;</code></pre></noscript></div>
-</p>
-
-<h1>Infrastructure</h1>
-
-<p>In both cases you need to run Zookeeper-based Failover Controller
-(<em>hadoop-hdfs-zkfc</em>). This daemon negotiates which NameNode should
-become active and which standby.</p>
-
-<p>But that's not all. Depending on the way you've choosen to deploy HA you
-need to do some other things:</p>
-
-<h2>Shared edits dir</h2>
-
-<p>With shared edits dir you need to deploy networked filesystem, and mount
-it on your NameNodes. After that you can run your cluster and be happy
-with your new HA.</p>
-
-<h2>Quroum based</h2>
-
-<p>For QJournal to operate you need to install one new package called
-<em>hadoop-hdfs-journalnode</em>. This provides startup scripts for Journal
-Node daemons. Choose at least three nodes that will be responsible for
-handling edits state and deploy journal nodes on them.</p>
-
-<h1>Conclusion</h1>
-
-<p>Thanks to guys from Cloudera we now can use an enterprise grade High
-Availability features for Hadoop. Eliminating the single point of
-failure in your cluster is essential for easy maintainability of your
-infrastructure.</p>
-
-<p>Given the above choices, I'd suggest using QJournal setup, becasue of
-its relatively small impact on the overal cluster architecture. It's
-good performance and fairly simple setup enable the users to easily
-start using Hadoop in HA setup.</p>
-
-<p>Are you using Hadoop with HA? What are your impressions?</p>
 ]]></content>
   </entry>
   

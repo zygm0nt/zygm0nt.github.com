@@ -4,7 +4,7 @@
   <title><![CDATA[Marcin bloguje]]></title>
   <link href="http://zygm0nt.github.com/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2013-08-13T20:26:05+02:00</updated>
+  <updated>2013-12-08T22:13:20+01:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -12,6 +12,68 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Simple HBase ORM]]></title>
+    <link href="http://zygm0nt.github.com/blog/2013/12/08/simple-hbase-orm/"/>
+    <updated>2013-12-08T21:08:00+01:00</updated>
+    <id>http://zygm0nt.github.com/blog/2013/12/08/simple-hbase-orm</id>
+    <content type="html"><![CDATA[<p>When dealing with data stored in HBase, you are quick to come to a
+conclusion, that it is extremaly inconvenient to reach to it
+via HBase native API. It is very verbose and you always need to convert
+between bytes and simple types - a pain.</p>
+
+<p>While I was working on a project of mine, I thought, why not to easy
+those pains and fetch real objects from HBase.</p>
+
+<p>And that&#8217;s how this simplistic, hackish ORM came to life. It is no match
+for projects like <a href="https://github.com/impetus-opensource/Kundera">Kundera</a>
+(a JPA compliant solution), or <a href="https://code.google.com/p/n-orm/">n-orm</a>. Nevertheless, it just suits my needs :)</p>
+
+<!-- more -->
+
+
+<p>Project sources are hosted on GitHub: <a href="https://github.com/zygm0nt/hbase-annotations">https://github.com/zygm0nt/hbase-annotations</a></p>
+
+<p>To make use of this, you need to have an entity class with annotations:
+- @Column - with argument specifying column family and column name, ie.
+  @Column(&#8220;cf:column-name&#8221;)
+- @Id - will store row key in this property,
+- and optionaly @Value - for Spring Expression Language, in case you
+  need to perform some extraction on the value.</p>
+
+<p><em>Annotations should be on setter methods.</em></p>
+
+<p>Now you have your model annotated and ready to be fetched from HBase.</p>
+
+<p>The actual work is done with a service class, that should extend class
+<a href="https://github.com/zygm0nt/hbase-annotations/blob/master/src/main/java/pl/touk/hadoop/hbase/BaseHadoopInteraction.java">BaseHadoopInteraction</a> just as class
+<a href="https://github.com/zygm0nt/hbase-annotations/blob/master/src/test/java/pl/touk/hadoop/hbase/SampleHBaseClient.java">SimpleHBaseClient</a> does.</p>
+
+<p>Then it is possible to just call:</p>
+
+<script src="https://gist.github.com/zygm0nt/7863407.js"></script>
+
+
+<p>Note that there are more methods you can use on BaseHadoopInteraction.
+You can also do:
+- scan
+- scan with key ranges
+- delete</p>
+
+<p>What you won&#8217;t get from this simple ORM is:
+- automatic object updating,
+- nested objects,
+- saving to HBase - &#8216;cause I didn&#8217;t have a need for that,</p>
+
+<p>Hope you&#8217;ll find this piece of code useful. If you see room for
+improvements while staying in project&#8217;s scope - please drop me a
+message.</p>
+
+<p>And if you are searching for a full-fledged ORM solution for interacting with HBase, just head
+straight to Kundera project website :)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Recently at storm-users]]></title>
@@ -2343,30 +2405,6 @@ allowfullscreen="true" width="425" height="344"></embed></object>
 <div class='author'><a href="http://sigvatr.jogger.pl">Sigvatr</a></div>
 <div class='content'>
 <p>I&#8217;m sorry, but I don&#8217;t understand  Polish :P</p></div>
-</div>
-</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[After WarJUG]]></title>
-    <link href="http://zygm0nt.github.com/blog/2011/02/23/after-warjug/"/>
-    <updated>2011-02-23T14:22:04+01:00</updated>
-    <id>http://zygm0nt.github.com/blog/2011/02/23/after-warjug</id>
-    <content type="html"><![CDATA[<div class='post'>
-<p>Some time ago I&#8217;d written about my <a href="http://mcl.jogger.pl/2011/02/17/hadoop-on-warsaw-jug/">arsaw JUG presentation</a>. I finally presented the the topic yesterday.</p>
-
-<p>I must say I&#8217;m fairly content with my yesterday&#8217;s presentation :) Here are some slides and as soon as the video will be available I&#8217;ll post it here too.</p>
-
-<div style="width:425px" id="__ss_7026758"><strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/zygm0nt/hadoop-i-okolice" title="Hadoop i okolice">Hadoop i okolice</a></strong><object id="__sse7026758" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=touktemplate-110223021208-phpapp02&stripped_title=hadoop-i-okolice&userName=zygm0nt" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed name="__sse7026758" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=touktemplate-110223021208-phpapp02&stripped_title=hadoop-i-okolice&userName=zygm0nt" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object><div style="padding:5px 0 12px">View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/zygm0nt">zygm0nt</a>.</div></div></div>
-<h2>Comments</h2>
-<div class='comments'>
-<div class='comment'>
-<div class='author'><a href="http://sigvatr.jogger.pl">Sigvatr</a></div>
-<div class='content'>
-<p>Czyli napisałeś ładny post po angielsku, tylko po to, by zaprosić do obejrzenia prezentacji po polsku?<br />
-<br />
-(przepraszam, ale mój angielski jest za słaby na pisanie w nim)</p></div>
 </div>
 </div>
 ]]></content>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: it | Marcin bloguje]]></title>
   <link href="http://zygm0nt.github.com/blog/categories/it/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2013-08-13T20:26:05+02:00</updated>
+  <updated>2013-12-08T22:13:20+01:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -12,6 +12,68 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Simple HBase ORM]]></title>
+    <link href="http://zygm0nt.github.com/blog/2013/12/08/simple-hbase-orm/"/>
+    <updated>2013-12-08T21:08:00+01:00</updated>
+    <id>http://zygm0nt.github.com/blog/2013/12/08/simple-hbase-orm</id>
+    <content type="html"><![CDATA[<p>When dealing with data stored in HBase, you are quick to come to a
+conclusion, that it is extremaly inconvenient to reach to it
+via HBase native API. It is very verbose and you always need to convert
+between bytes and simple types - a pain.</p>
+
+<p>While I was working on a project of mine, I thought, why not to easy
+those pains and fetch real objects from HBase.</p>
+
+<p>And that's how this simplistic, hackish ORM came to life. It is no match
+for projects like <a href="https://github.com/impetus-opensource/Kundera">Kundera</a>
+(a JPA compliant solution), or <a href="https://code.google.com/p/n-orm/">n-orm</a>. Nevertheless, it just suits my needs :)</p>
+
+<!-- more -->
+
+
+<p>Project sources are hosted on GitHub: <a href="https://github.com/zygm0nt/hbase-annotations">https://github.com/zygm0nt/hbase-annotations</a></p>
+
+<p>To make use of this, you need to have an entity class with annotations:
+- @Column - with argument specifying column family and column name, ie.
+  @Column("cf:column-name")
+- @Id - will store row key in this property,
+- and optionaly @Value - for Spring Expression Language, in case you
+  need to perform some extraction on the value.</p>
+
+<p><em>Annotations should be on setter methods.</em></p>
+
+<p>Now you have your model annotated and ready to be fetched from HBase.</p>
+
+<p>The actual work is done with a service class, that should extend class
+<a href="https://github.com/zygm0nt/hbase-annotations/blob/master/src/main/java/pl/touk/hadoop/hbase/BaseHadoopInteraction.java">BaseHadoopInteraction</a> just as class
+<a href="https://github.com/zygm0nt/hbase-annotations/blob/master/src/test/java/pl/touk/hadoop/hbase/SampleHBaseClient.java">SimpleHBaseClient</a> does.</p>
+
+<p>Then it is possible to just call:</p>
+
+<script src="https://gist.github.com/zygm0nt/7863407.js"></script>
+
+
+<p>Note that there are more methods you can use on BaseHadoopInteraction.
+You can also do:
+- scan
+- scan with key ranges
+- delete</p>
+
+<p>What you won't get from this simple ORM is:
+- automatic object updating,
+- nested objects,
+- saving to HBase - 'cause I didn't have a need for that,</p>
+
+<p>Hope you'll find this piece of code useful. If you see room for
+improvements while staying in project's scope - please drop me a
+message.</p>
+
+<p>And if you are searching for a full-fledged ORM solution for interacting with HBase, just head
+straight to Kundera project website :)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Recently at storm-users]]></title>

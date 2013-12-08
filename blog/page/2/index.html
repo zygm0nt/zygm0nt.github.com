@@ -9,7 +9,7 @@
   <meta name="author" content="Marcin Cylke">
 
   
-  <meta name="description" content="I bought a Kindle (3rd generation, Wi-Fi only) some time ago - like half a year ago. Read some books, done some web-browsing (awful, quite &hellip;">
+  <meta name="description" content="&#8230; or how I ended up writing a CouchDB proof of concept app? Once upon a time I set out on a journey to discover the NoSQL land. I&#8217;ve &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +84,252 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2011/09/21/what-is-nosql-good-for/">What Is NoSQL Good For?</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-09-21T23:12:34+02:00" pubdate data-updated="true">Sep 21<span>st</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<b>&#8230; or how I ended up writing a CouchDB proof of concept app?</b>
+
+<p>Once upon a time I set out on a journey to discover the NoSQL land.
+I&#8217;ve decided that doing simple queries wouldn&#8217;t be interesting enough.
+That&#8217;s why I&#8217;ve chose to create an app that would be based on some NoSQL
+database.</p>
+
+<p>
+The main idea was to create an app, that would dynamically update itself
+with geographic data flowing in. Since there are myriads of geo-data
+that are available on the internet, you can pick your favorite one and
+load them into your SQL database of choice.
+</p>
+
+<EXCERPT>
+<p>
+In my case the primary source of data was a proprietary database, or more specifically - one table in it continuously updated with new data. To make that
+data visible on my map I needed to:
+</p>
+
+<ul>
+<li> buffer the huge amount of those records - so as not to overhoul
+other services with large traffic, and not to flood the frontend</li>
+<li> convert then to my representation</li>
+<li> display them - have presentation layer in a browser - since
+browser-based frontend was the easiest and fastest to develop</li>
+</ul>
+
+<p>
+The idea of the front-end HTML page was to show new points on the map.
+From the moment of opening the page records that appear in database
+table should be shown interactively on the screen.
+</p>
+
+<h2>Toys used</h2>
+
+<p>
+For the first step I chose to use RabbitMQ broker. A queue on the broker would receive messages - one message per database table&#8217;s row.
+Then I&#8217;d use some simple groovy middle ware to convert the data to appropriate format and put it onto another db - this time db specific
+to my app. 
+</p>
+
+<p>
+You may ask why incorporate another database. It would be
+good for separating environments - assuming the original data contains
+some vulnerable content that should be anatomised, or we just don&#8217;t feel
+comfortable exposing the whole database of some XYZ-system just to have
+access to its one table.
+</p>
+
+<p>
+Since for my presentation layer I chose HTML+JS without any application server-based back-end I&#8217;ve decided on CouchDB . This seemed like
+a perfect match for this scenario. Why? - ease of use, REST API, with JSON responses - just great for interacting with my simple front-end.
+</p>
+
+<p>
+The flow of things was as shown on the image below:
+</p>
+
+<IMG src="http://blog.innovative-labs.com/blog/gmapper.png"
+alt="diagram"/>
+
+<h2>Avro - for the beginning</h2>
+<p>
+As you can see, I&#8217;ve chosen JSON as my data-format. I&#8217;ve been considering
+<a href="http://avro.apache.org">Apache Avro</a> in the first place but
+using it was a real pain in the ass. Avro itself is used in <a
+href="http://hadoop.apache.org">Apache Hadoop</a> as a serialization
+layer, so it would seem OK, but it has virtually <em>no
+documentation</em>. But once you tear through the unintuitive interface
+and manage to handle all those unthinkable exceptions you get a few pros
+for this library. It&#8217;s great in that it does not require code generation - I
+like it being made on the fly. It also offers sending data in binary
+format, which was not necessary, but never the less is a nice feature.
+</p>
+
+<p>
+What I certainly didn&#8217;t like about it was its orientation on the files
+rather than chunks of data - so it was not so obvious how should I send
+data through the wire. 
+</p>
+
+<p>
+Than I found out it can produce JSON output, which would work for me,
+except the output could not have been parsed by other JSON libraries :)
+(<a
+href="http://stackoverflow.com/questions/5375243/jcouchdb-svenson-unable-to-parse-json-string">I&#8217;ve
+asked on stackoverflow about that, but with no luck</a>). 
+</p>
+
+<p>If my whining haven&#8217;t put you back and still would like to see how to use Avro, try this unit
+test in project&#8217;s GitHub repo: <a
+href="https://github.com/zygm0nt/gmapped/blob/master/feeder/src/test/groovy/pl/ftang/example/feeder/avro/AvroSimpleTest.groovy">AvroSimpleTest.groovy</a>
+</p>
+
+
+<h2>Svenson</h2>
+
+<p>
+I&#8217;ve dropped Avro in favour of a simple JSON lib called (<a
+href="http://code.google.com/p/svenson/">Svenson</a> and that was
+painless. The only thing I was forced to do was create my model class in
+Java - the rest of the project is written in Groovy. I&#8217;ve no idea why
+was that necessary, and didn&#8217;t want to look into it.
+</p>
+
+<h2>RabbitMQ</h2>
+
+<p>
+Further on the way is <a href="http://www.rabbitmq.com/">RabbitMQ</a>, to which records are filled by a feeding
+middle-ware written in Groovy. Since I use <a
+href="http://activemq.apache.org">ActiveMQ</a> on a day-to-day basis,
+I&#8217;ve decided to try something new. This broker is a really nice piece of
+software. Being written in Erlang makes it really fast. What&#8217;s more it
+has some extensive capabilities and is easy to approach for anyone
+similar with messaging (JMS and friends). For such a lightweight product
+it is really powerful - implements AMQP! 
+</p>
+
+<h2>CouchDB</h2>
+
+<p>
+From the broker&#8217;s queue messages are again fetched by a middle-ware just
+to be put into <a href="http://couchdb.apache.org/">CouchDB</a> view.
+This database is also written in Erlang. It&#8217;s very reliable, however the
+way it handles refreshing view isn&#8217;t the most pleasant one -
+performance-wise. 
+</p>
+
+<p>
+Word of advice - if you&#8217;re on Debian derivative, be cautious with
+apt-repository version. It&#8217;s rather _ancient_. Also remember to add
+<b>allow_jsonp = true</b> to you config file
+<i>/opt/couchbase/etc/couchdb/local.ini</i>. It&#8217;s not enabled by
+default, and not having this set would result with empty responses from
+the CouchDB server.</p>
+
+<p>The problem here is, that the browser doesn&#8217;t allow quering a web server with hostname other than the one the script originates.
+ More on this case <a
+href="http://stackoverflow.com/questions/3386679/connection-ajax-couchdb-and-javascript">here</a>. Seems like my problem could be overcame by changing url in index.html and hostname couchdb listens on to the same address.
+</p>
+
+<p>
+I&#8217;ve also created a view, that would expose an event by key: <a
+href="https://github.com/zygm0nt/gmapped/blame/master/couchdb/by_date_view.js">view
+code</a>
+</p>
+
+<h2>Presenting the dots</h2>
+
+<p>
+As a back-end I&#8217;ve done some JQuery based AJAX calls - nothing too
+fancy. All things necessary for presentation layer are in <a
+href="https://github.com/zygm0nt/gmapped/blob/master/index.html">this
+file</a>.
+</p>
+
+<h2>Things to consider</h2>
+
+<p>
+Please bear in mind that this whole application is rather a playground,
+not a full-fledged project!! After creating all the parts I have some
+doubts about some architectural decisions I made. I don&#8217;t think the
+security have been taken into account seriously enough. Also scalability
+was never an issue ;-)
+</p>
+
+<p>
+If you have some thoughts about any of the aspects mentioned in this
+post, please feel free to comment or contact me directly :)
+</p>
+
+<p>
+
+And also you may try the application by yourself - it&#8217;s on the <a
+href="https://github.com/zygm0nt/gmapped">GitHub</a>.
+</p></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>@Piotrek, here is a link to JIRA ticket concerning this feature. I think it is being discussed ATM: https://issues.apache.org/jira/browse/COUCHDB-431</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://blog.koszulinski.pl">Piotrek Reinmar Koszuliński</a></div>
+<div class='content'>
+<p>About Same Origin Policy - now there&#8217;s Cross Origin Resource Sharing available in most of common browsers. It should help You if CouchDB has support for it.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>@klausa, thanks for your advice. I&#8217;ve made some changes to the post.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://klausa.jogger.pl">klausa</a></div>
+<div class='content'>
+<p>&gt;The main idea was to create an app, that would dynamically update itself with geographic data flowing in. <br />
+<br />
+Not to nitpick, but that doesn&#8217;t seem like an idea for app. I think you should explain what that displayed data is here.  If you moved your &#8216;Presenting the dots&#8217; paragraph just above &#8216;Toys used&#8217;, it would be clear what do you wanted to do with this app.<br />
+<br />
+&gt;Also remember to add allow_jsonp = true to you config file /opt/couchbase/etc/couchdb/local.ini.<br />
+<br />
+I think you should explain what that option *really* does.<br />
+<br />
+Other than that, nice post!</p></div>
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1546,59 +1792,6 @@ allowfullscreen="true" width="425" height="344"></embed></object>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2011/02/23/after-warjug/">After WarJUG</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-02-23T14:22:04+01:00" pubdate data-updated="true">Feb 23<span>rd</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<p>Some time ago I&#8217;d written about my <a href="http://mcl.jogger.pl/2011/02/17/hadoop-on-warsaw-jug/">arsaw JUG presentation</a>. I finally presented the the topic yesterday.</p>
-
-<p>I must say I&#8217;m fairly content with my yesterday&#8217;s presentation :) Here are some slides and as soon as the video will be available I&#8217;ll post it here too.</p>
-
-<div style="width:425px" id="__ss_7026758"><strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/zygm0nt/hadoop-i-okolice" title="Hadoop i okolice">Hadoop i okolice</a></strong><object id="__sse7026758" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=touktemplate-110223021208-phpapp02&stripped_title=hadoop-i-okolice&userName=zygm0nt" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed name="__sse7026758" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=touktemplate-110223021208-phpapp02&stripped_title=hadoop-i-okolice&userName=zygm0nt" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object><div style="padding:5px 0 12px">View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/zygm0nt">zygm0nt</a>.</div></div></div>
-<h2>Comments</h2>
-<div class='comments'>
-<div class='comment'>
-<div class='author'><a href="http://sigvatr.jogger.pl">Sigvatr</a></div>
-<div class='content'>
-<p>Czyli napisałeś ładny post po angielsku, tylko po to, by zaprosić do obejrzenia prezentacji po polsku?<br />
-<br />
-(przepraszam, ale mój angielski jest za słaby na pisanie w nim)</p></div>
-</div>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -1616,6 +1809,10 @@ allowfullscreen="true" width="425" height="344"></embed></object>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/08/simple-hbase-orm/">Simple HBase ORM</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/12/recently-at-storm-users/">Recently at storm-users</a>
       </li>
     
@@ -1629,10 +1826,6 @@ allowfullscreen="true" width="425" height="344"></embed></object>
     
       <li class="post">
         <a href="/blog/2012/11/30/after-whug/">After WHUG meeting</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/11/26/whug-8-beyond-hadoop/">WHUG 8. Beyond Hadoop - checking other options</a>
       </li>
     
   </ul>

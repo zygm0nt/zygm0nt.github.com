@@ -4,7 +4,7 @@
   <title><![CDATA[Marcin bloguje]]> - TouK</title>
   <link href="http://zygm0nt.github.com/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2013-08-13T20:26:05+02:00</updated>
+  <updated>2013-12-08T22:13:20+01:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -12,6 +12,68 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Simple HBase ORM]]></title>
+    <link href="http://zygm0nt.github.com/blog/2013/12/08/simple-hbase-orm/"/>
+    <updated>2013-12-08T21:08:00+01:00</updated>
+    <id>http://zygm0nt.github.com/blog/2013/12/08/simple-hbase-orm</id>
+    <content type="html"><![CDATA[<p>When dealing with data stored in HBase, you are quick to come to a
+conclusion, that it is extremaly inconvenient to reach to it
+via HBase native API. It is very verbose and you always need to convert
+between bytes and simple types - a pain.</p>
+
+<p>While I was working on a project of mine, I thought, why not to easy
+those pains and fetch real objects from HBase.</p>
+
+<p>And that&#8217;s how this simplistic, hackish ORM came to life. It is no match
+for projects like <a href="https://github.com/impetus-opensource/Kundera">Kundera</a>
+(a JPA compliant solution), or <a href="https://code.google.com/p/n-orm/">n-orm</a>. Nevertheless, it just suits my needs :)</p>
+
+<!-- more -->
+
+
+<p>Project sources are hosted on GitHub: <a href="https://github.com/zygm0nt/hbase-annotations">https://github.com/zygm0nt/hbase-annotations</a></p>
+
+<p>To make use of this, you need to have an entity class with annotations:
+- @Column - with argument specifying column family and column name, ie.
+  @Column(&#8220;cf:column-name&#8221;)
+- @Id - will store row key in this property,
+- and optionaly @Value - for Spring Expression Language, in case you
+  need to perform some extraction on the value.</p>
+
+<p><em>Annotations should be on setter methods.</em></p>
+
+<p>Now you have your model annotated and ready to be fetched from HBase.</p>
+
+<p>The actual work is done with a service class, that should extend class
+<a href="https://github.com/zygm0nt/hbase-annotations/blob/master/src/main/java/pl/touk/hadoop/hbase/BaseHadoopInteraction.java">BaseHadoopInteraction</a> just as class
+<a href="https://github.com/zygm0nt/hbase-annotations/blob/master/src/test/java/pl/touk/hadoop/hbase/SampleHBaseClient.java">SimpleHBaseClient</a> does.</p>
+
+<p>Then it is possible to just call:</p>
+
+<script src="https://gist.github.com/zygm0nt/7863407.js"></script>
+
+
+<p>Note that there are more methods you can use on BaseHadoopInteraction.
+You can also do:
+- scan
+- scan with key ranges
+- delete</p>
+
+<p>What you won&#8217;t get from this simple ORM is:
+- automatic object updating,
+- nested objects,
+- saving to HBase - &#8216;cause I didn&#8217;t have a need for that,</p>
+
+<p>Hope you&#8217;ll find this piece of code useful. If you see room for
+improvements while staying in project&#8217;s scope - please drop me a
+message.</p>
+
+<p>And if you are searching for a full-fledged ORM solution for interacting with HBase, just head
+straight to Kundera project website :)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Recently at storm-users]]></title>
@@ -2414,185 +2476,6 @@ good tools that handle JMS, feel free to comment!
 
 Got more advices, again, comment!
 </div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Schematron to the rescue!]]></title>
-    <link href="http://zygm0nt.github.com/blog/2010/10/21/schematron-to-the-rescue/"/>
-    <updated>2010-10-21T10:40:37+02:00</updated>
-    <id>http://zygm0nt.github.com/blog/2010/10/21/schematron-to-the-rescue</id>
-    <content type="html"><![CDATA[<div class='post'>
-<table border="0">
-<tr><td>
-<p>In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be solved with it - the standardization processes is there for some reason. But that happens only in ideal
-world, which we&#8217;re not living in. </p></td> <td><img src="http://blog.innovative-labs.com/blog/simpson_schematron.png" width="100"/>
-</td></tr></table>
-
-<p>In ideal world, when dealing with XML instances you&#8217;d be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal  definition language to declare your data structure. With that you get rigid rules as to how XML documents should look like. There doesn&#8217;t seem to be much space to deviate from specs. Well, in fact there is.</p>
-
-<EXCERPT/>
-
-<p>The main problem of XML, aside its verbosity, is the inability to create concise rules for the input or output document as a whole. Perhaps it&#8217;s a nice feature, because XML Schema should only be used to describe a data structure, not to infer business rules on it. Perhaps not. Nevertheless it&#8217;s not what I needed in one of the projects I&#8217;ve worked on.</p>
-
-<p>My need was to actually check the business validity of such documents. This was used in a Web Service environment, a pretty stupid WS, which sole role was to fetch data from database and pack it into appropriate XML structures. Errors might occur in database&#8217;s views or in WS - as usual. They might be data multiplication or appearance of some elements while they shouldn&#8217;t. Resulting documents were correctly validated with the xml schema, but the result was simply wrong from the business point of view.</p>
-
-<p>What I needed an XML formalization language, an ability to write rules that would assert some rules, report on not meeting stated rules. I was in need of a tool to write business rules to tame such XML entities.</p>
-
-<p>The simplest way I found to solve this was to use <a href="http://www.schematron.com/">Schematron!</a> - &#8220;a language for making assertions about patterns found in XML documents&#8221;. This neat tool is a set of XSL templates, that you use in conjunction with a rule set on documents to check. As a result of the check you get another XML document with test assertions - whether failed or succeeded.</p>
-
-<p>With Schematron you write a set of rules you expect the document to assert, than you use Schematron XSL template to produce XSL rules specific for your case. Now you only need to use newly generated XSL rules template on your XML document to check rules compliance. Easy, if not, check the diagram below.</p>
-
-
-<img src="http://blog.innovative-labs.com/blog/schematron_flow.png"
-width="600"/>
-
-<h2>How does it look?</h2>
-
-The rules&#8217; file may look like this:
-
-<pre class="brush: xml">
-<?xml version="1.0" encoding="iso-8859-1"?>
-<iso:schema    xmlns="http://purl.oclc.org/dsdl/schematron" 
-           xmlns:iso="http://purl.oclc.org/dsdl/schematron" 
-           xmlns:sch="http://www.ascc.net/xml/schematron"
-           xmlns:dp ="http://www.dpawson.co.uk/ns#"
-           xmlns:pc="http://example.com/pc/type"
-           queryBinding='xslt2'
-           schemaVersion="ISO19757-3">
-  <iso:title>TouK Schematron test harness</iso:title>
-
-  <iso:ns prefix="pc" uri="http://example.com/pc/types" />  
-
-
-<iso:pattern id="pc.getMigrationOffers">
-  <iso:title>checking GetMigrationOffers</iso:title>
-  <iso:rule context="pc:getMigrationOffersResponse">
-    <iso:report test="true()">Report date.<iso:value-of select="current-dateTime()"/></iso:report>
-    <iso:assert test="count(//@offerId[. = current()/@offerId]) = 1" >Unique offers allowed.</iso:assert>
-    <iso:assert test="count(//@asb) = 1">Each offer has to have an @abc attribute </iso:assert>
-  </iso:rule>
-  <iso:rule context="pc:offer">
-    <iso:assert test="count(pc:tariff) = 1">Each offer has to have a tariff</iso:assert>
-    <iso:assert test="count(pc:offerPromotion) = 1">Each offer has to have a promotion</iso:assert>
-  </iso:rule>
-</iso:pattern>
-
-<iso:pattern id="pc.getAllPhones">
-  <iso:title>checking GetAllPhones</iso:title>
-  <iso:rule context="pc:tac">
-    <iso:assert test="count(parent::node()/pc:tac[. = current()]) = 1">
-        TACs should be unique. TAC: <iso:value-of select="."/>, 
-        handsetId: <iso:value-of select="parent::node()/@handsetId"/>
-        offerId: <iso:value-of select="parent::node()/@offerId"/>
-    </iso:assert>
-  </iso:rule>
-</iso:pattern>
-
-</iso:schema>
-</pre>
-
-<p>Here we see two rules, one named <b>getMigrationOffers</b> and the other <b>getAllPhones</b>. The rules - mainly their asserts seem pretty self explanatory, but for the sake of completeness I&#8217;ll describe the rules for <b>getAllPhones</b>.</p>
-
-<p>There is one rule, which checks the uniqueness of <b>tac</b> elements. This rule tries to ensure that each handset should have a list of unique tac elements as its children. However there may appear tac elements of the same value in different handset elements.</p>
-
-<p>Given an input XML in the form of:</p>
-
-<pre class="brush: xml">
-<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
-   <soap:Body>
-      <getAllPhonesResponse xmlns="http://example.com/pc/types">
-         <handset endDate="2010-12-31T00:00:00.000+01:00" grossPrice="399" handsetId="95" isAllPhones="true" isPhone="true" manufacturer="SonyEricsson " materialSymbol="TE-SE-XW980-NS1-00" name=" Sony Ericsson W980, Open Market 48H" netPrice="327.04" offerId="103021" priceListId="5912" startDate="2010-03-22T00:00:00.000+01:00">
-            <tac>12028006</tac>
-            <tac>20070705</tac>
-            <tac>35535302</tac>
-            <tac>01216100</tac>
-            <tac>01216100</tac>
-         </handset>
-         <handset endDate="2010-12-31T00:00:00.000+01:00" grossPrice="399" handsetId="95" isAllPhones="true" isPhone="true" manufacturer="SonyEricsson " materialSymbol="TE-SE-XW980-NS1-00" name=" Sony Ericsson W980, Open Market 48H" netPrice="327.04" offerId="103056" priceListId="5912" startDate="2010-03-22T00:00:00.000+01:00">
-            <tac>12028006</tac>
-            <tac>20070705</tac>
-            <tac>35535302</tac>
-            <tac>01216100</tac>
-         </handset>
-         <handset endDate="2010-12-31T00:00:00.000+01:00" grossPrice="399" handsetId="95" isAllPhones="true" isPhone="true" manufacturer="SonyEricsson " materialSymbol="TE-SE-XW980-NS1-00" name=" Sony Ericsson W980, Open Market 48H" netPrice="327.04" offerId="103032" priceListId="5912" startDate="2010-03-22T00:00:00.000+01:00">
-            <tac>12028006</tac>
-            <tac>20070705</tac>
-            <tac>35535302</tac>
-            <tac>01216100</tac>
-         </handset>
-       </getAllPhonesResponse>
-   </soap:Body>
-</soap:Envelope>
-</pre>
-
-And passing those two files through the processing pipeline you get a report:
-
-<pre class="brush: xml">
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<svrl:schematron-output xmlns:schold="http://www.ascc.net/xml/schematron"
-                        xmlns:iso="http://purl.oclc.org/dsdl/schematron"
-                        xmlns:saxon="http://saxon.sf.net/"
-                        xmlns:pc="http://example.com/pc/types"
-                        xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-                        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-                        title="TouK Schematron test harness"
-                        schemaVersion="ISO19757-3">
-    
-   <svrl:ns-prefix-in-attribute-values uri="http://example.com/pc/types" prefix="pc"/>
-   <svrl:active-pattern document="file:/tmp/schematron/getAllPhones.xml" id="pc.getMigrationOffers"
-                        name="checking GetMigrationOffers"/>
-   <svrl:active-pattern document="file:/tmp/schematron/getAllPhones.xml" id="pc.getAllPhones"
-                        name="checking GetAllPhones"/>
-   <svrl:fired-rule context="pc:tac"/>
-   <svrl:fired-rule context="pc:tac"/>
-   <svrl:fired-rule context="pc:tac"/>
-   <svrl:fired-rule context="pc:tac"/>
-   <svrl:failed-assert test="count(parent::node()/pc:tac[. = current()]) = 1"
-                       location="/*:Envelope[namespace-uri()='http://www.w3.org/2003/05/soap-envelope'][1]/*:Body[namespace-uri()='http://www.w3.org/2003/05/soap-envelope'][1]/*:getAllPhonesResponse[namespace-uri()='http://example.com/pc/types'][1]/*:handset[namespace-uri()='http://example.com/pc/types'][1]/*:tac[namespace-uri()='http://example.com/pc/types'][4]">
-      <svrl:text>
-        TACs should be unique. TAC: 01216100, 
-        handsetId: 95
-        offerId: 103021</svrl:text>
-   </svrl:failed-assert>
-   <svrl:fired-rule context="pc:tac"/>
-   <svrl:failed-assert test="count(parent::node()/pc:tac[. = current()]) = 1"
-                       location="/*:Envelope[namespace-uri()='http://www.w3.org/2003/05/soap-envelope'][1]/*:Body[namespace-uri()='http://www.w3.org/2003/05/soap-envelope'][1]/*:getAllPhonesResponse[namespace-uri()='http://example.com/pc/types'][1]/*:handset[namespace-uri()='http://example.com/pc/types'][1]/*:tac[namespace-uri()='http://example.com/pc/types'][5]">
-      <svrl:text>
-        TACs should be unique. TAC: 01216100, 
-        handsetId: 95
-        offerId: 103021</svrl:text>
-   </svrl:failed-assert>
-   <svrl:fired-rule context="pc:tac"/>
-   <svrl:fired-rule context="pc:tac"/>
-   <svrl:fired-rule context="pc:tac"/>
-   <svrl:fired-rule context="pc:tac"/>
-[...]
-</svrl:schematron-output>
-</pre>
-
-<p>After running the validation, the report presents us with the result. It shows that there are actually non-unique tacs. Unfortunately the rule itself is not so optimal, as it is executed for each tac node. The better case would be to create a rule operating only on groups of tacs - having a rule for each handset&#8217;s tacs would be much better.
-
-<h2>Performance consideration</h2>
-
-<p>As you may have seen, Schematron gives quite a potential, if it comes to rules building - maybe not the easiest to comprehend, since written with XPath, but good enough.</p>
-
-<p>However, with all the XML processing involved in the process, it may take some considerable amount of time to execute such validations. For example, processing rules for file <b>getMigrationOffers.xml</b> takes about 2.296s - the file has 82 offer elements, which the rules operate on. But validating the other file, <b>getAllPhones.xml</b> takes 5.324s, with 3113 tac elements, and the rule iterating all of them.</p>
-
-<p>This overhead is too much in most of the situations. That&#8217;s why this solution is rather not for use in normal execution pipeline - it would be unwise to put Schematron to check each request, thus entangle it into my Web Services normal flow.</p>
-
-<p>What may be more desirable is to deploy a continuous integration server, with a project querying such Web Service and checking the rules in this manner.</p>
-
-<h2>Conclusion</h2>
-
-<p>So, what&#8217;s so great about having one XML generate another XML? Perhaps nothing, I think it would took just about a day to write some shell, python, &lt;other text processing tool&gt; that would perform equally (or even better). However, we loose technology homogeneity, and employ some other environments, not specific to our primary target platform, and that seems bad. Of course using some powerful text processing tool to impose the same rules might be much more efficient, thou less coherent.</p>
-
-<p>What is your approach to such situations? Have you used Schematron or any other similar tool?</p>
-
-<p><font size="-2">Code for this example is available on GitHub - <a
-href="http://github.com/zygm0nt/schematron-example">http://github.com/zygm0nt/schematron-example</a>.</font></p></div>
 ]]></content>
   </entry>
   
