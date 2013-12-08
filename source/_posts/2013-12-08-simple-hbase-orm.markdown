@@ -26,6 +26,7 @@ for projects like [Kundera](https://github.com/impetus-opensource/Kundera)
 Project sources are hosted on GitHub: [https://github.com/zygm0nt/hbase-annotations](https://github.com/zygm0nt/hbase-annotations)
 
 To make use of this, you need to have an entity class with annotations:
+
 - @Column - with argument specifying column family and column name, ie.
   @Column("cf:column-name")
 - @Id - will store row key in this property, 
@@ -46,11 +47,13 @@ Then it is possible to just call:
 
 Note that there are more methods you can use on BaseHadoopInteraction.
 You can also do:
+
 - scan
 - scan with key ranges
 - delete
 
 What you won't get from this simple ORM is:
+
 - automatic object updating,
 - nested objects,
 - saving to HBase - 'cause I didn't have a need for that,
