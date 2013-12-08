@@ -131,12 +131,16 @@ for projects like <a href="https://github.com/impetus-opensource/Kundera">Kunder
 
 <p>Project sources are hosted on GitHub: <a href="https://github.com/zygm0nt/hbase-annotations">https://github.com/zygm0nt/hbase-annotations</a></p>
 
-<p>To make use of this, you need to have an entity class with annotations:
-- @Column - with argument specifying column family and column name, ie.
-  @Column(&#8220;cf:column-name&#8221;)
-- @Id - will store row key in this property,
-- and optionaly @Value - for Spring Expression Language, in case you
-  need to perform some extraction on the value.</p>
+<p>To make use of this, you need to have an entity class with annotations:</p>
+
+<ul>
+<li>@Column - with argument specifying column family and column name, ie.
+@Column(&#8220;cf:column-name&#8221;)</li>
+<li>@Id - will store row key in this property,</li>
+<li>and optionaly @Value - for Spring Expression Language, in case you
+need to perform some extraction on the value.</li>
+</ul>
+
 
 <p><em>Annotations should be on setter methods.</em></p>
 
@@ -152,15 +156,23 @@ for projects like <a href="https://github.com/impetus-opensource/Kundera">Kunder
 
 
 <p>Note that there are more methods you can use on BaseHadoopInteraction.
-You can also do:
-- scan
-- scan with key ranges
-- delete</p>
+You can also do:</p>
 
-<p>What you won&#8217;t get from this simple ORM is:
-- automatic object updating,
-- nested objects,
-- saving to HBase - &#8216;cause I didn&#8217;t have a need for that,</p>
+<ul>
+<li>scan</li>
+<li>scan with key ranges</li>
+<li>delete</li>
+</ul>
+
+
+<p>What you won&#8217;t get from this simple ORM is:</p>
+
+<ul>
+<li>automatic object updating,</li>
+<li>nested objects,</li>
+<li>saving to HBase - &#8216;cause I didn&#8217;t have a need for that,</li>
+</ul>
+
 
 <p>Hope you&#8217;ll find this piece of code useful. If you see room for
 improvements while staying in project&#8217;s scope - please drop me a
