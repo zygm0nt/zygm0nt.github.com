@@ -27,10 +27,10 @@ Project sources are hosted on GitHub: [https://github.com/zygm0nt/hbase-annotati
 
 To make use of this, you need to have an entity class with annotations:
 
-- @Column - with argument specifying column family and column name, ie.
+* @Column - with argument specifying column family and column name, ie.
   @Column("cf:column-name")
-- @Id - will store row key in this property, 
-- and optionaly @Value - for Spring Expression Language, in case you
+* @Id - will store row key in this property, 
+* and optionaly @Value - for Spring Expression Language, in case you
   need to perform some extraction on the value.
 
 _Annotations should be on setter methods._
@@ -48,15 +48,15 @@ Then it is possible to just call:
 Note that there are more methods you can use on BaseHadoopInteraction.
 You can also do:
 
-- scan
-- scan with key ranges
-- delete
+* scan
+* scan with key ranges
+* delete
 
 What you won't get from this simple ORM is:
 
-- automatic object updating,
-- nested objects,
-- saving to HBase - 'cause I didn't have a need for that,
+* automatic object updating,
+* nested objects,
+* saving to HBase - 'cause I didn't have a need for that,
 
 Hope you'll find this piece of code useful. If you see room for
 improvements while staying in project's scope - please drop me a
