@@ -21,7 +21,7 @@ And that's how this simplistic, hackish ORM came to life. It is no match
 for projects like [Kundera](https://github.com/impetus-opensource/Kundera)
 (a JPA compliant solution), or [n-orm](https://code.google.com/p/n-orm/). Nevertheless, it just suits my needs :)
 
-<break>
+<!-- more -->
 
 Project sources are hosted on GitHub: [https://github.com/zygm0nt/hbase-annotations](https://github.com/zygm0nt/hbase-annotations)
 
