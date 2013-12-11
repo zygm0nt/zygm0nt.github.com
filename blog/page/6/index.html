@@ -9,7 +9,10 @@
   <meta name="author" content="Marcin Cylke">
 
   
-  <meta name="description" content="Od dawna używam hugina, który doskonale nadaje się do sklejania wielu zdjęć w panoramę. Robi to doskonale, wygładza, koryguje, dopasowuje. Wystarczy &hellip;">
+  <meta name="description" content="Zarządzanie pakietami to droga przez mękę. Czemu? Proszę bardzo:
+marcin@byakshee:~&gt; sudo zypper install f-spot
+Reading installed packages...
+'f- &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +87,106 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/09/20/open-suse-jest-uposledzone/">Open Suse Jest Upośledzone!</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-20T16:45:13+02:00" pubdate data-updated="true">Sep 20<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<p>Zarządzanie pakietami to droga przez mękę. Czemu? Proszę bardzo:</p>
+<p><code>marcin@byakshee:~&gt; sudo zypper install f-spot<br>
+Reading installed packages...<br>
+'f-spot' is already installed.<br>
+Nothing to do.</code></p>
+<p>ale już jakbym chciał upgrade paczki zrobić, to inna rozmowa:</p>
+<p><code>marcin@byakshee:~&gt; sudo zypper update f-spot<br>
+Reading installed packages...<br>
+Package 'f-spot' is not installed.<br>
+Nothing to do.</code><br></p>
+<p><br>
+Wniosek z tego taki, że jak raz zetkniesz się z apt-getem, to już nic nie będzie później odpowiednie :D A OpenSuse oczywiście odradzam.</p>
+<p></p>
+</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://a-patch.jogger.pl">a_patch</a></div>
+<div class='content'>
+<p>Apatitude ssie ;) Na moim NAS działa jakieś 80% wolniej niż apt-get. Zwłaszcza proces inicjacji.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://zapiski.mruwek.pl">mruwek</a></div>
+<div class='content'>
+<p>Zainstalowałem z lenistwa OpenSuse u mojej Miłości. Srodze się rozczarowałem. Ślimaczy się toto u Niej bardziej niż moje Gentoo, przy czym należy wspomnieć, że moja maszyna ma jakieś 7 lat więcej niż ta przez Nią aktualnie użytkowana.<br /><br />A poza tym apt-get jest przestarzały — „użyj mocy” i włącz aptitude.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>Nie korzystam z apt-geta na OpenSuse - takie wybiegi uznaję za jakieś akrobacje. Używam tylko YaST i zypper - no ale mam nadzieję, że korzystają z tej samej bazy pakietów :D albo że &quot;zypper install&quot; korzysta z tej samej co &quot;zypper update&quot; :)</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://epicweb.pl">Bartosz &quot;BTM&quot; Szczeciński</a></div>
+<div class='content'>
+<p>Oh, to nie wiem - administruje dwoma SuSE (jeden czysty SuSE, jeden OpenSuse) i poza marudzeniem na UBER WOLNE YaST problemów nie miałem.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://pawel-ciupak.jogger.pl">Paweł Ciupak</a></div>
+<div class='content'>
+<p>Raczej nie sądzę – ja też się z tym problemem w openSUSE spotkałem niegdyś, i zawsze on występował, nieważne jak paczka została zainstalowana.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://epicweb.pl">Bartosz &quot;BTM&quot; Szczeciński</a></div>
+<div class='content'>
+<p>Tu się nie sprzeczam, bo mnie zawsze YaST boli - ale może właśnie dlatego, że pakiet był instalowany przez czysty apt-get teraz są problemy z paczką?</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://pawel-ciupak.jogger.pl">Paweł Ciupak</a></div>
+<div class='content'>
+<p>Ma, ale jest szitowe – zawsze po instalacji czegokolwiek przez 5 minut musi się wałkować jakieś SuSEconfig, nie wiadomo po co.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://epicweb.pl">BTM</a></div>
+<div class='content'>
+<p>A ten - OpenSuse nie ma zarządzania przez yast?</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://pawel-ciupak.jogger.pl">Paweł Ciupak</a></div>
+<div class='content'>
+<p>Cóż, pozostaje mi się z tą opinią zgodzić. Używałem niegdyś openSUSE, i muszę przyznać, że zarządzanie pakietami w nim jest do dupy – a to problemy z apgrejdowaniem, a to konieczność żonglerki repozytoriami, a to pakiety z powycinanymi niektórymi funkcjonalnościami (bo patenty), a to całkowicie niepotrzebne i zbędne zależności… Ech.</p></div>
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -952,63 +1055,6 @@ Jeszcze jedno, Amiga nie była konkurencją dla żadnej maszyny SGI, nie ta klas
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2009/02/14/southland-tales/">Southland Tales</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-02-14T00:00:00+01:00" pubdate data-updated="true">Feb 14<span>th</span>, 2009</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-Kiedy zabrałem się po raz pierwszy do oglądania tego filmu, bardzo szybko się zniechęciłem. Ciężko było w niego brnąć, fabuła nie trzymała się kupy, film był dziwny i podzielony na jakieś nieskładne części.<br /><br />Dopiero po jakimś czasie przeczytałem, całkiem przypadkiem zresztą, że to jak najbardziej zamierzony efekt. Dziwne? Nie, nawet nie zupełnie. Sęk w tym, że kompletną opowieść podzielono na 6 części. Pierwsze 3 zostały opowiedziane w formie komiksu, natomiast pozostałe składają się na opisywane właśnie film. Nic więc dziwnego, że zaczynając od środka nie wiedziałem o co biega.<br /><br />Ta dziwna konstrukcja, po przeczytaniu komiksu zaczęła mieć więc wreszcie ręce i nogi. Wszystko zaczęło wskakiwać na swoje miejsca. Teraz tylko należało sobie poukładać i tak bardzo skomplikowaną fabułę.<br /><br />Film opowiada o świecie przyszłości. Świecie nękanym problemami energetycznymi, którym próbuje zaradzić korporacja Treer. Mapa geopolityczna wygląda całkiem inaczej niż to co znamy z dzisiejszych lekcji geografii. Jedynie południowe obszary byłego USA, odpowiadające mniej więcej stanowi California są miejscem mlekiem i miodem płynącym.<br /><br />Boxer Santeros (sportowie i postać baaardzo publiczna) zostaje uprowadzony i odnajduje się po kilku dniach na środku pustyni. Co działo się wtedy? Tego nie wie nawet on, a dodatkowo nie wie nawet jak się nazywa. Wszyscy szukają Boxera, a Boxer chce dowiedzieć się kim jest&#8230;<br /><br />Możnaby tak długo, bo historia jest bardzo zawiła, ociera się o paradoksy podróży w czasie. W filmie przeplatają się niejako 3 historie, rzeczywistość filmu, przeszłość oraz akcja scenariusza napisanego przez Boxera - to głównie w komiksie. Dopiero wszystkie 3 pozwalają zrozumieć jako tako całość. Jest to film Richarda Kelly&#8217;ego, który wyreżyserował również sławnego Donnie Darko, tak więc należy mieć na uwadze, że nie będzie lekko. Udało mu się za to namówić do tego przedsięwzięcia wiele sławnych twarzy jak chociażby Dwayne&#8217;a Johnsona (Boxer), Sarah Michelle Gellar, Justina Timberlake&#8217;a, Christopher Lambert.<br /><br />Choć jest to film ciężki, to jednak stanowi wyśmienity posiłek dla umysłu. Oglądajcie &#8220;na czczo&#8221; ;-)<br /><br /><br /><center><br /><a href="http://www.flickr.com/photos/zygm0nt/3282958730/" title="southlandtalesrockface1 by zygm0nt, on Flickr"><img src="http://farm4.static.flickr.com/3272/3282958730_e55e07c391.jpg" width="500" height="332" alt="southlandtalesrockface1" /></a></center><br /><br /><a href="http://www.imdb.com/title/tt0405336/">IMDB</a></div>
-<h2>Comments</h2>
-<div class='comments'>
-<div class='comment'>
-<div class='author'>Blog filmowy</div>
-<div class='content'>
-Witam, coś tutaj ostatnio mało nowości. Zostawiam swój ślad i zapraszam na mojego bloga.<br /><br />Kacper<br />blogofilmach.pl</div>
-</div>
-<div class='comment'>
-<div class='author'>FF Forum Filmowe</div>
-<div class='content'>
-Piszę tutaj, ponieważ nie znalazłam zakładki &quot;kontakt&quot; ani adresu mailowego. Administruję FF Forum Filmowe (www.forum-filmowe.pl), jesteśmy zainteresowani wymianą linków między naszym forum a tym blogiem. Będę czekać na kontakt:<br />admin@forum-filmowe.pl<br /><br />Pozdrawiam,<br />Ewa<br />www.forum-filmowe.pl</div>
-</div>
-<div class='comment'>
-<div class='author'>Agniecha</div>
-<div class='content'>
-nie podobał mi się ten film. Jak dla mnie totalna masakra. Miał kilka ciekawych motywów, ale ogólnie to nie było nic szczególnego.<BR/><BR/>dodaję do linków, ażeby częściej wpadać. jeżeli będziesz miał ochotę wpadnij do mnie na filmy-wedlug-agniechy.blog.onet.pl.<BR/>buziaki ;**<BR/>Agniecha</div>
-</div>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/7/">&larr; Older</a>
@@ -1026,6 +1072,10 @@ nie podobał mi się ten film. Jak dla mnie totalna masakra. Miał kilka ciekawy
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/10/distributed-scans-with-hbase/">Distributed scans with HBase</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/08/simple-hbase-orm/">Simple HBase ORM</a>
       </li>
     
@@ -1039,10 +1089,6 @@ nie podobał mi się ten film. Jak dla mnie totalna masakra. Miał kilka ciekawy
     
       <li class="post">
         <a href="/blog/2013/03/21/zookeeper-tips/">Operational problems with Zookeeper</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/11/30/after-whug/">After WHUG meeting</a>
       </li>
     
   </ul>

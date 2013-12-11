@@ -9,7 +9,7 @@
   <meta name="author" content="Marcin Cylke">
 
   
-  <meta name="description" content="&#8230; or how I ended up writing a CouchDB proof of concept app? Once upon a time I set out on a journey to discover the NoSQL land. I&#8217;ve &hellip;">
+  <meta name="description" content="Suppose you want to add some additional jars to your SoapUI installation. It all should work ok if you put them in bin/ext directory. It is scanned &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +84,106 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2011/11/02/soapui-ext-libs-and-its-weirdness/">SoapUI Ext Libs and Its Weirdness</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-02T16:32:15+01:00" pubdate data-updated="true">Nov 2<span>nd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<p>Suppose you want to add some additional jars to your SoapUI installation. It all should work ok if you put them in <b>bin/ext</b> directory. It is scanned at startup, and jars found there are automatically added to classpath.
+</p>
+
+<p>
+However if you want to add some JDBC drivers, and happen to be using SoapUI version higher than 3.5.1 it is a bit more tricky.
+</p>
+<p>You may face this NoClassDefFoundError:<br/>
+
+<pre>
+An error occured [oracle/jdbc/Driver], see error log for details
+java.lang.NoClassDefFoundError: oracle/jdbc/Driver
+</pre>
+</p> 
+
+<p>
+If so, try registering your drivers with <b>registerJdbcDriver</b> function, like I did in this snippet of code:
+</p>
+<div><script src='https://gist.github.com/1333768.js?file=jdbc-soapui.groovy'></script>
+<noscript><pre><code>if (context.sql == null) {
+	def driver = 'oracle.jdbc.OracleDriver'
+	com.eviware.soapui.support.GroovyUtils.registerJdbcDriver( driver )
+	def sql = Sql.newInstance('jdbc:oracle:thin:' + dbUri, driver)
+	context.setProperty('sql', sql)
+}</code></pre></noscript></div>
+
+
+
+<p>What a crappy thing!</p></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://podzastaw.org">Kelli</a></div>
+<div class='content'>
+<p>You can definitely see your expertise in the work you write.<br />
+The world hopes for more passionate writers such as you who are not afraid to <br />
+say how they believe. Always go after your heart.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.052b.com">Buford</a></div>
+<div class='content'>
+<p>It&#8217;s going to be end of mine day, however before finish I am reading this fantastic paragraph to increase my experience.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.hotelfocus.com.pl">Chandra</a></div>
+<div class='content'>
+<p>My family every time say that I am wasting my time <br />
+here at net, except I know I am getting knowledge every day by reading such pleasant articles.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.wayn.com/waynblog.html?wci=viewentry&amp;entry_key=265563">Florene</a></div>
+<div class='content'>
+<p>Thanks , I&#8217;ve just been looking for info approximately this topic for a long time and yours is the greatest I have found out till now. But, what concerning the bottom line? Are you positive in regards to the source?</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://www.hotelbookingwebsite.net">Myron</a></div>
+<div class='content'>
+<p>Nice post. I was checking continuously this blog and I am impressed!<br />
+Extremely helpful information specially the last part <br />
+:) I care for such information much. I was looking for this <br />
+particular info for a long time. Thank you and best of luck.</p></div>
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1710,88 +1810,6 @@ This weekend I&#8217;ve been fiddling with <a href="http://www.qemu.org">QEMU</a
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2011/03/20/me-on-hadoop-on-parleys/">Me on Hadoop on Parleys</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-03-20T20:35:39+01:00" pubdate data-updated="true">Mar 20<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<p>Finally I&#8217;ve managed to import my <a href="http://mcl.jogger.pl/2011/02/17/hadoop-on-warsaw-jug/">WarJUG presentation</a> to parleys.com. See for yourself :)
-</p>
-<EXCERPT>
-
-<object width="474" height="443">
-  <param name="movie" value="http://www.parleys.com/share/parleysshare2.swf?pageId=2316"/>
-  <param name="allowFullScreen" value="true"/>
-  <param name="pageId" value="2316"/>
-  <embed src="http://www.parleys.com/share/parleysshare2.swf?pageId=2316" type="application/x-shockwave-flash" allowfullscreen="true" width="474" height="443"/>
-</object>
-
-<p>
-If you&#8217;ve got problems with opening the parleys&#8217; version try the ones uploaded to youtube.
-</p>
-<p>
-Here is part 1:
-</p>
-<object width="425" height="344"><param name="movie"                            
-value="http://www.youtube.com/v/oUFUhZtsUFI?hl=en&fs=1"></param><param
-name="allowFullScreen" value="true"></param><param
-name="allowscriptaccess" value="always"></param><embed
-src="http://www.youtube.com/v/oUFUhZtsUFI?hl=en&fs=1"
-type="application/x-shockwave-flash" allowscriptaccess="always"
-allowfullscreen="true" width="425" height="344"></embed></object>
-
-<p>And here is part 2:</p>
-
-<object width="425" height="344"><param name="movie"
-value="http://www.youtube.com/v/LqhmOHXaQEU?hl=en&fs=1"></param><param
-name="allowFullScreen" value="true"></param><param
-name="allowscriptaccess" value="always"></param><embed
-src="http://www.youtube.com/v/LqhmOHXaQEU?hl=en&fs=1"
-type="application/x-shockwave-flash" allowscriptaccess="always"
-allowfullscreen="true" width="425" height="344"></embed></object>
-
-</div>
-<h2>Comments</h2>
-<div class='comments'>
-<div class='comment'>
-<div class='author'><a href="http://sigvatr.jogger.pl">Sigvatr</a></div>
-<div class='content'>
-<p>I&#8217;m sorry, but I don&#8217;t understand  Polish :P</p></div>
-</div>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -1809,6 +1827,10 @@ allowfullscreen="true" width="425" height="344"></embed></object>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/10/distributed-scans-with-hbase/">Distributed scans with HBase</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/08/simple-hbase-orm/">Simple HBase ORM</a>
       </li>
     
@@ -1822,10 +1844,6 @@ allowfullscreen="true" width="425" height="344"></embed></object>
     
       <li class="post">
         <a href="/blog/2013/03/21/zookeeper-tips/">Operational problems with Zookeeper</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/11/30/after-whug/">After WHUG meeting</a>
       </li>
     
   </ul>

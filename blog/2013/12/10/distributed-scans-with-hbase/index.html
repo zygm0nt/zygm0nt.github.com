@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Hellboy - Marcin bloguje</title>
+  <title>Distributed scans with HBase - Marcin bloguje</title>
   <meta name="author" content="Marcin Cylke">
 
   
-  <meta name="description" content="Okazało się, że początek semestru udał sie :) Wczoraj, zaraz po tym jak sie zwiozłem do akademika dowiedziałem się, że wpadają znajome. Zapowiadało &hellip;">
+  <meta name="description" content="HBase is by design a columnar store, that is optimized for random reads.
+You just ask for a row using rowId as an identifier and you get your
+data &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zygm0nt.github.com/blog/2007/11/07/hellboy/">
+  <link rel="canonical" href="http://zygm0nt.github.com/blog/2013/12/10/distributed-scans-with-hbase/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -88,7 +90,7 @@
   <header>
     
       
-        <h1 class="entry-title">Hellboy</h1>
+        <h1 class="entry-title">Distributed Scans With HBase</h1>
       
     
     
@@ -105,15 +107,101 @@
   
 
 
-<time datetime="2007-11-07T00:00:00+01:00" pubdate data-updated="true">Nov 7<span>th</span>, 2007</time>
+<time datetime="2013-12-10T21:26:00+01:00" pubdate data-updated="true">Dec 10<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><div class='post'>
-<p>Okazało się, że początek semestru udał sie :) Wczoraj, zaraz po tym jak sie zwiozłem do akademika dowiedziałem się, że wpadają znajome. Zapowiadało sie niewinnie, a impreza ostatecznie skończyła się o 3 nad ranem. A po jej zakończeniu nastąpiła projekcja Hellboy&#8217;a.</p> <p>Cóż, to może drobne oszustwo, bo film widziałem już wcześniej, i nie będzie to pierwsze wrażenie. Ale co tam, zasługuje on na wspomnienie.</p> <p>Film wyśmienity jest. Trzyma klimat &#8211; jeśli ktoś czytał komiks, to od razu załapie o co chodzi. Efekty bardzo ładne i dobrze wykorzystane, nie są treścią filmu, a tylko środkiem. Tak właśnie powinno być, nie odwrotnie, jak zazwyczaj. W każdym razie, kreacje bohaterow są całkiem niezłe. Szczególnie niesamowicie wygląda Ron Perlman w roli Hellboy&#8217;a. Robi niesamowite wrażenie. Akcja jak to akcja, jest jej dużo, i w sumie opiera się na tym co już powstało w formie komiksów. Super :)</p> <p>To film typowo rozrywkowy, oraz dla maniaków, tudzież wielbicieli/fanów Czerwonego Chłopca. Nie należy tu szykać jakiejś moralizowania.. To nie ta klasa filmów. Poprostu wystarczy się zachwycić wyśmienitą mieszanką wszelkich elementów w tym filmie.</p></div>
+<div class="entry-content"><p>HBase is by design a columnar store, that is optimized for random reads.
+You just ask for a row using rowId as an identifier and you get your
+data instantaneously.</p>
+
+<p>Performing a scan on part or whole table is a completely different thing.
+First of all, it is sequential. Meaning it is rather slow, because it
+doesn&#8217;t use all the RegionServers at the same time. It is implemented
+that way to realize the contract of Scan command - which has to return
+results sorted by key.</p>
+
+<p>So, how to do this efficiently?</p>
+
+<!-- more -->
+
+
+<p>The usual way of getting data from HBase is with the help of its API,
+mainly Scan objects. To accomplish the task I&#8217;ll use just them. I&#8217;ll
+specify startRow and stopRow, so that each Scan request will be looking
+through only part of the key space.</p>
+
+<p>It is crucial to note, that this whole solution works because of key
+sorting properties in HBase. So, HBase scans a table according to ascending key
+values. Since keys are of String type, key with value &#8220;1&#8221; is smaller
+than &#8220;2&#8221;, because they are sorted lexicographicly. So, also key with value &#8220;12345&#8221; is smaller than &#8220;2&#8221;. I&#8217;ve
+leveraged this property so that I&#8217;ve partitioned my whole key space according to
+the first character of the key. In my case keys contain only digits. So I
+have 10 ranges:</p>
+
+<ul>
+<li>null-1</li>
+<li>1-2</li>
+<li>2-3</li>
+<li>3-4</li>
+<li>4-5</li>
+<li>5-6</li>
+<li>6-7</li>
+<li>7-8</li>
+<li>8-9</li>
+<li>9-null</li>
+</ul>
+
+
+<p>The speedup comes from the fact, that each range resides in its own
+partition. That&#8217;s right, I&#8217;ve presplit the table to have 10 partitions.
+This corresponds rather nicely with my cluster&#8217;s setup, because I have
+more than 10 RegionServers. So every partition should be on different
+RegionServer. It will allow the code to do the requested scan operations
+in parallel - giving me this exact performance boost.</p>
+
+<p>How I&#8217;ve created the input table:</p>
+
+<p><code></p>
+
+<p>$ create 'tariff_changes', { NAME => 'cf', SPLITS_FILE => 'splits.txt', VERSIONS => 50, MAX_FILESIZE => 1073741824 }</p>
+
+<p>$ alter 'tariff_changes', { NAME => 'cf', SPLITS_FILE => 'splits.txt', VERSIONS => 50, MAX_FILESIZE => 1073741824 }</p>
+
+<p></code></p>
+
+<p>Split file is just something along this lines:</p>
+
+<p><code>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0
+</code></p>
+
+<p>This tells HBase what are the rowKeys starting and ending each of the
+partitions.</p>
+
+<p>Ok, so after this rather lengthy introduction, what the actual code
+does? It just spins of a few threads - one for each partition - and runs
+a Scan request tailored to that partitions key space. This way, I got a
+10x speedup for this particular scan. The execution time went down from
+30 minutes to 3 for my use case.</p>
+
+<p>I&#8217;ve created an example implementation of this idea. You can find it on
+GitHub:
+<a href="https://github.com/zygm0nt/hbase-distributed-search">https://github.com/zygm0nt/hbase-distributed-search</a>.</p>
+
+<p>Any ideas on how to speed things up even more with HBase?</p>
 </div>
 
 
@@ -136,12 +224,12 @@
   
 
 
-<time datetime="2007-11-07T00:00:00+01:00" pubdate data-updated="true">Nov 7<span>th</span>, 2007</time>
+<time datetime="2013-12-10T21:26:00+01:00" pubdate data-updated="true">Dec 10<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/review/'>review</a>
+    <a class='category' href='/blog/categories/hadoop/'>hadoop</a>, <a class='category' href='/blog/categories/hbase/'>hbase</a>, <a class='category' href='/blog/categories/it/'>it</a>, <a class='category' href='/blog/categories/touk/'>touk</a>
   
 </span>
 
@@ -150,7 +238,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zygm0nt.github.com/blog/2007/11/07/hellboy/" data-via="zygm0nt" data-counturl="http://zygm0nt.github.com/blog/2007/11/07/hellboy/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zygm0nt.github.com/blog/2013/12/10/distributed-scans-with-hbase/" data-via="zygm0nt" data-counturl="http://zygm0nt.github.com/blog/2013/12/10/distributed-scans-with-hbase/" >Tweet</a>
   
   
   
@@ -159,14 +247,18 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left articlenav" href="/blog/2007/11/07/green-street-hooligans/" title="Previous Post: Green Street Hooligans">&laquo; Green Street Hooligans</a>
+        <a class="basic-alignment left articlenav" href="/blog/2013/12/08/simple-hbase-orm/" title="Previous Post: Simple HBase ORM">&laquo; Simple HBase ORM</a>
       
-      
-        <a class="basic-alignment right articlenav" href="/blog/2007/11/07/intacto/" title="Next Post: Intacto">Intacto &raquo;</a>
       
     </p>
   </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -262,6 +354,22 @@
 
 </footer>
   
+
+<script type="text/javascript">
+      var disqus_shortname = 'marcinbloguje';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://zygm0nt.github.com/blog/2013/12/10/distributed-scans-with-hbase/';
+        var disqus_url = 'http://zygm0nt.github.com/blog/2013/12/10/distributed-scans-with-hbase/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 

@@ -9,9 +9,9 @@
   <meta name="author" content="Marcin Cylke">
 
   
-  <meta name="description" content="When dealing with data stored in HBase, you are quick to come to a
-conclusion, that it is extremaly inconvenient to reach to it
-via HBase native API &hellip;">
+  <meta name="description" content="HBase is by design a columnar store, that is optimized for random reads.
+You just ask for a row using rowId as an identifier and you get your
+data &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +86,59 @@ via HBase native API &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2013/12/10/distributed-scans-with-hbase/">Distributed Scans With HBase</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-10T21:26:00+01:00" pubdate data-updated="true">Dec 10<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>HBase is by design a columnar store, that is optimized for random reads.
+You just ask for a row using rowId as an identifier and you get your
+data instantaneously.</p>
+
+<p>Performing a scan on part or whole table is a completely different thing.
+First of all, it is sequential. Meaning it is rather slow, because it
+doesn&#8217;t use all the RegionServers at the same time. It is implemented
+that way to realize the contract of Scan command - which has to return
+results sorted by key.</p>
+
+<p>So, how to do this efficiently?</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/12/10/distributed-scans-with-hbase/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -927,106 +980,6 @@ blog? Any help would be greatly appreciated!</p></div>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2011/11/02/soapui-ext-libs-and-its-weirdness/">SoapUI Ext Libs and Its Weirdness</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-11-02T16:32:15+01:00" pubdate data-updated="true">Nov 2<span>nd</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<p>Suppose you want to add some additional jars to your SoapUI installation. It all should work ok if you put them in <b>bin/ext</b> directory. It is scanned at startup, and jars found there are automatically added to classpath.
-</p>
-
-<p>
-However if you want to add some JDBC drivers, and happen to be using SoapUI version higher than 3.5.1 it is a bit more tricky.
-</p>
-<p>You may face this NoClassDefFoundError:<br/>
-
-<pre>
-An error occured [oracle/jdbc/Driver], see error log for details
-java.lang.NoClassDefFoundError: oracle/jdbc/Driver
-</pre>
-</p> 
-
-<p>
-If so, try registering your drivers with <b>registerJdbcDriver</b> function, like I did in this snippet of code:
-</p>
-<div><script src='https://gist.github.com/1333768.js?file=jdbc-soapui.groovy'></script>
-<noscript><pre><code>if (context.sql == null) {
-	def driver = 'oracle.jdbc.OracleDriver'
-	com.eviware.soapui.support.GroovyUtils.registerJdbcDriver( driver )
-	def sql = Sql.newInstance('jdbc:oracle:thin:' + dbUri, driver)
-	context.setProperty('sql', sql)
-}</code></pre></noscript></div>
-
-
-
-<p>What a crappy thing!</p></div>
-<h2>Comments</h2>
-<div class='comments'>
-<div class='comment'>
-<div class='author'><a href="http://podzastaw.org">Kelli</a></div>
-<div class='content'>
-<p>You can definitely see your expertise in the work you write.<br />
-The world hopes for more passionate writers such as you who are not afraid to <br />
-say how they believe. Always go after your heart.</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://www.052b.com">Buford</a></div>
-<div class='content'>
-<p>It&#8217;s going to be end of mine day, however before finish I am reading this fantastic paragraph to increase my experience.</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://www.hotelfocus.com.pl">Chandra</a></div>
-<div class='content'>
-<p>My family every time say that I am wasting my time <br />
-here at net, except I know I am getting knowledge every day by reading such pleasant articles.</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://www.wayn.com/waynblog.html?wci=viewentry&amp;entry_key=265563">Florene</a></div>
-<div class='content'>
-<p>Thanks , I&#8217;ve just been looking for info approximately this topic for a long time and yours is the greatest I have found out till now. But, what concerning the bottom line? Are you positive in regards to the source?</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://www.hotelbookingwebsite.net">Myron</a></div>
-<div class='content'>
-<p>Nice post. I was checking continuously this blog and I am impressed!<br />
-Extremely helpful information specially the last part <br />
-:) I care for such information much. I was looking for this <br />
-particular info for a long time. Thank you and best of luck.</p></div>
-</div>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -1042,6 +995,10 @@ particular info for a long time. Thank you and best of luck.</p></div>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/10/distributed-scans-with-hbase/">Distributed scans with HBase</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/08/simple-hbase-orm/">Simple HBase ORM</a>
       </li>
     
@@ -1055,10 +1012,6 @@ particular info for a long time. Thank you and best of luck.</p></div>
     
       <li class="post">
         <a href="/blog/2013/03/21/zookeeper-tips/">Operational problems with Zookeeper</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/11/30/after-whug/">After WHUG meeting</a>
       </li>
     
   </ul>

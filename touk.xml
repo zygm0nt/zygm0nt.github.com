@@ -4,7 +4,7 @@
   <title><![CDATA[Marcin bloguje]]> - TouK</title>
   <link href="http://zygm0nt.github.com/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2013-12-08T22:19:52+01:00</updated>
+  <updated>2013-12-11T23:35:21+01:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -12,6 +12,102 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Distributed scans with HBase]]></title>
+    <link href="http://zygm0nt.github.com/blog/2013/12/10/distributed-scans-with-hbase/"/>
+    <updated>2013-12-10T21:26:00+01:00</updated>
+    <id>http://zygm0nt.github.com/blog/2013/12/10/distributed-scans-with-hbase</id>
+    <content type="html"><![CDATA[<p>HBase is by design a columnar store, that is optimized for random reads.
+You just ask for a row using rowId as an identifier and you get your
+data instantaneously.</p>
+
+<p>Performing a scan on part or whole table is a completely different thing.
+First of all, it is sequential. Meaning it is rather slow, because it
+doesn&#8217;t use all the RegionServers at the same time. It is implemented
+that way to realize the contract of Scan command - which has to return
+results sorted by key.</p>
+
+<p>So, how to do this efficiently?</p>
+
+<!-- more -->
+
+
+<p>The usual way of getting data from HBase is with the help of its API,
+mainly Scan objects. To accomplish the task I&#8217;ll use just them. I&#8217;ll
+specify startRow and stopRow, so that each Scan request will be looking
+through only part of the key space.</p>
+
+<p>It is crucial to note, that this whole solution works because of key
+sorting properties in HBase. So, HBase scans a table according to ascending key
+values. Since keys are of String type, key with value &#8220;1&#8221; is smaller
+than &#8220;2&#8221;, because they are sorted lexicographicly. So, also key with value &#8220;12345&#8221; is smaller than &#8220;2&#8221;. I&#8217;ve
+leveraged this property so that I&#8217;ve partitioned my whole key space according to
+the first character of the key. In my case keys contain only digits. So I
+have 10 ranges:</p>
+
+<ul>
+<li>null-1</li>
+<li>1-2</li>
+<li>2-3</li>
+<li>3-4</li>
+<li>4-5</li>
+<li>5-6</li>
+<li>6-7</li>
+<li>7-8</li>
+<li>8-9</li>
+<li>9-null</li>
+</ul>
+
+
+<p>The speedup comes from the fact, that each range resides in its own
+partition. That&#8217;s right, I&#8217;ve presplit the table to have 10 partitions.
+This corresponds rather nicely with my cluster&#8217;s setup, because I have
+more than 10 RegionServers. So every partition should be on different
+RegionServer. It will allow the code to do the requested scan operations
+in parallel - giving me this exact performance boost.</p>
+
+<p>How I&#8217;ve created the input table:</p>
+
+<p><code></p>
+
+<p>$ create 'tariff_changes', { NAME => 'cf', SPLITS_FILE => 'splits.txt', VERSIONS => 50, MAX_FILESIZE => 1073741824 }</p>
+
+<p>$ alter 'tariff_changes', { NAME => 'cf', SPLITS_FILE => 'splits.txt', VERSIONS => 50, MAX_FILESIZE => 1073741824 }</p>
+
+<p></code></p>
+
+<p>Split file is just something along this lines:</p>
+
+<p><code>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0
+</code></p>
+
+<p>This tells HBase what are the rowKeys starting and ending each of the
+partitions.</p>
+
+<p>Ok, so after this rather lengthy introduction, what the actual code
+does? It just spins of a few threads - one for each partition - and runs
+a Scan request tailored to that partitions key space. This way, I got a
+10x speedup for this particular scan. The execution time went down from
+30 minutes to 3 for my use case.</p>
+
+<p>I&#8217;ve created an example implementation of this idea. You can find it on
+GitHub:
+<a href="https://github.com/zygm0nt/hbase-distributed-search">https://github.com/zygm0nt/hbase-distributed-search</a>.</p>
+
+<p>Any ideas on how to speed things up even more with HBase?</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Simple HBase ORM]]></title>
@@ -2362,132 +2458,6 @@ to achieve it - the changes should be made to Broker configuration.
 <p>
 More on the subject of redelivieries in ActiveMQ can be found at <a href="http://activemq.apache.org/message-redelivery-and-dlq-handling.html">http://activemq.apache.org/message-redelivery-and-dlq-handling.html</a>.
 </p></div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Easier and nicer JMS]]></title>
-    <link href="http://zygm0nt.github.com/blog/2010/12/08/easier-and-nicer-jms/"/>
-    <updated>2010-12-08T10:22:34+01:00</updated>
-    <id>http://zygm0nt.github.com/blog/2010/12/08/easier-and-nicer-jms</id>
-    <content type="html"><![CDATA[<div class='post'>
-<table border="0">
-<tr><td>
-<p>
-JMS seems like a hostile ground. It has all it&#8217;s quirks and strange
-behaviours. A couple of defining standards plus esoteric brokers, queues
-and topics.
-</p>
-
-</td>
-<td><img src="http://blog.innovative-labs.com/blog/Screwdriver.jpg" width="150" /></td></tr></table>
-
-<p>
-At work, we mainly use open source Jms solutions, namely Apache
-ActiveMQ. This one is usually bundled with Apache Servicemix, as a
-message broker for this particular ESB. As there are some minor caveats
-in this scennerio, I&#8217;d like to describe here some guidelines for getting
-to running JMS queues.
-</p>
-<EXCERPT/>
-<p>
-Treat this post as a quick cheat sheet with the most common things about
-JMS I tend to forget :)
-</p>
-
-<p>
-Minor glitches encountered during work with embedded broker led to some
-thoughts about switching to external broker. This is how I configure SMX
-and AcviteMQ.
-</p>
-<p>
-Necessary steps:</p>
-<ul>
-<li> change <i>apache-servicemix/conf/servicemix.properties</i> <b>activemq.port</b>
-to sth else than standard, for example 61626</li>
-<li> change <i>apache-activemq/conf/activemq.xml</i> with this settings:
- <ul>
-    <li> change port, the service listens on:
-
-<pre class="brush: xml">
-        <transportConnectors>
-            <transportConnector name="openwire" uri="tcp://localhost:61626"/>
-        </transportConnectors>
-</pre></li>
-    <li> setup separate JMX instance:
-<pre class="brush: xml">
-        <managementContext>
-            <managementContext createConnector="true" connectorPort="2011"/>
-        </managementContext>
-</pre></li>
-</ul>
-</li>
-<li> the nicest tool I found for browsing queues and topics is <a href="http://www.hermesjms.com">Hermes
-JMS</a>. Sample config, that connects Hermes to ActiveMQ instance is on
-the picture below:
-
-<img src="http://blog.innovative-labs.com/blog/easy_jms.png" width="550" alt="HermesJMS to ActiveMQ connection config"/>
-</li>
-<li> sending simple messages with Hermes is basic, but what if you need to
-set some headers, send bulk messages, etc. Easy, just use Hermes xml
-format. Look like this code snippet below and is rather self-explanatory:
-
-<pre class="brush: xml">
-<content>
-    <entry type="1">
-        <textMessage JMSDeliveryMode="2" JMSExpiration="0" JMSPriority="0" JMSRedelivered="false" JMSTimestamp="0">
-            <headerProperty name="caseId" type="java.lang.String" value="105"/>
-            <text>&lt;![CDATA[<message>
-  <event>
-    <case>
-      <CASE_ID>105</CASE_ID>
-      <EVENT>1235</EVENT>
-    </case>
-  </event>
-</message>]]&gt;</text>
-        </textMessage>
-    </entry>
-</content>
-</pre>
-</li>
-<li> since we use lots of <a href="http://camel.apache.org">Apache
- Camel</a> to consume messages, here is a simple way to start broker in
-your tests:
-<ul>
-    <li> start a broker
-<pre class="brush: java">
-        BrokerService broker = new org.apache.activemq.broker.BrokerService();
-        broker.setBrokerName("AMQ-1");
-        broker.addConnector("tcp://localhost:51616");
-        broker.setPersistent(false);
-        broker.start();
-</pre>
-     Notice it has persistance disabled.
-</li>
-    <li> initialize Camel&#8217;s JMS component:
-<pre class="brush: java">
-    ctx.removeComponent("jms");
-    ctx.addComponent("jms", ActiveMQComponent.activeMQComponent("tcp://localhost:51616"));
-</pre></li>
-    <li> if you want to pass messages to reference endpoints, (like <i>ref:input</i>), use this wrapper method:
-<pre class="brush: java">
-private JmsEndpoint createJmsEndpoint(String endpoint) throws JMSException {
-        ActiveMQComponent amqc = (ActiveMQComponent) ctx.getComponent("jms");
-        JmsEndpoint endp = JmsEndpoint.newInstance(new ActiveMQTopic(endpoint), amqc);
-        return endp;
-}
-
-createJmsEndpoint("ESB/XYZ")
-</pre>
-</li>
-</ul>
-</li>
-</ul>
-These are all the tricks I&#8217;ve got for now! But if you know some other
-good tools that handle JMS, feel free to comment!
-
-Got more advices, again, comment!
-</div>
 ]]></content>
   </entry>
   

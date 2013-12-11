@@ -4,7 +4,7 @@
   <title><![CDATA[Category: hbase | Marcin bloguje]]></title>
   <link href="http://zygm0nt.github.com/blog/categories/hbase/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2013-12-08T22:19:52+01:00</updated>
+  <updated>2013-12-11T23:35:21+01:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -12,6 +12,102 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Distributed scans with HBase]]></title>
+    <link href="http://zygm0nt.github.com/blog/2013/12/10/distributed-scans-with-hbase/"/>
+    <updated>2013-12-10T21:26:00+01:00</updated>
+    <id>http://zygm0nt.github.com/blog/2013/12/10/distributed-scans-with-hbase</id>
+    <content type="html"><![CDATA[<p>HBase is by design a columnar store, that is optimized for random reads.
+You just ask for a row using rowId as an identifier and you get your
+data instantaneously.</p>
+
+<p>Performing a scan on part or whole table is a completely different thing.
+First of all, it is sequential. Meaning it is rather slow, because it
+doesn't use all the RegionServers at the same time. It is implemented
+that way to realize the contract of Scan command - which has to return
+results sorted by key.</p>
+
+<p>So, how to do this efficiently?</p>
+
+<!-- more -->
+
+
+<p>The usual way of getting data from HBase is with the help of its API,
+mainly Scan objects. To accomplish the task I'll use just them. I'll
+specify startRow and stopRow, so that each Scan request will be looking
+through only part of the key space.</p>
+
+<p>It is crucial to note, that this whole solution works because of key
+sorting properties in HBase. So, HBase scans a table according to ascending key
+values. Since keys are of String type, key with value "1" is smaller
+than "2", because they are sorted lexicographicly. So, also key with value "12345" is smaller than "2". I've
+leveraged this property so that I've partitioned my whole key space according to
+the first character of the key. In my case keys contain only digits. So I
+have 10 ranges:</p>
+
+<ul>
+<li>null-1</li>
+<li>1-2</li>
+<li>2-3</li>
+<li>3-4</li>
+<li>4-5</li>
+<li>5-6</li>
+<li>6-7</li>
+<li>7-8</li>
+<li>8-9</li>
+<li>9-null</li>
+</ul>
+
+
+<p>The speedup comes from the fact, that each range resides in its own
+partition. That's right, I've presplit the table to have 10 partitions.
+This corresponds rather nicely with my cluster's setup, because I have
+more than 10 RegionServers. So every partition should be on different
+RegionServer. It will allow the code to do the requested scan operations
+in parallel - giving me this exact performance boost.</p>
+
+<p>How I've created the input table:</p>
+
+<p><code></p>
+
+<p>$ create 'tariff_changes', { NAME => 'cf', SPLITS_FILE => 'splits.txt', VERSIONS => 50, MAX_FILESIZE => 1073741824 }</p>
+
+<p>$ alter 'tariff_changes', { NAME => 'cf', SPLITS_FILE => 'splits.txt', VERSIONS => 50, MAX_FILESIZE => 1073741824 }</p>
+
+<p></code></p>
+
+<p>Split file is just something along this lines:</p>
+
+<p><code>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0
+</code></p>
+
+<p>This tells HBase what are the rowKeys starting and ending each of the
+partitions.</p>
+
+<p>Ok, so after this rather lengthy introduction, what the actual code
+does? It just spins of a few threads - one for each partition - and runs
+a Scan request tailored to that partitions key space. This way, I got a
+10x speedup for this particular scan. The execution time went down from
+30 minutes to 3 for my use case.</p>
+
+<p>I've created an example implementation of this idea. You can find it on
+GitHub:
+<a href="https://github.com/zygm0nt/hbase-distributed-search">https://github.com/zygm0nt/hbase-distributed-search</a>.</p>
+
+<p>Any ideas on how to speed things up even more with HBase?</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Simple HBase ORM]]></title>

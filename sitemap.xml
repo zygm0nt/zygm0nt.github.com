@@ -737,15 +737,19 @@
         <lastmod>2013-12-08T22:17:51+01:00</lastmod>
     </url>
     <url>
+        <loc>http://zygm0nt.github.com/blog/2013/12/10/distributed-scans-with-hbase/</loc>
+        <lastmod>2013-12-11T23:35:07+01:00</lastmod>
+    </url>
+    <url>
         <loc>http://zygm0nt.github.com/touk.xml</loc>
         <lastmod>2013-06-24T22:08:35+02:00</lastmod>
     </url>
     <url>
         <loc>http://zygm0nt.github.com/blog/archives/</loc>
-        <lastmod>2013-12-08T22:17:51+01:00</lastmod>
+        <lastmod>2013-12-11T23:35:07+01:00</lastmod>
     </url>
     <url>
         <loc>http://zygm0nt.github.com/</loc>
-        <lastmod>2013-12-08T22:17:51+01:00</lastmod>
+        <lastmod>2013-12-11T23:35:07+01:00</lastmod>
     </url>
 </urlset>
