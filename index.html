@@ -9,9 +9,8 @@
   <meta name="author" content="Marcin Cylke">
 
   
-  <meta name="description" content="HBase is by design a columnar store, that is optimized for random reads.
-You just ask for a row using rowId as an identifier and you get your
-data &hellip;">
+  <meta name="description" content="How Super Confitura Man came to be :) Recently at TouK we had a one-day hackathon. There was no main theme for
+it, you just could post a project idea &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +85,63 @@ data &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2014/07/14/super-confitura-man/">Super Confitura Man</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-14T20:50:00+02:00" pubdate data-updated="true">Jul 14<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>How Super Confitura Man came to be :)</h2>
+
+<p>Recently at TouK we had a one-day hackathon. There was no main theme for
+it, you just could post a project idea, gather people around it and hack
+on that idea for a whole day - drinks and pizza included.</p>
+
+<p>My main idea was to create something that could be fun to build and be
+useful somehow to others. I’d figured out that since Confitura was just
+around a corner I could make a game, that would be playable at TouK’s
+booth at the conference venue. This idea seemed good enough to attract
+Rafał Nowak <a href="https://twitter.com/RNowak3">@RNowak3</a> and Marcin Jasion
+<a href="https://twitter.com/marcinjasion">@marcinjasion</a> - two TouK employees, that with me
+formed a team for the hackathon.</p>
+
+<p><img src="/assets/confitura-2014-01.jpg" alt="Confitura 01" /></p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/07/14/super-confitura-man/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -827,159 +883,6 @@ tags</a></li>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2012/06/18/hadoop-for-enterprises/">Hadoop for Enterprises</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-18T11:08:09+02:00" pubdate data-updated="true">Jun 18<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<p>Hadoop&#8217;s usage as a big data processing framework gains a lot of attention lately. Now, not only big players see, that they can embrace the data their sites or products are generating and develop their businesses on it. For that to happen two things are needed: the data itself and means of processing really big amounts of it.  </p>
-
-<p><span class="image-wrap" style=""><img src="http://blog.innovative-labs.com/blog/3488314950_453466f762_b.jpg" style="border: 0px solid black; width: 400px;" /></span></p>
-
-<p>Gathering data is relatively easy. These are not necessarily structured data, you don&#8217;t need to plan their usage at first. Just start collecting them and than you may experiment with their potential usage. If they&#8217;ll come out as useless rubbish - deleting them won&#8217;t be hard <img class="emoticon" src="/confluence/images/icons/emoticons/smile.gif" height="20" width="20" align="absmiddle" alt="" border="0"/> But imagine the values it may contribute to your business:</p>
-
-<ul>
-	<li>faster services - working on optimized data</li>
-	<li>more clients - because of more relevant search results</li>
-	<li>happy clients - your service can &#8220;read their minds&#8221; <img class="emoticon" src="/confluence/images/icons/emoticons/smile.gif" height="20" width="20" align="absmiddle" alt="" border="0"/></li>
-	<li>etc.</li>
-</ul>
-
-
-<p>There are many companies that utilize Hadoop ecosystem for their own needs. You can read about some of them here: <a href="http://wiki.apache.org/hadoop/PoweredBy" class="external-link" rel="nofollow">http://wiki.apache.org/hadoop/PoweredBy</a> But since that page lacks insight into specific applications of Hadoop I&#8217;ve tried to delve into<br/>
-details of how Hadoop helped tame some companies&#8217; big data sets.</p>
-
-<EXCERPT>
-
-<h2><a name="test-Facebook"></a>Facebook</h2>
-
-<p>Being a social network provider, a widely used one, they require no introduction. However if you&#8217;ve lived under a rock for last couple years just visit their website <a href="http://facebook.com" class="external-link" rel="nofollow">http://facebook.com</a></p>
-
-<p>Their main usage is data warehousing. Since they require to be able to access the data fast and reliably they had a need for real-time querying of their huge, and always growing data set. Their switch from MySQL databases was required due to the increasing workloads they experienced with standard databases. What they got &#8220;out of the box&#8221; with Hadoop was all the benefits of distributed file system (HDFS features). They expanded the ideas behind that even further and implemented truly Highly Available file system without Single Point of Failure.</p>
-
-<p>Facebook has 3 interesting usage scenarios in which Hadoop plays a major role:</p>
-
-<ul>
-	<li>Titan - is Facebook&#8217;s messaging system. It processes messages exchanged between users. Ensures that it happens fast and without glitches. Here Hadoop is used mainly as a huge, unlimited storage.</li>
-	<li>Puma - Facebook Insights - a tool providing page statistics for  advanced Facebook users. Based on streams of data (clicks, likes, shares, comments and impressions) it graphs those data and makes it available near instantly.</li>
-	<li>ODS - Operational Data Store - which stores Facebook&#8217;s internal metrics - collections of OS and cluster health metrics. And it facilitates multiple accounting solutions.</li>
-</ul>
-
-
-<h2><a name="test-Twitter"></a>Twitter</h2>
-
-<p>This popular micro-blogging platform, where you can register your account and follow friends and celebrities for their micro-messages does some pretty interesting things with their Hadoop cluster.</p>
-
-<p>One of their motivations is to speed up their web-page&#8217;s functionality. That is why the compute users&#8217; friendships in Twitter&#8217;s social graph with Hadoop. Using connections between users they calculate their relationship to each other and estimate groups of users.</p>
-
-<p>Since this service&#8217;s users generate lots of content, the company conducts researches based on natural language processing. They probe what could be told about a user from his tweets. They use tweets&#8217; contents for advertisement purpose, trends analysis and many more.</p>
-
-<p>From tweets and user&#8217;s behaviours they characterise usage scenarios. Also, they gather usage statistics, like number of searches daily, number of tweets. Based on this seemingly irrelevant data they run comparisons of different types of users. Twitter analyzes data to determine whether mobile users, users who use third party clients or power users use Twitter differently from average users. Of course theses seem like really specific applications but nevertheless they are very original and base on the data that Twitter has been gathering for some time now. </p>
-
-<h2><a name="test-EBay"></a>EBay</h2>
-
-<p>Being the biggest auctioning site on the Internet, EBay uses Hadoop processing for increasing search relevance based on click-stream data, user data. This seems pretty obvious, considering their area of operation.</p>
-
-<p>However the also have one other interesting thing - they try hard to automatically fill auctioned objects&#8217; metadata, based on the descriptions and other data provided by users. They employ data mining approach for this tasks and judging from their constant growth it seems to work <img class="emoticon" src="/confluence/images/icons/emoticons/smile.gif" height="20" width="20" align="absmiddle" alt="" border="0"/></p>
-
-<h2><a name="test-LinkedIn"></a>LinkedIn</h2>
-
-<p>Social network for professionals, thou a lot smaller than Facebook. Based on click-streams they discover relations between users. All the data concerning latest visits on your profile or people you may know from other places - this comes from Hadoop based analysis of those clicks people make all the time on their sites.</p>
-
-<p>Also a very neat feature, called InMaps (<a href="http://inmaps.linkedinlabs.com/" class="external-link" rel="nofollow">http://inmaps.linkedinlabs.com/</a>) analyse declared schools and companies and generates data for graph with clustered friends of yours.</p>
-
-<h2><a name="test-Last.fm"></a>Last.fm</h2>
-
-<p>This on-line radio site, praised by many for its invaluable recommendations&#8217; system seems like a rather small and simple service. But behind the facade of simple web page there are lots of data being processed, so that their services could match a certain level of perfection.</p>
-
-<p>Such large volume of their data comes from scrobbles. Each users of their service listening to a song generates a note about this fact - called scrobble. Based on that and user profiles they calculate global band popularity charts, maps of bands&#8217; popularity and many more usage statistics and timeline charts.</p>
-
-<p><span class="image-wrap" style=""><img src="http://blog.innovative-labs.com/blog/7346959440_71648c9fe7_b.jpg" style="border: 0px solid black; width: 400px;" /></span></p>
-
-<h2><a name="test-Conclusion"></a>Conclusion</h2>
-
-<p>They just try to detect and trace new patterns in seemingly chaotic data sets. Perhaps you could also do the same? Analyze your data and expand your business value?</p></div>
-<h2>Comments</h2>
-<div class='comments'>
-<div class='comment'>
-<div class='author'><a href="http://www.wedding-cake-decorations.net">wedding cake decorations</a></div>
-<div class='content'>
-<p>We stumbled over here from a different web address and thought I might check things out.<br />
-I like what I see so i am just following you.<br />
-Look forward to checking out your web page yet again.</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://www.car-floor-mats.net">rubber floor mats</a></div>
-<div class='content'>
-<p>I like what you guys are up too. This type of clever work and reporting!<br />
-<br />
-Keep up the awesome works guys I&#8217;ve added you guys to my own blogroll.</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://www.bispioner.ru/phpBB3/memberlist.php?mode=viewprofile&amp;u=119586">Svayambhut Ghosh</a></div>
-<div class='content'>
-<p>Greetings from Florida! I&#8217;m bored at work so I decided to browse your site on my iphone during lunch break. I enjoy the info you present here and can&#8217;t wait to take a look <br />
-when I get home. I&#8217;m surprised at how quick your blog loaded on my cell phone .. I&#8217;m not even using WIFI, just 3G .<br />
-. Anyways, very good site!</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://www.salethenorthfacejackets.com">north face jackets</a></div>
-<div class='content'>
-<p>Comfortableness &lt;a href=&quot;http://www.salethenorthfacejackets.com&quot;&gt;north face jackets&lt;/a&gt;<br />
-is crucial when they get it that will &lt;a href=&quot;http://www.salethenorthfacejackets.com&quot;&gt;north face outlet&lt;/a&gt; get the best school bags pertaining to going camping &lt;a href=&quot;http://www.salethenorthfacejackets.com&quot;&gt;north face sale&lt;/a&gt;. Your easiest guarantee in the case of even larger delivers has become One with an inner metal framework, one that can wind &lt;a href=&quot;http://www.salethenorthfacejackets.com&quot;&gt;cheap north face&lt;/a&gt; up being aligned to help you appropriately fit your &lt;a href=&quot;http://www.salethenorthfacejackets.com/the-north-face-women-1&quot;&gt;north face women&lt;/a&gt; body. They should be now have http://www.salethenorthfacejackets.com secure which were wholly flexible, because essentially in the form of midsection belt to get more aid.</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://www.plants-for-sale.com">plants sale</a></div>
-<div class='content'>
-<p>I never imagined how much stuff there was out there <br />
-on this! Thanks for making it easy to get the picture</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://www.facebook.com/profile.php?id=100003406472249">gWgVcetqzVZukd</a></div>
-<div class='content'>
-<p>What Programming Languages Do Jobs Require? | Regular Geek  regulargeek.com/2009/07/21/what-programming-languages-do-jobs-require   view page   cahecd  As a software engineer, you need to keep your skills sharp and current. This is a general requirement of the job. In addition to this, in the current economy you do not want to be without a job. Obviously, this means learning more about what your current company uses for all of its development. What if you do not have a job or you are looking to leave? What technologies or programming languages should you be looking into?   From the page</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://businesses.wickedlocal.com/MA-Westford/Computer-Service-and-Repair/15">computer pc repair</a></div>
-<div class='content'>
-<p>Howdy are using Wordpress for your site platform? I&#8217;m new to the blog world but I&#8217;m trying to <br />
-get started and create my own. Do you need any coding expertise to make your own <br />
-blog? Any help would be greatly appreciated!</p></div>
-</div>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -995,6 +898,10 @@ blog? Any help would be greatly appreciated!</p></div>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/07/14/super-confitura-man/">Super Confitura Man</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/10/distributed-scans-with-hbase/">Distributed scans with HBase</a>
       </li>
     
@@ -1008,10 +915,6 @@ blog? Any help would be greatly appreciated!</p></div>
     
       <li class="post">
         <a href="/blog/2013/06/23/zookeeper-curator/">Zookeeper + Curator = Distributed sync</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/03/21/zookeeper-tips/">Operational problems with Zookeeper</a>
       </li>
     
   </ul>
@@ -1073,7 +976,7 @@ blog? Any help would be greatly appreciated!</p></div>
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Marcin Cylke -
+  Copyright &copy; 2014 - Marcin Cylke -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

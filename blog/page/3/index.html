@@ -9,7 +9,7 @@
   <meta name="author" content="Marcin Cylke">
 
   
-  <meta name="description" content="Finally I&#8217;ve managed to import my WarJUG presentation to parleys.com. See for yourself :) If you&#8217;ve got problems with opening the &hellip;">
+  <meta name="description" content="This weekend I&#8217;ve been fiddling with QEMU. I&#8217;ve installed OpenBSD on a single image and wanted to have two instances of it communicating &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +84,63 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2011/03/27/how-to-run-multiple-guest-os-in-qemu/">How to Run Multiple Guest OS in QEMU?</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-27T20:47:11+02:00" pubdate data-updated="true">Mar 27<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+This weekend I&#8217;ve been fiddling with <a href="http://www.qemu.org">QEMU</a>. I&#8217;ve installed <a href="http://openbsd.org">OpenBSD</a> on a single image and wanted to have two instances of it communicating via network. Installing the system was easy, but the networking setup was quite a pain. See how I did that&#8230;
+<EXCERPT>
+
+<p>To make QEMU instances communicate with each other I needed to plug them to a &#8220;network&#8221;. That&#8217;s why I&#8217;ve created a bridge to which Virtual Instances would connect to. I&#8217;ve used the following script:</p>
+
+<div><script src='https://gist.github.com/889357.js?file='></script>
+<noscript><pre><code></code></pre></noscript></div>
+
+
+<p>Then I just needed to start Qemu with this command line:</p>
+
+<div><script src='https://gist.github.com/889359.js?file='></script>
+<noscript><pre><code></code></pre></noscript></div>
+ 
+
+<p>Since I&#8217;ve set up bridge for Qemu instances, I&#8217;ve plugged <a href="http://en.wikipedia.org/wiki/TUN/TAP">TAP</a> interfaces into it. That&#8217;s why I&#8217;ve needed to specify this in my qemu exec line. I&#8217;ve also added macaddress setting since both my instances were getting the same one.</p>
+
+<p>And that&#8217;s all! It works like a charm. Now on to some harder things!</p></div>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1067,253 +1124,6 @@ href="http://github.com/zygm0nt/schematron-example">http://github.com/zygm0nt/sc
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2010/08/26/complex-flows-with-apache-camel/">Complex Flows With Apache Camel</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-08-26T22:23:52+02:00" pubdate data-updated="true">Aug 26<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<p>
-At work, we&#8217;re mainly integrating services and systems, and since we&#8217;re on a constant lookout for new, better
-technologies, ways to do things easier, make them more sustainable, we&#8217;re trying to 
-</p>
-<p>
-Usually we use <a href="http://camel.apache.org">Apache Camel</a> for this task, which is a Swiss-knife for 
-integration engineer. What&#8217;s more, this tools corresponds well with our approach to integration solutions:
-</p>
-<ul>
-<li> try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits,
-<li> don&#8217;t convert XML into Java classes back and forth and be worried with problems like XML conversion,
-<li> try to get a simple flow of the process.
-</ul>
-
-<p>
-However, at first sight Apache Camel seems to have some drawbacks mainly
-in the area of  practical solutions ;-).
-It&#8217;s very handy tool if you need to use it as a pipeline with some marginal processing of 
-the data that passes through it. It gets a lot harder to wrap your head around if you consider some 
-branching and intermediate calls to external services. This may be tricky to write properly in Camel&#8217;s DSL.
-</p>
-<p>
-Here is a simple pipeline example:
-</p>
-<img src="http://blog.innovative-labs.com/blog/simple_flow.png" width="600"/>
-<p>
-And here the exact scenario we&#8217;re discussing:
-</p>
-<img src="http://blog.innovative-labs.com/blog/branched_flow.png" width="600"/>
-
-<p>
-What I&#8217;d like to show is the solution to this problem. Well, if you&#8217;re using a recent version of Camel 
-this may be easier, a little different, but should still more-or-less
-work this way. This code is written for 
-Apache Camel 1.4 - a rather antic version, but that&#8217;s what we&#8217;re forced to use. Oh, well.
-</p>
-
-<p>
-Ok, enough whining!
-</p>
-<p>
-So, I create a test class to illustrate the case. The route defined in <b>TestRouter</b> class is responsible for:
-</p>
-
-<ol>
-<li> receiving input
-<li> setting exchange property to a given xpath, which effectively is the name of the first XML element in the input stream
-<li> than, the input data is sent to three different external services, each of them replies with some fictional data - notice routes <b>a</b>, <b>b</b> and <b>c</b>.  The <b>SimpleContentSetter</b> processor is just for responding with a given text.
-<li> the response from all three services is somehow processed by <b>RequestEnricher</b> bean, which is described below
-<li> eventually the exchange is logged in specified category
-</ol>
-
-<p>
-Here is some code for this:
-</p>
-
-<pre class="brush: java">
-public class SimpleTest {
-    public void setUp() throws Exception {
-        TestRouter tr = new TestRouter();
-        ctx.addRoutes(tr);
-    }
-
-    @Test
-    public void shouldCheck() throws Exception {
-        ctx.createProducerTemplate().send("direct:in", getInOut("&lt;a/&gt;"));
-    }
-
-
-    class TestRouter extends RouteBuilder {
-
-        public void configure() throws Exception {
-
-            ((ProcessorType&lt;ProcessorType&gt;)from("direct:in")
-            .setProperty("operation").xpath("local-name(/*)", String.class)
-            .multicast(new MergeAggregationStrategy())
-                .to("direct:a", "direct:b", "direct:c")
-            .end()
-            .setBody().simple("<wrap>${in.body}</wrap>"))
-            .bean(RequestEnricher.class, "enrich")
-            .to("log:pl.touk.debug");
-            
-            from("direct:a").process(new SimpleContentSetter("&lt;aaaa/&gt;"));
-            from("direct:b").process(new SimpleContentSetter("&lt;bbbb param1=\"1\" param2=\"2\" param3=\"3\"/&gt;"));
-            from("direct:c").process(new SimpleContentSetter("&lt;cccc/&gt;"));
-        }
-    }
-}
-</pre>
-
-<p>
-What&#8217;s unusual in this code is the fact, that what normally Camel does when you write a piece of DSL like:
-</p>
-
-<pre class="brush: java">
-	.to("direct:a", "direct:b", "direct:c")
-</pre>
-
-<p>
-is pass input to service <b>a</b>, than <b>a</b>&#8217;s output gets passed to <b>b</b>, becomes it&#8217;s input, than
-<b>b</b>&#8217;s output becomes <b>c</b>&#8217;s input. The problem being, you loose the output from <b>a</b> and <b>b</b>, 
-not mentioning that you might want to send the same input to all three services.
-</p>
-
-<p>
-That&#8217;s where a little tool called <i>multicast()</i> comes in handy. It offers you the ability to aggregate 
-the outputs of those services. You may even create an <b>AggregationStrategy</b> that will do it the way you like. 
-Below class, <b>MergeAggregationStrategy</b> does exactly that kind of work - it joins outputs from all three 
-services. A lot of info about proper use of <b>AggregationStrategy</b>-ies can be found in 
-<a href="http://tmielke.blogspot.com/2009/01/using-camel-aggregator-correctly.html">this post by Torsten Mielke.</a> 
-</p>
-
-<pre class="brush: java">
-public class MergeAggregationStrategy implements AggregationStrategy {
-
-	public Exchange aggregate(Exchange oldExchange, Exchange newExchange) {
-		if (oldExchange.isFailed()) {
-			return oldExchange;
-		}
-		transformMessage(oldExchange.getIn(), newExchange.getIn());
-		transformMessage(oldExchange.getOut(), newExchange.getOut());
-		return newExchange;
-	}
-	
-	private void transformMessage(Message oldM, Message newM) {
-		String oldBody = oldM.getBody(String.class);
-		String newBody = newM.getBody(String.class);
-		newM.setBody(oldBody + newBody);
-	}
-	
-}
-</pre>
-
-<p>
-However nice this may look (or not), what you&#8217;re left with is a mix of multiple XMLs. Normally this 
-won&#8217;t do you much good. Better thing to do is to parse this output in some way. What we&#8217;re using for this 
-is a Groovy :). Which is great for the task of parsing XML. A lot less verbose than ordinary Java.
-</p>
-
-<p>
-Let&#8217;s assume a scenario, that the aggregated output, currently looking like this:
-</p>
-
-<pre class="brush: xml">
-	<aaaa></aaaa>
-	<bbbb></bbbb>
-	<cccc></cccc>
-</pre>
-
-<p>
-is to be processed with the following steps in mind:
-</p>
-
-<ul>
-<li> use <i>&lt;aaaa/&gt;</i> as the result element
-<li> use attributes <i>param1</i>, <i>param2</i>, <i>param3</i> from element <i>&lt;bbbb/&gt;</i> and add it to result element <i>&lt;aaaa/&gt;</i>
-</ul>
-
-<pre class="brush: groovy">
-public class RequestEnricher {
-	
-	public String enrich(@Property(name = "operation") String operation, Exchange ex) {
-		
-		use(DOMCategory) {
-			def dhl = new groovy.xml.Namespace("http://example.com/common/dhl/schema", 'dhl')
-			def pc = new groovy.xml.Namespace("http://example.com/pc/types", 'pc')
-			def doc = new XmlParser().parseText(ex.in.body)
-			
-			def pcRequest   = doc."aaaa"[0]
-			
-			["param1", "param2", "param3"].each() {
-				def node = doc.'**'[("" + it)][0]
-				if (node)
-					pcRequest['@' + it] = node.text()
-			}
-			
-			gNodeListToString([pcRequest])
-		}
-		
-	}
-	
-	String gNodeListToString(list) {
-		StringBuilder sb = new StringBuilder();
-		list.each { listItem -&gt;
-			StringWriter sw = new StringWriter();
-			new XmlNodePrinter(new PrintWriter(sw)).print(listItem)
-			sb.append(sw.toString());
-		}
-		return sb.toString();
-	}
-	
-}
-</pre>
-
-<p>
-What we&#8217;re doing here, especially the last line of <b>enrich</b> method is the conversion to String. There are
-some problems for Camel if we spit out Groovy objects. The rest is just some Groovy specific ways of manipulating XML.
-But looking into <b>enrich</b> method&#8217;s parameters, there is <i>@Property</i> annotation used, which binds the property
-assigned earlier in a router code to one of the arguments. That is really cool feature and there are more such annotations:
-</p> 
-
-<ul>
-<li> <i>@XPath</i>
-<li> <i>@Header</i>
-<li> <i>@Headers</i> and <i>@Properties</i> - gives whole maps of properties or headers
-</ul>
-
-<p>This pretty much concludes the subject :) Have fun, and if in doubt,
-leave a comment with your question!</p></div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -1331,6 +1141,10 @@ leave a comment with your question!</p></div>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/07/14/super-confitura-man/">Super Confitura Man</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/10/distributed-scans-with-hbase/">Distributed scans with HBase</a>
       </li>
     
@@ -1344,10 +1158,6 @@ leave a comment with your question!</p></div>
     
       <li class="post">
         <a href="/blog/2013/06/23/zookeeper-curator/">Zookeeper + Curator = Distributed sync</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/03/21/zookeeper-tips/">Operational problems with Zookeeper</a>
       </li>
     
   </ul>
@@ -1409,7 +1219,7 @@ leave a comment with your question!</p></div>
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Marcin Cylke -
+  Copyright &copy; 2014 - Marcin Cylke -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
