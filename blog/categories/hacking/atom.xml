@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: hacking | Marcin bloguje]]></title>
+  <link href="http://zygm0nt.github.com/blog/categories/hacking/atom.xml" rel="self"/>
+  <link href="http://zygm0nt.github.com/"/>
+  <updated>2016-01-25T22:08:13+01:00</updated>
+  <id>http://zygm0nt.github.com/</id>
+  <author>
+    <name><![CDATA[Marcin Cylke]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[32c3 most interesting videos]]></title>
+    <link href="http://zygm0nt.github.com/blog/2016/01/22/ccc-interesting-videos/"/>
+    <updated>2016-01-22T00:32:00+01:00</updated>
+    <id>http://zygm0nt.github.com/blog/2016/01/22/ccc-interesting-videos</id>
+    <content type="html"><![CDATA[<p>It's been some time since the most recent incarnation on Chaos Congress
+took place (<a href="http://www.ccc.de/">CCC site</a>). I've finally managed to
+sift through some of the videos. Have a selection of those I've found
+most interesting to me. If there are others really worth watching - pass
+me a line! Cheers.</p>
+
+<!-- more -->
+
+
+<ul>
+<li><p>Tor onion services are more useful than most people realize — super
+packed 32c3 talk from @torproject devs:
+<div class="embed-video-container"><iframe src="//www.youtube.com/embed/wHmxCeLpveA" allowfullscreen></iframe></div></p></li>
+<li><p>State of the Onion - what's happend in 2015 around Tor project.
+Informative to say the least.
+<div class="embed-video-container"><iframe src="//www.youtube.com/embed/DqBFez4v_2I" allowfullscreen></iframe></div></p></li>
+<li><p>A very interesting presentation. Especially in the light of Novena
+Laptop and the like:
+<div class="embed-video-container"><iframe src="//www.youtube.com/embed/rcwngbUrZNg" allowfullscreen></iframe></div></p></li>
+<li><p>SO YOU WANT TO BUILD A SATELLITE? - ha!
+<div class="embed-video-container"><iframe src="//www.youtube.com/embed/FO68gG320SM" allowfullscreen></iframe></div></p></li>
+<li><p>INSIDE GLORIOUS LEADER’S OPERATING SYSTEM - this one is actually
+great! No ridiculing, just a review of features. Go see what os-level
+surveilance looks like:
+<div class="embed-video-container"><iframe src="//www.youtube.com/embed/8LGDM9exlZw" allowfullscreen></iframe></div></p></li>
+<li><p>3D printing on the moon - just printing something on your 3d printer
+seems trivial compared to the challange of doing this under Moon
+conditions:</p></li>
+</ul>
+
+
+<p><div class="embed-video-container"><iframe src="//www.youtube.com/embed/_eYvMFipIQ4" allowfullscreen></iframe></div></p>
+
+<ul>
+<li>J. Alex Halderman, Nadia Heninger: Logjam: Diffie-Hellman, discrete
+logs, the NSA, and you
+<div class="embed-video-container"><iframe src="//www.youtube.com/embed/mS8gm-_rJgM" allowfullscreen></iframe></div></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

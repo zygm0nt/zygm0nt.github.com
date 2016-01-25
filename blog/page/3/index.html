@@ -9,7 +9,7 @@
   <meta name="author" content="Marcin Cylke">
 
   
-  <meta name="description" content="This weekend I&#8217;ve been fiddling with QEMU. I&#8217;ve installed OpenBSD on a single image and wanted to have two instances of it communicating &hellip;">
+  <meta name="description" content="The most crucial part of software development is testing. It should ensure us, that our code is correct, works according to given specs, etc. There &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +84,131 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2011/04/01/advisory-messages-to-the-rescue/">Advisory Messages to the Rescue</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-01T11:16:59+02:00" pubdate data-updated="true">Apr 1<span>st</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<p>
+The most crucial part of software development is testing. It should
+ensure us, that our code is correct, works according to given specs,
+etc. There are many kinds of tests: unit tests, integration, functional.
+In general you should try to test the smallest possible subset of your
+code and be able to check the state of the objects after the test.
+</p><p>
+This seems as rather easy task, but what if you have an integration
+end-to-end test to perform? In most cases asserting state in integration
+test is rather hard due to multiple systems interoperability. Let&#8217;s
+focus on a specific situation.
+</p>
+<EXCERPT>
+<p>
+What I needed to do the other day was write some integration test for
+Jms based system. The processing pipeline is easy:
+<ul>
+<li> fetch object from DB</li>
+<li> process it</li>
+<li> publish on JMS</li>
+</ul>
+</p><p>
+some other system (X-system) polls JMS:
+<ul>
+<li> if message is found</li>
+<li> fetch it (message disappears from the JMS queue)</li>
+<li> do sth with it</li>
+</p><p>
+Looks simple but since I didn&#8217;t have any sane access to the X-system I
+wanted to be sure that my object was actually put into the queue. It was
+not acceptable to subscribe to the queue and fetch that object in my
+test - it would dusrupt the flow of the whole process.
+</p><p>
+Fortunately I&#8217;ve been using <a
+href="http://activemq.apache.org">ActiveMQ</a> and since it offers a
+thing called <a
+href="http://activemq.apache.org/advisory-message.html">Advisory
+Messages</a> I&#8217;ve decided to use just them.
+</p><p>
+What are advisory messages? They are a set of administrative messages
+that are generated on a specific event, like message consumption,
+message delivery, topic destruction, and many more. Each type of message
+is delivered to a separate topic - prefixed with 
+<strong>ActiveMQ.Advisory</strong>. Since generation of such messages
+may be an overhead in production systems these features are turned off
+by default. You need to enable specific type of
+advisory message for a specific jms destination. You can do this with
+ths configuration change to <strong>activemq.xml</strong>
+</p>
+<div><script src='https://gist.github.com/897141.js?file='></script>
+<noscript><pre><code></code></pre></noscript></div>
+
+<p>
+As you can see, I&#8217;ve specified which advisories I want enabled. The full
+list of available advisories can be found <a
+href="http://activemq.apache.org/advisory-message.html">here</a>.
+</p><p>
+Since I wanted to read messages from that topic I&#8217;ve added the following
+configuration to my spring context - there is one destination bean for
+inserting messages and one bean for advisory topic.
+</p>
+<div><script src='https://gist.github.com/897150.js?file='></script>
+<noscript><pre><code></code></pre></noscript></div>
+
+<p>
+Thanks to this configuration I&#8217;ve been able to check that my message was
+actually delivered to the queue. There&#8217;ve been no need to worry about
+race conditions in consuming the message from original queue - if the
+X-system read the message, I&#8217;d be unable to determine if it has ever
+been in JMS at all.
+</p><p>
+What&#8217;s not so nice about that:
+<ul>
+<li> advisory messages can be thought of as counters rather than debugging
+  information</li>
+<li> they don&#8217;t contain any data that would allow us to match advisory
+  message to the original message - thou you could correlate by
+  timestamp</li>
+</ul>
+</p>
+<p>
+All in all, it&#8217;s a good tool to have! But perhaps you have some other
+thoughts on this subject? How do you test JMS?
+</p></div>
+<h2>Comments</h2>
+<div class='comments'>
+</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -916,214 +1041,6 @@ Got more advices, again, comment!
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2010/10/21/schematron-to-the-rescue/">Schematron to the Rescue!</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-10-21T10:40:37+02:00" pubdate data-updated="true">Oct 21<span>st</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<table border="0">
-<tr><td>
-<p>In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be solved with it - the standardization processes is there for some reason. But that happens only in ideal
-world, which we&#8217;re not living in. </p></td> <td><img src="http://blog.innovative-labs.com/blog/simpson_schematron.png" width="100"/>
-</td></tr></table>
-
-<p>In ideal world, when dealing with XML instances you&#8217;d be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal  definition language to declare your data structure. With that you get rigid rules as to how XML documents should look like. There doesn&#8217;t seem to be much space to deviate from specs. Well, in fact there is.</p>
-
-<EXCERPT/>
-
-<p>The main problem of XML, aside its verbosity, is the inability to create concise rules for the input or output document as a whole. Perhaps it&#8217;s a nice feature, because XML Schema should only be used to describe a data structure, not to infer business rules on it. Perhaps not. Nevertheless it&#8217;s not what I needed in one of the projects I&#8217;ve worked on.</p>
-
-<p>My need was to actually check the business validity of such documents. This was used in a Web Service environment, a pretty stupid WS, which sole role was to fetch data from database and pack it into appropriate XML structures. Errors might occur in database&#8217;s views or in WS - as usual. They might be data multiplication or appearance of some elements while they shouldn&#8217;t. Resulting documents were correctly validated with the xml schema, but the result was simply wrong from the business point of view.</p>
-
-<p>What I needed an XML formalization language, an ability to write rules that would assert some rules, report on not meeting stated rules. I was in need of a tool to write business rules to tame such XML entities.</p>
-
-<p>The simplest way I found to solve this was to use <a href="http://www.schematron.com/">Schematron!</a> - &#8220;a language for making assertions about patterns found in XML documents&#8221;. This neat tool is a set of XSL templates, that you use in conjunction with a rule set on documents to check. As a result of the check you get another XML document with test assertions - whether failed or succeeded.</p>
-
-<p>With Schematron you write a set of rules you expect the document to assert, than you use Schematron XSL template to produce XSL rules specific for your case. Now you only need to use newly generated XSL rules template on your XML document to check rules compliance. Easy, if not, check the diagram below.</p>
-
-
-<img src="http://blog.innovative-labs.com/blog/schematron_flow.png"
-width="600"/>
-
-<h2>How does it look?</h2>
-
-The rules&#8217; file may look like this:
-
-<pre class="brush: xml">
-<?xml version="1.0" encoding="iso-8859-1"?>
-<iso:schema    xmlns="http://purl.oclc.org/dsdl/schematron" 
-           xmlns:iso="http://purl.oclc.org/dsdl/schematron" 
-           xmlns:sch="http://www.ascc.net/xml/schematron"
-           xmlns:dp ="http://www.dpawson.co.uk/ns#"
-           xmlns:pc="http://example.com/pc/type"
-           queryBinding='xslt2'
-           schemaVersion="ISO19757-3">
-  <iso:title>TouK Schematron test harness</iso:title>
-
-  <iso:ns prefix="pc" uri="http://example.com/pc/types" />  
-
-
-<iso:pattern id="pc.getMigrationOffers">
-  <iso:title>checking GetMigrationOffers</iso:title>
-  <iso:rule context="pc:getMigrationOffersResponse">
-    <iso:report test="true()">Report date.<iso:value-of select="current-dateTime()"/></iso:report>
-    <iso:assert test="count(//@offerId[. = current()/@offerId]) = 1" >Unique offers allowed.</iso:assert>
-    <iso:assert test="count(//@asb) = 1">Each offer has to have an @abc attribute </iso:assert>
-  </iso:rule>
-  <iso:rule context="pc:offer">
-    <iso:assert test="count(pc:tariff) = 1">Each offer has to have a tariff</iso:assert>
-    <iso:assert test="count(pc:offerPromotion) = 1">Each offer has to have a promotion</iso:assert>
-  </iso:rule>
-</iso:pattern>
-
-<iso:pattern id="pc.getAllPhones">
-  <iso:title>checking GetAllPhones</iso:title>
-  <iso:rule context="pc:tac">
-    <iso:assert test="count(parent::node()/pc:tac[. = current()]) = 1">
-        TACs should be unique. TAC: <iso:value-of select="."/>, 
-        handsetId: <iso:value-of select="parent::node()/@handsetId"/>
-        offerId: <iso:value-of select="parent::node()/@offerId"/>
-    </iso:assert>
-  </iso:rule>
-</iso:pattern>
-
-</iso:schema>
-</pre>
-
-<p>Here we see two rules, one named <b>getMigrationOffers</b> and the other <b>getAllPhones</b>. The rules - mainly their asserts seem pretty self explanatory, but for the sake of completeness I&#8217;ll describe the rules for <b>getAllPhones</b>.</p>
-
-<p>There is one rule, which checks the uniqueness of <b>tac</b> elements. This rule tries to ensure that each handset should have a list of unique tac elements as its children. However there may appear tac elements of the same value in different handset elements.</p>
-
-<p>Given an input XML in the form of:</p>
-
-<pre class="brush: xml">
-<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
-   <soap:Body>
-      <getAllPhonesResponse xmlns="http://example.com/pc/types">
-         <handset endDate="2010-12-31T00:00:00.000+01:00" grossPrice="399" handsetId="95" isAllPhones="true" isPhone="true" manufacturer="SonyEricsson " materialSymbol="TE-SE-XW980-NS1-00" name=" Sony Ericsson W980, Open Market 48H" netPrice="327.04" offerId="103021" priceListId="5912" startDate="2010-03-22T00:00:00.000+01:00">
-            <tac>12028006</tac>
-            <tac>20070705</tac>
-            <tac>35535302</tac>
-            <tac>01216100</tac>
-            <tac>01216100</tac>
-         </handset>
-         <handset endDate="2010-12-31T00:00:00.000+01:00" grossPrice="399" handsetId="95" isAllPhones="true" isPhone="true" manufacturer="SonyEricsson " materialSymbol="TE-SE-XW980-NS1-00" name=" Sony Ericsson W980, Open Market 48H" netPrice="327.04" offerId="103056" priceListId="5912" startDate="2010-03-22T00:00:00.000+01:00">
-            <tac>12028006</tac>
-            <tac>20070705</tac>
-            <tac>35535302</tac>
-            <tac>01216100</tac>
-         </handset>
-         <handset endDate="2010-12-31T00:00:00.000+01:00" grossPrice="399" handsetId="95" isAllPhones="true" isPhone="true" manufacturer="SonyEricsson " materialSymbol="TE-SE-XW980-NS1-00" name=" Sony Ericsson W980, Open Market 48H" netPrice="327.04" offerId="103032" priceListId="5912" startDate="2010-03-22T00:00:00.000+01:00">
-            <tac>12028006</tac>
-            <tac>20070705</tac>
-            <tac>35535302</tac>
-            <tac>01216100</tac>
-         </handset>
-       </getAllPhonesResponse>
-   </soap:Body>
-</soap:Envelope>
-</pre>
-
-And passing those two files through the processing pipeline you get a report:
-
-<pre class="brush: xml">
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<svrl:schematron-output xmlns:schold="http://www.ascc.net/xml/schematron"
-                        xmlns:iso="http://purl.oclc.org/dsdl/schematron"
-                        xmlns:saxon="http://saxon.sf.net/"
-                        xmlns:pc="http://example.com/pc/types"
-                        xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-                        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-                        title="TouK Schematron test harness"
-                        schemaVersion="ISO19757-3">
-    
-   <svrl:ns-prefix-in-attribute-values uri="http://example.com/pc/types" prefix="pc"/>
-   <svrl:active-pattern document="file:/tmp/schematron/getAllPhones.xml" id="pc.getMigrationOffers"
-                        name="checking GetMigrationOffers"/>
-   <svrl:active-pattern document="file:/tmp/schematron/getAllPhones.xml" id="pc.getAllPhones"
-                        name="checking GetAllPhones"/>
-   <svrl:fired-rule context="pc:tac"/>
-   <svrl:fired-rule context="pc:tac"/>
-   <svrl:fired-rule context="pc:tac"/>
-   <svrl:fired-rule context="pc:tac"/>
-   <svrl:failed-assert test="count(parent::node()/pc:tac[. = current()]) = 1"
-                       location="/*:Envelope[namespace-uri()='http://www.w3.org/2003/05/soap-envelope'][1]/*:Body[namespace-uri()='http://www.w3.org/2003/05/soap-envelope'][1]/*:getAllPhonesResponse[namespace-uri()='http://example.com/pc/types'][1]/*:handset[namespace-uri()='http://example.com/pc/types'][1]/*:tac[namespace-uri()='http://example.com/pc/types'][4]">
-      <svrl:text>
-        TACs should be unique. TAC: 01216100, 
-        handsetId: 95
-        offerId: 103021</svrl:text>
-   </svrl:failed-assert>
-   <svrl:fired-rule context="pc:tac"/>
-   <svrl:failed-assert test="count(parent::node()/pc:tac[. = current()]) = 1"
-                       location="/*:Envelope[namespace-uri()='http://www.w3.org/2003/05/soap-envelope'][1]/*:Body[namespace-uri()='http://www.w3.org/2003/05/soap-envelope'][1]/*:getAllPhonesResponse[namespace-uri()='http://example.com/pc/types'][1]/*:handset[namespace-uri()='http://example.com/pc/types'][1]/*:tac[namespace-uri()='http://example.com/pc/types'][5]">
-      <svrl:text>
-        TACs should be unique. TAC: 01216100, 
-        handsetId: 95
-        offerId: 103021</svrl:text>
-   </svrl:failed-assert>
-   <svrl:fired-rule context="pc:tac"/>
-   <svrl:fired-rule context="pc:tac"/>
-   <svrl:fired-rule context="pc:tac"/>
-   <svrl:fired-rule context="pc:tac"/>
-[...]
-</svrl:schematron-output>
-</pre>
-
-<p>After running the validation, the report presents us with the result. It shows that there are actually non-unique tacs. Unfortunately the rule itself is not so optimal, as it is executed for each tac node. The better case would be to create a rule operating only on groups of tacs - having a rule for each handset&#8217;s tacs would be much better.
-
-<h2>Performance consideration</h2>
-
-<p>As you may have seen, Schematron gives quite a potential, if it comes to rules building - maybe not the easiest to comprehend, since written with XPath, but good enough.</p>
-
-<p>However, with all the XML processing involved in the process, it may take some considerable amount of time to execute such validations. For example, processing rules for file <b>getMigrationOffers.xml</b> takes about 2.296s - the file has 82 offer elements, which the rules operate on. But validating the other file, <b>getAllPhones.xml</b> takes 5.324s, with 3113 tac elements, and the rule iterating all of them.</p>
-
-<p>This overhead is too much in most of the situations. That&#8217;s why this solution is rather not for use in normal execution pipeline - it would be unwise to put Schematron to check each request, thus entangle it into my Web Services normal flow.</p>
-
-<p>What may be more desirable is to deploy a continuous integration server, with a project querying such Web Service and checking the rules in this manner.</p>
-
-<h2>Conclusion</h2>
-
-<p>So, what&#8217;s so great about having one XML generate another XML? Perhaps nothing, I think it would took just about a day to write some shell, python, &lt;other text processing tool&gt; that would perform equally (or even better). However, we loose technology homogeneity, and employ some other environments, not specific to our primary target platform, and that seems bad. Of course using some powerful text processing tool to impose the same rules might be much more efficient, thou less coherent.</p>
-
-<p>What is your approach to such situations? Have you used Schematron or any other similar tool?</p>
-
-<p><font size="-2">Code for this example is available on GitHub - <a
-href="http://github.com/zygm0nt/schematron-example">http://github.com/zygm0nt/schematron-example</a>.</font></p></div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -1141,6 +1058,10 @@ href="http://github.com/zygm0nt/schematron-example">http://github.com/zygm0nt/sc
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/01/22/ccc-interesting-videos/">32c3 most interesting videos</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/07/14/super-confitura-man/">Super Confitura Man</a>
       </li>
     
@@ -1154,10 +1075,6 @@ href="http://github.com/zygm0nt/schematron-example">http://github.com/zygm0nt/sc
     
       <li class="post">
         <a href="/blog/2013/08/12/recently-at-storm-users/">Recently at storm-users</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/06/23/zookeeper-curator/">Zookeeper + Curator = Distributed sync</a>
       </li>
     
   </ul>
@@ -1219,7 +1136,7 @@ href="http://github.com/zygm0nt/schematron-example">http://github.com/zygm0nt/sc
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Marcin Cylke -
+  Copyright &copy; 2016 - Marcin Cylke -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

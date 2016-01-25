@@ -9,7 +9,9 @@
   <meta name="author" content="Marcin Cylke">
 
   
-  <meta name="description" content="Hadoop&#8217;s usage as a big data processing framework gains a lot of attention lately. Now, not only big players see, that they can embrace the &hellip;">
+  <meta name="description" content="About a month ago I finally received my very own Raspberry Pi board!
+Don&#8217;t know what that is? Here, read some at their
+website. For the sake of &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +86,82 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2012/10/18/raspberry-pi/">Raspberry-pi</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-18T23:16:00+02:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>About a month ago I finally received my very own Raspberry Pi board!
+Don&#8217;t know what that is? Here, read some at their
+<a href="http://www.raspberrypi.org/">website</a>.</p>
+
+<p>For the sake of completness let me just describe that as prototyping
+platform with ARM processor. It is really similar in concept to what
+Arduino is, except it has not that many extensions available (none? or
+very little, I&#8217;ve only found those on <a href="http://adafruit.com/">Adafruit</a>
+pages).</p>
+
+<p>So, here is the obligatory picture.</p>
+
+<p><img src="http://blog.innovative-labs.com/blog/raspberry-pi.jpg" alt="My very own R-Pi" /></p>
+
+<p>It can run a Linux distribution, so anyone familiar with that can have a
+go with this low-powered computer.</p>
+
+<p>The board itself is on the market for quite some time now. That&#8217;s why
+there are lots of interesting resources and projects that you can do
+with that stuff.</p>
+
+<p>Here are just a bunch of them:</p>
+
+<ul>
+<li><a href="http://www.elcojacobs.com/uberfridge/">UberFridge</a> - for all the
+brewers in the world :)</li>
+<li>SOHO server</li>
+<li>a supercomputer - <a href="http://www.southampton.ac.uk/mediacentre/features/raspberry_pi_supercomputer.shtml">cluster out of R-Pi</a></li>
+<li>Arcade Cabinet - <a href="http://www.raspberrypi.org/phpBB3/viewtopic.php?f=9&amp;t=1814">custom build gaming rig</a></li>
+<li>Hand-held emulation machine - <a href="http://www.raspberrypi.org/phpBB3/viewtopic.php?f=9&amp;t=4570">R-Pi on the go</a></li>
+<li>sending R-Pi to <a href="http://www.raspberrypi.org/phpBB3/viewtopic.php?f=9&amp;t=2059">the edge of Space</a></li>
+<li>coffe machine - <a href="http://moccapi.blogspot.co.uk/">MoccaPi</a></li>
+<li>other projects on elinux - <a href="http://elinux.org/RPi_Projects">Elinux projects</a></li>
+<li>other projects on Hack-a-Day - <a href="http://hackaday.com/tag/raspberry-pi/">Hack-a-Day Raspberry Pi
+tags</a></li>
+</ul>
+
+
+<p>Do you also own R-Pi? Share what you plan to do with it.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1781,131 +1859,6 @@ you know other ways of doing that thing?</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2011/04/01/advisory-messages-to-the-rescue/">Advisory Messages to the Rescue</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-01T11:16:59+02:00" pubdate data-updated="true">Apr 1<span>st</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<p>
-The most crucial part of software development is testing. It should
-ensure us, that our code is correct, works according to given specs,
-etc. There are many kinds of tests: unit tests, integration, functional.
-In general you should try to test the smallest possible subset of your
-code and be able to check the state of the objects after the test.
-</p><p>
-This seems as rather easy task, but what if you have an integration
-end-to-end test to perform? In most cases asserting state in integration
-test is rather hard due to multiple systems interoperability. Let&#8217;s
-focus on a specific situation.
-</p>
-<EXCERPT>
-<p>
-What I needed to do the other day was write some integration test for
-Jms based system. The processing pipeline is easy:
-<ul>
-<li> fetch object from DB</li>
-<li> process it</li>
-<li> publish on JMS</li>
-</ul>
-</p><p>
-some other system (X-system) polls JMS:
-<ul>
-<li> if message is found</li>
-<li> fetch it (message disappears from the JMS queue)</li>
-<li> do sth with it</li>
-</p><p>
-Looks simple but since I didn&#8217;t have any sane access to the X-system I
-wanted to be sure that my object was actually put into the queue. It was
-not acceptable to subscribe to the queue and fetch that object in my
-test - it would dusrupt the flow of the whole process.
-</p><p>
-Fortunately I&#8217;ve been using <a
-href="http://activemq.apache.org">ActiveMQ</a> and since it offers a
-thing called <a
-href="http://activemq.apache.org/advisory-message.html">Advisory
-Messages</a> I&#8217;ve decided to use just them.
-</p><p>
-What are advisory messages? They are a set of administrative messages
-that are generated on a specific event, like message consumption,
-message delivery, topic destruction, and many more. Each type of message
-is delivered to a separate topic - prefixed with 
-<strong>ActiveMQ.Advisory</strong>. Since generation of such messages
-may be an overhead in production systems these features are turned off
-by default. You need to enable specific type of
-advisory message for a specific jms destination. You can do this with
-ths configuration change to <strong>activemq.xml</strong>
-</p>
-<div><script src='https://gist.github.com/897141.js?file='></script>
-<noscript><pre><code></code></pre></noscript></div>
-
-<p>
-As you can see, I&#8217;ve specified which advisories I want enabled. The full
-list of available advisories can be found <a
-href="http://activemq.apache.org/advisory-message.html">here</a>.
-</p><p>
-Since I wanted to read messages from that topic I&#8217;ve added the following
-configuration to my spring context - there is one destination bean for
-inserting messages and one bean for advisory topic.
-</p>
-<div><script src='https://gist.github.com/897150.js?file='></script>
-<noscript><pre><code></code></pre></noscript></div>
-
-<p>
-Thanks to this configuration I&#8217;ve been able to check that my message was
-actually delivered to the queue. There&#8217;ve been no need to worry about
-race conditions in consuming the message from original queue - if the
-X-system read the message, I&#8217;d be unable to determine if it has ever
-been in JMS at all.
-</p><p>
-What&#8217;s not so nice about that:
-<ul>
-<li> advisory messages can be thought of as counters rather than debugging
-  information</li>
-<li> they don&#8217;t contain any data that would allow us to match advisory
-  message to the original message - thou you could correlate by
-  timestamp</li>
-</ul>
-</p>
-<p>
-All in all, it&#8217;s a good tool to have! But perhaps you have some other
-thoughts on this subject? How do you test JMS?
-</p></div>
-<h2>Comments</h2>
-<div class='comments'>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -1923,6 +1876,10 @@ thoughts on this subject? How do you test JMS?
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/01/22/ccc-interesting-videos/">32c3 most interesting videos</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/07/14/super-confitura-man/">Super Confitura Man</a>
       </li>
     
@@ -1936,10 +1893,6 @@ thoughts on this subject? How do you test JMS?
     
       <li class="post">
         <a href="/blog/2013/08/12/recently-at-storm-users/">Recently at storm-users</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/06/23/zookeeper-curator/">Zookeeper + Curator = Distributed sync</a>
       </li>
     
   </ul>
@@ -2001,7 +1954,7 @@ thoughts on this subject? How do you test JMS?
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Marcin Cylke -
+  Copyright &copy; 2016 - Marcin Cylke -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

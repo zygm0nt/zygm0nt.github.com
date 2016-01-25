@@ -9,8 +9,7 @@
   <meta name="author" content="Marcin Cylke">
 
   
-  <meta name="description" content="
-Mam nadzieję, że wreszcie jednak ruszę z blogiem filmowym, po raz kolejny należy mu się reaktywacja. http://o-filmorama.blogspot.com ">
+  <meta name="description" content="Szlag by to trafił! Czemu tak ciężko jest obsługiwać unicode w pythonie? No niby wszystko jest ładnie konwertowane wewnętrznie na odpowiednie &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,6 +84,182 @@ Mam nadzieję, że wreszcie jednak ruszę z blogiem filmowym, po raz kolejny nal
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2010/04/22/unicode-w-pythonie/">Unicode W Pythonie</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-04-22T00:54:24+02:00" pubdate data-updated="true">Apr 22<span>nd</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<p>Szlag by to trafił! Czemu tak ciężko jest obsługiwać unicode w pythonie? </p>
+
+<p>No niby wszystko jest ładnie konwertowane wewnętrznie na odpowiednie reprezentacje, ale jeśli przychodzi co do czego, i chcemy wypisać sobie taki ciąg znaków na ekran, to już jest ciężej.</p>
+<EXCERPT><p>Weźmy prosty przykład. Wczytywałem plik z polskimi znaczkami, o taki:</p>
+
+<p><code>
+Roger Macdonald;Człowiek w żelaznej masce;25
+</code>
+</p>
+
+<p>a potem w kodzie pythonowym robiłem sobie tak:</p>
+
+<p><code>
+for line in open(sys.argv[1],'r').readlines():<br/>
+      print line.decode('utf-8')<br/>
+    (.... tu wysłanie do jakiegoś tam Web Service'u)<br/>
+</code></p>
+
+<p>i wszystko się pięknie wysypywało z komunikatem:</p>
+
+<p><code>
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xc5 in position 549: ordinal not in range(128)
+</code></p>
+
+<p>Błąd był niby zwracany przez bibliotekę do WS&#8217;ów, ale co z tego? Oczywiście słuszność miał python, że rzucił takim wyjątkiem, bo kodowanie źle miałęm ustawione:</p>
+
+<p><code>
+&gt;&gt;&gt; import sys<br/>
+&gt;&gt;&gt; sys.getdefaultencoding()<br/>
+'ascii'<br/>
+&gt;&gt;&gt;<br/> 
+</code></p>
+
+<p>Żeby temu zaradzić należało:</p>
+
+<ul>
+<li> stworzyć plik _sitecustomize.py_ z zawartością jak niżej:
+<p><code>
+#sitecustomize.py<br/>                                                                                                                              
+import sys<br/>
+sys.setdefaultencoding('utf-8')<br/>
+</code></p></li>
+<li> ustawić _PYTHONPATH=._ bo inaczej interpreter nie wczytywał pliku.</li>
+</ul>
+
+<p>Strasznie to zagmatwane i hakerskie. Więcej o problemie jest tutaj:</p>
+
+<ul>
+<li> <a href="http://diveintopython.org/xml_processing/unicode.html">rozdział z *Dive in Python*</a></li>
+<li> <a href="http://blog.ianbicking.org/illusive-setdefaultencoding.html">Blog koleżki na temat tego problemu</a></li></ul>
+</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="">jabollo</a></div>
+<div class='content'>
+<p>dajcie spokoj&#8230; python 2.7 nie potrafi dodac do siebie dwoch unicodow - to jest porazka - w 2 dekadzie 21 wieku nie mozna dodac do siebie dwoch zmiennych tego samego typu?<br />
+ehh</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="">demikaze</a></div>
+<div class='content'>
+<p>Niestety musisz się przyzwyczaić, że często podczas używania pythona będziesz zmuszony rozwiązywać problemy których w normalnych językach zwyczajnie nie ma.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin Cylke</a></div>
+<div class='content'>
+<p>@Lionix: a to byłby dobry trop, nawet nie wiedziałem, że tak można robić, tyle że w nagłówku pliku mam taki wpis:<br />
+<br />
+#!/usr/bin/env/python<br />
+# -*- coding: utf-8 -*-<br />
+<br />
+a i tak zaraz po starcie skryptu dostaję &#8216;ascii&#8217; przy wywołaniu sys.getdefaultencoding()</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="">Lionix</a></div>
+<div class='content'>
+<p>&gt;Błąd był niby zwracany przez bibliotekę do WS&#8217;ów, ale co z tego? <br />
+<br />
+A no wszystko z tego, to nie wina Pythona że ta biblioteka przeładowując sys.stdout  zmienia domyślne kodowanie  UNICODE na ASCII.<br />
+<br />
+Inna sprawa że konwerter ASCII zamiast wypisywać np &#8216;?&#8217; wywala błąd, ale akurat ja to uznaje za plus bo nie chciał byś widzieć chyba ? zamiast polskich literek i szukać gdzie one się tworzą?</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="">demikaze</a></div>
+<div class='content'>
+<p>@balon777: jak się otwiera stronę w przeglądarce i zabiera za jej czytanie odrobinę później, to może się zdarzyć że lista komentarzy na niej jest już trochę nieaktualna&#8230; ale widać że o tym samym pomyśleliśmy ;)<br />
+<br />
+P.S.<br />
+W pythonie 3.x parametr encoding obsługuje standardowa funkcja open(), nie trzeba korzystać z modułu codecs</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="">balon777</a></div>
+<div class='content'>
+<p>@demikaze: Widzę, że czytałeś poprzednie komenty ;)</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="">demikaze</a></div>
+<div class='content'>
+<p>Piszę z pamięci więc potraktuj to jedynie jako wskazówkę, ale zakładając że plik z polskimi znaczkami zakodowany jest w utf8 to w twoim przykładzie należałoby go otworzyć w taki sposób:<br />
+<br />
+import codecs<br />
+&#8230;<br />
+for line in codecs.open(sys.argv[1],&#8217;r&#8217;,encoding=&#8217;utf-8&#8217;).readlines():<br />
+&#8230;</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="">balon777</a></div>
+<div class='content'>
+<p>Jeśli plik z polskimi znaczkami jest w kodowaniu cp1250 to wystarczy:<br />
+<br />
+import codecs, sys<br />
+<br />
+for line in codecs.open(sys.argv[1],&quot;r&quot;, &quot;cp1250&quot;):<br />
+        # teraz line to obiekt klasy unicode<br />
+	print line.encode(&quot;utf8&quot;)</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://marines.jogger.pl">marines</a></div>
+<div class='content'>
+<p>w 2.6 też &quot;coding: utf-8&quot; załatwia sprawę ;)</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://blog.lrem.net">Remigiusz &#8216;lRem&#8217; Modrzejewski</a></div>
+<div class='content'>
+<p>Trzeba używać Pythona &gt;=3.0, albo Perla nie więcej niż ośmioletniego :&gt;</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://deetah.jogger.pl">DeeTah</a></div>
+<div class='content'>
+<p>Hm, mi w Pythonie 2.6 setdefaultencoding nie działało jak wrzuciłem w kod. Trzeba do oddzielnego pliku?</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://sl3dziu.jogger.pl">sl3dziu</a></div>
+<div class='content'>
+<p>Już dawno w Pythonie nie siedzę i nie mam jak tego sprawdzić ale zwykłe wrzucenie w nagłówek # -*- coding: utf-8 -*- nie rozwiązuje Twojego problemu?</p></div>
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -774,102 +949,6 @@ czo</p></div>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2009/09/22/demotywator-moj/">Demotywator Mój</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-09-22T23:59:20+02:00" pubdate data-updated="true">Sep 22<span>nd</span>, 2009</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<p>Z dwa tygodnie temu zrobiłem fotkę. Nadawała się na demotywator. Moim zdaniem przynajmnie :)</p>
-<p>Umieściłem ją więc w serwisie odpowiednim - demotywatory.pl Raczej nie pieją ludzie z zachwytu, ale mam radochę i tak :D.</p>
-<p>Link do demotywatora - <a href="http://demotywatory.pl/190154/Bite-your-ass">LINK.</a></p>
-</div>
-<h2>Comments</h2>
-<div class='comments'>
-<div class='comment'>
-<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
-<div class='content'>
-<p>@Voter101 - dzięki za słowa krytyki ;-)<br />
-<br />
-Jednak nadal dziwi mnie tak niesamowicie osobiste podejście do tego co ktoś sobie na blogu napisze. No ale trudno!<br />
-<br />
-A co do Twojej rady, żebym wracał do gimnazjum. Wydaje mi się, że ktoś tu tęskni za zeszłym rokiem, bo: <a href="http://voter101.jogger.pl/2009/09/08/liceum-nie-takie-straszne/"> http://voter101.jogger.pl/2009/09/08/liceum-nie-takie-straszne/</a><br />
-<br />
-:)</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="">Voter101</a></div>
-<div class='content'>
-<p>Marcinie Drogi, ten obrazek w białej ramce na czarnym tle z nieśmiesznym podpisem jest iście chujowy - że tak się wyrażę. Żal^2. Wracaj do gimnazjum, tam lubią takie obrazki w białej ramce, na czarnym tle!<br /><br />I teraz się pożal, że cię obraziłem. :) Nie było tego umieszczać na stronie głównej. Niestety społeczność joggera nie wybacza takich pomyłek. :D</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://pecet.jogger.pl">pecet</a></div>
-<div class='content'>
-<p>You forgot Poland.</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://modrzew.jogger.pl">Modrzew</a></div>
-<div class='content'>
-<p>To nie jest demotywator.</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://flegmatyk.jogger.pl">flegmatyk</a></div>
-<div class='content'>
-<p>W sumie, średnio śmieszne zdjęcie z kompletnie nieśmiesznym podpisem = demotywator!<br /><br />Sry, że tak brutalnie, ale moje podejście do wynalazku zwanego demotywatorami jest powszechnie znane ;)</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://zdaniemmagnesa.jogger.pl">Magnes</a></div>
-<div class='content'>
-<p>racja, nie przejmuj się definicjami ;) Kto by chciał, żeby demotywator demotywował ;)</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
-<div class='content'>
-<p>He! biorąc sobie jakąś tam definicję demotywatora, to może i nie jest demotywator. Natomiast jak dla mnie, to wszystko jest na miejscu:<br /><br />* głupi tekst<br />* głupie zdjęcie<br />* czarne tło<br />* biała ramka :P<br /><br />Mniej definicji ludzie!</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="">ixi</a></div>
-<div class='content'>
-<p>Bo to nie jest demotywator&#8230;</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://pawel-ciupak.jogger.pl">Paweł Ciupak</a></div>
-<div class='content'>
-<p>Zaraz pewnie przyjdzie RioT i zacznie krzyczeć że to nie demotywator ;).</p></div>
-</div>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/6/">&larr; Older</a>
@@ -887,6 +966,10 @@ A co do Twojej rady, żebym wracał do gimnazjum. Wydaje mi się, że ktoś tu t
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/01/22/ccc-interesting-videos/">32c3 most interesting videos</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/07/14/super-confitura-man/">Super Confitura Man</a>
       </li>
     
@@ -900,10 +983,6 @@ A co do Twojej rady, żebym wracał do gimnazjum. Wydaje mi się, że ktoś tu t
     
       <li class="post">
         <a href="/blog/2013/08/12/recently-at-storm-users/">Recently at storm-users</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/06/23/zookeeper-curator/">Zookeeper + Curator = Distributed sync</a>
       </li>
     
   </ul>
@@ -965,7 +1044,7 @@ A co do Twojej rady, żebym wracał do gimnazjum. Wydaje mi się, że ktoś tu t
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Marcin Cylke -
+  Copyright &copy; 2016 - Marcin Cylke -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

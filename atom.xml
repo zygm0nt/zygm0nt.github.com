@@ -4,7 +4,7 @@
   <title><![CDATA[Marcin bloguje]]></title>
   <link href="http://zygm0nt.github.com/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2014-07-14T21:29:35+02:00</updated>
+  <updated>2016-01-25T22:08:13+01:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -12,6 +12,86 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[32c3 most interesting videos]]></title>
+    <link href="http://zygm0nt.github.com/blog/2016/01/22/ccc-interesting-videos/"/>
+    <updated>2016-01-22T00:32:00+01:00</updated>
+    <id>http://zygm0nt.github.com/blog/2016/01/22/ccc-interesting-videos</id>
+    <content type="html"><![CDATA[<p>It&#8217;s been some time since the most recent incarnation on Chaos Congress
+took place (<a href="http://www.ccc.de/">CCC site</a>). I&#8217;ve finally managed to
+sift through some of the videos. Have a selection of those I&#8217;ve found
+most interesting to me. If there are others really worth watching - pass
+me a line! Cheers.</p>
+
+<!-- more -->
+
+
+<ul>
+<li>Tor onion services are more useful than most people realize — super
+packed 32c3 talk from @torproject devs:</li>
+</ul>
+
+
+<div class="embed-video-container"><iframe src="http://zygm0nt.github.com//www.youtube.com/embed/wHmxCeLpveA" allowfullscreen></iframe></div>
+
+
+<ul>
+<li>State of the Onion - what&#8217;s happend in 2015 around Tor project.
+Informative to say the least.</li>
+</ul>
+
+
+<div class="embed-video-container"><iframe src="http://zygm0nt.github.com//www.youtube.com/embed/DqBFez4v_2I" allowfullscreen></iframe></div>
+
+
+<ul>
+<li>A very interesting presentation. Especially in the light of Novena
+Laptop and the like:</li>
+</ul>
+
+
+<div class="embed-video-container"><iframe src="http://zygm0nt.github.com//www.youtube.com/embed/rcwngbUrZNg" allowfullscreen></iframe></div>
+
+
+<ul>
+<li>SO YOU WANT TO BUILD A SATELLITE? - ha!</li>
+</ul>
+
+
+<div class="embed-video-container"><iframe src="http://zygm0nt.github.com//www.youtube.com/embed/FO68gG320SM" allowfullscreen></iframe></div>
+
+
+<ul>
+<li>INSIDE GLORIOUS LEADER’S OPERATING SYSTEM - this one is actually
+great! No ridiculing, just a review of features. Go see what os-level
+surveilance looks like:</li>
+</ul>
+
+
+<div class="embed-video-container"><iframe src="http://zygm0nt.github.com//www.youtube.com/embed/8LGDM9exlZw" allowfullscreen></iframe></div>
+
+
+<ul>
+<li>3D printing on the moon - just printing something on your 3d printer
+seems trivial compared to the challange of doing this under Moon
+conditions:</li>
+</ul>
+
+
+<div class="embed-video-container"><iframe src="http://zygm0nt.github.com//www.youtube.com/embed/_eYvMFipIQ4" allowfullscreen></iframe></div>
+
+
+<ul>
+<li>J. Alex Halderman, Nadia Heninger: Logjam: Diffie-Hellman, discrete
+logs, the NSA, and you</li>
+</ul>
+
+
+<div class="embed-video-container"><iframe src="http://zygm0nt.github.com//www.youtube.com/embed/mS8gm-_rJgM" allowfullscreen></iframe></div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Super Confitura Man]]></title>
@@ -2504,102 +2584,6 @@ well&#8230;</p>.
 <em>InstallCert.java</em> app is rather dirty. I&#8217;ve been wondering, do
 you know other ways of doing that thing?</p>
 
-</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Advisory Messages to the rescue]]></title>
-    <link href="http://zygm0nt.github.com/blog/2011/04/01/advisory-messages-to-the-rescue/"/>
-    <updated>2011-04-01T11:16:59+02:00</updated>
-    <id>http://zygm0nt.github.com/blog/2011/04/01/advisory-messages-to-the-rescue</id>
-    <content type="html"><![CDATA[<div class='post'>
-<p>
-The most crucial part of software development is testing. It should
-ensure us, that our code is correct, works according to given specs,
-etc. There are many kinds of tests: unit tests, integration, functional.
-In general you should try to test the smallest possible subset of your
-code and be able to check the state of the objects after the test.
-</p><p>
-This seems as rather easy task, but what if you have an integration
-end-to-end test to perform? In most cases asserting state in integration
-test is rather hard due to multiple systems interoperability. Let&#8217;s
-focus on a specific situation.
-</p>
-<EXCERPT>
-<p>
-What I needed to do the other day was write some integration test for
-Jms based system. The processing pipeline is easy:
-<ul>
-<li> fetch object from DB</li>
-<li> process it</li>
-<li> publish on JMS</li>
-</ul>
-</p><p>
-some other system (X-system) polls JMS:
-<ul>
-<li> if message is found</li>
-<li> fetch it (message disappears from the JMS queue)</li>
-<li> do sth with it</li>
-</p><p>
-Looks simple but since I didn&#8217;t have any sane access to the X-system I
-wanted to be sure that my object was actually put into the queue. It was
-not acceptable to subscribe to the queue and fetch that object in my
-test - it would dusrupt the flow of the whole process.
-</p><p>
-Fortunately I&#8217;ve been using <a
-href="http://activemq.apache.org">ActiveMQ</a> and since it offers a
-thing called <a
-href="http://activemq.apache.org/advisory-message.html">Advisory
-Messages</a> I&#8217;ve decided to use just them.
-</p><p>
-What are advisory messages? They are a set of administrative messages
-that are generated on a specific event, like message consumption,
-message delivery, topic destruction, and many more. Each type of message
-is delivered to a separate topic - prefixed with 
-<strong>ActiveMQ.Advisory</strong>. Since generation of such messages
-may be an overhead in production systems these features are turned off
-by default. You need to enable specific type of
-advisory message for a specific jms destination. You can do this with
-ths configuration change to <strong>activemq.xml</strong>
-</p>
-<div><script src='https://gist.github.com/897141.js?file='></script>
-<noscript><pre><code></code></pre></noscript></div>
-
-<p>
-As you can see, I&#8217;ve specified which advisories I want enabled. The full
-list of available advisories can be found <a
-href="http://activemq.apache.org/advisory-message.html">here</a>.
-</p><p>
-Since I wanted to read messages from that topic I&#8217;ve added the following
-configuration to my spring context - there is one destination bean for
-inserting messages and one bean for advisory topic.
-</p>
-<div><script src='https://gist.github.com/897150.js?file='></script>
-<noscript><pre><code></code></pre></noscript></div>
-
-<p>
-Thanks to this configuration I&#8217;ve been able to check that my message was
-actually delivered to the queue. There&#8217;ve been no need to worry about
-race conditions in consuming the message from original queue - if the
-X-system read the message, I&#8217;d be unable to determine if it has ever
-been in JMS at all.
-</p><p>
-What&#8217;s not so nice about that:
-<ul>
-<li> advisory messages can be thought of as counters rather than debugging
-  information</li>
-<li> they don&#8217;t contain any data that would allow us to match advisory
-  message to the original message - thou you could correlate by
-  timestamp</li>
-</ul>
-</p>
-<p>
-All in all, it&#8217;s a good tool to have! But perhaps you have some other
-thoughts on this subject? How do you test JMS?
-</p></div>
-<h2>Comments</h2>
-<div class='comments'>
 </div>
 ]]></content>
   </entry>
