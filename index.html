@@ -9,9 +9,8 @@
   <meta name="author" content="Marcin Cylke">
 
   
-  <meta name="description" content="It&#8217;s been some time since the most recent incarnation on Chaos Congress
-took place (CCC site). I&#8217;ve finally managed to
-sift through some &hellip;">
+  <meta name="description" content="Lambda Days 2016 - Kraków This last two days I&#8217;ve spend on a conference in Kraków. The topics
+revolved around functional programming, with all &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +85,140 @@ sift through some &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2016/02/20/lambda-days-2016/">Lambda Days 2016</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-02-20T23:22:00+01:00" pubdate data-updated="true">Feb 20<span>th</span>, 2016</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>Lambda Days 2016 - Kraków</h1>
+
+<p>This last two days I&#8217;ve spend on a conference in Kraków. The topics
+revolved around functional programming, with all the experimental stuff,
+popular languages, etc. Here are the talks I&#8217;ve been to and short summaries of those:</p>
+
+<h2>Day 1:</h2>
+
+<ul>
+<li><p><strong>Propositions as types</strong> - the keynote delivered by Philip Wadler - seen it already on <a href="https://www.youtube.com/watch?v=IOiZatlZtGU">YouTube</a>. But the thing with Lambda t-shirt looked funny again :D</p></li>
+<li><p><strong>Using &#8220;Program shaping&#8221; and algorithmic skeletons to parallelise an evolutionary multi-agent system in Erlang</strong> - pretty long title, huh :) The presentation, thou very academic was also quite interesting. The whole concept not being particularly new, but the set of tools used for refactorings into parallel code seemed interesting.</p></li>
+<li><p><strong>Static analysis to identify divide-and-conquer algorithms</strong> - how to find particular class of algorithms in existing programs? Interesting but shallow, due to time limitations.</p></li>
+<li><p><strong>The Mysteries of Dropbox</strong> - John Hughes of QuickCheck fame showed how
+to test a big system using blackbox approach. Nice presentation, with
+all the great insight he always brings into his talks.</p></li>
+<li><p><strong>Muvr - Jan Machacek</strong> - that was a fun presentation. About how to build an app that detects your exercise routine and counts how many repeats you&#8217;ve done. There&#8217;ve been all:</p>
+
+<ul>
+<li>spark pipelining</li>
+<li>Swift code demo (it seemed like Swift IDE offers something similar to notebook-like programming, is it?),</li>
+<li>live coding
+Unfortunately due to WiFi&#8217;s proxy settings the live demo could not be finished, but the code for all this is available somewhere on Github, on <a href="https://github.com/muvr">this account</a>.</li>
+</ul>
+</li>
+<li><p><strong>Embracing change</strong> - how to introduce Clojure into your company&#8217;s
+technology stack seamlessly - by <strong>Artur Skowroński.</strong>
+Hilarious presentation about adopting new languages. It wasn&#8217;t that
+groundbreaking, at least for me, but the way it was presented, and the
+slides with all the Cthulhu references in them, were great!</p></li>
+</ul>
+
+
+<h2>Day 2:</h2>
+
+<ul>
+<li><p><strong>Things that matter by Bruce Tate</strong> - great energetic talk, with all the ideas about learning
+new languages. Bruce is the author of two excellent books: &#8220;Seven
+languages in seven weeks&#8221; and &#8220;Seven more languages in seven weeks&#8221; :)
+He went through languages mentioned in his books and summed up
+principles associated with their inception.</p>
+
+<p>I&#8217;ve almost decided to not come to this presentation,
+weighting between it and sleeping a little bit longer in my hotel room.</p></li>
+<li><p><strong>The Zen of Akka</strong> - delivered by a resident hakker at Typesafe - Konrad
+Malawski. Nice talk about Akka pitfalls, there were lots of
+recommendations and even some previously unknown to me features of Akka
+toolkit. Plus I loved the Japanese elements.</p></li>
+<li><p><strong>Creating reactive components using ClojureScript React wrappers</strong> - by
+Konrad Szydlo introduced Rum as a wrapper for React, described part of
+the ecosystem and explained mechanics behind the technology. Fine
+presentation, very intense on content. Konrad had 111 slides, but
+managed to show all of them without being hasty.</p></li>
+<li><p><strong>Getting started with Frege</strong> - Lech Glowiak, Frege seems to be a Haskell
+on the JVM, which in itself seems like a nice thing. But I treat such
+languages rather as nice experiments, than something useful. Especially
+its Java interop looks ugly. Nevertheless the presentation was given
+from the point of view of language contributor, which Lech is.</p></li>
+<li><p><strong>Practical demystification of CRDT</strong> - by Dmitry Ivanov and Nami
+Naserazad - both of them from TomTom. Guys are working on TomTom&#8217;s
+NaviCloud product. Their presentation was a practical guide throught the
+world of CRDTs (link to wikipedia). They showed their failures in
+implementing the system, gave advices, etc. The whole thing is even
+uploaded to github, so everyone can check their code
+(http://github.com/ajantis/scala-crdt). I&#8217;ve really enjoyed this talk
+due to its technical approach. There were no formal definitions, no
+teortical considerations, just clean report from the trenches.</p></li>
+<li><p><strong>Purely functiona Web Apps</strong> - by Michał Płachta - how to write Gitlab
+companion app in Haskell + Elm? Haskell for backend and Elm for
+frontend. This presentation showed great potential of Elm for frontend
+development. Moderatly approachable considering Friday afternoon and my
+lack of Haskell knowledge. Still, I plan to come back to this
+presentation later.</p></li>
+</ul>
+
+
+<h2>What I haven&#8217;t seen but plan to as soon as videos are available</h2>
+
+<ul>
+<li><strong>Modeling your domain. What have we learned? Where do we go from here?</strong> - by Norbert Wójtowicz - about modeling domain in Clojurescript apps</li>
+<li><strong>The F#orce awakend</strong> - by ewelina Gabasova - F# + geekery, the Twitter
+went nuts about that presentation, suppose not without reason</li>
+<li><strong>LFE - a lisp flavour on the Erlang VM</strong> - by Robert Virding - don&#8217;t know
+why but it seems intriguing enough</li>
+</ul>
+
+
+<h2>Conclusion</h2>
+
+<p>As always, things you didn&#8217;t expect to be interesting were the best
+ones. Highlights being presentations by Bruce Tate, Jan Machacek and guys
+from TomTom (Dmitry Ivanov and Nami Naserazad)</p>
+
+<p>Thanks to organisers for this conference. But I must say, that day 2 was a lot better than the first one. The talks were better structured and presented.</p>
+
+<p>One idea for the organizers - please print the schedule on the back of
+conference badge. It was pretty annoying to have to take out the A4
+sheets with whole day schedule each time I wanted to look at it</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -804,57 +937,6 @@ Hadoop-em.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2012/10/30/hadoop-ha/">Hadoop HA Setup</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-30T12:40:00+01:00" pubdate data-updated="true">Oct 30<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>With the advent of Hadoop&#8217;s 2.x version, there finally is a working
-High-Availability solution. Even two of those. Now it really is easy to
-configure and use those solutions. It no longer require external
-components, like
-<a href="http://blog.cloudera.com/blog/2009/07/hadoop-ha-configuration/">DRBD</a>.
-It all is just neatly packed into Cloudera Hadoop distribution - the
-precursor of this solution.</p>
-
-<p>Read on to find out how to use it.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/10/30/hadoop-ha/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -870,6 +952,10 @@ precursor of this solution.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/02/20/lambda-days-2016/">Lambda Days 2016</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/01/22/ccc-interesting-videos/">32c3 most interesting videos</a>
       </li>
     
@@ -883,10 +969,6 @@ precursor of this solution.</p>
     
       <li class="post">
         <a href="/blog/2013/12/08/simple-hbase-orm/">Simple HBase ORM</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/08/12/recently-at-storm-users/">Recently at storm-users</a>
       </li>
     
   </ul>

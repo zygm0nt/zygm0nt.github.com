@@ -1,0 +1,403 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Lambda Days 2016 - Marcin bloguje</title>
+  <meta name="author" content="Marcin Cylke">
+
+  
+  <meta name="description" content="Lambda Days 2016 - Kraków This last two days I&#8217;ve spend on a conference in Kraków. The topics
+revolved around functional programming, with all &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://zygm0nt.github.com/blog/2016/02/20/lambda-days-2016/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Marcin bloguje" type="application/atom+xml">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-172194-10']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <div id="logo">
+  	<div id="logoLeft">{</div>
+  	<div id="logoText">mob</div>
+  	<div id="logoRight">}</div>
+  	<div class="clear"></div>
+  </div>
+  <h1><a href="/">Marcin bloguje</a></h1>
+  
+    <h2>.impressions.memos.tech.</h2>
+  
+  <div class="clear"></div>
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:zygm0nt.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      
+        <h1 class="entry-title">Lambda Days 2016</h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-02-20T23:22:00+01:00" pubdate data-updated="true">Feb 20<span>th</span>, 2016</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h1>Lambda Days 2016 - Kraków</h1>
+
+<p>This last two days I&#8217;ve spend on a conference in Kraków. The topics
+revolved around functional programming, with all the experimental stuff,
+popular languages, etc. Here are the talks I&#8217;ve been to and short summaries of those:</p>
+
+<h2>Day 1:</h2>
+
+<ul>
+<li><p><strong>Propositions as types</strong> - the keynote delivered by Philip Wadler - seen it already on <a href="https://www.youtube.com/watch?v=IOiZatlZtGU">YouTube</a>. But the thing with Lambda t-shirt looked funny again :D</p></li>
+<li><p><strong>Using &#8220;Program shaping&#8221; and algorithmic skeletons to parallelise an evolutionary multi-agent system in Erlang</strong> - pretty long title, huh :) The presentation, thou very academic was also quite interesting. The whole concept not being particularly new, but the set of tools used for refactorings into parallel code seemed interesting.</p></li>
+<li><p><strong>Static analysis to identify divide-and-conquer algorithms</strong> - how to find particular class of algorithms in existing programs? Interesting but shallow, due to time limitations.</p></li>
+<li><p><strong>The Mysteries of Dropbox</strong> - John Hughes of QuickCheck fame showed how
+to test a big system using blackbox approach. Nice presentation, with
+all the great insight he always brings into his talks.</p></li>
+<li><p><strong>Muvr - Jan Machacek</strong> - that was a fun presentation. About how to build an app that detects your exercise routine and counts how many repeats you&#8217;ve done. There&#8217;ve been all:</p>
+
+<ul>
+<li>spark pipelining</li>
+<li>Swift code demo (it seemed like Swift IDE offers something similar to notebook-like programming, is it?),</li>
+<li>live coding
+Unfortunately due to WiFi&#8217;s proxy settings the live demo could not be finished, but the code for all this is available somewhere on Github, on <a href="https://github.com/muvr">this account</a>.</li>
+</ul>
+</li>
+<li><p><strong>Embracing change</strong> - how to introduce Clojure into your company&#8217;s
+technology stack seamlessly - by <strong>Artur Skowroński.</strong>
+Hilarious presentation about adopting new languages. It wasn&#8217;t that
+groundbreaking, at least for me, but the way it was presented, and the
+slides with all the Cthulhu references in them, were great!</p></li>
+</ul>
+
+
+<h2>Day 2:</h2>
+
+<ul>
+<li><p><strong>Things that matter by Bruce Tate</strong> - great energetic talk, with all the ideas about learning
+new languages. Bruce is the author of two excellent books: &#8220;Seven
+languages in seven weeks&#8221; and &#8220;Seven more languages in seven weeks&#8221; :)
+He went through languages mentioned in his books and summed up
+principles associated with their inception.</p>
+
+<p>I&#8217;ve almost decided to not come to this presentation,
+weighting between it and sleeping a little bit longer in my hotel room.</p></li>
+<li><p><strong>The Zen of Akka</strong> - delivered by a resident hakker at Typesafe - Konrad
+Malawski. Nice talk about Akka pitfalls, there were lots of
+recommendations and even some previously unknown to me features of Akka
+toolkit. Plus I loved the Japanese elements.</p></li>
+<li><p><strong>Creating reactive components using ClojureScript React wrappers</strong> - by
+Konrad Szydlo introduced Rum as a wrapper for React, described part of
+the ecosystem and explained mechanics behind the technology. Fine
+presentation, very intense on content. Konrad had 111 slides, but
+managed to show all of them without being hasty.</p></li>
+<li><p><strong>Getting started with Frege</strong> - Lech Glowiak, Frege seems to be a Haskell
+on the JVM, which in itself seems like a nice thing. But I treat such
+languages rather as nice experiments, than something useful. Especially
+its Java interop looks ugly. Nevertheless the presentation was given
+from the point of view of language contributor, which Lech is.</p></li>
+<li><p><strong>Practical demystification of CRDT</strong> - by Dmitry Ivanov and Nami
+Naserazad - both of them from TomTom. Guys are working on TomTom&#8217;s
+NaviCloud product. Their presentation was a practical guide throught the
+world of CRDTs (link to wikipedia). They showed their failures in
+implementing the system, gave advices, etc. The whole thing is even
+uploaded to github, so everyone can check their code
+(http://github.com/ajantis/scala-crdt). I&#8217;ve really enjoyed this talk
+due to its technical approach. There were no formal definitions, no
+teortical considerations, just clean report from the trenches.</p></li>
+<li><p><strong>Purely functiona Web Apps</strong> - by Michał Płachta - how to write Gitlab
+companion app in Haskell + Elm? Haskell for backend and Elm for
+frontend. This presentation showed great potential of Elm for frontend
+development. Moderatly approachable considering Friday afternoon and my
+lack of Haskell knowledge. Still, I plan to come back to this
+presentation later.</p></li>
+</ul>
+
+
+<h2>What I haven&#8217;t seen but plan to as soon as videos are available</h2>
+
+<ul>
+<li><strong>Modeling your domain. What have we learned? Where do we go from here?</strong> - by Norbert Wójtowicz - about modeling domain in Clojurescript apps</li>
+<li><strong>The F#orce awakend</strong> - by ewelina Gabasova - F# + geekery, the Twitter
+went nuts about that presentation, suppose not without reason</li>
+<li><strong>LFE - a lisp flavour on the Erlang VM</strong> - by Robert Virding - don&#8217;t know
+why but it seems intriguing enough</li>
+</ul>
+
+
+<h2>Conclusion</h2>
+
+<p>As always, things you didn&#8217;t expect to be interesting were the best
+ones. Highlights being presentations by Bruce Tate, Jan Machacek and guys
+from TomTom (Dmitry Ivanov and Nami Naserazad)</p>
+
+<p>Thanks to organisers for this conference. But I must say, that day 2 was a lot better than the first one. The talks were better structured and presented.</p>
+
+<p>One idea for the organizers - please print the schedule on the back of
+conference badge. It was pretty annoying to have to take out the A4
+sheets with whole day schedule each time I wanted to look at it</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Marcin Cylke</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-02-20T23:22:00+01:00" pubdate data-updated="true">Feb 20<span>th</span>, 2016</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/conference/'>conference</a>, <a class='category' href='/blog/categories/krakow/'>krakow</a>, <a class='category' href='/blog/categories/lambda-days-2016/'>lambda days 2016</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zygm0nt.github.com/blog/2016/02/20/lambda-days-2016/" data-via="zygm0nt" data-counturl="http://zygm0nt.github.com/blog/2016/02/20/lambda-days-2016/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left articlenav" href="/blog/2016/01/22/ccc-interesting-videos/" title="Previous Post: 32c3 most interesting videos">&laquo; 32c3 most interesting videos</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/02/20/lambda-days-2016/">Lambda Days 2016</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/01/22/ccc-interesting-videos/">32c3 most interesting videos</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/07/14/super-confitura-man/">Super Confitura Man</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/10/distributed-scans-with-hbase/">Distributed scans with HBase</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/08/simple-hbase-orm/">Simple HBase ORM</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/zygm0nt">@zygm0nt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'zygm0nt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("zygm0nt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/zygm0nt" class="twitter-follow-button" data-show-count="false">Follow @zygm0nt</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - Marcin Cylke -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'marcinbloguje';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://zygm0nt.github.com/blog/2016/02/20/lambda-days-2016/';
+        var disqus_url = 'http://zygm0nt.github.com/blog/2016/02/20/lambda-days-2016/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

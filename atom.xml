@@ -4,7 +4,7 @@
   <title><![CDATA[Marcin bloguje]]></title>
   <link href="http://zygm0nt.github.com/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2016-01-25T22:08:13+01:00</updated>
+  <updated>2016-02-20T23:27:23+01:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -12,6 +12,111 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Lambda Days 2016]]></title>
+    <link href="http://zygm0nt.github.com/blog/2016/02/20/lambda-days-2016/"/>
+    <updated>2016-02-20T23:22:00+01:00</updated>
+    <id>http://zygm0nt.github.com/blog/2016/02/20/lambda-days-2016</id>
+    <content type="html"><![CDATA[<h1>Lambda Days 2016 - Kraków</h1>
+
+<p>This last two days I&#8217;ve spend on a conference in Kraków. The topics
+revolved around functional programming, with all the experimental stuff,
+popular languages, etc. Here are the talks I&#8217;ve been to and short summaries of those:</p>
+
+<h2>Day 1:</h2>
+
+<ul>
+<li><p><strong>Propositions as types</strong> - the keynote delivered by Philip Wadler - seen it already on <a href="https://www.youtube.com/watch?v=IOiZatlZtGU">YouTube</a>. But the thing with Lambda t-shirt looked funny again :D</p></li>
+<li><p><strong>Using &#8220;Program shaping&#8221; and algorithmic skeletons to parallelise an evolutionary multi-agent system in Erlang</strong> - pretty long title, huh :) The presentation, thou very academic was also quite interesting. The whole concept not being particularly new, but the set of tools used for refactorings into parallel code seemed interesting.</p></li>
+<li><p><strong>Static analysis to identify divide-and-conquer algorithms</strong> - how to find particular class of algorithms in existing programs? Interesting but shallow, due to time limitations.</p></li>
+<li><p><strong>The Mysteries of Dropbox</strong> - John Hughes of QuickCheck fame showed how
+to test a big system using blackbox approach. Nice presentation, with
+all the great insight he always brings into his talks.</p></li>
+<li><p><strong>Muvr - Jan Machacek</strong> - that was a fun presentation. About how to build an app that detects your exercise routine and counts how many repeats you&#8217;ve done. There&#8217;ve been all:</p>
+
+<ul>
+<li>spark pipelining</li>
+<li>Swift code demo (it seemed like Swift IDE offers something similar to notebook-like programming, is it?),</li>
+<li>live coding
+Unfortunately due to WiFi&#8217;s proxy settings the live demo could not be finished, but the code for all this is available somewhere on Github, on <a href="https://github.com/muvr">this account</a>.</li>
+</ul>
+</li>
+<li><p><strong>Embracing change</strong> - how to introduce Clojure into your company&#8217;s
+technology stack seamlessly - by <strong>Artur Skowroński.</strong>
+Hilarious presentation about adopting new languages. It wasn&#8217;t that
+groundbreaking, at least for me, but the way it was presented, and the
+slides with all the Cthulhu references in them, were great!</p></li>
+</ul>
+
+
+<h2>Day 2:</h2>
+
+<ul>
+<li><p><strong>Things that matter by Bruce Tate</strong> - great energetic talk, with all the ideas about learning
+new languages. Bruce is the author of two excellent books: &#8220;Seven
+languages in seven weeks&#8221; and &#8220;Seven more languages in seven weeks&#8221; :)
+He went through languages mentioned in his books and summed up
+principles associated with their inception.</p>
+
+<p>I&#8217;ve almost decided to not come to this presentation,
+weighting between it and sleeping a little bit longer in my hotel room.</p></li>
+<li><p><strong>The Zen of Akka</strong> - delivered by a resident hakker at Typesafe - Konrad
+Malawski. Nice talk about Akka pitfalls, there were lots of
+recommendations and even some previously unknown to me features of Akka
+toolkit. Plus I loved the Japanese elements.</p></li>
+<li><p><strong>Creating reactive components using ClojureScript React wrappers</strong> - by
+Konrad Szydlo introduced Rum as a wrapper for React, described part of
+the ecosystem and explained mechanics behind the technology. Fine
+presentation, very intense on content. Konrad had 111 slides, but
+managed to show all of them without being hasty.</p></li>
+<li><p><strong>Getting started with Frege</strong> - Lech Glowiak, Frege seems to be a Haskell
+on the JVM, which in itself seems like a nice thing. But I treat such
+languages rather as nice experiments, than something useful. Especially
+its Java interop looks ugly. Nevertheless the presentation was given
+from the point of view of language contributor, which Lech is.</p></li>
+<li><p><strong>Practical demystification of CRDT</strong> - by Dmitry Ivanov and Nami
+Naserazad - both of them from TomTom. Guys are working on TomTom&#8217;s
+NaviCloud product. Their presentation was a practical guide throught the
+world of CRDTs (link to wikipedia). They showed their failures in
+implementing the system, gave advices, etc. The whole thing is even
+uploaded to github, so everyone can check their code
+(http://github.com/ajantis/scala-crdt). I&#8217;ve really enjoyed this talk
+due to its technical approach. There were no formal definitions, no
+teortical considerations, just clean report from the trenches.</p></li>
+<li><p><strong>Purely functiona Web Apps</strong> - by Michał Płachta - how to write Gitlab
+companion app in Haskell + Elm? Haskell for backend and Elm for
+frontend. This presentation showed great potential of Elm for frontend
+development. Moderatly approachable considering Friday afternoon and my
+lack of Haskell knowledge. Still, I plan to come back to this
+presentation later.</p></li>
+</ul>
+
+
+<h2>What I haven&#8217;t seen but plan to as soon as videos are available</h2>
+
+<ul>
+<li><strong>Modeling your domain. What have we learned? Where do we go from here?</strong> - by Norbert Wójtowicz - about modeling domain in Clojurescript apps</li>
+<li><strong>The F#orce awakend</strong> - by ewelina Gabasova - F# + geekery, the Twitter
+went nuts about that presentation, suppose not without reason</li>
+<li><strong>LFE - a lisp flavour on the Erlang VM</strong> - by Robert Virding - don&#8217;t know
+why but it seems intriguing enough</li>
+</ul>
+
+
+<h2>Conclusion</h2>
+
+<p>As always, things you didn&#8217;t expect to be interesting were the best
+ones. Highlights being presentations by Bruce Tate, Jan Machacek and guys
+from TomTom (Dmitry Ivanov and Nami Naserazad)</p>
+
+<p>Thanks to organisers for this conference. But I must say, that day 2 was a lot better than the first one. The talks were better structured and presented.</p>
+
+<p>One idea for the organizers - please print the schedule on the back of
+conference badge. It was pretty annoying to have to take out the A4
+sheets with whole day schedule each time I wanted to look at it</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[32c3 most interesting videos]]></title>
@@ -2294,296 +2399,6 @@ Floriańska street. It was a rather nice social event.</p>
 Tutaj ;)<br />
 http://blog.patryk-dobrowolski.eu/2011/05/16/refleksja-moze-byc-niebezpieczna-zobacz-jak-zniszczyc-sobie/</p></div>
 </div>
-</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[JCE keystore and untrusted sites]]></title>
-    <link href="http://zygm0nt.github.com/blog/2011/05/02/jce-keystore-and-untrusted-sites/"/>
-    <updated>2011-05-02T17:03:38+02:00</updated>
-    <id>http://zygm0nt.github.com/blog/2011/05/02/jce-keystore-and-untrusted-sites</id>
-    <content type="html"><![CDATA[<div class='post'>
-<p>Recently at work I was in need of connecting to a web service exposed via
-HTTPS. I&#8217;ve been doing this from inside <a href="http://servicemix.apache.org/home.html">Servicemix 3.3.1</a>, which may seem
-a bit inhibiting, but that was a requirement. Nevertheless I&#8217;ve been
-trying my luck with the included <em>servicemix-http-2008.01</em>
-component. I&#8217;ve created a simple <a
-href="http://servicemix.apache.org/working-with-service-units.html">Service
-Unit</a> using that component and made connection attempt.
-Unfortunately I&#8217;ve encountered issues with the SSL conversation
-negotiation. I had to dig deeper into the <em>servicemix-http</em> code
-to find out these had something to do with my <a
-href="https://secure.wikimedia.org/wikipedia/en/wiki/Java_Cryptography_Extension">JCE</a>
-keystore. Read more to find out what happened!</p>
-<EXCERPT>
-<p>Ok, so I had my <em>xbean.xml</em> for http component looking like
-this:</p>
-
-<div><script src='https://gist.github.com/951474.js?file=servicemix-http-xbean.xml'></script>
-<noscript><pre><code>&lt;beans xmlns:http=&quot;http://servicemix.apache.org/http/1.0&quot;
-       xmlns:my=&quot;http://example.pl/abc&quot;&gt;
-
-                &lt;http:endpoint
-                          endpoint=&quot;default&quot;
-                          locationURI=&quot;https://abc.host.pl&quot;
-                          role=&quot;provider&quot;
-                          service=&quot;my:service-1&quot;
-                          soap=&quot;true&quot;
-                          soapVersion=&quot;1.1&quot;&gt;
-                    &lt;http:ssl&gt;
-                             &lt;http:sslParameters
-                                         keyStore=&quot;classpath:keystore.jks&quot;
-                                         keyStorePassword=&quot;servicemix&quot;/&gt;
-                    &lt;/http:ssl&gt;
-                &lt;/http:endpoint&gt;            
-&lt;/beans&gt;</code></pre></noscript></div>
-
-
-
-<p>As you can see this is a proxy adapter to some outside service
-exposed via secured HTTP protocol. Since it&#8217;s <em>HTTPS</em> I&#8217;ve
-specified some SSL parameters. It was sufficient in my case to just pass
-the keystore file and it&#8217;s password.</p>
-
-<p>I&#8217;ve created my <em>keystore.jks</em> file in <em>smx_home/conf</em>
-with password <em>servicemix</em> in the following manner:</p>
-
-<div><script src='https://gist.github.com/951459.js?file=create_keystore.sh'></script>
-<noscript><pre><code>keytool -genkey -alias alias -keyalg RSA -keysize 1024 -dname &quot;CN=Marcin Cylke, OU=Java Security, O=ABC, c=PL&quot; -keypass secret_pass -storepass secret_pass -KeyStore /tmp/new</code></pre></noscript></div>
-
-
-<p>You can see what&#8217;s in this file with this command:</p>
-
-<div><script src='https://gist.github.com/951459.js?file=list_keys.sh'></script>
-<noscript><pre><code>keytool -list -v -KeyStore keystore.jks</code></pre></noscript></div>
-
-
-<p>At this point I thought, that having a configured keystore and my
-component would suffice. Wrong! As soon as I&#8217;ve tried to connect to the
-external service I got an exception:</p>
-
-<div><script src='https://gist.github.com/951458.js?file=untrusted_key_error.java'></script>
-<noscript><pre><code>javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
-    at com.sun.net.ssl.internal.ssl.Alerts.getSSLException(Alerts.java:174)
-    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1623)
-    at com.sun.net.ssl.internal.ssl.Handshaker.fatalSE(Handshaker.java:198)
-    at com.sun.net.ssl.internal.ssl.Handshaker.fatalSE(Handshaker.java:192)
-    at com.sun.net.ssl.internal.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1074)
-    at com.sun.net.ssl.internal.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:128)
-    at com.sun.net.ssl.internal.ssl.Handshaker.processLoop(Handshaker.java:529)
-    at com.sun.net.ssl.internal.ssl.Handshaker.process_record(Handshaker.java:465)
-    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:884)
-    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1120)
-    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.writeRecord(SSLSocketImpl.java:623)
-    at com.sun.net.ssl.internal.ssl.AppOutputStream.write(AppOutputStream.java:59)
-    at java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:65)
-    at java.io.BufferedOutputStream.flush(BufferedOutputStream.java:123)
-    at java.io.FilterOutputStream.flush(FilterOutputStream.java:123)
-    at org.apache.commons.httpclient.methods.EntityEnclosingMethod.writeRequestBody(EntityEnclosingMethod.java:502)
-    at org.apache.commons.httpclient.HttpMethodBase.writeRequest(HttpMethodBase.java:1973)
-    at org.apache.commons.httpclient.HttpMethodBase.execute(HttpMethodBase.java:993)
-    at org.apache.commons.httpclient.HttpMethodDirector.executeWithRetry(HttpMethodDirector.java:397)
-    at org.apache.commons.httpclient.HttpMethodDirector.executeMethod(HttpMethodDirector.java:170)
-    at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:396)
-    at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:346)
-    at org.apache.servicemix.http.processors.ProviderProcessor.process(ProviderProcessor.java:167)
-    at org.apache.servicemix.soap.SoapEndpoint.process(SoapEndpoint.java:368)
-    at org.apache.servicemix.common.AsyncBaseLifeCycle.doProcess(AsyncBaseLifeCycle.java:600)
-    at org.apache.servicemix.common.AsyncBaseLifeCycle.processExchange(AsyncBaseLifeCycle.java:554)
-    at org.apache.servicemix.common.AsyncBaseLifeCycle.onMessageExchange(AsyncBaseLifeCycle.java:510)
-    at org.apache.servicemix.common.SyncLifeCycleWrapper.onMessageExchange(SyncLifeCycleWrapper.java:60)
-    at org.apache.servicemix.jbi.messaging.DeliveryChannelImpl.processInBound(DeliveryChannelImpl.java:620)
-    at org.apache.servicemix.jbi.nmr.flow.AbstractFlow.doRouting(AbstractFlow.java:172)
-    at org.apache.servicemix.jbi.nmr.flow.seda.SedaFlow.doRouting(SedaFlow.java:168)
-    at org.apache.servicemix.jbi.nmr.flow.seda.SedaQueue$1.run(SedaQueue.java:134)
-    at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
-    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
-    at java.lang.Thread.run(Thread.java:619)
-Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
-    at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:294)
-    at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:200)
-    at sun.security.validator.Validator.validate(Validator.java:218)
-    at com.sun.net.ssl.internal.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:126)
-    at com.sun.net.ssl.internal.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:209)
-    at com.sun.net.ssl.internal.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:249)
-    at com.sun.net.ssl.internal.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1053)
-    ... 30 more
-Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
-    at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:174)
-    at java.security.cert.CertPathBuilder.build(CertPathBuilder.java:238)
-    at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:289)
-    ... 36 more
-</code></pre></noscript></div>
-
-
-<p>Hmmm.. this looks pretty nasty, but it&#8217;s not that bad. As one can
-read <a
-href="http://blogs.sun.com/gc/entry/unable_to_find_valid_certification">here</a>,
-it&#8217;s associated with the other site&#8217;s having an untrusted (unsigned)
-certificate. Assuming you actually trust the other end of the
-communication and this situation is ok for you, you should add the
-servers certificate to your keystore. The previously mentioned link
-contained a little java class that would do just that. You can find it
-here (original code) <a
-href="http://blogs.sun.com/andreas/resource/InstallCert.java">InstallCert.java</a>
-or you can look into my slightly changed version here <a
-href="https://gist.github.com/951492">at github</a>.</p>
-
-<p>You should call it as follows, assuming that file
-<em>keystore.jks</em> is in the current directory:</p>
-
-<script
-src="https://gist.github.com/951459.js?file=add_untrusted_key.sh"></script>
-
-<p>What you&#8217;ll probably see, when you execute this app is this:</p>
-
-<div><script src='https://gist.github.com/951458.js?file=add_untrusted_cert.sh'></script>
-<noscript><pre><code>mcl@correspondence:~/Desktop$ java InstallCert abc.host.pl keystore_pass
-Loading KeyStore keystore.jks...
-Opening connection to abc.host.pl:443...
-Starting SSL handshake...
-
-javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
-    at com.sun.net.ssl.internal.ssl.Alerts.getSSLException(Alerts.java:174)
-    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1623)
-    at com.sun.net.ssl.internal.ssl.Handshaker.fatalSE(Handshaker.java:198)
-    at com.sun.net.ssl.internal.ssl.Handshaker.fatalSE(Handshaker.java:192)
-    at com.sun.net.ssl.internal.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1074)
-    at com.sun.net.ssl.internal.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:128)
-    at com.sun.net.ssl.internal.ssl.Handshaker.processLoop(Handshaker.java:529)
-    at com.sun.net.ssl.internal.ssl.Handshaker.process_record(Handshaker.java:465)
-    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:884)
-    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1120)
-    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1147)
-    at com.sun.net.ssl.internal.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1131)
-    at InstallCert.main(InstallCert.java:82)
-Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
-    at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:294)
-    at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:200)
-    at sun.security.validator.Validator.validate(Validator.java:218)
-    at com.sun.net.ssl.internal.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:126)
-    at com.sun.net.ssl.internal.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:209)
-    at InstallCert$SavingTrustManager.checkServerTrusted(InstallCert.java:177)
-    at com.sun.net.ssl.internal.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1066)
-    ... 8 more
-Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
-    at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:174)
-    at java.security.cert.CertPathBuilder.build(CertPathBuilder.java:238)
-    at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:289)
-    ... 14 more
-
-Server sent 1 certificate(s):
-
- 1 Subject CN=abc.host.pl, OU=IT, O=Tytus De z o.o., L=Lubien, ST=Wielkopolskie, C=PL
-   Issuer  CN=abc.host.pl, OU=IT, O=Tytus De z o.o., L=Lubien, ST=Wielkopolskie, C=PL
-   sha1    18 20 0f 4d 75 05 4b 38 61 fc 62 ba 03 0d 28 8c 50 8f e4 bd 
-   md5     19 cc d0 aa 6d 25 4f 05 d7 c8 40 0c 14 7b 90 a2 
-
-Enter certificate to add to trusted keystore or 'q' to quit: [1]
-1
-
-[
-[
-  Version: V3
-  Subject: CN=abc.host.pl, OU=IT, O=Tytus De z o.o., L=Lubien, ST=Wielkopolskie, C=PL
-  Signature Algorithm: SHA1withRSA, OID = 1.2.840.113549.1.1.5
-
-  Key:  Sun RSA public key, 1024 bits
-  modulus: 132273155309282144973195320716811175193976134222571452308768552101191894740218986214811429267243902443501737048442287069471714463675362773263911735240842200098922910391008625926103368536307544892982972025285316457425020882189531886424398004920996956401109864350477607702600482953541993347423082215862581179547
-  public exponent: 65537
-  Validity: [From: Mon Nov 30 14:06:24 CET 2009,
-               To: Thu Nov 28 14:06:24 CET 2019]
-  Issuer:  CN=abc.host.pl, OU=IT, O=Tytus De z o.o., L=Lubien, ST=Wielkopolskie, C=PL
-  SerialNumber: [    00]
-
-]
-  Algorithm: [SHA1withRSA]
-  Signature:
-0000: 40 75 D4 B0 85 D1 34 DE   09 24 3C BC 72 46 B2 E0  @u....4..$&lt;.rF..
-0010: 18 15 84 DD A2 EB BA 5A   9F E3 5C F0 8F 53 60 EC  .......Z..\..S`.
-0020: 2C 5D CB C1 EE C3 3A 65   CF 9B 6C E5 FC 01 DD 05  ,]....:e..l.....
-0030: EA DC 66 BF FB 91 02 BC   39 77 CB 34 BC 7F 0B 23  ..f.....9w.4...#
-0040: 40 C9 85 B3 2A 2A 20 AE   74 B0 C9 FB 47 5F B3 88  @...** .t...G_..
-0050: E4 5E 6D 24 2F C0 43 9D   69 D5 69 4D 76 31 0A 62  .^m$/.C.i.iMv1.b
-0060: 1A C1 25 FB 14 41 06 0E   9F A8 D1 75 DD B8 B2 B2  ..%..A.....u....
-0070: 1D BF 90 11 69 18 9A C8   D5 AA 5D 26 6B 1C FB B0  ....i.....]&amp;k...
-
-]</code></pre></noscript></div>
-
-
-<p>Please note that there is a prompt (<em>Enter certificate to add to
-trusted keystore&#8230;</em>) in which you can enter the certificate number
-you wish to add to your keystore.</p>
-
-<p>After all those steps my request got through and I could happily
-query HTTPS service as long as I wanted to! Great!</p>
-
-<h2>Possible problems</h2>
-
-<p>In my search for this problem&#8217;s solution I&#8217;ve encountered this kind
-of exception:</p>
-
-<div><script src='https://gist.github.com/951458.js?file=keystore_key_error.java'></script>
-<noscript><pre><code>java.lang.Exception: java.security.UnrecoverableKeyException: Cannot recover key
-        at org.apache.servicemix.http.processors.ConsumerProcessor.process(ConsumerProcessor.java:216)
-        at org.apache.servicemix.http.HttpBridgeServlet.doPost(HttpBridgeServlet.java:71)
-        at javax.servlet.http.HttpServlet.service(HttpServlet.java:617)
-        at javax.servlet.http.HttpServlet.service(HttpServlet.java:690)
-        at org.mortbay.jetty.servlet.ServletHolder.handle(ServletHolder.java:502)
-        at org.mortbay.jetty.servlet.ServletHandler.handle(ServletHandler.java:363)
-        at org.mortbay.jetty.handler.ContextHandler.handle(ContextHandler.java:757)
-        at org.mortbay.jetty.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:206)
-        at org.mortbay.jetty.handler.HandlerCollection.handle(HandlerCollection.java:114)
-        at org.mortbay.jetty.handler.HandlerWrapper.handle(HandlerWrapper.java:152)
-        at org.mortbay.jetty.Server.handle(Server.java:324)
-        at org.mortbay.jetty.HttpConnection.handleRequest(HttpConnection.java:502)
-        at org.mortbay.jetty.HttpConnection.handle(HttpConnection.java:371)
-        at org.mortbay.io.nio.SelectChannelEndPoint.run(SelectChannelEndPoint.java:409)
-        at org.mortbay.jetty.nio.SelectChannelConnector$RetryContinuation.run(SelectChannelConnector.java:525)
-        at org.mortbay.thread.BoundedThreadPool$PoolThread.run(BoundedThreadPool.java:451)
-Caused by: java.security.UnrecoverableKeyException: Cannot recover key
-        at sun.security.provider.KeyProtector.recover(KeyProtector.java:311)
-        at sun.security.provider.JavaKeyStore.engineGetKey(JavaKeyStore.java:121)
-        at sun.security.provider.JavaKeyStore$JKS.engineGetKey(JavaKeyStore.java:38)
-        at java.security.KeyStore.getKey(KeyStore.java:763)
-        at com.sun.net.ssl.internal.ssl.SunX509KeyManagerImpl.&lt;init&gt;(SunX509KeyManagerImpl.java:113)
-        at com.sun.net.ssl.internal.ssl.KeyManagerFactoryImpl$SunX509.engineInit(KeyManagerFactoryImpl.java:48)
-        at javax.net.ssl.KeyManagerFactory.init(KeyManagerFactory.java:239)
-        at org.apache.servicemix.http.processors.CommonsHttpSSLSocketFactory.createUnmanagedFactory(CommonsHttpSSLSocketFactory.java:117)
-        at org.apache.servicemix.http.processors.CommonsHttpSSLSocketFactory.&lt;init&gt;(CommonsHttpSSLSocketFactory.java:50)
-        at org.apache.servicemix.http.processors.ProviderProcessor.getHostConfiguration(ProviderProcessor.java:276)
-        at org.apache.servicemix.http.processors.ProviderProcessor.process(ProviderProcessor.java:167)
-        at org.apache.servicemix.soap.SoapEndpoint.process(SoapEndpoint.java:368)
-        at org.apache.servicemix.common.AsyncBaseLifeCycle.doProcess(AsyncBaseLifeCycle.java:600)
-        at org.apache.servicemix.common.AsyncBaseLifeCycle.processExchange(AsyncBaseLifeCycle.java:554)
-        at org.apache.servicemix.common.AsyncBaseLifeCycle.onMessageExchange(AsyncBaseLifeCycle.java:510)
-        at org.apache.servicemix.common.SyncLifeCycleWrapper.onMessageExchange(SyncLifeCycleWrapper.java:60)
-        at org.apache.servicemix.jbi.messaging.DeliveryChannelImpl.processInBound(DeliveryChannelImpl.java:620)
-        at org.apache.servicemix.jbi.nmr.flow.AbstractFlow.doRouting(AbstractFlow.java:172)
-        at org.apache.servicemix.jbi.nmr.flow.seda.SedaFlow.doRouting(SedaFlow.java:168)
-        at org.apache.servicemix.jbi.nmr.flow.seda.SedaQueue$1.run(SedaQueue.java:134)
-        at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
-        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
-        at java.lang.Thread.run(Thread.java:619)
-</code></pre></noscript></div>
-
-
-<p>A little googling led me to this <a
-href="http://stackoverflow.com">StackOverflow</a> <a
-href="http://stackoverflow.com/questions/4926290/java-keystore-and-password-settings">question</a>.</p>
-
-<p>It seems that you cannot have multiple keys with different passwords
-in the same keystore and use <a
-href="http://download.oracle.com/javase/6/docs/api/javax/net/ssl/KeyManagerFactory.html">KeyManagerFactory</a> class. Oh
-well&#8230;</p>.
-
-<h2>Ending</h2>
-
-<p>To sum up, the solution given works, but in my opinion using the
-<em>InstallCert.java</em> app is rather dirty. I&#8217;ve been wondering, do
-you know other ways of doing that thing?</p>
-
 </div>
 ]]></content>
   </entry>
