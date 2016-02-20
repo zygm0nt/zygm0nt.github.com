@@ -1,0 +1,107 @@
+---
+layout: post
+title: "Lambda Days 2016"
+date: 2016-02-20 23:22
+comments: true
+categories: 
+ - lambda days 2016
+ - conference
+ - krakow
+---
+
+Lambda Days 2016 - Kraków
+===
+
+This last two days I've spend on a conference in Kraków. The topics
+revolved around functional programming, with all the experimental stuff,
+popular languages, etc. Here are the talks I've been to and short summaries of those:
+
+## Day 1:
+
+- **Propositions as types** - the keynote delivered by Philip Wadler - seen it already on [YouTube](https://www.youtube.com/watch?v=IOiZatlZtGU). But the thing with Lambda t-shirt looked funny again :D
+
+- **Using "Program shaping" and algorithmic skeletons to parallelise an evolutionary multi-agent system in Erlang** - pretty long title, huh :) The presentation, thou very academic was also quite interesting. The whole concept not being particularly new, but the set of tools used for refactorings into parallel code seemed interesting.
+- **Static analysis to identify divide-and-conquer algorithms** - how to find particular class of algorithms in existing programs? Interesting but shallow, due to time limitations. 
+
+- **The Mysteries of Dropbox** - John Hughes of QuickCheck fame showed how
+  to test a big system using blackbox approach. Nice presentation, with
+all the great insight he always brings into his talks.
+
+- **Muvr - Jan Machacek** - that was a fun presentation. About how to build an app that detects your exercise routine and counts how many repeats you've done. There've been all:
+   - spark pipelining
+   - Swift code demo (it seemed like Swift IDE offers something similar to notebook-like programming, is it?), 
+   - live coding
+Unfortunately due to WiFi's proxy settings the live demo could not be finished, but the code for all this is available somewhere on Github, on [this account](https://github.com/muvr).
+
+- **Embracing change** - how to introduce Clojure into your company's
+  technology stack seamlessly - by **Artur Skowroński.**
+  Hilarious presentation about adopting new languages. It wasn't that
+groundbreaking, at least for me, but the way it was presented, and the
+slides with all the Cthulhu references in them, were great! 
+
+## Day 2:
+
+- **Things that matter by Bruce Tate** - great energetic talk, with all the ideas about learning
+  new languages. Bruce is the author of two excellent books: "Seven
+languages in seven weeks" and "Seven more languages in seven weeks" :)
+He went through languages mentioned in his books and summed up
+principles associated with their inception.
+
+  I've almost decided to not come to this presentation,
+weighting between it and sleeping a little bit longer in my hotel room.
+
+- **The Zen of Akka** - delivered by a resident hakker at Typesafe - Konrad
+  Malawski. Nice talk about Akka pitfalls, there were lots of
+recommendations and even some previously unknown to me features of Akka
+toolkit. Plus I loved the Japanese elements.
+
+- **Creating reactive components using ClojureScript React wrappers** - by
+  Konrad Szydlo introduced Rum as a wrapper for React, described part of
+the ecosystem and explained mechanics behind the technology. Fine
+presentation, very intense on content. Konrad had 111 slides, but
+managed to show all of them without being hasty. 
+
+- **Getting started with Frege** - Lech Glowiak, Frege seems to be a Haskell
+  on the JVM, which in itself seems like a nice thing. But I treat such
+languages rather as nice experiments, than something useful. Especially
+its Java interop looks ugly. Nevertheless the presentation was given
+from the point of view of language contributor, which Lech is.
+
+- **Practical demystification of CRDT** - by Dmitry Ivanov and Nami
+  Naserazad - both of them from TomTom. Guys are working on TomTom's
+NaviCloud product. Their presentation was a practical guide throught the
+world of CRDTs (link to wikipedia). They showed their failures in
+implementing the system, gave advices, etc. The whole thing is even
+uploaded to github, so everyone can check their code
+(http://github.com/ajantis/scala-crdt). I've really enjoyed this talk
+due to its technical approach. There were no formal definitions, no
+teortical considerations, just clean report from the trenches.
+
+- **Purely functiona Web Apps** - by Michał Płachta - how to write Gitlab
+  companion app in Haskell + Elm? Haskell for backend and Elm for
+frontend. This presentation showed great potential of Elm for frontend
+development. Moderatly approachable considering Friday afternoon and my
+lack of Haskell knowledge. Still, I plan to come back to this
+presentation later.
+
+
+## What I haven't seen but plan to as soon as videos are available
+
+- **Modeling your domain. What have we learned? Where do we go from here?** - by Norbert Wójtowicz - about modeling domain in Clojurescript apps
+- **The F#orce awakend** - by ewelina Gabasova - F# + geekery, the Twitter
+  went nuts about that presentation, suppose not without reason
+- **LFE - a lisp flavour on the Erlang VM** - by Robert Virding - don't know
+  why but it seems intriguing enough
+
+
+## Conclusion
+
+As always, things you didn't expect to be interesting were the best
+ones. Highlights being presentations by Bruce Tate, Jan Machacek and guys
+from TomTom (Dmitry Ivanov and Nami Naserazad)
+
+Thanks to organisers for this conference. But I must say, that day 2 was a lot better than the first one. The talks were better structured and presented.
+
+One idea for the organizers - please print the schedule on the back of
+conference badge. It was pretty annoying to have to take out the A4
+sheets with whole day schedule each time I wanted to look at it

@@ -13,3 +13,12 @@ git@github.com:username/username.github.com.git
 username.github.com/_deploy$ git pull origin master
 username.github.com/_deploy$ cd ..
 username.github.com$
+
+
+
+PATH=/home/marcin/.rbenv/shims:/home/marcin/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+
+rake new_post\["title "\]
+rake generate
+rake deploy
+
