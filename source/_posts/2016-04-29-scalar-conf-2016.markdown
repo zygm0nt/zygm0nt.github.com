@@ -1,0 +1,81 @@
+---
+layout: post
+title: "Scalar Conf 2016"
+date: 2016-04-29 22:22
+comments: true
+categories: 
+    - scala
+    - conference
+---
+
+Scalar Conf 2016
+
+![Polin museum - interior](/assets/POLIN-Museum-of-the-History-of-Polish-Jews-int02.jpg)
+
+This small conference had its third installment in (http://www.polin.pl/en)[Polin - Museum of the History of Polish Jews]. Organizing Scala conference isn't that obvious and having that kind of attention is really great - all the foreign speakers, etc. 
+
+Here is a quick recap of presentations I've attended.
+<!-- more -->
+
+### Having a cake ... - by Paweł Szulc
+
+A keynote about typeclasses. I've read the slides before the presentation  -and they are available [here](http://www.slideshare.net/paulszulc/introduction-to-type-classes-in-30-min), so it wasn't new to me. But I'd strongly recommend to watch this talk.
+
+Also, there is another nice talk by Paweł: [ Category theory is absolute general nonsense!](https://www.youtube.com/watch?v=ENtdZ9MBo5Y) This talk is in Polish only.
+
+### EFF Monad - by Eric Torreborre
+
+Different way of monadic composition, implemented in a separate library: [eff-cats](https://github.com/atnos-org/eff-cats) (there is also scalaz alternative). Technically it was a bit over my head, but after experimenting with the concept at home it seems interesting. 
+
+I liked that Eric, being Zalando employee, developed that for their internal usage. Also the beauty of easily constructing different technological stacks with consistent API is very tempting.
+
+Interesting things used/mentioned were:
+
+- [non/kind-projector](github.com/non/kind-projector)- for projections
+- [Monad Transformers and Modular Interpreters](http://haskell.cs.yale.edu/?post_type=publication&p=319) 
+
+### Incremental compiler - by Krzysztof Romanowski
+
+Deep dive into scalac incremental compiler implementation. While the presentation itself, the way it was presented, was very nice, I didn't particularly enjoy the topic. It seemed more appropriate for tools' developers.
+
+### Akka cluster with Etcd - by Maciej Biłas
+
+This one looked promising. Joining multiple exciting technologies seems often that way. Unfortunately it was rather tech preview of Kubernetes app setup rather than Scala presentation. 
+
+I'm a bit disappointed, because looking through the sources of the project [akka-cluster-etcd](https://github.com/rkrzewski/akka-cluster-etcd) there are lots of things to describe. Kubernetes not being one of them ;-)
+
+
+###Shapeless? Easy! - by Valentin Kasas
+
+Well, that was a clear introduction to shapeless. Till this presentation I've treated shapeless as only some vague thingy you use when writing libraries. Valentin proved otherwise. 
+
+He gave a clear and consistent tutorial on the basics of shapeless and its potential use in some example applications. He created a simple diff tool. Not that useful in real life application, but definitely helped make a point.
+
+Will look into real life examples in near future.
+
+Fun fact: The speaker had his presentation in [REPLesent](https://github.com/marconilanna/REPLesent), a sbt plugin for presentations - and performed most of the slide-jumping-fu with just one hand, other held in his pocket :D Looked quite hilarious.
+
+Valentin also mentioned shapeless' typeclass derivation - this actually looks nice! Have a look at this [question](https://meta.plasm.us/posts/2015/11/08/type-classes-and-generic-derivation/)
+
+### Cool Toolz in the Scalaz and Cats Toolboxes - by Jan Pustelnik
+
+Functional Design Patterns - enjoyable talk. With a bit of theoretical background, lots of useful use-cases. The talk was about cats and scalaz - both being very similar, and patterns they contain.
+
+Key points being:
+
+- Functor pattern for abstracting Big Data computations, to achieve easier testability 
+- composing functors - |@| scream operator - also know (officially) as Applicative Builder
+- Applicative  - a list of computation into a computation of lists, list traversal
+- Applicative pattern for reading config
+
+There is this nice video called "A purely functional approach to building large applications". Go see [it](https://www.youtube.com/watch?v=dS3IlDBDlvo).
+
+## Conclusion
+
+To conclude - the conference was really great. Both the talks and social side of the event were enjoyable. I've been blown away by the great architecture of the museum itself. Been there a couple times and enjoyed all of them.
+
+The much needed change would be to bring more tracks, because sometimes topics were too specific and I'd gladly change lecture to some other. 
+
+As for the usual conference merch, there were no bags with leaflets and pens etc. It came as a surprise to me, but I also really liked it. People infact throw away most of the contents from such bags. Also, no t-shirt as a default - great idea! If you like it - just buy one, otherwise don't bother.
+
+Overall - great job Softwaremill! Keep up the good work!.
