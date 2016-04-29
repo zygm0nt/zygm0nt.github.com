@@ -8,10 +8,8 @@
   <title>Serenity - Marcin bloguje</title>
   <meta name="author" content="Marcin Cylke">
 
-  <!-- Causes trouble with per-article font implementations under /source/_includes/article.html
   
-  <meta name="description" content="Serenity Już dosyć sporo czasu upłynęło odkąd zachwycałem się serialem Firefly. Dziś trochę o jego pełnometrażowej kontynuacji. Film wyszedł spod &hellip;">
-  -->
+  <meta name="description" content="Już dosyć sporo czasu upłynęło odkąd zachwycałem się serialem Firefly. Dziś trochę o jego pełnometrażowej kontynuacji. Film wyszedł spod ręki tego &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,27 +18,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zygm0nt.github.com/blog/2007/11/08/serenity">
+  <link rel="canonical" href="http://zygm0nt.github.com/blog/2007/11/08/serenity/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="Marcin bloguje" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Marcin bloguje" type="application/atom+xml">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=Poller+One" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=Germania+One" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=Fontdiner+Swanky" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=Lato&subset=latin-ext" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=Cardo&subset=latin-ext" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=Sorts+Mill+Goudy" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=Della+Respira" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=UnifrakturMaguntia&subset=all" rel="stylesheet" type="text/css">
-<link href='http://fonts.googleapis.com/css?family=Arimo|EB+Garamond|PT+Sans+Caption&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
   <script type="text/javascript">
@@ -50,50 +38,47 @@
 
     (function() {
       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
   </script>
 
 
 </head>
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<logo>
 
-<img src="/logo.png" alt="Website Logo. Upload to /source/logo.png ; disable in /source/_includes/logo.html" height="32px" width="32px">
-</logo>
-
-
-
-<body >
+<body   >
   <header role="banner"><hgroup>
+  <div id="logo">
+  	<div id="logoLeft">{</div>
+  	<div id="logoText">mob</div>
+  	<div id="logoRight">}</div>
+  	<div class="clear"></div>
+  </div>
   <h1><a href="/">Marcin bloguje</a></h1>
   
     <h2>.impressions.memos.tech.</h2>
   
+  <div class="clear"></div>
 </hgroup>
 
 </header>
-  <nav role="navigation"><ul class="main-navigation">
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:zygm0nt.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
 </ul>
 
-<br>
-
-      
-        <form action="http://google.com/search" method="get">
-          <fieldset role="search">
-            <input type="hidden" name="q" value="site:zygm0nt.github.com" />
-      
-      
-            <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-          </fieldset>
-        </form>
-  
 </nav>
   <div id="main">
     <div id="content">
@@ -103,7 +88,7 @@
   <header>
     
       
-        <h1 class="entry-title" style="font-family: ">Serenity</h1>
+        <h1 class="entry-title">Serenity</h1>
       
     
     
@@ -114,37 +99,47 @@
 
 
 
-        
+
+
+
+  
+
+
+<time datetime="2007-11-08T00:00:00+01:00" pubdate data-updated="true">Nov 8<span>th</span>, 2007</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content" style="font-family: ; font-size: "><div class='post'>
+<div class="entry-content"><div class='post'>
 <p>Już dosyć sporo czasu upłynęło odkąd zachwycałem się serialem Firefly. Dziś trochę o jego pełnometrażowej kontynuacji. Film wyszedł spod ręki tego samego człowieka, który zajmował się serialem. Nadal mamy tu kowbojskie podejście do tematu podboju kosmosu. Statki itp są jak najbardziej sci-f&#8217;owe, ale juz zachowanie ludzi na planetach to typowy western. Przez analogię można każdą z takich planet przyrównać do miast dzikiego zachodu. Mimo to w filmie jest to troszkę mniej widoczne, serial w tym przodował.</p> <p>Film rozwija wątki znane z serialu. Akcja toczy się wokół Rivier, jednej z pasażerek zabranych przez Serenity. Okazuje się, że Sojusz wysyła za nią człowieka, który ma odzyskać mała - jest on dosyć bezwzględny, ale trzeba przyznać, że to facet z zasadami. W trakcie filmu wyjaśnia się kilka wątków, które pojawiły się tylko na chwilę w serialu. Generalnie, to niechciałbym zbyt dużo akcji zdradzać, bo mógłbym zepsuć zabawę tym którzy chcą obejrzeć. Ci którzy nie chcą i tak nie skorzystaliby z dalszego dopowiadania fabuły :-D Ważne, że cały scenariusz jest świetny, a pomysły w nim zawarte świeże. Całość wciąga.</p> <p>Wraz z nowym filmem dostaliśmy dalszy ciąg wspaniałych, mięsistych i pełnych życia bohaterów. Są dobrze zagrani i wspaniale zarysowani w fabule. To nie mdły Star Trek. Całość dzieje się we wszechświecie, który ma ogromny potencjał. Jest przemyślany i spójny - bardzo przypomina rozmachem ten z serialu Farscape. Polecam.</p> <a href="http://www.flickr.com/photos/zygm0nt/258383575/" title="Photo Sharing"><img class="centered" src="http://static.flickr.com/116/258383575_88a4c08748_o.png" width="450" height="443" alt="serenity-multi" /></a> <br/> <p class="graybox"> <a href="http://www.imdb.com/title/tt0379786/">Serenity</a> (2005) <br/> Reżyser: <a href="http://www.imdb.com/name/nm0923736/">Joss Whedon</a> <br/> Obsada: <a href="http://www.imdb.com/name/nm0277213/">Nathan Fillion</a>, <a href="http://www.imdb.com/name/nm0000284/">Adam Baldwin</a>, <a href="http://www.imdb.com/name/nm1132359/">Summer Glau</a>, <a href="http://www.imdb.com/name/nm0821612/">Jewel Staite</a> <br/> </p></div>
 </div>
 
 
-  <footer class="page-footer">
+  <footer>
     <p class="meta">
       
   
 
-<span class="byline author vcard">Text authored by <span class="fn">Marcin Cylke</span></span>
-
-
-      
-
-
-
-
+<span class="byline author vcard">Posted by <span class="fn">Marcin Cylke</span></span>
 
       
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-11-08T00:00:00+01:00" pubdate data-updated="true">Nov 8<span>th</span>, 2007</time>
       
 
-<br><span class="categories">
-  In categories:
+<span class="categories">
   
     <a class='category' href='/blog/categories/review/'>review</a>
   
@@ -155,7 +150,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://zygm0nt.github.com/blog/2007/11/08/serenity/" data-via="zygm0nt" data-counturl="http://zygm0nt.github.com/blog/2007/11/08/serenity/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zygm0nt.github.com/blog/2007/11/08/serenity/" data-via="zygm0nt" data-counturl="http://zygm0nt.github.com/blog/2007/11/08/serenity/" >Tweet</a>
   
   
   
@@ -164,23 +159,105 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2007/11/08/sentinel/" title="Previous Post: The Sentinel">&laquo; The Sentinel</a>
+        <a class="basic-alignment left articlenav" href="/blog/2007/11/08/sentinel/" title="Previous Post: The Sentinel">&laquo; The Sentinel</a>
       
       
-        <a class="basic-alignment right" href="/blog/2007/11/08/sommer-vorm-balkon/" title="Next Post: Sommer vorm Balkon">Sommer vorm Balkon &raquo;</a>
+        <a class="basic-alignment right articlenav" href="/blog/2007/11/08/sommer-vorm-balkon/" title="Next Post: Sommer vorm Balkon">Sommer vorm Balkon &raquo;</a>
       
     </p>
   </footer>
 </article>
 
-
 </div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/04/29/scalar-conf-2016/">Scalar Conf 2016</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/02/20/lambda-days-2016/">Lambda Days 2016</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/01/22/ccc-interesting-videos/">32c3 most interesting videos</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/07/14/super-confitura-man/">Super Confitura Man</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/10/distributed-scans-with-hbase/">Distributed scans with HBase</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/zygm0nt">@zygm0nt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'zygm0nt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("zygm0nt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/zygm0nt" class="twitter-follow-button" data-show-count="false">Follow @zygm0nt</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
 
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Website copyright &copy; 2016 - Marcin Cylke |
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/TheChymera/Koenigspress">Königspress</a></span>
+  Copyright &copy; 2016 - Marcin Cylke -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
 </footer>
@@ -197,7 +274,7 @@
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>

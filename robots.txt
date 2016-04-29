@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: 
-
-Sitemap: http://zygm0nt.github.com/sitemap.xml 

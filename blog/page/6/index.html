@@ -8,11 +8,10 @@
   <title>Marcin bloguje</title>
   <meta name="author" content="Marcin Cylke">
 
-  <!-- Causes trouble with per-article font implementations under /source/_includes/article.html
   
-  <meta name="description" content="Solaris W TR Wczoraj byłem w TR (http://www.trwarszawa.pl/). Na wejściówki, po
-taniości. Obejrzałem spektakl Solaris, bo to Lem, bo znam, bo jako &hellip;">
-  -->
+  <meta name="description" content="Wczoraj byłem w TR (http://www.trwarszawa.pl/). Na wejściówki, po
+taniości. Obejrzałem spektakl Solaris, bo to Lem, bo znam, bo jako jedną
+z &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,27 +20,17 @@ taniości. Obejrzałem spektakl Solaris, bo to Lem, bo znam, bo jako &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zygm0nt.github.com/blog/page/6">
+  <link rel="canonical" href="http://zygm0nt.github.com/blog/page/6/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="Marcin bloguje" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Marcin bloguje" type="application/atom+xml">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=Poller+One" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=Germania+One" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=Fontdiner+Swanky" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=Lato&subset=latin-ext" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=Cardo&subset=latin-ext" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=Sorts+Mill+Goudy" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=Della+Respira" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=UnifrakturMaguntia&subset=all" rel="stylesheet" type="text/css">
-<link href='http://fonts.googleapis.com/css?family=Arimo|EB+Garamond|PT+Sans+Caption&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
   <script type="text/javascript">
@@ -51,50 +40,47 @@ taniości. Obejrzałem spektakl Solaris, bo to Lem, bo znam, bo jako &hellip;">
 
     (function() {
       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
   </script>
 
 
 </head>
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<logo>
 
-<img src="/logo.png" alt="Website Logo. Upload to /source/logo.png ; disable in /source/_includes/logo.html" height="32px" width="32px">
-</logo>
-
-
-
-<body >
+<body   >
   <header role="banner"><hgroup>
+  <div id="logo">
+  	<div id="logoLeft">{</div>
+  	<div id="logoText">mob</div>
+  	<div id="logoRight">}</div>
+  	<div class="clear"></div>
+  </div>
   <h1><a href="/">Marcin bloguje</a></h1>
   
     <h2>.impressions.memos.tech.</h2>
   
+  <div class="clear"></div>
 </hgroup>
 
 </header>
-  <nav role="navigation"><ul class="main-navigation">
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:zygm0nt.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
 </ul>
 
-<br>
-
-      
-        <form action="http://google.com/search" method="get">
-          <fieldset role="search">
-            <input type="hidden" name="q" value="site:zygm0nt.github.com" />
-      
-      
-            <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-          </fieldset>
-        </form>
-  
 </nav>
   <div id="main">
     <div id="content">
@@ -106,7 +92,9 @@ taniości. Obejrzałem spektakl Solaris, bo to Lem, bo znam, bo jako &hellip;">
       
   <header>
     
-      <h1 class="entry-title" style="font-family: "><a href="/blog/2009/11/13/solaris-w-tr/">Solaris W TR</a></h1>
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/11/13/solaris-w-tr/">Solaris W TR</a></h1>
+      
     
     
       <p class="meta">
@@ -116,14 +104,20 @@ taniości. Obejrzałem spektakl Solaris, bo to Lem, bo znam, bo jako &hellip;">
 
 
 
-        
+
+
+
+  
+
+
+<time datetime="2009-11-13T09:51:17+01:00" pubdate data-updated="true">Nov 13<span>th</span>, 2009</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
+  <div class="entry-content"><div class='post'>
 <p>Wczoraj byłem w TR (http://www.trwarszawa.pl/). Na wejściówki, po<br />
 taniości. Obejrzałem spektakl Solaris, bo to Lem, bo znam, bo jako jedną<br />
 z niewielu rzeczy Lema czytałem. Powody były.</p>
@@ -187,7 +181,9 @@ czo</p></div>
       
   <header>
     
-      <h1 class="entry-title" style="font-family: "><a href="/blog/2009/09/25/love-some-kind-of-preview/"><p>Love - Some Kind of Preview&#8230;</p></a></h1>
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/09/25/love-some-kind-of-preview/"><p>Love - Some Kind of Preview&#8230;</p></a></h1>
+      
     
     
       <p class="meta">
@@ -197,14 +193,20 @@ czo</p></div>
 
 
 
-        
+
+
+
+  
+
+
+<time datetime="2009-09-25T01:06:05+02:00" pubdate data-updated="true">Sep 25<span>th</span>, 2009</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
+  <div class="entry-content"><div class='post'>
 <p>Czytając mój ulubiony serwis o grach, czyli <a href="http://www.rockpapershotgun.com/">Rock-Paper-Shutgun</a> dowiedziałem się, że osobnik znany jako Eskil Steenberg wypuścił nieinteraktywne preview swojego &#8220;multiplayer experience&#8221; - <b>LOVE</b>.</p>
 <EXCERPT><p>O co tyle szumu? Wystarczy spojrzeć na to jak gra wygląda. Nie chodzi w tym o jakąś wypasioną grafikę, a o frajdę z gry. Eskil pisze swoją grę w pojedynkę. Idzie mu to naprawdę sprawnie. A zestaw narzędzi jakich używa wprawia mnie za każdym razem w podziw. Chodzi mi z grubsza o narzędzia pokroju Verse (<a href="http://www.quelsolaar.com/verse/">http://www.quelsolaar.com/verse/</a>), które to jest rozproszonym edytorem modeli 3D. Pozwala na współpracę wielu osób i do tego integruje się chociażby z Blenderem. A to tylko wierzchołek tej góry :) Całość wygląda niesamowicie innowacyjnie i imponująco.</p>
 
@@ -222,7 +224,9 @@ czo</p></div>
       
   <header>
     
-      <h1 class="entry-title" style="font-family: "><a href="/blog/2009/09/22/demotywator-moj/">Demotywator Mój</a></h1>
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/09/22/demotywator-moj/">Demotywator Mój</a></h1>
+      
     
     
       <p class="meta">
@@ -232,14 +236,20 @@ czo</p></div>
 
 
 
-        
+
+
+
+  
+
+
+<time datetime="2009-09-22T23:59:20+02:00" pubdate data-updated="true">Sep 22<span>nd</span>, 2009</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
+  <div class="entry-content"><div class='post'>
 <p>Z dwa tygodnie temu zrobiłem fotkę. Nadawała się na demotywator. Moim zdaniem przynajmnie :)</p>
 <p>Umieściłem ją więc w serwisie odpowiednim - demotywatory.pl Raczej nie pieją ludzie z zachwytu, ale mam radochę i tak :D.</p>
 <p>Link do demotywatora - <a href="http://demotywatory.pl/190154/Bite-your-ass">LINK.</a></p>
@@ -310,7 +320,9 @@ A co do Twojej rady, żebym wracał do gimnazjum. Wydaje mi się, że ktoś tu t
       
   <header>
     
-      <h1 class="entry-title" style="font-family: "><a href="/blog/2009/09/20/ludzie-porzuccie-f-spot/">Ludzie! Porzućcie F-Spot!</a></h1>
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/09/20/ludzie-porzuccie-f-spot/">Ludzie! Porzućcie F-Spot!</a></h1>
+      
     
     
       <p class="meta">
@@ -320,14 +332,20 @@ A co do Twojej rady, żebym wracał do gimnazjum. Wydaje mi się, że ktoś tu t
 
 
 
-        
+
+
+
+  
+
+
+<time datetime="2009-09-20T19:57:33+02:00" pubdate data-updated="true">Sep 20<span>th</span>, 2009</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
+  <div class="entry-content"><div class='post'>
 <p>Dziś usiadłem do porządkowania zdjęć z wyjazdu wakacyjnego. Postanowiłem użyć do tego właśnie programu F-Spot. Wydawał się on odpowiedni. Zaimportował fotki, posortował według informacji EXIF. Schody zaczęły się w momencie edycji całej kolekcji.</p>
 <EXCERPT><p>Ze zdjęciami było trochę problemów, którymi chciałem się zająć:</p>
 <ul>
@@ -459,7 +477,9 @@ http://yorba.org/shotwell/</p></div>
       
   <header>
     
-      <h1 class="entry-title" style="font-family: "><a href="/blog/2009/09/20/open-suse-jest-uposledzone/">Open Suse Jest Upośledzone!</a></h1>
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/09/20/open-suse-jest-uposledzone/">Open Suse Jest Upośledzone!</a></h1>
+      
     
     
       <p class="meta">
@@ -469,14 +489,20 @@ http://yorba.org/shotwell/</p></div>
 
 
 
-        
+
+
+
+  
+
+
+<time datetime="2009-09-20T16:45:13+02:00" pubdate data-updated="true">Sep 20<span>th</span>, 2009</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
+  <div class="entry-content"><div class='post'>
 <p>Zarządzanie pakietami to droga przez mękę. Czemu? Proszę bardzo:</p>
 <p><code>marcin@byakshee:~&gt; sudo zypper install f-spot<br>
 Reading installed packages...<br>
@@ -551,7 +577,9 @@ Wniosek z tego taki, że jak raz zetkniesz się z apt-getem, to już nic nie bę
       
   <header>
     
-      <h1 class="entry-title" style="font-family: "><a href="/blog/2009/09/20/przydatne-programy-zdjeciowe/">Przydatne Programy Zdjęciowe</a></h1>
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/09/20/przydatne-programy-zdjeciowe/">Przydatne Programy Zdjęciowe</a></h1>
+      
     
     
       <p class="meta">
@@ -561,14 +589,20 @@ Wniosek z tego taki, że jak raz zetkniesz się z apt-getem, to już nic nie bę
 
 
 
-        
+
+
+
+  
+
+
+<time datetime="2009-09-20T12:29:06+02:00" pubdate data-updated="true">Sep 20<span>th</span>, 2009</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
+  <div class="entry-content"><div class='post'>
 <p>Od dawna używam <a href="http://hugin.sourceforge.net/">hugina</a>, który doskonale nadaje się do sklejania wielu zdjęć w panoramę. Robi to doskonale, wygładza, koryguje, dopasowuje. Wystarczy wrzucić sekwencję zdjęć w odpowiedniej kolejności, a program załatwi wszystko za mnie. Miód!</p>
 <p>Dziś znalazłem natomiast programik o dziwnej conieco nazwie <a href="http://www.indii.org/software/tintii">tintii</a>. On z koleii służy do przerabiana zdjęc na czarnobiałe, zostawiając pewien obszar w kolorze. Robienie podobnej rzeczy w Gimpie nigdy nie wychodziło mi łatwo. Dzięki temu narzędziu wszystko idzie łatwo i przyjemnie!</p>
 <p>Polecam!</p>
@@ -598,7 +632,9 @@ Wniosek z tego taki, że jak raz zetkniesz się z apt-getem, to już nic nie bę
       
   <header>
     
-      <h1 class="entry-title" style="font-family: "><a href="/blog/2009/09/20/battlestar-galactica/">Battlestar Galactica</a></h1>
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/09/20/battlestar-galactica/">Battlestar Galactica</a></h1>
+      
     
     
       <p class="meta">
@@ -608,14 +644,20 @@ Wniosek z tego taki, że jak raz zetkniesz się z apt-getem, to już nic nie bę
 
 
 
-        
+
+
+
+  
+
+
+<time datetime="2009-09-20T00:00:00+02:00" pubdate data-updated="true">Sep 20<span>th</span>, 2009</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
+  <div class="entry-content"><div class='post'>
 <p>Wszystko zaczęło się w 2005, kiedy to wypuszczony został pierwszy odcinek odświeżonego serialu Battlestar Galactica. Początkowo zapowiadał się po prostu remake serialu z lat 70. Jednak z czasem, gdy rozwijała się fabuła a kolejne odcinki puchły od mnogości bohaterów i ich różnorodności, serial stał się czymś nowym. Całkiem odrębnym.</p><br /><br /><p>Przez te lata pozwolił przeżyć z bohaterami zagładę planety Caprice, ucieczkę grupy 50 000 niedobitków, partyzancką walkę z przeważającymi siłami Cylonów. Gdy znaleziono nowy dom, oglądaliśmy ich zmagania z niegościnną planetą, a później z jażmę Cylonów, którzy jednak znaleźli ich i tam. Z czasem doszło do unii między ludźmi a Cylonami, aż w końcu&#8230;.</p><br /><br /><p>Nieee&#8230;. to by był zbyt duży spoiler. Sęk w tym, że właśnie skończyłem 4. sezon Battlestar Galactica, który rozstrzygnął masę rzeczy i zakończył całość. I jakkolwiek ckliwie i telenowelowo brzmi powyższe streszczenie, to wszystkim fanom scifi radzę zapoznać się z tą produkcją, bo naprawdę warto.</p><br /><br /><p>Wiele z tych postaci osiągnęło już status kultowy :D przynajmniej wśród osób oglądających serial!</p><br /><br /><center><br /><a href="http://www.flickr.com/photos/zygm0nt/3937926580/" title="Battlestar galactica - last supper by zygm0nt, on Flickr"><img src="http://farm3.static.flickr.com/2604/3937926580_74b6ac43d4.jpg" width="500" height="324" alt="Battlestar galactica - last supper" /></a></center><br /><br /><a href="http://www.imdb.com/title/tt0407362/">IMDB</a><br/><br /><a href="http://en.wikipedia.org/wiki/Battlestar_Galactica">Wikipedia</a></div>
 </div>
   
@@ -629,7 +671,9 @@ Wniosek z tego taki, że jak raz zetkniesz się z apt-getem, to już nic nie bę
       
   <header>
     
-      <h1 class="entry-title" style="font-family: "><a href="/blog/2009/09/16/sycylijski-ibm/">Sycylijski IBM?</a></h1>
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/09/16/sycylijski-ibm/">Sycylijski IBM?</a></h1>
+      
     
     
       <p class="meta">
@@ -639,14 +683,20 @@ Wniosek z tego taki, że jak raz zetkniesz się z apt-getem, to już nic nie bę
 
 
 
-        
+
+
+
+  
+
+
+<time datetime="2009-09-16T20:02:06+02:00" pubdate data-updated="true">Sep 16<span>th</span>, 2009</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
+  <div class="entry-content"><div class='post'>
 <p>Ostatnio było tu ciszej, a to ze względu na wakacyjny wypad na Sycylię. Ładnie, pięknie, wino, kobiety, owoce morza. No, to tyle z relacji.</p>
 <p><br></p>
 <p><br>
@@ -670,7 +720,9 @@ Ja chciałem o czymś trochę innym. A mianowicie właśnie na Sycylii, konkretn
       
   <header>
     
-      <h1 class="entry-title" style="font-family: "><a href="/blog/2009/09/16/public-enemies/">Public Enemies</a></h1>
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/09/16/public-enemies/">Public Enemies</a></h1>
+      
     
     
       <p class="meta">
@@ -680,14 +732,20 @@ Ja chciałem o czymś trochę innym. A mianowicie właśnie na Sycylii, konkretn
 
 
 
-        
+
+
+
+  
+
+
+<time datetime="2009-09-16T00:00:00+02:00" pubdate data-updated="true">Sep 16<span>th</span>, 2009</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
+  <div class="entry-content"><div class='post'>
 Na ten film czekałem dosyć długo. Może nie jakoś szczególnie, ale jednak zrobiło na mnie wrażenie, że kręci go Michael Mann. Że w rolach głównych sama śmietanka. Że o gangsterach. Zapowiadało się super.<br /><br />Film opowiada historię Johna Dillingera, który napadał na banki, rabował z klasą, uciekał z więzień. A wszystko to robił w złotych latach gangsterki w USA, czyli latach 20. Mamy tu wszystko co gangsterskie kino zawierać powinno. Jest dużo przemocy, romans, zajadły policjant ścigający Johna. Całość jest historią wejścia na szczyt i szbkiego końca Dillingera. Jego brawurowe skoki na banki zwróciły na siebie tak dużą uwagę, że stał się synonimem wroga publicznego numer jeden. Spowodowało to wydzielenie w FBI specjalnej jednostki, zmianę sposobu prowadzenia dochodzeń. I to wszystko właśnie jest pokazane w filmie. Bardzo zgrabnie i z sensem.<br /><br />Na uwagę zasługuje sposób kręcenia filmu. Bardzo naturalny obraz, kamera pracuje intensywnie śledząc bohaterów w momentach dynamicznych, ale potrafi &#8220;przystanąć&#8221; i objąć w ładny kadr dziewczynę Johna, graną przez Marion Cotillard.<br /><br />Na filmie nie zawiodłem się. Trzymał w napięciu i nie nudził. Cóż chcieć innego!<br /><br /><center><br /><a href="http://www.flickr.com/photos/zygm0nt/3937861236/" title="public-enemies by zygm0nt, on Flickr"><img src="http://farm4.static.flickr.com/3478/3937861236_c4fc7c99f2.jpg" width="500" height="333" alt="public-enemies" /></a><br /></center><br /><p>&nbsp;</p><br /><br /><br /><a href="http://www.imdb.com/title/tt1152836/">IMDB</a></div>
 <h2>Comments</h2>
 <div class='comments'>
@@ -709,7 +767,9 @@ Johnny! &lt;3<br /><br />Pozdrawiam<br />Amandine<br />filmdine.blogspot.com</di
       
   <header>
     
-      <h1 class="entry-title" style="font-family: "><a href="/blog/2009/08/29/system-shock-2/">System Shock 2</a></h1>
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/08/29/system-shock-2/">System Shock 2</a></h1>
+      
     
     
       <p class="meta">
@@ -719,14 +779,20 @@ Johnny! &lt;3<br /><br />Pozdrawiam<br />Amandine<br />filmdine.blogspot.com</di
 
 
 
-        
+
+
+
+  
+
+
+<time datetime="2009-08-29T16:23:24+02:00" pubdate data-updated="true">Aug 29<span>th</span>, 2009</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
+  <div class="entry-content"><div class='post'>
 <p>Pamiętacie taką grę? Ja pamiętam jedynie tytuł i obszerny opis części pierwszej zamieszczony w którymś numerze Secret Service. Wtedy ta gra była poza moim zasięgiem - za sprawą wymagań sprzętowych.</p>
 <EXCERPT><p>Dopiero jakiś rok temu udało mi się zdobyć System Shock - część pierwszą. Zagrywałem się w nią bardzo długo, uruchomiłem całość pod DosBox&#8217;em i działało pięknie.</p>
 <p>Po jej ukończeniu przyszła chrapka na część drugą. Zdobyłem jakąś wersję tej gry i co? I nie da się w nią grać! Ani pod Wine (linux), ani na Windows Vista. Próbowałem wszystkich patchy jakie znalazłem, opisów, sposobików (z wineHQ).</p>
@@ -861,20 +927,101 @@ Johnny! &lt;3<br /><br />Pozdrawiam<br />Amandine<br />filmdine.blogspot.com</di
   
   <div class="pagination">
     
-      <a class="prev" href="">&larr; Older</a>
+      <a class="prev" href="/blog/page/7/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
-    <a class="next" href="">Newer &rarr;</a>
+    <a class="next" href="/blog/page/5/">Newer &rarr;</a>
     
   </div>
 </div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/04/29/scalar-conf-2016/">Scalar Conf 2016</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/02/20/lambda-days-2016/">Lambda Days 2016</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/01/22/ccc-interesting-videos/">32c3 most interesting videos</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/07/14/super-confitura-man/">Super Confitura Man</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/10/distributed-scans-with-hbase/">Distributed scans with HBase</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/zygm0nt">@zygm0nt</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'zygm0nt',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("zygm0nt", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/zygm0nt" class="twitter-follow-button" data-show-count="false">Follow @zygm0nt</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
 
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Website copyright &copy; 2016 - Marcin Cylke |
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/TheChymera/Koenigspress">Königspress</a></span>
+  Copyright &copy; 2016 - Marcin Cylke -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
 </footer>
@@ -888,7 +1035,7 @@ Johnny! &lt;3<br /><br />Pozdrawiam<br />Amandine<br />filmdine.blogspot.com</di
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -904,7 +1051,7 @@ Johnny! &lt;3<br /><br />Pozdrawiam<br />Amandine<br />filmdine.blogspot.com</di
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>
