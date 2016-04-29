@@ -4,7 +4,7 @@
   <title><![CDATA[Marcin bloguje]]></title>
   <link href="http://zygm0nt.github.com/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2016-04-29T22:29:49+02:00</updated>
+  <updated>2016-04-29T22:38:38+02:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -20,86 +20,12 @@
     <id>http://zygm0nt.github.com/blog/2016/04/29/scalar-conf-2016</id>
     <content type="html"><![CDATA[<p>Scalar Conf 2016</p>
 
-<p><img src="assets/POLIN-Museum-of-the-History-of-Polish-Jews-int02.jpg" alt="Polin museum - interior" /></p>
+<p><img src="http://zygm0nt.github.com/assets/POLIN-Museum-of-the-History-of-Polish-Jews-int02.jpg" alt="Polin museum - interior" /></p>
 
 <p>This small conference had its third installment in (http://www.polin.pl/en)[Polin - Museum of the History of Polish Jews]. Organizing Scala conference isn&#8217;t that obvious and having that kind of attention is really great - all the foreign speakers, etc.</p>
 
 <p>Here is a quick recap of presentations I&#8217;ve attended.</p>
 
-<!-- more -->
-
-
-<h3>Having a cake &#8230; - by Paweł Szulc</h3>
-
-<p>A keynote about typeclasses. I&#8217;ve read the slides before the presentation  -and they are available (http://www.slideshare.net/paulszulc/introduction-to-type-classes-in-30-min)[here], so it wasn&#8217;t new to me. But I&#8217;d strongly recommend to watch this talk.</p>
-
-<p>Also, there is another nice talk by Paweł: (https://www.youtube.com/watch?v=ENtdZ9MBo5Y)[ Category theory is absolute general nonsense!] This talk is in Polish only.</p>
-
-<h3>EFF Monad - by Eric Torreborre</h3>
-
-<p>Different way of monadic composition, implemented in a separate library: (https://github.com/atnos-org/eff-cats)[eff-cats] (there is also scalaz alternative). Technically it was a bit over my head, but after experimenting with the concept at home it seems interesting.</p>
-
-<p>I liked that Eric, being Zalando employee, developed that for their internal usage. Also the beauty of easily constructing different technological stacks with consistent API is very tempting.</p>
-
-<p>Interesting things used/mentioned were:</p>
-
-<ul>
-<li>(github.com/non/kind-projector)[non/kind-projector] - for projections</li>
-<li>(http://haskell.cs.yale.edu/?post_type=publication&amp;p=319)[Monad Transformers and Modular Interpreters]</li>
-</ul>
-
-
-<h3>Incremental compiler - by Krzysztof Romanowski</h3>
-
-<p>Deep dive into scalac incremental compiler implementation. While the presentation itself, the way it was presented, was very nice, I didn&#8217;t particularly enjoy the topic. It seemed more appropriate for tools&#8217; developers.</p>
-
-<h3>Akka cluster with Etcd - by Maciej Biłas</h3>
-
-<p>This one looked promising. Joining multiple exciting technologies seems often that way. Unfortunately it was rather tech preview of Kubernetes app setup rather than Scala presentation.</p>
-
-<p>I&#8217;m a bit disappointed, because looking through the sources of the project (https://github.com/rkrzewski/akka-cluster-etcd)[akka-cluster-etcd] there are lots of things to describe. Kubernetes not being one of them ;-)</p>
-
-<h3>Lunch break</h3>
-
-<p>There was dinner served by museum&#8217;s restaurant but we chose to wander around and go to Ramen Girl. Unfortunately they were closed on that day. But that just turned into a brilliant stroke of luck - because we found this delicious place - (http://www.krainapierogow.eu/)[Kraina pierogów]. Great! That gave lots of energy for the rest of conference.</p>
-
-<h3>Shapeless? Easy! - by Valentin Kasas</h3>
-
-<p>Well, that was a clear introduction to shapeless. Till this presentation I&#8217;ve treated shapeless as only some vague thingy you use when writing libraries. Valentin proved otherwise.</p>
-
-<p>He gave a clear and consistent tutorial on the basics of shapeless and its potential use in some example applications. He created a simple diff tool. Not that useful in real life application, but definitely helped make a point.</p>
-
-<p>Will look into real life examples in near future.</p>
-
-<p>Fun fact: The speaker had his presentation in (https://github.com/marconilanna/REPLesent)[REPLesent], a sbt plugin for presentations - and performed most of the slide-jumping-fu with just one hand, other held in his pocket :D Looked quite hilarious.</p>
-
-<p>Valentin also mentioned shapeless&#8217; typeclass derivation - this actually looks nice! Have a look at this (https://meta.plasm.us/posts/2015/11/08/type-classes-and-generic-derivation/)[question]</p>
-
-<h3>Cool Toolz in the Scalaz and Cats Toolboxes - by Jan Pustelnik</h3>
-
-<p>Functional Design Patterns - enjoyable talk. With a bit of theoretical background, lots of useful use-cases. The talk was about cats and scalaz - both being very similar, and patterns they contain.</p>
-
-<p>Key points being:</p>
-
-<ul>
-<li>Functor pattern for abstracting Big Data computations, to achieve easier testability</li>
-<li>composing functors - |@| scream operator - also know (officially) as Applicative Builder</li>
-<li>Applicative  - a list of computation into a computation of lists, list traversal</li>
-<li>Applicative pattern for reading config</li>
-</ul>
-
-
-<p>There is this nice video called &#8220;A purely functional approach to building large applications&#8221;. Go see (https://www.youtube.com/watch?v=dS3IlDBDlvo)[it].</p>
-
-<h2>Conclusion</h2>
-
-<p>To conclude - the conference was really great. Both the talks and social side of the event were enjoyable. I&#8217;ve been blown away by the great architecture of the museum itself. Been there a couple times and enjoyed all of them.</p>
-
-<p>The much needed change would be to bring more tracks, because sometimes topics were too specific and I&#8217;d gladly change lecture to some other.</p>
-
-<p>As for the usual conference merch, there were no bags with leaflets and pens etc. It came as a surprise to me, but I also really liked it. People infact throw away most of the contents from such bags. Also, no t-shirt as a default - great idea! If you like it - just buy one, otherwise don&#8217;t bother.</p>
-
-<p>Overall - great job Softwaremill! Keep up the good work!.</p>
 ]]></content>
   </entry>
   
@@ -209,7 +135,7 @@ sheets with whole day schedule each time I wanted to look at it</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[32c3 most interesting videos]]></title>
+    <title type="html"><![CDATA[32c3 Most Interesting Videos]]></title>
     <link href="http://zygm0nt.github.com/blog/2016/01/22/ccc-interesting-videos/"/>
     <updated>2016-01-22T00:32:00+01:00</updated>
     <id>http://zygm0nt.github.com/blog/2016/01/22/ccc-interesting-videos</id>
@@ -218,72 +144,6 @@ took place (<a href="http://www.ccc.de/">CCC site</a>). I&#8217;ve finally manag
 sift through some of the videos. Have a selection of those I&#8217;ve found
 most interesting to me. If there are others really worth watching - pass
 me a line! Cheers.</p>
-
-<!-- more -->
-
-
-<ul>
-<li>Tor onion services are more useful than most people realize — super
-packed 32c3 talk from @torproject devs:</li>
-</ul>
-
-
-<div class="embed-video-container"><iframe src="http://zygm0nt.github.com//www.youtube.com/embed/wHmxCeLpveA" allowfullscreen></iframe></div>
-
-
-<ul>
-<li>State of the Onion - what&#8217;s happend in 2015 around Tor project.
-Informative to say the least.</li>
-</ul>
-
-
-<div class="embed-video-container"><iframe src="http://zygm0nt.github.com//www.youtube.com/embed/DqBFez4v_2I" allowfullscreen></iframe></div>
-
-
-<ul>
-<li>A very interesting presentation. Especially in the light of Novena
-Laptop and the like:</li>
-</ul>
-
-
-<div class="embed-video-container"><iframe src="http://zygm0nt.github.com//www.youtube.com/embed/rcwngbUrZNg" allowfullscreen></iframe></div>
-
-
-<ul>
-<li>SO YOU WANT TO BUILD A SATELLITE? - ha!</li>
-</ul>
-
-
-<div class="embed-video-container"><iframe src="http://zygm0nt.github.com//www.youtube.com/embed/FO68gG320SM" allowfullscreen></iframe></div>
-
-
-<ul>
-<li>INSIDE GLORIOUS LEADER’S OPERATING SYSTEM - this one is actually
-great! No ridiculing, just a review of features. Go see what os-level
-surveilance looks like:</li>
-</ul>
-
-
-<div class="embed-video-container"><iframe src="http://zygm0nt.github.com//www.youtube.com/embed/8LGDM9exlZw" allowfullscreen></iframe></div>
-
-
-<ul>
-<li>3D printing on the moon - just printing something on your 3d printer
-seems trivial compared to the challange of doing this under Moon
-conditions:</li>
-</ul>
-
-
-<div class="embed-video-container"><iframe src="http://zygm0nt.github.com//www.youtube.com/embed/_eYvMFipIQ4" allowfullscreen></iframe></div>
-
-
-<ul>
-<li>J. Alex Halderman, Nadia Heninger: Logjam: Diffie-Hellman, discrete
-logs, the NSA, and you</li>
-</ul>
-
-
-<div class="embed-video-container"><iframe src="http://zygm0nt.github.com//www.youtube.com/embed/mS8gm-_rJgM" allowfullscreen></iframe></div>
 
 ]]></content>
   </entry>
@@ -309,154 +169,11 @@ formed a team for the hackathon.</p>
 
 <p><img src="http://zygm0nt.github.com/assets/confitura-2014-01.jpg" alt="Confitura 01" /></p>
 
-<!-- more -->
-
-
-<p>The initial plan was to develop a simple mario-style game, with
-preceduraly generated levels, random collectible items and enemies. One
-of the ideas was to introduce Confitura Man as the main character, but
-due to time constraints, this fall through. We’ve decided to just choose
-a random available sprite for a character - hence the onion man :)</p>
-
-<p><img src="http://zygm0nt.github.com/assets/confitura-2014-02.jpg" alt="Confitura 02" /></p>
-
-<h2>How the game is played?</h2>
-
-<p>Since we wanted to have a scoreboard and have unique users, we’ve
-printed out QR codes. A person that would like to play the game could
-pick up a QR code, show it against a camera attached to the play booth.
-The start page scanned the QR code and launched the game with username
-read from paper code.</p>
-
-<p>The rest of the game was playable with gamepad or keyboard.</p>
-
-<p><img src="http://zygm0nt.github.com/assets/confitura-2014-04.png" alt="Confitura game screen" /></p>
-
-<h2>Technicalities</h2>
-
-<p>Writing a game takes a lot of time and effort. We wanted to deliver, so
-we’ve decided to spend some time in the days before the hackathon just
-to bootstrap the technology stack of our enterprise.</p>
-
-<p>We’ve decided that the game would be written in some Javascript based
-engine, with Google Chrome as a web platform. There are a lot of HTML5
-game engines - <a href="http://html5gameengine.com/">list of html5 game engines</a> and you could easily create a
-game with each and every of them. We’ve decided to use <a href="http://phaser.io/">Phaser IO</a>
-which handles a lot of difficult,  game-related stuff on its own. So, we
-didn’t have to worry about physics, loading and storing assets,
-animations, object collisions, controls input/output. Go see for
-yourself, it is really nice and easy to use.</p>
-
-<p>Scoreboard would be a rip-off from <a href="http://blog.gengo.com/jira-survivor/">JIRA Survivor</a>
-with stats being served from some web server app. To make things harder,
-the backend server was written in Clojure. With no experience in that
-language in the team, it was a bit risky, but the tasks of the server
-were trivial, so if all that clojure effort failed, it could be
-rewritten in something we know.</p>
-
-<h2>Statistics</h2>
-
-<p>During the whole Confitura day there were 69 unique players (69 QR codes
-were used), and 1237 games were played. The final score looked like
-this:</p>
-
-<ol>
-<li>Barister Lingerie 158 - 1450 points</li>
-<li>Boilerdang Custardbath 386 - 1060 points</li>
-<li>Benadryl Clarytin 306 - 870 points</li>
-</ol>
-
-
-<p>And the obligatory scoreboard screenshot:</p>
-
-<p><img src="http://zygm0nt.github.com/assets/confitura-2014-03.png" alt="Confitura 03" /></p>
-
-<h2>Obstacles</h2>
-
-<p>The game, being created in just one day, had to have problems :) It
-wasn’t play tested enough, there were some rough edges. During the day
-we had to make a few fixes:</p>
-
-<ul>
-<li>the server did not respect the highest score by specific user, it was just overwritting a user’s score with it’s latest one,</li>
-<li>there was one feature not supported on keyboard, that was available on gamepad - turbo button</li>
-<li>server was opening a database connection each time it got a request, so after around 5 minutes it would exhaust open file limit for MongoDB (backend database), this was easily fixed - thou the fix is a bit hackish :)</li>
-</ul>
-
-
-<p>These were easily identified and fixed.
-Unfortunately there were issues that we were unable to fix while the
-event was on:</p>
-
-<ul>
-<li>google chrome kept asking for the permission to use webcam - this was very annoying, and all the info found on the web did not work - <a href="http://stackoverflow.com/questions/16835421/how-to-allow-chrome-to-access-my-camera-on-localhost/16929608#16929608">StackOverflow thread</a></li>
-<li>it was hard to start the game with QR code - either the codes were too small, or the lighting around that area was inappropriate - I think this
-issue could be fixed by printing larger codes,</li>
-</ul>
-
-
-<h2>Technology evaluation</h2>
-
-<p>All in all we were pretty happy with the chosen stack. Phaser was easy
-to use and left us with just the fun parts of the game creation process.
-Finding the right graphics with appropriate licensing was rather hard.
-We didn’t have enough time to polish all the visual aspects of the game
-before Confitura.</p>
-
-<p>Writing a server in clojure was the most challenging part, with all the
-new syntax and new libraries. There were tasks, trivial in java/scala,
-but hard in Clojure - at least for a whimpy beginners :) Nevertheless
-Clojure seems like a really handy tool and I’d like to dive deeper into
-its ecosystem.</p>
-
-<h2>Source code</h2>
-
-<p>All of the sources for the game can be found here
-<a href="https://github.com/TouK/confitura-man">TouK/confitura-man</a>.</p>
-
-<p>The repository is split into two parts:</p>
-
-<ul>
-<li>game - HTML5 game</li>
-<li>server - clojure based backend server</li>
-</ul>
-
-
-<p>To run the server you need to have a local MongoDB installation. Than in
-server’s directory run:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ lein ring server-headless </span></code></pre></td></tr></table></div></figure>
-
-
-<p>This will start a server on <code>http://localhost:3000</code></p>
-
-<p>To run the game you need to install dependencies with bower and than
-run</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ grunt</span></code></pre></td></tr></table></div></figure>
-
-
-<p>from game’s directory.</p>
-
-<p>To launch the QR reading part of the game, you enter
-<code>http://localhost:9000/start.html</code>. After scanning the code you’ll be
-redirected to <code>http://localhost:9000/index.html</code> - and the game starts.</p>
-
-<h2>Conclusion</h2>
-
-<p>Summing up, it was a great experience creating the game. It was fun to
-watch people playing the game. And even with all those glitches and
-stupid graphics, there were people vigorously playing it, which was
-awesome.</p>
-
-<h2>Thanks to Rafał and Michał for great coding experience, and thanks to all the players of our stupid little game. If you’d like to ask me about anything - feel free to contact me by mail or twitter <a href="https://twitter.com/zygm0nt">@zygm0nt</a></h2>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Distributed scans with HBase]]></title>
+    <title type="html"><![CDATA[Distributed Scans With HBase]]></title>
     <link href="http://zygm0nt.github.com/blog/2013/12/10/distributed-scans-with-hbase/"/>
     <updated>2013-12-10T21:26:00+01:00</updated>
     <id>http://zygm0nt.github.com/blog/2013/12/10/distributed-scans-with-hbase</id>
@@ -472,82 +189,6 @@ results sorted by key.</p>
 
 <p>So, how to do this efficiently?</p>
 
-<!-- more -->
-
-
-<p>The usual way of getting data from HBase is with the help of its API,
-mainly Scan objects. To accomplish the task I&#8217;ll use just them. I&#8217;ll
-specify startRow and stopRow, so that each Scan request will be looking
-through only part of the key space.</p>
-
-<p>It is crucial to note, that this whole solution works because of key
-sorting properties in HBase. So, HBase scans a table according to ascending key
-values. Since keys are of String type, key with value &#8220;1&#8221; is smaller
-than &#8220;2&#8221;, because they are sorted lexicographicly. So, also key with value &#8220;12345&#8221; is smaller than &#8220;2&#8221;. I&#8217;ve
-leveraged this property so that I&#8217;ve partitioned my whole key space according to
-the first character of the key. In my case keys contain only digits. So I
-have 10 ranges:</p>
-
-<ul>
-<li>null-1</li>
-<li>1-2</li>
-<li>2-3</li>
-<li>3-4</li>
-<li>4-5</li>
-<li>5-6</li>
-<li>6-7</li>
-<li>7-8</li>
-<li>8-9</li>
-<li>9-null</li>
-</ul>
-
-
-<p>The speedup comes from the fact, that each range resides in its own
-partition. That&#8217;s right, I&#8217;ve presplit the table to have 10 partitions.
-This corresponds rather nicely with my cluster&#8217;s setup, because I have
-more than 10 RegionServers. So every partition should be on different
-RegionServer. It will allow the code to do the requested scan operations
-in parallel - giving me this exact performance boost.</p>
-
-<p>How I&#8217;ve created the input table:</p>
-
-<p><code></p>
-
-<p>$ create 'tariff_changes', { NAME => 'cf', SPLITS_FILE => 'splits.txt', VERSIONS => 50, MAX_FILESIZE => 1073741824 }</p>
-
-<p>$ alter 'tariff_changes', { NAME => 'cf', SPLITS_FILE => 'splits.txt', VERSIONS => 50, MAX_FILESIZE => 1073741824 }</p>
-
-<p></code></p>
-
-<p>Split file is just something along this lines:</p>
-
-<p><code>
-1
-2
-3
-4
-5
-6
-7
-8
-9
-0
-</code></p>
-
-<p>This tells HBase what are the rowKeys starting and ending each of the
-partitions.</p>
-
-<p>Ok, so after this rather lengthy introduction, what the actual code
-does? It just spins of a few threads - one for each partition - and runs
-a Scan request tailored to that partitions key space. This way, I got a
-10x speedup for this particular scan. The execution time went down from
-30 minutes to 3 for my use case.</p>
-
-<p>I&#8217;ve created an example implementation of this idea. You can find it on
-GitHub:
-<a href="https://github.com/zygm0nt/hbase-distributed-search">https://github.com/zygm0nt/hbase-distributed-search</a>.</p>
-
-<p>Any ideas on how to speed things up even more with HBase?</p>
 ]]></content>
   </entry>
   
@@ -568,129 +209,22 @@ those pains and fetch real objects from HBase.</p>
 for projects like <a href="https://github.com/impetus-opensource/Kundera">Kundera</a>
 (a JPA compliant solution), or <a href="https://code.google.com/p/n-orm/">n-orm</a>. Nevertheless, it just suits my needs :)</p>
 
-<!-- more -->
-
-
-<p>Project sources are hosted on GitHub: <a href="https://github.com/zygm0nt/hbase-annotations">https://github.com/zygm0nt/hbase-annotations</a></p>
-
-<p>To make use of this, you need to have an entity class with annotations:</p>
-
-<ul>
-<li>@Column - with argument specifying column family and column name, ie.
-@Column(&#8220;cf:column-name&#8221;)</li>
-<li>@Id - will store row key in this property,</li>
-<li>and optionaly @Value - for Spring Expression Language, in case you
-need to perform some extraction on the value.</li>
-</ul>
-
-
-<p><em>Annotations should be on setter methods.</em></p>
-
-<p>Now you have your model annotated and ready to be fetched from HBase.</p>
-
-<p>The actual work is done with a service class, that should extend class
-<a href="https://github.com/zygm0nt/hbase-annotations/blob/master/src/main/java/pl/touk/hadoop/hbase/BaseHadoopInteraction.java">BaseHadoopInteraction</a> just as class
-<a href="https://github.com/zygm0nt/hbase-annotations/blob/master/src/test/java/pl/touk/hadoop/hbase/SampleHBaseClient.java">SimpleHBaseClient</a> does.</p>
-
-<p>Then it is possible to just call:</p>
-
-<script src="https://gist.github.com/zygm0nt/7863407.js"></script>
-
-
-<p>Note that there are more methods you can use on BaseHadoopInteraction.
-You can also do:</p>
-
-<ul>
-<li>scan</li>
-<li>scan with key ranges</li>
-<li>delete</li>
-</ul>
-
-
-<p>What you won&#8217;t get from this simple ORM is:</p>
-
-<ul>
-<li>automatic object updating,</li>
-<li>nested objects,</li>
-<li>saving to HBase - &#8216;cause I didn&#8217;t have a need for that,</li>
-</ul>
-
-
-<p>Hope you&#8217;ll find this piece of code useful. If you see room for
-improvements while staying in project&#8217;s scope - please drop me a
-message.</p>
-
-<p>And if you are searching for a full-fledged ORM solution for interacting with HBase, just head
-straight to Kundera project website :)</p>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Recently at storm-users]]></title>
+    <title type="html"><![CDATA[Recently at Storm-users]]></title>
     <link href="http://zygm0nt.github.com/blog/2013/08/12/recently-at-storm-users/"/>
     <updated>2013-08-12T22:26:00+02:00</updated>
     <id>http://zygm0nt.github.com/blog/2013/08/12/recently-at-storm-users</id>
     <content type="html"><![CDATA[<p>I&#8217;ve been reading through storm-users Google Group recently. This
 resolution was heavily inspired by Adam Kawa&#8217;s post <a href="http://hakunamapdata.com/football-zero-apache-pig-hero-the-essence-from-hundreds-of-posts-from-apache-pig-user-mailing-list/">&#8220;Football zero, Apache Pig hero&#8221;</a>. Since I&#8217;ve encountered a lot of insightful and very interesting information I&#8217;ve decided to describe some of those in this post.</p>
 
-<!-- more -->
-
-
-<ul>
-<li><p>nimbus will work in HA mode - There&#8217;s a pull request open for it already&#8230; but some
-recent work (distributing topology files via Bittorrent) will greatly
-simplify the implementation. Once the Bittorrent work is done we&#8217;ll look
-at reworking the HA pull request. (<a href="https://github.com/nathanmarz/storm/pull/629">storm’s pull request</a>)</p></li>
-<li><p>pig on storm - Pig on Trident would be a cool and welcome project. Join
-and groupBy have very clear semantics there, as those concepts exist
-directly in Trident. The extensions needed to Pig are the concept of
-incremental, persistent state across batches (mirroring those concepts
-in Trident). You can read a complete <a href="https://cwiki.apache.org/confluence/display/PIG/Pig+on+Storm+Proposal">proposal</a>.</p></li>
-<li><p>implementing topologies in pure python with <a href="https://github.com/AirSage/Petrel">petrel</a> looks like this:</p></li>
-</ul>
-
-
-<blockquote><pre><code>class Bolt(storm.BasicBolt):
-    def initialize(self, conf, context):
-       ''' This method executed only once '''
-        storm.log('initializing bolt')
-
-    def process(self, tup):
-       ''' This method executed every time a new tuple arrived '''       
-       msg = tup.values[0]
-       storm.log('Got tuple %s' %msg)
-
-if __name__ == "__main__":
-    Bolt().run()
-</code></pre></blockquote>
-
-<ul>
-<li><p>Fliptop is happy with storm - see their presentation <a href="http://www.slideshare.net/robbiecheng/lesson-learned-of-twitter-storm">here</a></p></li>
-<li><p>topology metrics in 0.9.0: The new metrics feature allows you to collect
-arbitrarily custom metrics over fixed windows. Those metrics are
-exported to a metrics stream that you can consume by implementing
-<a href="https://github.com/nathanmarz/storm/blob/master/storm-core/src/jvm/backtype/storm/metric/api/IMetricsConsumer.java">IMetricsConsumer</a> and configure with <a href="https://github.com/nathanmarz/storm/blob/master/storm-core/src/jvm/backtype/storm/Config.java#L473">Config.java#L473</a>.
-Use <strong>TopologyContext#registerMetric</strong> to register new metrics.</p></li>
-<li><p>storm vs flume - some users&#8217; point of view: I use Storm and Flume and find that they are better at
-different things - it really depends on your use case as to which one is
-better suited. First and foremost, they were originally designed to do
-different things: Flume is a reliable service for collecting,
-aggregating, and moving large amounts of data from source to destination
-(e.g. log data from many web servers to HDFS). Storm is more for
-real-time computation (e.g. streaming analytics) where you analyse data
-in flight and don&#8217;t necessarily land it anywhere. Having said that,
-Storm is also fault-tolerant and can write to external data stores (e.g.
-HBase) and you can do real-time computation in Flume (using
-interceptors)</p></li>
-</ul>
-
-
-<p>That&#8217;s all for this day - however, I&#8217;ll keep on reading through storm-users, so watch this space for more info on storm development.</p>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Zookeeper + Curator = Distributed sync]]></title>
+    <title type="html"><![CDATA[Zookeeper + Curator = Distributed Sync]]></title>
     <link href="http://zygm0nt.github.com/blog/2013/06/23/zookeeper-curator/"/>
     <updated>2013-06-23T22:20:00+02:00</updated>
     <id>http://zygm0nt.github.com/blog/2013/06/23/zookeeper-curator</id>
@@ -814,7 +348,7 @@ public final class WorkerMetadata {
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Operational problems with Zookeeper]]></title>
+    <title type="html"><![CDATA[Operational Problems With Zookeeper]]></title>
     <link href="http://zygm0nt.github.com/blog/2013/03/21/zookeeper-tips/"/>
     <updated>2013-03-21T23:56:00+01:00</updated>
     <id>http://zygm0nt.github.com/blog/2013/03/21/zookeeper-tips</id>
@@ -996,7 +530,7 @@ ZOOKEEPER-1521</li>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[After WHUG meeting]]></title>
+    <title type="html"><![CDATA[After WHUG Meeting]]></title>
     <link href="http://zygm0nt.github.com/blog/2012/11/30/after-whug/"/>
     <updated>2012-11-30T22:20:00+01:00</updated>
     <id>http://zygm0nt.github.com/blog/2012/11/30/after-whug</id>
@@ -1011,7 +545,7 @@ src="http://zygm0nt.github.com//speakerdeck.com/assets/embed.js"></script>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[WHUG 8. Beyond Hadoop - checking other options]]></title>
+    <title type="html"><![CDATA[WHUG 8. Beyond Hadoop - Checking Other Options]]></title>
     <link href="http://zygm0nt.github.com/blog/2012/11/26/whug-8-beyond-hadoop/"/>
     <updated>2012-11-26T09:11:00+01:00</updated>
     <id>http://zygm0nt.github.com/blog/2012/11/26/whug-8-beyond-hadoop</id>
@@ -1037,7 +571,7 @@ Hadoop-em.</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Hadoop HA setup]]></title>
+    <title type="html"><![CDATA[Hadoop HA Setup]]></title>
     <link href="http://zygm0nt.github.com/blog/2012/10/30/hadoop-ha/"/>
     <updated>2012-10-30T12:40:00+01:00</updated>
     <id>http://zygm0nt.github.com/blog/2012/10/30/hadoop-ha</id>
@@ -1051,258 +585,11 @@ precursor of this solution.</p>
 
 <p>Read on to find out how to use it.</p>
 
-<!-- more -->
-
-
-<p>The most important weakness of previous Hadoop releases was the
-single-point-of-failure, which happend to be NameNode. NameNode as a key
-component of every Hadoop cluster, is responsible for managing
-filesystem namespace information and block location. Loosing its data results in loosing all the data
-stored on DataNodes. HDFS is no longer able to reach for specific files,
-or its blocks. This renders your cluster inoperable.</p>
-
-<p>So it is crucial to be able to detect and counter problems with NameNode.
-The most desirable behavior is to have a hot backup, that would ensure
-a no-downtime cluster operation. To achieve this, the second NameNode
-need to have up-to-date information on filesystem metadata and it needs
-to be also up and running. Starting NameNode with existing set of data
-may easily take many minutes to parse the actual filesystem state.</p>
-
-<p>Previously used solution - depoying SecondaryNameNode - was somewhat
-flawed. It took long time to recover after failure. It was not a
-hot-backup solution, which also added to the problem. Some other
-solution was required.</p>
-
-<p>So, what needed to be made redundant is the edits dir contents and
-sending block location maps from each of the DataNodes to NameNodes -
-in case of HA deployment - to both NameNodes. This was accomplished in
-two steps. The first one with the release of CDH 4 beta - solution based
-on sharing edits directory. Than, with CDH 4.1 came quorum based solution.</p>
-
-<p>Find out how to configure those on your cluster.</p>
-
-<h2>Shared edits directory solution</h2>
-
-<p><img src="http://blog.innovative-labs.com/blog/hadoop_ha-nfs.png" alt="Hadoop HA - NFS based edits share" /></p>
-
-<p>For this kind of setup, there is an assumption, that in a cluster exists
-a shared storage directory. It should be deployed using some kind of
-network-based filesystem. You could try with NFS or GlusterFS.</p>
-
-<div><script src='https://gist.github.com/3958555.js?file=core-site.xml'></script>
-<noscript><pre><code>&lt;property&gt;
-  &lt;name&gt;fs.default.name/name&gt;
-  &lt;value&gt;hdfs://example-cluster&lt;/value&gt;
-&lt;/property&gt;</code></pre></noscript></div>
-
-
-
-
-<div><script src='https://gist.github.com/3958555.js?file=hdfs-site.xml'></script>
-<noscript><pre><code>&lt;!-- common server name --&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.nameservices&lt;/name&gt;
-  &lt;value&gt;example-cluster&lt;/value&gt;
-&lt;/property&gt;
-
-&lt;!-- HA configuration --&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.ha.namenodes.example-cluster&lt;/name&gt;
-  &lt;value&gt;nn1,nn2&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.namenode.rpc-address.example-cluster.nn1&lt;/name&gt;
-  &lt;value&gt;master1:8020&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.namenode.rpc-address.example-cluster.nn2&lt;/name&gt;
-  &lt;value&gt;master2:8020&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.namenode.http-address.example-cluster.nn1&lt;/name&gt;
-  &lt;value&gt;0.0.0.0:50070&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.namenode.http-address.example-cluster.nn2&lt;/name&gt;
-  &lt;value&gt;0.0.0.0:50070&lt;/value&gt;
-&lt;/property&gt;
-
-&lt;!-- Storage for edits' files --&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.namenode.shared.edits.dir&lt;/name&gt;
-  &lt;value&gt;file:///mnt/filer1/dfs/ha-name-dir-shared&lt;/value&gt;
-&lt;/property&gt;
-
-&lt;!-- Client failover --&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.client.failover.proxy.provider.example-cluster&lt;/name&gt;
-  &lt;value&gt;org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider&lt;/value&gt;
-&lt;/property&gt;
-
-&lt;!-- Fencing configuration --&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.ha.fencing.methods&lt;/name&gt;
-  &lt;value&gt;sshfence&lt;/value&gt;
-&lt;/property&gt;
- &lt;property&gt;
-  &lt;name&gt;dfs.ha.fencing.ssh.private-key-files&lt;/name&gt;
-  &lt;value&gt;/home/user/.ssh/id_dsa&lt;/value&gt;
-&lt;/property&gt;
-
-
-&lt;!-- Automatic failover configuration --&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.ha.automatic-failover.enabled&lt;/name&gt;
-  &lt;value&gt;true&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-  &lt;name&gt;ha.zookeeper.quorum&lt;/name&gt;
-  &lt;value&gt;zk1:2181,zk2:2181,zk3:2181&lt;/value&gt;
-&lt;/property&gt;
-</code></pre></noscript></div>
-
-
-<p>This setup is quite OK, as long as you&#8217;re comfortable with maintaining a
-separate service (network storage) for handling the HA state. It seems
-error prone to me, because it adds another service which high
-availability should be ensured. NFS seems to be a bad choice here,
-because AFAIK it does not offer HA out of the box.</p>
-
-<p>On the other hand, we have GlusterFS, which is a distributed filesystem,
-you can deploy on multiple bricks and increase the replication level.</p>
-
-<p>Nevertheless, it still brings additional burden of another service to
-maintain.</p>
-
-<h2>Quorum based solution</h2>
-
-<p><img src="http://blog.innovative-labs.com/blog/hadoop_ha-quorum.png" alt="Hadoop HA - Quorum based edits share" /></p>
-
-<p>With the release of CDH 4.1.0 we are now able to use a much better
-integrated solution called JournalNode. Now all the updates are
-synchronized through a JournalNode. Each JournalNode have the same data
-and all the NameNodes are able to recive filesystem state updates from
-that daemons.</p>
-
-<p>This solution is much more consistent with Hadoop ecosystem.</p>
-
-<p>Please note, that the config is almost identical to the one needed for
-shared edits directory solution. The only difference is the value for
-<em>dfs.namenode.shared.edits.dir</em>. This now points to all the journal
-nodes deployed in our cluster.</p>
-
-<div><script src='https://gist.github.com/3973262.js?file=core-site.xml'></script>
-<noscript><pre><code>&lt;property&gt;
-  &lt;name&gt;fs.default.name/name&gt;
-  &lt;value&gt;hdfs://example-cluster&lt;/value&gt;
-&lt;/property&gt;</code></pre></noscript></div>
-
-
-
-
-<div><script src='https://gist.github.com/3973262.js?file=hdfs-site.xml'></script>
-<noscript><pre><code>&lt;!-- common server name --&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.nameservices&lt;/name&gt;
-  &lt;value&gt;example-cluster&lt;/value&gt;
-&lt;/property&gt;
-
-&lt;!-- HA configuration --&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.ha.namenodes.example-cluster&lt;/name&gt;
-  &lt;value&gt;nn1,nn2&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.namenode.rpc-address.example-cluster.nn1&lt;/name&gt;
-  &lt;value&gt;master1:8020&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.namenode.rpc-address.example-cluster.nn2&lt;/name&gt;
-  &lt;value&gt;master2:8020&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.namenode.http-address.example-cluster.nn1&lt;/name&gt;
-  &lt;value&gt;0.0.0.0:50070&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.namenode.http-address.example-cluster.nn2&lt;/name&gt;
-  &lt;value&gt;0.0.0.0:50070&lt;/value&gt;
-&lt;/property&gt;
-
-&lt;!-- Storage for edits' files --&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.namenode.shared.edits.dir&lt;/name&gt;
-  &lt;value&gt;qjournal://node1:8485;node2:8485;node3:8485/example-cluster&lt;/value&gt;
-&lt;/property&gt;
-
-&lt;!-- Client failover --&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.client.failover.proxy.provider.example-cluster&lt;/name&gt;
-  &lt;value&gt;org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider&lt;/value&gt;
-&lt;/property&gt;
-
-&lt;!-- Fencing configuration --&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.ha.fencing.methods&lt;/name&gt;
-  &lt;value&gt;sshfence&lt;/value&gt;
-&lt;/property&gt;
- &lt;property&gt;
-  &lt;name&gt;dfs.ha.fencing.ssh.private-key-files&lt;/name&gt;
-  &lt;value&gt;/home/user/.ssh/id_dsa&lt;/value&gt;
-&lt;/property&gt;
-
-
-&lt;!-- Automatic failover configuration --&gt;
-&lt;property&gt;
-  &lt;name&gt;dfs.ha.automatic-failover.enabled&lt;/name&gt;
-  &lt;value&gt;true&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-  &lt;name&gt;ha.zookeeper.quorum&lt;/name&gt;
-  &lt;value&gt;zk1:2181,zk2:2181,zk3:2181&lt;/value&gt;
-&lt;/property&gt;</code></pre></noscript></div>
-
-
-<h1>Infrastructure</h1>
-
-<p>In both cases you need to run Zookeeper-based Failover Controller
-(<em>hadoop-hdfs-zkfc</em>). This daemon negotiates which NameNode should
-become active and which standby.</p>
-
-<p>But that&#8217;s not all. Depending on the way you&#8217;ve choosen to deploy HA you
-need to do some other things:</p>
-
-<h2>Shared edits dir</h2>
-
-<p>With shared edits dir you need to deploy networked filesystem, and mount
-it on your NameNodes. After that you can run your cluster and be happy
-with your new HA.</p>
-
-<h2>Quroum based</h2>
-
-<p>For QJournal to operate you need to install one new package called
-<em>hadoop-hdfs-journalnode</em>. This provides startup scripts for Journal
-Node daemons. Choose at least three nodes that will be responsible for
-handling edits state and deploy journal nodes on them.</p>
-
-<h1>Conclusion</h1>
-
-<p>Thanks to guys from Cloudera we now can use an enterprise grade High
-Availability features for Hadoop. Eliminating the single point of
-failure in your cluster is essential for easy maintainability of your
-infrastructure.</p>
-
-<p>Given the above choices, I&#8217;d suggest using QJournal setup, becasue of
-its relatively small impact on the overal cluster architecture. It&#8217;s
-good performance and fairly simple setup enable the users to easily
-start using Hadoop in HA setup.</p>
-
-<p>Are you using Hadoop with HA? What are your impressions?</p>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[raspberry-pi]]></title>
+    <title type="html"><![CDATA[Raspberry-pi]]></title>
     <link href="http://zygm0nt.github.com/blog/2012/10/18/raspberry-pi/"/>
     <updated>2012-10-18T23:16:00+02:00</updated>
     <id>http://zygm0nt.github.com/blog/2012/10/18/raspberry-pi</id>
@@ -1473,7 +760,7 @@ blog? Any help would be greatly appreciated!</p></div>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[SoapUI ext libs and its weirdness]]></title>
+    <title type="html"><![CDATA[SoapUI Ext Libs and Its Weirdness]]></title>
     <link href="http://zygm0nt.github.com/blog/2011/11/02/soapui-ext-libs-and-its-weirdness/"/>
     <updated>2011-11-02T16:32:15+01:00</updated>
     <id>http://zygm0nt.github.com/blog/2011/11/02/soapui-ext-libs-and-its-weirdness</id>
@@ -1544,7 +831,7 @@ particular info for a long time. Thank you and best of luck.</p></div>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[What is NoSQL good for?]]></title>
+    <title type="html"><![CDATA[What Is NoSQL Good For?]]></title>
     <link href="http://zygm0nt.github.com/blog/2011/09/21/what-is-nosql-good-for/"/>
     <updated>2011-09-21T23:12:34+02:00</updated>
     <id>http://zygm0nt.github.com/blog/2011/09/21/what-is-nosql-good-for</id>
@@ -1761,7 +1048,7 @@ Other than that, nice post!</p></div>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[5 best things to do with your Kindle]]></title>
+    <title type="html"><![CDATA[5 Best Things to Do With Your Kindle]]></title>
     <link href="http://zygm0nt.github.com/blog/2011/08/23/5-best-things-to-do-with-your-kindle/"/>
     <updated>2011-08-23T00:19:14+02:00</updated>
     <id>http://zygm0nt.github.com/blog/2011/08/23/5-best-things-to-do-with-your-kindle</id>
@@ -1919,7 +1206,7 @@ W każdym razie polecam zakup, bo naprawdę warto - chyba że wolałbyś coś w 
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Great many ways to enjoy life!]]></title>
+    <title type="html"><![CDATA[Great Many Ways to Enjoy Life!]]></title>
     <link href="http://zygm0nt.github.com/blog/2011/08/08/great-many-ways-to-enjoy-life/"/>
     <updated>2011-08-08T00:44:39+02:00</updated>
     <id>http://zygm0nt.github.com/blog/2011/08/08/great-many-ways-to-enjoy-life</id>
@@ -1950,7 +1237,7 @@ This looks like a very nice art+video project. Look at those clips:
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[OVal - validate your models quickly and effortlessly!]]></title>
+    <title type="html"><![CDATA[OVal - Validate Your Models Quickly and Effortlessly!]]></title>
     <link href="http://zygm0nt.github.com/blog/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/"/>
     <updated>2011-07-14T10:25:19+02:00</updated>
     <id>http://zygm0nt.github.com/blog/2011/07/14/oval-validate-your-models-quickly-and-effortlessly</id>
@@ -2163,7 +1450,7 @@ Doea OVal handle variations / directions of validation?</p></div>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Geecon 2011 - day 2]]></title>
+    <title type="html"><![CDATA[Geecon 2011 - Day 2]]></title>
     <link href="http://zygm0nt.github.com/blog/2011/05/22/geecon-2011-day-2/"/>
     <updated>2011-05-22T18:39:31+02:00</updated>
     <id>http://zygm0nt.github.com/blog/2011/05/22/geecon-2011-day-2</id>

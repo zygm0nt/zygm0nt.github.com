@@ -8,8 +8,10 @@
   <title>Marcin bloguje</title>
   <meta name="author" content="Marcin Cylke">
 
+  <!-- Causes trouble with per-article font implementations under /source/_includes/article.html
   
-  <meta name="description" content="Wydawało się, że będzie to nudny film. Zacząłem go oglądać jedynie ze względu na Hopkinsa. Okazało się, że to świetny film, można powiedzieć nawet &hellip;">
+  <meta name="description" content="The World&#8217;s Fastest Indian Wydawało się, że będzie to nudny film. Zacząłem go oglądać jedynie ze względu na Hopkinsa. Okazało się, że to &hellip;">
+  -->
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,17 +20,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zygm0nt.github.com/blog/page/10/">
+  <link rel="canonical" href="http://zygm0nt.github.com/blog/page/10">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="Marcin bloguje" type="application/atom+xml">
-  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Poller+One" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Germania+One" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Fontdiner+Swanky" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Lato&subset=latin-ext" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Cardo&subset=latin-ext" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Sorts+Mill+Goudy" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Della+Respira" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=UnifrakturMaguntia&subset=all" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Arimo|EB+Garamond|PT+Sans+Caption&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   <script type="text/javascript">
@@ -38,47 +50,50 @@
 
     (function() {
       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
   </script>
 
 
 </head>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<logo>
 
-<body   >
+<img src="/logo.png" alt="Website Logo. Upload to /source/logo.png ; disable in /source/_includes/logo.html" height="32px" width="32px">
+</logo>
+
+
+
+<body >
   <header role="banner"><hgroup>
-  <div id="logo">
-  	<div id="logoLeft">{</div>
-  	<div id="logoText">mob</div>
-  	<div id="logoRight">}</div>
-  	<div class="clear"></div>
-  </div>
   <h1><a href="/">Marcin bloguje</a></h1>
   
     <h2>.impressions.memos.tech.</h2>
   
-  <div class="clear"></div>
 </hgroup>
 
 </header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:zygm0nt.github.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
+  <nav role="navigation"><ul class="main-navigation">
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
 </ul>
 
+<br>
+
+      
+        <form action="http://google.com/search" method="get">
+          <fieldset role="search">
+            <input type="hidden" name="q" value="site:zygm0nt.github.com" />
+      
+      
+            <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+          </fieldset>
+        </form>
+  
 </nav>
   <div id="main">
     <div id="content">
@@ -90,9 +105,7 @@
       
   <header>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2007/11/08/world-fastest-indian/">The World&#8217;s Fastest Indian</a></h1>
-      
+      <h1 class="entry-title" style="font-family: "><a href="/blog/2007/11/08/world-fastest-indian/">The World&#8217;s Fastest Indian</a></h1>
     
     
       <p class="meta">
@@ -102,20 +115,14 @@
 
 
 
-
-
-
-  
-
-
-<time datetime="2007-11-08T00:00:00+01:00" pubdate data-updated="true">Nov 8<span>th</span>, 2007</time>
+        
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
 <p>Wydawało się, że będzie to nudny film. Zacząłem go oglądać jedynie ze względu na Hopkinsa. Okazało się, że to świetny film, można powiedzieć nawet że film drogi. Bardzo fajna rola Anthonego Hopkinsa, który wciela się w postać miłośnika motocykli, który na swoim ukochanym Indianie próbuje jechać jak najszybciej się da. A wszystko to na końcu świata, w Nowej Zelandii. Jego mażeniem jest wybrać się do Bonnevile w USA, aby przetestować tam osiągi swego motocykla.</p> <p>Jak się okazało, jest to film oparty na faktach, taki człowiek naprawdę żył, co jest tym bardziej niesamowite. Polecam!</p> <a href="http://www.flickr.com/photos/zygm0nt/290679980/" title="Photo Sharing"><img class="centered" src="http://static.flickr.com/121/290679980_ecb1a72e34_o.jpg" width="400" height="275" alt="fastest_indian" /></a> <br/> <p class="graybox"> <a href="http://www.imdb.com/title/tt0412080/">The World&#8217;s Fastest Indian</a> (2006) <br/> Reżyser: <a href="http://www.imdb.com/name/nm0002044/">Roger Donaldson</a> <br/> Obsada: <a href="http://www.imdb.com/name/nm0000164/">Anthony Hopkins</a> <br/> </p></div>
 </div>
   
@@ -129,9 +136,7 @@
       
   <header>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2007/11/08/volver/">Volver</a></h1>
-      
+      <h1 class="entry-title" style="font-family: "><a href="/blog/2007/11/08/volver/">Volver</a></h1>
     
     
       <p class="meta">
@@ -141,20 +146,14 @@
 
 
 
-
-
-
-  
-
-
-<time datetime="2007-11-08T00:00:00+01:00" pubdate data-updated="true">Nov 8<span>th</span>, 2007</time>
+        
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
 <a href="http://www.flickr.com/photos/zygm0nt/384997365/" title="Photo Sharing"><img class="centered" src="http://farm1.static.flickr.com/136/384997365_5ac04ee817_o.jpg" width="425" height="250" alt="volver" /></a></div>
 </div>
   
@@ -168,9 +167,7 @@
       
   <header>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2007/11/08/v-for-vendetta/">V for Vendetta</a></h1>
-      
+      <h1 class="entry-title" style="font-family: "><a href="/blog/2007/11/08/v-for-vendetta/">V for Vendetta</a></h1>
     
     
       <p class="meta">
@@ -180,20 +177,14 @@
 
 
 
-
-
-
-  
-
-
-<time datetime="2007-11-08T00:00:00+01:00" pubdate data-updated="true">Nov 8<span>th</span>, 2007</time>
+        
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
 <p>Szacun&#8230;</p> <br/> <a href="http://www.flickr.com/photos/zygm0nt/258654620/" title="Photo Sharing"><img class="centered" src="http://static.flickr.com/94/258654620_91c6201d9f.jpg" width="356" height="500" alt="v_for_vendetta2" /></a> <br/> <p class="graybox"> <a href="http://www.imdb.com/title/tt0434409/">V for Vendetta</a> (2006) <br/> Reżyser: <a href="http://www.imdb.com/name/nm0574625/">James McTeigue</a> <br/> Obsada: <a href="http://www.imdb.com/name/nm0000204/">Natalie Portman</a>, <a href="http://www.imdb.com/name/nm0000457/">John Hurt</a> <br/> </p></div>
 </div>
   
@@ -207,9 +198,7 @@
       
   <header>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2007/11/08/united-93/">United 93</a></h1>
-      
+      <h1 class="entry-title" style="font-family: "><a href="/blog/2007/11/08/united-93/">United 93</a></h1>
     
     
       <p class="meta">
@@ -219,20 +208,14 @@
 
 
 
-
-
-
-  
-
-
-<time datetime="2007-11-08T00:00:00+01:00" pubdate data-updated="true">Nov 8<span>th</span>, 2007</time>
+        
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
 <p>Dosyć głośno było o tym filmie jeszcze jakiś czas temu. A wszystko to z powodu treści jakich dotyczy. Otóż jest to historia jednego z samolotów porwanych 11 września 2001, w dniu zamachów na na WTC. Historia jak najbardziej wymyślona, i bazująca jedynie na faktach, bo tak naprawdę nikt nie wie co się wydarzyło na pokładzie tego samolotu.</p> <p>Dodatkowo, w samym filmie wydarzeń z samego pokładu samolotu jest stosunkowo niewiel. Jest trochę restrospekcji na temat terrorystów. Jest też i trochę o całym wydarzeniu, 11.09 i zamieszaniu jakie miało wtedy miejsce w portach lotniczych i wierzach kontroli lotu.</p> <p>Fajnie, że pokazano to od strony pasażerów, nawet jeśli nie wiadomo, czy co kolwiek z tego jest prawdą, to wygląda wiarygodnie. Jednakże film jest nudnawy. Dużo jest scen związanych z obsługą naziemną, słabo oddany jest tragizm. Mimo, że chaos na pokładzie jest pokazany bardzo wyraziście, to jednak momentami nieporadność zamachowców wręcz śmieszy (ale to pewnie tyle, co można wynieść nie siedząc w takim samolocie).</p> <a href="http://www.flickr.com/photos/zygm0nt/274568319/" title="Photo Sharing"><img class="centered" src="http://static.flickr.com/112/274568319_8ada6d45c1_o.jpg" width="359" height="238" alt="united 93" /></a> <br> <p class="graybox"> <a href="http://www.imdb.com/title/tt0475276/">United 93</a> (2006) <br> Reżyser: <a href="http://www.imdb.com/name/nm0339030/">Paul Greengrass </a> <br> Obsada: serialowi aktorzy :) <br> </p></div>
 </div>
   
@@ -246,9 +229,7 @@
       
   <header>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2007/11/08/ultraviolet/">Ultraviolet</a></h1>
-      
+      <h1 class="entry-title" style="font-family: "><a href="/blog/2007/11/08/ultraviolet/">Ultraviolet</a></h1>
     
     
       <p class="meta">
@@ -258,20 +239,14 @@
 
 
 
-
-
-
-  
-
-
-<time datetime="2007-11-08T00:00:00+01:00" pubdate data-updated="true">Nov 8<span>th</span>, 2007</time>
+        
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
 <p>Milla Jovovich nie zagra już pewnie żadnej zwykłej, w miarę dobrej roli. Od czasu gdy najęła się do filmu Resident Evil spotkać ją można już tylko w takich dziwnych produkcjach. I o ile Resident Evil było nawet nawet, to Ultraviolet jest koszmarnie słaby.</p> <p>Jeśli kogoś ciekawi fabuła filmu, to jest sobie świat przyszłości, pogrążony w walce pomiędzy wampirami (hemofagi, czyli nie kto inny jak żywiące się krwią potworki), a ludźmi. Pojawia się jakaś dziwna &#8220;przesyłka&#8221;, która okazuje się małym chłopcem. W jego krwii mają znajdować się antyciała potrafiące zwalczyć chorobę jaką jest wampiryzm. I w sumie tyle, nic nie udaje się doprowadzić do końca, nie ma wyraźnego i rozstrzygającego jakiekolwiek problemy zakończenia. Nic.</p> <p>Jest za to dużo scen walki. Wręcz mnóstwo. Są efekty specjalne, całkiem ciekawie czasem pomyślane, ale widać wyraźnie, że zabrakło pieniędzy na ich porządne dopracowanie, bo często widać edycję komputerową.</p> <p>Mdły i nudny. Taki o niczym.</p> <a href="http://www.flickr.com/photos/zygm0nt/274735359/" title="Photo Sharing"><img class="centered" src="http://static.flickr.com/115/274735359_f8bb6468f0_o.jpg" width="450" height="300" alt="ultraviolet" /></a> <br> <p class="graybox"> <a href="http://www.imdb.com/title/tt0370032/">Ultraviolet</a> (2006) <br> Reżyser: <a href="http://www.imdb.com/name/nm0934483/">Kurt Wimmer </a> <br> Obsada: <a href="http://www.imdb.com/name/nm0000170/">Milla Jovovich</a>, <a href="http://www.imdb.com/name/nm1080974/">Cameron Bright</a>, <a href="http://www.imdb.com/name/nm0001209/">William Fichtner</a> <br> </p></div>
 </div>
   
@@ -285,9 +260,7 @@
       
   <header>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2007/11/08/tomcats/">Tomcats</a></h1>
-      
+      <h1 class="entry-title" style="font-family: "><a href="/blog/2007/11/08/tomcats/">Tomcats</a></h1>
     
     
       <p class="meta">
@@ -297,20 +270,14 @@
 
 
 
-
-
-
-  
-
-
-<time datetime="2007-11-08T00:00:00+01:00" pubdate data-updated="true">Nov 8<span>th</span>, 2007</time>
+        
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
 <p>Film ten opowiada o grupce kumpli, którzy są sporymi kobieciarzami, a do tego na pierwszym weselu członka paczki ustalają pewną zasadę: zakładają fundusz, na który będą wpłacać kasę. Ostatni kawaler spośród nich, dostaje całą sumę uzbieraną do tego czasu.</p> <p>Głupie, naiwne i obleśne. Stanowczo odradzam, bo to strata czasu.</p> <a href="http://www.flickr.com/photos/zygm0nt/265949733/" title="Photo Sharing"><img class="centered" src="http://static.flickr.com/97/265949733_19b3e8a459_o.jpg" width="450" height="275" alt="tomcats" /></a> <br/> <p class="graybox"> <a href="http://www.imdb.com/title/tt0246989/">Tomcats</a> (2001) <br/> Reżyser: <a href="http://www.imdb.com/name/nm0201304/">Gregory Poirier</a> <br/> Obsada: <a href="http://www.imdb.com/name/nm0005278/">Jerry O&#8217;Connell</a>, <a href="http://www.imdb.com/name/nm0002436/">Shannon Elizabeth</a>, <a href="http://www.imdb.com/name/nm0000998/">Jake Busey</a> <br/> </p></div>
 </div>
   
@@ -324,9 +291,7 @@
       
   <header>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2007/11/08/step-up/">Step Up</a></h1>
-      
+      <h1 class="entry-title" style="font-family: "><a href="/blog/2007/11/08/step-up/">Step Up</a></h1>
     
     
       <p class="meta">
@@ -336,20 +301,14 @@
 
 
 
-
-
-
-  
-
-
-<time datetime="2007-11-08T00:00:00+01:00" pubdate data-updated="true">Nov 8<span>th</span>, 2007</time>
+        
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
 <p>I mamy kolejny film o tańcu. Jako że aktualnie na topie są rytmy latino-disco-hip-hop-etc, to tutaj właśnie do takich cudów się fika. No cóż, jeśli muzycznie komuś to nie pasuje, to może sobie chociaż popatrzeć jak tańcują.</p> <p>Mamy tu niezbyt znanych aktorów, sporo tańca i wątki poboczne. Wszystko ładnie zmieszane. Dzięki temu dostajemy historyjkę o chopakach z getta. Jeden z nich w ramach odrabiania kary ma sprzątać w szkole pełnej artystów (po angielskiemu jest to School of Art, u nas raczej nic takiego nie ma). Całkiem przypadkiem zaczyna pomagać jednej z dziewczyn w jej występie tanecznym. No i się oczywiście w sobie zakochują. Duża część filmu kręci się wokół tego. Mamy szczęście nowopoznania, kryzys gdy wychodzi na jaw mały sekret, później próba pogodzenia się. Oczywiście, kończy się happy endem.</p> <p>Akcja nie zachwyca w żaden sposób. Można sobie jedynie popatrzeć jak tańczą&#8230; I chyba tyle. Ciekawym natomiast jest miejsce akcji. Chodzi o ową szkołę i ludzi skupionych wokół niej. Są naparwdę ładnie wkomponowanie w całość. I tyle.</p> <a href="http://www.flickr.com/photos/zygm0nt/251457485/"><img class="centered" src="http://static.flickr.com/79/251457485_031b992b14.jpg?v=0"></a> <br/> <p class="graybox"> <a href="http://www.imdb.com/title/tt0462590/">Step Up</a> (2006) <br/> Reżyser: <a href="http://www.imdb.com/name/nm0281945/"> Anne Fletcher</a><br/> Obsada: <a href="http://www.imdb.com/name/nm1475594/">Channing Tatum</a>, <a href="http://www.imdb.com/name/nm1564087/">Jenna Dewan</a>, <a href="http://www.imdb.com/name/nm1690482/"> Damaine Radcliff</a> <br/> </p></div>
 </div>
   
@@ -363,9 +322,7 @@
       
   <header>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2007/11/08/sommer-vorm-balkon/">Sommer Vorm Balkon</a></h1>
-      
+      <h1 class="entry-title" style="font-family: "><a href="/blog/2007/11/08/sommer-vorm-balkon/">Sommer Vorm Balkon</a></h1>
     
     
       <p class="meta">
@@ -375,20 +332,14 @@
 
 
 
-
-
-
-  
-
-
-<time datetime="2007-11-08T00:00:00+01:00" pubdate data-updated="true">Nov 8<span>th</span>, 2007</time>
+        
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
 <p>Film ten obejrzałem na auli wykładowej, z dvd, z rzutnika. Wydawało by się, że warunki świetne. I jasne, tyle że film był po niemiecku, z niemieckimi napisami. Całe szczęście, że dosyć sporo rozumiałem, a w trudniejszych momentach miałem wsparcie.</p> <p>Otóż film jest historią dwóch kobiet, samotnych. Jedna z nich wychowuje dziecko. A łączy je to, że są przyjaciółkami, robią na balkonie mieszkania należącego do jednej z nich głupie żarty, i piją sporo alkoholu. Przedstawia on całkiem codzienne życie owych pań. Jedna z nich opiekuje się starszymi ludźmi, z czym związanych jest kilka bardzo fajnych, i śmiesznych momentów. Druga szuka pracy, z czym ma spory problem. Pewnego razu prawie wpada pod samochód (TIR). Koleje losu sprawiają, że już niebawem jej koleżanka wyląduje w łóżku z kierowcą owego TIRa. I cóż, od łóżka to się dopiero zacznie. Facet pojawi się w filmie już na stałe. Nie prezentuje sobą nic, i to jest właśnie tak śmieszne. Postanawia zamieszkać u tej kobiety, i już (specjalnie nie przejmuje się jej zdaniem). Wiążą się z tym kolejne śmieszne fragmenty :)</p> <p>Niemieckie kino kojarzyło mi się do tej pory jedynie z kryminalnymi serialami typu &#8220;Komisarz Rex&#8221;, albo z filmami porno. Miło wiedzieć, że jednak potrafią robić dobre filmy. Szkoda, że nie wejdzie to do nas do kin, czy chociażby na DVD. Warto obejrzeć.</p> <a href="http://www.flickr.com/photos/zygm0nt/251457484/" title="Photo Sharing"><img class="centered" src="http://static.flickr.com/97/251457484_c8f4a51ca8_m.jpg" width="203" height="240" alt="sommer vorm balkon" /></a> <br/> <p class="graybox"> <a href="http://www.sommervormbalkon.de/">Sommer vorm Balkon</a> (2006) <br/> Reżyser: Andreas Dresden<br/> Obsada: Inka Friedrich, Nadja Uhl, Andreas Schmidt <br/> </p></div>
 </div>
   
@@ -402,9 +353,7 @@
       
   <header>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2007/11/08/serenity/">Serenity</a></h1>
-      
+      <h1 class="entry-title" style="font-family: "><a href="/blog/2007/11/08/serenity/">Serenity</a></h1>
     
     
       <p class="meta">
@@ -414,20 +363,14 @@
 
 
 
-
-
-
-  
-
-
-<time datetime="2007-11-08T00:00:00+01:00" pubdate data-updated="true">Nov 8<span>th</span>, 2007</time>
+        
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
 <p>Już dosyć sporo czasu upłynęło odkąd zachwycałem się serialem Firefly. Dziś trochę o jego pełnometrażowej kontynuacji. Film wyszedł spod ręki tego samego człowieka, który zajmował się serialem. Nadal mamy tu kowbojskie podejście do tematu podboju kosmosu. Statki itp są jak najbardziej sci-f&#8217;owe, ale juz zachowanie ludzi na planetach to typowy western. Przez analogię można każdą z takich planet przyrównać do miast dzikiego zachodu. Mimo to w filmie jest to troszkę mniej widoczne, serial w tym przodował.</p> <p>Film rozwija wątki znane z serialu. Akcja toczy się wokół Rivier, jednej z pasażerek zabranych przez Serenity. Okazuje się, że Sojusz wysyła za nią człowieka, który ma odzyskać mała - jest on dosyć bezwzględny, ale trzeba przyznać, że to facet z zasadami. W trakcie filmu wyjaśnia się kilka wątków, które pojawiły się tylko na chwilę w serialu. Generalnie, to niechciałbym zbyt dużo akcji zdradzać, bo mógłbym zepsuć zabawę tym którzy chcą obejrzeć. Ci którzy nie chcą i tak nie skorzystaliby z dalszego dopowiadania fabuły :-D Ważne, że cały scenariusz jest świetny, a pomysły w nim zawarte świeże. Całość wciąga.</p> <p>Wraz z nowym filmem dostaliśmy dalszy ciąg wspaniałych, mięsistych i pełnych życia bohaterów. Są dobrze zagrani i wspaniale zarysowani w fabule. To nie mdły Star Trek. Całość dzieje się we wszechświecie, który ma ogromny potencjał. Jest przemyślany i spójny - bardzo przypomina rozmachem ten z serialu Farscape. Polecam.</p> <a href="http://www.flickr.com/photos/zygm0nt/258383575/" title="Photo Sharing"><img class="centered" src="http://static.flickr.com/116/258383575_88a4c08748_o.png" width="450" height="443" alt="serenity-multi" /></a> <br/> <p class="graybox"> <a href="http://www.imdb.com/title/tt0379786/">Serenity</a> (2005) <br/> Reżyser: <a href="http://www.imdb.com/name/nm0923736/">Joss Whedon</a> <br/> Obsada: <a href="http://www.imdb.com/name/nm0277213/">Nathan Fillion</a>, <a href="http://www.imdb.com/name/nm0000284/">Adam Baldwin</a>, <a href="http://www.imdb.com/name/nm1132359/">Summer Glau</a>, <a href="http://www.imdb.com/name/nm0821612/">Jewel Staite</a> <br/> </p></div>
 </div>
   
@@ -441,9 +384,7 @@
       
   <header>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2007/11/08/sentinel/">The Sentinel</a></h1>
-      
+      <h1 class="entry-title" style="font-family: "><a href="/blog/2007/11/08/sentinel/">The Sentinel</a></h1>
     
     
       <p class="meta">
@@ -453,20 +394,14 @@
 
 
 
-
-
-
-  
-
-
-<time datetime="2007-11-08T00:00:00+01:00" pubdate data-updated="true">Nov 8<span>th</span>, 2007</time>
+        
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
 <p>Tym razem od reżysera filmu &#8220;S.W.A.T.&#8221;, który nie błysnął, dostajemy sensację na temat zamachu na prezydenta. Akcja filmu jak najbardziej na czasie, jeśli chodzi o wredne czarne charaktery, które mają się tego czynu podjąć. Otóż stoją za tym byli agenci KGB o pochodzeniu arabskim. Tak więc jak zwykle - terroryzm. Całe szczęście czujny Douglas, który gra tu ochroniarza w otoczeniu prezydenta, trafia na ślad spisku.</p> <p>Nie jest zbyt ambitnie, ale nie jest też zbyt głupio i naiwnie. Zdecydowanie znośnie. Nawet momentami ciekawa i wciągająca. Wreszcie jakąś rólkę dostała Kim Basinger, której od dawna nie było widać na ekranach. Towarzyszą jej Kiefer Sutherland, gwiazdka serialu &#8220;24 godziny&#8221;, oraz Eva Longoria, tym razem z serialu &#8220;Desperate Housewives&#8221;.</p> <p>Da się obejrzeć :-) </p> <a href="http://www.flickr.com/photos/zygm0nt/276062378/" title="Photo Sharing"><img class="centered" src="http://static.flickr.com/114/276062378_33b3bd3f93_o.jpg" width="450" height="300" alt="sentinel" /></a> <br> <p class="graybox"> <a href="http://www.imdb.com/title/tt0443632/">The Sentinel</a> (2006) <br> Reżyser: <a href="http://www.imdb.com/name/nm0424800/">Clark Johnson </a> <br> Obsada: <a href="http://www.imdb.com/name/nm0000140/">Michael Douglas</a>, <a href="http://www.imdb.com/name/nm0000662/">Kiefer Sutherland</a>, <a href="http://www.imdb.com/name/nm0519456/">Eva Longoria</a>, <a href="http://www.imdb.com/name/nm0000107/">Kim Basinger</a> <br> </p></div>
 </div>
   
@@ -477,101 +412,20 @@
   
   <div class="pagination">
     
-      <a class="prev" href="/blog/page/11/">&larr; Older</a>
+      <a class="prev" href="">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
-    <a class="next" href="/blog/page/9/">Newer &rarr;</a>
+    <a class="next" href="">Newer &rarr;</a>
     
   </div>
 </div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2016/04/29/scalar-conf-2016/">Scalar Conf 2016</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/02/20/lambda-days-2016/">Lambda Days 2016</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/01/22/ccc-interesting-videos/">32c3 most interesting videos</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/07/14/super-confitura-man/">Super Confitura Man</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/10/distributed-scans-with-hbase/">Distributed scans with HBase</a>
-      </li>
-    
-  </ul>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  
-  <a href="https://github.com/zygm0nt">@zygm0nt</a> on GitHub
-  
-  <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'zygm0nt',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-<section>
-  <h1>Latest Tweets</h1>
-  <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  <script type="text/javascript">
-    $.domReady(function(){
-      getTwitterFeed("zygm0nt", 4, false);
-    });
-  </script>
-  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
-  
-    <a href="http://twitter.com/zygm0nt" class="twitter-follow-button" data-show-count="false">Follow @zygm0nt</a>
-  
-</section>
-
-
-
-
-
-  
-</aside>
 
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2016 - Marcin Cylke -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+  Website copyright &copy; 2016 - Marcin Cylke |
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/TheChymera/Koenigspress">Königspress</a></span>
 </p>
 
 </footer>
@@ -585,7 +439,7 @@
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -601,7 +455,7 @@
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>

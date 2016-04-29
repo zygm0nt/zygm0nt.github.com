@@ -8,8 +8,10 @@
   <title>Marcin bloguje</title>
   <meta name="author" content="Marcin Cylke">
 
+  <!-- Causes trouble with per-article font implementations under /source/_includes/article.html
   
-  <meta name="description" content="Dziś na warsztacie biograficzny film o lordzie Rochester, niejakim Johnie Wilmot&#8217;ie. Widać z samego tytułu, że osobnik powinien być &hellip;">
+  <meta name="description" content="The Libertine Dziś na warsztacie biograficzny film o lordzie Rochester, niejakim Johnie Wilmot&#8217;ie. Widać z samego tytułu, że osobnik powinien &hellip;">
+  -->
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,17 +20,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zygm0nt.github.com/blog/page/12/">
+  <link rel="canonical" href="http://zygm0nt.github.com/blog/page/12">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="Marcin bloguje" type="application/atom+xml">
-  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Poller+One" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Germania+One" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Fontdiner+Swanky" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Lato&subset=latin-ext" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Cardo&subset=latin-ext" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Sorts+Mill+Goudy" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Della+Respira" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=UnifrakturMaguntia&subset=all" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Arimo|EB+Garamond|PT+Sans+Caption&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   <script type="text/javascript">
@@ -38,47 +50,50 @@
 
     (function() {
       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
   </script>
 
 
 </head>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<logo>
 
-<body   >
+<img src="/logo.png" alt="Website Logo. Upload to /source/logo.png ; disable in /source/_includes/logo.html" height="32px" width="32px">
+</logo>
+
+
+
+<body >
   <header role="banner"><hgroup>
-  <div id="logo">
-  	<div id="logoLeft">{</div>
-  	<div id="logoText">mob</div>
-  	<div id="logoRight">}</div>
-  	<div class="clear"></div>
-  </div>
   <h1><a href="/">Marcin bloguje</a></h1>
   
     <h2>.impressions.memos.tech.</h2>
   
-  <div class="clear"></div>
 </hgroup>
 
 </header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:zygm0nt.github.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
+  <nav role="navigation"><ul class="main-navigation">
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
 </ul>
 
+<br>
+
+      
+        <form action="http://google.com/search" method="get">
+          <fieldset role="search">
+            <input type="hidden" name="q" value="site:zygm0nt.github.com" />
+      
+      
+            <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+          </fieldset>
+        </form>
+  
 </nav>
   <div id="main">
     <div id="content">
@@ -90,9 +105,7 @@
       
   <header>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2007/11/08/libertine/">The Libertine</a></h1>
-      
+      <h1 class="entry-title" style="font-family: "><a href="/blog/2007/11/08/libertine/">The Libertine</a></h1>
     
     
       <p class="meta">
@@ -102,20 +115,14 @@
 
 
 
-
-
-
-  
-
-
-<time datetime="2007-11-08T00:00:00+01:00" pubdate data-updated="true">Nov 8<span>th</span>, 2007</time>
+        
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
 <p>Dziś na warsztacie biograficzny film o lordzie Rochester, niejakim Johnie Wilmot&#8217;ie. Widać z samego tytułu, że osobnik powinien być rozpustnikiem jakich mało. I tak też mamy w filmie pokazane. W roli lorda mamy Johnny&#8217;ego, który sprawuje się wyśmienicie w lokowanej peruce i stroju z epoki. Jak przystało na rozpustnika bardzo dużo miesza, obraża i uwodzi. Jako że zna króla, to dużo rzeczy uchodzi mu na sucho, jednakże nie zawsze i tylko do pewnego momentu - nie będę wyjawiał co i jak, bo jest w miarę to zabawne. Oprócz szokowania ów lord jest również niezwykłym znawcą teatru i aktorstwa - takie sprawia wrażenie, ale być może to tylko po to by dobrać się do kolejnej kobiety. Mimo tych moich wątpliwości jest to dobrze pokazany wątek, jedna z osi filmu.</p> <p>Jeśli ktoś by chciał obejrzeć to polecam śmiało, bo choć czasem nudnawy, to jednak wartościowy to film. Biografie mają to do siebie, że nie zawsze potrafią zając widza, a już napewno nie przez cały czas.</p> <p>Miłym akcentem jest efekt nadany obrazowi. Nie potrafię ocenić czy to efekt pochodzący z obiektywu kamery (filtr), czy może obróbka komputerowa, ale obraz jest niesamowicie ziarnisty, co nadaje dodatkowego uroku, daje wrażenie tajemniczości.</p> <a href="http://www.flickr.com/photos/zygm0nt/254305858/" title="Photo Sharing"><img class="centered" src="http://static.flickr.com/101/254305858_a3a9c1d17a_o.jpg" width="350" height="228" alt="libertine-350" /></a> <br/> <p class="graybox"> <a href="http://www.imdb.com/title/tt0375920/">The Libertine</a> (2004) <br/> Reżyser: <a href="http://www.imdb.com/name/nm1461380/">Laurence Dunmore</a><br/> Obsada: <a href="http://www.imdb.com/name/nm0000136/">Johnny Depp</a>, <a href="http://www.imdb.com/name/nm0000518/">John Malkovich</a> <br/> </p></div>
 </div>
   
@@ -129,9 +136,7 @@
       
   <header>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2007/11/08/la-leggenda-del-pianista-sull/">La Leggenda Del Pianista Sull&#8217;oceano</a></h1>
-      
+      <h1 class="entry-title" style="font-family: "><a href="/blog/2007/11/08/la-leggenda-del-pianista-sull/">La Leggenda Del Pianista Sull&#8217;oceano</a></h1>
     
     
       <p class="meta">
@@ -141,20 +146,14 @@
 
 
 
-
-
-
-  
-
-
-<time datetime="2007-11-08T00:00:00+01:00" pubdate data-updated="true">Nov 8<span>th</span>, 2007</time>
+        
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
 <p>Od dawna chciałem obejrzeć ten film. Przegapiłem jakiś czas temu jego emisję w telewizji. Wydawało się, że już go raczej nie zobaczę, albo będą z tym nie lada problemy. Aż tu pewnego dnia trafiłem na DVD z tym filmem w pewnym sklepie (a co! nie będzie kryptoreklamy) i się skusiłem. Film przeleżał na półce swoje, aż wreszcie trafił do odtwarzacza.</p> <p>Tytuł filmu to zarazem imię głównego bohatera, chłopca, który urodził się na statku i nie zszedł z niego do końca życia. Dosyć niezwykłe dzieje, trzeba przyznać. W roli głównej Tim Roth, a jego pełne imię i nazwisko to Danny Boodmann T.D. Lemon Nineteen Hundred 1900.</p> <p>1900 to z pozoru zwykły chłopak, na początku widzimy go przy kotłach i sypaniu do nich węgla, ale szybko &#8220;awansuje&#8221; on na członka zespołu, który umila podróż bogaczom z pierwszej klasy. Dostaje angaż pianisty, bo w tym jest mistrzem. Jest to film o muzyce, kawałek jest też o miłości (trochę dziwny), i jeszcze raz o muzyce. Mamy tu wielką emigrację z pozycji załogi statku wożącego ludzi do Nowego Świata.</p> <p>I o ile praktycznie cały film jest równy i dobry, to sama końcówka jest nudna i przegadana. Zniechęciła mnie.</p> <p>Ach i bym zapomniał! Muzyka Enio Mirricone!</p> <a href="http://www.flickr.com/photos/zygm0nt/265204801/" title="Photo Sharing"><img class="centered" src="http://static.flickr.com/107/265204801_c517eb0706_o.jpg" width="325" height="218" alt="1900" /></a> <br/> <p class="graybox"> <a href="http://www.imdb.com/title/tt0120731/">La Leggenda del pianista sull&#8217;oceano</a> (1998) <br/> Reżyser: <a href="http://www.imdb.com/name/nm0868153/">Giuseppe Tornatore</a> <br/> Obsada: <a href="http://www.imdb.com/name/nm0000619/">Tim Roth</a>, <a href="http://www.imdb.com/name/nm0638056/">Bill Nunn</a> <br/> </p></div>
 </div>
   
@@ -168,9 +167,7 @@
       
   <header>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2007/11/08/kebab-connection/">Kebab Connection</a></h1>
-      
+      <h1 class="entry-title" style="font-family: "><a href="/blog/2007/11/08/kebab-connection/">Kebab Connection</a></h1>
     
     
       <p class="meta">
@@ -180,20 +177,14 @@
 
 
 
-
-
-
-  
-
-
-<time datetime="2007-11-08T00:00:00+01:00" pubdate data-updated="true">Nov 8<span>th</span>, 2007</time>
+        
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
 <p>Pod tak dziwnym tytułem kryje się komedyjka niemieckiej produkcji, ale o bardzo tureckim zabarwieniu.</p> <p>Film prezentuje losy jednego takiego Turka, który chce zostać reżyserem filmowym, czy może kimś innym, ale o tym dalej. Zaczyna od robienia reklam dla sieci kebabów. Same reklamy są zdecydowanie bardzo pomysłowe i warte uwagi :) i zyskują bardzo dużą popularność, a co za tym idzie przyczyniają się do wzrostu popularności owej sieci restauracji. Pojawiają się inni chętni do takich reklam itp. Poza całym tym wątkiem reżyserskim mamy historię pary, wannabe-reżysera oraz jego dziewczyny.</p> <p>Bardzo chwytliwa opowieść, bardzo zabawna. Ciężko było mi sobie wyobrazić, że można zrobić film o kebabach. Widać można, i to z niezłym skutkiem. Akcja jest ciekawa, a bohaterowie barwni, i to głównie oni trzymają przy filmie.</p> <p>Obejrzenie tej produkcji nie było dla mnie łatwe, zdecydowanie nie! Widziałem to po niemiecku, którego to języka nie znam za specjalnie dobrze. Mimo to podobało mi się. Szkoda, że do Polski to nie dotrze.</p> <a href="http://www.flickr.com/photos/zygm0nt/349757814/" title="Photo Sharing"><img class="centered" src="http://farm1.static.flickr.com/143/349757814_b18899eae1_o.jpg" width="350" height="233" alt="kebab_connection" /></a> <br/> <p class="graybox"> <a href="http://www.imdb.com/title/tt0177882">Kebab Connection</a> (2005) <br/> Reżyser: <a href="http://www.imdb.com/name/nm1014347/">Sinan Akkus</a>, <a href="http://www.imdb.com/name/nm0766649/">Anno Saul</a> <br/> Obsada: <a href="http://www.imdb.com/name/nm0079301/">Emanuel Bettencourt</a>, <a href="http://www.imdb.com/name/nm1160560/">Nora Tschirner</a> <br/> </p></div>
 </div>
   
@@ -207,9 +198,7 @@
       
   <header>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2007/11/08/infernal-affairs-mou-gaan-dou/">Infernal Affairs - Mou Gaan Dou</a></h1>
-      
+      <h1 class="entry-title" style="font-family: "><a href="/blog/2007/11/08/infernal-affairs-mou-gaan-dou/">Infernal Affairs - Mou Gaan Dou</a></h1>
     
     
       <p class="meta">
@@ -219,20 +208,14 @@
 
 
 
-
-
-
-  
-
-
-<time datetime="2007-11-08T00:00:00+01:00" pubdate data-updated="true">Nov 8<span>th</span>, 2007</time>
+        
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
 <p>Miód! Poprostu cudowny film. Niby od małego się ogląda wszelkie filmy sensacyjne, o policjantach, o gangach, o czym sobie tylko człowiek nie zamarzy, a i tak nie wie czego się może jeszcze spodziewać. Tytułowy film jest sensacją pełną gębą. Nakręcony przez środowisko z Hong Kongu wybija się ponad inne popularne aktualnie produkcje. A czym się wybija? Otóż świeżością, nietypowym podejściem do tematu i realizacją.</p> <p>Film opowiada o walce tamtejszej policji (akcja oczywiście dzieje się w Hong Kongu) z mafią (Triada). Niby codzienność, ale tutaj jest to ukazane z pozycji zakamuflowanych informatorów po obu stronach barykady. Mamy tutaj policjanta w Triadzie, który pracuje już w ten sposób 7 rok, oraz członka Triady w policji. Nie wiedzą oczywiście, kto jest kto i na wzajem próbują odkryć swoją tożsamość. I nie, nie wychodzi z tego schizofreniczne bagno :)</p> <p>Nie ma tu widowiskowych efektów specjalnych, jest za to solidna akcja i wiele elektryzujących momentów. Scenariusz jest bardzo wiarygodny (jak dla mnie, oczywiście ;-) ). Dodam może tylko, że amerykanie szykują remake tego filmu. Ma się nazywać &#8220;The Departed&#8221;, czyli na nasze jakoś &#8220;Infiltrator&#8221; a robić go ma Martin Scorsese, a obsada to same gwiazdy.</p> <a href="http://www.flickr.com/photos/zygm0nt/254771088/" title="Photo Sharing"><img class="centered" src="http://static.flickr.com/99/254771088_2986cd8da2_o.jpg" width="400" height="300" alt="infernal_affairs_400" /></a> <br/> <p class="graybox"> <a href="http://www.imdb.com/title/tt0338564/">Infernal Affairs - Mou gaan dou</a> (2002) <br/> Reżyser: <a href="http://www.imdb.com/name/nm0490487/">Wai Keung Lau</a>, <a href="http://www.imdb.com/name/nm0538320/">Siu Fai Mak</a> <br/> Obsada: <a href="http://www.imdb.com/name/nm0504897/">Tony Leung Chiu Wai</a> <br/> </p></div>
 </div>
   
@@ -246,9 +229,7 @@
       
   <header>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2007/11/08/illusionist/">The Illusionist</a></h1>
-      
+      <h1 class="entry-title" style="font-family: "><a href="/blog/2007/11/08/illusionist/">The Illusionist</a></h1>
     
     
       <p class="meta">
@@ -258,20 +239,14 @@
 
 
 
-
-
-
-  
-
-
-<time datetime="2007-11-08T00:00:00+01:00" pubdate data-updated="true">Nov 8<span>th</span>, 2007</time>
+        
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
 <p>Wreszcie, po dosyć długiej przerwie pojawił się kolejny film z Edwardem Nortonem w roli głównej. Tym razem zagrał on iluzjonistę, a akcja całej historii ma miejsce w Wiedniu. Czas akcji, to bodajże XIX wiek. Fajnie pokazane miasto robi wrażenie, choć tu od razu przyczepię się do tego, że tak naprawdę pokazano tylko drobne wycinki. Zabrakło jakiejś sceny z rozmachem, do pokazania architektury.</p> <p>No ale wracając do akcji filmu, jest ona ciekawa, ale nie wprowadza specjalnych nowości. Edward, grając iluzjonistę Eisenheima jest zakochany w przyszłej żonie księdzia Leopolda. Dama, pomimo pochodzenia z wyższego stanu i przez to niedostępna oficjalnie dla poczciwego magika, odwzajemnia to uczucie. I tu zaczyna się &#8220;potyczka&#8221;, gdyż Eisenheim próbuje w jakiś sposób wyrwać kobietę spod wpływu księdzia.</p> <p>W tym celu posługuje się sprytnie zaplanowanym ciągiem wydarzeń, które mają mu pomóc wywieźć pannę z miasta i z kraju. Plan ma oczywiście podłoże &#8220;magiczne&#8221;, czyli do akcji wchodzą sztuczki iluzjonisty. Z tym że cała akcja wygląda prawie jak Ocean&#8217;s Eleven, tyle że w innej epoce. Ach no i czasem troszkę zbytnio to się romansidłowate robi.</p> <p>Jeśli chodzi o grę aktorów, to jest jaka jest. Bez zachwytów. Plus za osobę, która ciągle je :) (to taka moja mała obserwacja)</p> <p>Dostalismy zgrabną łamigłówkę, która sama w sobie jest fajna i przyjemna, ale nie może się równać z wypuszczonym w tym samym czasie filmem &#8220;The Prestige&#8221;. Takie życie.</p> <a href="http://www.flickr.com/photos/zygm0nt/394094246/" title="Photo Sharing"><img class="centered" src="http://farm1.static.flickr.com/175/394094246_5cbedf9ed8_o.jpg" width="320" height="209" alt="the illusionist" /></a> <br/> <p class="graybox"> <a href="http://imdb.com/title/tt0443543">The Ullusionist</a> (2006) <br/> Reżyser: <a href="http://imdb.com/name/nm1139726/">Neil Burger</a> <br/> Obsada: <a href="http://imdb.com/name/nm0001570/">Edward Norton</a>, <a href="http://imdb.com/name/nm0316079/">Paul Giamatti</a>, <a href="http://imdb.com/name/nm0004754/">Jessica Biel</a>, <a href="http://imdb.com/name/nm0001722/">Rufus Sewell</a> <br/> </p></div>
 </div>
   
@@ -285,9 +260,7 @@
       
   <header>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2007/11/08/idiocracy/">Idiocracy</a></h1>
-      
+      <h1 class="entry-title" style="font-family: "><a href="/blog/2007/11/08/idiocracy/">Idiocracy</a></h1>
     
     
       <p class="meta">
@@ -297,20 +270,14 @@
 
 
 
-
-
-
-  
-
-
-<time datetime="2007-11-08T00:00:00+01:00" pubdate data-updated="true">Nov 8<span>th</span>, 2007</time>
+        
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
 <p>Ludzie! Czytajcie ksiązki, gazety, oglądajcie mądre filmy, myślcie. Bo jak nie to czeka nas to co w tym filmie pokazane :P</p> <p>No.. Trochę koloryzuję. </p> <p>Joe miał przeciętną pracę w wojsku, był bibliotekarzem i nic nie robił całymi dniami. Więc wojsko wybrało go do eksperymentu z hibernacją. Kilka rzeczy poszło nie tak i Joe budzi się kilka stuleci później, w świecie idiotów. Jako że jest tam najmądrzejszym człowiekiem to zostaje nawet prezydentem.</p> <p>Zapychacz czasu. Głupi, marny, ratuje jedynie ten film dosyć fajny duet głównych bohaterów. Nie żeby coś nadzwyczajnego jednak.</p> <a href="http://www.flickr.com/photos/zygm0nt/373345085/" title="Photo Sharing"><img class="centered" src="http://farm1.static.flickr.com/161/373345085_58f1773197_o.jpg" width="381" height="250" alt="lcl_idiocracy" /></a> <br/> <p class="graybox"> <a href="http://www.imdb.com/title/tt0387808">Idiocracy</a> (2006) <br/> Reżyser: <a href="http://www.imdb.com/name/nm0431918/">Mike Judge</a> <br/> Obsada: <a href="http://www.imdb.com/name/nm0005561/">Luke Wilson</a>, <a href="http://www.imdb.com/name/nm0748973/">Maya Rudolph</a>, <a href="http://www.imdb.com/name/nm1009277/">Dax Shepard (kretyn!)</a> <br/> </p></div>
 </div>
   
@@ -324,9 +291,7 @@
       
   <header>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2007/11/08/hoodwinked/">Hoodwinked!</a></h1>
-      
+      <h1 class="entry-title" style="font-family: "><a href="/blog/2007/11/08/hoodwinked/">Hoodwinked!</a></h1>
     
     
       <p class="meta">
@@ -336,20 +301,14 @@
 
 
 
-
-
-
-  
-
-
-<time datetime="2007-11-08T00:00:00+01:00" pubdate data-updated="true">Nov 8<span>th</span>, 2007</time>
+        
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
 <p>W tym przypadku do czynienia mamy z bajeczką opowiadającą historię Czerwonego Kapturka. Zachodzi przestępstwo - czyli cała sytuacja w domku babci (z wilkiem itp.), zjawia się policja i bada zaistniałą sytuację. Kto co zrobił, jak to zrobił i czy powinien to zrobić. Dosyć niekonwencjonalne podejście do bajek, choć wydaje się lekką kopią Shreka, z przeniesieniem rzeczywistych służb i zachowań (jak właśnie policja) do świata bajek.</p> <p>Tak naprawdę nie wiadomo do kogo skierowana jest ta bajeczka. Bo dla dzieci trochę zbyt powikłana i dziwna, a dla dorosłych zbyt słaba - mało ciekawej akcji, niezbyt śmieszna. I jak tu zdecydować?</p> <p>Mi się nie podobała. Pomieszanie z poplątaniem.</p> <a href="http://www.flickr.com/photos/zygm0nt/368835451/" title="Photo Sharing"><img src="http://farm1.static.flickr.com/118/368835451_de703e9f78_o.jpg" width="444" height="250" alt="hoodwinked" /></a> <br/> <p class="graybox"> <a href="http://www.imdb.com/title/tt0443536">Hoodwinked!</a> (2005) <br/> Reżyser: <a href="http://www.imdb.com/name/nm0249897/">Cory Edwards</a> <br/> Obsada: to film animowany!!! <br/> </p></div>
 </div>
   
@@ -363,9 +322,7 @@
       
   <header>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2007/11/08/hills-have-eyes/">The Hills Have Eyes</a></h1>
-      
+      <h1 class="entry-title" style="font-family: "><a href="/blog/2007/11/08/hills-have-eyes/">The Hills Have Eyes</a></h1>
     
     
       <p class="meta">
@@ -375,20 +332,14 @@
 
 
 
-
-
-
-  
-
-
-<time datetime="2007-11-08T00:00:00+01:00" pubdate data-updated="true">Nov 8<span>th</span>, 2007</time>
+        
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
 <p>Argh!! Kolejny remake, ileż można!</p> <p>Rodzinka wyrusza sobie na wakacje samochodem z przyczepą. Jadą do słonecznej Kalifornii przecinając równie słoneczną pustynię. Przypadkiem skręcają z właściwej drogi szukajac skrótu, co okazuje się niezyt trafionym pomysłem. Okazuje się, że na pustyni żyją ludzie, nie do końca normalni, którzy zaczynają na nich polować. W trakcie filmu okazuje się, że owi ludzie to dzieci z mutacjami popromiennymi, gdyż na owej pustyni rząd przeprowadzał próby nuklearne. Swoją drogą ciekawy to pomysł, aby wpleść taki wątek do filmu (świetna scena krajobrazu pustyni porytej kraterami po wybuchach nuklearnych).</p> <p>Problem tylko w tym, że sensowny pomysł służy jedynie temu, aby zbudować scenerię do bezsensownej rzezi. Dużo gore. Dużo krwi się leje, jak dla mnie nawet trochę za dużo.</p> <p>Nawet nie głupio pomyślane. Zobaczymy co będzie w drugiej części, która już jest w produkcji ;-)</p> <a href="http://www.flickr.com/photos/zygm0nt/278131937/" title="Photo Sharing"><img class="centered" src="http://static.flickr.com/117/278131937_557aa9c860_o.jpg" width="444" height="293" alt="hills-have-eyes" /></a> <br/> <p class="graybox"> <a href="http://www.imdb.com/title/tt0454841/">The Hills Have Eyes</a> (2006) <br/> Reżyser: <a href="http://www.imdb.com/name/nm0014960/">Alexandre Aja</a> <br/> Obsada: <a href="http://www.imdb.com/name/nm0505971/">Ted Levine</a>, <a href="http://www.imdb.com/name/nm0211087/">Emilie de Ravin</a> <br/> </p></div>
 </div>
   
@@ -402,9 +353,7 @@
       
   <header>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2007/11/08/hable-con-ella-talk-to-her/">Hable Con Ella (Talk to Her)</a></h1>
-      
+      <h1 class="entry-title" style="font-family: "><a href="/blog/2007/11/08/hable-con-ella-talk-to-her/">Hable Con Ella (Talk to Her)</a></h1>
     
     
       <p class="meta">
@@ -414,20 +363,14 @@
 
 
 
-
-
-
-  
-
-
-<time datetime="2007-11-08T00:00:00+01:00" pubdate data-updated="true">Nov 8<span>th</span>, 2007</time>
+        
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
 <a href="http://www.flickr.com/photos/zygm0nt/384997366/" title="Photo Sharing"><img  class="centered" src="http://farm1.static.flickr.com/137/384997366_9aed536284_o.jpg" width="430" height="355" alt="hable con ella" /></a></div>
 </div>
   
@@ -441,9 +384,7 @@
       
   <header>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2007/11/08/employee-of-month-2004-vs-2006/">Employee of the Month: 2004 vs 2006</a></h1>
-      
+      <h1 class="entry-title" style="font-family: "><a href="/blog/2007/11/08/employee-of-month-2004-vs-2006/">Employee of the Month: 2004 vs 2006</a></h1>
     
     
       <p class="meta">
@@ -453,20 +394,14 @@
 
 
 
-
-
-
-  
-
-
-<time datetime="2007-11-08T00:00:00+01:00" pubdate data-updated="true">Nov 8<span>th</span>, 2007</time>
+        
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content" style="font-family: ; font-size: "><div class='post'>
 <p>W dzisiejszym odcinku proponuję małe porównanie. Na warsztat biorę dwa filmy o tym samym tytule, ale z różnych lat. Różnica może nie wydaje się zbyt duża, bo to w końcu tylko dwa lata. Jeden z filmów, o tytule &#8220;Employee of the Month&#8221; został nakręcony w 2004 roku, natomiast ten drugi, czyli &#8220;Employee of the Month&#8221; datuje się na 2006. Niby tylko dwa lata, a różnica w treści diametralna.</p> <p>Tak więc po koleji. Najpierw film z 2006 roku, gdyż to jego obejrzałem jako pierwszego. Jest to głupawa komedyjka o Zacku, który pracuje w wielkim supermarkecie i jak ognia unika wszelkich awansów. Ma ku temu jakieś tam swoje powody, których i tak na początku nie znamy. Ma swoich kolegów z pracy, z którymi pije piwo również w czasie wolnym. Ma również całkiem dobrą posadkę, której nie chce zmieniać. Aż do czasu, gdy pojawia się &#8220;na sklepie&#8221; nowa kasjerka. Zack znajduje trudnym zainteresowanie jej swoją osobą. Okazuje się, że Amy, bo tak ma dziewoja na imię, leci raczej na Vinca, służbistę i posiadacza kilkunastu tytułów pracownika miesiąca. Niewiele myśląc Zack postanawia zarwać do pani kasjerki i sam zostaje kasjerem&#8230;</p> <p>Jest sztucznie, czasem odrobinę śmiesznie. Mamy tu słabą obsadę, w roli Amy zobaczyć można Jessice Simpson, która niestety nie ma nic wspólnego z tymi kreskówkami. Film wydaje się zrobiony jedynie dla jej osoby, bo reszta jest mizerna. Nawet mimo tego, że Dane Cook, to dosyć obiecujący aktor i może nadałby się na jakiegoś czarnego charaktera, to niestety tutaj ma nędzną rolę.</p> <p>Czyli słabizna.</p> <a href="http://www.flickr.com/photos/zygm0nt/384956437/" title="Photo Sharing"><img class="centered" src="http://farm1.static.flickr.com/131/384956437_fed0ecec23_o.jpg" width="450" height="332" alt="2006_employee_of_the_month" /></a> <p>Z drugiej strony natomiast mamy film o takim samym tytule, tyle że z 2004 roku. Film błyszczy. Nie żeby był wybitny, ale w stosunku do opisanego wcześniej &#8220;arcydzieła&#8221;, oglądanie tej wtórnej dosyć produkcji było przyjemnością.</p> <p>No ale od początku. Film opowiada historię faceta, który miał wszystko i to stracił w jeden dzień: praca, kobieta, dom, pieniądze, itp. W trakcie tej retrospektywnej wycieczki poznajemy jego perypetie ze znajomymi, oglądamy jego dzień w pracy i jeszcze lepiej poznajemy jego znajomych.. Wszystko fajnie się układa, fabuła się kręci, wątki rozwijają. Tyle że w pewnym momencie wszystko przestaje być takie jak się wydawało, co mniej więcej oznacza, że David, bo tak na imię ma główny bohater, nie jest tym za kogo go od początku uważaliśmy.</p> <p>Więcej akcji nie chciałbym zdradzać ze względu na możliwość spalenia całego filmu. Wykorzystano tu powszechny od jakiegoś czasu motyw: jeśli myślisz, że coś się stanie, to zrobimy coś czego się nie spodziewałeś, a wszelkie małe elementy, które nie pasowały Ci do tej pory od razu wpadną na swoje miejsce. Takie puzzle, tyle że na ekranie. Nie jest to wybieg nowy, nie powala na kolana, ale oferuje miłą rozrywkę w nierażącej scenografii. Widać, że to faktycznie mogło mieć miejsce :) (oczywiście w USA).</p> <a href="http://www.flickr.com/photos/zygm0nt/384956438/" title="Photo Sharing"><img class="centered" src="http://farm1.static.flickr.com/179/384956438_c1c7b5dc5b_o.jpg" width="446" height="192" alt="employee_of_the_month_2004" /></a> <p>Tak więc drodzy czytelnicy, jeśli chcielibyście oglądać film &#8220;Employee of the Month&#8221; to sięgnijcie po ten z roku 2004, nie powinniście się zbytnio zawieść :-)</p> <br> <p class="graybox"> <a href="http://www.imdb.com/title/tt0362590/">Employee of the Month</a> (2004) <br> Reżyser: <a href="http://www.imdb.com/name/nm0745861/">Mitch Rouse</a> <br> Obsada: <a href="http://www.imdb.com/name/nm0000369/">Matt Dillon</a>, <a href="http://www.imdb.com/name/nm0001872/">Steve Zahn</a>, <a href="http://www.imdb.com/name/nm0000775/">Christina Applegate</a> <br> <br> <p class="graybox"> <a href="http://www.imdb.com/title/tt0424993/">Employee of the Month</a> (2006) <br> Reżyser: <a href="http://www.imdb.com/name/nm0177637/">Greg Coolidge</a> <br> Obsada: <a href="http://www.imdb.com/name/nm0176981/">Dane Cook</a>, <a href="http://www.imdb.com/name/nm0005433/">Jessica Simpson</a>, <a href="http://www.imdb.com/name/nm1009277/">Dax Shepard</a> <br></div>
 </div>
   
@@ -477,101 +412,20 @@
   
   <div class="pagination">
     
-      <a class="prev" href="/blog/page/13/">&larr; Older</a>
+      <a class="prev" href="">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
-    <a class="next" href="/blog/page/11/">Newer &rarr;</a>
+    <a class="next" href="">Newer &rarr;</a>
     
   </div>
 </div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2016/04/29/scalar-conf-2016/">Scalar Conf 2016</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/02/20/lambda-days-2016/">Lambda Days 2016</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/01/22/ccc-interesting-videos/">32c3 most interesting videos</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/07/14/super-confitura-man/">Super Confitura Man</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/10/distributed-scans-with-hbase/">Distributed scans with HBase</a>
-      </li>
-    
-  </ul>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  
-  <a href="https://github.com/zygm0nt">@zygm0nt</a> on GitHub
-  
-  <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'zygm0nt',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-<section>
-  <h1>Latest Tweets</h1>
-  <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  <script type="text/javascript">
-    $.domReady(function(){
-      getTwitterFeed("zygm0nt", 4, false);
-    });
-  </script>
-  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
-  
-    <a href="http://twitter.com/zygm0nt" class="twitter-follow-button" data-show-count="false">Follow @zygm0nt</a>
-  
-</section>
-
-
-
-
-
-  
-</aside>
 
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2016 - Marcin Cylke -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+  Website copyright &copy; 2016 - Marcin Cylke |
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/TheChymera/Koenigspress">Königspress</a></span>
 </p>
 
 </footer>
@@ -585,7 +439,7 @@
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -601,7 +455,7 @@
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: hadoop | Marcin bloguje]]></title>
+  <title><![CDATA[Category: Hadoop | Marcin bloguje]]></title>
   <link href="http://zygm0nt.github.com/blog/categories/hadoop/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2016-04-29T22:29:49+02:00</updated>
+  <updated>2016-04-29T22:38:38+02:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Distributed scans with HBase]]></title>
+    <title type="html"><![CDATA[Distributed Scans With HBase]]></title>
     <link href="http://zygm0nt.github.com/blog/2013/12/10/distributed-scans-with-hbase/"/>
     <updated>2013-12-10T21:26:00+01:00</updated>
     <id>http://zygm0nt.github.com/blog/2013/12/10/distributed-scans-with-hbase</id>
@@ -184,7 +184,7 @@ straight to Kundera project website :)</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Zookeeper + Curator = Distributed sync]]></title>
+    <title type="html"><![CDATA[Zookeeper + Curator = Distributed Sync]]></title>
     <link href="http://zygm0nt.github.com/blog/2013/06/23/zookeeper-curator/"/>
     <updated>2013-06-23T22:20:00+02:00</updated>
     <id>http://zygm0nt.github.com/blog/2013/06/23/zookeeper-curator</id>
@@ -442,7 +442,7 @@ usage examples are in my github repo at &lt;/span&gt;&lt;span class="c5"&gt;&lt;
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Operational problems with Zookeeper]]></title>
+    <title type="html"><![CDATA[Operational Problems With Zookeeper]]></title>
     <link href="http://zygm0nt.github.com/blog/2013/03/21/zookeeper-tips/"/>
     <updated>2013-03-21T23:56:00+01:00</updated>
     <id>http://zygm0nt.github.com/blog/2013/03/21/zookeeper-tips</id>
@@ -624,7 +624,7 @@ ZOOKEEPER-1521</li>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[After WHUG meeting]]></title>
+    <title type="html"><![CDATA[After WHUG Meeting]]></title>
     <link href="http://zygm0nt.github.com/blog/2012/11/30/after-whug/"/>
     <updated>2012-11-30T22:20:00+01:00</updated>
     <id>http://zygm0nt.github.com/blog/2012/11/30/after-whug</id>

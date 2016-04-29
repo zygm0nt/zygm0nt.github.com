@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: relacja | Marcin bloguje]]></title>
+  <title><![CDATA[Category: Relacja | Marcin bloguje]]></title>
   <link href="http://zygm0nt.github.com/blog/categories/relacja/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2016-04-29T22:29:49+02:00</updated>
+  <updated>2016-04-29T22:38:38+02:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Geecon 2011 - day 2]]></title>
+    <title type="html"><![CDATA[Geecon 2011 - Day 2]]></title>
     <link href="http://zygm0nt.github.com/blog/2011/05/22/geecon-2011-day-2/"/>
     <updated>2011-05-22T18:39:31+02:00</updated>
     <id>http://zygm0nt.github.com/blog/2011/05/22/geecon-2011-day-2</id>
@@ -369,7 +369,7 @@ talks were nice enough :) for a hobbist like me.</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[6+ hour layover in Stockholm]]></title>
+    <title type="html"><![CDATA[6+ Hour Layover in Stockholm]]></title>
     <link href="http://zygm0nt.github.com/blog/2010/08/13/6-hour-layover-in-stockholm/"/>
     <updated>2010-08-13T00:22:01+02:00</updated>
     <id>http://zygm0nt.github.com/blog/2010/08/13/6-hour-layover-in-stockholm</id>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: scala | Marcin bloguje]]></title>
+  <title><![CDATA[Category: Scala | Marcin bloguje]]></title>
   <link href="http://zygm0nt.github.com/blog/categories/scala/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2016-04-29T22:29:49+02:00</updated>
+  <updated>2016-04-29T22:38:38+02:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -20,7 +20,7 @@
     <id>http://zygm0nt.github.com/blog/2016/04/29/scalar-conf-2016</id>
     <content type="html"><![CDATA[<p>Scalar Conf 2016</p>
 
-<p><img src="assets/POLIN-Museum-of-the-History-of-Polish-Jews-int02.jpg" alt="Polin museum - interior" /></p>
+<p><img src="/assets/POLIN-Museum-of-the-History-of-Polish-Jews-int02.jpg" alt="Polin museum - interior" /></p>
 
 <p>This small conference had its third installment in (http://www.polin.pl/en)[Polin - Museum of the History of Polish Jews]. Organizing Scala conference isn't that obvious and having that kind of attention is really great - all the foreign speakers, etc.</p>
 
@@ -31,21 +31,21 @@
 
 <h3>Having a cake ... - by Paweł Szulc</h3>
 
-<p>A keynote about typeclasses. I've read the slides before the presentation  -and they are available (http://www.slideshare.net/paulszulc/introduction-to-type-classes-in-30-min)[here], so it wasn't new to me. But I'd strongly recommend to watch this talk.</p>
+<p>A keynote about typeclasses. I've read the slides before the presentation  -and they are available <a href="http://www.slideshare.net/paulszulc/introduction-to-type-classes-in-30-min">here</a>, so it wasn't new to me. But I'd strongly recommend to watch this talk.</p>
 
-<p>Also, there is another nice talk by Paweł: (https://www.youtube.com/watch?v=ENtdZ9MBo5Y)[ Category theory is absolute general nonsense!] This talk is in Polish only.</p>
+<p>Also, there is another nice talk by Paweł: <a href="https://www.youtube.com/watch?v=ENtdZ9MBo5Y"> Category theory is absolute general nonsense!</a> This talk is in Polish only.</p>
 
 <h3>EFF Monad - by Eric Torreborre</h3>
 
-<p>Different way of monadic composition, implemented in a separate library: (https://github.com/atnos-org/eff-cats)[eff-cats] (there is also scalaz alternative). Technically it was a bit over my head, but after experimenting with the concept at home it seems interesting.</p>
+<p>Different way of monadic composition, implemented in a separate library: <a href="https://github.com/atnos-org/eff-cats">eff-cats</a> (there is also scalaz alternative). Technically it was a bit over my head, but after experimenting with the concept at home it seems interesting.</p>
 
 <p>I liked that Eric, being Zalando employee, developed that for their internal usage. Also the beauty of easily constructing different technological stacks with consistent API is very tempting.</p>
 
 <p>Interesting things used/mentioned were:</p>
 
 <ul>
-<li>(github.com/non/kind-projector)[non/kind-projector] - for projections</li>
-<li>(http://haskell.cs.yale.edu/?post_type=publication&amp;p=319)[Monad Transformers and Modular Interpreters]</li>
+<li><a href="github.com/non/kind-projector">non/kind-projector</a>- for projections</li>
+<li><a href="http://haskell.cs.yale.edu/?post_type=publication&amp;p=319">Monad Transformers and Modular Interpreters</a></li>
 </ul>
 
 
@@ -57,11 +57,7 @@
 
 <p>This one looked promising. Joining multiple exciting technologies seems often that way. Unfortunately it was rather tech preview of Kubernetes app setup rather than Scala presentation.</p>
 
-<p>I'm a bit disappointed, because looking through the sources of the project (https://github.com/rkrzewski/akka-cluster-etcd)[akka-cluster-etcd] there are lots of things to describe. Kubernetes not being one of them ;-)</p>
-
-<h3>Lunch break</h3>
-
-<p>There was dinner served by museum's restaurant but we chose to wander around and go to Ramen Girl. Unfortunately they were closed on that day. But that just turned into a brilliant stroke of luck - because we found this delicious place - (http://www.krainapierogow.eu/)[Kraina pierogów]. Great! That gave lots of energy for the rest of conference.</p>
+<p>I'm a bit disappointed, because looking through the sources of the project <a href="https://github.com/rkrzewski/akka-cluster-etcd">akka-cluster-etcd</a> there are lots of things to describe. Kubernetes not being one of them ;-)</p>
 
 <h3>Shapeless? Easy! - by Valentin Kasas</h3>
 
@@ -71,9 +67,9 @@
 
 <p>Will look into real life examples in near future.</p>
 
-<p>Fun fact: The speaker had his presentation in (https://github.com/marconilanna/REPLesent)[REPLesent], a sbt plugin for presentations - and performed most of the slide-jumping-fu with just one hand, other held in his pocket :D Looked quite hilarious.</p>
+<p>Fun fact: The speaker had his presentation in <a href="https://github.com/marconilanna/REPLesent">REPLesent</a>, a sbt plugin for presentations - and performed most of the slide-jumping-fu with just one hand, other held in his pocket :D Looked quite hilarious.</p>
 
-<p>Valentin also mentioned shapeless' typeclass derivation - this actually looks nice! Have a look at this (https://meta.plasm.us/posts/2015/11/08/type-classes-and-generic-derivation/)[question]</p>
+<p>Valentin also mentioned shapeless' typeclass derivation - this actually looks nice! Have a look at this <a href="https://meta.plasm.us/posts/2015/11/08/type-classes-and-generic-derivation/">question</a></p>
 
 <h3>Cool Toolz in the Scalaz and Cats Toolboxes - by Jan Pustelnik</h3>
 
@@ -89,7 +85,7 @@
 </ul>
 
 
-<p>There is this nice video called "A purely functional approach to building large applications". Go see (https://www.youtube.com/watch?v=dS3IlDBDlvo)[it].</p>
+<p>There is this nice video called "A purely functional approach to building large applications". Go see <a href="https://www.youtube.com/watch?v=dS3IlDBDlvo">it</a>.</p>
 
 <h2>Conclusion</h2>
 

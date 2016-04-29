@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: hbase | Marcin bloguje]]></title>
+  <title><![CDATA[Category: Hbase | Marcin bloguje]]></title>
   <link href="http://zygm0nt.github.com/blog/categories/hbase/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2016-04-29T22:29:49+02:00</updated>
+  <updated>2016-04-29T22:38:38+02:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Distributed scans with HBase]]></title>
+    <title type="html"><![CDATA[Distributed Scans With HBase]]></title>
     <link href="http://zygm0nt.github.com/blog/2013/12/10/distributed-scans-with-hbase/"/>
     <updated>2013-12-10T21:26:00+01:00</updated>
     <id>http://zygm0nt.github.com/blog/2013/12/10/distributed-scans-with-hbase</id>

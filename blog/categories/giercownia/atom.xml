@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: giercownia | Marcin bloguje]]></title>
+  <title><![CDATA[Category: Giercownia | Marcin bloguje]]></title>
   <link href="http://zygm0nt.github.com/blog/categories/giercownia/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2016-04-29T22:29:49+02:00</updated>
+  <updated>2016-04-29T22:38:38+02:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Deus Ex - what a game!]]></title>
+    <title type="html"><![CDATA[Deus Ex - What a Game!]]></title>
     <link href="http://zygm0nt.github.com/blog/2011/02/17/deus-ex-what-a-game/"/>
     <updated>2011-02-17T01:05:50+01:00</updated>
     <id>http://zygm0nt.github.com/blog/2011/02/17/deus-ex-what-a-game</id>
@@ -128,7 +128,7 @@ Do you know that every time somebody mention Deus Ex, someone will reinstall it?
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Mass Effect ]]></title>
+    <title type="html"><![CDATA[Mass Effect]]></title>
     <link href="http://zygm0nt.github.com/blog/2010/04/21/mass-effect/"/>
     <updated>2010-04-21T19:59:39+02:00</updated>
     <id>http://zygm0nt.github.com/blog/2010/04/21/mass-effect</id>
@@ -216,7 +216,7 @@ Z drugiej strony, czy to jest złą rzeczą? Weźmy taką Ultime Underworld - wa
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[<p>Love - some kind of preview...</p> ]]></title>
+    <title type="html"><![CDATA[<p>Love - Some Kind of Preview...</p>]]></title>
     <link href="http://zygm0nt.github.com/blog/2009/09/25/love-some-kind-of-preview/"/>
     <updated>2009-09-25T01:06:05+02:00</updated>
     <id>http://zygm0nt.github.com/blog/2009/09/25/love-some-kind-of-preview</id>
