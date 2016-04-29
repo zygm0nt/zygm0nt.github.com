@@ -9,7 +9,7 @@
   <meta name="author" content="Marcin Cylke">
 
   
-  <meta name="description" content="This looks like the best pigsticking ever! Look at that little girl! The blood, butcher&#8217;s knife, and child&#8217;s soother :) Photo from Jamie &hellip;">
+  <meta name="description" content="JMS seems like a hostile ground. It has all it&#8217;s quirks and strange behaviours. A couple of defining standards plus esoteric brokers, queues &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +84,161 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2010/12/08/easier-and-nicer-jms/">Easier and Nicer JMS</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-08T10:22:34+01:00" pubdate data-updated="true">Dec 8<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<table border="0">
+<tr><td>
+<p>
+JMS seems like a hostile ground. It has all it&#8217;s quirks and strange
+behaviours. A couple of defining standards plus esoteric brokers, queues
+and topics.
+</p>
+
+</td>
+<td><img src="http://blog.innovative-labs.com/blog/Screwdriver.jpg" width="150" /></td></tr></table>
+
+<p>
+At work, we mainly use open source Jms solutions, namely Apache
+ActiveMQ. This one is usually bundled with Apache Servicemix, as a
+message broker for this particular ESB. As there are some minor caveats
+in this scennerio, I&#8217;d like to describe here some guidelines for getting
+to running JMS queues.
+</p>
+<EXCERPT/>
+<p>
+Treat this post as a quick cheat sheet with the most common things about
+JMS I tend to forget :)
+</p>
+
+<p>
+Minor glitches encountered during work with embedded broker led to some
+thoughts about switching to external broker. This is how I configure SMX
+and AcviteMQ.
+</p>
+<p>
+Necessary steps:</p>
+<ul>
+<li> change <i>apache-servicemix/conf/servicemix.properties</i> <b>activemq.port</b>
+to sth else than standard, for example 61626</li>
+<li> change <i>apache-activemq/conf/activemq.xml</i> with this settings:
+ <ul>
+    <li> change port, the service listens on:
+
+<pre class="brush: xml">
+        <transportConnectors>
+            <transportConnector name="openwire" uri="tcp://localhost:61626"/>
+        </transportConnectors>
+</pre></li>
+    <li> setup separate JMX instance:
+<pre class="brush: xml">
+        <managementContext>
+            <managementContext createConnector="true" connectorPort="2011"/>
+        </managementContext>
+</pre></li>
+</ul>
+</li>
+<li> the nicest tool I found for browsing queues and topics is <a href="http://www.hermesjms.com">Hermes
+JMS</a>. Sample config, that connects Hermes to ActiveMQ instance is on
+the picture below:
+
+<img src="http://blog.innovative-labs.com/blog/easy_jms.png" width="550" alt="HermesJMS to ActiveMQ connection config"/>
+</li>
+<li> sending simple messages with Hermes is basic, but what if you need to
+set some headers, send bulk messages, etc. Easy, just use Hermes xml
+format. Look like this code snippet below and is rather self-explanatory:
+
+<pre class="brush: xml">
+<content>
+    <entry type="1">
+        <textMessage JMSDeliveryMode="2" JMSExpiration="0" JMSPriority="0" JMSRedelivered="false" JMSTimestamp="0">
+            <headerProperty name="caseId" type="java.lang.String" value="105"/>
+            <text><![CDATA[<message>
+  <event>
+    <case>
+      <CASE_ID>105</CASE_ID>
+      <EVENT>1235</EVENT>
+    </case>
+  </event>
+</message>]]></text>
+        </textMessage>
+    </entry>
+</content>
+</pre>
+</li>
+<li> since we use lots of <a href="http://camel.apache.org">Apache
+ Camel</a> to consume messages, here is a simple way to start broker in
+your tests:
+<ul>
+    <li> start a broker
+<pre class="brush: java">
+        BrokerService broker = new org.apache.activemq.broker.BrokerService();
+        broker.setBrokerName("AMQ-1");
+        broker.addConnector("tcp://localhost:51616");
+        broker.setPersistent(false);
+        broker.start();
+</pre>
+     Notice it has persistance disabled.
+</li>
+    <li> initialize Camel&#8217;s JMS component:
+<pre class="brush: java">
+    ctx.removeComponent("jms");
+    ctx.addComponent("jms", ActiveMQComponent.activeMQComponent("tcp://localhost:51616"));
+</pre></li>
+    <li> if you want to pass messages to reference endpoints, (like <i>ref:input</i>), use this wrapper method:
+<pre class="brush: java">
+private JmsEndpoint createJmsEndpoint(String endpoint) throws JMSException {
+        ActiveMQComponent amqc = (ActiveMQComponent) ctx.getComponent("jms");
+        JmsEndpoint endp = JmsEndpoint.newInstance(new ActiveMQTopic(endpoint), amqc);
+        return endp;
+}
+
+createJmsEndpoint("ESB/XYZ")
+</pre>
+</li>
+</ul>
+</li>
+</ul>
+These are all the tricks I&#8217;ve got for now! But if you know some other
+good tools that handle JMS, feel free to comment!
+
+Got more advices, again, comment!
+</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1338,136 +1493,6 @@ does not compute</p></div>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2010/05/07/eclipse-ecosystem/">Eclipse Ecosystem</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-05-07T11:55:59+02:00" pubdate data-updated="true">May 7<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<p>Do you use Eclipse? Or perhaps you use other IDE but would like to try
-&#8220;the big E&#8221;? Well, that&#8217;s OK, and completely understandable, because
-Eclipse is actually a great, versatile tool. But Eclipse is not just an
-IDE, in fact it is a comp let, extensible platform. What&#8217;s even more
-important, there are tones of valuable Eclipse-related projects gathered
-around the platform.</p>
-<EXCERPT><p>Yes, there are lots. Some are good, some are bad, but the usual, stock
-ones, signed by Eclipse, are worth taking a closer look. They&#8217;re not a
-mere innovation to the way we write code with an IDE. Those tools
-provide new ways to _create_ our code. </p>
-
-<p>Consider Eclipse just a foundation for better things to come. Having
-Equinox OSGI container underneath it is fully modular ecosystem, that
-allows multiple bundles (in which we pack the plug-ins) coexist, and
-benefit from each others functionalities. Not dwelling on details of
-OSGI, it gives us a simple extensible platform to play with.</p>
-
-<p>That in fact is great, because out of piles of Eclipse components you
-can build your own component base, and thus create a basis for your own
-solution. Since Eclipse is extensible you can extend the IDE&#8217;s
-workbench, by implementing plug-ins, or you can choose to implement a
-standalone application, that is based on RCP (Rich Client Platform)
-concept. And there are really big apps written with this in mind, like
-IBM&#8217;s Lotus Suite, totally based on Eclipse - and pretty neat also.</p>
-
-<p>Well, that looks nice, but who writes so much code these days, who
-wants to create all the domain classes and GUI stuff by hand crafted
-api interfaces? Nope, one no longer have to go this path, just try
-Eclipse EMF sub-project, which offers model driven development practices,
-and whole bunch of code generation plug-ins will come to aid you. Using
-EMF you can create your domain model in just a few clicks, or import it
-from your existing java interfaces - actually you can use a couple more
-ways to do this. Having an EMF model you are just a few clicks from
-generating a working, domain editor, that would serve as a sandbox for
-your ideas about the domain you&#8217;re implementing, or it can be used right
-away in your new shiny web application. </p>
-
-<p>Another few clicks and you get free model persistence with Hibernate, or
-other ORM framework. And this really works.</p> 
-
-<p>Since it would be nice to present things to end users you could generate
-some basic graphic editor, of course Eclipse supports that. But who uses
-thick clients today? Be serious, right? If you want something
-web-enabled, you don&#8217;t have to move your skills from the Eclipse
-ecosystem, just try out Eclipse RAP and have your Eclipse application in
-your browser via some serious Javascript voodoo magic - like on-the-fly
-converters. Of course other popular frameworks are allowed :)</p>
-
-<p>What is most important here, is the constant use of the same tools,
-developing subsequent stages of the app don&#8217;t require you to switch
-skills. It&#8217;s Java all way up to this place.</p>
-
-<p>And it gets more interesting when you dive deeper and deeper into this
-rich and flourishing community. Some examples of the vastness of the
-platform may be:</p>
-
-<ul>
-<li> Swordfish - SOA solution, with BAM (Business Activity Monitoring)
-implemented<li>
-<li> XText - enables you to write a simple (or not) DSLs for your apps</li>
-<li> E4 - next gen Eclipse IDE, with many great ideas in it</li>
-</ul>
-
-<p>Of course, the whole picture gets a bit blurry if you consider more
-technical details, there is not so much ease of use or scalability, etc,
-as you might expected. The whole Eclipse ecosystem may not be suitable
-for all your applications, but it may be for some. Or perhaps it is
-suitable for only a couple stages in your current project? </p>
-
-<p>Let this be just a simple introduction to the rich Eclipse Community
-projects. With next iterations of this cycle I&#8217;d like to describe more
-in-depth details of the Eclipse framework, and various usage scenarios
-for Eclipse projects. Stay tuned!
-</p>
-</div>
-<h2>Comments</h2>
-<div class='comments'>
-<div class='comment'>
-<div class='author'><a href="">Marcin</a></div>
-<div class='content'>
-<p>Nope, I meant http://eclipse.org<br />
-<br />
-IDE as in Integrated Development Environment</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="http://www.africangamesafari.com/pl.html">africarpa</a></div>
-<div class='content'>
-<p>Hi Marcin, just tell us please what the hell is Eclipse ecosystem.<br />
-Where we can get it?<br />
-IDE you mean Integrated Drive Electronics?</p></div>
-</div>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/5/">&larr; Older</a>
@@ -1485,6 +1510,10 @@ IDE you mean Integrated Drive Electronics?</p></div>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/04/29/scalar-conf-2016/">Scalar Conf 2016</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/02/20/lambda-days-2016/">Lambda Days 2016</a>
       </li>
     
@@ -1498,10 +1527,6 @@ IDE you mean Integrated Drive Electronics?</p></div>
     
       <li class="post">
         <a href="/blog/2013/12/10/distributed-scans-with-hbase/">Distributed scans with HBase</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/08/simple-hbase-orm/">Simple HBase ORM</a>
       </li>
     
   </ul>

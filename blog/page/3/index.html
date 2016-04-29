@@ -9,7 +9,7 @@
   <meta name="author" content="Marcin Cylke">
 
   
-  <meta name="description" content="Recently at work I was in need of connecting to a web service exposed via HTTPS. I&#8217;ve been doing this from inside Servicemix 3.3.1, which may &hellip;">
+  <meta name="description" content="Last week&#8217;s Java conference - Geecon was very interesting. It was well prepared, and gave an insight into the current Java related trends - &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +84,227 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2011/05/19/geecon-2011-day-1/">Geecon 2011 - Day 1</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-19T22:05:05+02:00" pubdate data-updated="true">May 19<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<p>Last week&#8217;s Java conference - <a href="http://2011.geecon.org">Geecon</a> was very
+interesting. It was well prepared, and gave an insight into the current
+Java related trends - concurrency, DSLs, polyglot programming. But not
+only that - there were also some pretty different talks from excellent
+speakers.</p>
+
+<p>
+The whole event took 4 days:
+</p>
+
+<ul>
+<li>University day (wednesday)</li>
+<li>2 regular conference days (Thursday + Friday) </li>
+<li>hacker garden (Sunday)</li>
+</ul>
+
+<p>
+I decided to attend only on Thursday and Friday - no time for more. Here
+is what interesting happened during those days.
+</p>
+
+<EXCERPT>
+
+<h1>Day 1</h2>
+
+<p>The morning got me unprepared. After hard enough, after work travel to
+Krakow on Wednesday, I wasn&#8217;t in the best shape. However after arriving
+at the venue, being greeted with breakfast and refreshments I
+looked at the rest of the day with real hope.</p>
+
+<p>Since the schedule was tight - three parallel tracks of lecture, I
+had to choose, so bare in mind, that is my account of what I&#8217;ve seen and
+heard. Others may, of course, differ.</p>
+
+<h2>1. <a href="http://blogs.oracle.com/dannycoward/">Danny Coward</a> &#8220;Java SE: The Road Ahead&#8221;</h2>
+
+<p>Danny, being on <a href="http://www.oracle.com">Oracle</a> (considering being also former
+Sun&#8217;s employee a plus) payroll, gave an insightful talk on new things to
+came in <a
+href="http://blogs.oracle.com/dannycoward/entry/channeling_java_se_7">Java 7</a>. He drew rather serious plans for Java 8.
+According to Danny, the main trends in today&#8217;s Java ecosystem are:</p>
+
+<ul>
+<li>parallel programming</li>
+<li>language dynamics</li>
+</ul>
+
+<p>and he probably is right :) The great things to come with new
+versions of Java are:</p>
+
+<ul>
+<li>closures in Java (finally!)</li>
+<li>extending interfaces</li>
+<li>map, filter - functions for collections</li>
+<li>lambda expressions - thou in Java 8</li>
+</ul>
+<p>The talk itself was a nice keynote, but I doubt the road map for Java
+will be met in its full extent - the goals aren&#8217;t that small.</p>
+
+<h2>2. <a href="http://www.springsource.com/people/jhoeller">Juergen Hoeller</a> &#8220;Enterprise Java in 2011&#8221;</h2>
+
+<p><a href="http://www.springsource.com/">Spring Source</a> as one of the sponsors sent Juergen to
+evangelize about the world of enterprise and Java&#8217;s place in it :) He
+emphasized different kinds of deployment: WAR, cloud deployment - and
+the latter&#8217;s rise of importance.</p>
+
+<p>He pointed out how outdated current application servers are - the
+usually lag ~3 years behind the main trends and developers&#8217; needs - good
+point! He proposed looking under the hood of now-popular cloud
+environments: <a href="http://code.google.com/appengine/">Google App
+Engine</a> or <a href="http://aws.amazon.com/ec2/">Amazon
+Elastic Cloud</a> to look for schemas in them, etc - I intend to listen
+to his advice.</p>
+
+<p>All in all this guy gave a great talk covering wide spectrum of
+technologies and not focusing on technical stuff too much.</p>
+
+<h2>3. <a href="http://www.javaspecialists.eu/contact.jsp">Heinz Kabutz</a> &#8220;Reflection madness&#8221;</h2>
+
+<p>Despite living on a Greek island, this guy showed also how to whack
+ones mind with <a
+href="http://download.oracle.com/javase/tutorial/reflect/">Java Reflection API</a>. Pure magic! Some
+highlights of his talk were:</p>
+<ul>
+<li>how to get <i>42 + 1 = 44</i></li>
+<li>get the size of an object</li>
+<li>get method caller&#8217;s id</li>
+<li>add enum values dynamically</li>
+</ul>
+
+<p>With all this examples he pointed that using <i>SecurityManager</i>
+will prevent such nasty coding practices.</p>
+
+<p>Since he is an editor of <a
+href="http://www.javaspecialists.eu/">Javaspecialists.eu</a>
+newsletter, all the answers to problems presented in his talk (and many
+many more) can be found there. </p>
+<p>Well done, not to useful for me, nevertheless - interesting.</p>
+
+<h2>4. <a href="https://twitter.com/#!/mfiguiere">Michael Figuiere</a>,
+Cyrille Le Clere
+&#8220;NoSQL & Datagrid from developer perspective&#8221;</h2>
+<p>I don&#8217;t know what to think of this talk. It consisted an introduction
+to NoSQL databases but also a bit of problem&#8217;s description that can be
+encountered when dealing with them. Notable thoughts were on:</p>
+
+<ul>
+<li>creating a sharding ready data structure</li>
+<li>denormalization as a useful process for NoSQL DBs</li>
+<li>NoSQL usually means <b>no transactions</b></li>
+</ul>
+
+<h2>5. <A href="http://hamletdarcy.blogspot.com/">Hamlet D&#8217;Arcy</a> &#8220;New Ideas for old code&#8221;</h2>
+
+<p>Since a lot of developers (all?) have to deal with legacy code - one
+way or another, this talk was <i>a must</i>!</p>. The speaker shared
+some ideas on how to work with such code and remain sane. The talk was
+vivid, interesting and entertaining, well, and the notable thought? Here
+they are:</p>
+
+<ul>
+<li>51% rule - if you&#8217;re not committing 51% of your time/your tasks into
+fixing your situation than the whole battle <b>is already lost</b>,</li>
+<li>read some good stuff!:<br/>
+    <ul>
+        <li><a
+href="http://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672">Martin Fowler&#8217;s &#8220;Refactoring&#8221;</a></li>
+        <li><a
+href="http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=sr_1_1?s=books&ie=UTF8&qid=1305828015&sr=1-1">George C. Martin &#8220;Clean Code&#8221;</a></li>
+        <li><a href="http://chadfowler.com/2006/12/27/the-big-rewrite">Chad Fowler &#8220;Big Rewrites&#8221;</a> - and why they
+failed, what&#8217;s wrong with them</li>
+    </ul>
+</li>
+<li>use static analysis - <a href="http://findbugs.sourceforge.net/">Find Bugz</a>, 
+pmc</li>
+<li><a href="http://en.wikipedia.org/wiki/Command-query_separation">query-command</a> - a method should be a query or a
+command:<br/>
+    <ul>
+        <li>query - returns sth</li>
+        <li>command - change the state of an object</li>
+    </ul>
+</li>
+<li>he also proposed <b>scratch refactoring</b><br/>
+    <ol>
+        <li>set a timer</li>
+        <li>tag your code</li>
+        <li><b>refactor without tests</b></li>
+        <li>step back and analyze</li>
+        <li>is it better? if not, revert</li>
+    </ol>
+</li></ul>
+
+<p>This was nice! - it assumed arriving at a project with no ( or
+little) tests.</p>
+
+<h2>6. Aslan Knutsen &#8220;Arquillian&#8221;</a></h2>
+
+<p>The last talk of that day was about some new library from JBoss that
+would allow to test your components with unit tests - test them in a
+destination container. The whole point of this library is to run the
+specific fragment of code as if it was build and deployed to some
+application server (let&#8217;s say JBoss AS ;-) ). To be honest, I can&#8217;t find
+much application for that - thou I&#8217;m not doing any serious work in JEE
+world.</p>
+
+<h2>Party</h2>
+
+<p>And the day ended. But there was sth else to do after the official
+part - party time! It took place at <a href="">Klub Pauza</a> on
+Floriańska street. It was a rather nice social event.</p>
+
+
+<p><i>&#8230; to be continued - stay tuned for part 2</i></p></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://blog.patryk-dobrowolski.eu">JedenPies</a></div>
+<div class='content'>
+<p>&quot;how to get 42 + 1 = 44&quot;?<br />
+Tutaj ;)<br />
+http://blog.patryk-dobrowolski.eu/2011/05/16/refleksja-moze-byc-niebezpieczna-zobacz-jak-zniszczyc-sobie/</p></div>
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1161,161 +1382,6 @@ More on the subject of redelivieries in ActiveMQ can be found at <a href="http:/
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2010/12/08/easier-and-nicer-jms/">Easier and Nicer JMS</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-08T10:22:34+01:00" pubdate data-updated="true">Dec 8<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<table border="0">
-<tr><td>
-<p>
-JMS seems like a hostile ground. It has all it&#8217;s quirks and strange
-behaviours. A couple of defining standards plus esoteric brokers, queues
-and topics.
-</p>
-
-</td>
-<td><img src="http://blog.innovative-labs.com/blog/Screwdriver.jpg" width="150" /></td></tr></table>
-
-<p>
-At work, we mainly use open source Jms solutions, namely Apache
-ActiveMQ. This one is usually bundled with Apache Servicemix, as a
-message broker for this particular ESB. As there are some minor caveats
-in this scennerio, I&#8217;d like to describe here some guidelines for getting
-to running JMS queues.
-</p>
-<EXCERPT/>
-<p>
-Treat this post as a quick cheat sheet with the most common things about
-JMS I tend to forget :)
-</p>
-
-<p>
-Minor glitches encountered during work with embedded broker led to some
-thoughts about switching to external broker. This is how I configure SMX
-and AcviteMQ.
-</p>
-<p>
-Necessary steps:</p>
-<ul>
-<li> change <i>apache-servicemix/conf/servicemix.properties</i> <b>activemq.port</b>
-to sth else than standard, for example 61626</li>
-<li> change <i>apache-activemq/conf/activemq.xml</i> with this settings:
- <ul>
-    <li> change port, the service listens on:
-
-<pre class="brush: xml">
-        <transportConnectors>
-            <transportConnector name="openwire" uri="tcp://localhost:61626"/>
-        </transportConnectors>
-</pre></li>
-    <li> setup separate JMX instance:
-<pre class="brush: xml">
-        <managementContext>
-            <managementContext createConnector="true" connectorPort="2011"/>
-        </managementContext>
-</pre></li>
-</ul>
-</li>
-<li> the nicest tool I found for browsing queues and topics is <a href="http://www.hermesjms.com">Hermes
-JMS</a>. Sample config, that connects Hermes to ActiveMQ instance is on
-the picture below:
-
-<img src="http://blog.innovative-labs.com/blog/easy_jms.png" width="550" alt="HermesJMS to ActiveMQ connection config"/>
-</li>
-<li> sending simple messages with Hermes is basic, but what if you need to
-set some headers, send bulk messages, etc. Easy, just use Hermes xml
-format. Look like this code snippet below and is rather self-explanatory:
-
-<pre class="brush: xml">
-<content>
-    <entry type="1">
-        <textMessage JMSDeliveryMode="2" JMSExpiration="0" JMSPriority="0" JMSRedelivered="false" JMSTimestamp="0">
-            <headerProperty name="caseId" type="java.lang.String" value="105"/>
-            <text><![CDATA[<message>
-  <event>
-    <case>
-      <CASE_ID>105</CASE_ID>
-      <EVENT>1235</EVENT>
-    </case>
-  </event>
-</message>]]></text>
-        </textMessage>
-    </entry>
-</content>
-</pre>
-</li>
-<li> since we use lots of <a href="http://camel.apache.org">Apache
- Camel</a> to consume messages, here is a simple way to start broker in
-your tests:
-<ul>
-    <li> start a broker
-<pre class="brush: java">
-        BrokerService broker = new org.apache.activemq.broker.BrokerService();
-        broker.setBrokerName("AMQ-1");
-        broker.addConnector("tcp://localhost:51616");
-        broker.setPersistent(false);
-        broker.start();
-</pre>
-     Notice it has persistance disabled.
-</li>
-    <li> initialize Camel&#8217;s JMS component:
-<pre class="brush: java">
-    ctx.removeComponent("jms");
-    ctx.addComponent("jms", ActiveMQComponent.activeMQComponent("tcp://localhost:51616"));
-</pre></li>
-    <li> if you want to pass messages to reference endpoints, (like <i>ref:input</i>), use this wrapper method:
-<pre class="brush: java">
-private JmsEndpoint createJmsEndpoint(String endpoint) throws JMSException {
-        ActiveMQComponent amqc = (ActiveMQComponent) ctx.getComponent("jms");
-        JmsEndpoint endp = JmsEndpoint.newInstance(new ActiveMQTopic(endpoint), amqc);
-        return endp;
-}
-
-createJmsEndpoint("ESB/XYZ")
-</pre>
-</li>
-</ul>
-</li>
-</ul>
-These are all the tricks I&#8217;ve got for now! But if you know some other
-good tools that handle JMS, feel free to comment!
-
-Got more advices, again, comment!
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -1333,6 +1399,10 @@ Got more advices, again, comment!
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/04/29/scalar-conf-2016/">Scalar Conf 2016</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/02/20/lambda-days-2016/">Lambda Days 2016</a>
       </li>
     
@@ -1346,10 +1416,6 @@ Got more advices, again, comment!
     
       <li class="post">
         <a href="/blog/2013/12/10/distributed-scans-with-hbase/">Distributed scans with HBase</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/08/simple-hbase-orm/">Simple HBase ORM</a>
       </li>
     
   </ul>
