@@ -4,7 +4,7 @@
   <title><![CDATA[Marcin bloguje]]></title>
   <link href="http://zygm0nt.github.com/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2016-04-29T22:43:58+02:00</updated>
+  <updated>2016-07-11T23:21:06+02:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -12,6 +12,85 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Should you switch to Mac?]]></title>
+    <link href="http://zygm0nt.github.com/blog/2016/07/07/mac-os-x-switch/"/>
+    <updated>2016-07-07T23:22:00+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2016/07/07/mac-os-x-switch</id>
+    <content type="html"><![CDATA[<p><img src="https://farm9.staticflickr.com/8064/8229071681_02ffdb91dc_z_d.jpg" alt="enter image description here" /><em>by Flick user <a href="https://www.flickr.com/photos/raneko/8229071681/in/photolist-dxb9je-sEQEP-5gDCSr-PE6FE-7Pa2t3-5yhFqq-MsHbZ-tEVFv-kBEvsd-5uPrGV-a5wisf-Ea1We-5tX2pp-22ybhw-ivTix6-5yk9cA-kBCugR-gcSkD-8cdXjv-asK9Y-7ZM66R-8N4eSG-4mchWA-4pjwaT-Gy8BR-7HPwfe-dxb9hv-4rXMuz-h6gJgm-9jULZ6-5SPsfu-kBECo7-6UUwCT-5whRwW-4rujwZ-8Kye5Q-9hN1d6-5utN7V-k9drqQ-4QPsUy-8VEazh-8UB7Ms-8VEaEq-neQih-8EHChx-ecth3o-8yrLUn-o7oNS-kBCXKM-6UYBrs">raneko</a></em></p>
+
+<p>Who would have thought? Me switching to Mac? But it actually happened. I&#8217;ve been a long time Linux user, so why actually do the switch now? Or ever? Have a look at my thoughts and insights of novice Mac user.</p>
+
+<!--more-->
+
+
+<h2>In the beginning</h2>
+
+<p>My humble beginnings were with RedHat 6.0 on a AMD Duron 600Mhz PC machine. With a dialup connection. And setting that thing to connect into Poland&#8217;s national provider TPSA was rather painful. After some time using Linux, going from RedHat to Slackware I&#8217;ve decided things weren&#8217;t tough enough and switched to BSDs. That was really fun! I&#8217;ve used Free and Open flavors for a few years which very really great. Than switched back to Linux. I&#8217;ve used those *nix systems for all-things-computer. At home and at work.</p>
+
+<h2>The switch</h2>
+
+<p>And than came the new job and I had to choose: regular Dell or Macbook? Blue pill or red pill? I chose the later.</p>
+
+<p>The switch wasn&#8217;t that painful, but mainly thanks to superb hardware Apple offers. Having to get used to a completely new OS was quite another story. It&#8217;s not that I was shocked by it. As a long time Linux user all the concepts are known to me. It&#8217;s the other way around - there are a lot of things missing that I learned to require from my tool of work.</p>
+
+<p>What I really appreciate is the known userland tools - it&#8217;s BSD at the heart of it. Well, of course the kernel is some whacky Mach microkernel, but as for the userland I&#8217;m happy :) You can read more about the kernel and system&#8217;s design history on wikipedia (<a href="https://en.wikipedia.org/wiki/OS_X">Os X</a>, <a href="https://en.wikipedia.org/wiki/Darwin_(operating_system">Darwin</a>) <a href="https://en.wikipedia.org/wiki/XNU">XNU</a>)</p>
+
+<p>One of the biggest disappointments was the filesystem and the way it&#8217;s presented to users. Mac OS X comes with HFS+ (<a href="https://en.wikipedia.org/wiki/HFS_Plus">link</a>) filesystem which is case insensitive!!! To me this seems like an abomination. Plus there are multiple shortcuts taken by Apple engineers, like its endiannes: primarily Macs used PowerPC chips which are BigEndian by desing, but after switching to Intel processors everything is LittleEndian now. AFAIK HFS+ has to still switch bytes when reading metadata.</p>
+
+<p>Really neat thing I&#8217;ve found out recently is that under the hood OS X uses PF (OpenBSD&#8217;s packet filter) as a firewalling solution.
+I don&#8217;t know which version is in the current release and how does it compare against the original implementation, but since PF has such a nice syntax and performance it&#8217;s great to have it on board. There are numerous blog posts about setting a decent firewall on OS X with PF so go have a look. Also you can play with PF by means of a set of apps called <a href="http://www.murusfirewall.com/">Murus</a>.</p>
+
+<h2>Useful tools</h2>
+
+<ul>
+<li><a href="http://brew.sh/">Brew</a> - basic application provider, offers all the things I&#8217;ve become used to when on Linux,</li>
+<li><a href="https://github.com/ianyh/Amethyst">Amethyst</a> - allows window tiling with keyboard shortcuts and has focus-follows-mouse :D I love this feature, although with all the windows popping all over the place I must admit it sometimes gets messy.</li>
+<li><a href="https://www.ragingmenace.com/software/menumeters/">MenuMeters</a> - have a bunch of those geeky meters all over the place (no longer usable with El Capitan)</li>
+<li>Alfred - seems like a nice app, Spotlight on steroids. It&#8217;s free and you can download it via <a href="https://itunes.apple.com/au/app/alfred/id405843582?mt=12">ITunes</a></li>
+<li>Flashlight - add more providers to Spotlight - unfortunately with recent introduction of rootless mac partition it&#8217;s no longer possible to use this tool</li>
+</ul>
+
+
+<h2>Hacking Spotlight</h2>
+
+<p>Spotlight is just that neat little thing out there that seems like indexing all the things and runs installed programs. But it can also serve as a calculator and &#8230;</p>
+
+<p>You can also read the contents of its cache file.</p>
+
+<p>Up until version 10.10.4 of OS X it was possible to have additions to spotlight, but now this behaviour is blocked by the system.
+http://mac-how-to.wonderhowto.com/how-to/customize-spotlight-search-mac-os-x-yosemite-0160786/</p>
+
+<h2>Script setup</h2>
+
+<p>Setup your mac with this shell script - but be very careful and read through this file first! https://gist.github.com/brandonb927/3195465</p>
+
+<p><img src="https://farm6.staticflickr.com/5168/5263917715_6c8217fcfe_z_d.jpg" alt="One sneaky image" /><em>by Flickr user <a href="https://www.flickr.com/photos/blakespot/5263917715/in/photolist-929XkZ-fJwTR-8Me2LN-8qSP9F-6UD2Ce-fM51y-ARaAo-BJXFt-iE8ep-4rXScB-bX3z7w-6npV8P-5Eamox-33QA9W-5EXuR9-mQDnb-6UqpxG-6UqF7m-69b4jp-oytZCJ-4rXGFP-6xweAZ-ACukt-aZfi5-6QouE3-5CAQgW-8MeHqC-5QBeu1-L4qEw-4s35hq-4w9tXh-67Ymah-4s33cu-jjDFo-6J3zqD-8N4tSh-kbFD4-sESfP-66GAT5-9FUKfq-d3BrPG-4rXPZt-8N1aLa-6UCTvi-kBCzsH-2SXDWe-5CGTEq-5zogZ2-5JAGsk-kkAgZK">blakespot</a></em></p>
+
+<h2>Neat things</h2>
+
+<p>And it is quite positive, that Mac OS X developers care about small, but extremely important things - like building OpenSSH with LibreSSL support!</p>
+
+<h2>DTrace</h2>
+
+<p>Recently I&#8217;ve experienced a huge slowdown on my Mac. The It support&#8217;s solution was to reinstall the OS. I refused, this seemed like a barbaric method and also I just wanted to use this opportunity to delve deeper into internals of this OS.</p>
+
+<p>I&#8217;ve started with analysing system behaviour with <a href="https://en.wikipedia.org/wiki/DTrace">DTrace</a> - probing interface originating from Solaris</p>
+
+<p>Useful introductory links are here:</p>
+
+<ul>
+<li>http://dtrace.org/blogs/brendan/2011/10/10/top-10-dtrace-scripts-for-mac-os-x/</li>
+<li>http://dtrace.org/blogs/brendan/2012/11/14/dtracing-in-anger/</li>
+</ul>
+
+
+<h2>Conclusion</h2>
+
+<p>All in all the switch was relatively painless, and with tools and tricks described here I feel very comfortable using this system.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Scalar Conf 2016]]></title>
@@ -2154,145 +2233,6 @@ Say, we have an object with a primary key, that is mandatory (in the database), 
 <br />
 Doea OVal handle variations / directions of validation?</p></div>
 </div>
-</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Geecon 2011 - day 2]]></title>
-    <link href="http://zygm0nt.github.com/blog/2011/05/22/geecon-2011-day-2/"/>
-    <updated>2011-05-22T18:39:31+02:00</updated>
-    <id>http://zygm0nt.github.com/blog/2011/05/22/geecon-2011-day-2</id>
-    <content type="html"><![CDATA[<div class='post'>
-<p>And now for part 2 of my visit to Geecon 2011!</p>
-<EXCERPT>
-<h2>1. <a href="http://jim.webber.name/">Jim Webber</a> &#8220;Revisiting SOA for the 21st
-century&#8221;</h2>
-
-<p>Now this was awesome! Jim Webber, a former <a
-href="http://www.thoughtworks.com/">ThoughtWorks</a> employee, now
-Neo4j evangelist (in <a href="http://neotechnology.com/">Neotechnology</a>) described his views
-on how SOA should look - according to him. This was presented
-previously, on other occasions as his &#8220;Guerilla SOA&#8221; talk - generally he
-advocated for REST based services, loose contracts (stating that WSDLs
-are too verbose and code generation is evil).</p>
-
-<p>Jim mentioned Martin Fowler&#8217;s article on integration databases but I
-couldn&#8217;t find it anywhere - thou the topic looks interesting. He also
-recommended <a
-href="http://en.wikipedia.org/wiki/Behavior_Driven_Development">BDD</a> and exposing tests on the web for the end
-user to use them as early as possible.</p>
-
-<p> One big point he made his case with was <b>not relying on enterprise
-software</b>. Simple tools can do much better job. He compared
-implementing Web Services security (Secured SOAP over HTTP over TCP IP)
-to REST based service accessed through <i>HTTPS</i> - basic and easily
-testable with tools like <a href="http://curl.haxx.se/">curl</a>.</p>
-
-<p>Great talk. One of the best!</p>
-
-<h2>2. <a href="http://blog.staffannoteberg.com/">Staffan Noteberg</a> &#8220;Regex - the future
-programming&#8221;</h2>
-
-<p>I must confess, that this did not go too well. The whole talk was
-well prepared and laid out but it lacked depth. It was pretty basic
-introduction to regex. From the presentation&#8217;s subject I was rather
-prepared for some novel uses of regex - like for example: showing how to
-filter big volume of data with simple regex or sth.</p>
-
-<p>But the talk was fun, Staffan is a good speaker. He is also an author
-of <a href="http://www.pomodorotechnique.com/"> pomodoro technique</a> book - I intend to read sth abut
-this technique and this may be a nice start</p>
-
-<h2>3. Bartosz Kowalewski &#8220;Is OSGI ready for wide
-adoption?&#8221;</h2>
-
-<p>If it comes to titles I tend to rely on them pretty heavily, however
-strange it may seem. This time I also did - and the whole talk did not
-give me a definitive answer to the stated question.</p>
-
-<p>Sure, the presentation was informative, but it described some OSGI
-specific, quite low level stuff. Of course, if you want to use OSGI -
-even by leveraging application server with OSGI under the hood - you
-should know a fair bit about the technology itself. Even thou the AS
-does a good job of hiding OSGI container specifics from the developer,
-in case of problems it&#8217;s better to be well informed. All in all - the
-talk gave too little information for me.</p>
-
-<h2>4. <a href="http://www.jetbrains.com/company/people/Pech_Vaclav.html">Vaclav Pech</a> &#8220;Pick low hanging fruit&#8221;</h2>
-
-<p><b>&#8220;Parallelism is not hard, multithreading is&#8221;</b> - this was the
-key sentence of the presentation. The speaker showed how to introduce
-concurrency into normal java/groovy code by sprinkling it with
-concurrency powder. Easy enough! With <a
-href="http://gpars.codehaus.org/">GPars</a> library he
-showed:</p>
-
-<ul>
-<li>running processing tasks with thread pools</li>
-<li>testing concurrent code</li>
-<li>Fork/join Thread Pool - multiple thread queues (note to self:
-fork/join is good for hierarchical problems)</li>
-<li>low-hanging fruits:<br>
-
-    <ul>
-    <li>async calculations</li>
-    <li>fork/join</li>
-    <li>dataflow</li>
-    <li>parallel collection processing</li>
-    </ul>
-</li>
-<li>Actors are great - use <a
-href="http://gpars.codehaus.org/">GPars</a> or <a href="http://akka.io/">Akka</a>,
-is sufficient to use <i>@ActiveMethod</i> and <i>@ActiveObject</i>
-annotations and Actors are usable in OO-world</li>
-</ul>
-</p>
-
-<p> Good talk, well received!</p>
-
-<h2>5. <a href="http://www.linkedin.com/in/antonarhipov">Anton Arhipov</a> &#8220;Bytecode for discriminating
-developers&#8221;</h2>
-
-<p>Technical introduction to the world of bytecode, jvm specification
-details. I&#8217;ve drifted away to some other topics - really - can&#8217;t recall
-what this was all about.</p>
-
-<h2>6. <a href="http://jroller.com/aalmiray/">Andreas Almiray</a> &#8220;Polyglot Programming&#8221;</h2>
-
-<p>This was a nice talk covering Groovy, Scala and Closure. The whole
-point of it was to show how cool it is to play with emerging JVM
-languages. They are not only fun but also useful. What&#8217;s more, they
-bring freshness to java world, injecting it with some new paradigms and
-methodologies. It is easier to incorporate new ideas into younger JVM
-languages than to the mature Java.</p>
-
-<h2>7. <a href="http://jim.webber.name/">Jim Webber</a> &#8220;A pragmatic introduction to
-Neo4j&#8221;</h2>
-
-<p>And Jim Webber again, this time with some <a href="http://neo4j.org/">Neo4j</a> evangelism. First
-came some taxonomy information on NoSQL databases (Not Only SQL) as a
-whole - than some specific examples of problems solvable with graph
-databases - and Neo4j is a graph database. </p>
-
-<p> Main points of Jim&#8217;s talk were:
-<ul>
-<li>sharding a database is important for scalability</li>
-<li>series data - should be OK to use Neo4j as their storage</li>
-</ul>
-
-<h2>Conclusion</h2>
-
-<p>These were all the sessions I attended. On Saturday there was a
-Hacker-garden, but neither I had time nor will to stay - the topics were
-very interesting and I&#8217;d definitely like to experience such an event,
-but after 2 days of continuous talks I was rather tired.</p>
-
-<p>To sum up, 2011&#8217;s Geecon was a great experience, with lots of
-interesting talks and lots of new inspirations. Keep up the good work
-guys!</p></div>
-<h2>Comments</h2>
-<div class='comments'>
 </div>
 ]]></content>
   </entry>

@@ -9,9 +9,9 @@
   <meta name="author" content="Marcin Cylke">
 
   
-  <meta name="description" content="W najbliższy czwartek - czyli 29.11.2012 - poprowadzę prezentację w
-ramach Warsaw Hadoop User Group. Swoją obecność można odklinąć tu
-http://www. &hellip;">
+  <meta name="description" content="Here are the slides from the talk a gave yesterday. If you have any
+questions, please ask. <script async class="speakerdeck-embed"
+data-id=" &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +86,50 @@ http://www. &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2012/11/30/after-whug/">After WHUG Meeting</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-30T22:20:00+01:00" pubdate data-updated="true">Nov 30<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Here are the slides from the talk a gave yesterday. If you have any
+questions, please ask.</p>
+
+<script async class="speakerdeck-embed"
+data-id="cc18d5601d60013059a31231381554d7" data-ratio="1.33333333333333"
+src="//speakerdeck.com/assets/embed.js"></script>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1257,174 +1301,6 @@ Doea OVal handle variations / directions of validation?</p></div>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2011/05/22/geecon-2011-day-2/">Geecon 2011 - Day 2</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-05-22T18:39:31+02:00" pubdate data-updated="true">May 22<span>nd</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<p>And now for part 2 of my visit to Geecon 2011!</p>
-<EXCERPT>
-<h2>1. <a href="http://jim.webber.name/">Jim Webber</a> &#8220;Revisiting SOA for the 21st
-century&#8221;</h2>
-
-<p>Now this was awesome! Jim Webber, a former <a
-href="http://www.thoughtworks.com/">ThoughtWorks</a> employee, now
-Neo4j evangelist (in <a href="http://neotechnology.com/">Neotechnology</a>) described his views
-on how SOA should look - according to him. This was presented
-previously, on other occasions as his &#8220;Guerilla SOA&#8221; talk - generally he
-advocated for REST based services, loose contracts (stating that WSDLs
-are too verbose and code generation is evil).</p>
-
-<p>Jim mentioned Martin Fowler&#8217;s article on integration databases but I
-couldn&#8217;t find it anywhere - thou the topic looks interesting. He also
-recommended <a
-href="http://en.wikipedia.org/wiki/Behavior_Driven_Development">BDD</a> and exposing tests on the web for the end
-user to use them as early as possible.</p>
-
-<p> One big point he made his case with was <b>not relying on enterprise
-software</b>. Simple tools can do much better job. He compared
-implementing Web Services security (Secured SOAP over HTTP over TCP IP)
-to REST based service accessed through <i>HTTPS</i> - basic and easily
-testable with tools like <a href="http://curl.haxx.se/">curl</a>.</p>
-
-<p>Great talk. One of the best!</p>
-
-<h2>2. <a href="http://blog.staffannoteberg.com/">Staffan Noteberg</a> &#8220;Regex - the future
-programming&#8221;</h2>
-
-<p>I must confess, that this did not go too well. The whole talk was
-well prepared and laid out but it lacked depth. It was pretty basic
-introduction to regex. From the presentation&#8217;s subject I was rather
-prepared for some novel uses of regex - like for example: showing how to
-filter big volume of data with simple regex or sth.</p>
-
-<p>But the talk was fun, Staffan is a good speaker. He is also an author
-of <a href="http://www.pomodorotechnique.com/"> pomodoro technique</a> book - I intend to read sth abut
-this technique and this may be a nice start</p>
-
-<h2>3. Bartosz Kowalewski &#8220;Is OSGI ready for wide
-adoption?&#8221;</h2>
-
-<p>If it comes to titles I tend to rely on them pretty heavily, however
-strange it may seem. This time I also did - and the whole talk did not
-give me a definitive answer to the stated question.</p>
-
-<p>Sure, the presentation was informative, but it described some OSGI
-specific, quite low level stuff. Of course, if you want to use OSGI -
-even by leveraging application server with OSGI under the hood - you
-should know a fair bit about the technology itself. Even thou the AS
-does a good job of hiding OSGI container specifics from the developer,
-in case of problems it&#8217;s better to be well informed. All in all - the
-talk gave too little information for me.</p>
-
-<h2>4. <a href="http://www.jetbrains.com/company/people/Pech_Vaclav.html">Vaclav Pech</a> &#8220;Pick low hanging fruit&#8221;</h2>
-
-<p><b>&#8220;Parallelism is not hard, multithreading is&#8221;</b> - this was the
-key sentence of the presentation. The speaker showed how to introduce
-concurrency into normal java/groovy code by sprinkling it with
-concurrency powder. Easy enough! With <a
-href="http://gpars.codehaus.org/">GPars</a> library he
-showed:</p>
-
-<ul>
-<li>running processing tasks with thread pools</li>
-<li>testing concurrent code</li>
-<li>Fork/join Thread Pool - multiple thread queues (note to self:
-fork/join is good for hierarchical problems)</li>
-<li>low-hanging fruits:<br>
-
-    <ul>
-    <li>async calculations</li>
-    <li>fork/join</li>
-    <li>dataflow</li>
-    <li>parallel collection processing</li>
-    </ul>
-</li>
-<li>Actors are great - use <a
-href="http://gpars.codehaus.org/">GPars</a> or <a href="http://akka.io/">Akka</a>,
-is sufficient to use <i>@ActiveMethod</i> and <i>@ActiveObject</i>
-annotations and Actors are usable in OO-world</li>
-</ul>
-</p>
-
-<p> Good talk, well received!</p>
-
-<h2>5. <a href="http://www.linkedin.com/in/antonarhipov">Anton Arhipov</a> &#8220;Bytecode for discriminating
-developers&#8221;</h2>
-
-<p>Technical introduction to the world of bytecode, jvm specification
-details. I&#8217;ve drifted away to some other topics - really - can&#8217;t recall
-what this was all about.</p>
-
-<h2>6. <a href="http://jroller.com/aalmiray/">Andreas Almiray</a> &#8220;Polyglot Programming&#8221;</h2>
-
-<p>This was a nice talk covering Groovy, Scala and Closure. The whole
-point of it was to show how cool it is to play with emerging JVM
-languages. They are not only fun but also useful. What&#8217;s more, they
-bring freshness to java world, injecting it with some new paradigms and
-methodologies. It is easier to incorporate new ideas into younger JVM
-languages than to the mature Java.</p>
-
-<h2>7. <a href="http://jim.webber.name/">Jim Webber</a> &#8220;A pragmatic introduction to
-Neo4j&#8221;</h2>
-
-<p>And Jim Webber again, this time with some <a href="http://neo4j.org/">Neo4j</a> evangelism. First
-came some taxonomy information on NoSQL databases (Not Only SQL) as a
-whole - than some specific examples of problems solvable with graph
-databases - and Neo4j is a graph database. </p>
-
-<p> Main points of Jim&#8217;s talk were:
-<ul>
-<li>sharding a database is important for scalability</li>
-<li>series data - should be OK to use Neo4j as their storage</li>
-</ul>
-
-<h2>Conclusion</h2>
-
-<p>These were all the sessions I attended. On Saturday there was a
-Hacker-garden, but neither I had time nor will to stay - the topics were
-very interesting and I&#8217;d definitely like to experience such an event,
-but after 2 days of continuous talks I was rather tired.</p>
-
-<p>To sum up, 2011&#8217;s Geecon was a great experience, with lots of
-interesting talks and lots of new inspirations. Keep up the good work
-guys!</p></div>
-<h2>Comments</h2>
-<div class='comments'>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -1442,6 +1318,10 @@ guys!</p></div>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/07/07/mac-os-x-switch/">Should you switch to Mac?</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/04/29/scalar-conf-2016/">Scalar Conf 2016</a>
       </li>
     
@@ -1455,10 +1335,6 @@ guys!</p></div>
     
       <li class="post">
         <a href="/blog/2014/07/14/super-confitura-man/">Super Confitura Man</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/10/distributed-scans-with-hbase/">Distributed scans with HBase</a>
       </li>
     
   </ul>
