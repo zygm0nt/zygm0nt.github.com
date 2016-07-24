@@ -4,7 +4,7 @@
   <title><![CDATA[Marcin bloguje]]></title>
   <link href="http://zygm0nt.github.com/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2016-07-11T23:21:06+02:00</updated>
+  <updated>2016-07-24T23:08:13+02:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -12,6 +12,68 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[IT minimalist]]></title>
+    <link href="http://zygm0nt.github.com/blog/2016/07/24/it-minimalist/"/>
+    <updated>2016-07-24T23:06:00+02:00</updated>
+    <id>http://zygm0nt.github.com/blog/2016/07/24/it-minimalist</id>
+    <content type="html"><![CDATA[<p>This is me at this moment in time:</p>
+
+<ul>
+<li>164 rss channels I&#8217;m subscribed to</li>
+<li>47 opened browser tabs, in two different browsers (Chrome, Firefox), across two different machines,</li>
+<li>29 movies to watch -</li>
+<li>44 notes in google keep</li>
+<li>78 books to read</li>
+</ul>
+
+
+<p>This is information overload.</p>
+
+<!-- more -->
+
+
+<p><em>Disclaimer</em>: Please treat this entry as a mind dump - the description of my approach at this moment. These are ways of dealing with information overflow, and also threads. If you&#8217;d like to discuss anything related, feel free to write about that in comments&#8217; section.</p>
+
+<p>You can always say I&#8217;m just clicking like a madman, or suffering from <a href="https://en.wikipedia.org/wiki/Adhd">ADHD</a> or <a href="https://en.wikipedia.org/wiki/Fear_of_missing_out">FOMA</a>. Sure, this would be the simplest explanation.</p>
+
+<p>But I&#8217;d argue, that my behavior isn&#8217;t that rare. People just tend to get lost in this abundance of information. That&#8217;s why I&#8217;ve tried introducing minimalistic approach in my digital activity.</p>
+
+<h2>What is minimalism</h2>
+
+<p>There is actually a trend that says - leave only the most important things, have only a hundred of them, this should suffice. You can read about <a href="http://www.theminimalists.com/minimalism/">it</a> <a href="http://www.becomingminimalist.com/">all</a> <a href="http://time.com/3738202/minimalism-clutter-too-much-stuff/">around</a> the <a href="http://zenhabits.net/">internet</a>.</p>
+
+<p>In general this is more about simplifying your living, not only its physical aspects. There are lots of advises how to have less on your mind, let go of unimportant things. And this all really helps.</p>
+
+<p>Some of those I&#8217;ve tried. And it helped. I&#8217;ve stopped blindly gathering things. I&#8217;ve thrown away, sold or swapped some others I know I won&#8217;t look into again. I&#8217;ve somewhat learned how to at best try to be a minimalist in physical world. I&#8217;m still struggling to set my mind onto minimalist&#8217;s tracks.</p>
+
+<p>What I&#8217;ve been lacking was following those rules with my thought processes and my digital activity.
+The way I can most precisely describe my mind, or what&#8217;s happening in it is indycar race with new cars constantly joining without the old ones retiring.
+This means all the time I get all the weird ideas, some small, like clean the fridge, some bigger, like I need to check this new awesome hardware or software platform, and sometimes they&#8217;re just overwhelming but tempting. The kind of bold ones - &#8220;get rich young or die trying&#8221; kind.</p>
+
+<h2>How I deal with this constant stream of &#8220;joy&#8221;?</h2>
+
+<ul>
+<li><a href="http://bulletjournal.com/">bullet journal</a> - one journal instead of myriads of little notes all over the place . The idea is really neat, cause it assumes you spent some time reviewing your past, not finished goals and verify whether they&#8217;re still things worth pursuing or not,</li>
+<li><a href="https://keep.google.com">google keep</a> - nice but it is just a virtual bunch of little notes. Great for fast note-scribbling on a mobile. Also they have one huge advantage over paper ones - they&#8217;re searchable,</li>
+<li><a href="https://getpocket.com/">pocket</a> - I use this simple app a lot. It allows me to channel all the things that seem like a worthwhile reads to mobile - thus they won&#8217;t pollute browser windows. And there is a chance I&#8217;ll read them later. There is also another thing about cluttering my pocket account, but by postponing to Pocket you gain time to reconsider if that piece of information is still relevant after some amount of time.</li>
+</ul>
+
+
+<h2>Distractions / sources of &#8220;joy&#8221;</h2>
+
+<ul>
+<li>twitter, facebook - sifting through meaningless entries on some of those services try to limit it&#8217;s usage, to some amount per day/week</li>
+<li><a href="http://newsblur.com/">newsblur</a> - lots of RSS feeds - I read only the most interesting ones, which means I skim through majority of the feeds. Also I try to follow simple rule - if I want to add a new feed, I look through those already there and try to decide which ones I don&#8217;t actively read, or don&#8217;t enjoy. It is not obligatory to remove feeds, but the simple act of reconsidering is sometimes the best solution.</li>
+</ul>
+
+
+<h2>Conclusion</h2>
+
+<p>Not doing anything isn&#8217;t helping. Advising at least some solutions to this data influx is the least we can do. I&#8217;ve mentioned just the most useful to me. If you have yours, please share those in the comments.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Should you switch to Mac?]]></title>
@@ -2020,219 +2082,6 @@ This looks like a very nice art+video project. Look at those clips:
 </ol></div>
 <h2>Comments</h2>
 <div class='comments'>
-</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[OVal - validate your models quickly and effortlessly!]]></title>
-    <link href="http://zygm0nt.github.com/blog/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/"/>
-    <updated>2011-07-14T10:25:19+02:00</updated>
-    <id>http://zygm0nt.github.com/blog/2011/07/14/oval-validate-your-models-quickly-and-effortlessly</id>
-    <content type="html"><![CDATA[<div class='post'>
-<p>Some time ago one of the projects at work required me to validate
-some Java POJOs. Theses were my model classes and I&#8217;ve been creating
-them from incoming WebService requests. One would say that XSD would be
-sufficient for the task, for parts of this validations - sure, it would.
-But there were some advanced rules XSD would not handle, or would render
-the schema document very complicated.</p>
-
-<p>Rules I needed to express were like:
-
-<ul>
-
-<li>person&#8217;s <i>first_name</i> and <i>last_name</i> should be of appropriate length -
-between 2 and 20, and additionally one could pass a zero-length string
-just to remove the previous value</li>
-<li><i>state</i> field should consist only defined values - as in
-dictionary value - this one would be completable with XSD&#8217;s
-enumerations, but would require often changing schema files and
-redistributing them to interested parties :(</li>
-</ul>
-
-<p>The library I&#8217;ve decided to use for this task is <a
-href="http://oval.sf.net">OVal</a> and it came out really nice! Read on
-to find out the details!</p>
-
-<EXCERPT>
-
-<p>Oval is quite mature library that allows POJO validation, but is not
-JSR303 (bean validation) implementation. It has converters that enable
-it to understand those annotations, but I&#8217;m not sure about the
-compatibility.</p>
-
-<p>I&#8217;ve tried only a subset of the available checks, among which
-were:</p>
-
-<ul>
-<li>NotNull</li>
-<li>NotEmpty</li>
-<li>Length</li>
-</ul>
-
-<p>There are many more, and their attributes give interesting ways to
-configure the validation process. But using them was rather easy and did
-not require to much brainstorming. What I really needed were custom
-checks. And in this area OVal shows it&#8217;s strength. Implementing a check
-is really easy.</p>
-
-<p>I needed an annotation that would check a field against some values in
-a dictionary. If field&#8217;s value was in the given set, than the validation
-would succeed, if not, an exception would be thrown. To accomplish this
-task it is required to implement two classes: annotation class and check
-class - called by the validation engine on a given field.</p>
-
-<p>Let&#8217;s start with our new annotation:</p>
-
-<div><script src='https://gist.github.com/1077516.js?file=DictionaryValue.java'></script>
-<noscript><pre><code>import net.sf.oval.configuration.annotation.Constraint;
-
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
-@Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.FIELD, ElementType.PARAMETER, ElementType.METHOD})
-@Constraint(checkWith = DictionaryValueCheck.class)
-public @interface DictionaryValue {
-    /**
-     * message to be used for the ConstraintsViolatedException
-     *
-     * @see ConstraintsViolatedException
-     */
-    String message() default &quot;constraint.DictionaryValue.violated&quot;;
-
-    String file();
-}</code></pre></noscript></div>
- 
-
-In the above snippet I&#8217;ve defined a check-annotation, that would be used like
-this:
-
-<div><script src='https://gist.github.com/1077516.js?file=sample.java'></script>
-<noscript><pre><code>public class Address {
-        ....
-	@DictionaryValue(file = &quot;/validation/voivodeship.txt&quot;) String state;
-        ....
-}</code></pre></noscript></div>
- 
-
-You can pass <i>file</i> - containing dictionary values for this field.
-There is also <i>message</i> field in the annotation which is an error
-message returned by the validation engine of failed check - pretty
-handy. And can be expressed in <i>.properties</i> file as:
-
-<div><script src='https://gist.github.com/1077516.js?file=validation.properties'></script>
-<noscript><pre><code>constraint.DictionaryValue.violated={context} is not among allowed dictionary values</code></pre></noscript></div>
- 
-
-<p>Placeholder, like <i>context</i>, will be replaced with correct values supplied by the
-validation engine.</p>
-
-Annotating a field is not enough. It is also needed to create a validator
-for this kind of check. The name of the class is already defined in
-<i>DictionaryValue</i> annotation, it is called
-<i>DictionaryValueCheck</i> and I&#8217;ve done this check this way:
-
-<div><script src='https://gist.github.com/1077516.js?file=DictionaryValueCheck.java'></script>
-<noscript><pre><code>import net.sf.oval.Validator;
-import net.sf.oval.configuration.annotation.AbstractAnnotationCheck;
-import net.sf.oval.context.OValContext;
-import net.sf.oval.exception.OValException;
-import org.apache.commons.io.IOUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.regex.Pattern;
-
-public class DictionaryValueCheck extends AbstractAnnotationCheck&lt;DictionaryValue&gt; {
-
-    private Log log = LogFactory.getLog(DictionaryValueCheck.class);
-
-    private String file;
-
-    Map&lt;String, String&gt; dictionary;
-
-    @Override
-	public void configure(final DictionaryValue constraintAnnotation) {
-		super.configure(constraintAnnotation);
-		setFile(constraintAnnotation.file());
-	}
-
-    private void setFile(String file) {
-        this.file = file;
-        dictionary = loadDictionaryFrom(file);
-        requireMessageVariablesRecreation();
-    }
-
-    private Map&lt;String, String&gt; loadDictionaryFrom(String file) {
-        String fileStr;
-        Map&lt;String, String&gt; map = new HashMap&lt;String, String&gt;();
-        try {
-            fileStr = IOUtils.toString(this.getClass().getResourceAsStream(file));
-        } catch (IOException e) {
-            log.error(&quot;Error loading file: &quot;, e);
-            return map;
-        }
-        for (String line : fileStr.split(&quot;\n&quot;)) {
-            if (line.trim().length() == 0)
-                continue;
-            String[] tokens = line.split(&quot; &quot;, 2); // we want 2 substrings max
-            if (tokens.length == 2)
-                map.put(tokens[0], tokens[1]);
-            if (tokens.length == 1)
-                map.put(tokens[0], null);
-        }
-        return map;
-    }
-
-    public boolean isSatisfied(Object validatedObject, Object valueToValidate, OValContext context, Validator validator) throws OValException {
-        if (valueToValidate == null)
-            return true;
-        return dictionary.containsKey(valueToValidate);
-    }
-}
-</code></pre></noscript></div>
-
-
-What this basically does is:
-<ol>
-<li>when <i>file</i> is set - read dictionary content from the file into
-map</li>
-<li>upon check request just lookup value in dictionary parsed from the
-input file</li>
-</ol>
-
-<p>And that&#8217;s it!</p>
-
-<p>For me Oval is really great tool. With it at ones disposal it is extremely easy to create any
-imaginable validation you need. This library is really easy to use and
-offers lots of handy features.</p>
-
-<p>But perhaps I&#8217;m reinventing the wheel and all this can be done easily
-with some other library? Share Your opinion!</p>
-</div>
-<h2>Comments</h2>
-<div class='comments'>
-<div class='comment'>
-<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
-<div class='content'>
-<p>Now that&#8217;s a great question. I&#8217;ve forgotten to write about this, but OVal offers profiles, which you can disable or enable whenever you like. You set a profile for a specific annotation. In your case let&#8217;s assume You have two operations: add and update. Your model has field annotated with @NotNull(profile=&quot;UPDATE&quot;), which means we don&#8217;t want null values on it when updating. In _add_ operation you disable the profile called UPDATE, so the annotation is also disabled. When calling _update_ you enable the profile and the validation is performed. <br />
-<br />
-More on this here: http://oval.sourceforge.net/userguide.html#d4e561</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="">querial</a></div>
-<div class='content'>
-<p>Question:<br />
-Say, we have an object with a primary key, that is mandatory (in the database), but described as AUTOINCREMENT. When client sends new object data, the primary key is obviously null, but we need to validate it for not-nullity in other cases.<br />
-<br />
-Doea OVal handle variations / directions of validation?</p></div>
-</div>
 </div>
 ]]></content>
   </entry>

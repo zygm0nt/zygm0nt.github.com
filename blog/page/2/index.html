@@ -9,9 +9,9 @@
   <meta name="author" content="Marcin Cylke">
 
   
-  <meta name="description" content="Here are the slides from the talk a gave yesterday. If you have any
-questions, please ask. <script async class="speakerdeck-embed"
-data-id=" &hellip;">
+  <meta name="description" content="This post is a summary of what has been presented by Kathleen Ting on
+StrangeLoop conference. You can watch the original here:
+http://www.infoq.com/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +86,217 @@ data-id=" &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2013/03/21/zookeeper-tips/">Operational Problems With Zookeeper</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-21T23:56:00+01:00" pubdate data-updated="true">Mar 21<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This post is a summary of what has been presented by Kathleen Ting on
+StrangeLoop conference. You can watch the original here:
+<a href="http://www.infoq.com/presentations/Misconfiguration-ZooKeeper">http://www.infoq.com/presentations/Misconfiguration-ZooKeeper</a></p>
+
+<p>I&#8217;ve decided to put this selection here for quick reference.</p>
+
+<h2>Connection mismanagement</h2>
+
+<ul>
+<li><p>too many connections</p>
+
+<pre><code>  WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - Too many connections from /xx.x.xx.xxx - max is 60
+</code></pre></li>
+<li><p>running out of ZK connections?</p>
+
+<ul>
+<li>set <code>maxClientCnxns=200</code> in <code>zoo.cfg</code></li>
+</ul>
+</li>
+<li><p>HBase client leaking connections?</p>
+
+<ul>
+<li>fixed in HBASE-3777, HBASE-4773, HBASE-5466</li>
+<li>manually close connections</li>
+</ul>
+</li>
+<li><p>connection closes prematurely</p>
+
+<pre><code>  ERROR: org.apache.hadoop.hbase.ZooKeeperConnectionException: HBase is able to connect to ZooKeeper but the connection closes immediately.
+</code></pre></li>
+<li><p>in <code>hbase-site.xml</code> set <code>hbase.zookeeper.recoverable.waittime=30000ms</code></p></li>
+<li><p>pig hangs connecting to HBase</p>
+
+<pre><code>  WARN org.apache.zookeeper.ClientCnxn: Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect java.net.ConnectionException: Connection refused!
+</code></pre>
+
+<p>  <strong>CAUSE:</strong> location of ZK quorum is not known to Pig</p>
+
+<ul>
+<li>use Pig 10, which includes PIG-2115</li>
+<li>if there is an overlap between TaskTrackers and ZK quorum nodes
+
+<ul>
+<li>set <code>hbase.zookeeper.quorum</code> to final in <code>hbase-site.xml</code></li>
+<li>otherwise add <code>hbaze.zoopeeker.quorum=hadoophbasemaster.lan:2181</code> in <code>pig.properties</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Time mismanagement</h2>
+
+<ul>
+<li><p>client session timed out</p>
+
+<pre><code>  INFO org.apache.zookeeper.server.ZooKeeperServer: Expiring session &lt;id&gt;, timeout of 40000ms exceeded
+</code></pre>
+
+<ul>
+<li>ZK and HBase need the same session timeout values
+
+<ul>
+<li><code>zoo.cfg</code>: <code>maxSession=Timeout=180000</code></li>
+<li><code>hbase-site.xml</code>: <code>zookeeper.session.timeout=180000</code></li>
+</ul>
+</li>
+<li>don&#8217;t co-locate ZK with IO-intense DataNode or RegionServer</li>
+<li>specify right amount of heap and tune GC flags
+
+<ul>
+<li>turn on parallel/CMS/incremental GC</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>clients lose connections</p>
+
+<pre><code>  WARN org.apache.zookeeper.ClientCnxn - Session &lt;id&gt; for server &lt;name&gt;, unexpected error, closing socket connection and attempting reconnect java.io.IOException: Broken pipe
+</code></pre>
+
+<ul>
+<li>don&#8217;t use SSD drive for ZK transaction log</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Disk management</h2>
+
+<ul>
+<li><p>unable to load database - unable to run quorum server</p>
+
+<pre><code>  FATAL Unable to load database on disk !  java.io.IOException: Failed to process transaction type: 2 error: KeeperErrorCode = NoNode for &lt;file&gt; at org.apache.zookeeper.server.persistence.FileTxnSnapLog.restore(FileTxnSnapLog.java:152)!
+</code></pre>
+
+<ul>
+<li>archive and wipe <code>/var/zookeeper/version-2</code> if other two ZK servers
+are running</li>
+</ul>
+</li>
+<li><p>unable to load database - unreasonable length exception</p>
+
+<pre><code>  FATAL Unable to load database on disk java.io.IOException: Unreasonable length = 1048583 at org.apache.jute.BinaryInputArchive.readBuffer(BinaryInputArchive.java:100)
+</code></pre>
+
+<ul>
+<li>server allows a client to set data larger than the server can read from disk</li>
+<li>if a znode is not readable, increase <code>jute.maxbuffer</code>
+
+<ul>
+<li>look for <code>"Packet len &lt;xx&gt; is out of range"</code> in the client log</li>
+<li>increase it by 20%</li>
+<li>set in <code>JVMFLAGS="-Djute.maxbuffer=yy" bin/zkCli.sh</code></li>
+<li>fixed in ZOOKEEPER-1513</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>failure to follow leader</p>
+
+<pre><code>  WARN org.apache.zookeeper.server.quorum.Learner: Exception when following the leader java.net.SocketTimeoutException: Read timed out 
+</code></pre>
+
+  <strong>CAUSE:</strong>
+
+<ul>
+<li>disk IO contention, network issues</li>
+<li>ZK snapshot is too large (lots of ZK nodes)</li>
+</ul>
+
+
+<p>  <strong>SOLVE:</strong></p>
+
+<ul>
+<li>reduce IO contention by putting dataDir on dedicated spindle</li>
+<li>increase initLimit on all ZK servers and restart, see
+ZOOKEEPER-1521</li>
+<li>monitor network</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Best Practices</h2>
+
+<p><strong>DOs</strong></p>
+
+<ul>
+<li>separate spindles for dataDir &amp; dataLogDir</li>
+<li>allocate 3 or 5 ZK servers</li>
+<li>tune garbage collection</li>
+<li>run zkCleanup.sh script via cron</li>
+</ul>
+
+
+<p><strong>DON&#8217;Ts</strong></p>
+
+<ul>
+<li>dont&#8217; co-locate ZK with I/O intense DataNode or RegionServer</li>
+<li>don&#8217;t use SSD drive for ZK transaction log</li>
+</ul>
+
+
+<p>You may use Zookeeper as an observer - a non-voting member:</p>
+
+<ul>
+<li><p>in zoo.cfg</p>
+
+<pre><code>  peerType=observer
+</code></pre></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1059,248 +1270,6 @@ This looks like a very nice art+video project. Look at those clips:
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/">OVal - Validate Your Models Quickly and Effortlessly!</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-07-14T10:25:19+02:00" pubdate data-updated="true">Jul 14<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<p>Some time ago one of the projects at work required me to validate
-some Java POJOs. Theses were my model classes and I&#8217;ve been creating
-them from incoming WebService requests. One would say that XSD would be
-sufficient for the task, for parts of this validations - sure, it would.
-But there were some advanced rules XSD would not handle, or would render
-the schema document very complicated.</p>
-
-<p>Rules I needed to express were like:
-
-<ul>
-
-<li>person&#8217;s <i>first_name</i> and <i>last_name</i> should be of appropriate length -
-between 2 and 20, and additionally one could pass a zero-length string
-just to remove the previous value</li>
-<li><i>state</i> field should consist only defined values - as in
-dictionary value - this one would be completable with XSD&#8217;s
-enumerations, but would require often changing schema files and
-redistributing them to interested parties :(</li>
-</ul>
-
-<p>The library I&#8217;ve decided to use for this task is <a
-href="http://oval.sf.net">OVal</a> and it came out really nice! Read on
-to find out the details!</p>
-
-<EXCERPT>
-
-<p>Oval is quite mature library that allows POJO validation, but is not
-JSR303 (bean validation) implementation. It has converters that enable
-it to understand those annotations, but I&#8217;m not sure about the
-compatibility.</p>
-
-<p>I&#8217;ve tried only a subset of the available checks, among which
-were:</p>
-
-<ul>
-<li>NotNull</li>
-<li>NotEmpty</li>
-<li>Length</li>
-</ul>
-
-<p>There are many more, and their attributes give interesting ways to
-configure the validation process. But using them was rather easy and did
-not require to much brainstorming. What I really needed were custom
-checks. And in this area OVal shows it&#8217;s strength. Implementing a check
-is really easy.</p>
-
-<p>I needed an annotation that would check a field against some values in
-a dictionary. If field&#8217;s value was in the given set, than the validation
-would succeed, if not, an exception would be thrown. To accomplish this
-task it is required to implement two classes: annotation class and check
-class - called by the validation engine on a given field.</p>
-
-<p>Let&#8217;s start with our new annotation:</p>
-
-<div><script src='https://gist.github.com/1077516.js?file=DictionaryValue.java'></script>
-<noscript><pre><code>import net.sf.oval.configuration.annotation.Constraint;
-
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
-@Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.FIELD, ElementType.PARAMETER, ElementType.METHOD})
-@Constraint(checkWith = DictionaryValueCheck.class)
-public @interface DictionaryValue {
-    /**
-     * message to be used for the ConstraintsViolatedException
-     *
-     * @see ConstraintsViolatedException
-     */
-    String message() default &quot;constraint.DictionaryValue.violated&quot;;
-
-    String file();
-}</code></pre></noscript></div>
- 
-
-In the above snippet I&#8217;ve defined a check-annotation, that would be used like
-this:
-
-<div><script src='https://gist.github.com/1077516.js?file=sample.java'></script>
-<noscript><pre><code>public class Address {
-        ....
-	@DictionaryValue(file = &quot;/validation/voivodeship.txt&quot;) String state;
-        ....
-}</code></pre></noscript></div>
- 
-
-You can pass <i>file</i> - containing dictionary values for this field.
-There is also <i>message</i> field in the annotation which is an error
-message returned by the validation engine of failed check - pretty
-handy. And can be expressed in <i>.properties</i> file as:
-
-<div><script src='https://gist.github.com/1077516.js?file=validation.properties'></script>
-<noscript><pre><code>constraint.DictionaryValue.violated={context} is not among allowed dictionary values</code></pre></noscript></div>
- 
-
-<p>Placeholder, like <i>context</i>, will be replaced with correct values supplied by the
-validation engine.</p>
-
-Annotating a field is not enough. It is also needed to create a validator
-for this kind of check. The name of the class is already defined in
-<i>DictionaryValue</i> annotation, it is called
-<i>DictionaryValueCheck</i> and I&#8217;ve done this check this way:
-
-<div><script src='https://gist.github.com/1077516.js?file=DictionaryValueCheck.java'></script>
-<noscript><pre><code>import net.sf.oval.Validator;
-import net.sf.oval.configuration.annotation.AbstractAnnotationCheck;
-import net.sf.oval.context.OValContext;
-import net.sf.oval.exception.OValException;
-import org.apache.commons.io.IOUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.regex.Pattern;
-
-public class DictionaryValueCheck extends AbstractAnnotationCheck&lt;DictionaryValue&gt; {
-
-    private Log log = LogFactory.getLog(DictionaryValueCheck.class);
-
-    private String file;
-
-    Map&lt;String, String&gt; dictionary;
-
-    @Override
-	public void configure(final DictionaryValue constraintAnnotation) {
-		super.configure(constraintAnnotation);
-		setFile(constraintAnnotation.file());
-	}
-
-    private void setFile(String file) {
-        this.file = file;
-        dictionary = loadDictionaryFrom(file);
-        requireMessageVariablesRecreation();
-    }
-
-    private Map&lt;String, String&gt; loadDictionaryFrom(String file) {
-        String fileStr;
-        Map&lt;String, String&gt; map = new HashMap&lt;String, String&gt;();
-        try {
-            fileStr = IOUtils.toString(this.getClass().getResourceAsStream(file));
-        } catch (IOException e) {
-            log.error(&quot;Error loading file: &quot;, e);
-            return map;
-        }
-        for (String line : fileStr.split(&quot;\n&quot;)) {
-            if (line.trim().length() == 0)
-                continue;
-            String[] tokens = line.split(&quot; &quot;, 2); // we want 2 substrings max
-            if (tokens.length == 2)
-                map.put(tokens[0], tokens[1]);
-            if (tokens.length == 1)
-                map.put(tokens[0], null);
-        }
-        return map;
-    }
-
-    public boolean isSatisfied(Object validatedObject, Object valueToValidate, OValContext context, Validator validator) throws OValException {
-        if (valueToValidate == null)
-            return true;
-        return dictionary.containsKey(valueToValidate);
-    }
-}
-</code></pre></noscript></div>
-
-
-What this basically does is:
-<ol>
-<li>when <i>file</i> is set - read dictionary content from the file into
-map</li>
-<li>upon check request just lookup value in dictionary parsed from the
-input file</li>
-</ol>
-
-<p>And that&#8217;s it!</p>
-
-<p>For me Oval is really great tool. With it at ones disposal it is extremely easy to create any
-imaginable validation you need. This library is really easy to use and
-offers lots of handy features.</p>
-
-<p>But perhaps I&#8217;m reinventing the wheel and all this can be done easily
-with some other library? Share Your opinion!</p>
-</div>
-<h2>Comments</h2>
-<div class='comments'>
-<div class='comment'>
-<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
-<div class='content'>
-<p>Now that&#8217;s a great question. I&#8217;ve forgotten to write about this, but OVal offers profiles, which you can disable or enable whenever you like. You set a profile for a specific annotation. In your case let&#8217;s assume You have two operations: add and update. Your model has field annotated with @NotNull(profile=&quot;UPDATE&quot;), which means we don&#8217;t want null values on it when updating. In _add_ operation you disable the profile called UPDATE, so the annotation is also disabled. When calling _update_ you enable the profile and the validation is performed. <br />
-<br />
-More on this here: http://oval.sourceforge.net/userguide.html#d4e561</p></div>
-</div>
-<div class='comment'>
-<div class='author'><a href="">querial</a></div>
-<div class='content'>
-<p>Question:<br />
-Say, we have an object with a primary key, that is mandatory (in the database), but described as AUTOINCREMENT. When client sends new object data, the primary key is obviously null, but we need to validate it for not-nullity in other cases.<br />
-<br />
-Doea OVal handle variations / directions of validation?</p></div>
-</div>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -1318,6 +1287,10 @@ Doea OVal handle variations / directions of validation?</p></div>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/07/24/it-minimalist/">IT minimalist</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/07/07/mac-os-x-switch/">Should you switch to Mac?</a>
       </li>
     
@@ -1331,10 +1304,6 @@ Doea OVal handle variations / directions of validation?</p></div>
     
       <li class="post">
         <a href="/blog/2016/01/22/ccc-interesting-videos/">32c3 most interesting videos</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/07/14/super-confitura-man/">Super Confitura Man</a>
       </li>
     
   </ul>
