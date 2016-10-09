@@ -47,6 +47,8 @@ This pass should be enough to:
 # Bad Hackers Copy, Great Hackers Steal
 Hey, it's not me "going loco". Check this guy - Avi Bryant talking about his experience with reading research papers. The video is [here](https://vimeo.com/4763707). He shows his product for introducing mass edits in spreadsheets by generalizing editing with a groups of algorithms. There are no details of the algorithms, but please watch this just for his great motivation and passion.
 
+{% vimeo 4763707 %}
+
 # What I've already read and find important?
 Since I've started tracking my progress with reading research papers I've already read quite a number of those. Here, have a look at some extremely interesting papers, at least things I find this way:
 
