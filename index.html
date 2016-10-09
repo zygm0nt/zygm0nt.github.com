@@ -9,8 +9,7 @@
   <meta name="author" content="Marcin Cylke">
 
   
-  <meta name="description" content="This is me at this moment in time: 164 rss channels I&#8217;m subscribed to
-47 opened browser tabs, in two different browsers (Chrome, Firefox), &hellip;">
+  <meta name="description" content="Research papers seemed to exist there for others to read. They were that strange thing some people produced and no one ever read. At least they &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,6 +84,51 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2016/10/09/reading-research-papers/">Reading Research Papers for Fun and Profit</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-10-09T23:00:00+02:00" pubdate data-updated="true">Oct 9<span>th</span>, 2016</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Research papers seemed to exist there for others to read. They were that strange thing some people produced and no one ever read. At least they looked to me like this for a long time. But that changed. Gradually, when I became interested first, in distributed systems, than in machine learning, they started appearing frequently along blogposts and tweets. With mentions all over internet. This made me think about their usefulness in solving general, everyday problems in those areas. They were no longer that unapproachable, academic papers I read at school. Nope, they became something else entirely.</p>
+
+<p>Over time I&#8217;ve learned to gather insights, ideas and understanding from them. I&#8217;ve developed some technique and would like to share it. Is it really helpful? I don&#8217;t know. Perhaps it just works for me. Can&#8217;t say for sure.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2016/10/09/reading-research-papers/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -622,159 +666,6 @@ resolution was heavily inspired by Adam Kawa&#8217;s post <a href="http://hakuna
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2013/06/23/zookeeper-curator/">Zookeeper + Curator = Distributed Sync</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-23T22:20:00+02:00" pubdate data-updated="true">Jun 23<span>rd</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p class="c8"><img height="300" src="/assets/2013-06-24-zookeeper-curator.jpg"></p><p class="c1"><span></span></p><p class="c8">
-    <span>An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system&rsquo;s components. Since I had already a few separate components I didn&rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I&rsquo;ve decided to go that way with my solution.</span>
-</p><h2 class="c8"><a name="h.v629433u6utf"></a><span>What is Zookeeper?</span></h2><p class="c8"><span>Just a crude distributed synchronization framework. However, it implements Paxos-style algorithms (</span><span
-        class="c5"><a class="c0" href="http://en.wikipedia.org/wiki/Paxos_(computer_science)">http://en.wikipedia.org/wiki/Paxos_(computer_science)</a></span><span>) to ensure no split-brain scenarios would occur. This is quite an important feature, since I don&rsquo;t have to care about that kind of problems while using this app. You just need to create an ensemble of a couple of its instances - to ensure high availability. It is basically a virtual filesystem, with files, directories and stuff. One could ask why another filesystem? Well this one is a rather special one, especially for distributed systems. The reason why creating all the locking algorithms on top of Zookeeper is easy is its Ephemeral Nodes - which are just files that exist as long as connection for them exists. After it disconnects - such file disappears. </span>
-</p><p class="c8"><span>With such paradigms in place it&rsquo;s fairly easy to create some high level algorithms for synchronization.</span>
-</p><p class="c1"><span></span></p><p class="c8"><span>Having that in place, it</span><span>&nbsp;can</span><span>&nbsp;safely integrate multiple services ensuring loose coupling in a distributed way.</span>
-</p><p class="c1"><span></span></p><h2 class="c8"><a name="h.ppqvt63vg53w"></a><span>Zookeeper from developer&rsquo;s POV</span>
-</h2><p class="c8"><span>With all the base services for Zookeeper started, it seems there is nothing else, than just connect to it and start implementing necessary algorithms. Unfortunately, the API is quite basic and offers files and directories abstractions with the addition of different node type (file types) - ephemeral and sequence. It is also possible to watch a node for changes.</span>
-</p><h2 class="c8"><a name="h.lgfultrxupbf"></a><span>Using bare Zookeeper is hard!</span></h2><p class="c8"><span>Creating connections is tedious - and there is lots of things to take care of. Handling an established connection is hard - when establishing connection to ensemble, it&rsquo;s necessary to negotiate a session also. During the whole process a number of exceptions can occur - these are &ldquo;recoverable&rdquo;
-    exceptions, that can be gracefully handled and not break the connection.</span></p><p class="c1"><span></span></p><p
-        class="c8"><span>So, Zookeeper API is hard.</span></p><p class="c1"><span></span></p><p class="c8"><span>Even if one is proficient with that API, then there come recipes. The reason for using Zookeeper is to be able to implement some more sophisticated algorithms on top of it. Unfortunately those aren&rsquo;t trivial and it is again quite hard to implement them without bugs.</span>
-</p><p class="c1"><span></span></p><p class="c8"><span>And since distributed systems are hard, why would anyone want another difficult to handle tool? </span>
-</p><p class="c1"><span></span></p><h2 class="c8"><a name="h.8n72xils1l1f"></a><span>Enter Curator</span></h2><p
-        class="c8"><span>Happily, guys from Netflix implemented a nice abstraction for dealing with Zookeeper internals. They called it Curator and use it extensively in the company&rsquo;s environment. Curator offers consistent API for Zookeeper&rsquo;s functionality. It even implements a couple of recipes for distributed systems.</span>
-</p><p class="c1"><span></span></p><h2 class="c8"><a name="h.k63iku7qitza"></a><span>File read/write</span></h2><p
-        class="c8"><span>The basic use of Zookeeper is as a distributed configuration repository. For this scenario I only need read/write capabilities, to be able to write and read files from the Zookeeper filesystem. This code snippet writes a sample json to a file on ZK filesystem.</span>
-</p><p class="c1"><span></span></p><a href="#" name="fb1072a0c295459e23a47b12e8c09952a5ab3768"></a><a href="#"
-                                                                                                      name="0"></a>
-<pre>
-<code>
-EnsurePath ensurePath = new EnsurePath(markerPath);
-ensurePath.ensure(client.getZookeeperClient());
-String json = “...”;
-if (client.checkExists().forPath(statusFile(core)) != null)
-     client.setData().forPath(statusFile(core), json.getBytes());
-else
-     client.create().forPath(statusFile(core), json.getBytes());
-
-</code>
-</pre>
-
-<p class="c1"><span></span></p><h2 class="c8"><a name="h.ikl4cn73c5uw"></a><span>Distributed locking</span></h2>
-<p class="c8"><span>Having multiple systems there may be a need of using an exclusive lock for some resource, or perhaps some big system requires it&rsquo;s components to synchronize based on locks. This &ldquo;recipe&rdquo;
-    is an ideal match for those situations.</span></p><p class="c1"><span></span></p><a href="#"
-                                                                                        name="b0329bbbf14b79ffaba1139881914aea887ef6a3"></a>
-<a href="#" name="1"></a>
-<pre>
-<code>
-
-lock = new InterProcessSemaphoreMutex(client, lockPath);
-lock.acquire(5, TimeUnit.MINUTES);
-… do sth …
-lock.release();
-
-</code>
-</pre>
-
-<p class="c8"><span>&nbsp;(from </span><span class="c5"><a class="c0"
-                                                                   href="https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/LockingRemotely.java">https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/LockingRemotely.java</a></span><span>)</span>
-</p><p class="c1"><span></span></p><h2 class="c8"><a name="h.ck92kse5nam2"></a><span>Sevice Advertisement</span></h2><p
-        class="c8"><span>This is quite an interesting use case. With many small services on different servers it is not wise to exchange ip addresses and ports between them. When some of those services may go down, while other will try to replace them - the task gets even harder. </span>
-</p><p class="c8"><span>That&rsquo;s why, with Zookeeper in place, it can be utilised as a registry of existing services.</span>
-</p><p class="c1"><span></span></p><p class="c8"><span>If a service starts, it registers into the ServiceRegistry, offering basic information, like it&rsquo;s purpose, role, address, and port. </span>
-</p><p class="c8"><span>Services that want to use a specific kind of service request an access to some instance. This way of configuring easily decouples services from their configuration.</span>
-</p><p class="c1"><span></span></p><p class="c8"><span>Basically this scenario needs ? steps:</span></p><p class="c8">
-    <span>1. Service starts and registers its presence (</span><span class="c5"><a class="c0"
-                                                                                   href="https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerAdvertiser.java#L44">https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerAdvertiser.java#L44</a></span><span>)</span><span>:</span>
-</p><p class="c1"><span></span></p><a href="#" name="1c67229d451cd2d82dddaf1fb12af1aed4a8ecb0"></a>
-
-<pre>
-<code>
-
-ServiceDiscovery<WorkerMetadata> discovery = getDiscovery();
-            discovery.start();
-            ServiceInstance si = getInstance();
-            log.info(si);
-            discovery.registerService(si);
-
-
-</code>
-</pre>
-<p class="c1"><span></span></p><p class="c8"><span>2. Another service - on another host or in another JVM on the same machine tries to discover who is implementing the service (</span><span
-        class="c5"><a class="c0"
-                      href="https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerFinder.java#L50">https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerFinder.java#L50</a></span><span>)</span><span>:</span>
-</p><p class="c1"><span></span></p><a href="#" name="0e430a074ab36c8eea3f84fae3d0cffb400dd281"></a><a href="#"
-                                                                                                      name="3"></a>
-<pre>
-<code>
-instances = discovery.queryForInstances(serviceName);
-</code>
-</pre>
-
-<p class="c8"><span>The whole concept here is ridiculously simple - the service advertising its presence just stores a file with its whereabouts. The service that is looking for service providers just look into specific directory and read stored definitions.</span>
-</p><p class="c1"><span></span></p><p class="c8"><span>In my example, the structure advertised by services looks like this (+ some getters and constructor - the rest is here: </span><span
-        class="c5"><a class="c0"
-                      href="https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/model/WorkerMetadata.java">https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/model/WorkerMetadata.java</a></span><span>):</span>
-</p><p class="c1"><span></span></p><a href="#" name="c0131478bfab43e60b5e077f3170a172a909d199"></a>
-
-<pre>
-<code>
-
-public final class WorkerMetadata {
-    private final UUID workerId;
-    private final String listenAddress;
-    private final int listenPort;
-}
-
-</code>
-</pre>
-<p class="c1"><span></span></p><h2 class="c8"><a name="h.qvt6wa2m15sm"></a><span>Source code</span></h2><p
-        class="c8"><span>The above recipes are available in Curator library (</span><span class="c5"><a class="c0"
-                                                                                                        href="http://curator.incubator.apache.org/">http://curator.incubator.apache.org/</a></span><span>). Recipes&rsquo;
-    usage examples are in my github repo at </span><span class="c5"><a class="c0"
-                                                                       href="https://github.com/zygm0nt/curator-playground">https://github.com/zygm0nt/curator-playground</a></span>
-</p><p class="c1"><span></span></p><h2 class="c8"><a name="h.o1zkosbrwpah"></a><span>Conclusion</span></h2><p
-        class="c8"><span>If you&rsquo;re in need of a reliable platform for exchanging data and managing synchronization, and you need to do it in a distributed fashion - just choose Zookeeper. Then add Curator for the ease of using it. Enjoy!</span>
-</p><p class="c1"><span></span></p><p class="c1"><span></span></p>
-<hr><p class="c1"><span></span></p>
-<ol class="c13" start="1">
-    <li class="c7"><span>image comes from: </span><span class="c5"><a class="c0"
-                                                                      href="http://www.flickr.com/photos/jfgallery/2993361148">http://www.flickr.com/photos/jfgallery/2993361148</a></span>
-    </li>
-    <li class="c7"><span>all source code fragments taken from this repo: </span><span class="c5"><a class="c0"
-                                                                                                    href="https://github.com/zygm0nt/curator-playground">https://github.com/zygm0nt/curator-playground</a></span>
-    </li>
-</ol>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -790,6 +681,10 @@ public final class WorkerMetadata {
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/10/09/reading-research-papers/">Reading research papers for fun and profit</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/07/24/it-minimalist/">IT minimalist</a>
       </li>
     
@@ -803,10 +698,6 @@ public final class WorkerMetadata {
     
       <li class="post">
         <a href="/blog/2016/02/20/lambda-days-2016/">Lambda Days 2016</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/01/22/ccc-interesting-videos/">32c3 most interesting videos</a>
       </li>
     
   </ul>
