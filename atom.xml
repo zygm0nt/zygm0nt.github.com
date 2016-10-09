@@ -4,7 +4,7 @@
   <title><![CDATA[Marcin bloguje]]></title>
   <link href="http://zygm0nt.github.com/atom.xml" rel="self"/>
   <link href="http://zygm0nt.github.com/"/>
-  <updated>2016-10-09T23:06:44+02:00</updated>
+  <updated>2016-10-09T23:10:09+02:00</updated>
   <id>http://zygm0nt.github.com/</id>
   <author>
     <name><![CDATA[Marcin Cylke]]></name>
@@ -70,6 +70,9 @@
 <h1>Bad Hackers Copy, Great Hackers Steal</h1>
 
 <p>Hey, it&#8217;s not me &#8220;going loco&#8221;. Check this guy - Avi Bryant talking about his experience with reading research papers. The video is <a href="https://vimeo.com/4763707">here</a>. He shows his product for introducing mass edits in spreadsheets by generalizing editing with a groups of algorithms. There are no details of the algorithms, but please watch this just for his great motivation and passion.</p>
+
+<div class="embed-video-container"><iframe src="http://zygm0nt.github.com//player.vimeo.com/video/4763707"></iframe></div>
+
 
 <h1>What I&#8217;ve already read and find important?</h1>
 
