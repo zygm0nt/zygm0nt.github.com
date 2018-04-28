@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Complex flows with Apache Camel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.15" />
+  <link href="" rel="alternate" type="application/rss+xml" title="Just a blog" />
+  <link href="http://marcin.cylke.com.pl/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://marcin.cylke.com.pl/css/hc.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  
+    
+    </head>
+    <body>
+<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
+      <div id = "wrapper">
+
+
+<div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="http://marcin.cylke.com.pl/"><p class="navbar-brand">Just a blog</p></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+					
+					
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+       
+       <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+					<img src="" />
+          <li class="sidebar-brand"><a href="http://marcin.cylke.com.pl/"><h1 class="brand">Just a blog</h1></a><h3></h3></li>
+          <hr />
+					
+          <hr />
+          <div id="social-wrapper">
+           
+           
+           
+           
+         </div>
+       </ul>
+     </div>
+
+
+
+     <div class="container">
+
+
+  <div id="article">
+   <div class="article-title">Complex flows with Apache Camel</div>
+   <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 2010-08-26</small></p> <hr/>
+   <div class="post">
+     <div class='post'>
+<p>
+At work, we're mainly integrating services and systems, and since we're on a constant lookout for new, better
+technologies, ways to do things easier, make them more sustainable, we're trying to 
+</p>
+<p>
+Usually we use <a href="http://camel.apache.org">Apache Camel</a> for this task, which is a Swiss-knife for 
+integration engineer. What's more, this tools corresponds well with our approach to integration solutions:
+</p>
+<ul>
+<li> try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits,
+<li> don't convert XML into Java classes back and forth and be worried with problems like XML conversion,
+<li> try to get a simple flow of the process.
+</ul>
+
+<p>
+However, at first sight Apache Camel seems to have some drawbacks mainly
+in the area of  practical solutions ;-).
+It's very handy tool if you need to use it as a pipeline with some marginal processing of 
+the data that passes through it. It gets a lot harder to wrap your head around if you consider some 
+branching and intermediate calls to external services. This may be tricky to write properly in Camel's DSL.
+</p>
+<p>
+Here is a simple pipeline example:
+</p>
+<img src="http://blog.innovative-labs.com/blog/simple_flow.png" width="600"/>
+<p>
+And here the exact scenario we're discussing:
+</p>
+<img src="http://blog.innovative-labs.com/blog/branched_flow.png" width="600"/>
+
+<p>
+What I'd like to show is the solution to this problem. Well, if you're using a recent version of Camel 
+this may be easier, a little different, but should still more-or-less
+work this way. This code is written for 
+Apache Camel 1.4 - a rather antic version, but that's what we're forced to use. Oh, well.
+</p>
+
+<p>
+Ok, enough whining!
+</p>
+<p>
+So, I create a test class to illustrate the case. The route defined in <b>TestRouter</b> class is responsible for:
+</p>
+
+<ol>
+<li> receiving input
+<li> setting exchange property to a given xpath, which effectively is the name of the first XML element in the input stream
+<li> than, the input data is sent to three different external services, each of them replies with some fictional data - notice routes <b>a</b>, <b>b</b> and <b>c</b>.  The <b>SimpleContentSetter</b> processor is just for responding with a given text.
+<li> the response from all three services is somehow processed by <b>RequestEnricher</b> bean, which is described below
+<li> eventually the exchange is logged in specified category
+</ol>
+
+<p>
+Here is some code for this:
+</p>
+
+<pre class="brush: java">
+public class SimpleTest {
+    public void setUp() throws Exception {
+        TestRouter tr = new TestRouter();
+        ctx.addRoutes(tr);
+    }
+
+    @Test
+    public void shouldCheck() throws Exception {
+        ctx.createProducerTemplate().send("direct:in", getInOut("&lt;a/&gt;"));
+    }
+
+
+    class TestRouter extends RouteBuilder {
+
+        public void configure() throws Exception {
+
+            ((ProcessorType&lt;ProcessorType&gt;)from("direct:in")
+            .setProperty("operation").xpath("local-name(/*)", String.class)
+            .multicast(new MergeAggregationStrategy())
+                .to("direct:a", "direct:b", "direct:c")
+            .end()
+            .setBody().simple("<wrap>${in.body}</wrap>"))
+            .bean(RequestEnricher.class, "enrich")
+            .to("log:pl.touk.debug");
+            
+            from("direct:a").process(new SimpleContentSetter("&lt;aaaa/&gt;"));
+            from("direct:b").process(new SimpleContentSetter("&lt;bbbb param1=\"1\" param2=\"2\" param3=\"3\"/&gt;"));
+            from("direct:c").process(new SimpleContentSetter("&lt;cccc/&gt;"));
+        }
+    }
+}
+</pre>
+
+<p>
+What's unusual in this code is the fact, that what normally Camel does when you write a piece of DSL like:
+</p>
+
+<pre class="brush: java">
+	.to("direct:a", "direct:b", "direct:c")
+</pre>
+
+<p>
+is pass input to service <b>a</b>, than <b>a</b>'s output gets passed to <b>b</b>, becomes it's input, than
+<b>b</b>'s output becomes <b>c</b>'s input. The problem being, you loose the output from <b>a</b> and <b>b</b>, 
+not mentioning that you might want to send the same input to all three services.
+</p>
+
+<p>
+That's where a little tool called <i>multicast()</i> comes in handy. It offers you the ability to aggregate 
+the outputs of those services. You may even create an <b>AggregationStrategy</b> that will do it the way you like. 
+Below class, <b>MergeAggregationStrategy</b> does exactly that kind of work - it joins outputs from all three 
+services. A lot of info about proper use of <b>AggregationStrategy</b>-ies can be found in 
+<a href="http://tmielke.blogspot.com/2009/01/using-camel-aggregator-correctly.html">this post by Torsten Mielke.</a> 
+</p>
+
+<pre class="brush: java">
+public class MergeAggregationStrategy implements AggregationStrategy {
+
+	public Exchange aggregate(Exchange oldExchange, Exchange newExchange) {
+		if (oldExchange.isFailed()) {
+			return oldExchange;
+		}
+		transformMessage(oldExchange.getIn(), newExchange.getIn());
+		transformMessage(oldExchange.getOut(), newExchange.getOut());
+		return newExchange;
+	}
+	
+	private void transformMessage(Message oldM, Message newM) {
+		String oldBody = oldM.getBody(String.class);
+		String newBody = newM.getBody(String.class);
+		newM.setBody(oldBody + newBody);
+	}
+	
+}
+</pre>
+
+<p>
+However nice this may look (or not), what you're left with is a mix of multiple XMLs. Normally this 
+won't do you much good. Better thing to do is to parse this output in some way. What we're using for this 
+is a Groovy :). Which is great for the task of parsing XML. A lot less verbose than ordinary Java.
+</p>
+
+<p>
+Let's assume a scenario, that the aggregated output, currently looking like this:
+</p>
+
+<pre class="brush: xml">
+	<aaaa></aaaa>
+	<bbbb></bbbb>
+	<cccc></cccc>
+</pre>
+
+<p>
+is to be processed with the following steps in mind:
+</p>
+
+<ul>
+<li> use <i>&lt;aaaa/&gt;</i> as the result element
+<li> use attributes <i>param1</i>, <i>param2</i>, <i>param3</i> from element <i>&lt;bbbb/&gt;</i> and add it to result element <i>&lt;aaaa/&gt;</i>
+</ul>
+
+<pre class="brush: groovy">
+public class RequestEnricher {
+	
+	public String enrich(@Property(name = "operation") String operation, Exchange ex) {
+		
+		use(DOMCategory) {
+			def dhl = new groovy.xml.Namespace("http://example.com/common/dhl/schema", 'dhl')
+			def pc = new groovy.xml.Namespace("http://example.com/pc/types", 'pc')
+			def doc = new XmlParser().parseText(ex.in.body)
+			
+			def pcRequest   = doc."aaaa"[0]
+			
+			["param1", "param2", "param3"].each() {
+				def node = doc.'**'[("" + it)][0]
+				if (node)
+					pcRequest['@' + it] = node.text()
+			}
+			
+			gNodeListToString([pcRequest])
+		}
+		
+	}
+	
+	String gNodeListToString(list) {
+		StringBuilder sb = new StringBuilder();
+		list.each { listItem -&gt;
+			StringWriter sw = new StringWriter();
+			new XmlNodePrinter(new PrintWriter(sw)).print(listItem)
+			sb.append(sw.toString());
+		}
+		return sb.toString();
+	}
+	
+}
+</pre>
+
+<p>
+What we're doing here, especially the last line of <b>enrich</b> method is the conversion to String. There are
+some problems for Camel if we spit out Groovy objects. The rest is just some Groovy specific ways of manipulating XML.
+But looking into <b>enrich</b> method's parameters, there is <i>@Property</i> annotation used, which binds the property
+assigned earlier in a router code to one of the arguments. That is really cool feature and there are more such annotations:
+</p> 
+
+<ul>
+<li> <i>@XPath</i>
+<li> <i>@Header</i>
+<li> <i>@Headers</i> and <i>@Properties</i> - gives whole maps of properties or headers
+</ul>
+
+<p>This pretty much concludes the subject :) Have fun, and if in doubt,
+leave a comment with your question!</p></div>
+
+   </div>
+ </div>
+
+
+ <a href="https://twitter.com/share" class="twitter-share-button " data-size="small" data-count="none">Tweet</a>
+ <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+ <ul class="pager">
+      &nbsp;<li class="previous"><a href="http://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/"> Schematron to the rescue!</a></li>
+      &nbsp;<li class="next"><a href="http://marcin.cylke.com.pl/2010/08/18/meetbsd-2010/"> Meetbsd 2010</a></li>
+</ul>
+
+
+
+    </ul>
+    </div>
+    <footer>
+
+        <p class="text-muted credit">&copy; 2018. All rights reserved. </p>
+    </footer>
+ 
+    <script src="http://marcin.cylke.com.pl/js/jquery-1.10.2.min.js"></script>
+    <script src="http://marcin.cylke.com.pl/js/bootstrap.min.js"></script>
+    <script src="http://marcin.cylke.com.pl/js/bootstrap.js"></script>
+    <script type="text/javascript" src="http://marcin.cylke.com.pl/js/hc.js"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hack Electronics on Just a blog</title>
+    <link>http://marcin.cylke.com.pl/categories/hack-electronics/</link>
+    <description>Recent content in Hack Electronics on Just a blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Oct 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://marcin.cylke.com.pl/categories/hack-electronics/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>raspberry-pi</title>
+      <link>http://marcin.cylke.com.pl/2012/10/18/raspberry-pi/</link>
+      <pubDate>Thu, 18 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2012/10/18/raspberry-pi/</guid>
+      <description>&lt;p&gt;About a month ago I finally received my very own Raspberry Pi board!
+Don&amp;rsquo;t know what that is? Here, read some at their
+&lt;a href=&#34;http://www.raspberrypi.org/&#34;&gt;website&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For the sake of completness let me just describe that as prototyping
+platform with ARM processor. It is really similar in concept to what
+Arduino is, except it has not that many extensions available (none? or
+very little, I&amp;rsquo;ve only found those on &lt;a href=&#34;http://adafruit.com/&#34;&gt;Adafruit&lt;/a&gt;
+pages).&lt;/p&gt;
+
+&lt;p&gt;So, here is the obligatory picture.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.innovative-labs.com/blog/raspberry-pi.jpg&#34; alt=&#34;My very own R-Pi&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It can run a Linux distribution, so anyone familiar with that can have a
+go with this low-powered computer.&lt;/p&gt;
+
+&lt;p&gt;The board itself is on the market for quite some time now. That&amp;rsquo;s why
+there are lots of interesting resources and projects that you can do
+with that stuff.&lt;/p&gt;
+
+&lt;p&gt;Here are just a bunch of them:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.elcojacobs.com/uberfridge/&#34;&gt;UberFridge&lt;/a&gt; - for all the
+brewers in the world :)&lt;/li&gt;
+&lt;li&gt;SOHO server&lt;/li&gt;
+&lt;li&gt;a supercomputer - &lt;a href=&#34;http://www.southampton.ac.uk/mediacentre/features/raspberry_pi_supercomputer.shtml&#34;&gt;cluster out of R-Pi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Arcade Cabinet - &lt;a href=&#34;http://www.raspberrypi.org/phpBB3/viewtopic.php?f=9&amp;amp;t=1814&#34;&gt;custom build gaming rig&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Hand-held emulation machine - &lt;a href=&#34;http://www.raspberrypi.org/phpBB3/viewtopic.php?f=9&amp;amp;t=4570&#34;&gt;R-Pi on the go&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;sending R-Pi to &lt;a href=&#34;http://www.raspberrypi.org/phpBB3/viewtopic.php?f=9&amp;amp;t=2059&#34;&gt;the edge of Space&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;coffe machine - &lt;a href=&#34;http://moccapi.blogspot.co.uk/&#34;&gt;MoccaPi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;other projects on elinux - &lt;a href=&#34;http://elinux.org/RPi_Projects&#34;&gt;Elinux projects&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;other projects on Hack-a-Day - &lt;a href=&#34;http://hackaday.com/tag/raspberry-pi/&#34;&gt;Hack-a-Day Raspberry Pi
+tags&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Do you also own R-Pi? Share what you plan to do with it.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

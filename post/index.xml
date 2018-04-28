@@ -1,0 +1,1328 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Just a blog</title>
+    <link>http://marcin.cylke.com.pl/post/</link>
+    <description>Recent content in Posts on Just a blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Oct 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://marcin.cylke.com.pl/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Reading research papers for fun and profit</title>
+      <link>http://marcin.cylke.com.pl/2016/10/10/reading-research-papers/</link>
+      <pubDate>Mon, 10 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2016/10/10/reading-research-papers/</guid>
+      <description>
+
+&lt;p&gt;Research papers seemed to exist there for others to read. They were that strange thing some people produced and no one ever read. At least they looked to me like this for a long time. But that changed. Gradually, when I became interested first, in distributed systems, than in machine learning, they started appearing frequently along blogposts and tweets. With mentions all over internet. This made me think about their usefulness in solving general, everyday problems in those areas. They were no longer that unapproachable, academic papers I read at school. Nope, they became something else entirely.&lt;/p&gt;
+
+&lt;p&gt;Over time I&amp;rsquo;ve learned to gather insights, ideas and understanding from them. I&amp;rsquo;ve developed some technique and would like to share it. Is it really helpful? I don&amp;rsquo;t know. Perhaps it just works for me. Can&amp;rsquo;t say for sure.&lt;/p&gt;
+
+&lt;h1 id=&#34;how-to-read-a-research-paper:fc6d4d0c048956505e8df0489b0a739e&#34;&gt;How to read a research paper?&lt;/h1&gt;
+
+&lt;p&gt;The most basic paper that shows how to efficiently read research papers is &lt;a href=&#34;http://blizzard.cs.uwaterloo.ca/keshav/home/Papers/data/07/paper-reading.pdf&#34;&gt;&amp;ldquo;How to read a paper&amp;rdquo;&lt;/a&gt;. It&amp;rsquo;s great, short and succinct but pinpoints exactly the things you should do to read and comprehend such content. At least it works for me.&lt;/p&gt;
+
+&lt;p&gt;The whole procedure outlines reading a paper in multiple papers. It also states that reading from paper is a lot more efficient that from screen. At least it gets all the online distractions away.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve decided to go with just two passes. First pass is just to quickly scan the paper and see if it&amp;rsquo;s actually relevant. Second pass should give me sufficient understanding of the paper to decide should I dwell on it longer (ie. to implement or use in some project).&lt;/p&gt;
+
+&lt;p&gt;Ok, so, here&amp;rsquo;s what I get from each pass:&lt;/p&gt;
+
+&lt;h2 id=&#34;1st-pass:fc6d4d0c048956505e8df0489b0a739e&#34;&gt;1st pass&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;read the title&lt;/li&gt;
+&lt;li&gt;read headlines&lt;/li&gt;
+&lt;li&gt;look at math formulas&lt;/li&gt;
+&lt;li&gt;reat the conclusion&lt;/li&gt;
+&lt;li&gt;glare over references&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This pass should be sufficient to assign the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;category - what type of paper is it?&lt;/li&gt;
+&lt;li&gt;context - which other papers are related&lt;/li&gt;
+&lt;li&gt;correctness - do the assumptions appear to be valid&lt;/li&gt;
+&lt;li&gt;contributions - what are the paper&amp;rsquo;s main contributions&lt;/li&gt;
+&lt;li&gt;clarity - is the paper well written?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;2nd-pass:fc6d4d0c048956505e8df0489b0a739e&#34;&gt;2nd pass&lt;/h2&gt;
+
+&lt;p&gt;This pass should be enough to:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;grasp the content of the paper&lt;/li&gt;
+&lt;li&gt;be able to summarize the main theme of the paper&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;bad-hackers-copy-great-hackers-steal:fc6d4d0c048956505e8df0489b0a739e&#34;&gt;Bad Hackers Copy, Great Hackers Steal&lt;/h1&gt;
+
+&lt;p&gt;Hey, it&amp;rsquo;s not me &amp;ldquo;going loco&amp;rdquo;. Check this guy - Avi Bryant talking about his experience with reading research papers. The video is &lt;a href=&#34;https://vimeo.com/4763707&#34;&gt;here&lt;/a&gt;. He shows his product for introducing mass edits in spreadsheets by generalizing editing with a groups of algorithms. There are no details of the algorithms, but please watch this just for his great motivation and passion.&lt;/p&gt;
+
+&lt;p&gt;{% vimeo 4763707 %}&lt;/p&gt;
+
+&lt;h1 id=&#34;what-i-ve-already-read-and-find-important:fc6d4d0c048956505e8df0489b0a739e&#34;&gt;What I&amp;rsquo;ve already read and find important?&lt;/h1&gt;
+
+&lt;p&gt;Since I&amp;rsquo;ve started tracking my progress with reading research papers I&amp;rsquo;ve already read quite a number of those. Here, have a look at some extremely interesting papers, at least things I find this way:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.acolyer.org/2016/09/12/on-designing-and-deploying-internet-scale-services/&#34;&gt;On designing and deploying internet scale services&lt;/a&gt; - great paper. A concise compedium of guidelines to follow when building big, distributed systems. Goes through different areas of a project - functional and non-functional requirements&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://research.facebook.com/publications/realtime-data-processing-at-facebook/&#34;&gt;Realtime data procesing at Facebook&lt;/a&gt;  - how facebook manages processing all that data, how they move fast at such scale? This paper describes an ecosystem that exists at Facebook. Great to see they actually use multiple streaming solutions, just for the sake of &amp;ldquo;right tool for the job&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cs.virginia.edu/~evans/cs655/readings/smalltalk.html&#34;&gt;Design principles behind Smalltalk&lt;/a&gt; - very short one, but informative and great to read. Basically lays down a couple simple principles on building systems&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://research.google.com/pubs/pub45390.html&#34;&gt;Goods: Organizing Google&amp;rsquo;s datasets&lt;/a&gt; - not universally useful or entertaining, but if you tackle heaps of unstructured data on daily basis - ideas presented here are enlightening&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;start-small:fc6d4d0c048956505e8df0489b0a739e&#34;&gt;Start small&lt;/h1&gt;
+
+&lt;p&gt;Of course this is not for everyone. Just try and decide whether you like that kind of brain muscle stretching, or not. If the things described above scare you, perhaps try with something smaller. There is a delightful Youtube channel &lt;a href=&#34;https://www.youtube.com/playlist?list=PLujxSBD-JXgnqDD1n-V30pKtp6Q886x7e&#34;&gt;2 minute papers&lt;/a&gt;, which goes beyond computer science and shows great scientific innovations in just two minutes. This in itself is just too short to actually get all the details, but is just enough to get you interested in a specific subject. You can later dig deeper into specific areas.&lt;/p&gt;
+
+&lt;h1 id=&#34;conclusion:fc6d4d0c048956505e8df0489b0a739e&#34;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;Reading research papers changes perspective. It&amp;rsquo;s great, do this as frequent as you want, but just ingest new ideas, or read papers that are effectively building blocks of specific industries. They are really good and reading the classics is always in fashion!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>IT minimalist</title>
+      <link>http://marcin.cylke.com.pl/2016/07/24/it-minimalist/</link>
+      <pubDate>Sun, 24 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2016/07/24/it-minimalist/</guid>
+      <description>
+
+&lt;p&gt;This is me at this moment in time:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;164 rss channels I&amp;rsquo;m subscribed to&lt;/li&gt;
+&lt;li&gt;47 opened browser tabs, in two different browsers (Chrome, Firefox), across two different machines,&lt;/li&gt;
+&lt;li&gt;29 movies to watch -&lt;/li&gt;
+&lt;li&gt;44 notes in google keep&lt;/li&gt;
+&lt;li&gt;78 books to read&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This is information overload.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Disclaimer&lt;/em&gt;: Please treat this entry as a mind dump - the description of my approach at this moment. These are ways of dealing with information overflow, and also threads. If you&amp;rsquo;d like to discuss anything related, feel free to write about that in comments&amp;rsquo; section.&lt;/p&gt;
+
+&lt;p&gt;You can always say I&amp;rsquo;m just clicking like a madman, or suffering from &lt;a href=&#34;https://en.wikipedia.org/wiki/Adhd&#34;&gt;ADHD&lt;/a&gt; or &lt;a href=&#34;https://en.wikipedia.org/wiki/Fear_of_missing_out&#34;&gt;FOMA&lt;/a&gt;. Sure, this would be the simplest explanation.&lt;/p&gt;
+
+&lt;p&gt;But I&amp;rsquo;d argue, that my behavior isn&amp;rsquo;t that rare. People just tend to get lost in this abundance of information. That&amp;rsquo;s why I&amp;rsquo;ve tried introducing minimalistic approach in my digital activity.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-is-minimalism:739fcbbf01106c09ee1fd49336d32079&#34;&gt;What is minimalism&lt;/h2&gt;
+
+&lt;p&gt;There is actually a trend that says - leave only the most important things, have only a hundred of them, this should suffice. You can read about &lt;a href=&#34;http://www.theminimalists.com/minimalism/&#34;&gt;it&lt;/a&gt; &lt;a href=&#34;http://www.becomingminimalist.com/&#34;&gt;all&lt;/a&gt; &lt;a href=&#34;http://time.com/3738202/minimalism-clutter-too-much-stuff/&#34;&gt;around&lt;/a&gt; the &lt;a href=&#34;http://zenhabits.net/&#34;&gt;internet&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In general this is more about simplifying your living, not only its physical aspects. There are lots of advises how to have less on your mind, let go of unimportant things. And this all really helps.&lt;/p&gt;
+
+&lt;p&gt;Some of those I&amp;rsquo;ve tried. And it helped. I&amp;rsquo;ve stopped blindly gathering things. I&amp;rsquo;ve thrown away, sold or swapped some others I know I won&amp;rsquo;t look into again. I&amp;rsquo;ve somewhat learned how to at best try to be a minimalist in physical world. I&amp;rsquo;m still struggling to set my mind onto minimalist&amp;rsquo;s tracks.&lt;/p&gt;
+
+&lt;p&gt;What I&amp;rsquo;ve been lacking was following those rules with my thought processes and my digital activity.
+The way I can most precisely describe my mind, or what&amp;rsquo;s happening in it is indycar race with new cars constantly joining without the old ones retiring.
+This means all the time I get all the weird ideas, some small, like clean the fridge, some bigger, like I need to check this new awesome hardware or software platform, and sometimes they&amp;rsquo;re just overwhelming but tempting. The kind of bold ones - &amp;ldquo;get rich young or die trying&amp;rdquo; kind.&lt;/p&gt;
+
+&lt;h2 id=&#34;how-i-deal-with-this-constant-stream-of-joy:739fcbbf01106c09ee1fd49336d32079&#34;&gt;How I deal with this constant stream of &amp;ldquo;joy&amp;rdquo;?&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://bulletjournal.com/&#34;&gt;bullet journal&lt;/a&gt; - one journal instead of myriads of little notes all over the place . The idea is really neat, cause it assumes you spent some time reviewing your past, not finished goals and verify whether they&amp;rsquo;re still things worth pursuing or not,&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://keep.google.com&#34;&gt;google keep&lt;/a&gt; - nice but it is just a virtual bunch of little notes. Great for fast note-scribbling on a mobile. Also they have one huge advantage over paper ones - they&amp;rsquo;re searchable,&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getpocket.com/&#34;&gt;pocket&lt;/a&gt; - I use this simple app a lot. It allows me to channel all the things that seem like a worthwhile reads to mobile - thus they won&amp;rsquo;t pollute browser windows. And there is a chance I&amp;rsquo;ll read them later. There is also another thing about cluttering my pocket account, but by postponing to Pocket you gain time to reconsider if that piece of information is still relevant after some amount of time.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;distractions-sources-of-joy:739fcbbf01106c09ee1fd49336d32079&#34;&gt;Distractions / sources of &amp;ldquo;joy&amp;rdquo;&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;twitter, facebook - sifting through meaningless entries on some of those services try to limit it&amp;rsquo;s usage, to some amount per day/week&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://newsblur.com/&#34;&gt;newsblur&lt;/a&gt; - lots of RSS feeds - I read only the most interesting ones, which means I skim through majority of the feeds. Also I try to follow simple rule - if I want to add a new feed, I look through those already there and try to decide which ones I don&amp;rsquo;t actively read, or don&amp;rsquo;t enjoy. It is not obligatory to remove feeds, but the simple act of reconsidering is sometimes the best solution.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;conclusion:739fcbbf01106c09ee1fd49336d32079&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Not doing anything isn&amp;rsquo;t helping. Advising at least some solutions to this data influx is the least we can do. I&amp;rsquo;ve mentioned just the most useful to me. If you have yours, please share those in the comments.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Should you switch to Mac?</title>
+      <link>http://marcin.cylke.com.pl/2016/07/07/mac-os-x-switch/</link>
+      <pubDate>Thu, 07 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2016/07/07/mac-os-x-switch/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;https://farm9.staticflickr.com/8064/8229071681_02ffdb91dc_z_d.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;em&gt;by Flick user &lt;a href=&#34;https://www.flickr.com/photos/raneko/8229071681/in/photolist-dxb9je-sEQEP-5gDCSr-PE6FE-7Pa2t3-5yhFqq-MsHbZ-tEVFv-kBEvsd-5uPrGV-a5wisf-Ea1We-5tX2pp-22ybhw-ivTix6-5yk9cA-kBCugR-gcSkD-8cdXjv-asK9Y-7ZM66R-8N4eSG-4mchWA-4pjwaT-Gy8BR-7HPwfe-dxb9hv-4rXMuz-h6gJgm-9jULZ6-5SPsfu-kBECo7-6UUwCT-5whRwW-4rujwZ-8Kye5Q-9hN1d6-5utN7V-k9drqQ-4QPsUy-8VEazh-8UB7Ms-8VEaEq-neQih-8EHChx-ecth3o-8yrLUn-o7oNS-kBCXKM-6UYBrs&#34;&gt;raneko&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Who would have thought? Me switching to Mac? But it actually happened. I&amp;rsquo;ve been a long time Linux user, so why actually do the switch now? Or ever? Have a look at my thoughts and insights of novice Mac user.&lt;/p&gt;
+
+&lt;h2 id=&#34;in-the-beginning:f7d70e45ef21079a1cb2a356feab8261&#34;&gt;In the beginning&lt;/h2&gt;
+
+&lt;p&gt;My humble beginnings were with RedHat 6.0 on a AMD Duron 600Mhz PC machine. With a dialup connection. And setting that thing to connect into Poland&amp;rsquo;s national provider TPSA was rather painful. After some time using Linux, going from RedHat to Slackware I&amp;rsquo;ve decided things weren&amp;rsquo;t tough enough and switched to BSDs. That was really fun! I&amp;rsquo;ve used Free and Open flavors for a few years which very really great. Than switched back to Linux. I&amp;rsquo;ve used those *nix systems for all-things-computer. At home and at work.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-switch:f7d70e45ef21079a1cb2a356feab8261&#34;&gt;The switch&lt;/h2&gt;
+
+&lt;p&gt;And than came the new job and I had to choose: regular Dell or Macbook? Blue pill or red pill? I chose the later.&lt;/p&gt;
+
+&lt;p&gt;The switch wasn&amp;rsquo;t that painful, but mainly thanks to superb hardware Apple offers. Having to get used to a completely new OS was quite another story. It&amp;rsquo;s not that I was shocked by it. As a long time Linux user all the concepts are known to me. It&amp;rsquo;s the other way around - there are a lot of things missing that I learned to require from my tool of work.&lt;/p&gt;
+
+&lt;p&gt;What I really appreciate is the known userland tools - it&amp;rsquo;s BSD at the heart of it. Well, of course the kernel is some whacky Mach microkernel, but as for the userland I&amp;rsquo;m happy :) You can read more about the kernel and system&amp;rsquo;s design history on wikipedia (&lt;a href=&#34;https://en.wikipedia.org/wiki/OS_X&#34;&gt;Os X&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Darwin_(operating_system&#34;&gt;Darwin&lt;/a&gt;) &lt;a href=&#34;https://en.wikipedia.org/wiki/XNU&#34;&gt;XNU&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;One of the biggest disappointments was the filesystem and the way it&amp;rsquo;s presented to users. Mac OS X comes with HFS+ (&lt;a href=&#34;https://en.wikipedia.org/wiki/HFS_Plus&#34;&gt;link&lt;/a&gt;) filesystem which is case insensitive!!! To me this seems like an abomination. Plus there are multiple shortcuts taken by Apple engineers, like its endiannes: primarily Macs used PowerPC chips which are BigEndian by desing, but after switching to Intel processors everything is LittleEndian now. AFAIK HFS+ has to still switch bytes when reading metadata.&lt;/p&gt;
+
+&lt;p&gt;Really neat thing I&amp;rsquo;ve found out recently is that under the hood OS X uses PF (OpenBSD&amp;rsquo;s packet filter) as a firewalling solution.
+I don&amp;rsquo;t know which version is in the current release and how does it compare against the original implementation, but since PF has such a nice syntax and performance it&amp;rsquo;s great to have it on board. There are numerous blog posts about setting a decent firewall on OS X with PF so go have a look. Also you can play with PF by means of a set of apps called &lt;a href=&#34;http://www.murusfirewall.com/&#34;&gt;Murus&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;useful-tools:f7d70e45ef21079a1cb2a356feab8261&#34;&gt;Useful tools&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://brew.sh/&#34;&gt;Brew&lt;/a&gt; - basic application provider, offers all the things I&amp;rsquo;ve become used to when on Linux,&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ianyh/Amethyst&#34;&gt;Amethyst&lt;/a&gt; - allows window tiling with keyboard shortcuts and has focus-follows-mouse :D I love this feature, although with all the windows popping all over the place I must admit it sometimes gets messy.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.ragingmenace.com/software/menumeters/&#34;&gt;MenuMeters&lt;/a&gt; - have a bunch of those geeky meters all over the place (no longer usable with El Capitan)&lt;/li&gt;
+&lt;li&gt;Alfred - seems like a nice app, Spotlight on steroids. It&amp;rsquo;s free and you can download it via &lt;a href=&#34;https://itunes.apple.com/au/app/alfred/id405843582?mt=12&#34;&gt;ITunes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Flashlight - add more providers to Spotlight - unfortunately with recent introduction of rootless mac partition it&amp;rsquo;s no longer possible to use this tool&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;hacking-spotlight:f7d70e45ef21079a1cb2a356feab8261&#34;&gt;Hacking Spotlight&lt;/h2&gt;
+
+&lt;p&gt;Spotlight is just that neat little thing out there that seems like indexing all the things and runs installed programs. But it can also serve as a calculator and &amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;You can also read the contents of its cache file.&lt;/p&gt;
+
+&lt;p&gt;Up until version 10.10.4 of OS X it was possible to have additions to spotlight, but now this behaviour is blocked by the system.
+&lt;a href=&#34;http://mac-how-to.wonderhowto.com/how-to/customize-spotlight-search-mac-os-x-yosemite-0160786/&#34;&gt;http://mac-how-to.wonderhowto.com/how-to/customize-spotlight-search-mac-os-x-yosemite-0160786/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;script-setup:f7d70e45ef21079a1cb2a356feab8261&#34;&gt;Script setup&lt;/h2&gt;
+
+&lt;p&gt;Setup your mac with this shell script - but be very careful and read through this file first! &lt;a href=&#34;https://gist.github.com/brandonb927/3195465&#34;&gt;https://gist.github.com/brandonb927/3195465&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://farm6.staticflickr.com/5168/5263917715_6c8217fcfe_z_d.jpg&#34; alt=&#34;One sneaky image&#34; /&gt;&lt;em&gt;by Flickr user &lt;a href=&#34;https://www.flickr.com/photos/blakespot/5263917715/in/photolist-929XkZ-fJwTR-8Me2LN-8qSP9F-6UD2Ce-fM51y-ARaAo-BJXFt-iE8ep-4rXScB-bX3z7w-6npV8P-5Eamox-33QA9W-5EXuR9-mQDnb-6UqpxG-6UqF7m-69b4jp-oytZCJ-4rXGFP-6xweAZ-ACukt-aZfi5-6QouE3-5CAQgW-8MeHqC-5QBeu1-L4qEw-4s35hq-4w9tXh-67Ymah-4s33cu-jjDFo-6J3zqD-8N4tSh-kbFD4-sESfP-66GAT5-9FUKfq-d3BrPG-4rXPZt-8N1aLa-6UCTvi-kBCzsH-2SXDWe-5CGTEq-5zogZ2-5JAGsk-kkAgZK&#34;&gt;blakespot&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;neat-things:f7d70e45ef21079a1cb2a356feab8261&#34;&gt;Neat things&lt;/h2&gt;
+
+&lt;p&gt;And it is quite positive, that Mac OS X developers care about small, but extremely important things - like building OpenSSH with LibreSSL support!&lt;/p&gt;
+
+&lt;h2 id=&#34;dtrace:f7d70e45ef21079a1cb2a356feab8261&#34;&gt;DTrace&lt;/h2&gt;
+
+&lt;p&gt;Recently I&amp;rsquo;ve experienced a huge slowdown on my Mac. The It support&amp;rsquo;s solution was to reinstall the OS. I refused, this seemed like a barbaric method and also I just wanted to use this opportunity to delve deeper into internals of this OS.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve started with analysing system behaviour with &lt;a href=&#34;https://en.wikipedia.org/wiki/DTrace&#34;&gt;DTrace&lt;/a&gt; - probing interface originating from Solaris&lt;/p&gt;
+
+&lt;p&gt;Useful introductory links are here:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://dtrace.org/blogs/brendan/2011/10/10/top-10-dtrace-scripts-for-mac-os-x/&#34;&gt;http://dtrace.org/blogs/brendan/2011/10/10/top-10-dtrace-scripts-for-mac-os-x/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://dtrace.org/blogs/brendan/2012/11/14/dtracing-in-anger/&#34;&gt;http://dtrace.org/blogs/brendan/2012/11/14/dtracing-in-anger/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;conclusion:f7d70e45ef21079a1cb2a356feab8261&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;All in all the switch was relatively painless, and with tools and tricks described here I feel very comfortable using this system.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Scalar Conf 2016</title>
+      <link>http://marcin.cylke.com.pl/2016/04/29/scalar-conf-2016/</link>
+      <pubDate>Fri, 29 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2016/04/29/scalar-conf-2016/</guid>
+      <description>
+
+&lt;p&gt;Scalar Conf 2016&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://marcin.cylke.com.pl/assets/POLIN-Museum-of-the-History-of-Polish-Jews-int02.jpg&#34; alt=&#34;Polin museum - interior&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This small conference had its third installment in (&lt;a href=&#34;http://www.polin.pl/en)[Polin&#34;&gt;http://www.polin.pl/en)[Polin&lt;/a&gt; - Museum of the History of Polish Jews]. Organizing Scala conference isn&amp;rsquo;t that obvious and having that kind of attention is really great - all the foreign speakers, etc.&lt;/p&gt;
+
+&lt;p&gt;Here is a quick recap of presentations I&amp;rsquo;ve attended.&lt;/p&gt;
+
+&lt;h3 id=&#34;having-a-cake-by-paweł-szulc:dce739b86c0a87e1707117ba023d86a9&#34;&gt;Having a cake &amp;hellip; - by Paweł Szulc&lt;/h3&gt;
+
+&lt;p&gt;A keynote about typeclasses. I&amp;rsquo;ve read the slides before the presentation  -and they are available &lt;a href=&#34;http://www.slideshare.net/paulszulc/introduction-to-type-classes-in-30-min&#34;&gt;here&lt;/a&gt;, so it wasn&amp;rsquo;t new to me. But I&amp;rsquo;d strongly recommend to watch this talk.&lt;/p&gt;
+
+&lt;p&gt;Also, there is another nice talk by Paweł: &lt;a href=&#34;https://www.youtube.com/watch?v=ENtdZ9MBo5Y&#34;&gt; Category theory is absolute general nonsense!&lt;/a&gt; This talk is in Polish only.&lt;/p&gt;
+
+&lt;h3 id=&#34;eff-monad-by-eric-torreborre:dce739b86c0a87e1707117ba023d86a9&#34;&gt;EFF Monad - by Eric Torreborre&lt;/h3&gt;
+
+&lt;p&gt;Different way of monadic composition, implemented in a separate library: &lt;a href=&#34;https://github.com/atnos-org/eff-cats&#34;&gt;eff-cats&lt;/a&gt; (there is also scalaz alternative). Technically it was a bit over my head, but after experimenting with the concept at home it seems interesting.&lt;/p&gt;
+
+&lt;p&gt;I liked that Eric, being Zalando employee, developed that for their internal usage. Also the beauty of easily constructing different technological stacks with consistent API is very tempting.&lt;/p&gt;
+
+&lt;p&gt;Interesting things used/mentioned were:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;github.com/non/kind-projector&#34;&gt;non/kind-projector&lt;/a&gt;- for projections&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://haskell.cs.yale.edu/?post_type=publication&amp;amp;p=319&#34;&gt;Monad Transformers and Modular Interpreters&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;incremental-compiler-by-krzysztof-romanowski:dce739b86c0a87e1707117ba023d86a9&#34;&gt;Incremental compiler - by Krzysztof Romanowski&lt;/h3&gt;
+
+&lt;p&gt;Deep dive into scalac incremental compiler implementation. While the presentation itself, the way it was presented, was very nice, I didn&amp;rsquo;t particularly enjoy the topic. It seemed more appropriate for tools&amp;rsquo; developers.&lt;/p&gt;
+
+&lt;h3 id=&#34;akka-cluster-with-etcd-by-maciej-biłas:dce739b86c0a87e1707117ba023d86a9&#34;&gt;Akka cluster with Etcd - by Maciej Biłas&lt;/h3&gt;
+
+&lt;p&gt;This one looked promising. Joining multiple exciting technologies seems often that way. Unfortunately it was rather tech preview of Kubernetes app setup rather than Scala presentation.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m a bit disappointed, because looking through the sources of the project &lt;a href=&#34;https://github.com/rkrzewski/akka-cluster-etcd&#34;&gt;akka-cluster-etcd&lt;/a&gt; there are lots of things to describe. Kubernetes not being one of them ;-)&lt;/p&gt;
+
+&lt;h3 id=&#34;shapeless-easy-by-valentin-kasas:dce739b86c0a87e1707117ba023d86a9&#34;&gt;Shapeless? Easy! - by Valentin Kasas&lt;/h3&gt;
+
+&lt;p&gt;Well, that was a clear introduction to shapeless. Till this presentation I&amp;rsquo;ve treated shapeless as only some vague thingy you use when writing libraries. Valentin proved otherwise.&lt;/p&gt;
+
+&lt;p&gt;He gave a clear and consistent tutorial on the basics of shapeless and its potential use in some example applications. He created a simple diff tool. Not that useful in real life application, but definitely helped make a point.&lt;/p&gt;
+
+&lt;p&gt;Will look into real life examples in near future.&lt;/p&gt;
+
+&lt;p&gt;Fun fact: The speaker had his presentation in &lt;a href=&#34;https://github.com/marconilanna/REPLesent&#34;&gt;REPLesent&lt;/a&gt;, a sbt plugin for presentations - and performed most of the slide-jumping-fu with just one hand, other held in his pocket :D Looked quite hilarious.&lt;/p&gt;
+
+&lt;p&gt;Valentin also mentioned shapeless&amp;rsquo; typeclass derivation - this actually looks nice! Have a look at this &lt;a href=&#34;https://meta.plasm.us/posts/2015/11/08/type-classes-and-generic-derivation/&#34;&gt;question&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;cool-toolz-in-the-scalaz-and-cats-toolboxes-by-jan-pustelnik:dce739b86c0a87e1707117ba023d86a9&#34;&gt;Cool Toolz in the Scalaz and Cats Toolboxes - by Jan Pustelnik&lt;/h3&gt;
+
+&lt;p&gt;Functional Design Patterns - enjoyable talk. With a bit of theoretical background, lots of useful use-cases. The talk was about cats and scalaz - both being very similar, and patterns they contain.&lt;/p&gt;
+
+&lt;p&gt;Key points being:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Functor pattern for abstracting Big Data computations, to achieve easier testability&lt;/li&gt;
+&lt;li&gt;composing functors - |@| scream operator - also know (officially) as Applicative Builder&lt;/li&gt;
+&lt;li&gt;Applicative  - a list of computation into a computation of lists, list traversal&lt;/li&gt;
+&lt;li&gt;Applicative pattern for reading config&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There is this nice video called &amp;ldquo;A purely functional approach to building large applications&amp;rdquo;. Go see &lt;a href=&#34;https://www.youtube.com/watch?v=dS3IlDBDlvo&#34;&gt;it&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion:dce739b86c0a87e1707117ba023d86a9&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;To conclude - the conference was really great. Both the talks and social side of the event were enjoyable. I&amp;rsquo;ve been blown away by the great architecture of the museum itself. Been there a couple times and enjoyed all of them.&lt;/p&gt;
+
+&lt;p&gt;The much needed change would be to bring more tracks, because sometimes topics were too specific and I&amp;rsquo;d gladly change lecture to some other.&lt;/p&gt;
+
+&lt;p&gt;As for the usual conference merch, there were no bags with leaflets and pens etc. It came as a surprise to me, but I also really liked it. People infact throw away most of the contents from such bags. Also, no t-shirt as a default - great idea! If you like it - just buy one, otherwise don&amp;rsquo;t bother.&lt;/p&gt;
+
+&lt;p&gt;Overall - great job Softwaremill! Keep up the good work!.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Lambda Days 2016</title>
+      <link>http://marcin.cylke.com.pl/2016/02/20/lambda-days-2016/</link>
+      <pubDate>Sat, 20 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2016/02/20/lambda-days-2016/</guid>
+      <description>
+
+&lt;h1 id=&#34;lambda-days-2016-kraków:7f3feb2c897a8b921f015db0c292ec6c&#34;&gt;Lambda Days 2016 - Kraków&lt;/h1&gt;
+
+&lt;p&gt;This last two days I&amp;rsquo;ve spend on a conference in Kraków. The topics
+revolved around functional programming, with all the experimental stuff,
+popular languages, etc. Here are the talks I&amp;rsquo;ve been to and short summaries of those:&lt;/p&gt;
+
+&lt;h2 id=&#34;day-1:7f3feb2c897a8b921f015db0c292ec6c&#34;&gt;Day 1:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Propositions as types&lt;/strong&gt; - the keynote delivered by Philip Wadler - seen it already on &lt;a href=&#34;https://www.youtube.com/watch?v=IOiZatlZtGU&#34;&gt;YouTube&lt;/a&gt;. But the thing with Lambda t-shirt looked funny again :D&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Using &amp;ldquo;Program shaping&amp;rdquo; and algorithmic skeletons to parallelise an evolutionary multi-agent system in Erlang&lt;/strong&gt; - pretty long title, huh :) The presentation, thou very academic was also quite interesting. The whole concept not being particularly new, but the set of tools used for refactorings into parallel code seemed interesting.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Static analysis to identify divide-and-conquer algorithms&lt;/strong&gt; - how to find particular class of algorithms in existing programs? Interesting but shallow, due to time limitations.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;The Mysteries of Dropbox&lt;/strong&gt; - John Hughes of QuickCheck fame showed how
+to test a big system using blackbox approach. Nice presentation, with
+all the great insight he always brings into his talks.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Muvr - Jan Machacek&lt;/strong&gt; - that was a fun presentation. About how to build an app that detects your exercise routine and counts how many repeats you&amp;rsquo;ve done. There&amp;rsquo;ve been all:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;spark pipelining&lt;/li&gt;
+&lt;li&gt;Swift code demo (it seemed like Swift IDE offers something similar to notebook-like programming, is it?),&lt;/li&gt;
+&lt;li&gt;live coding
+Unfortunately due to WiFi&amp;rsquo;s proxy settings the live demo could not be finished, but the code for all this is available somewhere on Github, on &lt;a href=&#34;https://github.com/muvr&#34;&gt;this account&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Embracing change&lt;/strong&gt; - how to introduce Clojure into your company&amp;rsquo;s
+technology stack seamlessly - by &lt;strong&gt;Artur Skowroński.&lt;/strong&gt;
+Hilarious presentation about adopting new languages. It wasn&amp;rsquo;t that
+groundbreaking, at least for me, but the way it was presented, and the
+slides with all the Cthulhu references in them, were great!&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;day-2:7f3feb2c897a8b921f015db0c292ec6c&#34;&gt;Day 2:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Things that matter by Bruce Tate&lt;/strong&gt; - great energetic talk, with all the ideas about learning
+new languages. Bruce is the author of two excellent books: &amp;ldquo;Seven
+languages in seven weeks&amp;rdquo; and &amp;ldquo;Seven more languages in seven weeks&amp;rdquo; :)
+He went through languages mentioned in his books and summed up
+principles associated with their inception.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I&amp;rsquo;ve almost decided to not come to this presentation,
+weighting between it and sleeping a little bit longer in my hotel room.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;The Zen of Akka&lt;/strong&gt; - delivered by a resident hakker at Typesafe - Konrad
+Malawski. Nice talk about Akka pitfalls, there were lots of
+recommendations and even some previously unknown to me features of Akka
+toolkit. Plus I loved the Japanese elements.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Creating reactive components using ClojureScript React wrappers&lt;/strong&gt; - by
+Konrad Szydlo introduced Rum as a wrapper for React, described part of
+the ecosystem and explained mechanics behind the technology. Fine
+presentation, very intense on content. Konrad had 111 slides, but
+managed to show all of them without being hasty.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Getting started with Frege&lt;/strong&gt; - Lech Glowiak, Frege seems to be a Haskell
+on the JVM, which in itself seems like a nice thing. But I treat such
+languages rather as nice experiments, than something useful. Especially
+its Java interop looks ugly. Nevertheless the presentation was given
+from the point of view of language contributor, which Lech is.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Practical demystification of CRDT&lt;/strong&gt; - by Dmitry Ivanov and Nami
+Naserazad - both of them from TomTom. Guys are working on TomTom&amp;rsquo;s
+NaviCloud product. Their presentation was a practical guide throught the
+world of CRDTs (link to wikipedia). They showed their failures in
+implementing the system, gave advices, etc. The whole thing is even
+uploaded to github, so everyone can check their code
+(&lt;a href=&#34;http://github.com/ajantis/scala-crdt&#34;&gt;http://github.com/ajantis/scala-crdt&lt;/a&gt;). I&amp;rsquo;ve really enjoyed this talk
+due to its technical approach. There were no formal definitions, no
+teortical considerations, just clean report from the trenches.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Purely functiona Web Apps&lt;/strong&gt; - by Michał Płachta - how to write Gitlab
+companion app in Haskell + Elm? Haskell for backend and Elm for
+frontend. This presentation showed great potential of Elm for frontend
+development. Moderatly approachable considering Friday afternoon and my
+lack of Haskell knowledge. Still, I plan to come back to this
+presentation later.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;what-i-haven-t-seen-but-plan-to-as-soon-as-videos-are-available:7f3feb2c897a8b921f015db0c292ec6c&#34;&gt;What I haven&amp;rsquo;t seen but plan to as soon as videos are available&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Modeling your domain. What have we learned? Where do we go from here?&lt;/strong&gt; - by Norbert Wójtowicz - about modeling domain in Clojurescript apps&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The F#orce awakend&lt;/strong&gt; - by ewelina Gabasova - F# + geekery, the Twitter
+went nuts about that presentation, suppose not without reason&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LFE - a lisp flavour on the Erlang VM&lt;/strong&gt; - by Robert Virding - don&amp;rsquo;t know
+why but it seems intriguing enough&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;conclusion:7f3feb2c897a8b921f015db0c292ec6c&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;As always, things you didn&amp;rsquo;t expect to be interesting were the best
+ones. Highlights being presentations by Bruce Tate, Jan Machacek and guys
+from TomTom (Dmitry Ivanov and Nami Naserazad)&lt;/p&gt;
+
+&lt;p&gt;Thanks to organisers for this conference. But I must say, that day 2 was a lot better than the first one. The talks were better structured and presented.&lt;/p&gt;
+
+&lt;p&gt;One idea for the organizers - please print the schedule on the back of
+conference badge. It was pretty annoying to have to take out the A4
+sheets with whole day schedule each time I wanted to look at it&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>32c3 most interesting videos</title>
+      <link>http://marcin.cylke.com.pl/2016/01/22/ccc-interesting-videos/</link>
+      <pubDate>Fri, 22 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2016/01/22/ccc-interesting-videos/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s been some time since the most recent incarnation on Chaos Congress
+took place (&lt;a href=&#34;http://www.ccc.de/&#34;&gt;CCC site&lt;/a&gt;). I&amp;rsquo;ve finally managed to
+sift through some of the videos. Have a selection of those I&amp;rsquo;ve found
+most interesting to me. If there are others really worth watching - pass
+me a line! Cheers.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Tor onion services are more useful than most people realize — super
+packed 32c3 talk from @torproject devs:
+{% youtube wHmxCeLpveA %}&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;State of the Onion - what&amp;rsquo;s happend in 2015 around Tor project.
+Informative to say the least.
+{% youtube DqBFez4v_2I %}&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;A very interesting presentation. Especially in the light of Novena
+Laptop and the like:
+{% youtube rcwngbUrZNg %}&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;SO YOU WANT TO BUILD A SATELLITE? - ha!
+{% youtube FO68gG320SM %}&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;INSIDE GLORIOUS LEADER’S OPERATING SYSTEM - this one is actually
+great! No ridiculing, just a review of features. Go see what os-level
+surveilance looks like:
+{% youtube 8LGDM9exlZw %}&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;3D printing on the moon - just printing something on your 3d printer
+seems trivial compared to the challange of doing this under Moon
+conditions:&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;{% youtube _eYvMFipIQ4 %}&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;J. Alex Halderman, Nadia Heninger: Logjam: Diffie-Hellman, discrete
+logs, the NSA, and you
+{% youtube mS8gm-_rJgM %}&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Super Confitura Man</title>
+      <link>http://marcin.cylke.com.pl/2014/07/14/super-confitura-man/</link>
+      <pubDate>Mon, 14 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2014/07/14/super-confitura-man/</guid>
+      <description>
+
+&lt;h2 id=&#34;how-super-confitura-man-came-to-be:c5352db95c635e6c4b0653937eeeffaf&#34;&gt;How Super Confitura Man came to be :)&lt;/h2&gt;
+
+&lt;p&gt;Recently at TouK we had a one-day hackathon. There was no main theme for
+it, you just could post a project idea, gather people around it and hack
+on that idea for a whole day - drinks and pizza included.&lt;/p&gt;
+
+&lt;p&gt;My main idea was to create something that could be fun to build and be
+useful somehow to others. I’d figured out that since Confitura was just
+around a corner I could make a game, that would be playable at TouK’s
+booth at the conference venue. This idea seemed good enough to attract
+Rafał Nowak &lt;a href=&#34;https://twitter.com/RNowak3&#34;&gt;@RNowak3&lt;/a&gt; and Marcin Jasion
+&lt;a href=&#34;https://twitter.com/marcinjasion&#34;&gt;@marcinjasion&lt;/a&gt; - two TouK employees, that with me
+formed a team for the hackathon.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://marcin.cylke.com.pl/assets/confitura-2014-01.jpg&#34; alt=&#34;Confitura 01&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The initial plan was to develop a simple mario-style game, with
+preceduraly generated levels, random collectible items and enemies. One
+of the ideas was to introduce Confitura Man as the main character, but
+due to time constraints, this fall through. We’ve decided to just choose
+a random available sprite for a character - hence the onion man :)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://marcin.cylke.com.pl/assets/confitura-2014-02.jpg&#34; alt=&#34;Confitura 02&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;how-the-game-is-played:c5352db95c635e6c4b0653937eeeffaf&#34;&gt;How the game is played?&lt;/h2&gt;
+
+&lt;p&gt;Since we wanted to have a scoreboard and have unique users, we’ve
+printed out QR codes. A person that would like to play the game could
+pick up a QR code, show it against a camera attached to the play booth.
+The start page scanned the QR code and launched the game with username
+read from paper code.&lt;/p&gt;
+
+&lt;p&gt;The rest of the game was playable with gamepad or keyboard.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://marcin.cylke.com.pl/assets/confitura-2014-04.png&#34; alt=&#34;Confitura game screen&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;technicalities:c5352db95c635e6c4b0653937eeeffaf&#34;&gt;Technicalities&lt;/h2&gt;
+
+&lt;p&gt;Writing a game takes a lot of time and effort. We wanted to deliver, so
+we’ve decided to spend some time in the days before the hackathon just
+to bootstrap the technology stack of our enterprise.&lt;/p&gt;
+
+&lt;p&gt;We’ve decided that the game would be written in some Javascript based
+engine, with Google Chrome as a web platform. There are a lot of HTML5
+game engines - &lt;a href=&#34;http://html5gameengine.com/&#34;&gt;list of html5 game engines&lt;/a&gt; and you could easily create a
+game with each and every of them. We’ve decided to use &lt;a href=&#34;http://phaser.io/&#34;&gt;Phaser IO&lt;/a&gt;
+which handles a lot of difficult,  game-related stuff on its own. So, we
+didn’t have to worry about physics, loading and storing assets,
+animations, object collisions, controls input/output. Go see for
+yourself, it is really nice and easy to use.&lt;/p&gt;
+
+&lt;p&gt;Scoreboard would be a rip-off from &lt;a href=&#34;http://blog.gengo.com/jira-survivor/&#34;&gt;JIRA Survivor&lt;/a&gt;
+with stats being served from some web server app. To make things harder,
+the backend server was written in Clojure. With no experience in that
+language in the team, it was a bit risky, but the tasks of the server
+were trivial, so if all that clojure effort failed, it could be
+rewritten in something we know.&lt;/p&gt;
+
+&lt;h2 id=&#34;statistics:c5352db95c635e6c4b0653937eeeffaf&#34;&gt;Statistics&lt;/h2&gt;
+
+&lt;p&gt;During the whole Confitura day there were 69 unique players (69 QR codes
+were used), and 1237 games were played. The final score looked like
+this:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Barister Lingerie 158 - 1450 points&lt;/li&gt;
+&lt;li&gt;Boilerdang Custardbath 386 - 1060 points&lt;/li&gt;
+&lt;li&gt;Benadryl Clarytin 306 - 870 points&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;And the obligatory scoreboard screenshot:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://marcin.cylke.com.pl/assets/confitura-2014-03.png&#34; alt=&#34;Confitura 03&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;obstacles:c5352db95c635e6c4b0653937eeeffaf&#34;&gt;Obstacles&lt;/h2&gt;
+
+&lt;p&gt;The game, being created in just one day, had to have problems :) It
+wasn’t play tested enough, there were some rough edges. During the day
+we had to make a few fixes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the server did not respect the highest score by specific user, it was just overwritting a user’s score with it’s latest one,&lt;/li&gt;
+&lt;li&gt;there was one feature not supported on keyboard, that was available on gamepad - turbo button&lt;/li&gt;
+&lt;li&gt;server was opening a database connection each time it got a request, so after around 5 minutes it would exhaust open file limit for MongoDB (backend database), this was easily fixed - thou the fix is a bit hackish :)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These were easily identified and fixed.
+Unfortunately there were issues that we were unable to fix while the
+event was on:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;google chrome kept asking for the permission to use webcam - this was very annoying, and all the info found on the web did not work - &lt;a href=&#34;http://stackoverflow.com/questions/16835421/how-to-allow-chrome-to-access-my-camera-on-localhost/16929608#16929608&#34;&gt;StackOverflow thread&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;it was hard to start the game with QR code - either the codes were too small, or the lighting around that area was inappropriate - I think this
+issue could be fixed by printing larger codes,&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;##Technology evaluation&lt;/p&gt;
+
+&lt;p&gt;All in all we were pretty happy with the chosen stack. Phaser was easy
+to use and left us with just the fun parts of the game creation process.
+Finding the right graphics with appropriate licensing was rather hard.
+We didn’t have enough time to polish all the visual aspects of the game
+before Confitura.&lt;/p&gt;
+
+&lt;p&gt;Writing a server in clojure was the most challenging part, with all the
+new syntax and new libraries. There were tasks, trivial in java/scala,
+but hard in Clojure - at least for a whimpy beginners :) Nevertheless
+Clojure seems like a really handy tool and I’d like to dive deeper into
+its ecosystem.&lt;/p&gt;
+
+&lt;h2 id=&#34;source-code:c5352db95c635e6c4b0653937eeeffaf&#34;&gt;Source code&lt;/h2&gt;
+
+&lt;p&gt;All of the sources for the game can be found here
+&lt;a href=&#34;https://github.com/TouK/confitura-man&#34;&gt;TouK/confitura-man&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The repository is split into two parts:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;game - HTML5 game&lt;/li&gt;
+&lt;li&gt;server - clojure based backend server&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To run the server you need to have a local MongoDB installation. Than in
+server’s directory run:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ lein ring server-headless 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will start a server on &lt;code&gt;http://localhost:3000&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;To run the game you need to install dependencies with bower and than
+run&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ grunt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;from game’s directory.&lt;/p&gt;
+
+&lt;p&gt;To launch the QR reading part of the game, you enter
+&lt;code&gt;http://localhost:9000/start.html&lt;/code&gt;. After scanning the code you’ll be
+redirected to &lt;code&gt;http://localhost:9000/index.html&lt;/code&gt; - and the game starts.&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion:c5352db95c635e6c4b0653937eeeffaf&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Summing up, it was a great experience creating the game. It was fun to
+watch people playing the game. And even with all those glitches and
+stupid graphics, there were people vigorously playing it, which was
+awesome.&lt;/p&gt;
+
+&lt;h2 id=&#34;thanks-to-rafał-and-michał-for-great-coding-experience-and-thanks-to-all-the-players-of-our-stupid-little-game-if-you-d-like-to-ask-me-about-anything-feel-free-to-contact-me-by-mail-or-twitter-zygm0nt-https-twitter-com-zygm0nt:c5352db95c635e6c4b0653937eeeffaf&#34;&gt;Thanks to Rafał and Michał for great coding experience, and thanks to all the players of our stupid little game. If you’d like to ask me about anything - feel free to contact me by mail or twitter &lt;a href=&#34;https://twitter.com/zygm0nt&#34;&gt;@zygm0nt&lt;/a&gt;&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Distributed scans with HBase</title>
+      <link>http://marcin.cylke.com.pl/2013/12/10/distributed-scans-with-hbase/</link>
+      <pubDate>Tue, 10 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2013/12/10/distributed-scans-with-hbase/</guid>
+      <description>&lt;p&gt;HBase is by design a columnar store, that is optimized for random reads.
+You just ask for a row using rowId as an identifier and you get your
+data instantaneously.&lt;/p&gt;
+
+&lt;p&gt;Performing a scan on part or whole table is a completely different thing.
+First of all, it is sequential. Meaning it is rather slow, because it
+doesn&amp;rsquo;t use all the RegionServers at the same time. It is implemented
+that way to realize the contract of Scan command - which has to return
+results sorted by key.&lt;/p&gt;
+
+&lt;p&gt;So, how to do this efficiently?&lt;/p&gt;
+
+&lt;p&gt;The usual way of getting data from HBase is with the help of its API,
+mainly Scan objects. To accomplish the task I&amp;rsquo;ll use just them. I&amp;rsquo;ll
+specify startRow and stopRow, so that each Scan request will be looking
+through only part of the key space.&lt;/p&gt;
+
+&lt;p&gt;It is crucial to note, that this whole solution works because of key
+sorting properties in HBase. So, HBase scans a table according to ascending key
+values. Since keys are of String type, key with value &amp;ldquo;1&amp;rdquo; is smaller
+than &amp;ldquo;2&amp;rdquo;, because they are sorted lexicographicly. So, also key with value &amp;ldquo;12345&amp;rdquo; is smaller than &amp;ldquo;2&amp;rdquo;. I&amp;rsquo;ve
+leveraged this property so that I&amp;rsquo;ve partitioned my whole key space according to
+the first character of the key. In my case keys contain only digits. So I
+have 10 ranges:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;null-1&lt;/li&gt;
+&lt;li&gt;1-2&lt;/li&gt;
+&lt;li&gt;2-3&lt;/li&gt;
+&lt;li&gt;3-4&lt;/li&gt;
+&lt;li&gt;4-5&lt;/li&gt;
+&lt;li&gt;5-6&lt;/li&gt;
+&lt;li&gt;6-7&lt;/li&gt;
+&lt;li&gt;7-8&lt;/li&gt;
+&lt;li&gt;8-9&lt;/li&gt;
+&lt;li&gt;9-null&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The speedup comes from the fact, that each range resides in its own
+partition. That&amp;rsquo;s right, I&amp;rsquo;ve presplit the table to have 10 partitions.
+This corresponds rather nicely with my cluster&amp;rsquo;s setup, because I have
+more than 10 RegionServers. So every partition should be on different
+RegionServer. It will allow the code to do the requested scan operations
+in parallel - giving me this exact performance boost.&lt;/p&gt;
+
+&lt;p&gt;How I&amp;rsquo;ve created the input table:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&lt;/p&gt;
+
+&lt;p&gt;$ create &amp;lsquo;tariff_changes&amp;rsquo;, { NAME =&amp;gt; &amp;lsquo;cf&amp;rsquo;, SPLITS_FILE =&amp;gt; &amp;lsquo;splits.txt&amp;rsquo;, VERSIONS =&amp;gt; 50, MAX_FILESIZE =&amp;gt; 1073741824 }&lt;/p&gt;
+
+&lt;p&gt;$ alter &amp;lsquo;tariff_changes&amp;rsquo;, { NAME =&amp;gt; &amp;lsquo;cf&amp;rsquo;, SPLITS_FILE =&amp;gt; &amp;lsquo;splits.txt&amp;rsquo;, VERSIONS =&amp;gt; 50, MAX_FILESIZE =&amp;gt; 1073741824 }&lt;/p&gt;
+
+&lt;p&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Split file is just something along this lines:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This tells HBase what are the rowKeys starting and ending each of the
+partitions.&lt;/p&gt;
+
+&lt;p&gt;Ok, so after this rather lengthy introduction, what the actual code
+does? It just spins of a few threads - one for each partition - and runs
+a Scan request tailored to that partitions key space. This way, I got a
+10x speedup for this particular scan. The execution time went down from
+30 minutes to 3 for my use case.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve created an example implementation of this idea. You can find it on
+GitHub:
+&lt;a href=&#34;https://github.com/zygm0nt/hbase-distributed-search&#34;&gt;https://github.com/zygm0nt/hbase-distributed-search&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Any ideas on how to speed things up even more with HBase?&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Simple HBase ORM</title>
+      <link>http://marcin.cylke.com.pl/2013/12/08/simple-hbase-orm/</link>
+      <pubDate>Sun, 08 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2013/12/08/simple-hbase-orm/</guid>
+      <description>&lt;p&gt;When dealing with data stored in HBase, you are quick to come to a
+conclusion, that it is extremaly inconvenient to reach to it
+via HBase native API. It is very verbose and you always need to convert
+between bytes and simple types - a pain.&lt;/p&gt;
+
+&lt;p&gt;While I was working on a project of mine, I thought, why not to easy
+those pains and fetch real objects from HBase.&lt;/p&gt;
+
+&lt;p&gt;And that&amp;rsquo;s how this simplistic, hackish ORM came to life. It is no match
+for projects like &lt;a href=&#34;https://github.com/impetus-opensource/Kundera&#34;&gt;Kundera&lt;/a&gt;
+(a JPA compliant solution), or &lt;a href=&#34;https://code.google.com/p/n-orm/&#34;&gt;n-orm&lt;/a&gt;. Nevertheless, it just suits my needs :)&lt;/p&gt;
+
+&lt;p&gt;Project sources are hosted on GitHub: &lt;a href=&#34;https://github.com/zygm0nt/hbase-annotations&#34;&gt;https://github.com/zygm0nt/hbase-annotations&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;To make use of this, you need to have an entity class with annotations:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;@Column - with argument specifying column family and column name, ie.
+@Column(&amp;ldquo;cf:column-name&amp;rdquo;)&lt;/li&gt;
+&lt;li&gt;@Id - will store row key in this property,&lt;/li&gt;
+&lt;li&gt;and optionaly @Value - for Spring Expression Language, in case you
+need to perform some extraction on the value.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Annotations should be on setter methods.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Now you have your model annotated and ready to be fetched from HBase.&lt;/p&gt;
+
+&lt;p&gt;The actual work is done with a service class, that should extend class
+&lt;a href=&#34;https://github.com/zygm0nt/hbase-annotations/blob/master/src/main/java/pl/touk/hadoop/hbase/BaseHadoopInteraction.java&#34;&gt;BaseHadoopInteraction&lt;/a&gt; just as class
+&lt;a href=&#34;https://github.com/zygm0nt/hbase-annotations/blob/master/src/test/java/pl/touk/hadoop/hbase/SampleHBaseClient.java&#34;&gt;SimpleHBaseClient&lt;/a&gt; does.&lt;/p&gt;
+
+&lt;p&gt;Then it is possible to just call:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/zygm0nt/7863407.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;Note that there are more methods you can use on BaseHadoopInteraction.
+You can also do:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;scan&lt;/li&gt;
+&lt;li&gt;scan with key ranges&lt;/li&gt;
+&lt;li&gt;delete&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;What you won&amp;rsquo;t get from this simple ORM is:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;automatic object updating,&lt;/li&gt;
+&lt;li&gt;nested objects,&lt;/li&gt;
+&lt;li&gt;saving to HBase - &amp;lsquo;cause I didn&amp;rsquo;t have a need for that,&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Hope you&amp;rsquo;ll find this piece of code useful. If you see room for
+improvements while staying in project&amp;rsquo;s scope - please drop me a
+message.&lt;/p&gt;
+
+&lt;p&gt;And if you are searching for a full-fledged ORM solution for interacting with HBase, just head
+straight to Kundera project website :)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Recently at storm-users</title>
+      <link>http://marcin.cylke.com.pl/2013/08/12/recently-at-storm-users/</link>
+      <pubDate>Mon, 12 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2013/08/12/recently-at-storm-users/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been reading through storm-users Google Group recently. This
+resolution was heavily inspired by Adam Kawa&amp;rsquo;s post &lt;a href=&#34;http://hakunamapdata.com/football-zero-apache-pig-hero-the-essence-from-hundreds-of-posts-from-apache-pig-user-mailing-list/&#34;&gt;&amp;ldquo;Football zero, Apache Pig hero&amp;rdquo;&lt;/a&gt;. Since I&amp;rsquo;ve encountered a lot of insightful and very interesting information I&amp;rsquo;ve decided to describe some of those in this post.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;nimbus will work in HA mode - There&amp;rsquo;s a pull request open for it already&amp;hellip; but some
+recent work (distributing topology files via Bittorrent) will greatly
+simplify the implementation. Once the Bittorrent work is done we&amp;rsquo;ll look
+at reworking the HA pull request. (&lt;a href=&#34;https://github.com/nathanmarz/storm/pull/629&#34;&gt;storm’s pull request&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;pig on storm - Pig on Trident would be a cool and welcome project. Join
+and groupBy have very clear semantics there, as those concepts exist
+directly in Trident. The extensions needed to Pig are the concept of
+incremental, persistent state across batches (mirroring those concepts
+in Trident). You can read a complete &lt;a href=&#34;https://cwiki.apache.org/confluence/display/PIG/Pig+on+Storm+Proposal&#34;&gt;proposal&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;implementing topologies in pure python with &lt;a href=&#34;https://github.com/AirSage/Petrel&#34;&gt;petrel&lt;/a&gt; looks like this:&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;class Bolt(storm.BasicBolt):
+    def initialize(self, conf, context):
+       &#39;&#39;&#39; This method executed only once &#39;&#39;&#39;
+        storm.log(&#39;initializing bolt&#39;)
+
+    def process(self, tup):
+       &#39;&#39;&#39; This method executed every time a new tuple arrived &#39;&#39;&#39;       
+       msg = tup.values[0]
+       storm.log(&#39;Got tuple %s&#39; %msg)
+
+if __name__ == &amp;quot;__main__&amp;quot;:
+    Bolt().run()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Fliptop is happy with storm - see their presentation &lt;a href=&#34;http://www.slideshare.net/robbiecheng/lesson-learned-of-twitter-storm&#34;&gt;here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;topology metrics in 0.9.0: The new metrics feature allows you to collect
+arbitrarily custom metrics over fixed windows. Those metrics are
+exported to a metrics stream that you can consume by implementing
+&lt;a href=&#34;https://github.com/nathanmarz/storm/blob/master/storm-core/src/jvm/backtype/storm/metric/api/IMetricsConsumer.java&#34;&gt;IMetricsConsumer&lt;/a&gt; and configure with &lt;a href=&#34;https://github.com/nathanmarz/storm/blob/master/storm-core/src/jvm/backtype/storm/Config.java#L473&#34;&gt;Config.java#L473&lt;/a&gt;.
+Use &lt;strong&gt;TopologyContext#registerMetric&lt;/strong&gt; to register new metrics.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;storm vs flume - some users&amp;rsquo; point of view: I use Storm and Flume and find that they are better at
+different things - it really depends on your use case as to which one is
+better suited. First and foremost, they were originally designed to do
+different things: Flume is a reliable service for collecting,
+aggregating, and moving large amounts of data from source to destination
+(e.g. log data from many web servers to HDFS). Storm is more for
+real-time computation (e.g. streaming analytics) where you analyse data
+in flight and don&amp;rsquo;t necessarily land it anywhere. Having said that,
+Storm is also fault-tolerant and can write to external data stores (e.g.
+HBase) and you can do real-time computation in Flume (using
+interceptors)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That&amp;rsquo;s all for this day - however, I&amp;rsquo;ll keep on reading through storm-users, so watch this space for more info on storm development.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Zookeeper &#43; Curator = Distributed sync</title>
+      <link>http://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/</link>
+      <pubDate>Mon, 24 Jun 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/</guid>
+      <description>&lt;p class=&#34;c8&#34;&gt;&lt;img height=&#34;300&#34; src=&#34;http://marcin.cylke.com.pl/assets/2013-06-24-zookeeper-curator.jpg&#34;&gt;&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c8&#34;&gt;
+    &lt;span&gt;An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system&amp;rsquo;s components. Since I had already a few separate components I didn&amp;rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I&amp;rsquo;ve decided to go that way with my solution.&lt;/span&gt;
+&lt;/p&gt;&lt;h2 class=&#34;c8&#34;&gt;&lt;a name=&#34;h.v629433u6utf&#34;&gt;&lt;/a&gt;&lt;span&gt;What is Zookeeper?&lt;/span&gt;&lt;/h2&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;Just a crude distributed synchronization framework. However, it implements Paxos-style algorithms (&lt;/span&gt;&lt;span
+        class=&#34;c5&#34;&gt;&lt;a class=&#34;c0&#34; href=&#34;http://en.wikipedia.org/wiki/Paxos_(computer_science)&#34;&gt;http://en.wikipedia.org/wiki/Paxos_(computer_science)&lt;/a&gt;&lt;/span&gt;&lt;span&gt;) to ensure no split-brain scenarios would occur. This is quite an important feature, since I don&amp;rsquo;t have to care about that kind of problems while using this app. You just need to create an ensemble of a couple of its instances - to ensure high availability. It is basically a virtual filesystem, with files, directories and stuff. One could ask why another filesystem? Well this one is a rather special one, especially for distributed systems. The reason why creating all the locking algorithms on top of Zookeeper is easy is its Ephemeral Nodes - which are just files that exist as long as connection for them exists. After it disconnects - such file disappears. &lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;With such paradigms in place it&amp;rsquo;s fairly easy to create some high level algorithms for synchronization.&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;Having that in place, it&lt;/span&gt;&lt;span&gt;&amp;nbsp;can&lt;/span&gt;&lt;span&gt;&amp;nbsp;safely integrate multiple services ensuring loose coupling in a distributed way.&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;h2 class=&#34;c8&#34;&gt;&lt;a name=&#34;h.ppqvt63vg53w&#34;&gt;&lt;/a&gt;&lt;span&gt;Zookeeper from developer&amp;rsquo;s POV&lt;/span&gt;
+&lt;/h2&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;With all the base services for Zookeeper started, it seems there is nothing else, than just connect to it and start implementing necessary algorithms. Unfortunately, the API is quite basic and offers files and directories abstractions with the addition of different node type (file types) - ephemeral and sequence. It is also possible to watch a node for changes.&lt;/span&gt;
+&lt;/p&gt;&lt;h2 class=&#34;c8&#34;&gt;&lt;a name=&#34;h.lgfultrxupbf&#34;&gt;&lt;/a&gt;&lt;span&gt;Using bare Zookeeper is hard!&lt;/span&gt;&lt;/h2&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;Creating connections is tedious - and there is lots of things to take care of. Handling an established connection is hard - when establishing connection to ensemble, it&amp;rsquo;s necessary to negotiate a session also. During the whole process a number of exceptions can occur - these are &amp;ldquo;recoverable&amp;rdquo;
+    exceptions, that can be gracefully handled and not break the connection.&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p
+        class=&#34;c8&#34;&gt;&lt;span&gt;So, Zookeeper API is hard.&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;Even if one is proficient with that API, then there come recipes. The reason for using Zookeeper is to be able to implement some more sophisticated algorithms on top of it. Unfortunately those aren&amp;rsquo;t trivial and it is again quite hard to implement them without bugs.&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;And since distributed systems are hard, why would anyone want another difficult to handle tool? &lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;h2 class=&#34;c8&#34;&gt;&lt;a name=&#34;h.8n72xils1l1f&#34;&gt;&lt;/a&gt;&lt;span&gt;Enter Curator&lt;/span&gt;&lt;/h2&gt;&lt;p
+        class=&#34;c8&#34;&gt;&lt;span&gt;Happily, guys from Netflix implemented a nice abstraction for dealing with Zookeeper internals. They called it Curator and use it extensively in the company&amp;rsquo;s environment. Curator offers consistent API for Zookeeper&amp;rsquo;s functionality. It even implements a couple of recipes for distributed systems.&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;h2 class=&#34;c8&#34;&gt;&lt;a name=&#34;h.k63iku7qitza&#34;&gt;&lt;/a&gt;&lt;span&gt;File read/write&lt;/span&gt;&lt;/h2&gt;&lt;p
+        class=&#34;c8&#34;&gt;&lt;span&gt;The basic use of Zookeeper is as a distributed configuration repository. For this scenario I only need read/write capabilities, to be able to write and read files from the Zookeeper filesystem. This code snippet writes a sample json to a file on ZK filesystem.&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;a href=&#34;#&#34; name=&#34;fb1072a0c295459e23a47b12e8c09952a5ab3768&#34;&gt;&lt;/a&gt;&lt;a href=&#34;#&#34;
+                                                                                                      name=&#34;0&#34;&gt;&lt;/a&gt;
+&lt;pre&gt;
+&lt;code&gt;
+EnsurePath ensurePath = new EnsurePath(markerPath);
+ensurePath.ensure(client.getZookeeperClient());
+String json = “...”;
+if (client.checkExists().forPath(statusFile(core)) != null)
+     client.setData().forPath(statusFile(core), json.getBytes());
+else
+     client.create().forPath(statusFile(core), json.getBytes());
+
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;h2 class=&#34;c8&#34;&gt;&lt;a name=&#34;h.ikl4cn73c5uw&#34;&gt;&lt;/a&gt;&lt;span&gt;Distributed locking&lt;/span&gt;&lt;/h2&gt;
+&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;Having multiple systems there may be a need of using an exclusive lock for some resource, or perhaps some big system requires it&amp;rsquo;s components to synchronize based on locks. This &amp;ldquo;recipe&amp;rdquo;
+    is an ideal match for those situations.&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;a href=&#34;#&#34;
+                                                                                        name=&#34;b0329bbbf14b79ffaba1139881914aea887ef6a3&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;#&#34; name=&#34;1&#34;&gt;&lt;/a&gt;
+&lt;pre&gt;
+&lt;code&gt;
+
+lock = new InterProcessSemaphoreMutex(client, lockPath);
+lock.acquire(5, TimeUnit.MINUTES);
+… do sth …
+lock.release();
+
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;&amp;nbsp;(from &lt;/span&gt;&lt;span class=&#34;c5&#34;&gt;&lt;a class=&#34;c0&#34;
+                                                                   href=&#34;https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/LockingRemotely.java&#34;&gt;https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/LockingRemotely.java&lt;/a&gt;&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;h2 class=&#34;c8&#34;&gt;&lt;a name=&#34;h.ck92kse5nam2&#34;&gt;&lt;/a&gt;&lt;span&gt;Sevice Advertisement&lt;/span&gt;&lt;/h2&gt;&lt;p
+        class=&#34;c8&#34;&gt;&lt;span&gt;This is quite an interesting use case. With many small services on different servers it is not wise to exchange ip addresses and ports between them. When some of those services may go down, while other will try to replace them - the task gets even harder. &lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;That&amp;rsquo;s why, with Zookeeper in place, it can be utilised as a registry of existing services.&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;If a service starts, it registers into the ServiceRegistry, offering basic information, like it&amp;rsquo;s purpose, role, address, and port. &lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;Services that want to use a specific kind of service request an access to some instance. This way of configuring easily decouples services from their configuration.&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;Basically this scenario needs ? steps:&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c8&#34;&gt;
+    &lt;span&gt;1. Service starts and registers its presence (&lt;/span&gt;&lt;span class=&#34;c5&#34;&gt;&lt;a class=&#34;c0&#34;
+                                                                                   href=&#34;https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerAdvertiser.java#L44&#34;&gt;https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerAdvertiser.java#L44&lt;/a&gt;&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;a href=&#34;#&#34; name=&#34;1c67229d451cd2d82dddaf1fb12af1aed4a8ecb0&#34;&gt;&lt;/a&gt;
+
+&lt;pre&gt;
+&lt;code&gt;
+
+ServiceDiscovery&lt;WorkerMetadata&gt; discovery = getDiscovery();
+            discovery.start();
+            ServiceInstance si = getInstance();
+            log.info(si);
+            discovery.registerService(si);
+
+
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;2. Another service - on another host or in another JVM on the same machine tries to discover who is implementing the service (&lt;/span&gt;&lt;span
+        class=&#34;c5&#34;&gt;&lt;a class=&#34;c0&#34;
+                      href=&#34;https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerFinder.java#L50&#34;&gt;https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerFinder.java#L50&lt;/a&gt;&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;a href=&#34;#&#34; name=&#34;0e430a074ab36c8eea3f84fae3d0cffb400dd281&#34;&gt;&lt;/a&gt;&lt;a href=&#34;#&#34;
+                                                                                                      name=&#34;3&#34;&gt;&lt;/a&gt;
+&lt;pre&gt;
+&lt;code&gt;
+instances = discovery.queryForInstances(serviceName);
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;The whole concept here is ridiculously simple - the service advertising its presence just stores a file with its whereabouts. The service that is looking for service providers just look into specific directory and read stored definitions.&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;In my example, the structure advertised by services looks like this (+ some getters and constructor - the rest is here: &lt;/span&gt;&lt;span
+        class=&#34;c5&#34;&gt;&lt;a class=&#34;c0&#34;
+                      href=&#34;https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/model/WorkerMetadata.java&#34;&gt;https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/model/WorkerMetadata.java&lt;/a&gt;&lt;/span&gt;&lt;span&gt;):&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;a href=&#34;#&#34; name=&#34;c0131478bfab43e60b5e077f3170a172a909d199&#34;&gt;&lt;/a&gt;
+
+&lt;pre&gt;
+&lt;code&gt;
+
+public final class WorkerMetadata {
+    private final UUID workerId;
+    private final String listenAddress;
+    private final int listenPort;
+}
+
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;h2 class=&#34;c8&#34;&gt;&lt;a name=&#34;h.qvt6wa2m15sm&#34;&gt;&lt;/a&gt;&lt;span&gt;Source code&lt;/span&gt;&lt;/h2&gt;&lt;p
+        class=&#34;c8&#34;&gt;&lt;span&gt;The above recipes are available in Curator library (&lt;/span&gt;&lt;span class=&#34;c5&#34;&gt;&lt;a class=&#34;c0&#34;
+                                                                                                        href=&#34;http://curator.incubator.apache.org/&#34;&gt;http://curator.incubator.apache.org/&lt;/a&gt;&lt;/span&gt;&lt;span&gt;). Recipes&amp;rsquo;
+    usage examples are in my github repo at &lt;/span&gt;&lt;span class=&#34;c5&#34;&gt;&lt;a class=&#34;c0&#34;
+                                                                       href=&#34;https://github.com/zygm0nt/curator-playground&#34;&gt;https://github.com/zygm0nt/curator-playground&lt;/a&gt;&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;h2 class=&#34;c8&#34;&gt;&lt;a name=&#34;h.o1zkosbrwpah&#34;&gt;&lt;/a&gt;&lt;span&gt;Conclusion&lt;/span&gt;&lt;/h2&gt;&lt;p
+        class=&#34;c8&#34;&gt;&lt;span&gt;If you&amp;rsquo;re in need of a reliable platform for exchanging data and managing synchronization, and you need to do it in a distributed fashion - just choose Zookeeper. Then add Curator for the ease of using it. Enjoy!&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;hr&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ol class=&#34;c13&#34; start=&#34;1&#34;&gt;
+    &lt;li class=&#34;c7&#34;&gt;&lt;span&gt;image comes from: &lt;/span&gt;&lt;span class=&#34;c5&#34;&gt;&lt;a class=&#34;c0&#34;
+                                                                      href=&#34;http://www.flickr.com/photos/jfgallery/2993361148&#34;&gt;http://www.flickr.com/photos/jfgallery/2993361148&lt;/a&gt;&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li class=&#34;c7&#34;&gt;&lt;span&gt;all source code fragments taken from this repo: &lt;/span&gt;&lt;span class=&#34;c5&#34;&gt;&lt;a class=&#34;c0&#34;
+                                                                                                    href=&#34;https://github.com/zygm0nt/curator-playground&#34;&gt;https://github.com/zygm0nt/curator-playground&lt;/a&gt;&lt;/span&gt;
+    &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Operational problems with Zookeeper</title>
+      <link>http://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/</link>
+      <pubDate>Thu, 21 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/</guid>
+      <description>
+
+&lt;p&gt;This post is a summary of what has been presented by Kathleen Ting on
+StrangeLoop conference. You can watch the original here:
+&lt;a href=&#34;http://www.infoq.com/presentations/Misconfiguration-ZooKeeper&#34;&gt;http://www.infoq.com/presentations/Misconfiguration-ZooKeeper&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve decided to put this selection here for quick reference.&lt;/p&gt;
+
+&lt;h2 id=&#34;connection-mismanagement:3dd1934cab1c17d4d4b86e7299da0f63&#34;&gt;Connection mismanagement&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;too many connections&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - Too many connections from /xx.x.xx.xxx - max is 60
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;running out of ZK connections?&lt;/li&gt;
+&lt;li&gt;set &lt;code&gt;maxClientCnxns=200&lt;/code&gt; in &lt;code&gt;zoo.cfg&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;HBase client leaking connections?&lt;/li&gt;
+&lt;li&gt;fixed in HBASE-3777, HBASE-4773, HBASE-5466&lt;/li&gt;
+&lt;li&gt;manually close connections&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;connection closes prematurely&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ERROR: org.apache.hadoop.hbase.ZooKeeperConnectionException: HBase is able to connect to ZooKeeper but the connection closes immediately.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;in &lt;code&gt;hbase-site.xml&lt;/code&gt; set &lt;code&gt;hbase.zookeeper.recoverable.waittime=30000ms&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;pig hangs connecting to HBase&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;WARN org.apache.zookeeper.ClientCnxn: Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect java.net.ConnectionException: Connection refused!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;CAUSE:&lt;/strong&gt; location of ZK quorum is not known to Pig&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;use Pig 10, which includes PIG-2115&lt;/li&gt;
+&lt;li&gt;if there is an overlap between TaskTrackers and ZK quorum nodes
+
+&lt;ul&gt;
+&lt;li&gt;set &lt;code&gt;hbase.zookeeper.quorum&lt;/code&gt; to final in &lt;code&gt;hbase-site.xml&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;otherwise add &lt;code&gt;hbaze.zoopeeker.quorum=hadoophbasemaster.lan:2181&lt;/code&gt; in &lt;code&gt;pig.properties&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;time-mismanagement:3dd1934cab1c17d4d4b86e7299da0f63&#34;&gt;Time mismanagement&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;client session timed out&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;INFO org.apache.zookeeper.server.ZooKeeperServer: Expiring session &amp;lt;id&amp;gt;, timeout of 40000ms exceeded
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ZK and HBase need the same session timeout values
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;zoo.cfg&lt;/code&gt;: &lt;code&gt;maxSession=Timeout=180000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hbase-site.xml&lt;/code&gt;: &lt;code&gt;zookeeper.session.timeout=180000&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;don&amp;rsquo;t co-locate ZK with IO-intense DataNode or RegionServer&lt;/li&gt;
+&lt;li&gt;specify right amount of heap and tune GC flags
+
+&lt;ul&gt;
+&lt;li&gt;turn on parallel/CMS/incremental GC&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;clients lose connections&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;WARN org.apache.zookeeper.ClientCnxn - Session &amp;lt;id&amp;gt; for server &amp;lt;name&amp;gt;, unexpected error, closing socket connection and attempting reconnect java.io.IOException: Broken pipe
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;don&amp;rsquo;t use SSD drive for ZK transaction log&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;disk-management:3dd1934cab1c17d4d4b86e7299da0f63&#34;&gt;Disk management&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;unable to load database - unable to run quorum server&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;FATAL Unable to load database on disk !  java.io.IOException: Failed to process transaction type: 2 error: KeeperErrorCode = NoNode for &amp;lt;file&amp;gt; at org.apache.zookeeper.server.persistence.FileTxnSnapLog.restore(FileTxnSnapLog.java:152)!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;archive and wipe &lt;code&gt;/var/zookeeper/version-2&lt;/code&gt; if other two ZK servers
+are running&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;unable to load database - unreasonable length exception&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;FATAL Unable to load database on disk java.io.IOException: Unreasonable length = 1048583 at org.apache.jute.BinaryInputArchive.readBuffer(BinaryInputArchive.java:100)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;server allows a client to set data larger than the server can read from disk&lt;/li&gt;
+&lt;li&gt;if a znode is not readable, increase &lt;code&gt;jute.maxbuffer&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;look for &lt;code&gt;&amp;quot;Packet len &amp;lt;xx&amp;gt; is out of range&amp;quot;&lt;/code&gt; in the client log&lt;/li&gt;
+&lt;li&gt;increase it by 20%&lt;/li&gt;
+&lt;li&gt;set in &lt;code&gt;JVMFLAGS=&amp;quot;-Djute.maxbuffer=yy&amp;quot; bin/zkCli.sh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;fixed in ZOOKEEPER-1513&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;failure to follow leader&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;WARN org.apache.zookeeper.server.quorum.Learner: Exception when following the leader java.net.SocketTimeoutException: Read timed out 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;CAUSE:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;disk IO contention, network issues&lt;/li&gt;
+&lt;li&gt;ZK snapshot is too large (lots of ZK nodes)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;SOLVE:&lt;/strong&gt;
+- reduce IO contention by putting dataDir on dedicated spindle
+- increase initLimit on all ZK servers and restart, see
+  ZOOKEEPER-1521
+- monitor network&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;best-practices:3dd1934cab1c17d4d4b86e7299da0f63&#34;&gt;Best Practices&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;DOs&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;separate spindles for dataDir &amp;amp; dataLogDir&lt;/li&gt;
+&lt;li&gt;allocate 3 or 5 ZK servers&lt;/li&gt;
+&lt;li&gt;tune garbage collection&lt;/li&gt;
+&lt;li&gt;run zkCleanup.sh script via cron&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;DON&amp;rsquo;Ts&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;dont&amp;rsquo; co-locate ZK with I/O intense DataNode or RegionServer&lt;/li&gt;
+&lt;li&gt;don&amp;rsquo;t use SSD drive for ZK transaction log&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You may use Zookeeper as an observer - a non-voting member:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;in zoo.cfg&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;peerType=observer
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>After WHUG meeting</title>
+      <link>http://marcin.cylke.com.pl/2012/11/30/after-whug/</link>
+      <pubDate>Fri, 30 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2012/11/30/after-whug/</guid>
+      <description>&lt;p&gt;Here are the slides from the talk a gave yesterday. If you have any
+questions, please ask.&lt;/p&gt;
+
+&lt;script async class=&#34;speakerdeck-embed&#34;
+data-id=&#34;cc18d5601d60013059a31231381554d7&#34; data-ratio=&#34;1.33333333333333&#34;
+src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>WHUG 8. Beyond Hadoop - checking other options</title>
+      <link>http://marcin.cylke.com.pl/2012/11/26/whug-8-beyond-hadoop/</link>
+      <pubDate>Mon, 26 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2012/11/26/whug-8-beyond-hadoop/</guid>
+      <description>&lt;p&gt;W najbliższy czwartek - czyli 29.11.2012 - poprowadzę prezentację w
+ramach Warsaw Hadoop User Group. Swoją obecność można odklinąć tu
+&lt;a href=&#34;http://www.meetup.com/warsaw-hug/&#34;&gt;http://www.meetup.com/warsaw-hug/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;A o czym będę mówił? Przeklejka ze strony WHUG:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Marcin skupi się na współpracy ekosystemu Hadoopa z innymi narzędziami.
+Pokaże jak prosto i wygodnie przetwarzać grafy i jak stosować podejście
+Big Data, w czasie rzeczywistym. Poruszy również temat łatwiejszego
+tworzenia algorytmów Map-Reduce&lt;/p&gt;
+
+&lt;p&gt;Będzie to nieco mniej technicza (ale wciąż praktyczna) wycieczka po
+obrzeżach tematyki, która jest zwykle poruszana w połączeniu z
+Hadoop-em.&lt;/p&gt;
+
+&lt;p&gt;Prezentacja będzie dotyczyć narzędzi takich jak Cascading, Storm, Titan.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Zapraszam!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hadoop HA setup</title>
+      <link>http://marcin.cylke.com.pl/2012/10/30/hadoop-ha/</link>
+      <pubDate>Tue, 30 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2012/10/30/hadoop-ha/</guid>
+      <description>
+
+&lt;p&gt;With the advent of Hadoop&amp;rsquo;s 2.x version, there finally is a working
+High-Availability solution. Even two of those. Now it really is easy to
+configure and use those solutions. It no longer require external
+components, like
+&lt;a href=&#34;http://blog.cloudera.com/blog/2009/07/hadoop-ha-configuration/&#34;&gt;DRBD&lt;/a&gt;.
+It all is just neatly packed into Cloudera Hadoop distribution - the
+precursor of this solution.&lt;/p&gt;
+
+&lt;p&gt;Read on to find out how to use it.&lt;/p&gt;
+
+&lt;p&gt;The most important weakness of previous Hadoop releases was the
+single-point-of-failure, which happend to be NameNode. NameNode as a key
+component of every Hadoop cluster, is responsible for managing
+filesystem namespace information and block location. Loosing its data results in loosing all the data
+stored on DataNodes. HDFS is no longer able to reach for specific files,
+or its blocks. This renders your cluster inoperable.&lt;/p&gt;
+
+&lt;p&gt;So it is crucial to be able to detect and counter problems with NameNode.
+The most desirable behavior is to have a hot backup, that would ensure
+a no-downtime cluster operation. To achieve this, the second NameNode
+need to have up-to-date information on filesystem metadata and it needs
+to be also up and running. Starting NameNode with existing set of data
+may easily take many minutes to parse the actual filesystem state.&lt;/p&gt;
+
+&lt;p&gt;Previously used solution - depoying SecondaryNameNode - was somewhat
+flawed. It took long time to recover after failure. It was not a
+hot-backup solution, which also added to the problem. Some other
+solution was required.&lt;/p&gt;
+
+&lt;p&gt;So, what needed to be made redundant is the edits dir contents and
+sending block location maps from each of the DataNodes to NameNodes -
+in case of HA deployment - to both NameNodes. This was accomplished in
+two steps. The first one with the release of CDH 4 beta - solution based
+on sharing edits directory. Than, with CDH 4.1 came quorum based solution.&lt;/p&gt;
+
+&lt;p&gt;Find out how to configure those on your cluster.&lt;/p&gt;
+
+&lt;h2 id=&#34;shared-edits-directory-solution:8d364cd6dcb7b648a710c293387d3c8c&#34;&gt;Shared edits directory solution&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.innovative-labs.com/blog/hadoop_ha-nfs.png&#34; alt=&#34;Hadoop HA - NFS based edits share&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For this kind of setup, there is an assumption, that in a cluster exists
+a shared storage directory. It should be deployed using some kind of
+network-based filesystem. You could try with NFS or GlusterFS.&lt;/p&gt;
+
+&lt;p&gt;{% gist 3958555  core-site.xml %}&lt;/p&gt;
+
+&lt;p&gt;{% gist 3958555  hdfs-site.xml %}&lt;/p&gt;
+
+&lt;p&gt;This setup is quite OK, as long as you&amp;rsquo;re comfortable with maintaining a
+separate service (network storage) for handling the HA state. It seems
+error prone to me, because it adds another service which high
+availability should be ensured. NFS seems to be a bad choice here,
+because AFAIK it does not offer HA out of the box.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, we have GlusterFS, which is a distributed filesystem,
+you can deploy on multiple bricks and increase the replication level.&lt;/p&gt;
+
+&lt;p&gt;Nevertheless, it still brings additional burden of another service to
+maintain.&lt;/p&gt;
+
+&lt;h2 id=&#34;quorum-based-solution:8d364cd6dcb7b648a710c293387d3c8c&#34;&gt;Quorum based solution&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.innovative-labs.com/blog/hadoop_ha-quorum.png&#34; alt=&#34;Hadoop HA - Quorum based edits share&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;With the release of CDH 4.1.0 we are now able to use a much better
+integrated solution called JournalNode. Now all the updates are
+synchronized through a JournalNode. Each JournalNode have the same data
+and all the NameNodes are able to recive filesystem state updates from
+that daemons.&lt;/p&gt;
+
+&lt;p&gt;This solution is much more consistent with Hadoop ecosystem.&lt;/p&gt;
+
+&lt;p&gt;Please note, that the config is almost identical to the one needed for
+shared edits directory solution. The only difference is the value for
+&lt;em&gt;dfs.namenode.shared.edits.dir&lt;/em&gt;. This now points to all the journal
+nodes deployed in our cluster.&lt;/p&gt;
+
+&lt;p&gt;{% gist 3973262 core-site.xml %}&lt;/p&gt;
+
+&lt;p&gt;{% gist 3973262 hdfs-site.xml %}&lt;/p&gt;
+
+&lt;h1 id=&#34;infrastructure:8d364cd6dcb7b648a710c293387d3c8c&#34;&gt;Infrastructure&lt;/h1&gt;
+
+&lt;p&gt;In both cases you need to run Zookeeper-based Failover Controller
+(&lt;em&gt;hadoop-hdfs-zkfc&lt;/em&gt;). This daemon negotiates which NameNode should
+become active and which standby.&lt;/p&gt;
+
+&lt;p&gt;But that&amp;rsquo;s not all. Depending on the way you&amp;rsquo;ve choosen to deploy HA you
+need to do some other things:&lt;/p&gt;
+
+&lt;h2 id=&#34;shared-edits-dir:8d364cd6dcb7b648a710c293387d3c8c&#34;&gt;Shared edits dir&lt;/h2&gt;
+
+&lt;p&gt;With shared edits dir you need to deploy networked filesystem, and mount
+it on your NameNodes. After that you can run your cluster and be happy
+with your new HA.&lt;/p&gt;
+
+&lt;h2 id=&#34;quroum-based:8d364cd6dcb7b648a710c293387d3c8c&#34;&gt;Quroum based&lt;/h2&gt;
+
+&lt;p&gt;For QJournal to operate you need to install one new package called
+&lt;em&gt;hadoop-hdfs-journalnode&lt;/em&gt;. This provides startup scripts for Journal
+Node daemons. Choose at least three nodes that will be responsible for
+handling edits state and deploy journal nodes on them.&lt;/p&gt;
+
+&lt;h1 id=&#34;conclusion:8d364cd6dcb7b648a710c293387d3c8c&#34;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;Thanks to guys from Cloudera we now can use an enterprise grade High
+Availability features for Hadoop. Eliminating the single point of
+failure in your cluster is essential for easy maintainability of your
+infrastructure.&lt;/p&gt;
+
+&lt;p&gt;Given the above choices, I&amp;rsquo;d suggest using QJournal setup, becasue of
+its relatively small impact on the overal cluster architecture. It&amp;rsquo;s
+good performance and fairly simple setup enable the users to easily
+start using Hadoop in HA setup.&lt;/p&gt;
+
+&lt;p&gt;Are you using Hadoop with HA? What are your impressions?&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

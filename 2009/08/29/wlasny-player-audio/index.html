@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Własny player audio?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.15" />
+  <link href="" rel="alternate" type="application/rss+xml" title="Just a blog" />
+  <link href="http://marcin.cylke.com.pl/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://marcin.cylke.com.pl/css/hc.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  
+    
+    </head>
+    <body>
+<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
+      <div id = "wrapper">
+
+
+<div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="http://marcin.cylke.com.pl/"><p class="navbar-brand">Just a blog</p></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+					
+					
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+       
+       <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+					<img src="" />
+          <li class="sidebar-brand"><a href="http://marcin.cylke.com.pl/"><h1 class="brand">Just a blog</h1></a><h3></h3></li>
+          <hr />
+					
+          <hr />
+          <div id="social-wrapper">
+           
+           
+           
+           
+         </div>
+       </ul>
+     </div>
+
+
+
+     <div class="container">
+
+
+  <div id="article">
+   <div class="article-title">Własny player audio?</div>
+   <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 2009-08-29</small></p> <hr/>
+   <div class="post">
+     <div class='post'>
+<p>Od jakiegoś czasu męczy mnie nędza wśród odtwarzaczy audio dostępnych na różne unixy. Niby są, ale jakieś takie wybrakowane, zupełnie nie przystające do moich potrzeb. Niby robią dużo, ale ja nie potrzebuję kombajnu do muzyki.</p>
+<p>Oczywiście, są różne takie jak:</p>
+<ul>
+<li>Rhythmbox</li>
+<li>Amarok</li>
+<li>xmms i xmms2</li>
+<li>musicpd</li>
+<li>bmpx</li>
+<li>cmus</li>
+</ul>
+<p>No i wszystko fajnie, nie mam zamiaru negować ich użycia. Mi one po prostu nie do końca pasują. Rhythmbox, bo jest duży, ma za dużo featerów, niby umie dużo ale jak co do czego przyjdzie to bywają problemy. Amarok, część KDE, a ja używam GNOME, albo tylko jakiegoś WM - a do tego jest przerośniętą kobyłą. xmms to staroć, a xmms2 nie używałem. Nie zachęcił mnie swoją architekturą klient-serwer. bmpx - fajny, ale mało stabilny. musicpd, przyjemny, ma prawie to co bym chciał - to znaczy jego klienty to mają, no ale znów ta nieszczęsna architektura klient-serwer. Po co to w odtwarzaczu muzyki?? cmus jest fajny, ale nie graficzny.</p>
+<EXCERPT><p>Tak więc widać, że jestem wybredny, lub też mam w tym jakiś cel. I jedno i drugie :D</p>
+<p><br></p>
+<p><br>
+To czego oczekuję od odtwarzacza to prostota i kilka fajnych bajerków. Chciałbym mieć takiego IPoda tyle że na ekranie komputera. Na czym mi zależy? Prost!</p>
+<p>Najpierw co musi taki player mieć:</p>
+<ul>
+<li>budowanie biblioteki z plikami muzycznymi - oczywista oczywistość przecież</li>
+<li>... i tym samym przeszukiwanie tej biblioteki - chcę szukać po nazwie pliku, jego lokalizacji i jeszcze przy wykorzystaniu wyrażeń regularnych :D</li>
+<li>wyświetlanie okładki słuchanej płyty, w przypadku braku - ściągnięcie okładki</li>
+<li>masowa edycja metadanych utworów - coś co pozwoli wyszukać sobie regexpem kawałki, a potem im wszystkim zedytować metadane, pomijając dane specyficzne dla pojedynczego kawałka, jak chociażby tytuł</li>
+<li>jako bajer fajnie byłoby również móc oceniać kawałki - ale w sumie nie wiem, po co, nigdy z tego nie korzystałem do tej pory</li>
+</ul>
+<p>Tak wyglądają założenia, a tak chciałbym żeby wyglądał interface:</p>
+<p></p>
+<center><img src="http://innovative-labs.com/images/soundUI.png"></center>
+<p></p>
+<p>Krótki opis zaznaczonych na obrazku elementów:</p>
+<p></p>
+<ol>
+<li>wyświetlanie okładki albumu, może niekoniecznie w ten sposób, jak na rysunku - chciałbym też przedstawić więcej informacji o utworze/płycie/wykonawcy przy jakiejś operacji na okładce - to jeszcze nie ustalone</li>
+<li>tak powinny być wyświetlane wyszukane utwory</li>
+<li>pole do wyszukiwania, niby główna część operacyjna aplikacji</li>
+</ol>
+<p></p>
+<p>A co Wy sądzicie? Pomijam zasadność tworzenia kolejnego odtwarzacza. Czy macie jakieś killer-features, których brakuje w obecnie istniejących odtwarzaczach? A może jest już coś fajnego co pasowałoby do mojej idei, a czego w tej chwili brakuje?</p>
+<h4>mały dizclaimer</h4>
+<p>Obrazek stworzony przy pomocy narzędzia <a href="http://www.balsamiq.com/">Balsamiq Mockups</a>, a dokładniej w jego wersji webowej. Niestety, export do PNG nie zadziałał więc zrobiłem screenshota :) Narzędzie jest bardzo przyjemne w użytkowaniu, ale do takiej zabawy, niekomercyjnej, jego cena jest zaporowa.</p>
+</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://pulpit.jogger.pl">skkf</a></div>
+<div class='content'>
+<p>Jeden z konfigów foobara wyglądał identycznie jak Twój szkic, ale niestety nie bardzo jest pod linuksa.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://elwis.jogger.pl">Bartek</a></div>
+<div class='content'>
+<p>Nie wiem co tak ludziom nie pasuje w architekturze klient-serwer.<br />Może MOC?</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://iluzion.jogger.pl/">iluzion</a></div>
+<div class='content'>
+<p>Ja również oddaję swój głos na Quod Libet, bo spełnia podane kryteria. Poza tym suwaki od głośności i przewijania działają bez opóźnień czy nawet trzasków (przynajmniej kiedyś takie słyszałem w Banshee przy zmianie głośności).</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://marines.jogger.pl">marines</a></div>
+<div class='content'>
+<p>no to własnie QL będzie dla ciebie w sam raz :&gt; powiedziabym raczej, że exaile jest nieco kobylasty. ;]</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>Sęk w tym, że ja nie szukam &quot;zbyt&quot; wielu featerów. Chcę czystego playera, który umie grać muzykę. Nie chcę podcastów, last.fm, itp :)</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://radmen.jogger.pl">radmen</a></div>
+<div class='content'>
+<p>Hmm Songbird ? Straszna kobyła kiedyś to była, ale ficzerów miała troszkę.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://marines.jogger.pl">marines</a></div>
+<div class='content'>
+<p>dokładnie, quodlibet.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="mwi-ng.jogger.pl">mwi</a></div>
+<div class='content'>
+<p>ja bym na twoim miejscu sprobowal jeszcze quod libet, kiedys go uzywalem i bardzo mi sie podobal, ale stwierdzilem ze wyrazenia regularne nie sa jednak potrzebne do zarzadzania muzyka ;p</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>@globi - sonata jest bardzo fajna, ale ja naprawdę nie potrzebuję serwera do muzyki. Korzystałem z tego tandemu dosyć długi czas i mi się znudziło.<br /><br />@Nn - banshee mogę porównać stabilnością z bmpx - równie często się wywala, więc zdecydowanie nie.<br /><br />Co do propozycji MoC, to mimo wszystko wydaje mi się, że on nie ma opcji wyświetlania okładek ;-)<br /><br />Ok, znalazłem alternatywę, która mnie satysfakcjonuje. I zamierzam się jej trzymać. Mowa o Exaile.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="">globi</a></div>
+<div class='content'>
+<p>Sonata + mpd</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://rdominiak.jogger.pl">Radek</a></div>
+<div class='content'>
+<p>moc ma bazę utworów i wyszukiwarkę muzyki?</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://blog.skubert.net">Skubert</a></div>
+<div class='content'>
+<p>Hm, jak chcesz czegoś małego, prostego i oszczędzającego zasoby to MoC. Jest świetna.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>@egzemplarz, ten player jest bardzo fajny. Na razie poużywam go sobie. Mam wersję 0.2.14, i w tej chwili niezbyt chce ściągać okładki, no ale może coś źle robię.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="">Nn</a></div>
+<div class='content'>
+<p>Na Twoim miejscu sprawdziłbym Banshee. Niestety, pociąga on za sobą mono, ale w dużej mierze spełnia Twoje potrzeby. Brak mu z wymienionych rzeczy chyba tylko obsługi wyrażeń regularnych.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://jogger.vmario.org">vmario</a></div>
+<div class='content'>
+<p>gmusicbrowser</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://egzemplarz.jogger.pl">egzemplarz</a></div>
+<div class='content'>
+<p>E... Exaile?</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://rdominiak.jogger.pl">Radek</a></div>
+<div class='content'>
+<p>W takim razie pierwszy akapit daje mylne wrażenie, że to kolejny powód, by nie lubić Linuksa ;)</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>@dunDer, obejrzałem sobie odobinę no i jakoś znaczących zmian w UI w stosunku do audacious nie widać. No i nadal wygląda jak klon winampa.<br /><br />@Radek, nie raczej nie mam - nie korzystam z Windowsa do tego stopnia.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://rdominiak.jogger.pl">Radek</a></div>
+<div class='content'>
+<p>A pod Windę masz coś co Cię zaspokaja?</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="">dunDer</a></div>
+<div class='content'>
+<p>Może Audacious2?</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>Próbowałem, używam od czasu do czasu. Ale nadal, to jest player do filmów. Przynajmniej ja tak go widzę. Dodatkowo wydaje mi się dosyć ciężki.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://blog.skubert.net">Skubert</a></div>
+<div class='content'>
+<p>A próbowałeś VLC? Nie pociąga za sobą połowy KDE i jest wygodne w użyciu.</p></div>
+</div>
+</div>
+
+   </div>
+ </div>
+
+
+ <a href="https://twitter.com/share" class="twitter-share-button " data-size="small" data-count="none">Tweet</a>
+ <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+ <ul class="pager">
+      &nbsp;<li class="previous"><a href="http://marcin.cylke.com.pl/2009/08/29/system-shock-2/"> System Shock 2</a></li>
+      &nbsp;<li class="next"><a href="http://marcin.cylke.com.pl/2009/08/23/sgi-o2-upragiony/"> SGI O2 - upragiony</a></li>
+</ul>
+
+
+
+    </ul>
+    </div>
+    <footer>
+
+        <p class="text-muted credit">&copy; 2018. All rights reserved. </p>
+    </footer>
+ 
+    <script src="http://marcin.cylke.com.pl/js/jquery-1.10.2.min.js"></script>
+    <script src="http://marcin.cylke.com.pl/js/bootstrap.min.js"></script>
+    <script src="http://marcin.cylke.com.pl/js/bootstrap.js"></script>
+    <script type="text/javascript" src="http://marcin.cylke.com.pl/js/hc.js"></script>
+</body>
+
+</html>
+

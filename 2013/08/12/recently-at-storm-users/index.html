@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Recently at storm-users</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.15" />
+  <link href="" rel="alternate" type="application/rss+xml" title="Just a blog" />
+  <link href="http://marcin.cylke.com.pl/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://marcin.cylke.com.pl/css/hc.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  
+    
+    </head>
+    <body>
+<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
+      <div id = "wrapper">
+
+
+<div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="http://marcin.cylke.com.pl/"><p class="navbar-brand">Just a blog</p></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+					
+					
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+       
+       <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+					<img src="" />
+          <li class="sidebar-brand"><a href="http://marcin.cylke.com.pl/"><h1 class="brand">Just a blog</h1></a><h3></h3></li>
+          <hr />
+					
+          <hr />
+          <div id="social-wrapper">
+           
+           
+           
+           
+         </div>
+       </ul>
+     </div>
+
+
+
+     <div class="container">
+
+
+  <div id="article">
+   <div class="article-title">Recently at storm-users</div>
+   <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 2013-08-12</small></p> <hr/>
+   <div class="post">
+     <p>I&rsquo;ve been reading through storm-users Google Group recently. This
+resolution was heavily inspired by Adam Kawa&rsquo;s post <a href="http://hakunamapdata.com/football-zero-apache-pig-hero-the-essence-from-hundreds-of-posts-from-apache-pig-user-mailing-list/">&ldquo;Football zero, Apache Pig hero&rdquo;</a>. Since I&rsquo;ve encountered a lot of insightful and very interesting information I&rsquo;ve decided to describe some of those in this post.</p>
+
+<ul>
+<li><p>nimbus will work in HA mode - There&rsquo;s a pull request open for it already&hellip; but some
+recent work (distributing topology files via Bittorrent) will greatly
+simplify the implementation. Once the Bittorrent work is done we&rsquo;ll look
+at reworking the HA pull request. (<a href="https://github.com/nathanmarz/storm/pull/629">storm’s pull request</a>)</p></li>
+
+<li><p>pig on storm - Pig on Trident would be a cool and welcome project. Join
+and groupBy have very clear semantics there, as those concepts exist
+directly in Trident. The extensions needed to Pig are the concept of
+incremental, persistent state across batches (mirroring those concepts
+in Trident). You can read a complete <a href="https://cwiki.apache.org/confluence/display/PIG/Pig+on+Storm+Proposal">proposal</a>.</p></li>
+
+<li><p>implementing topologies in pure python with <a href="https://github.com/AirSage/Petrel">petrel</a> looks like this:</p></li>
+</ul>
+
+<blockquote>
+<pre><code>class Bolt(storm.BasicBolt):
+    def initialize(self, conf, context):
+       ''' This method executed only once '''
+        storm.log('initializing bolt')
+
+    def process(self, tup):
+       ''' This method executed every time a new tuple arrived '''       
+       msg = tup.values[0]
+       storm.log('Got tuple %s' %msg)
+
+if __name__ == &quot;__main__&quot;:
+    Bolt().run()
+</code></pre>
+</blockquote>
+
+<ul>
+<li><p>Fliptop is happy with storm - see their presentation <a href="http://www.slideshare.net/robbiecheng/lesson-learned-of-twitter-storm">here</a></p></li>
+
+<li><p>topology metrics in 0.9.0: The new metrics feature allows you to collect
+arbitrarily custom metrics over fixed windows. Those metrics are
+exported to a metrics stream that you can consume by implementing
+<a href="https://github.com/nathanmarz/storm/blob/master/storm-core/src/jvm/backtype/storm/metric/api/IMetricsConsumer.java">IMetricsConsumer</a> and configure with <a href="https://github.com/nathanmarz/storm/blob/master/storm-core/src/jvm/backtype/storm/Config.java#L473">Config.java#L473</a>.
+Use <strong>TopologyContext#registerMetric</strong> to register new metrics.</p></li>
+
+<li><p>storm vs flume - some users&rsquo; point of view: I use Storm and Flume and find that they are better at
+different things - it really depends on your use case as to which one is
+better suited. First and foremost, they were originally designed to do
+different things: Flume is a reliable service for collecting,
+aggregating, and moving large amounts of data from source to destination
+(e.g. log data from many web servers to HDFS). Storm is more for
+real-time computation (e.g. streaming analytics) where you analyse data
+in flight and don&rsquo;t necessarily land it anywhere. Having said that,
+Storm is also fault-tolerant and can write to external data stores (e.g.
+HBase) and you can do real-time computation in Flume (using
+interceptors)</p></li>
+</ul>
+
+<p>That&rsquo;s all for this day - however, I&rsquo;ll keep on reading through storm-users, so watch this space for more info on storm development.</p>
+
+   </div>
+ </div>
+
+
+ <a href="https://twitter.com/share" class="twitter-share-button " data-size="small" data-count="none">Tweet</a>
+ <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+ <ul class="pager">
+      &nbsp;<li class="previous"><a href="http://marcin.cylke.com.pl/2013/12/08/simple-hbase-orm/"> Simple HBase ORM</a></li>
+      &nbsp;<li class="next"><a href="http://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/"> Zookeeper &#43; Curator = Distributed sync</a></li>
+</ul>
+
+
+
+    </ul>
+    </div>
+    <footer>
+
+        <p class="text-muted credit">&copy; 2018. All rights reserved. </p>
+    </footer>
+ 
+    <script src="http://marcin.cylke.com.pl/js/jquery-1.10.2.min.js"></script>
+    <script src="http://marcin.cylke.com.pl/js/bootstrap.min.js"></script>
+    <script src="http://marcin.cylke.com.pl/js/bootstrap.js"></script>
+    <script type="text/javascript" src="http://marcin.cylke.com.pl/js/hc.js"></script>
+</body>
+
+</html>
+

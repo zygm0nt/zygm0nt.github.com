@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>JMS redelivery with ActiveMQ and Servicemix</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.15" />
+  <link href="" rel="alternate" type="application/rss+xml" title="Just a blog" />
+  <link href="http://marcin.cylke.com.pl/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://marcin.cylke.com.pl/css/hc.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  
+    
+    </head>
+    <body>
+<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
+      <div id = "wrapper">
+
+
+<div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="http://marcin.cylke.com.pl/"><p class="navbar-brand">Just a blog</p></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+					
+					
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+       
+       <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+					<img src="" />
+          <li class="sidebar-brand"><a href="http://marcin.cylke.com.pl/"><h1 class="brand">Just a blog</h1></a><h3></h3></li>
+          <hr />
+					
+          <hr />
+          <div id="social-wrapper">
+           
+           
+           
+           
+         </div>
+       </ul>
+     </div>
+
+
+
+     <div class="container">
+
+
+  <div id="article">
+   <div class="article-title">JMS redelivery with ActiveMQ and Servicemix</div>
+   <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 2011-01-17</small></p> <hr/>
+   <div class="post">
+     <div class='post'>
+<p>
+The other day I felt a compelling need to implement a JMS redelivery
+scenario. The exact scenario I'd been trying to handle was:
+</p>
+
+<ol>
+<li>my message is in an ActiveMQ queue or topic</li>
+<li>its processing fails, because of some exception - ie. database
+access exception due to server nonavailability</li>
+<li>since we get an exception, the message is not handled properly, we
+may want to retry processing attempt some time later</li>
+<li>of course, for the redelivery to happen we need the message to stay
+in the ActiveMQ queue - fetching messages from the queue will be stopped
+until the redelivery succeeds or expires</li>
+</ol>
+
+See how this can be done after the jump :)
+
+<EXCERPT/>
+
+<p>
+For this to happen, I've tried implementing Apache Camel route, but as
+it turns out, Camel fails to deliver facilities for exact JMS
+redelivery. It is possible to set JMS connection in <i>transacted</i>
+mode, but the redeliveries happen one after another and fixed times.
+</p>
+
+<p>
+What I've ended up doing was implement a servicemix-jms endpoint. I've
+used this configuration for it:
+</p>
+<pre class="brush: xml">
+<jms:endpoint service="ts:WorkflowConsumerService"
+                  endpoint="default"
+                  targetService="ts:WorkflowConsumerCamelService"
+                  targetEndpoint="default"
+                  role="consumer"
+                  processorName="jca"
+                  connectionFactory="#connectionFactory"
+                  resourceAdapter="#ra"
+                  activationSpec="#activationSpec"
+                  bootstrapContext="#bootstrapContext"
+                  synchronous="true"
+                  rollbackOnError="true"
+                  wsdlResource="classpath:LeadManagement.wsdl"
+                  defaultMep="http://www.w3.org/2004/08/wsdl/in-only"/>
+
+    <bean name="connectionFactory" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiName">
+            <value>activemq/connectionFactory</value>
+        </property>
+    </bean>
+
+    <bean name="ra" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiName">
+            <value>activemq/resourceAdapter</value>
+        </property>
+    </bean>
+
+    <bean id="activationSpec" class="org.apache.activemq.ra.ActiveMQActivationSpec">
+        <property name="destination" value="example/C"/>
+        <property name="destinationType" value="javax.jms.Queue"/>
+        <property name="maximumRedeliveries" value="10"/>
+        <property name="initialRedeliveryDelay" value="10000"/>
+    </bean>
+
+    <jee:jndi-lookup id="bootstrapContext" jndi-name="java:comp/env/smx/BootstrapContext">
+    </jee:jndi-lookup>
+</pre>
+<p>
+As you can see, we lookup a couple of things in JNDI registry, so you need to 
+have them configured on the Servicemix side - a sample config presented 
+farther in this entry. 
+</p><p>
+The bean responsible for configuring redelivery settings is <b>activationSpec</b>.
+You can set various things with it, like:
+</p>
+<ul>
+<li>initial redelivery delay</li>
+<li>maximum number of redeliveries</li>
+<li>backoff multiplier</li>
+<li>...</li>
+</ul>
+<p>
+What is really important in <i>jms:endpoint</i> config for this to work are:</p>
+<ul>
+<li><i>processorName="jca"</i></li>
+<li><i>rollbackOnError="true"</i></li>
+</ul>
+<p>
+Servicemix should have the following entries in its jndi registry:
+</p>
+<pre class="brush: xml">
+         <entry key="activemq/resourceAdapter" value-ref="activemqRA" />
+
+         <entry key="activemq/connectionFactory" value-ref="activemqCF" />
+
+(...) 
+<!-- namespaces:-->
+       xmlns:jencks="http://jencks.org/2.0"
+       xmlns:amqra="http://activemq.apache.org/schema/ra" -->
+
+          <amqra:resourceAdapter
+                  id="activemqRA"
+                  serverUrl="${activemq.url}" />
+          <amqra:managedConnectionFactory
+                  id="activemqMCF"
+                  resourceAdapter="#activemqRA" />
+          <jencks:connectionFactory
+                  id="activemqCF"
+                  managedConnectionFactory="#activemqMCF"
+                  connectionManager="#connectionManager" />
+</pre>
+
+<p>
+When the redeliveries are exhausted, message is routed to global Dead Letter Queue
+called ActiveMQ.DLQ. Since this is a single bag for all the failed messages
+from all queues, you may want to configure this aspect differently. For example
+you can tell ActiveMQ to create a single DLQ for each queue. Use this config 
+to achieve it - the changes should be made to Broker configuration.
+</p>
+<pre class="brush: xml">
+<broker...>
+  <destinationPolicy>
+    <policyMap>
+      <policyEntries>
+        <!-- Set the following policy on all queues using the '>' wildcard -->
+        <policyEntry queue=">">
+          <deadLetterStrategy>
+            <!--
+              Use the prefix 'DLQ.' for the destination name, and make
+              the DLQ a queue rather than a topic
+            -->
+            <individualDeadLetterStrategy
+              queuePrefix="DLQ." useQueueForQueueMessages="true" />
+          </deadLetterStrategy>
+        </policyEntry>
+      </policyEntries>
+    </policyMap>
+  </destinationPolicy>
+  ...
+</broker>
+</pre>
+<p>
+More on the subject of redelivieries in ActiveMQ can be found at <a href="http://activemq.apache.org/message-redelivery-and-dlq-handling.html">http://activemq.apache.org/message-redelivery-and-dlq-handling.html</a>.
+</p></div>
+
+   </div>
+ </div>
+
+
+ <a href="https://twitter.com/share" class="twitter-share-button " data-size="small" data-count="none">Tweet</a>
+ <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+ <ul class="pager">
+      &nbsp;<li class="previous"><a href="http://marcin.cylke.com.pl/2011/02/17/deus-ex-what-a-game/"> Deus Ex - what a game!</a></li>
+      &nbsp;<li class="next"><a href="http://marcin.cylke.com.pl/2010/12/10/ku-pamieci-o-top-postingu/"> Ku pamięci - o top-postingu</a></li>
+</ul>
+
+
+
+    </ul>
+    </div>
+    <footer>
+
+        <p class="text-muted credit">&copy; 2018. All rights reserved. </p>
+    </footer>
+ 
+    <script src="http://marcin.cylke.com.pl/js/jquery-1.10.2.min.js"></script>
+    <script src="http://marcin.cylke.com.pl/js/bootstrap.min.js"></script>
+    <script src="http://marcin.cylke.com.pl/js/bootstrap.js"></script>
+    <script type="text/javascript" src="http://marcin.cylke.com.pl/js/hc.js"></script>
+</body>
+
+</html>
+

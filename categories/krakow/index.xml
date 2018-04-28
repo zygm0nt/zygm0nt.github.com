@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Krakow on Just a blog</title>
+    <link>http://marcin.cylke.com.pl/categories/krakow/</link>
+    <description>Recent content in Krakow on Just a blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Feb 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://marcin.cylke.com.pl/categories/krakow/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Lambda Days 2016</title>
+      <link>http://marcin.cylke.com.pl/2016/02/20/lambda-days-2016/</link>
+      <pubDate>Sat, 20 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2016/02/20/lambda-days-2016/</guid>
+      <description>
+
+&lt;h1 id=&#34;lambda-days-2016-kraków:7f3feb2c897a8b921f015db0c292ec6c&#34;&gt;Lambda Days 2016 - Kraków&lt;/h1&gt;
+
+&lt;p&gt;This last two days I&amp;rsquo;ve spend on a conference in Kraków. The topics
+revolved around functional programming, with all the experimental stuff,
+popular languages, etc. Here are the talks I&amp;rsquo;ve been to and short summaries of those:&lt;/p&gt;
+
+&lt;h2 id=&#34;day-1:7f3feb2c897a8b921f015db0c292ec6c&#34;&gt;Day 1:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Propositions as types&lt;/strong&gt; - the keynote delivered by Philip Wadler - seen it already on &lt;a href=&#34;https://www.youtube.com/watch?v=IOiZatlZtGU&#34;&gt;YouTube&lt;/a&gt;. But the thing with Lambda t-shirt looked funny again :D&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Using &amp;ldquo;Program shaping&amp;rdquo; and algorithmic skeletons to parallelise an evolutionary multi-agent system in Erlang&lt;/strong&gt; - pretty long title, huh :) The presentation, thou very academic was also quite interesting. The whole concept not being particularly new, but the set of tools used for refactorings into parallel code seemed interesting.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Static analysis to identify divide-and-conquer algorithms&lt;/strong&gt; - how to find particular class of algorithms in existing programs? Interesting but shallow, due to time limitations.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;The Mysteries of Dropbox&lt;/strong&gt; - John Hughes of QuickCheck fame showed how
+to test a big system using blackbox approach. Nice presentation, with
+all the great insight he always brings into his talks.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Muvr - Jan Machacek&lt;/strong&gt; - that was a fun presentation. About how to build an app that detects your exercise routine and counts how many repeats you&amp;rsquo;ve done. There&amp;rsquo;ve been all:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;spark pipelining&lt;/li&gt;
+&lt;li&gt;Swift code demo (it seemed like Swift IDE offers something similar to notebook-like programming, is it?),&lt;/li&gt;
+&lt;li&gt;live coding
+Unfortunately due to WiFi&amp;rsquo;s proxy settings the live demo could not be finished, but the code for all this is available somewhere on Github, on &lt;a href=&#34;https://github.com/muvr&#34;&gt;this account&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Embracing change&lt;/strong&gt; - how to introduce Clojure into your company&amp;rsquo;s
+technology stack seamlessly - by &lt;strong&gt;Artur Skowroński.&lt;/strong&gt;
+Hilarious presentation about adopting new languages. It wasn&amp;rsquo;t that
+groundbreaking, at least for me, but the way it was presented, and the
+slides with all the Cthulhu references in them, were great!&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;day-2:7f3feb2c897a8b921f015db0c292ec6c&#34;&gt;Day 2:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Things that matter by Bruce Tate&lt;/strong&gt; - great energetic talk, with all the ideas about learning
+new languages. Bruce is the author of two excellent books: &amp;ldquo;Seven
+languages in seven weeks&amp;rdquo; and &amp;ldquo;Seven more languages in seven weeks&amp;rdquo; :)
+He went through languages mentioned in his books and summed up
+principles associated with their inception.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I&amp;rsquo;ve almost decided to not come to this presentation,
+weighting between it and sleeping a little bit longer in my hotel room.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;The Zen of Akka&lt;/strong&gt; - delivered by a resident hakker at Typesafe - Konrad
+Malawski. Nice talk about Akka pitfalls, there were lots of
+recommendations and even some previously unknown to me features of Akka
+toolkit. Plus I loved the Japanese elements.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Creating reactive components using ClojureScript React wrappers&lt;/strong&gt; - by
+Konrad Szydlo introduced Rum as a wrapper for React, described part of
+the ecosystem and explained mechanics behind the technology. Fine
+presentation, very intense on content. Konrad had 111 slides, but
+managed to show all of them without being hasty.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Getting started with Frege&lt;/strong&gt; - Lech Glowiak, Frege seems to be a Haskell
+on the JVM, which in itself seems like a nice thing. But I treat such
+languages rather as nice experiments, than something useful. Especially
+its Java interop looks ugly. Nevertheless the presentation was given
+from the point of view of language contributor, which Lech is.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Practical demystification of CRDT&lt;/strong&gt; - by Dmitry Ivanov and Nami
+Naserazad - both of them from TomTom. Guys are working on TomTom&amp;rsquo;s
+NaviCloud product. Their presentation was a practical guide throught the
+world of CRDTs (link to wikipedia). They showed their failures in
+implementing the system, gave advices, etc. The whole thing is even
+uploaded to github, so everyone can check their code
+(&lt;a href=&#34;http://github.com/ajantis/scala-crdt&#34;&gt;http://github.com/ajantis/scala-crdt&lt;/a&gt;). I&amp;rsquo;ve really enjoyed this talk
+due to its technical approach. There were no formal definitions, no
+teortical considerations, just clean report from the trenches.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Purely functiona Web Apps&lt;/strong&gt; - by Michał Płachta - how to write Gitlab
+companion app in Haskell + Elm? Haskell for backend and Elm for
+frontend. This presentation showed great potential of Elm for frontend
+development. Moderatly approachable considering Friday afternoon and my
+lack of Haskell knowledge. Still, I plan to come back to this
+presentation later.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;what-i-haven-t-seen-but-plan-to-as-soon-as-videos-are-available:7f3feb2c897a8b921f015db0c292ec6c&#34;&gt;What I haven&amp;rsquo;t seen but plan to as soon as videos are available&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Modeling your domain. What have we learned? Where do we go from here?&lt;/strong&gt; - by Norbert Wójtowicz - about modeling domain in Clojurescript apps&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The F#orce awakend&lt;/strong&gt; - by ewelina Gabasova - F# + geekery, the Twitter
+went nuts about that presentation, suppose not without reason&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LFE - a lisp flavour on the Erlang VM&lt;/strong&gt; - by Robert Virding - don&amp;rsquo;t know
+why but it seems intriguing enough&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;conclusion:7f3feb2c897a8b921f015db0c292ec6c&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;As always, things you didn&amp;rsquo;t expect to be interesting were the best
+ones. Highlights being presentations by Bruce Tate, Jan Machacek and guys
+from TomTom (Dmitry Ivanov and Nami Naserazad)&lt;/p&gt;
+
+&lt;p&gt;Thanks to organisers for this conference. But I must say, that day 2 was a lot better than the first one. The talks were better structured and presented.&lt;/p&gt;
+
+&lt;p&gt;One idea for the organizers - please print the schedule on the back of
+conference badge. It was pretty annoying to have to take out the A4
+sheets with whole day schedule each time I wanted to look at it&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

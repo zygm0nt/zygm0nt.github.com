@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scala on Just a blog</title>
+    <link>http://marcin.cylke.com.pl/categories/scala/</link>
+    <description>Recent content in Scala on Just a blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 29 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://marcin.cylke.com.pl/categories/scala/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Scalar Conf 2016</title>
+      <link>http://marcin.cylke.com.pl/2016/04/29/scalar-conf-2016/</link>
+      <pubDate>Fri, 29 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2016/04/29/scalar-conf-2016/</guid>
+      <description>
+
+&lt;p&gt;Scalar Conf 2016&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://marcin.cylke.com.pl/assets/POLIN-Museum-of-the-History-of-Polish-Jews-int02.jpg&#34; alt=&#34;Polin museum - interior&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This small conference had its third installment in (&lt;a href=&#34;http://www.polin.pl/en)[Polin&#34;&gt;http://www.polin.pl/en)[Polin&lt;/a&gt; - Museum of the History of Polish Jews]. Organizing Scala conference isn&amp;rsquo;t that obvious and having that kind of attention is really great - all the foreign speakers, etc.&lt;/p&gt;
+
+&lt;p&gt;Here is a quick recap of presentations I&amp;rsquo;ve attended.&lt;/p&gt;
+
+&lt;h3 id=&#34;having-a-cake-by-paweł-szulc:dce739b86c0a87e1707117ba023d86a9&#34;&gt;Having a cake &amp;hellip; - by Paweł Szulc&lt;/h3&gt;
+
+&lt;p&gt;A keynote about typeclasses. I&amp;rsquo;ve read the slides before the presentation  -and they are available &lt;a href=&#34;http://www.slideshare.net/paulszulc/introduction-to-type-classes-in-30-min&#34;&gt;here&lt;/a&gt;, so it wasn&amp;rsquo;t new to me. But I&amp;rsquo;d strongly recommend to watch this talk.&lt;/p&gt;
+
+&lt;p&gt;Also, there is another nice talk by Paweł: &lt;a href=&#34;https://www.youtube.com/watch?v=ENtdZ9MBo5Y&#34;&gt; Category theory is absolute general nonsense!&lt;/a&gt; This talk is in Polish only.&lt;/p&gt;
+
+&lt;h3 id=&#34;eff-monad-by-eric-torreborre:dce739b86c0a87e1707117ba023d86a9&#34;&gt;EFF Monad - by Eric Torreborre&lt;/h3&gt;
+
+&lt;p&gt;Different way of monadic composition, implemented in a separate library: &lt;a href=&#34;https://github.com/atnos-org/eff-cats&#34;&gt;eff-cats&lt;/a&gt; (there is also scalaz alternative). Technically it was a bit over my head, but after experimenting with the concept at home it seems interesting.&lt;/p&gt;
+
+&lt;p&gt;I liked that Eric, being Zalando employee, developed that for their internal usage. Also the beauty of easily constructing different technological stacks with consistent API is very tempting.&lt;/p&gt;
+
+&lt;p&gt;Interesting things used/mentioned were:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;github.com/non/kind-projector&#34;&gt;non/kind-projector&lt;/a&gt;- for projections&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://haskell.cs.yale.edu/?post_type=publication&amp;amp;p=319&#34;&gt;Monad Transformers and Modular Interpreters&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;incremental-compiler-by-krzysztof-romanowski:dce739b86c0a87e1707117ba023d86a9&#34;&gt;Incremental compiler - by Krzysztof Romanowski&lt;/h3&gt;
+
+&lt;p&gt;Deep dive into scalac incremental compiler implementation. While the presentation itself, the way it was presented, was very nice, I didn&amp;rsquo;t particularly enjoy the topic. It seemed more appropriate for tools&amp;rsquo; developers.&lt;/p&gt;
+
+&lt;h3 id=&#34;akka-cluster-with-etcd-by-maciej-biłas:dce739b86c0a87e1707117ba023d86a9&#34;&gt;Akka cluster with Etcd - by Maciej Biłas&lt;/h3&gt;
+
+&lt;p&gt;This one looked promising. Joining multiple exciting technologies seems often that way. Unfortunately it was rather tech preview of Kubernetes app setup rather than Scala presentation.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m a bit disappointed, because looking through the sources of the project &lt;a href=&#34;https://github.com/rkrzewski/akka-cluster-etcd&#34;&gt;akka-cluster-etcd&lt;/a&gt; there are lots of things to describe. Kubernetes not being one of them ;-)&lt;/p&gt;
+
+&lt;h3 id=&#34;shapeless-easy-by-valentin-kasas:dce739b86c0a87e1707117ba023d86a9&#34;&gt;Shapeless? Easy! - by Valentin Kasas&lt;/h3&gt;
+
+&lt;p&gt;Well, that was a clear introduction to shapeless. Till this presentation I&amp;rsquo;ve treated shapeless as only some vague thingy you use when writing libraries. Valentin proved otherwise.&lt;/p&gt;
+
+&lt;p&gt;He gave a clear and consistent tutorial on the basics of shapeless and its potential use in some example applications. He created a simple diff tool. Not that useful in real life application, but definitely helped make a point.&lt;/p&gt;
+
+&lt;p&gt;Will look into real life examples in near future.&lt;/p&gt;
+
+&lt;p&gt;Fun fact: The speaker had his presentation in &lt;a href=&#34;https://github.com/marconilanna/REPLesent&#34;&gt;REPLesent&lt;/a&gt;, a sbt plugin for presentations - and performed most of the slide-jumping-fu with just one hand, other held in his pocket :D Looked quite hilarious.&lt;/p&gt;
+
+&lt;p&gt;Valentin also mentioned shapeless&amp;rsquo; typeclass derivation - this actually looks nice! Have a look at this &lt;a href=&#34;https://meta.plasm.us/posts/2015/11/08/type-classes-and-generic-derivation/&#34;&gt;question&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;cool-toolz-in-the-scalaz-and-cats-toolboxes-by-jan-pustelnik:dce739b86c0a87e1707117ba023d86a9&#34;&gt;Cool Toolz in the Scalaz and Cats Toolboxes - by Jan Pustelnik&lt;/h3&gt;
+
+&lt;p&gt;Functional Design Patterns - enjoyable talk. With a bit of theoretical background, lots of useful use-cases. The talk was about cats and scalaz - both being very similar, and patterns they contain.&lt;/p&gt;
+
+&lt;p&gt;Key points being:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Functor pattern for abstracting Big Data computations, to achieve easier testability&lt;/li&gt;
+&lt;li&gt;composing functors - |@| scream operator - also know (officially) as Applicative Builder&lt;/li&gt;
+&lt;li&gt;Applicative  - a list of computation into a computation of lists, list traversal&lt;/li&gt;
+&lt;li&gt;Applicative pattern for reading config&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There is this nice video called &amp;ldquo;A purely functional approach to building large applications&amp;rdquo;. Go see &lt;a href=&#34;https://www.youtube.com/watch?v=dS3IlDBDlvo&#34;&gt;it&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion:dce739b86c0a87e1707117ba023d86a9&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;To conclude - the conference was really great. Both the talks and social side of the event were enjoyable. I&amp;rsquo;ve been blown away by the great architecture of the museum itself. Been there a couple times and enjoyed all of them.&lt;/p&gt;
+
+&lt;p&gt;The much needed change would be to bring more tracks, because sometimes topics were too specific and I&amp;rsquo;d gladly change lecture to some other.&lt;/p&gt;
+
+&lt;p&gt;As for the usual conference merch, there were no bags with leaflets and pens etc. It came as a surprise to me, but I also really liked it. People infact throw away most of the contents from such bags. Also, no t-shirt as a default - great idea! If you like it - just buy one, otherwise don&amp;rsquo;t bother.&lt;/p&gt;
+
+&lt;p&gt;Overall - great job Softwaremill! Keep up the good work!.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

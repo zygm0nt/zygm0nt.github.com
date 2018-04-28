@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>What is NoSQL good for?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.15" />
+  <link href="" rel="alternate" type="application/rss+xml" title="Just a blog" />
+  <link href="http://marcin.cylke.com.pl/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://marcin.cylke.com.pl/css/hc.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  
+    
+    </head>
+    <body>
+<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
+      <div id = "wrapper">
+
+
+<div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="http://marcin.cylke.com.pl/"><p class="navbar-brand">Just a blog</p></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+					
+					
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+       
+       <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+					<img src="" />
+          <li class="sidebar-brand"><a href="http://marcin.cylke.com.pl/"><h1 class="brand">Just a blog</h1></a><h3></h3></li>
+          <hr />
+					
+          <hr />
+          <div id="social-wrapper">
+           
+           
+           
+           
+         </div>
+       </ul>
+     </div>
+
+
+
+     <div class="container">
+
+
+  <div id="article">
+   <div class="article-title">What is NoSQL good for?</div>
+   <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 2011-09-21</small></p> <hr/>
+   <div class="post">
+     <div class='post'>
+<b>... or how I ended up writing a CouchDB proof of concept app?</b>
+
+<p>Once upon a time I set out on a journey to discover the NoSQL land.
+I've decided that doing simple queries wouldn't be interesting enough.
+That's why I've chose to create an app that would be based on some NoSQL
+database.</p>
+
+<p>
+The main idea was to create an app, that would dynamically update itself
+with geographic data flowing in. Since there are myriads of geo-data
+that are available on the internet, you can pick your favorite one and
+load them into your SQL database of choice.
+</p>
+
+<EXCERPT>
+<p>
+In my case the primary source of data was a proprietary database, or more specifically - one table in it continuously updated with new data. To make that
+data visible on my map I needed to:
+</p>
+
+<ul>
+<li> buffer the huge amount of those records - so as not to overhoul
+other services with large traffic, and not to flood the frontend</li>
+<li> convert then to my representation</li>
+<li> display them - have presentation layer in a browser - since
+browser-based frontend was the easiest and fastest to develop</li>
+</ul>
+
+<p>
+The idea of the front-end HTML page was to show new points on the map.
+From the moment of opening the page records that appear in database
+table should be shown interactively on the screen.
+</p>
+
+<h2>Toys used</h2>
+
+<p>
+For the first step I chose to use RabbitMQ broker. A queue on the broker would receive messages - one message per database table's row.
+Then I'd use some simple groovy middle ware to convert the data to appropriate format and put it onto another db - this time db specific
+to my app. 
+</p>
+
+<p>
+You may ask why incorporate another database. It would be
+good for separating environments - assuming the original data contains
+some vulnerable content that should be anatomised, or we just don't feel
+comfortable exposing the whole database of some XYZ-system just to have
+access to its one table.
+</p>
+
+<p>
+Since for my presentation layer I chose HTML+JS without any application server-based back-end I've decided on CouchDB . This seemed like
+a perfect match for this scenario. Why? - ease of use, REST API, with JSON responses - just great for interacting with my simple front-end.
+</p>
+
+<p>
+The flow of things was as shown on the image below:
+</p>
+
+<IMG src="http://blog.innovative-labs.com/blog/gmapper.png"
+alt="diagram"/>
+
+<h2>Avro - for the beginning</h2>
+<p>
+As you can see, I've chosen JSON as my data-format. I've been considering
+<a href="http://avro.apache.org">Apache Avro</a> in the first place but
+using it was a real pain in the ass. Avro itself is used in <a
+href="http://hadoop.apache.org">Apache Hadoop</a> as a serialization
+layer, so it would seem OK, but it has virtually <em>no
+documentation</em>. But once you tear through the unintuitive interface
+and manage to handle all those unthinkable exceptions you get a few pros
+for this library. It's great in that it does not require code generation - I
+like it being made on the fly. It also offers sending data in binary
+format, which was not necessary, but never the less is a nice feature.
+</p>
+
+<p>
+What I certainly didn't like about it was its orientation on the files
+rather than chunks of data - so it was not so obvious how should I send
+data through the wire. 
+</p>
+
+<p>
+Than I found out it can produce JSON output, which would work for me,
+except the output could not have been parsed by other JSON libraries :)
+(<a
+href="http://stackoverflow.com/questions/5375243/jcouchdb-svenson-unable-to-parse-json-string">I've
+asked on stackoverflow about that, but with no luck</a>). 
+</p>
+
+<p>If my whining haven't put you back and still would like to see how to use Avro, try this unit
+test in project's GitHub repo: <a
+href="https://github.com/zygm0nt/gmapped/blob/master/feeder/src/test/groovy/pl/ftang/example/feeder/avro/AvroSimpleTest.groovy">AvroSimpleTest.groovy</a>
+</p>
+
+
+<h2>Svenson</h2>
+
+<p>
+I've dropped Avro in favour of a simple JSON lib called (<a
+href="http://code.google.com/p/svenson/">Svenson</a> and that was
+painless. The only thing I was forced to do was create my model class in
+Java - the rest of the project is written in Groovy. I've no idea why
+was that necessary, and didn't want to look into it.
+</p>
+
+<h2>RabbitMQ</h2>
+
+<p>
+Further on the way is <a href="http://www.rabbitmq.com/">RabbitMQ</a>, to which records are filled by a feeding
+middle-ware written in Groovy. Since I use <a
+href="http://activemq.apache.org">ActiveMQ</a> on a day-to-day basis,
+I've decided to try something new. This broker is a really nice piece of
+software. Being written in Erlang makes it really fast. What's more it
+has some extensive capabilities and is easy to approach for anyone
+similar with messaging (JMS and friends). For such a lightweight product
+it is really powerful - implements AMQP! 
+</p>
+
+<h2>CouchDB</h2>
+
+<p>
+From the broker's queue messages are again fetched by a middle-ware just
+to be put into <a href="http://couchdb.apache.org/">CouchDB</a> view.
+This database is also written in Erlang. It's very reliable, however the
+way it handles refreshing view isn't the most pleasant one -
+performance-wise. 
+</p>
+
+<p>
+Word of advice - if you're on Debian derivative, be cautious with
+apt-repository version. It's rather _ancient_. Also remember to add
+<b>allow_jsonp = true</b> to you config file
+<i>/opt/couchbase/etc/couchdb/local.ini</i>. It's not enabled by
+default, and not having this set would result with empty responses from
+the CouchDB server.</p>
+
+<p>The problem here is, that the browser doesn't allow quering a web server with hostname other than the one the script originates.
+ More on this case <a
+href="http://stackoverflow.com/questions/3386679/connection-ajax-couchdb-and-javascript">here</a>. Seems like my problem could be overcame by changing url in index.html and hostname couchdb listens on to the same address.
+</p>
+
+<p>
+I've also created a view, that would expose an event by key: <a
+href="https://github.com/zygm0nt/gmapped/blame/master/couchdb/by_date_view.js">view
+code</a>
+</p>
+
+<h2>Presenting the dots</h2>
+
+<p>
+As a back-end I've done some JQuery based AJAX calls - nothing too
+fancy. All things necessary for presentation layer are in <a
+href="https://github.com/zygm0nt/gmapped/blob/master/index.html">this
+file</a>.
+</p>
+
+<h2>Things to consider</h2>
+
+<p>
+Please bear in mind that this whole application is rather a playground,
+not a full-fledged project!! After creating all the parts I have some
+doubts about some architectural decisions I made. I don't think the
+security have been taken into account seriously enough. Also scalability
+was never an issue ;-)
+</p>
+
+<p>
+If you have some thoughts about any of the aspects mentioned in this
+post, please feel free to comment or contact me directly :)
+</p>
+
+<p>
+
+And also you may try the application by yourself - it's on the <a
+href="https://github.com/zygm0nt/gmapped">GitHub</a>.
+</p></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>@Piotrek, here is a link to JIRA ticket concerning this feature. I think it is being discussed ATM: https://issues.apache.org/jira/browse/COUCHDB-431</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://blog.koszulinski.pl">Piotrek Reinmar Koszuliński</a></div>
+<div class='content'>
+<p>About Same Origin Policy - now there's Cross Origin Resource Sharing available in most of common browsers. It should help You if CouchDB has support for it.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>@klausa, thanks for your advice. I've made some changes to the post.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://klausa.jogger.pl">klausa</a></div>
+<div class='content'>
+<p>&gt;The main idea was to create an app, that would dynamically update itself with geographic data flowing in. <br />
+<br />
+Not to nitpick, but that doesn't seem like an idea for app. I think you should explain what that displayed data is here.  If you moved your 'Presenting the dots' paragraph just above 'Toys used', it would be clear what do you wanted to do with this app.<br />
+<br />
+&gt;Also remember to add allow_jsonp = true to you config file /opt/couchbase/etc/couchdb/local.ini.<br />
+<br />
+I think you should explain what that option *really* does.<br />
+<br />
+Other than that, nice post!</p></div>
+</div>
+</div>
+
+   </div>
+ </div>
+
+
+ <a href="https://twitter.com/share" class="twitter-share-button " data-size="small" data-count="none">Tweet</a>
+ <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+ <ul class="pager">
+      &nbsp;<li class="previous"><a href="http://marcin.cylke.com.pl/2011/11/02/soapui-ext-libs-and-its-weirdness/"> SoapUI ext libs and its weirdness</a></li>
+      &nbsp;<li class="next"><a href="http://marcin.cylke.com.pl/2011/08/22/5-best-things-to-do-with-your-kindle/"> 5 best things to do with your Kindle</a></li>
+</ul>
+
+
+
+    </ul>
+    </div>
+    <footer>
+
+        <p class="text-muted credit">&copy; 2018. All rights reserved. </p>
+    </footer>
+ 
+    <script src="http://marcin.cylke.com.pl/js/jquery-1.10.2.min.js"></script>
+    <script src="http://marcin.cylke.com.pl/js/bootstrap.min.js"></script>
+    <script src="http://marcin.cylke.com.pl/js/bootstrap.js"></script>
+    <script type="text/javascript" src="http://marcin.cylke.com.pl/js/hc.js"></script>
+</body>
+
+</html>
+

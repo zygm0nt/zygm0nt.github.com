@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Distributed scans with HBase</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.15" />
+  <link href="" rel="alternate" type="application/rss+xml" title="Just a blog" />
+  <link href="http://marcin.cylke.com.pl/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://marcin.cylke.com.pl/css/hc.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  
+    
+    </head>
+    <body>
+<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
+      <div id = "wrapper">
+
+
+<div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="http://marcin.cylke.com.pl/"><p class="navbar-brand">Just a blog</p></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+					
+					
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+       
+       <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+					<img src="" />
+          <li class="sidebar-brand"><a href="http://marcin.cylke.com.pl/"><h1 class="brand">Just a blog</h1></a><h3></h3></li>
+          <hr />
+					
+          <hr />
+          <div id="social-wrapper">
+           
+           
+           
+           
+         </div>
+       </ul>
+     </div>
+
+
+
+     <div class="container">
+
+
+  <div id="article">
+   <div class="article-title">Distributed scans with HBase</div>
+   <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 2013-12-10</small></p> <hr/>
+   <div class="post">
+     <p>HBase is by design a columnar store, that is optimized for random reads.
+You just ask for a row using rowId as an identifier and you get your
+data instantaneously.</p>
+
+<p>Performing a scan on part or whole table is a completely different thing.
+First of all, it is sequential. Meaning it is rather slow, because it
+doesn&rsquo;t use all the RegionServers at the same time. It is implemented
+that way to realize the contract of Scan command - which has to return
+results sorted by key.</p>
+
+<p>So, how to do this efficiently?</p>
+
+<p>The usual way of getting data from HBase is with the help of its API,
+mainly Scan objects. To accomplish the task I&rsquo;ll use just them. I&rsquo;ll
+specify startRow and stopRow, so that each Scan request will be looking
+through only part of the key space.</p>
+
+<p>It is crucial to note, that this whole solution works because of key
+sorting properties in HBase. So, HBase scans a table according to ascending key
+values. Since keys are of String type, key with value &ldquo;1&rdquo; is smaller
+than &ldquo;2&rdquo;, because they are sorted lexicographicly. So, also key with value &ldquo;12345&rdquo; is smaller than &ldquo;2&rdquo;. I&rsquo;ve
+leveraged this property so that I&rsquo;ve partitioned my whole key space according to
+the first character of the key. In my case keys contain only digits. So I
+have 10 ranges:</p>
+
+<ul>
+<li>null-1</li>
+<li>1-2</li>
+<li>2-3</li>
+<li>3-4</li>
+<li>4-5</li>
+<li>5-6</li>
+<li>6-7</li>
+<li>7-8</li>
+<li>8-9</li>
+<li>9-null</li>
+</ul>
+
+<p>The speedup comes from the fact, that each range resides in its own
+partition. That&rsquo;s right, I&rsquo;ve presplit the table to have 10 partitions.
+This corresponds rather nicely with my cluster&rsquo;s setup, because I have
+more than 10 RegionServers. So every partition should be on different
+RegionServer. It will allow the code to do the requested scan operations
+in parallel - giving me this exact performance boost.</p>
+
+<p>How I&rsquo;ve created the input table:</p>
+
+<p><code></p>
+
+<p>$ create &lsquo;tariff_changes&rsquo;, { NAME =&gt; &lsquo;cf&rsquo;, SPLITS_FILE =&gt; &lsquo;splits.txt&rsquo;, VERSIONS =&gt; 50, MAX_FILESIZE =&gt; 1073741824 }</p>
+
+<p>$ alter &lsquo;tariff_changes&rsquo;, { NAME =&gt; &lsquo;cf&rsquo;, SPLITS_FILE =&gt; &lsquo;splits.txt&rsquo;, VERSIONS =&gt; 50, MAX_FILESIZE =&gt; 1073741824 }</p>
+
+<p></code></p>
+
+<p>Split file is just something along this lines:</p>
+
+<p><code>
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0
+</code></p>
+
+<p>This tells HBase what are the rowKeys starting and ending each of the
+partitions.</p>
+
+<p>Ok, so after this rather lengthy introduction, what the actual code
+does? It just spins of a few threads - one for each partition - and runs
+a Scan request tailored to that partitions key space. This way, I got a
+10x speedup for this particular scan. The execution time went down from
+30 minutes to 3 for my use case.</p>
+
+<p>I&rsquo;ve created an example implementation of this idea. You can find it on
+GitHub:
+<a href="https://github.com/zygm0nt/hbase-distributed-search">https://github.com/zygm0nt/hbase-distributed-search</a>.</p>
+
+<p>Any ideas on how to speed things up even more with HBase?</p>
+
+   </div>
+ </div>
+
+
+ <a href="https://twitter.com/share" class="twitter-share-button " data-size="small" data-count="none">Tweet</a>
+ <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+ <ul class="pager">
+      &nbsp;<li class="previous"><a href="http://marcin.cylke.com.pl/2014/07/14/super-confitura-man/"> Super Confitura Man</a></li>
+      &nbsp;<li class="next"><a href="http://marcin.cylke.com.pl/2013/12/08/simple-hbase-orm/"> Simple HBase ORM</a></li>
+</ul>
+
+
+
+    </ul>
+    </div>
+    <footer>
+
+        <p class="text-muted credit">&copy; 2018. All rights reserved. </p>
+    </footer>
+ 
+    <script src="http://marcin.cylke.com.pl/js/jquery-1.10.2.min.js"></script>
+    <script src="http://marcin.cylke.com.pl/js/bootstrap.min.js"></script>
+    <script src="http://marcin.cylke.com.pl/js/bootstrap.js"></script>
+    <script type="text/javascript" src="http://marcin.cylke.com.pl/js/hc.js"></script>
+</body>
+
+</html>
+

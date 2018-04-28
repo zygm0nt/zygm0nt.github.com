@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Super Confitura Man</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.15" />
+  <link href="" rel="alternate" type="application/rss+xml" title="Just a blog" />
+  <link href="http://marcin.cylke.com.pl/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://marcin.cylke.com.pl/css/hc.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  
+    
+    </head>
+    <body>
+<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
+      <div id = "wrapper">
+
+
+<div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="http://marcin.cylke.com.pl/"><p class="navbar-brand">Just a blog</p></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+					
+					
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+       
+       <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+					<img src="" />
+          <li class="sidebar-brand"><a href="http://marcin.cylke.com.pl/"><h1 class="brand">Just a blog</h1></a><h3></h3></li>
+          <hr />
+					
+          <hr />
+          <div id="social-wrapper">
+           
+           
+           
+           
+         </div>
+       </ul>
+     </div>
+
+
+
+     <div class="container">
+
+
+  <div id="article">
+   <div class="article-title">Super Confitura Man</div>
+   <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 2014-07-14</small></p> <hr/>
+   <div class="post">
+     
+
+<h2 id="how-super-confitura-man-came-to-be:c5352db95c635e6c4b0653937eeeffaf">How Super Confitura Man came to be :)</h2>
+
+<p>Recently at TouK we had a one-day hackathon. There was no main theme for
+it, you just could post a project idea, gather people around it and hack
+on that idea for a whole day - drinks and pizza included.</p>
+
+<p>My main idea was to create something that could be fun to build and be
+useful somehow to others. I’d figured out that since Confitura was just
+around a corner I could make a game, that would be playable at TouK’s
+booth at the conference venue. This idea seemed good enough to attract
+Rafał Nowak <a href="https://twitter.com/RNowak3">@RNowak3</a> and Marcin Jasion
+<a href="https://twitter.com/marcinjasion">@marcinjasion</a> - two TouK employees, that with me
+formed a team for the hackathon.</p>
+
+<p><img src="/assets/confitura-2014-01.jpg" alt="Confitura 01" /></p>
+
+<p>The initial plan was to develop a simple mario-style game, with
+preceduraly generated levels, random collectible items and enemies. One
+of the ideas was to introduce Confitura Man as the main character, but
+due to time constraints, this fall through. We’ve decided to just choose
+a random available sprite for a character - hence the onion man :)</p>
+
+<p><img src="/assets/confitura-2014-02.jpg" alt="Confitura 02" /></p>
+
+<h2 id="how-the-game-is-played:c5352db95c635e6c4b0653937eeeffaf">How the game is played?</h2>
+
+<p>Since we wanted to have a scoreboard and have unique users, we’ve
+printed out QR codes. A person that would like to play the game could
+pick up a QR code, show it against a camera attached to the play booth.
+The start page scanned the QR code and launched the game with username
+read from paper code.</p>
+
+<p>The rest of the game was playable with gamepad or keyboard.</p>
+
+<p><img src="/assets/confitura-2014-04.png" alt="Confitura game screen" /></p>
+
+<h2 id="technicalities:c5352db95c635e6c4b0653937eeeffaf">Technicalities</h2>
+
+<p>Writing a game takes a lot of time and effort. We wanted to deliver, so
+we’ve decided to spend some time in the days before the hackathon just
+to bootstrap the technology stack of our enterprise.</p>
+
+<p>We’ve decided that the game would be written in some Javascript based
+engine, with Google Chrome as a web platform. There are a lot of HTML5
+game engines - <a href="http://html5gameengine.com/">list of html5 game engines</a> and you could easily create a
+game with each and every of them. We’ve decided to use <a href="http://phaser.io/">Phaser IO</a>
+which handles a lot of difficult,  game-related stuff on its own. So, we
+didn’t have to worry about physics, loading and storing assets,
+animations, object collisions, controls input/output. Go see for
+yourself, it is really nice and easy to use.</p>
+
+<p>Scoreboard would be a rip-off from <a href="http://blog.gengo.com/jira-survivor/">JIRA Survivor</a>
+with stats being served from some web server app. To make things harder,
+the backend server was written in Clojure. With no experience in that
+language in the team, it was a bit risky, but the tasks of the server
+were trivial, so if all that clojure effort failed, it could be
+rewritten in something we know.</p>
+
+<h2 id="statistics:c5352db95c635e6c4b0653937eeeffaf">Statistics</h2>
+
+<p>During the whole Confitura day there were 69 unique players (69 QR codes
+were used), and 1237 games were played. The final score looked like
+this:</p>
+
+<ol>
+<li>Barister Lingerie 158 - 1450 points</li>
+<li>Boilerdang Custardbath 386 - 1060 points</li>
+<li>Benadryl Clarytin 306 - 870 points</li>
+</ol>
+
+<p>And the obligatory scoreboard screenshot:</p>
+
+<p><img src="/assets/confitura-2014-03.png" alt="Confitura 03" /></p>
+
+<h2 id="obstacles:c5352db95c635e6c4b0653937eeeffaf">Obstacles</h2>
+
+<p>The game, being created in just one day, had to have problems :) It
+wasn’t play tested enough, there were some rough edges. During the day
+we had to make a few fixes:</p>
+
+<ul>
+<li>the server did not respect the highest score by specific user, it was just overwritting a user’s score with it’s latest one,</li>
+<li>there was one feature not supported on keyboard, that was available on gamepad - turbo button</li>
+<li>server was opening a database connection each time it got a request, so after around 5 minutes it would exhaust open file limit for MongoDB (backend database), this was easily fixed - thou the fix is a bit hackish :)</li>
+</ul>
+
+<p>These were easily identified and fixed.
+Unfortunately there were issues that we were unable to fix while the
+event was on:</p>
+
+<ul>
+<li>google chrome kept asking for the permission to use webcam - this was very annoying, and all the info found on the web did not work - <a href="http://stackoverflow.com/questions/16835421/how-to-allow-chrome-to-access-my-camera-on-localhost/16929608#16929608">StackOverflow thread</a></li>
+<li>it was hard to start the game with QR code - either the codes were too small, or the lighting around that area was inappropriate - I think this
+issue could be fixed by printing larger codes,</li>
+</ul>
+
+<p>##Technology evaluation</p>
+
+<p>All in all we were pretty happy with the chosen stack. Phaser was easy
+to use and left us with just the fun parts of the game creation process.
+Finding the right graphics with appropriate licensing was rather hard.
+We didn’t have enough time to polish all the visual aspects of the game
+before Confitura.</p>
+
+<p>Writing a server in clojure was the most challenging part, with all the
+new syntax and new libraries. There were tasks, trivial in java/scala,
+but hard in Clojure - at least for a whimpy beginners :) Nevertheless
+Clojure seems like a really handy tool and I’d like to dive deeper into
+its ecosystem.</p>
+
+<h2 id="source-code:c5352db95c635e6c4b0653937eeeffaf">Source code</h2>
+
+<p>All of the sources for the game can be found here
+<a href="https://github.com/TouK/confitura-man">TouK/confitura-man</a>.</p>
+
+<p>The repository is split into two parts:</p>
+
+<ul>
+<li>game - HTML5 game</li>
+<li>server - clojure based backend server</li>
+</ul>
+
+<p>To run the server you need to have a local MongoDB installation. Than in
+server’s directory run:</p>
+
+<pre><code>$ lein ring server-headless 
+</code></pre>
+
+<p>This will start a server on <code>http://localhost:3000</code></p>
+
+<p>To run the game you need to install dependencies with bower and than
+run</p>
+
+<pre><code>$ grunt
+</code></pre>
+
+<p>from game’s directory.</p>
+
+<p>To launch the QR reading part of the game, you enter
+<code>http://localhost:9000/start.html</code>. After scanning the code you’ll be
+redirected to <code>http://localhost:9000/index.html</code> - and the game starts.</p>
+
+<h2 id="conclusion:c5352db95c635e6c4b0653937eeeffaf">Conclusion</h2>
+
+<p>Summing up, it was a great experience creating the game. It was fun to
+watch people playing the game. And even with all those glitches and
+stupid graphics, there were people vigorously playing it, which was
+awesome.</p>
+
+<h2 id="thanks-to-rafał-and-michał-for-great-coding-experience-and-thanks-to-all-the-players-of-our-stupid-little-game-if-you-d-like-to-ask-me-about-anything-feel-free-to-contact-me-by-mail-or-twitter-zygm0nt-https-twitter-com-zygm0nt:c5352db95c635e6c4b0653937eeeffaf">Thanks to Rafał and Michał for great coding experience, and thanks to all the players of our stupid little game. If you’d like to ask me about anything - feel free to contact me by mail or twitter <a href="https://twitter.com/zygm0nt">@zygm0nt</a></h2>
+
+   </div>
+ </div>
+
+
+ <a href="https://twitter.com/share" class="twitter-share-button " data-size="small" data-count="none">Tweet</a>
+ <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+ <ul class="pager">
+      &nbsp;<li class="previous"><a href="http://marcin.cylke.com.pl/2016/01/22/ccc-interesting-videos/"> 32c3 most interesting videos</a></li>
+      &nbsp;<li class="next"><a href="http://marcin.cylke.com.pl/2013/12/10/distributed-scans-with-hbase/"> Distributed scans with HBase</a></li>
+</ul>
+
+
+
+    </ul>
+    </div>
+    <footer>
+
+        <p class="text-muted credit">&copy; 2018. All rights reserved. </p>
+    </footer>
+ 
+    <script src="http://marcin.cylke.com.pl/js/jquery-1.10.2.min.js"></script>
+    <script src="http://marcin.cylke.com.pl/js/bootstrap.min.js"></script>
+    <script src="http://marcin.cylke.com.pl/js/bootstrap.js"></script>
+    <script type="text/javascript" src="http://marcin.cylke.com.pl/js/hc.js"></script>
+</body>
+
+</html>
+

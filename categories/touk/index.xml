@@ -1,0 +1,1730 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Touk on Just a blog</title>
+    <link>http://marcin.cylke.com.pl/categories/touk/</link>
+    <description>Recent content in Touk on Just a blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 Jul 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://marcin.cylke.com.pl/categories/touk/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Super Confitura Man</title>
+      <link>http://marcin.cylke.com.pl/2014/07/14/super-confitura-man/</link>
+      <pubDate>Mon, 14 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2014/07/14/super-confitura-man/</guid>
+      <description>
+
+&lt;h2 id=&#34;how-super-confitura-man-came-to-be:c5352db95c635e6c4b0653937eeeffaf&#34;&gt;How Super Confitura Man came to be :)&lt;/h2&gt;
+
+&lt;p&gt;Recently at TouK we had a one-day hackathon. There was no main theme for
+it, you just could post a project idea, gather people around it and hack
+on that idea for a whole day - drinks and pizza included.&lt;/p&gt;
+
+&lt;p&gt;My main idea was to create something that could be fun to build and be
+useful somehow to others. I’d figured out that since Confitura was just
+around a corner I could make a game, that would be playable at TouK’s
+booth at the conference venue. This idea seemed good enough to attract
+Rafał Nowak &lt;a href=&#34;https://twitter.com/RNowak3&#34;&gt;@RNowak3&lt;/a&gt; and Marcin Jasion
+&lt;a href=&#34;https://twitter.com/marcinjasion&#34;&gt;@marcinjasion&lt;/a&gt; - two TouK employees, that with me
+formed a team for the hackathon.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://marcin.cylke.com.pl/assets/confitura-2014-01.jpg&#34; alt=&#34;Confitura 01&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The initial plan was to develop a simple mario-style game, with
+preceduraly generated levels, random collectible items and enemies. One
+of the ideas was to introduce Confitura Man as the main character, but
+due to time constraints, this fall through. We’ve decided to just choose
+a random available sprite for a character - hence the onion man :)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://marcin.cylke.com.pl/assets/confitura-2014-02.jpg&#34; alt=&#34;Confitura 02&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;how-the-game-is-played:c5352db95c635e6c4b0653937eeeffaf&#34;&gt;How the game is played?&lt;/h2&gt;
+
+&lt;p&gt;Since we wanted to have a scoreboard and have unique users, we’ve
+printed out QR codes. A person that would like to play the game could
+pick up a QR code, show it against a camera attached to the play booth.
+The start page scanned the QR code and launched the game with username
+read from paper code.&lt;/p&gt;
+
+&lt;p&gt;The rest of the game was playable with gamepad or keyboard.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://marcin.cylke.com.pl/assets/confitura-2014-04.png&#34; alt=&#34;Confitura game screen&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;technicalities:c5352db95c635e6c4b0653937eeeffaf&#34;&gt;Technicalities&lt;/h2&gt;
+
+&lt;p&gt;Writing a game takes a lot of time and effort. We wanted to deliver, so
+we’ve decided to spend some time in the days before the hackathon just
+to bootstrap the technology stack of our enterprise.&lt;/p&gt;
+
+&lt;p&gt;We’ve decided that the game would be written in some Javascript based
+engine, with Google Chrome as a web platform. There are a lot of HTML5
+game engines - &lt;a href=&#34;http://html5gameengine.com/&#34;&gt;list of html5 game engines&lt;/a&gt; and you could easily create a
+game with each and every of them. We’ve decided to use &lt;a href=&#34;http://phaser.io/&#34;&gt;Phaser IO&lt;/a&gt;
+which handles a lot of difficult,  game-related stuff on its own. So, we
+didn’t have to worry about physics, loading and storing assets,
+animations, object collisions, controls input/output. Go see for
+yourself, it is really nice and easy to use.&lt;/p&gt;
+
+&lt;p&gt;Scoreboard would be a rip-off from &lt;a href=&#34;http://blog.gengo.com/jira-survivor/&#34;&gt;JIRA Survivor&lt;/a&gt;
+with stats being served from some web server app. To make things harder,
+the backend server was written in Clojure. With no experience in that
+language in the team, it was a bit risky, but the tasks of the server
+were trivial, so if all that clojure effort failed, it could be
+rewritten in something we know.&lt;/p&gt;
+
+&lt;h2 id=&#34;statistics:c5352db95c635e6c4b0653937eeeffaf&#34;&gt;Statistics&lt;/h2&gt;
+
+&lt;p&gt;During the whole Confitura day there were 69 unique players (69 QR codes
+were used), and 1237 games were played. The final score looked like
+this:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Barister Lingerie 158 - 1450 points&lt;/li&gt;
+&lt;li&gt;Boilerdang Custardbath 386 - 1060 points&lt;/li&gt;
+&lt;li&gt;Benadryl Clarytin 306 - 870 points&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;And the obligatory scoreboard screenshot:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://marcin.cylke.com.pl/assets/confitura-2014-03.png&#34; alt=&#34;Confitura 03&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;obstacles:c5352db95c635e6c4b0653937eeeffaf&#34;&gt;Obstacles&lt;/h2&gt;
+
+&lt;p&gt;The game, being created in just one day, had to have problems :) It
+wasn’t play tested enough, there were some rough edges. During the day
+we had to make a few fixes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the server did not respect the highest score by specific user, it was just overwritting a user’s score with it’s latest one,&lt;/li&gt;
+&lt;li&gt;there was one feature not supported on keyboard, that was available on gamepad - turbo button&lt;/li&gt;
+&lt;li&gt;server was opening a database connection each time it got a request, so after around 5 minutes it would exhaust open file limit for MongoDB (backend database), this was easily fixed - thou the fix is a bit hackish :)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These were easily identified and fixed.
+Unfortunately there were issues that we were unable to fix while the
+event was on:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;google chrome kept asking for the permission to use webcam - this was very annoying, and all the info found on the web did not work - &lt;a href=&#34;http://stackoverflow.com/questions/16835421/how-to-allow-chrome-to-access-my-camera-on-localhost/16929608#16929608&#34;&gt;StackOverflow thread&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;it was hard to start the game with QR code - either the codes were too small, or the lighting around that area was inappropriate - I think this
+issue could be fixed by printing larger codes,&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;##Technology evaluation&lt;/p&gt;
+
+&lt;p&gt;All in all we were pretty happy with the chosen stack. Phaser was easy
+to use and left us with just the fun parts of the game creation process.
+Finding the right graphics with appropriate licensing was rather hard.
+We didn’t have enough time to polish all the visual aspects of the game
+before Confitura.&lt;/p&gt;
+
+&lt;p&gt;Writing a server in clojure was the most challenging part, with all the
+new syntax and new libraries. There were tasks, trivial in java/scala,
+but hard in Clojure - at least for a whimpy beginners :) Nevertheless
+Clojure seems like a really handy tool and I’d like to dive deeper into
+its ecosystem.&lt;/p&gt;
+
+&lt;h2 id=&#34;source-code:c5352db95c635e6c4b0653937eeeffaf&#34;&gt;Source code&lt;/h2&gt;
+
+&lt;p&gt;All of the sources for the game can be found here
+&lt;a href=&#34;https://github.com/TouK/confitura-man&#34;&gt;TouK/confitura-man&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The repository is split into two parts:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;game - HTML5 game&lt;/li&gt;
+&lt;li&gt;server - clojure based backend server&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To run the server you need to have a local MongoDB installation. Than in
+server’s directory run:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ lein ring server-headless 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will start a server on &lt;code&gt;http://localhost:3000&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;To run the game you need to install dependencies with bower and than
+run&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ grunt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;from game’s directory.&lt;/p&gt;
+
+&lt;p&gt;To launch the QR reading part of the game, you enter
+&lt;code&gt;http://localhost:9000/start.html&lt;/code&gt;. After scanning the code you’ll be
+redirected to &lt;code&gt;http://localhost:9000/index.html&lt;/code&gt; - and the game starts.&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion:c5352db95c635e6c4b0653937eeeffaf&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Summing up, it was a great experience creating the game. It was fun to
+watch people playing the game. And even with all those glitches and
+stupid graphics, there were people vigorously playing it, which was
+awesome.&lt;/p&gt;
+
+&lt;h2 id=&#34;thanks-to-rafał-and-michał-for-great-coding-experience-and-thanks-to-all-the-players-of-our-stupid-little-game-if-you-d-like-to-ask-me-about-anything-feel-free-to-contact-me-by-mail-or-twitter-zygm0nt-https-twitter-com-zygm0nt:c5352db95c635e6c4b0653937eeeffaf&#34;&gt;Thanks to Rafał and Michał for great coding experience, and thanks to all the players of our stupid little game. If you’d like to ask me about anything - feel free to contact me by mail or twitter &lt;a href=&#34;https://twitter.com/zygm0nt&#34;&gt;@zygm0nt&lt;/a&gt;&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Distributed scans with HBase</title>
+      <link>http://marcin.cylke.com.pl/2013/12/10/distributed-scans-with-hbase/</link>
+      <pubDate>Tue, 10 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2013/12/10/distributed-scans-with-hbase/</guid>
+      <description>&lt;p&gt;HBase is by design a columnar store, that is optimized for random reads.
+You just ask for a row using rowId as an identifier and you get your
+data instantaneously.&lt;/p&gt;
+
+&lt;p&gt;Performing a scan on part or whole table is a completely different thing.
+First of all, it is sequential. Meaning it is rather slow, because it
+doesn&amp;rsquo;t use all the RegionServers at the same time. It is implemented
+that way to realize the contract of Scan command - which has to return
+results sorted by key.&lt;/p&gt;
+
+&lt;p&gt;So, how to do this efficiently?&lt;/p&gt;
+
+&lt;p&gt;The usual way of getting data from HBase is with the help of its API,
+mainly Scan objects. To accomplish the task I&amp;rsquo;ll use just them. I&amp;rsquo;ll
+specify startRow and stopRow, so that each Scan request will be looking
+through only part of the key space.&lt;/p&gt;
+
+&lt;p&gt;It is crucial to note, that this whole solution works because of key
+sorting properties in HBase. So, HBase scans a table according to ascending key
+values. Since keys are of String type, key with value &amp;ldquo;1&amp;rdquo; is smaller
+than &amp;ldquo;2&amp;rdquo;, because they are sorted lexicographicly. So, also key with value &amp;ldquo;12345&amp;rdquo; is smaller than &amp;ldquo;2&amp;rdquo;. I&amp;rsquo;ve
+leveraged this property so that I&amp;rsquo;ve partitioned my whole key space according to
+the first character of the key. In my case keys contain only digits. So I
+have 10 ranges:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;null-1&lt;/li&gt;
+&lt;li&gt;1-2&lt;/li&gt;
+&lt;li&gt;2-3&lt;/li&gt;
+&lt;li&gt;3-4&lt;/li&gt;
+&lt;li&gt;4-5&lt;/li&gt;
+&lt;li&gt;5-6&lt;/li&gt;
+&lt;li&gt;6-7&lt;/li&gt;
+&lt;li&gt;7-8&lt;/li&gt;
+&lt;li&gt;8-9&lt;/li&gt;
+&lt;li&gt;9-null&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The speedup comes from the fact, that each range resides in its own
+partition. That&amp;rsquo;s right, I&amp;rsquo;ve presplit the table to have 10 partitions.
+This corresponds rather nicely with my cluster&amp;rsquo;s setup, because I have
+more than 10 RegionServers. So every partition should be on different
+RegionServer. It will allow the code to do the requested scan operations
+in parallel - giving me this exact performance boost.&lt;/p&gt;
+
+&lt;p&gt;How I&amp;rsquo;ve created the input table:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&lt;/p&gt;
+
+&lt;p&gt;$ create &amp;lsquo;tariff_changes&amp;rsquo;, { NAME =&amp;gt; &amp;lsquo;cf&amp;rsquo;, SPLITS_FILE =&amp;gt; &amp;lsquo;splits.txt&amp;rsquo;, VERSIONS =&amp;gt; 50, MAX_FILESIZE =&amp;gt; 1073741824 }&lt;/p&gt;
+
+&lt;p&gt;$ alter &amp;lsquo;tariff_changes&amp;rsquo;, { NAME =&amp;gt; &amp;lsquo;cf&amp;rsquo;, SPLITS_FILE =&amp;gt; &amp;lsquo;splits.txt&amp;rsquo;, VERSIONS =&amp;gt; 50, MAX_FILESIZE =&amp;gt; 1073741824 }&lt;/p&gt;
+
+&lt;p&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Split file is just something along this lines:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This tells HBase what are the rowKeys starting and ending each of the
+partitions.&lt;/p&gt;
+
+&lt;p&gt;Ok, so after this rather lengthy introduction, what the actual code
+does? It just spins of a few threads - one for each partition - and runs
+a Scan request tailored to that partitions key space. This way, I got a
+10x speedup for this particular scan. The execution time went down from
+30 minutes to 3 for my use case.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve created an example implementation of this idea. You can find it on
+GitHub:
+&lt;a href=&#34;https://github.com/zygm0nt/hbase-distributed-search&#34;&gt;https://github.com/zygm0nt/hbase-distributed-search&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Any ideas on how to speed things up even more with HBase?&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Simple HBase ORM</title>
+      <link>http://marcin.cylke.com.pl/2013/12/08/simple-hbase-orm/</link>
+      <pubDate>Sun, 08 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2013/12/08/simple-hbase-orm/</guid>
+      <description>&lt;p&gt;When dealing with data stored in HBase, you are quick to come to a
+conclusion, that it is extremaly inconvenient to reach to it
+via HBase native API. It is very verbose and you always need to convert
+between bytes and simple types - a pain.&lt;/p&gt;
+
+&lt;p&gt;While I was working on a project of mine, I thought, why not to easy
+those pains and fetch real objects from HBase.&lt;/p&gt;
+
+&lt;p&gt;And that&amp;rsquo;s how this simplistic, hackish ORM came to life. It is no match
+for projects like &lt;a href=&#34;https://github.com/impetus-opensource/Kundera&#34;&gt;Kundera&lt;/a&gt;
+(a JPA compliant solution), or &lt;a href=&#34;https://code.google.com/p/n-orm/&#34;&gt;n-orm&lt;/a&gt;. Nevertheless, it just suits my needs :)&lt;/p&gt;
+
+&lt;p&gt;Project sources are hosted on GitHub: &lt;a href=&#34;https://github.com/zygm0nt/hbase-annotations&#34;&gt;https://github.com/zygm0nt/hbase-annotations&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;To make use of this, you need to have an entity class with annotations:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;@Column - with argument specifying column family and column name, ie.
+@Column(&amp;ldquo;cf:column-name&amp;rdquo;)&lt;/li&gt;
+&lt;li&gt;@Id - will store row key in this property,&lt;/li&gt;
+&lt;li&gt;and optionaly @Value - for Spring Expression Language, in case you
+need to perform some extraction on the value.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Annotations should be on setter methods.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Now you have your model annotated and ready to be fetched from HBase.&lt;/p&gt;
+
+&lt;p&gt;The actual work is done with a service class, that should extend class
+&lt;a href=&#34;https://github.com/zygm0nt/hbase-annotations/blob/master/src/main/java/pl/touk/hadoop/hbase/BaseHadoopInteraction.java&#34;&gt;BaseHadoopInteraction&lt;/a&gt; just as class
+&lt;a href=&#34;https://github.com/zygm0nt/hbase-annotations/blob/master/src/test/java/pl/touk/hadoop/hbase/SampleHBaseClient.java&#34;&gt;SimpleHBaseClient&lt;/a&gt; does.&lt;/p&gt;
+
+&lt;p&gt;Then it is possible to just call:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/zygm0nt/7863407.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;Note that there are more methods you can use on BaseHadoopInteraction.
+You can also do:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;scan&lt;/li&gt;
+&lt;li&gt;scan with key ranges&lt;/li&gt;
+&lt;li&gt;delete&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;What you won&amp;rsquo;t get from this simple ORM is:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;automatic object updating,&lt;/li&gt;
+&lt;li&gt;nested objects,&lt;/li&gt;
+&lt;li&gt;saving to HBase - &amp;lsquo;cause I didn&amp;rsquo;t have a need for that,&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Hope you&amp;rsquo;ll find this piece of code useful. If you see room for
+improvements while staying in project&amp;rsquo;s scope - please drop me a
+message.&lt;/p&gt;
+
+&lt;p&gt;And if you are searching for a full-fledged ORM solution for interacting with HBase, just head
+straight to Kundera project website :)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Recently at storm-users</title>
+      <link>http://marcin.cylke.com.pl/2013/08/12/recently-at-storm-users/</link>
+      <pubDate>Mon, 12 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2013/08/12/recently-at-storm-users/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been reading through storm-users Google Group recently. This
+resolution was heavily inspired by Adam Kawa&amp;rsquo;s post &lt;a href=&#34;http://hakunamapdata.com/football-zero-apache-pig-hero-the-essence-from-hundreds-of-posts-from-apache-pig-user-mailing-list/&#34;&gt;&amp;ldquo;Football zero, Apache Pig hero&amp;rdquo;&lt;/a&gt;. Since I&amp;rsquo;ve encountered a lot of insightful and very interesting information I&amp;rsquo;ve decided to describe some of those in this post.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;nimbus will work in HA mode - There&amp;rsquo;s a pull request open for it already&amp;hellip; but some
+recent work (distributing topology files via Bittorrent) will greatly
+simplify the implementation. Once the Bittorrent work is done we&amp;rsquo;ll look
+at reworking the HA pull request. (&lt;a href=&#34;https://github.com/nathanmarz/storm/pull/629&#34;&gt;storm’s pull request&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;pig on storm - Pig on Trident would be a cool and welcome project. Join
+and groupBy have very clear semantics there, as those concepts exist
+directly in Trident. The extensions needed to Pig are the concept of
+incremental, persistent state across batches (mirroring those concepts
+in Trident). You can read a complete &lt;a href=&#34;https://cwiki.apache.org/confluence/display/PIG/Pig+on+Storm+Proposal&#34;&gt;proposal&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;implementing topologies in pure python with &lt;a href=&#34;https://github.com/AirSage/Petrel&#34;&gt;petrel&lt;/a&gt; looks like this:&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;class Bolt(storm.BasicBolt):
+    def initialize(self, conf, context):
+       &#39;&#39;&#39; This method executed only once &#39;&#39;&#39;
+        storm.log(&#39;initializing bolt&#39;)
+
+    def process(self, tup):
+       &#39;&#39;&#39; This method executed every time a new tuple arrived &#39;&#39;&#39;       
+       msg = tup.values[0]
+       storm.log(&#39;Got tuple %s&#39; %msg)
+
+if __name__ == &amp;quot;__main__&amp;quot;:
+    Bolt().run()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Fliptop is happy with storm - see their presentation &lt;a href=&#34;http://www.slideshare.net/robbiecheng/lesson-learned-of-twitter-storm&#34;&gt;here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;topology metrics in 0.9.0: The new metrics feature allows you to collect
+arbitrarily custom metrics over fixed windows. Those metrics are
+exported to a metrics stream that you can consume by implementing
+&lt;a href=&#34;https://github.com/nathanmarz/storm/blob/master/storm-core/src/jvm/backtype/storm/metric/api/IMetricsConsumer.java&#34;&gt;IMetricsConsumer&lt;/a&gt; and configure with &lt;a href=&#34;https://github.com/nathanmarz/storm/blob/master/storm-core/src/jvm/backtype/storm/Config.java#L473&#34;&gt;Config.java#L473&lt;/a&gt;.
+Use &lt;strong&gt;TopologyContext#registerMetric&lt;/strong&gt; to register new metrics.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;storm vs flume - some users&amp;rsquo; point of view: I use Storm and Flume and find that they are better at
+different things - it really depends on your use case as to which one is
+better suited. First and foremost, they were originally designed to do
+different things: Flume is a reliable service for collecting,
+aggregating, and moving large amounts of data from source to destination
+(e.g. log data from many web servers to HDFS). Storm is more for
+real-time computation (e.g. streaming analytics) where you analyse data
+in flight and don&amp;rsquo;t necessarily land it anywhere. Having said that,
+Storm is also fault-tolerant and can write to external data stores (e.g.
+HBase) and you can do real-time computation in Flume (using
+interceptors)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That&amp;rsquo;s all for this day - however, I&amp;rsquo;ll keep on reading through storm-users, so watch this space for more info on storm development.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Zookeeper &#43; Curator = Distributed sync</title>
+      <link>http://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/</link>
+      <pubDate>Mon, 24 Jun 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/</guid>
+      <description>&lt;p class=&#34;c8&#34;&gt;&lt;img height=&#34;300&#34; src=&#34;http://marcin.cylke.com.pl/assets/2013-06-24-zookeeper-curator.jpg&#34;&gt;&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c8&#34;&gt;
+    &lt;span&gt;An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system&amp;rsquo;s components. Since I had already a few separate components I didn&amp;rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I&amp;rsquo;ve decided to go that way with my solution.&lt;/span&gt;
+&lt;/p&gt;&lt;h2 class=&#34;c8&#34;&gt;&lt;a name=&#34;h.v629433u6utf&#34;&gt;&lt;/a&gt;&lt;span&gt;What is Zookeeper?&lt;/span&gt;&lt;/h2&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;Just a crude distributed synchronization framework. However, it implements Paxos-style algorithms (&lt;/span&gt;&lt;span
+        class=&#34;c5&#34;&gt;&lt;a class=&#34;c0&#34; href=&#34;http://en.wikipedia.org/wiki/Paxos_(computer_science)&#34;&gt;http://en.wikipedia.org/wiki/Paxos_(computer_science)&lt;/a&gt;&lt;/span&gt;&lt;span&gt;) to ensure no split-brain scenarios would occur. This is quite an important feature, since I don&amp;rsquo;t have to care about that kind of problems while using this app. You just need to create an ensemble of a couple of its instances - to ensure high availability. It is basically a virtual filesystem, with files, directories and stuff. One could ask why another filesystem? Well this one is a rather special one, especially for distributed systems. The reason why creating all the locking algorithms on top of Zookeeper is easy is its Ephemeral Nodes - which are just files that exist as long as connection for them exists. After it disconnects - such file disappears. &lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;With such paradigms in place it&amp;rsquo;s fairly easy to create some high level algorithms for synchronization.&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;Having that in place, it&lt;/span&gt;&lt;span&gt;&amp;nbsp;can&lt;/span&gt;&lt;span&gt;&amp;nbsp;safely integrate multiple services ensuring loose coupling in a distributed way.&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;h2 class=&#34;c8&#34;&gt;&lt;a name=&#34;h.ppqvt63vg53w&#34;&gt;&lt;/a&gt;&lt;span&gt;Zookeeper from developer&amp;rsquo;s POV&lt;/span&gt;
+&lt;/h2&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;With all the base services for Zookeeper started, it seems there is nothing else, than just connect to it and start implementing necessary algorithms. Unfortunately, the API is quite basic and offers files and directories abstractions with the addition of different node type (file types) - ephemeral and sequence. It is also possible to watch a node for changes.&lt;/span&gt;
+&lt;/p&gt;&lt;h2 class=&#34;c8&#34;&gt;&lt;a name=&#34;h.lgfultrxupbf&#34;&gt;&lt;/a&gt;&lt;span&gt;Using bare Zookeeper is hard!&lt;/span&gt;&lt;/h2&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;Creating connections is tedious - and there is lots of things to take care of. Handling an established connection is hard - when establishing connection to ensemble, it&amp;rsquo;s necessary to negotiate a session also. During the whole process a number of exceptions can occur - these are &amp;ldquo;recoverable&amp;rdquo;
+    exceptions, that can be gracefully handled and not break the connection.&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p
+        class=&#34;c8&#34;&gt;&lt;span&gt;So, Zookeeper API is hard.&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;Even if one is proficient with that API, then there come recipes. The reason for using Zookeeper is to be able to implement some more sophisticated algorithms on top of it. Unfortunately those aren&amp;rsquo;t trivial and it is again quite hard to implement them without bugs.&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;And since distributed systems are hard, why would anyone want another difficult to handle tool? &lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;h2 class=&#34;c8&#34;&gt;&lt;a name=&#34;h.8n72xils1l1f&#34;&gt;&lt;/a&gt;&lt;span&gt;Enter Curator&lt;/span&gt;&lt;/h2&gt;&lt;p
+        class=&#34;c8&#34;&gt;&lt;span&gt;Happily, guys from Netflix implemented a nice abstraction for dealing with Zookeeper internals. They called it Curator and use it extensively in the company&amp;rsquo;s environment. Curator offers consistent API for Zookeeper&amp;rsquo;s functionality. It even implements a couple of recipes for distributed systems.&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;h2 class=&#34;c8&#34;&gt;&lt;a name=&#34;h.k63iku7qitza&#34;&gt;&lt;/a&gt;&lt;span&gt;File read/write&lt;/span&gt;&lt;/h2&gt;&lt;p
+        class=&#34;c8&#34;&gt;&lt;span&gt;The basic use of Zookeeper is as a distributed configuration repository. For this scenario I only need read/write capabilities, to be able to write and read files from the Zookeeper filesystem. This code snippet writes a sample json to a file on ZK filesystem.&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;a href=&#34;#&#34; name=&#34;fb1072a0c295459e23a47b12e8c09952a5ab3768&#34;&gt;&lt;/a&gt;&lt;a href=&#34;#&#34;
+                                                                                                      name=&#34;0&#34;&gt;&lt;/a&gt;
+&lt;pre&gt;
+&lt;code&gt;
+EnsurePath ensurePath = new EnsurePath(markerPath);
+ensurePath.ensure(client.getZookeeperClient());
+String json = “...”;
+if (client.checkExists().forPath(statusFile(core)) != null)
+     client.setData().forPath(statusFile(core), json.getBytes());
+else
+     client.create().forPath(statusFile(core), json.getBytes());
+
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;h2 class=&#34;c8&#34;&gt;&lt;a name=&#34;h.ikl4cn73c5uw&#34;&gt;&lt;/a&gt;&lt;span&gt;Distributed locking&lt;/span&gt;&lt;/h2&gt;
+&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;Having multiple systems there may be a need of using an exclusive lock for some resource, or perhaps some big system requires it&amp;rsquo;s components to synchronize based on locks. This &amp;ldquo;recipe&amp;rdquo;
+    is an ideal match for those situations.&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;a href=&#34;#&#34;
+                                                                                        name=&#34;b0329bbbf14b79ffaba1139881914aea887ef6a3&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;#&#34; name=&#34;1&#34;&gt;&lt;/a&gt;
+&lt;pre&gt;
+&lt;code&gt;
+
+lock = new InterProcessSemaphoreMutex(client, lockPath);
+lock.acquire(5, TimeUnit.MINUTES);
+… do sth …
+lock.release();
+
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;&amp;nbsp;(from &lt;/span&gt;&lt;span class=&#34;c5&#34;&gt;&lt;a class=&#34;c0&#34;
+                                                                   href=&#34;https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/LockingRemotely.java&#34;&gt;https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/LockingRemotely.java&lt;/a&gt;&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;h2 class=&#34;c8&#34;&gt;&lt;a name=&#34;h.ck92kse5nam2&#34;&gt;&lt;/a&gt;&lt;span&gt;Sevice Advertisement&lt;/span&gt;&lt;/h2&gt;&lt;p
+        class=&#34;c8&#34;&gt;&lt;span&gt;This is quite an interesting use case. With many small services on different servers it is not wise to exchange ip addresses and ports between them. When some of those services may go down, while other will try to replace them - the task gets even harder. &lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;That&amp;rsquo;s why, with Zookeeper in place, it can be utilised as a registry of existing services.&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;If a service starts, it registers into the ServiceRegistry, offering basic information, like it&amp;rsquo;s purpose, role, address, and port. &lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;Services that want to use a specific kind of service request an access to some instance. This way of configuring easily decouples services from their configuration.&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;Basically this scenario needs ? steps:&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c8&#34;&gt;
+    &lt;span&gt;1. Service starts and registers its presence (&lt;/span&gt;&lt;span class=&#34;c5&#34;&gt;&lt;a class=&#34;c0&#34;
+                                                                                   href=&#34;https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerAdvertiser.java#L44&#34;&gt;https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerAdvertiser.java#L44&lt;/a&gt;&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;a href=&#34;#&#34; name=&#34;1c67229d451cd2d82dddaf1fb12af1aed4a8ecb0&#34;&gt;&lt;/a&gt;
+
+&lt;pre&gt;
+&lt;code&gt;
+
+ServiceDiscovery&lt;WorkerMetadata&gt; discovery = getDiscovery();
+            discovery.start();
+            ServiceInstance si = getInstance();
+            log.info(si);
+            discovery.registerService(si);
+
+
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;2. Another service - on another host or in another JVM on the same machine tries to discover who is implementing the service (&lt;/span&gt;&lt;span
+        class=&#34;c5&#34;&gt;&lt;a class=&#34;c0&#34;
+                      href=&#34;https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerFinder.java#L50&#34;&gt;https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerFinder.java#L50&lt;/a&gt;&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;a href=&#34;#&#34; name=&#34;0e430a074ab36c8eea3f84fae3d0cffb400dd281&#34;&gt;&lt;/a&gt;&lt;a href=&#34;#&#34;
+                                                                                                      name=&#34;3&#34;&gt;&lt;/a&gt;
+&lt;pre&gt;
+&lt;code&gt;
+instances = discovery.queryForInstances(serviceName);
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;The whole concept here is ridiculously simple - the service advertising its presence just stores a file with its whereabouts. The service that is looking for service providers just look into specific directory and read stored definitions.&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;In my example, the structure advertised by services looks like this (+ some getters and constructor - the rest is here: &lt;/span&gt;&lt;span
+        class=&#34;c5&#34;&gt;&lt;a class=&#34;c0&#34;
+                      href=&#34;https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/model/WorkerMetadata.java&#34;&gt;https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/model/WorkerMetadata.java&lt;/a&gt;&lt;/span&gt;&lt;span&gt;):&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;a href=&#34;#&#34; name=&#34;c0131478bfab43e60b5e077f3170a172a909d199&#34;&gt;&lt;/a&gt;
+
+&lt;pre&gt;
+&lt;code&gt;
+
+public final class WorkerMetadata {
+    private final UUID workerId;
+    private final String listenAddress;
+    private final int listenPort;
+}
+
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;h2 class=&#34;c8&#34;&gt;&lt;a name=&#34;h.qvt6wa2m15sm&#34;&gt;&lt;/a&gt;&lt;span&gt;Source code&lt;/span&gt;&lt;/h2&gt;&lt;p
+        class=&#34;c8&#34;&gt;&lt;span&gt;The above recipes are available in Curator library (&lt;/span&gt;&lt;span class=&#34;c5&#34;&gt;&lt;a class=&#34;c0&#34;
+                                                                                                        href=&#34;http://curator.incubator.apache.org/&#34;&gt;http://curator.incubator.apache.org/&lt;/a&gt;&lt;/span&gt;&lt;span&gt;). Recipes&amp;rsquo;
+    usage examples are in my github repo at &lt;/span&gt;&lt;span class=&#34;c5&#34;&gt;&lt;a class=&#34;c0&#34;
+                                                                       href=&#34;https://github.com/zygm0nt/curator-playground&#34;&gt;https://github.com/zygm0nt/curator-playground&lt;/a&gt;&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;h2 class=&#34;c8&#34;&gt;&lt;a name=&#34;h.o1zkosbrwpah&#34;&gt;&lt;/a&gt;&lt;span&gt;Conclusion&lt;/span&gt;&lt;/h2&gt;&lt;p
+        class=&#34;c8&#34;&gt;&lt;span&gt;If you&amp;rsquo;re in need of a reliable platform for exchanging data and managing synchronization, and you need to do it in a distributed fashion - just choose Zookeeper. Then add Curator for the ease of using it. Enjoy!&lt;/span&gt;
+&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;hr&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ol class=&#34;c13&#34; start=&#34;1&#34;&gt;
+    &lt;li class=&#34;c7&#34;&gt;&lt;span&gt;image comes from: &lt;/span&gt;&lt;span class=&#34;c5&#34;&gt;&lt;a class=&#34;c0&#34;
+                                                                      href=&#34;http://www.flickr.com/photos/jfgallery/2993361148&#34;&gt;http://www.flickr.com/photos/jfgallery/2993361148&lt;/a&gt;&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li class=&#34;c7&#34;&gt;&lt;span&gt;all source code fragments taken from this repo: &lt;/span&gt;&lt;span class=&#34;c5&#34;&gt;&lt;a class=&#34;c0&#34;
+                                                                                                    href=&#34;https://github.com/zygm0nt/curator-playground&#34;&gt;https://github.com/zygm0nt/curator-playground&lt;/a&gt;&lt;/span&gt;
+    &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Operational problems with Zookeeper</title>
+      <link>http://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/</link>
+      <pubDate>Thu, 21 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/</guid>
+      <description>
+
+&lt;p&gt;This post is a summary of what has been presented by Kathleen Ting on
+StrangeLoop conference. You can watch the original here:
+&lt;a href=&#34;http://www.infoq.com/presentations/Misconfiguration-ZooKeeper&#34;&gt;http://www.infoq.com/presentations/Misconfiguration-ZooKeeper&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve decided to put this selection here for quick reference.&lt;/p&gt;
+
+&lt;h2 id=&#34;connection-mismanagement:3dd1934cab1c17d4d4b86e7299da0f63&#34;&gt;Connection mismanagement&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;too many connections&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - Too many connections from /xx.x.xx.xxx - max is 60
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;running out of ZK connections?&lt;/li&gt;
+&lt;li&gt;set &lt;code&gt;maxClientCnxns=200&lt;/code&gt; in &lt;code&gt;zoo.cfg&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;HBase client leaking connections?&lt;/li&gt;
+&lt;li&gt;fixed in HBASE-3777, HBASE-4773, HBASE-5466&lt;/li&gt;
+&lt;li&gt;manually close connections&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;connection closes prematurely&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ERROR: org.apache.hadoop.hbase.ZooKeeperConnectionException: HBase is able to connect to ZooKeeper but the connection closes immediately.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;in &lt;code&gt;hbase-site.xml&lt;/code&gt; set &lt;code&gt;hbase.zookeeper.recoverable.waittime=30000ms&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;pig hangs connecting to HBase&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;WARN org.apache.zookeeper.ClientCnxn: Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect java.net.ConnectionException: Connection refused!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;CAUSE:&lt;/strong&gt; location of ZK quorum is not known to Pig&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;use Pig 10, which includes PIG-2115&lt;/li&gt;
+&lt;li&gt;if there is an overlap between TaskTrackers and ZK quorum nodes
+
+&lt;ul&gt;
+&lt;li&gt;set &lt;code&gt;hbase.zookeeper.quorum&lt;/code&gt; to final in &lt;code&gt;hbase-site.xml&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;otherwise add &lt;code&gt;hbaze.zoopeeker.quorum=hadoophbasemaster.lan:2181&lt;/code&gt; in &lt;code&gt;pig.properties&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;time-mismanagement:3dd1934cab1c17d4d4b86e7299da0f63&#34;&gt;Time mismanagement&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;client session timed out&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;INFO org.apache.zookeeper.server.ZooKeeperServer: Expiring session &amp;lt;id&amp;gt;, timeout of 40000ms exceeded
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ZK and HBase need the same session timeout values
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;zoo.cfg&lt;/code&gt;: &lt;code&gt;maxSession=Timeout=180000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hbase-site.xml&lt;/code&gt;: &lt;code&gt;zookeeper.session.timeout=180000&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;don&amp;rsquo;t co-locate ZK with IO-intense DataNode or RegionServer&lt;/li&gt;
+&lt;li&gt;specify right amount of heap and tune GC flags
+
+&lt;ul&gt;
+&lt;li&gt;turn on parallel/CMS/incremental GC&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;clients lose connections&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;WARN org.apache.zookeeper.ClientCnxn - Session &amp;lt;id&amp;gt; for server &amp;lt;name&amp;gt;, unexpected error, closing socket connection and attempting reconnect java.io.IOException: Broken pipe
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;don&amp;rsquo;t use SSD drive for ZK transaction log&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;disk-management:3dd1934cab1c17d4d4b86e7299da0f63&#34;&gt;Disk management&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;unable to load database - unable to run quorum server&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;FATAL Unable to load database on disk !  java.io.IOException: Failed to process transaction type: 2 error: KeeperErrorCode = NoNode for &amp;lt;file&amp;gt; at org.apache.zookeeper.server.persistence.FileTxnSnapLog.restore(FileTxnSnapLog.java:152)!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;archive and wipe &lt;code&gt;/var/zookeeper/version-2&lt;/code&gt; if other two ZK servers
+are running&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;unable to load database - unreasonable length exception&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;FATAL Unable to load database on disk java.io.IOException: Unreasonable length = 1048583 at org.apache.jute.BinaryInputArchive.readBuffer(BinaryInputArchive.java:100)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;server allows a client to set data larger than the server can read from disk&lt;/li&gt;
+&lt;li&gt;if a znode is not readable, increase &lt;code&gt;jute.maxbuffer&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;look for &lt;code&gt;&amp;quot;Packet len &amp;lt;xx&amp;gt; is out of range&amp;quot;&lt;/code&gt; in the client log&lt;/li&gt;
+&lt;li&gt;increase it by 20%&lt;/li&gt;
+&lt;li&gt;set in &lt;code&gt;JVMFLAGS=&amp;quot;-Djute.maxbuffer=yy&amp;quot; bin/zkCli.sh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;fixed in ZOOKEEPER-1513&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;failure to follow leader&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;WARN org.apache.zookeeper.server.quorum.Learner: Exception when following the leader java.net.SocketTimeoutException: Read timed out 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;CAUSE:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;disk IO contention, network issues&lt;/li&gt;
+&lt;li&gt;ZK snapshot is too large (lots of ZK nodes)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;SOLVE:&lt;/strong&gt;
+- reduce IO contention by putting dataDir on dedicated spindle
+- increase initLimit on all ZK servers and restart, see
+  ZOOKEEPER-1521
+- monitor network&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;best-practices:3dd1934cab1c17d4d4b86e7299da0f63&#34;&gt;Best Practices&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;DOs&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;separate spindles for dataDir &amp;amp; dataLogDir&lt;/li&gt;
+&lt;li&gt;allocate 3 or 5 ZK servers&lt;/li&gt;
+&lt;li&gt;tune garbage collection&lt;/li&gt;
+&lt;li&gt;run zkCleanup.sh script via cron&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;DON&amp;rsquo;Ts&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;dont&amp;rsquo; co-locate ZK with I/O intense DataNode or RegionServer&lt;/li&gt;
+&lt;li&gt;don&amp;rsquo;t use SSD drive for ZK transaction log&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You may use Zookeeper as an observer - a non-voting member:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;in zoo.cfg&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;peerType=observer
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>After WHUG meeting</title>
+      <link>http://marcin.cylke.com.pl/2012/11/30/after-whug/</link>
+      <pubDate>Fri, 30 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2012/11/30/after-whug/</guid>
+      <description>&lt;p&gt;Here are the slides from the talk a gave yesterday. If you have any
+questions, please ask.&lt;/p&gt;
+
+&lt;script async class=&#34;speakerdeck-embed&#34;
+data-id=&#34;cc18d5601d60013059a31231381554d7&#34; data-ratio=&#34;1.33333333333333&#34;
+src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>WHUG 8. Beyond Hadoop - checking other options</title>
+      <link>http://marcin.cylke.com.pl/2012/11/26/whug-8-beyond-hadoop/</link>
+      <pubDate>Mon, 26 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2012/11/26/whug-8-beyond-hadoop/</guid>
+      <description>&lt;p&gt;W najbliższy czwartek - czyli 29.11.2012 - poprowadzę prezentację w
+ramach Warsaw Hadoop User Group. Swoją obecność można odklinąć tu
+&lt;a href=&#34;http://www.meetup.com/warsaw-hug/&#34;&gt;http://www.meetup.com/warsaw-hug/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;A o czym będę mówił? Przeklejka ze strony WHUG:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Marcin skupi się na współpracy ekosystemu Hadoopa z innymi narzędziami.
+Pokaże jak prosto i wygodnie przetwarzać grafy i jak stosować podejście
+Big Data, w czasie rzeczywistym. Poruszy również temat łatwiejszego
+tworzenia algorytmów Map-Reduce&lt;/p&gt;
+
+&lt;p&gt;Będzie to nieco mniej technicza (ale wciąż praktyczna) wycieczka po
+obrzeżach tematyki, która jest zwykle poruszana w połączeniu z
+Hadoop-em.&lt;/p&gt;
+
+&lt;p&gt;Prezentacja będzie dotyczyć narzędzi takich jak Cascading, Storm, Titan.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Zapraszam!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hadoop HA setup</title>
+      <link>http://marcin.cylke.com.pl/2012/10/30/hadoop-ha/</link>
+      <pubDate>Tue, 30 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2012/10/30/hadoop-ha/</guid>
+      <description>
+
+&lt;p&gt;With the advent of Hadoop&amp;rsquo;s 2.x version, there finally is a working
+High-Availability solution. Even two of those. Now it really is easy to
+configure and use those solutions. It no longer require external
+components, like
+&lt;a href=&#34;http://blog.cloudera.com/blog/2009/07/hadoop-ha-configuration/&#34;&gt;DRBD&lt;/a&gt;.
+It all is just neatly packed into Cloudera Hadoop distribution - the
+precursor of this solution.&lt;/p&gt;
+
+&lt;p&gt;Read on to find out how to use it.&lt;/p&gt;
+
+&lt;p&gt;The most important weakness of previous Hadoop releases was the
+single-point-of-failure, which happend to be NameNode. NameNode as a key
+component of every Hadoop cluster, is responsible for managing
+filesystem namespace information and block location. Loosing its data results in loosing all the data
+stored on DataNodes. HDFS is no longer able to reach for specific files,
+or its blocks. This renders your cluster inoperable.&lt;/p&gt;
+
+&lt;p&gt;So it is crucial to be able to detect and counter problems with NameNode.
+The most desirable behavior is to have a hot backup, that would ensure
+a no-downtime cluster operation. To achieve this, the second NameNode
+need to have up-to-date information on filesystem metadata and it needs
+to be also up and running. Starting NameNode with existing set of data
+may easily take many minutes to parse the actual filesystem state.&lt;/p&gt;
+
+&lt;p&gt;Previously used solution - depoying SecondaryNameNode - was somewhat
+flawed. It took long time to recover after failure. It was not a
+hot-backup solution, which also added to the problem. Some other
+solution was required.&lt;/p&gt;
+
+&lt;p&gt;So, what needed to be made redundant is the edits dir contents and
+sending block location maps from each of the DataNodes to NameNodes -
+in case of HA deployment - to both NameNodes. This was accomplished in
+two steps. The first one with the release of CDH 4 beta - solution based
+on sharing edits directory. Than, with CDH 4.1 came quorum based solution.&lt;/p&gt;
+
+&lt;p&gt;Find out how to configure those on your cluster.&lt;/p&gt;
+
+&lt;h2 id=&#34;shared-edits-directory-solution:8d364cd6dcb7b648a710c293387d3c8c&#34;&gt;Shared edits directory solution&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.innovative-labs.com/blog/hadoop_ha-nfs.png&#34; alt=&#34;Hadoop HA - NFS based edits share&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For this kind of setup, there is an assumption, that in a cluster exists
+a shared storage directory. It should be deployed using some kind of
+network-based filesystem. You could try with NFS or GlusterFS.&lt;/p&gt;
+
+&lt;p&gt;{% gist 3958555  core-site.xml %}&lt;/p&gt;
+
+&lt;p&gt;{% gist 3958555  hdfs-site.xml %}&lt;/p&gt;
+
+&lt;p&gt;This setup is quite OK, as long as you&amp;rsquo;re comfortable with maintaining a
+separate service (network storage) for handling the HA state. It seems
+error prone to me, because it adds another service which high
+availability should be ensured. NFS seems to be a bad choice here,
+because AFAIK it does not offer HA out of the box.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, we have GlusterFS, which is a distributed filesystem,
+you can deploy on multiple bricks and increase the replication level.&lt;/p&gt;
+
+&lt;p&gt;Nevertheless, it still brings additional burden of another service to
+maintain.&lt;/p&gt;
+
+&lt;h2 id=&#34;quorum-based-solution:8d364cd6dcb7b648a710c293387d3c8c&#34;&gt;Quorum based solution&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.innovative-labs.com/blog/hadoop_ha-quorum.png&#34; alt=&#34;Hadoop HA - Quorum based edits share&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;With the release of CDH 4.1.0 we are now able to use a much better
+integrated solution called JournalNode. Now all the updates are
+synchronized through a JournalNode. Each JournalNode have the same data
+and all the NameNodes are able to recive filesystem state updates from
+that daemons.&lt;/p&gt;
+
+&lt;p&gt;This solution is much more consistent with Hadoop ecosystem.&lt;/p&gt;
+
+&lt;p&gt;Please note, that the config is almost identical to the one needed for
+shared edits directory solution. The only difference is the value for
+&lt;em&gt;dfs.namenode.shared.edits.dir&lt;/em&gt;. This now points to all the journal
+nodes deployed in our cluster.&lt;/p&gt;
+
+&lt;p&gt;{% gist 3973262 core-site.xml %}&lt;/p&gt;
+
+&lt;p&gt;{% gist 3973262 hdfs-site.xml %}&lt;/p&gt;
+
+&lt;h1 id=&#34;infrastructure:8d364cd6dcb7b648a710c293387d3c8c&#34;&gt;Infrastructure&lt;/h1&gt;
+
+&lt;p&gt;In both cases you need to run Zookeeper-based Failover Controller
+(&lt;em&gt;hadoop-hdfs-zkfc&lt;/em&gt;). This daemon negotiates which NameNode should
+become active and which standby.&lt;/p&gt;
+
+&lt;p&gt;But that&amp;rsquo;s not all. Depending on the way you&amp;rsquo;ve choosen to deploy HA you
+need to do some other things:&lt;/p&gt;
+
+&lt;h2 id=&#34;shared-edits-dir:8d364cd6dcb7b648a710c293387d3c8c&#34;&gt;Shared edits dir&lt;/h2&gt;
+
+&lt;p&gt;With shared edits dir you need to deploy networked filesystem, and mount
+it on your NameNodes. After that you can run your cluster and be happy
+with your new HA.&lt;/p&gt;
+
+&lt;h2 id=&#34;quroum-based:8d364cd6dcb7b648a710c293387d3c8c&#34;&gt;Quroum based&lt;/h2&gt;
+
+&lt;p&gt;For QJournal to operate you need to install one new package called
+&lt;em&gt;hadoop-hdfs-journalnode&lt;/em&gt;. This provides startup scripts for Journal
+Node daemons. Choose at least three nodes that will be responsible for
+handling edits state and deploy journal nodes on them.&lt;/p&gt;
+
+&lt;h1 id=&#34;conclusion:8d364cd6dcb7b648a710c293387d3c8c&#34;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;Thanks to guys from Cloudera we now can use an enterprise grade High
+Availability features for Hadoop. Eliminating the single point of
+failure in your cluster is essential for easy maintainability of your
+infrastructure.&lt;/p&gt;
+
+&lt;p&gt;Given the above choices, I&amp;rsquo;d suggest using QJournal setup, becasue of
+its relatively small impact on the overal cluster architecture. It&amp;rsquo;s
+good performance and fairly simple setup enable the users to easily
+start using Hadoop in HA setup.&lt;/p&gt;
+
+&lt;p&gt;Are you using Hadoop with HA? What are your impressions?&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hadoop for Enterprises</title>
+      <link>http://marcin.cylke.com.pl/2012/06/18/hadoop-for-enterprises/</link>
+      <pubDate>Mon, 18 Jun 2012 09:08:09 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2012/06/18/hadoop-for-enterprises/</guid>
+      <description>&lt;div class=&#39;post&#39;&gt;
+&lt;p&gt;Hadoop&#39;s usage as a big data processing framework gains a lot of attention lately. Now, not only big players see, that they can embrace the data their sites or products are generating and develop their businesses on it. For that to happen two things are needed: the data itself and means of processing really big amounts of it.  &lt;/p&gt;
+
+&lt;p&gt;&lt;span class=&#34;image-wrap&#34; style=&#34;&#34;&gt;&lt;img src=&#34;http://blog.innovative-labs.com/blog/3488314950_453466f762_b.jpg&#34; style=&#34;border: 0px solid black; width: 400px;&#34; /&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Gathering data is relatively easy. These are not necessarily structured data, you don&#39;t need to plan their usage at first. Just start collecting them and than you may experiment with their potential usage. If they&#39;ll come out as useless rubbish - deleting them won&#39;t be hard &lt;img class=&#34;emoticon&#34; src=&#34;http://marcin.cylke.com.pl/confluence/images/icons/emoticons/smile.gif&#34; height=&#34;20&#34; width=&#34;20&#34; align=&#34;absmiddle&#34; alt=&#34;&#34; border=&#34;0&#34;/&gt; But imagine the values it may contribute to your business:&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;faster services - working on optimized data&lt;/li&gt;
+	&lt;li&gt;more clients - because of more relevant search results&lt;/li&gt;
+	&lt;li&gt;happy clients - your service can &#34;read their minds&#34; &lt;img class=&#34;emoticon&#34; src=&#34;http://marcin.cylke.com.pl/confluence/images/icons/emoticons/smile.gif&#34; height=&#34;20&#34; width=&#34;20&#34; align=&#34;absmiddle&#34; alt=&#34;&#34; border=&#34;0&#34;/&gt;&lt;/li&gt;
+	&lt;li&gt;etc.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;There are many companies that utilize Hadoop ecosystem for their own needs. You can read about some of them here: &lt;a href=&#34;http://wiki.apache.org/hadoop/PoweredBy&#34; class=&#34;external-link&#34; rel=&#34;nofollow&#34;&gt;http://wiki.apache.org/hadoop/PoweredBy&lt;/a&gt; But since that page lacks insight into specific applications of Hadoop I&#39;ve tried to delve into&lt;br/&gt;
+details of how Hadoop helped tame some companies&#39; big data sets.&lt;/p&gt;
+
+&lt;EXCERPT&gt;
+
+&lt;h2&gt;&lt;a name=&#34;test-Facebook&#34;&gt;&lt;/a&gt;Facebook&lt;/h2&gt;
+
+&lt;p&gt;Being a social network provider, a widely used one, they require no introduction. However if you&#39;ve lived under a rock for last couple years just visit their website &lt;a href=&#34;http://facebook.com&#34; class=&#34;external-link&#34; rel=&#34;nofollow&#34;&gt;http://facebook.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Their main usage is data warehousing. Since they require to be able to access the data fast and reliably they had a need for real-time querying of their huge, and always growing data set. Their switch from MySQL databases was required due to the increasing workloads they experienced with standard databases. What they got &#34;out of the box&#34; with Hadoop was all the benefits of distributed file system (HDFS features). They expanded the ideas behind that even further and implemented truly Highly Available file system without Single Point of Failure.&lt;/p&gt;
+
+&lt;p&gt;Facebook has 3 interesting usage scenarios in which Hadoop plays a major role:&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Titan - is Facebook&#39;s messaging system. It processes messages exchanged between users. Ensures that it happens fast and without glitches. Here Hadoop is used mainly as a huge, unlimited storage.&lt;/li&gt;
+	&lt;li&gt;Puma - Facebook Insights - a tool providing page statistics for  advanced Facebook users. Based on streams of data (clicks, likes, shares, comments and impressions) it graphs those data and makes it available near instantly.&lt;/li&gt;
+	&lt;li&gt;ODS - Operational Data Store - which stores Facebook&#39;s internal metrics - collections of OS and cluster health metrics. And it facilitates multiple accounting solutions.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;&lt;a name=&#34;test-Twitter&#34;&gt;&lt;/a&gt;Twitter&lt;/h2&gt;
+
+&lt;p&gt;This popular micro-blogging platform, where you can register your account and follow friends and celebrities for their micro-messages does some pretty interesting things with their Hadoop cluster.&lt;/p&gt;
+
+&lt;p&gt;One of their motivations is to speed up their web-page&#39;s functionality. That is why the compute users&#39; friendships in Twitter&#39;s social graph with Hadoop. Using connections between users they calculate their relationship to each other and estimate groups of users.&lt;/p&gt;
+
+&lt;p&gt;Since this service&#39;s users generate lots of content, the company conducts researches based on natural language processing. They probe what could be told about a user from his tweets. They use tweets&#39; contents for advertisement purpose, trends analysis and many more.&lt;/p&gt;
+
+&lt;p&gt;From tweets and user&#39;s behaviours they characterise usage scenarios. Also, they gather usage statistics, like number of searches daily, number of tweets. Based on this seemingly irrelevant data they run comparisons of different types of users. Twitter analyzes data to determine whether mobile users, users who use third party clients or power users use Twitter differently from average users. Of course theses seem like really specific applications but nevertheless they are very original and base on the data that Twitter has been gathering for some time now. &lt;/p&gt;
+
+&lt;h2&gt;&lt;a name=&#34;test-EBay&#34;&gt;&lt;/a&gt;EBay&lt;/h2&gt;
+
+&lt;p&gt;Being the biggest auctioning site on the Internet, EBay uses Hadoop processing for increasing search relevance based on click-stream data, user data. This seems pretty obvious, considering their area of operation.&lt;/p&gt;
+
+&lt;p&gt;However the also have one other interesting thing - they try hard to automatically fill auctioned objects&#39; metadata, based on the descriptions and other data provided by users. They employ data mining approach for this tasks and judging from their constant growth it seems to work &lt;img class=&#34;emoticon&#34; src=&#34;http://marcin.cylke.com.pl/confluence/images/icons/emoticons/smile.gif&#34; height=&#34;20&#34; width=&#34;20&#34; align=&#34;absmiddle&#34; alt=&#34;&#34; border=&#34;0&#34;/&gt;&lt;/p&gt;
+
+&lt;h2&gt;&lt;a name=&#34;test-LinkedIn&#34;&gt;&lt;/a&gt;LinkedIn&lt;/h2&gt;
+
+&lt;p&gt;Social network for professionals, thou a lot smaller than Facebook. Based on click-streams they discover relations between users. All the data concerning latest visits on your profile or people you may know from other places - this comes from Hadoop based analysis of those clicks people make all the time on their sites.&lt;/p&gt;
+
+&lt;p&gt;Also a very neat feature, called InMaps (&lt;a href=&#34;http://inmaps.linkedinlabs.com/&#34; class=&#34;external-link&#34; rel=&#34;nofollow&#34;&gt;http://inmaps.linkedinlabs.com/&lt;/a&gt;) analyse declared schools and companies and generates data for graph with clustered friends of yours.&lt;/p&gt;
+
+&lt;h2&gt;&lt;a name=&#34;test-Last.fm&#34;&gt;&lt;/a&gt;Last.fm&lt;/h2&gt;
+
+&lt;p&gt;This on-line radio site, praised by many for its invaluable recommendations&#39; system seems like a rather small and simple service. But behind the facade of simple web page there are lots of data being processed, so that their services could match a certain level of perfection.&lt;/p&gt;
+
+&lt;p&gt;Such large volume of their data comes from scrobbles. Each users of their service listening to a song generates a note about this fact - called scrobble. Based on that and user profiles they calculate global band popularity charts, maps of bands&#39; popularity and many more usage statistics and timeline charts.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class=&#34;image-wrap&#34; style=&#34;&#34;&gt;&lt;img src=&#34;http://blog.innovative-labs.com/blog/7346959440_71648c9fe7_b.jpg&#34; style=&#34;border: 0px solid black; width: 400px;&#34; /&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;h2&gt;&lt;a name=&#34;test-Conclusion&#34;&gt;&lt;/a&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;They just try to detect and trace new patterns in seemingly chaotic data sets. Perhaps you could also do the same? Analyze your data and expand your business value?&lt;/p&gt;&lt;/div&gt;
+&lt;h2&gt;Comments&lt;/h2&gt;
+&lt;div class=&#39;comments&#39;&gt;
+&lt;div class=&#39;comment&#39;&gt;
+&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://www.wedding-cake-decorations.net&#34;&gt;wedding cake decorations&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&#39;content&#39;&gt;
+&lt;p&gt;We stumbled over here from a different web address and thought I might check things out.&lt;br /&gt;
+I like what I see so i am just following you.&lt;br /&gt;
+Look forward to checking out your web page yet again.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#39;comment&#39;&gt;
+&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://www.car-floor-mats.net&#34;&gt;rubber floor mats&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&#39;content&#39;&gt;
+&lt;p&gt;I like what you guys are up too. This type of clever work and reporting!&lt;br /&gt;
+&lt;br /&gt;
+Keep up the awesome works guys I&#39;ve added you guys to my own blogroll.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#39;comment&#39;&gt;
+&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://www.bispioner.ru/phpBB3/memberlist.php?mode=viewprofile&amp;amp;u=119586&#34;&gt;Svayambhut Ghosh&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&#39;content&#39;&gt;
+&lt;p&gt;Greetings from Florida! I&#39;m bored at work so I decided to browse your site on my iphone during lunch break. I enjoy the info you present here and can&#39;t wait to take a look &lt;br /&gt;
+when I get home. I&#39;m surprised at how quick your blog loaded on my cell phone .. I&#39;m not even using WIFI, just 3G .&lt;br /&gt;
+. Anyways, very good site!&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#39;comment&#39;&gt;
+&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://www.salethenorthfacejackets.com&#34;&gt;north face jackets&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&#39;content&#39;&gt;
+&lt;p&gt;Comfortableness &amp;lt;a href=&amp;quot;http://www.salethenorthfacejackets.com&amp;quot;&amp;gt;north face jackets&amp;lt;/a&amp;gt;&lt;br /&gt;
+is crucial when they get it that will &amp;lt;a href=&amp;quot;http://www.salethenorthfacejackets.com&amp;quot;&amp;gt;north face outlet&amp;lt;/a&amp;gt; get the best school bags pertaining to going camping &amp;lt;a href=&amp;quot;http://www.salethenorthfacejackets.com&amp;quot;&amp;gt;north face sale&amp;lt;/a&amp;gt;. Your easiest guarantee in the case of even larger delivers has become One with an inner metal framework, one that can wind &amp;lt;a href=&amp;quot;http://www.salethenorthfacejackets.com&amp;quot;&amp;gt;cheap north face&amp;lt;/a&amp;gt; up being aligned to help you appropriately fit your &amp;lt;a href=&amp;quot;http://www.salethenorthfacejackets.com/the-north-face-women-1&amp;quot;&amp;gt;north face women&amp;lt;/a&amp;gt; body. They should be now have http://www.salethenorthfacejackets.com secure which were wholly flexible, because essentially in the form of midsection belt to get more aid.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#39;comment&#39;&gt;
+&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://www.plants-for-sale.com&#34;&gt;plants sale&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&#39;content&#39;&gt;
+&lt;p&gt;I never imagined how much stuff there was out there &lt;br /&gt;
+on this! Thanks for making it easy to get the picture&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#39;comment&#39;&gt;
+&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://www.facebook.com/profile.php?id=100003406472249&#34;&gt;gWgVcetqzVZukd&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&#39;content&#39;&gt;
+&lt;p&gt;What Programming Languages Do Jobs Require? | Regular Geek  regulargeek.com/2009/07/21/what-programming-languages-do-jobs-require   view page   cahecd  As a software engineer, you need to keep your skills sharp and current. This is a general requirement of the job. In addition to this, in the current economy you do not want to be without a job. Obviously, this means learning more about what your current company uses for all of its development. What if you do not have a job or you are looking to leave? What technologies or programming languages should you be looking into?   From the page&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#39;comment&#39;&gt;
+&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://businesses.wickedlocal.com/MA-Westford/Computer-Service-and-Repair/15&#34;&gt;computer pc repair&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&#39;content&#39;&gt;
+&lt;p&gt;Howdy are using Wordpress for your site platform? I&#39;m new to the blog world but I&#39;m trying to &lt;br /&gt;
+get started and create my own. Do you need any coding expertise to make your own &lt;br /&gt;
+blog? Any help would be greatly appreciated!&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SoapUI ext libs and its weirdness</title>
+      <link>http://marcin.cylke.com.pl/2011/11/02/soapui-ext-libs-and-its-weirdness/</link>
+      <pubDate>Wed, 02 Nov 2011 15:32:15 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/11/02/soapui-ext-libs-and-its-weirdness/</guid>
+      <description>&lt;div class=&#39;post&#39;&gt;
+&lt;p&gt;Suppose you want to add some additional jars to your SoapUI installation. It all should work ok if you put them in &lt;b&gt;bin/ext&lt;/b&gt; directory. It is scanned at startup, and jars found there are automatically added to classpath.
+&lt;/p&gt;
+
+&lt;p&gt;
+However if you want to add some JDBC drivers, and happen to be using SoapUI version higher than 3.5.1 it is a bit more tricky.
+&lt;/p&gt;
+&lt;p&gt;You may face this NoClassDefFoundError:&lt;br/&gt;
+
+&lt;pre&gt;
+An error occured [oracle/jdbc/Driver], see error log for details
+java.lang.NoClassDefFoundError: oracle/jdbc/Driver
+&lt;/pre&gt;
+&lt;/p&gt; 
+
+&lt;p&gt;
+If so, try registering your drivers with &lt;b&gt;registerJdbcDriver&lt;/b&gt; function, like I did in this snippet of code:
+&lt;/p&gt;
+{% gist 1333768 jdbc-soapui.groovy %}
+
+
+&lt;p&gt;What a crappy thing!&lt;/p&gt;&lt;/div&gt;
+&lt;h2&gt;Comments&lt;/h2&gt;
+&lt;div class=&#39;comments&#39;&gt;
+&lt;div class=&#39;comment&#39;&gt;
+&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://podzastaw.org&#34;&gt;Kelli&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&#39;content&#39;&gt;
+&lt;p&gt;You can definitely see your expertise in the work you write.&lt;br /&gt;
+The world hopes for more passionate writers such as you who are not afraid to &lt;br /&gt;
+say how they believe. Always go after your heart.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#39;comment&#39;&gt;
+&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://www.052b.com&#34;&gt;Buford&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&#39;content&#39;&gt;
+&lt;p&gt;It&#39;s going to be end of mine day, however before finish I am reading this fantastic paragraph to increase my experience.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#39;comment&#39;&gt;
+&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://www.hotelfocus.com.pl&#34;&gt;Chandra&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&#39;content&#39;&gt;
+&lt;p&gt;My family every time say that I am wasting my time &lt;br /&gt;
+here at net, except I know I am getting knowledge every day by reading such pleasant articles.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#39;comment&#39;&gt;
+&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://www.wayn.com/waynblog.html?wci=viewentry&amp;amp;entry_key=265563&#34;&gt;Florene&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&#39;content&#39;&gt;
+&lt;p&gt;Thanks , I&#39;ve just been looking for info approximately this topic for a long time and yours is the greatest I have found out till now. But, what concerning the bottom line? Are you positive in regards to the source?&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#39;comment&#39;&gt;
+&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://www.hotelbookingwebsite.net&#34;&gt;Myron&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&#39;content&#39;&gt;
+&lt;p&gt;Nice post. I was checking continuously this blog and I am impressed!&lt;br /&gt;
+Extremely helpful information specially the last part &lt;br /&gt;
+:) I care for such information much. I was looking for this &lt;br /&gt;
+particular info for a long time. Thank you and best of luck.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>What is NoSQL good for?</title>
+      <link>http://marcin.cylke.com.pl/2011/09/21/what-is-nosql-good-for/</link>
+      <pubDate>Wed, 21 Sep 2011 21:12:34 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/09/21/what-is-nosql-good-for/</guid>
+      <description>&lt;div class=&#39;post&#39;&gt;
+&lt;b&gt;... or how I ended up writing a CouchDB proof of concept app?&lt;/b&gt;
+
+&lt;p&gt;Once upon a time I set out on a journey to discover the NoSQL land.
+I&#39;ve decided that doing simple queries wouldn&#39;t be interesting enough.
+That&#39;s why I&#39;ve chose to create an app that would be based on some NoSQL
+database.&lt;/p&gt;
+
+&lt;p&gt;
+The main idea was to create an app, that would dynamically update itself
+with geographic data flowing in. Since there are myriads of geo-data
+that are available on the internet, you can pick your favorite one and
+load them into your SQL database of choice.
+&lt;/p&gt;
+
+&lt;EXCERPT&gt;
+&lt;p&gt;
+In my case the primary source of data was a proprietary database, or more specifically - one table in it continuously updated with new data. To make that
+data visible on my map I needed to:
+&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt; buffer the huge amount of those records - so as not to overhoul
+other services with large traffic, and not to flood the frontend&lt;/li&gt;
+&lt;li&gt; convert then to my representation&lt;/li&gt;
+&lt;li&gt; display them - have presentation layer in a browser - since
+browser-based frontend was the easiest and fastest to develop&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+The idea of the front-end HTML page was to show new points on the map.
+From the moment of opening the page records that appear in database
+table should be shown interactively on the screen.
+&lt;/p&gt;
+
+&lt;h2&gt;Toys used&lt;/h2&gt;
+
+&lt;p&gt;
+For the first step I chose to use RabbitMQ broker. A queue on the broker would receive messages - one message per database table&#39;s row.
+Then I&#39;d use some simple groovy middle ware to convert the data to appropriate format and put it onto another db - this time db specific
+to my app. 
+&lt;/p&gt;
+
+&lt;p&gt;
+You may ask why incorporate another database. It would be
+good for separating environments - assuming the original data contains
+some vulnerable content that should be anatomised, or we just don&#39;t feel
+comfortable exposing the whole database of some XYZ-system just to have
+access to its one table.
+&lt;/p&gt;
+
+&lt;p&gt;
+Since for my presentation layer I chose HTML+JS without any application server-based back-end I&#39;ve decided on CouchDB . This seemed like
+a perfect match for this scenario. Why? - ease of use, REST API, with JSON responses - just great for interacting with my simple front-end.
+&lt;/p&gt;
+
+&lt;p&gt;
+The flow of things was as shown on the image below:
+&lt;/p&gt;
+
+&lt;IMG src=&#34;http://blog.innovative-labs.com/blog/gmapper.png&#34;
+alt=&#34;diagram&#34;/&gt;
+
+&lt;h2&gt;Avro - for the beginning&lt;/h2&gt;
+&lt;p&gt;
+As you can see, I&#39;ve chosen JSON as my data-format. I&#39;ve been considering
+&lt;a href=&#34;http://avro.apache.org&#34;&gt;Apache Avro&lt;/a&gt; in the first place but
+using it was a real pain in the ass. Avro itself is used in &lt;a
+href=&#34;http://hadoop.apache.org&#34;&gt;Apache Hadoop&lt;/a&gt; as a serialization
+layer, so it would seem OK, but it has virtually &lt;em&gt;no
+documentation&lt;/em&gt;. But once you tear through the unintuitive interface
+and manage to handle all those unthinkable exceptions you get a few pros
+for this library. It&#39;s great in that it does not require code generation - I
+like it being made on the fly. It also offers sending data in binary
+format, which was not necessary, but never the less is a nice feature.
+&lt;/p&gt;
+
+&lt;p&gt;
+What I certainly didn&#39;t like about it was its orientation on the files
+rather than chunks of data - so it was not so obvious how should I send
+data through the wire. 
+&lt;/p&gt;
+
+&lt;p&gt;
+Than I found out it can produce JSON output, which would work for me,
+except the output could not have been parsed by other JSON libraries :)
+(&lt;a
+href=&#34;http://stackoverflow.com/questions/5375243/jcouchdb-svenson-unable-to-parse-json-string&#34;&gt;I&#39;ve
+asked on stackoverflow about that, but with no luck&lt;/a&gt;). 
+&lt;/p&gt;
+
+&lt;p&gt;If my whining haven&#39;t put you back and still would like to see how to use Avro, try this unit
+test in project&#39;s GitHub repo: &lt;a
+href=&#34;https://github.com/zygm0nt/gmapped/blob/master/feeder/src/test/groovy/pl/ftang/example/feeder/avro/AvroSimpleTest.groovy&#34;&gt;AvroSimpleTest.groovy&lt;/a&gt;
+&lt;/p&gt;
+
+
+&lt;h2&gt;Svenson&lt;/h2&gt;
+
+&lt;p&gt;
+I&#39;ve dropped Avro in favour of a simple JSON lib called (&lt;a
+href=&#34;http://code.google.com/p/svenson/&#34;&gt;Svenson&lt;/a&gt; and that was
+painless. The only thing I was forced to do was create my model class in
+Java - the rest of the project is written in Groovy. I&#39;ve no idea why
+was that necessary, and didn&#39;t want to look into it.
+&lt;/p&gt;
+
+&lt;h2&gt;RabbitMQ&lt;/h2&gt;
+
+&lt;p&gt;
+Further on the way is &lt;a href=&#34;http://www.rabbitmq.com/&#34;&gt;RabbitMQ&lt;/a&gt;, to which records are filled by a feeding
+middle-ware written in Groovy. Since I use &lt;a
+href=&#34;http://activemq.apache.org&#34;&gt;ActiveMQ&lt;/a&gt; on a day-to-day basis,
+I&#39;ve decided to try something new. This broker is a really nice piece of
+software. Being written in Erlang makes it really fast. What&#39;s more it
+has some extensive capabilities and is easy to approach for anyone
+similar with messaging (JMS and friends). For such a lightweight product
+it is really powerful - implements AMQP! 
+&lt;/p&gt;
+
+&lt;h2&gt;CouchDB&lt;/h2&gt;
+
+&lt;p&gt;
+From the broker&#39;s queue messages are again fetched by a middle-ware just
+to be put into &lt;a href=&#34;http://couchdb.apache.org/&#34;&gt;CouchDB&lt;/a&gt; view.
+This database is also written in Erlang. It&#39;s very reliable, however the
+way it handles refreshing view isn&#39;t the most pleasant one -
+performance-wise. 
+&lt;/p&gt;
+
+&lt;p&gt;
+Word of advice - if you&#39;re on Debian derivative, be cautious with
+apt-repository version. It&#39;s rather _ancient_. Also remember to add
+&lt;b&gt;allow_jsonp = true&lt;/b&gt; to you config file
+&lt;i&gt;/opt/couchbase/etc/couchdb/local.ini&lt;/i&gt;. It&#39;s not enabled by
+default, and not having this set would result with empty responses from
+the CouchDB server.&lt;/p&gt;
+
+&lt;p&gt;The problem here is, that the browser doesn&#39;t allow quering a web server with hostname other than the one the script originates.
+ More on this case &lt;a
+href=&#34;http://stackoverflow.com/questions/3386679/connection-ajax-couchdb-and-javascript&#34;&gt;here&lt;/a&gt;. Seems like my problem could be overcame by changing url in index.html and hostname couchdb listens on to the same address.
+&lt;/p&gt;
+
+&lt;p&gt;
+I&#39;ve also created a view, that would expose an event by key: &lt;a
+href=&#34;https://github.com/zygm0nt/gmapped/blame/master/couchdb/by_date_view.js&#34;&gt;view
+code&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;h2&gt;Presenting the dots&lt;/h2&gt;
+
+&lt;p&gt;
+As a back-end I&#39;ve done some JQuery based AJAX calls - nothing too
+fancy. All things necessary for presentation layer are in &lt;a
+href=&#34;https://github.com/zygm0nt/gmapped/blob/master/index.html&#34;&gt;this
+file&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;h2&gt;Things to consider&lt;/h2&gt;
+
+&lt;p&gt;
+Please bear in mind that this whole application is rather a playground,
+not a full-fledged project!! After creating all the parts I have some
+doubts about some architectural decisions I made. I don&#39;t think the
+security have been taken into account seriously enough. Also scalability
+was never an issue ;-)
+&lt;/p&gt;
+
+&lt;p&gt;
+If you have some thoughts about any of the aspects mentioned in this
+post, please feel free to comment or contact me directly :)
+&lt;/p&gt;
+
+&lt;p&gt;
+
+And also you may try the application by yourself - it&#39;s on the &lt;a
+href=&#34;https://github.com/zygm0nt/gmapped&#34;&gt;GitHub&lt;/a&gt;.
+&lt;/p&gt;&lt;/div&gt;
+&lt;h2&gt;Comments&lt;/h2&gt;
+&lt;div class=&#39;comments&#39;&gt;
+&lt;div class=&#39;comment&#39;&gt;
+&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://mcl.jogger.pl&#34;&gt;Marcin&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&#39;content&#39;&gt;
+&lt;p&gt;@Piotrek, here is a link to JIRA ticket concerning this feature. I think it is being discussed ATM: https://issues.apache.org/jira/browse/COUCHDB-431&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#39;comment&#39;&gt;
+&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://blog.koszulinski.pl&#34;&gt;Piotrek Reinmar Koszuliński&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&#39;content&#39;&gt;
+&lt;p&gt;About Same Origin Policy - now there&#39;s Cross Origin Resource Sharing available in most of common browsers. It should help You if CouchDB has support for it.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#39;comment&#39;&gt;
+&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://mcl.jogger.pl&#34;&gt;Marcin&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&#39;content&#39;&gt;
+&lt;p&gt;@klausa, thanks for your advice. I&#39;ve made some changes to the post.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#39;comment&#39;&gt;
+&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://klausa.jogger.pl&#34;&gt;klausa&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&#39;content&#39;&gt;
+&lt;p&gt;&amp;gt;The main idea was to create an app, that would dynamically update itself with geographic data flowing in. &lt;br /&gt;
+&lt;br /&gt;
+Not to nitpick, but that doesn&#39;t seem like an idea for app. I think you should explain what that displayed data is here.  If you moved your &#39;Presenting the dots&#39; paragraph just above &#39;Toys used&#39;, it would be clear what do you wanted to do with this app.&lt;br /&gt;
+&lt;br /&gt;
+&amp;gt;Also remember to add allow_jsonp = true to you config file /opt/couchbase/etc/couchdb/local.ini.&lt;br /&gt;
+&lt;br /&gt;
+I think you should explain what that option *really* does.&lt;br /&gt;
+&lt;br /&gt;
+Other than that, nice post!&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>OVal - validate your models quickly and effortlessly!</title>
+      <link>http://marcin.cylke.com.pl/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/</link>
+      <pubDate>Thu, 14 Jul 2011 08:25:19 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/</guid>
+      <description>&lt;div class=&#39;post&#39;&gt;
+&lt;p&gt;Some time ago one of the projects at work required me to validate
+some Java POJOs. Theses were my model classes and I&#39;ve been creating
+them from incoming WebService requests. One would say that XSD would be
+sufficient for the task, for parts of this validations - sure, it would.
+But there were some advanced rules XSD would not handle, or would render
+the schema document very complicated.&lt;/p&gt;
+
+&lt;p&gt;Rules I needed to express were like:
+
+&lt;ul&gt;
+
+&lt;li&gt;person&#39;s &lt;i&gt;first_name&lt;/i&gt; and &lt;i&gt;last_name&lt;/i&gt; should be of appropriate length -
+between 2 and 20, and additionally one could pass a zero-length string
+just to remove the previous value&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;state&lt;/i&gt; field should consist only defined values - as in
+dictionary value - this one would be completable with XSD&#39;s
+enumerations, but would require often changing schema files and
+redistributing them to interested parties :(&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The library I&#39;ve decided to use for this task is &lt;a
+href=&#34;http://oval.sf.net&#34;&gt;OVal&lt;/a&gt; and it came out really nice! Read on
+to find out the details!&lt;/p&gt;
+
+&lt;EXCERPT&gt;
+
+&lt;p&gt;Oval is quite mature library that allows POJO validation, but is not
+JSR303 (bean validation) implementation. It has converters that enable
+it to understand those annotations, but I&#39;m not sure about the
+compatibility.&lt;/p&gt;
+
+&lt;p&gt;I&#39;ve tried only a subset of the available checks, among which
+were:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;NotNull&lt;/li&gt;
+&lt;li&gt;NotEmpty&lt;/li&gt;
+&lt;li&gt;Length&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are many more, and their attributes give interesting ways to
+configure the validation process. But using them was rather easy and did
+not require to much brainstorming. What I really needed were custom
+checks. And in this area OVal shows it&#39;s strength. Implementing a check
+is really easy.&lt;/p&gt;
+
+&lt;p&gt;I needed an annotation that would check a field against some values in
+a dictionary. If field&#39;s value was in the given set, than the validation
+would succeed, if not, an exception would be thrown. To accomplish this
+task it is required to implement two classes: annotation class and check
+class - called by the validation engine on a given field.&lt;/p&gt;
+
+&lt;p&gt;Let&#39;s start with our new annotation:&lt;/p&gt;
+
+{% gist 1077516 DictionaryValue.java %} 
+
+In the above snippet I&#39;ve defined a check-annotation, that would be used like
+this:
+
+{% gist 1077516 sample.java %} 
+
+You can pass &lt;i&gt;file&lt;/i&gt; - containing dictionary values for this field.
+There is also &lt;i&gt;message&lt;/i&gt; field in the annotation which is an error
+message returned by the validation engine of failed check - pretty
+handy. And can be expressed in &lt;i&gt;.properties&lt;/i&gt; file as:
+
+{% gist 1077516 validation.properties %} 
+
+&lt;p&gt;Placeholder, like &lt;i&gt;context&lt;/i&gt;, will be replaced with correct values supplied by the
+validation engine.&lt;/p&gt;
+
+Annotating a field is not enough. It is also needed to create a validator
+for this kind of check. The name of the class is already defined in
+&lt;i&gt;DictionaryValue&lt;/i&gt; annotation, it is called
+&lt;i&gt;DictionaryValueCheck&lt;/i&gt; and I&#39;ve done this check this way:
+
+{% gist 1077516 DictionaryValueCheck.java %}
+
+What this basically does is:
+&lt;ol&gt;
+&lt;li&gt;when &lt;i&gt;file&lt;/i&gt; is set - read dictionary content from the file into
+map&lt;/li&gt;
+&lt;li&gt;upon check request just lookup value in dictionary parsed from the
+input file&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;And that&#39;s it!&lt;/p&gt;
+
+&lt;p&gt;For me Oval is really great tool. With it at ones disposal it is extremely easy to create any
+imaginable validation you need. This library is really easy to use and
+offers lots of handy features.&lt;/p&gt;
+
+&lt;p&gt;But perhaps I&#39;m reinventing the wheel and all this can be done easily
+with some other library? Share Your opinion!&lt;/p&gt;
+&lt;/div&gt;
+&lt;h2&gt;Comments&lt;/h2&gt;
+&lt;div class=&#39;comments&#39;&gt;
+&lt;div class=&#39;comment&#39;&gt;
+&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://mcl.jogger.pl&#34;&gt;Marcin&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&#39;content&#39;&gt;
+&lt;p&gt;Now that&#39;s a great question. I&#39;ve forgotten to write about this, but OVal offers profiles, which you can disable or enable whenever you like. You set a profile for a specific annotation. In your case let&#39;s assume You have two operations: add and update. Your model has field annotated with @NotNull(profile=&amp;quot;UPDATE&amp;quot;), which means we don&#39;t want null values on it when updating. In _add_ operation you disable the profile called UPDATE, so the annotation is also disabled. When calling _update_ you enable the profile and the validation is performed. &lt;br /&gt;
+&lt;br /&gt;
+More on this here: http://oval.sourceforge.net/userguide.html#d4e561&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#39;comment&#39;&gt;
+&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;&#34;&gt;querial&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&#39;content&#39;&gt;
+&lt;p&gt;Question:&lt;br /&gt;
+Say, we have an object with a primary key, that is mandatory (in the database), but described as AUTOINCREMENT. When client sends new object data, the primary key is obviously null, but we need to validate it for not-nullity in other cases.&lt;br /&gt;
+&lt;br /&gt;
+Doea OVal handle variations / directions of validation?&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Geecon 2011 - day 2</title>
+      <link>http://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/</link>
+      <pubDate>Sun, 22 May 2011 16:39:31 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/</guid>
+      <description>&lt;div class=&#39;post&#39;&gt;
+&lt;p&gt;And now for part 2 of my visit to Geecon 2011!&lt;/p&gt;
+&lt;EXCERPT&gt;
+&lt;h2&gt;1. &lt;a href=&#34;http://jim.webber.name/&#34;&gt;Jim Webber&lt;/a&gt; &#34;Revisiting SOA for the 21st
+century&#34;&lt;/h2&gt;
+
+&lt;p&gt;Now this was awesome! Jim Webber, a former &lt;a
+href=&#34;http://www.thoughtworks.com/&#34;&gt;ThoughtWorks&lt;/a&gt; employee, now
+Neo4j evangelist (in &lt;a href=&#34;http://neotechnology.com/&#34;&gt;Neotechnology&lt;/a&gt;) described his views
+on how SOA should look - according to him. This was presented
+previously, on other occasions as his &#34;Guerilla SOA&#34; talk - generally he
+advocated for REST based services, loose contracts (stating that WSDLs
+are too verbose and code generation is evil).&lt;/p&gt;
+
+&lt;p&gt;Jim mentioned Martin Fowler&#39;s article on integration databases but I
+couldn&#39;t find it anywhere - thou the topic looks interesting. He also
+recommended &lt;a
+href=&#34;http://en.wikipedia.org/wiki/Behavior_Driven_Development&#34;&gt;BDD&lt;/a&gt; and exposing tests on the web for the end
+user to use them as early as possible.&lt;/p&gt;
+
+&lt;p&gt; One big point he made his case with was &lt;b&gt;not relying on enterprise
+software&lt;/b&gt;. Simple tools can do much better job. He compared
+implementing Web Services security (Secured SOAP over HTTP over TCP IP)
+to REST based service accessed through &lt;i&gt;HTTPS&lt;/i&gt; - basic and easily
+testable with tools like &lt;a href=&#34;http://curl.haxx.se/&#34;&gt;curl&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Great talk. One of the best!&lt;/p&gt;
+
+&lt;h2&gt;2. &lt;a href=&#34;http://blog.staffannoteberg.com/&#34;&gt;Staffan Noteberg&lt;/a&gt; &#34;Regex - the future
+programming&#34;&lt;/h2&gt;
+
+&lt;p&gt;I must confess, that this did not go too well. The whole talk was
+well prepared and laid out but it lacked depth. It was pretty basic
+introduction to regex. From the presentation&#39;s subject I was rather
+prepared for some novel uses of regex - like for example: showing how to
+filter big volume of data with simple regex or sth.&lt;/p&gt;
+
+&lt;p&gt;But the talk was fun, Staffan is a good speaker. He is also an author
+of &lt;a href=&#34;http://www.pomodorotechnique.com/&#34;&gt; pomodoro technique&lt;/a&gt; book - I intend to read sth abut
+this technique and this may be a nice start&lt;/p&gt;
+
+&lt;h2&gt;3. Bartosz Kowalewski &#34;Is OSGI ready for wide
+adoption?&#34;&lt;/h2&gt;
+
+&lt;p&gt;If it comes to titles I tend to rely on them pretty heavily, however
+strange it may seem. This time I also did - and the whole talk did not
+give me a definitive answer to the stated question.&lt;/p&gt;
+
+&lt;p&gt;Sure, the presentation was informative, but it described some OSGI
+specific, quite low level stuff. Of course, if you want to use OSGI -
+even by leveraging application server with OSGI under the hood - you
+should know a fair bit about the technology itself. Even thou the AS
+does a good job of hiding OSGI container specifics from the developer,
+in case of problems it&#39;s better to be well informed. All in all - the
+talk gave too little information for me.&lt;/p&gt;
+
+&lt;h2&gt;4. &lt;a href=&#34;http://www.jetbrains.com/company/people/Pech_Vaclav.html&#34;&gt;Vaclav Pech&lt;/a&gt; &#34;Pick low hanging fruit&#34;&lt;/h2&gt;
+
+&lt;p&gt;&lt;b&gt;&#34;Parallelism is not hard, multithreading is&#34;&lt;/b&gt; - this was the
+key sentence of the presentation. The speaker showed how to introduce
+concurrency into normal java/groovy code by sprinkling it with
+concurrency powder. Easy enough! With &lt;a
+href=&#34;http://gpars.codehaus.org/&#34;&gt;GPars&lt;/a&gt; library he
+showed:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;running processing tasks with thread pools&lt;/li&gt;
+&lt;li&gt;testing concurrent code&lt;/li&gt;
+&lt;li&gt;Fork/join Thread Pool - multiple thread queues (note to self:
+fork/join is good for hierarchical problems)&lt;/li&gt;
+&lt;li&gt;low-hanging fruits:&lt;br&gt;
+
+    &lt;ul&gt;
+    &lt;li&gt;async calculations&lt;/li&gt;
+    &lt;li&gt;fork/join&lt;/li&gt;
+    &lt;li&gt;dataflow&lt;/li&gt;
+    &lt;li&gt;parallel collection processing&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Actors are great - use &lt;a
+href=&#34;http://gpars.codehaus.org/&#34;&gt;GPars&lt;/a&gt; or &lt;a href=&#34;http://akka.io/&#34;&gt;Akka&lt;/a&gt;,
+is sufficient to use &lt;i&gt;@ActiveMethod&lt;/i&gt; and &lt;i&gt;@ActiveObject&lt;/i&gt;
+annotations and Actors are usable in OO-world&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+
+&lt;p&gt; Good talk, well received!&lt;/p&gt;
+
+&lt;h2&gt;5. &lt;a href=&#34;http://www.linkedin.com/in/antonarhipov&#34;&gt;Anton Arhipov&lt;/a&gt; &#34;Bytecode for discriminating
+developers&#34;&lt;/h2&gt;
+
+&lt;p&gt;Technical introduction to the world of bytecode, jvm specification
+details. I&#39;ve drifted away to some other topics - really - can&#39;t recall
+what this was all about.&lt;/p&gt;
+
+&lt;h2&gt;6. &lt;a href=&#34;http://jroller.com/aalmiray/&#34;&gt;Andreas Almiray&lt;/a&gt; &#34;Polyglot Programming&#34;&lt;/h2&gt;
+
+&lt;p&gt;This was a nice talk covering Groovy, Scala and Closure. The whole
+point of it was to show how cool it is to play with emerging JVM
+languages. They are not only fun but also useful. What&#39;s more, they
+bring freshness to java world, injecting it with some new paradigms and
+methodologies. It is easier to incorporate new ideas into younger JVM
+languages than to the mature Java.&lt;/p&gt;
+
+&lt;h2&gt;7. &lt;a href=&#34;http://jim.webber.name/&#34;&gt;Jim Webber&lt;/a&gt; &#34;A pragmatic introduction to
+Neo4j&#34;&lt;/h2&gt;
+
+&lt;p&gt;And Jim Webber again, this time with some &lt;a href=&#34;http://neo4j.org/&#34;&gt;Neo4j&lt;/a&gt; evangelism. First
+came some taxonomy information on NoSQL databases (Not Only SQL) as a
+whole - than some specific examples of problems solvable with graph
+databases - and Neo4j is a graph database. &lt;/p&gt;
+
+&lt;p&gt; Main points of Jim&#39;s talk were:
+&lt;ul&gt;
+&lt;li&gt;sharding a database is important for scalability&lt;/li&gt;
+&lt;li&gt;series data - should be OK to use Neo4j as their storage&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;These were all the sessions I attended. On Saturday there was a
+Hacker-garden, but neither I had time nor will to stay - the topics were
+very interesting and I&#39;d definitely like to experience such an event,
+but after 2 days of continuous talks I was rather tired.&lt;/p&gt;
+
+&lt;p&gt;To sum up, 2011&#39;s Geecon was a great experience, with lots of
+interesting talks and lots of new inspirations. Keep up the good work
+guys!&lt;/p&gt;&lt;/div&gt;
+&lt;h2&gt;Comments&lt;/h2&gt;
+&lt;div class=&#39;comments&#39;&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Geecon 2011 - day 1</title>
+      <link>http://marcin.cylke.com.pl/2011/05/19/geecon-2011-day-1/</link>
+      <pubDate>Thu, 19 May 2011 20:05:05 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/05/19/geecon-2011-day-1/</guid>
+      <description>&lt;div class=&#39;post&#39;&gt;
+&lt;p&gt;Last week&#39;s Java conference - &lt;a href=&#34;http://2011.geecon.org&#34;&gt;Geecon&lt;/a&gt; was very
+interesting. It was well prepared, and gave an insight into the current
+Java related trends - concurrency, DSLs, polyglot programming. But not
+only that - there were also some pretty different talks from excellent
+speakers.&lt;/p&gt;
+
+&lt;p&gt;
+The whole event took 4 days:
+&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;University day (wednesday)&lt;/li&gt;
+&lt;li&gt;2 regular conference days (Thursday + Friday) &lt;/li&gt;
+&lt;li&gt;hacker garden (Sunday)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+I decided to attend only on Thursday and Friday - no time for more. Here
+is what interesting happened during those days.
+&lt;/p&gt;
+
+&lt;EXCERPT&gt;
+
+&lt;h1&gt;Day 1&lt;/h2&gt;
+
+&lt;p&gt;The morning got me unprepared. After hard enough, after work travel to
+Krakow on Wednesday, I wasn&#39;t in the best shape. However after arriving
+at the venue, being greeted with breakfast and refreshments I
+looked at the rest of the day with real hope.&lt;/p&gt;
+
+&lt;p&gt;Since the schedule was tight - three parallel tracks of lecture, I
+had to choose, so bare in mind, that is my account of what I&#39;ve seen and
+heard. Others may, of course, differ.&lt;/p&gt;
+
+&lt;h2&gt;1. &lt;a href=&#34;http://blogs.oracle.com/dannycoward/&#34;&gt;Danny Coward&lt;/a&gt; &#34;Java SE: The Road Ahead&#34;&lt;/h2&gt;
+
+&lt;p&gt;Danny, being on &lt;a href=&#34;http://www.oracle.com&#34;&gt;Oracle&lt;/a&gt; (considering being also former
+Sun&#39;s employee a plus) payroll, gave an insightful talk on new things to
+came in &lt;a
+href=&#34;http://blogs.oracle.com/dannycoward/entry/channeling_java_se_7&#34;&gt;Java 7&lt;/a&gt;. He drew rather serious plans for Java 8.
+According to Danny, the main trends in today&#39;s Java ecosystem are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;parallel programming&lt;/li&gt;
+&lt;li&gt;language dynamics&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;and he probably is right :) The great things to come with new
+versions of Java are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;closures in Java (finally!)&lt;/li&gt;
+&lt;li&gt;extending interfaces&lt;/li&gt;
+&lt;li&gt;map, filter - functions for collections&lt;/li&gt;
+&lt;li&gt;lambda expressions - thou in Java 8&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The talk itself was a nice keynote, but I doubt the road map for Java
+will be met in its full extent - the goals aren&#39;t that small.&lt;/p&gt;
+
+&lt;h2&gt;2. &lt;a href=&#34;http://www.springsource.com/people/jhoeller&#34;&gt;Juergen Hoeller&lt;/a&gt; &#34;Enterprise Java in 2011&#34;&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.springsource.com/&#34;&gt;Spring Source&lt;/a&gt; as one of the sponsors sent Juergen to
+evangelize about the world of enterprise and Java&#39;s place in it :) He
+emphasized different kinds of deployment: WAR, cloud deployment - and
+the latter&#39;s rise of importance.&lt;/p&gt;
+
+&lt;p&gt;He pointed out how outdated current application servers are - the
+usually lag ~3 years behind the main trends and developers&#39; needs - good
+point! He proposed looking under the hood of now-popular cloud
+environments: &lt;a href=&#34;http://code.google.com/appengine/&#34;&gt;Google App
+Engine&lt;/a&gt; or &lt;a href=&#34;http://aws.amazon.com/ec2/&#34;&gt;Amazon
+Elastic Cloud&lt;/a&gt; to look for schemas in them, etc - I intend to listen
+to his advice.&lt;/p&gt;
+
+&lt;p&gt;All in all this guy gave a great talk covering wide spectrum of
+technologies and not focusing on technical stuff too much.&lt;/p&gt;
+
+&lt;h2&gt;3. &lt;a href=&#34;http://www.javaspecialists.eu/contact.jsp&#34;&gt;Heinz Kabutz&lt;/a&gt; &#34;Reflection madness&#34;&lt;/h2&gt;
+
+&lt;p&gt;Despite living on a Greek island, this guy showed also how to whack
+ones mind with &lt;a
+href=&#34;http://download.oracle.com/javase/tutorial/reflect/&#34;&gt;Java Reflection API&lt;/a&gt;. Pure magic! Some
+highlights of his talk were:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;how to get &lt;i&gt;42 + 1 = 44&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;get the size of an object&lt;/li&gt;
+&lt;li&gt;get method caller&#39;s id&lt;/li&gt;
+&lt;li&gt;add enum values dynamically&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With all this examples he pointed that using &lt;i&gt;SecurityManager&lt;/i&gt;
+will prevent such nasty coding practices.&lt;/p&gt;
+
+&lt;p&gt;Since he is an editor of &lt;a
+href=&#34;http://www.javaspecialists.eu/&#34;&gt;Javaspecialists.eu&lt;/a&gt;
+newsletter, all the answers to problems presented in his talk (and many
+many more) can be found there. &lt;/p&gt;
+&lt;p&gt;Well done, not to useful for me, nevertheless - interesting.&lt;/p&gt;
+
+&lt;h2&gt;4. &lt;a href=&#34;https://twitter.com/#!/mfiguiere&#34;&gt;Michael Figuiere&lt;/a&gt;,
+Cyrille Le Clere
+&#34;NoSQL &amp; Datagrid from developer perspective&#34;&lt;/h2&gt;
+&lt;p&gt;I don&#39;t know what to think of this talk. It consisted an introduction
+to NoSQL databases but also a bit of problem&#39;s description that can be
+encountered when dealing with them. Notable thoughts were on:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;creating a sharding ready data structure&lt;/li&gt;
+&lt;li&gt;denormalization as a useful process for NoSQL DBs&lt;/li&gt;
+&lt;li&gt;NoSQL usually means &lt;b&gt;no transactions&lt;/b&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;5. &lt;A href=&#34;http://hamletdarcy.blogspot.com/&#34;&gt;Hamlet D&#39;Arcy&lt;/a&gt; &#34;New Ideas for old code&#34;&lt;/h2&gt;
+
+&lt;p&gt;Since a lot of developers (all?) have to deal with legacy code - one
+way or another, this talk was &lt;i&gt;a must&lt;/i&gt;!&lt;/p&gt;. The speaker shared
+some ideas on how to work with such code and remain sane. The talk was
+vivid, interesting and entertaining, well, and the notable thought? Here
+they are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;51% rule - if you&#39;re not committing 51% of your time/your tasks into
+fixing your situation than the whole battle &lt;b&gt;is already lost&lt;/b&gt;,&lt;/li&gt;
+&lt;li&gt;read some good stuff!:&lt;br/&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a
+href=&#34;http://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672&#34;&gt;Martin Fowler&#39;s &#34;Refactoring&#34;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a
+href=&#34;http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1305828015&amp;sr=1-1&#34;&gt;George C. Martin &#34;Clean Code&#34;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;http://chadfowler.com/2006/12/27/the-big-rewrite&#34;&gt;Chad Fowler &#34;Big Rewrites&#34;&lt;/a&gt; - and why they
+failed, what&#39;s wrong with them&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;use static analysis - &lt;a href=&#34;http://findbugs.sourceforge.net/&#34;&gt;Find Bugz&lt;/a&gt;, 
+pmc&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Command-query_separation&#34;&gt;query-command&lt;/a&gt; - a method should be a query or a
+command:&lt;br/&gt;
+    &lt;ul&gt;
+        &lt;li&gt;query - returns sth&lt;/li&gt;
+        &lt;li&gt;command - change the state of an object&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;he also proposed &lt;b&gt;scratch refactoring&lt;/b&gt;&lt;br/&gt;
+    &lt;ol&gt;
+        &lt;li&gt;set a timer&lt;/li&gt;
+        &lt;li&gt;tag your code&lt;/li&gt;
+        &lt;li&gt;&lt;b&gt;refactor without tests&lt;/b&gt;&lt;/li&gt;
+        &lt;li&gt;step back and analyze&lt;/li&gt;
+        &lt;li&gt;is it better? if not, revert&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p&gt;This was nice! - it assumed arriving at a project with no ( or
+little) tests.&lt;/p&gt;
+
+&lt;h2&gt;6. Aslan Knutsen &#34;Arquillian&#34;&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;The last talk of that day was about some new library from JBoss that
+would allow to test your components with unit tests - test them in a
+destination container. The whole point of this library is to run the
+specific fragment of code as if it was build and deployed to some
+application server (let&#39;s say JBoss AS ;-) ). To be honest, I can&#39;t find
+much application for that - thou I&#39;m not doing any serious work in JEE
+world.&lt;/p&gt;
+
+&lt;h2&gt;Party&lt;/h2&gt;
+
+&lt;p&gt;And the day ended. But there was sth else to do after the official
+part - party time! It took place at &lt;a href=&#34;&#34;&gt;Klub Pauza&lt;/a&gt; on
+Floriańska street. It was a rather nice social event.&lt;/p&gt;
+
+
+&lt;p&gt;&lt;i&gt;... to be continued - stay tuned for part 2&lt;/i&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;h2&gt;Comments&lt;/h2&gt;
+&lt;div class=&#39;comments&#39;&gt;
+&lt;div class=&#39;comment&#39;&gt;
+&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://blog.patryk-dobrowolski.eu&#34;&gt;JedenPies&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&#39;content&#39;&gt;
+&lt;p&gt;&amp;quot;how to get 42 + 1 = 44&amp;quot;?&lt;br /&gt;
+Tutaj ;)&lt;br /&gt;
+http://blog.patryk-dobrowolski.eu/2011/05/16/refleksja-moze-byc-niebezpieczna-zobacz-jak-zniszczyc-sobie/&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
