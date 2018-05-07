@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 07 Jul 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://marcin.cylke.com.pl/categories/mac-os-x/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://marcin.cylke.com.pl/categories/mac-os-x/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Should you switch to Mac?</title>
@@ -15,75 +17,11 @@
       <pubDate>Thu, 07 Jul 2016 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2016/07/07/mac-os-x-switch/</guid>
-      <description>
-
-&lt;p&gt;&lt;img src=&#34;https://farm9.staticflickr.com/8064/8229071681_02ffdb91dc_z_d.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;em&gt;by Flick user &lt;a href=&#34;https://www.flickr.com/photos/raneko/8229071681/in/photolist-dxb9je-sEQEP-5gDCSr-PE6FE-7Pa2t3-5yhFqq-MsHbZ-tEVFv-kBEvsd-5uPrGV-a5wisf-Ea1We-5tX2pp-22ybhw-ivTix6-5yk9cA-kBCugR-gcSkD-8cdXjv-asK9Y-7ZM66R-8N4eSG-4mchWA-4pjwaT-Gy8BR-7HPwfe-dxb9hv-4rXMuz-h6gJgm-9jULZ6-5SPsfu-kBECo7-6UUwCT-5whRwW-4rujwZ-8Kye5Q-9hN1d6-5utN7V-k9drqQ-4QPsUy-8VEazh-8UB7Ms-8VEaEq-neQih-8EHChx-ecth3o-8yrLUn-o7oNS-kBCXKM-6UYBrs&#34;&gt;raneko&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;https://farm9.staticflickr.com/8064/8229071681_02ffdb91dc_z_d.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;em&gt;by Flick user &lt;a href=&#34;https://www.flickr.com/photos/raneko/8229071681/in/photolist-dxb9je-sEQEP-5gDCSr-PE6FE-7Pa2t3-5yhFqq-MsHbZ-tEVFv-kBEvsd-5uPrGV-a5wisf-Ea1We-5tX2pp-22ybhw-ivTix6-5yk9cA-kBCugR-gcSkD-8cdXjv-asK9Y-7ZM66R-8N4eSG-4mchWA-4pjwaT-Gy8BR-7HPwfe-dxb9hv-4rXMuz-h6gJgm-9jULZ6-5SPsfu-kBECo7-6UUwCT-5whRwW-4rujwZ-8Kye5Q-9hN1d6-5utN7V-k9drqQ-4QPsUy-8VEazh-8UB7Ms-8VEaEq-neQih-8EHChx-ecth3o-8yrLUn-o7oNS-kBCXKM-6UYBrs&#34;&gt;raneko&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Who would have thought? Me switching to Mac? But it actually happened. I&amp;rsquo;ve been a long time Linux user, so why actually do the switch now? Or ever? Have a look at my thoughts and insights of novice Mac user.&lt;/p&gt;
 
-&lt;h2 id=&#34;in-the-beginning:f7d70e45ef21079a1cb2a356feab8261&#34;&gt;In the beginning&lt;/h2&gt;
-
-&lt;p&gt;My humble beginnings were with RedHat 6.0 on a AMD Duron 600Mhz PC machine. With a dialup connection. And setting that thing to connect into Poland&amp;rsquo;s national provider TPSA was rather painful. After some time using Linux, going from RedHat to Slackware I&amp;rsquo;ve decided things weren&amp;rsquo;t tough enough and switched to BSDs. That was really fun! I&amp;rsquo;ve used Free and Open flavors for a few years which very really great. Than switched back to Linux. I&amp;rsquo;ve used those *nix systems for all-things-computer. At home and at work.&lt;/p&gt;
-
-&lt;h2 id=&#34;the-switch:f7d70e45ef21079a1cb2a356feab8261&#34;&gt;The switch&lt;/h2&gt;
-
-&lt;p&gt;And than came the new job and I had to choose: regular Dell or Macbook? Blue pill or red pill? I chose the later.&lt;/p&gt;
-
-&lt;p&gt;The switch wasn&amp;rsquo;t that painful, but mainly thanks to superb hardware Apple offers. Having to get used to a completely new OS was quite another story. It&amp;rsquo;s not that I was shocked by it. As a long time Linux user all the concepts are known to me. It&amp;rsquo;s the other way around - there are a lot of things missing that I learned to require from my tool of work.&lt;/p&gt;
-
-&lt;p&gt;What I really appreciate is the known userland tools - it&amp;rsquo;s BSD at the heart of it. Well, of course the kernel is some whacky Mach microkernel, but as for the userland I&amp;rsquo;m happy :) You can read more about the kernel and system&amp;rsquo;s design history on wikipedia (&lt;a href=&#34;https://en.wikipedia.org/wiki/OS_X&#34;&gt;Os X&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Darwin_(operating_system&#34;&gt;Darwin&lt;/a&gt;) &lt;a href=&#34;https://en.wikipedia.org/wiki/XNU&#34;&gt;XNU&lt;/a&gt;)&lt;/p&gt;
-
-&lt;p&gt;One of the biggest disappointments was the filesystem and the way it&amp;rsquo;s presented to users. Mac OS X comes with HFS+ (&lt;a href=&#34;https://en.wikipedia.org/wiki/HFS_Plus&#34;&gt;link&lt;/a&gt;) filesystem which is case insensitive!!! To me this seems like an abomination. Plus there are multiple shortcuts taken by Apple engineers, like its endiannes: primarily Macs used PowerPC chips which are BigEndian by desing, but after switching to Intel processors everything is LittleEndian now. AFAIK HFS+ has to still switch bytes when reading metadata.&lt;/p&gt;
-
-&lt;p&gt;Really neat thing I&amp;rsquo;ve found out recently is that under the hood OS X uses PF (OpenBSD&amp;rsquo;s packet filter) as a firewalling solution.
-I don&amp;rsquo;t know which version is in the current release and how does it compare against the original implementation, but since PF has such a nice syntax and performance it&amp;rsquo;s great to have it on board. There are numerous blog posts about setting a decent firewall on OS X with PF so go have a look. Also you can play with PF by means of a set of apps called &lt;a href=&#34;http://www.murusfirewall.com/&#34;&gt;Murus&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;useful-tools:f7d70e45ef21079a1cb2a356feab8261&#34;&gt;Useful tools&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://brew.sh/&#34;&gt;Brew&lt;/a&gt; - basic application provider, offers all the things I&amp;rsquo;ve become used to when on Linux,&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/ianyh/Amethyst&#34;&gt;Amethyst&lt;/a&gt; - allows window tiling with keyboard shortcuts and has focus-follows-mouse :D I love this feature, although with all the windows popping all over the place I must admit it sometimes gets messy.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.ragingmenace.com/software/menumeters/&#34;&gt;MenuMeters&lt;/a&gt; - have a bunch of those geeky meters all over the place (no longer usable with El Capitan)&lt;/li&gt;
-&lt;li&gt;Alfred - seems like a nice app, Spotlight on steroids. It&amp;rsquo;s free and you can download it via &lt;a href=&#34;https://itunes.apple.com/au/app/alfred/id405843582?mt=12&#34;&gt;ITunes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Flashlight - add more providers to Spotlight - unfortunately with recent introduction of rootless mac partition it&amp;rsquo;s no longer possible to use this tool&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;hacking-spotlight:f7d70e45ef21079a1cb2a356feab8261&#34;&gt;Hacking Spotlight&lt;/h2&gt;
-
-&lt;p&gt;Spotlight is just that neat little thing out there that seems like indexing all the things and runs installed programs. But it can also serve as a calculator and &amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;You can also read the contents of its cache file.&lt;/p&gt;
-
-&lt;p&gt;Up until version 10.10.4 of OS X it was possible to have additions to spotlight, but now this behaviour is blocked by the system.
-&lt;a href=&#34;http://mac-how-to.wonderhowto.com/how-to/customize-spotlight-search-mac-os-x-yosemite-0160786/&#34;&gt;http://mac-how-to.wonderhowto.com/how-to/customize-spotlight-search-mac-os-x-yosemite-0160786/&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;script-setup:f7d70e45ef21079a1cb2a356feab8261&#34;&gt;Script setup&lt;/h2&gt;
-
-&lt;p&gt;Setup your mac with this shell script - but be very careful and read through this file first! &lt;a href=&#34;https://gist.github.com/brandonb927/3195465&#34;&gt;https://gist.github.com/brandonb927/3195465&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://farm6.staticflickr.com/5168/5263917715_6c8217fcfe_z_d.jpg&#34; alt=&#34;One sneaky image&#34; /&gt;&lt;em&gt;by Flickr user &lt;a href=&#34;https://www.flickr.com/photos/blakespot/5263917715/in/photolist-929XkZ-fJwTR-8Me2LN-8qSP9F-6UD2Ce-fM51y-ARaAo-BJXFt-iE8ep-4rXScB-bX3z7w-6npV8P-5Eamox-33QA9W-5EXuR9-mQDnb-6UqpxG-6UqF7m-69b4jp-oytZCJ-4rXGFP-6xweAZ-ACukt-aZfi5-6QouE3-5CAQgW-8MeHqC-5QBeu1-L4qEw-4s35hq-4w9tXh-67Ymah-4s33cu-jjDFo-6J3zqD-8N4tSh-kbFD4-sESfP-66GAT5-9FUKfq-d3BrPG-4rXPZt-8N1aLa-6UCTvi-kBCzsH-2SXDWe-5CGTEq-5zogZ2-5JAGsk-kkAgZK&#34;&gt;blakespot&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;neat-things:f7d70e45ef21079a1cb2a356feab8261&#34;&gt;Neat things&lt;/h2&gt;
-
-&lt;p&gt;And it is quite positive, that Mac OS X developers care about small, but extremely important things - like building OpenSSH with LibreSSL support!&lt;/p&gt;
-
-&lt;h2 id=&#34;dtrace:f7d70e45ef21079a1cb2a356feab8261&#34;&gt;DTrace&lt;/h2&gt;
-
-&lt;p&gt;Recently I&amp;rsquo;ve experienced a huge slowdown on my Mac. The It support&amp;rsquo;s solution was to reinstall the OS. I refused, this seemed like a barbaric method and also I just wanted to use this opportunity to delve deeper into internals of this OS.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve started with analysing system behaviour with &lt;a href=&#34;https://en.wikipedia.org/wiki/DTrace&#34;&gt;DTrace&lt;/a&gt; - probing interface originating from Solaris&lt;/p&gt;
-
-&lt;p&gt;Useful introductory links are here:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://dtrace.org/blogs/brendan/2011/10/10/top-10-dtrace-scripts-for-mac-os-x/&#34;&gt;http://dtrace.org/blogs/brendan/2011/10/10/top-10-dtrace-scripts-for-mac-os-x/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://dtrace.org/blogs/brendan/2012/11/14/dtracing-in-anger/&#34;&gt;http://dtrace.org/blogs/brendan/2012/11/14/dtracing-in-anger/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;conclusion:f7d70e45ef21079a1cb2a356feab8261&#34;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;All in all the switch was relatively painless, and with tools and tricks described here I feel very comfortable using this system.&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

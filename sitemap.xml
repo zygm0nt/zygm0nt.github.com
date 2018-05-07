@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <url>
-    <loc>http://marcin.cylke.com.pl/</loc>
-    <lastmod>2016-10-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>http://marcin.cylke.com.pl/2016/10/10/reading-research-papers/</loc>
@@ -950,6 +945,215 @@
   <url>
     <loc>http://marcin.cylke.com.pl/2007/11/07/aweczka/</loc>
     <lastmod>2007-11-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/announcement/</loc>
+    <lastmod>2010-04-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/by%C5%82a-taka-gra/</loc>
+    <lastmod>2011-02-17T00:05:50+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/</loc>
+    <lastmod>2010-04-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/clojure/</loc>
+    <lastmod>2014-07-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/conference/</loc>
+    <lastmod>2016-04-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/congress/</loc>
+    <lastmod>2016-01-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/electronics/</loc>
+    <lastmod>2012-10-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/giercownia/</loc>
+    <lastmod>2011-02-17T00:05:50+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/ha/</loc>
+    <lastmod>2012-10-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/hack/</loc>
+    <lastmod>2012-10-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/hacking/</loc>
+    <lastmod>2016-07-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/hadoop/</loc>
+    <lastmod>2013-12-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/hbase/</loc>
+    <lastmod>2013-12-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/it/</loc>
+    <lastmod>2013-12-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/java/</loc>
+    <lastmod>2013-06-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/javascript/</loc>
+    <lastmod>2014-07-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/</loc>
+    <lastmod>2016-10-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/krakow/</loc>
+    <lastmod>2016-02-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/kult/</loc>
+    <lastmod>2009-09-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/lambda-days-2016/</loc>
+    <lastmod>2016-02-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/mac-os-x/</loc>
+    <lastmod>2016-07-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/miniblog/</loc>
+    <lastmod>2010-04-21T18:01:59+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/og%C3%B3lne/</loc>
+    <lastmod>2012-06-18T09:08:09+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/post/</loc>
+    <lastmod>2016-10-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/relacja/</loc>
+    <lastmod>2011-05-22T16:39:31+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/review/</loc>
+    <lastmod>2009-09-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/scala/</loc>
+    <lastmod>2016-04-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/scifi/</loc>
+    <lastmod>2009-09-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/storm/</loc>
+    <lastmod>2013-08-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/techblog/</loc>
+    <lastmod>2012-06-18T09:08:09+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/tips/</loc>
+    <lastmod>2013-03-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/touk/</loc>
+    <lastmod>2014-07-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/zdj%C4%99cia/</loc>
+    <lastmod>2009-09-20T10:29:06+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/zookeeper/</loc>
+    <lastmod>2013-06-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>

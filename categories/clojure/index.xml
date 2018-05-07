@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 14 Jul 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://marcin.cylke.com.pl/categories/clojure/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://marcin.cylke.com.pl/categories/clojure/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Super Confitura Man</title>
@@ -15,9 +17,7 @@
       <pubDate>Mon, 14 Jul 2014 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2014/07/14/super-confitura-man/</guid>
-      <description>
-
-&lt;h2 id=&#34;how-super-confitura-man-came-to-be:c5352db95c635e6c4b0653937eeeffaf&#34;&gt;How Super Confitura Man came to be :)&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;how-super-confitura-man-came-to-be&#34;&gt;How Super Confitura Man came to be :)&lt;/h2&gt;
 
 &lt;p&gt;Recently at TouK we had a one-day hackathon. There was no main theme for
 it, you just could post a project idea, gather people around it and hack
@@ -33,141 +33,7 @@ formed a team for the hackathon.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://marcin.cylke.com.pl/assets/confitura-2014-01.jpg&#34; alt=&#34;Confitura 01&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;The initial plan was to develop a simple mario-style game, with
-preceduraly generated levels, random collectible items and enemies. One
-of the ideas was to introduce Confitura Man as the main character, but
-due to time constraints, this fall through. We’ve decided to just choose
-a random available sprite for a character - hence the onion man :)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://marcin.cylke.com.pl/assets/confitura-2014-02.jpg&#34; alt=&#34;Confitura 02&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;how-the-game-is-played:c5352db95c635e6c4b0653937eeeffaf&#34;&gt;How the game is played?&lt;/h2&gt;
-
-&lt;p&gt;Since we wanted to have a scoreboard and have unique users, we’ve
-printed out QR codes. A person that would like to play the game could
-pick up a QR code, show it against a camera attached to the play booth.
-The start page scanned the QR code and launched the game with username
-read from paper code.&lt;/p&gt;
-
-&lt;p&gt;The rest of the game was playable with gamepad or keyboard.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://marcin.cylke.com.pl/assets/confitura-2014-04.png&#34; alt=&#34;Confitura game screen&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;technicalities:c5352db95c635e6c4b0653937eeeffaf&#34;&gt;Technicalities&lt;/h2&gt;
-
-&lt;p&gt;Writing a game takes a lot of time and effort. We wanted to deliver, so
-we’ve decided to spend some time in the days before the hackathon just
-to bootstrap the technology stack of our enterprise.&lt;/p&gt;
-
-&lt;p&gt;We’ve decided that the game would be written in some Javascript based
-engine, with Google Chrome as a web platform. There are a lot of HTML5
-game engines - &lt;a href=&#34;http://html5gameengine.com/&#34;&gt;list of html5 game engines&lt;/a&gt; and you could easily create a
-game with each and every of them. We’ve decided to use &lt;a href=&#34;http://phaser.io/&#34;&gt;Phaser IO&lt;/a&gt;
-which handles a lot of difficult,  game-related stuff on its own. So, we
-didn’t have to worry about physics, loading and storing assets,
-animations, object collisions, controls input/output. Go see for
-yourself, it is really nice and easy to use.&lt;/p&gt;
-
-&lt;p&gt;Scoreboard would be a rip-off from &lt;a href=&#34;http://blog.gengo.com/jira-survivor/&#34;&gt;JIRA Survivor&lt;/a&gt;
-with stats being served from some web server app. To make things harder,
-the backend server was written in Clojure. With no experience in that
-language in the team, it was a bit risky, but the tasks of the server
-were trivial, so if all that clojure effort failed, it could be
-rewritten in something we know.&lt;/p&gt;
-
-&lt;h2 id=&#34;statistics:c5352db95c635e6c4b0653937eeeffaf&#34;&gt;Statistics&lt;/h2&gt;
-
-&lt;p&gt;During the whole Confitura day there were 69 unique players (69 QR codes
-were used), and 1237 games were played. The final score looked like
-this:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Barister Lingerie 158 - 1450 points&lt;/li&gt;
-&lt;li&gt;Boilerdang Custardbath 386 - 1060 points&lt;/li&gt;
-&lt;li&gt;Benadryl Clarytin 306 - 870 points&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;And the obligatory scoreboard screenshot:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://marcin.cylke.com.pl/assets/confitura-2014-03.png&#34; alt=&#34;Confitura 03&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;obstacles:c5352db95c635e6c4b0653937eeeffaf&#34;&gt;Obstacles&lt;/h2&gt;
-
-&lt;p&gt;The game, being created in just one day, had to have problems :) It
-wasn’t play tested enough, there were some rough edges. During the day
-we had to make a few fixes:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;the server did not respect the highest score by specific user, it was just overwritting a user’s score with it’s latest one,&lt;/li&gt;
-&lt;li&gt;there was one feature not supported on keyboard, that was available on gamepad - turbo button&lt;/li&gt;
-&lt;li&gt;server was opening a database connection each time it got a request, so after around 5 minutes it would exhaust open file limit for MongoDB (backend database), this was easily fixed - thou the fix is a bit hackish :)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;These were easily identified and fixed.
-Unfortunately there were issues that we were unable to fix while the
-event was on:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;google chrome kept asking for the permission to use webcam - this was very annoying, and all the info found on the web did not work - &lt;a href=&#34;http://stackoverflow.com/questions/16835421/how-to-allow-chrome-to-access-my-camera-on-localhost/16929608#16929608&#34;&gt;StackOverflow thread&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;it was hard to start the game with QR code - either the codes were too small, or the lighting around that area was inappropriate - I think this
-issue could be fixed by printing larger codes,&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;##Technology evaluation&lt;/p&gt;
-
-&lt;p&gt;All in all we were pretty happy with the chosen stack. Phaser was easy
-to use and left us with just the fun parts of the game creation process.
-Finding the right graphics with appropriate licensing was rather hard.
-We didn’t have enough time to polish all the visual aspects of the game
-before Confitura.&lt;/p&gt;
-
-&lt;p&gt;Writing a server in clojure was the most challenging part, with all the
-new syntax and new libraries. There were tasks, trivial in java/scala,
-but hard in Clojure - at least for a whimpy beginners :) Nevertheless
-Clojure seems like a really handy tool and I’d like to dive deeper into
-its ecosystem.&lt;/p&gt;
-
-&lt;h2 id=&#34;source-code:c5352db95c635e6c4b0653937eeeffaf&#34;&gt;Source code&lt;/h2&gt;
-
-&lt;p&gt;All of the sources for the game can be found here
-&lt;a href=&#34;https://github.com/TouK/confitura-man&#34;&gt;TouK/confitura-man&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The repository is split into two parts:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;game - HTML5 game&lt;/li&gt;
-&lt;li&gt;server - clojure based backend server&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;To run the server you need to have a local MongoDB installation. Than in
-server’s directory run:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ lein ring server-headless 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This will start a server on &lt;code&gt;http://localhost:3000&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;To run the game you need to install dependencies with bower and than
-run&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ grunt
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;from game’s directory.&lt;/p&gt;
-
-&lt;p&gt;To launch the QR reading part of the game, you enter
-&lt;code&gt;http://localhost:9000/start.html&lt;/code&gt;. After scanning the code you’ll be
-redirected to &lt;code&gt;http://localhost:9000/index.html&lt;/code&gt; - and the game starts.&lt;/p&gt;
-
-&lt;h2 id=&#34;conclusion:c5352db95c635e6c4b0653937eeeffaf&#34;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;Summing up, it was a great experience creating the game. It was fun to
-watch people playing the game. And even with all those glitches and
-stupid graphics, there were people vigorously playing it, which was
-awesome.&lt;/p&gt;
-
-&lt;h2 id=&#34;thanks-to-rafał-and-michał-for-great-coding-experience-and-thanks-to-all-the-players-of-our-stupid-little-game-if-you-d-like-to-ask-me-about-anything-feel-free-to-contact-me-by-mail-or-twitter-zygm0nt-https-twitter-com-zygm0nt:c5352db95c635e6c4b0653937eeeffaf&#34;&gt;Thanks to Rafał and Michał for great coding experience, and thanks to all the players of our stupid little game. If you’d like to ask me about anything - feel free to contact me by mail or twitter &lt;a href=&#34;https://twitter.com/zygm0nt&#34;&gt;@zygm0nt&lt;/a&gt;&lt;/h2&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

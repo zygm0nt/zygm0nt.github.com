@@ -1,74 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Hadoop HA setup</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.15" />
-  <link href="" rel="alternate" type="application/rss+xml" title="Just a blog" />
-  <link href="http://marcin.cylke.com.pl/css/bootstrap.min.css" rel="stylesheet">
-  <link href="http://marcin.cylke.com.pl/css/hc.css" rel="stylesheet">
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.40.1" />
+
+
+<title>Hadoop HA setup - Just a blog</title>
+<meta property="og:title" content="Hadoop HA setup - Just a blog">
+
+
+
   
+
+
+
+
+
+
+<link rel="stylesheet" href="http://marcin.cylke.com.plcss/main.css" media="all">
+<link rel="stylesheet" href="http://marcin.cylke.com.plcss/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="http://marcin.cylke.com.pl" class="nav-logo">
+    <img src="http://marcin.cylke.com.plimages/" 
+         width="" 
+         height="" 
+         alt="">
+  </a>
+
+  <ul class="nav-links">
     
-    </head>
-    <body>
-<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
-      <div id = "wrapper">
+    <li><a href="/about/">about hugo</a></li>
+    
+    <li><a href="/getting-started/">getting started</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
 
 
-<div class="navbar navbar-default" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a href="http://marcin.cylke.com.pl/"><p class="navbar-brand">Just a blog</p></a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-					
-					
-          </ul>
-        </div>
-      </div>
-    </div>
-
-
-
-       
-       <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-					<img src="" />
-          <li class="sidebar-brand"><a href="http://marcin.cylke.com.pl/"><h1 class="brand">Just a blog</h1></a><h3></h3></li>
-          <hr />
-					
-          <hr />
-          <div id="social-wrapper">
-           
-           
-           
-           
-         </div>
-       </ul>
-     </div>
-
-
-
-     <div class="container">
-
-
-  <div id="article">
-   <div class="article-title">Hadoop HA setup</div>
-   <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 2012-10-30</small></p> <hr/>
-   <div class="post">
-     
-
-<p>With the advent of Hadoop&rsquo;s 2.x version, there finally is a working
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">Hadoop HA setup</h1>
+    
+    <span class="article-date">2012-10-30</span>
+    
+    <ul class="article-taxonomy">
+                  
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/hadoop">hadoop</a><a href="/categories/java">java</a><a href="/categories/ha">ha</a><a href="/categories/touk">touk</a>
+      </li>
+      
+    
+      
+    </ul>
+ 
+    <div class="article-content">
+      <p>With the advent of Hadoop&rsquo;s 2.x version, there finally is a working
 High-Availability solution. Even two of those. Now it really is easy to
 configure and use those solutions. It no longer require external
 components, like
@@ -77,6 +71,8 @@ It all is just neatly packed into Cloudera Hadoop distribution - the
 precursor of this solution.</p>
 
 <p>Read on to find out how to use it.</p>
+
+<p></p>
 
 <p>The most important weakness of previous Hadoop releases was the
 single-point-of-failure, which happend to be NameNode. NameNode as a key
@@ -105,7 +101,7 @@ on sharing edits directory. Than, with CDH 4.1 came quorum based solution.</p>
 
 <p>Find out how to configure those on your cluster.</p>
 
-<h2 id="shared-edits-directory-solution:8d364cd6dcb7b648a710c293387d3c8c">Shared edits directory solution</h2>
+<h2 id="shared-edits-directory-solution">Shared edits directory solution</h2>
 
 <p><img src="http://blog.innovative-labs.com/blog/hadoop_ha-nfs.png" alt="Hadoop HA - NFS based edits share" /></p>
 
@@ -113,9 +109,9 @@ on sharing edits directory. Than, with CDH 4.1 came quorum based solution.</p>
 a shared storage directory. It should be deployed using some kind of
 network-based filesystem. You could try with NFS or GlusterFS.</p>
 
-<p>{% gist 3958555  core-site.xml %}</p>
+<script src="//gist.github.com/3958555/core-site.xml.js"></script>
 
-<p>{% gist 3958555  hdfs-site.xml %}</p>
+<script src="//gist.github.com/3958555/hdfs-site.xml.js"></script>
 
 <p>This setup is quite OK, as long as you&rsquo;re comfortable with maintaining a
 separate service (network storage) for handling the HA state. It seems
@@ -129,7 +125,7 @@ you can deploy on multiple bricks and increase the replication level.</p>
 <p>Nevertheless, it still brings additional burden of another service to
 maintain.</p>
 
-<h2 id="quorum-based-solution:8d364cd6dcb7b648a710c293387d3c8c">Quorum based solution</h2>
+<h2 id="quorum-based-solution">Quorum based solution</h2>
 
 <p><img src="http://blog.innovative-labs.com/blog/hadoop_ha-quorum.png" alt="Hadoop HA - Quorum based edits share" /></p>
 
@@ -146,11 +142,11 @@ shared edits directory solution. The only difference is the value for
 <em>dfs.namenode.shared.edits.dir</em>. This now points to all the journal
 nodes deployed in our cluster.</p>
 
-<p>{% gist 3973262 core-site.xml %}</p>
+<script src="//gist.github.com/3973262/core-site.xml.js"></script>
 
-<p>{% gist 3973262 hdfs-site.xml %}</p>
+<script src="//gist.github.com/3973262/hdfs-site.xml.js"></script>
 
-<h1 id="infrastructure:8d364cd6dcb7b648a710c293387d3c8c">Infrastructure</h1>
+<h1 id="infrastructure">Infrastructure</h1>
 
 <p>In both cases you need to run Zookeeper-based Failover Controller
 (<em>hadoop-hdfs-zkfc</em>). This daemon negotiates which NameNode should
@@ -159,20 +155,20 @@ become active and which standby.</p>
 <p>But that&rsquo;s not all. Depending on the way you&rsquo;ve choosen to deploy HA you
 need to do some other things:</p>
 
-<h2 id="shared-edits-dir:8d364cd6dcb7b648a710c293387d3c8c">Shared edits dir</h2>
+<h2 id="shared-edits-dir">Shared edits dir</h2>
 
 <p>With shared edits dir you need to deploy networked filesystem, and mount
 it on your NameNodes. After that you can run your cluster and be happy
 with your new HA.</p>
 
-<h2 id="quroum-based:8d364cd6dcb7b648a710c293387d3c8c">Quroum based</h2>
+<h2 id="quroum-based">Quroum based</h2>
 
 <p>For QJournal to operate you need to install one new package called
 <em>hadoop-hdfs-journalnode</em>. This provides startup scripts for Journal
 Node daemons. Choose at least three nodes that will be responsible for
 handling edits state and deploy journal nodes on them.</p>
 
-<h1 id="conclusion:8d364cd6dcb7b648a710c293387d3c8c">Conclusion</h1>
+<h1 id="conclusion">Conclusion</h1>
 
 <p>Thanks to guys from Cloudera we now can use an enterprise grade High
 Availability features for Hadoop. Eliminating the single point of
@@ -185,33 +181,43 @@ good performance and fairly simple setup enable the users to easily
 start using Hadoop in HA setup.</p>
 
 <p>Are you using Hadoop with HA? What are your impressions?</p>
-
-   </div>
- </div>
-
-
- <a href="https://twitter.com/share" class="twitter-share-button " data-size="small" data-count="none">Tweet</a>
- <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
- <ul class="pager">
-      &nbsp;<li class="previous"><a href="http://marcin.cylke.com.pl/2012/11/26/whug-8-beyond-hadoop/"> WHUG 8. Beyond Hadoop - checking other options</a></li>
-      &nbsp;<li class="next"><a href="http://marcin.cylke.com.pl/2012/10/18/raspberry-pi/"> raspberry-pi</a></li>
-</ul>
-
-
-
-    </ul>
     </div>
-    <footer>
-
-        <p class="text-muted credit">&copy; 2018. All rights reserved. </p>
-    </footer>
  
-    <script src="http://marcin.cylke.com.pl/js/jquery-1.10.2.min.js"></script>
-    <script src="http://marcin.cylke.com.pl/js/bootstrap.min.js"></script>
-    <script src="http://marcin.cylke.com.pl/js/bootstrap.js"></script>
-    <script type="text/javascript" src="http://marcin.cylke.com.pl/js/hc.js"></script>
-</body>
+     <div id="disqus_thread"></div>
+<script>
+    (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = '//marcinbloguje.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
+
+      <script id="dsq-count-scr" src="//careerboost.disqus.com/count.js" async></script>
+
+
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="http://marcin.cylke.com.pl/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/mobybit/hugo-natrium-theme"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="http://marcin.cylke.com.plsite-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
 </html>
 

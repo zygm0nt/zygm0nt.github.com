@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 12 Aug 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://marcin.cylke.com.pl/categories/storm/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://marcin.cylke.com.pl/categories/storm/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Recently at storm-users</title>
@@ -18,61 +20,7 @@
       <description>&lt;p&gt;I&amp;rsquo;ve been reading through storm-users Google Group recently. This
 resolution was heavily inspired by Adam Kawa&amp;rsquo;s post &lt;a href=&#34;http://hakunamapdata.com/football-zero-apache-pig-hero-the-essence-from-hundreds-of-posts-from-apache-pig-user-mailing-list/&#34;&gt;&amp;ldquo;Football zero, Apache Pig hero&amp;rdquo;&lt;/a&gt;. Since I&amp;rsquo;ve encountered a lot of insightful and very interesting information I&amp;rsquo;ve decided to describe some of those in this post.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;nimbus will work in HA mode - There&amp;rsquo;s a pull request open for it already&amp;hellip; but some
-recent work (distributing topology files via Bittorrent) will greatly
-simplify the implementation. Once the Bittorrent work is done we&amp;rsquo;ll look
-at reworking the HA pull request. (&lt;a href=&#34;https://github.com/nathanmarz/storm/pull/629&#34;&gt;storm’s pull request&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;pig on storm - Pig on Trident would be a cool and welcome project. Join
-and groupBy have very clear semantics there, as those concepts exist
-directly in Trident. The extensions needed to Pig are the concept of
-incremental, persistent state across batches (mirroring those concepts
-in Trident). You can read a complete &lt;a href=&#34;https://cwiki.apache.org/confluence/display/PIG/Pig+on+Storm+Proposal&#34;&gt;proposal&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;implementing topologies in pure python with &lt;a href=&#34;https://github.com/AirSage/Petrel&#34;&gt;petrel&lt;/a&gt; looks like this:&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;pre&gt;&lt;code&gt;class Bolt(storm.BasicBolt):
-    def initialize(self, conf, context):
-       &#39;&#39;&#39; This method executed only once &#39;&#39;&#39;
-        storm.log(&#39;initializing bolt&#39;)
-
-    def process(self, tup):
-       &#39;&#39;&#39; This method executed every time a new tuple arrived &#39;&#39;&#39;       
-       msg = tup.values[0]
-       storm.log(&#39;Got tuple %s&#39; %msg)
-
-if __name__ == &amp;quot;__main__&amp;quot;:
-    Bolt().run()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Fliptop is happy with storm - see their presentation &lt;a href=&#34;http://www.slideshare.net/robbiecheng/lesson-learned-of-twitter-storm&#34;&gt;here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;topology metrics in 0.9.0: The new metrics feature allows you to collect
-arbitrarily custom metrics over fixed windows. Those metrics are
-exported to a metrics stream that you can consume by implementing
-&lt;a href=&#34;https://github.com/nathanmarz/storm/blob/master/storm-core/src/jvm/backtype/storm/metric/api/IMetricsConsumer.java&#34;&gt;IMetricsConsumer&lt;/a&gt; and configure with &lt;a href=&#34;https://github.com/nathanmarz/storm/blob/master/storm-core/src/jvm/backtype/storm/Config.java#L473&#34;&gt;Config.java#L473&lt;/a&gt;.
-Use &lt;strong&gt;TopologyContext#registerMetric&lt;/strong&gt; to register new metrics.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;storm vs flume - some users&amp;rsquo; point of view: I use Storm and Flume and find that they are better at
-different things - it really depends on your use case as to which one is
-better suited. First and foremost, they were originally designed to do
-different things: Flume is a reliable service for collecting,
-aggregating, and moving large amounts of data from source to destination
-(e.g. log data from many web servers to HDFS). Storm is more for
-real-time computation (e.g. streaming analytics) where you analyse data
-in flight and don&amp;rsquo;t necessarily land it anywhere. Having said that,
-Storm is also fault-tolerant and can write to external data stores (e.g.
-HBase) and you can do real-time computation in Flume (using
-interceptors)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;That&amp;rsquo;s all for this day - however, I&amp;rsquo;ll keep on reading through storm-users, so watch this space for more info on storm development.&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

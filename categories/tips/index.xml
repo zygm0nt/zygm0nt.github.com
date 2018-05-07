@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 21 Mar 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://marcin.cylke.com.pl/categories/tips/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://marcin.cylke.com.pl/categories/tips/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Operational problems with Zookeeper</title>
@@ -15,166 +17,10 @@
       <pubDate>Thu, 21 Mar 2013 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/</guid>
-      <description>
-
-&lt;p&gt;This post is a summary of what has been presented by Kathleen Ting on
-StrangeLoop conference. You can watch the original here:
-&lt;a href=&#34;http://www.infoq.com/presentations/Misconfiguration-ZooKeeper&#34;&gt;http://www.infoq.com/presentations/Misconfiguration-ZooKeeper&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve decided to put this selection here for quick reference.&lt;/p&gt;
-
-&lt;h2 id=&#34;connection-mismanagement:3dd1934cab1c17d4d4b86e7299da0f63&#34;&gt;Connection mismanagement&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;too many connections&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - Too many connections from /xx.x.xx.xxx - max is 60
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;running out of ZK connections?&lt;/li&gt;
-&lt;li&gt;set &lt;code&gt;maxClientCnxns=200&lt;/code&gt; in &lt;code&gt;zoo.cfg&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;HBase client leaking connections?&lt;/li&gt;
-&lt;li&gt;fixed in HBASE-3777, HBASE-4773, HBASE-5466&lt;/li&gt;
-&lt;li&gt;manually close connections&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;connection closes prematurely&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ERROR: org.apache.hadoop.hbase.ZooKeeperConnectionException: HBase is able to connect to ZooKeeper but the connection closes immediately.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;in &lt;code&gt;hbase-site.xml&lt;/code&gt; set &lt;code&gt;hbase.zookeeper.recoverable.waittime=30000ms&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;pig hangs connecting to HBase&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;WARN org.apache.zookeeper.ClientCnxn: Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect java.net.ConnectionException: Connection refused!
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;CAUSE:&lt;/strong&gt; location of ZK quorum is not known to Pig&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;use Pig 10, which includes PIG-2115&lt;/li&gt;
-&lt;li&gt;if there is an overlap between TaskTrackers and ZK quorum nodes
-
-&lt;ul&gt;
-&lt;li&gt;set &lt;code&gt;hbase.zookeeper.quorum&lt;/code&gt; to final in &lt;code&gt;hbase-site.xml&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;otherwise add &lt;code&gt;hbaze.zoopeeker.quorum=hadoophbasemaster.lan:2181&lt;/code&gt; in &lt;code&gt;pig.properties&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;time-mismanagement:3dd1934cab1c17d4d4b86e7299da0f63&#34;&gt;Time mismanagement&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;client session timed out&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;INFO org.apache.zookeeper.server.ZooKeeperServer: Expiring session &amp;lt;id&amp;gt;, timeout of 40000ms exceeded
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ZK and HBase need the same session timeout values
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;zoo.cfg&lt;/code&gt;: &lt;code&gt;maxSession=Timeout=180000&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;hbase-site.xml&lt;/code&gt;: &lt;code&gt;zookeeper.session.timeout=180000&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;don&amp;rsquo;t co-locate ZK with IO-intense DataNode or RegionServer&lt;/li&gt;
-&lt;li&gt;specify right amount of heap and tune GC flags
-
-&lt;ul&gt;
-&lt;li&gt;turn on parallel/CMS/incremental GC&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;clients lose connections&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;WARN org.apache.zookeeper.ClientCnxn - Session &amp;lt;id&amp;gt; for server &amp;lt;name&amp;gt;, unexpected error, closing socket connection and attempting reconnect java.io.IOException: Broken pipe
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;don&amp;rsquo;t use SSD drive for ZK transaction log&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;disk-management:3dd1934cab1c17d4d4b86e7299da0f63&#34;&gt;Disk management&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;unable to load database - unable to run quorum server&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;FATAL Unable to load database on disk !  java.io.IOException: Failed to process transaction type: 2 error: KeeperErrorCode = NoNode for &amp;lt;file&amp;gt; at org.apache.zookeeper.server.persistence.FileTxnSnapLog.restore(FileTxnSnapLog.java:152)!
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;archive and wipe &lt;code&gt;/var/zookeeper/version-2&lt;/code&gt; if other two ZK servers
-are running&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;unable to load database - unreasonable length exception&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;FATAL Unable to load database on disk java.io.IOException: Unreasonable length = 1048583 at org.apache.jute.BinaryInputArchive.readBuffer(BinaryInputArchive.java:100)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;server allows a client to set data larger than the server can read from disk&lt;/li&gt;
-&lt;li&gt;if a znode is not readable, increase &lt;code&gt;jute.maxbuffer&lt;/code&gt;
-
-&lt;ul&gt;
-&lt;li&gt;look for &lt;code&gt;&amp;quot;Packet len &amp;lt;xx&amp;gt; is out of range&amp;quot;&lt;/code&gt; in the client log&lt;/li&gt;
-&lt;li&gt;increase it by 20%&lt;/li&gt;
-&lt;li&gt;set in &lt;code&gt;JVMFLAGS=&amp;quot;-Djute.maxbuffer=yy&amp;quot; bin/zkCli.sh&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;fixed in ZOOKEEPER-1513&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;failure to follow leader&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;WARN org.apache.zookeeper.server.quorum.Learner: Exception when following the leader java.net.SocketTimeoutException: Read timed out 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;CAUSE:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;disk IO contention, network issues&lt;/li&gt;
-&lt;li&gt;ZK snapshot is too large (lots of ZK nodes)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;SOLVE:&lt;/strong&gt;
-- reduce IO contention by putting dataDir on dedicated spindle
-- increase initLimit on all ZK servers and restart, see
-  ZOOKEEPER-1521
-- monitor network&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;best-practices:3dd1934cab1c17d4d4b86e7299da0f63&#34;&gt;Best Practices&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;DOs&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;separate spindles for dataDir &amp;amp; dataLogDir&lt;/li&gt;
-&lt;li&gt;allocate 3 or 5 ZK servers&lt;/li&gt;
-&lt;li&gt;tune garbage collection&lt;/li&gt;
-&lt;li&gt;run zkCleanup.sh script via cron&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;DON&amp;rsquo;Ts&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;dont&amp;rsquo; co-locate ZK with I/O intense DataNode or RegionServer&lt;/li&gt;
-&lt;li&gt;don&amp;rsquo;t use SSD drive for ZK transaction log&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;You may use Zookeeper as an observer - a non-voting member:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;in zoo.cfg&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;peerType=observer
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>This post is a summary of what has been presented by Kathleen Ting on StrangeLoop conference. You can watch the original here: http://www.infoq.com/presentations/Misconfiguration-ZooKeeper
+I&amp;rsquo;ve decided to put this selection here for quick reference.
+Connection mismanagement  too many connections
+WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - Too many connections from /xx.x.xx.xxx - max is 60   running out of ZK connections? set maxClientCnxns=200 in zoo.cfg HBase client leaking connections? fixed in HBASE-3777, HBASE-4773, HBASE-5466 manually close connections  connection closes prematurely</description>
     </item>
     
   </channel>

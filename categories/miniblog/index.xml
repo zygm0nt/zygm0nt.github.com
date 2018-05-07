@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 21 Apr 2010 18:01:59 +0000</lastBuildDate>
-    <atom:link href="http://marcin.cylke.com.pl/categories/miniblog/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://marcin.cylke.com.pl/categories/miniblog/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Reaktywacja o-filmoramy?</title>
@@ -15,12 +17,8 @@
       <pubDate>Wed, 21 Apr 2010 18:01:59 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2010/04/21/reaktywacja-o-filmoramy/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
-&lt;p&gt;Mam nadzieję, że wreszcie jednak ruszę z blogiem filmowym, po raz kolejny należy mu się reaktywacja.&lt;/p&gt;
-
-&lt;A href=&#34;http://o-filmorama.blogspot.com&#34;&gt;http://o-filmorama.blogspot.com&lt;/a&gt;
-&lt;/div&gt;
-</description>
+      <description>Mam nadzieję, że wreszcie jednak ruszę z blogiem filmowym, po raz kolejny należy mu się reaktywacja.
+http://o-filmorama.blogspot.com  </description>
     </item>
     
   </channel>

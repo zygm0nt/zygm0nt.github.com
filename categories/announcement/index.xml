@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 10 Apr 2010 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://marcin.cylke.com.pl/categories/announcement/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://marcin.cylke.com.pl/categories/announcement/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Here cometh English :)</title>
@@ -15,9 +17,7 @@
       <pubDate>Sat, 10 Apr 2010 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2010/04/10/here-cometh-english/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
-From this day on, this blog will contain only posts in English.&lt;/div&gt;
-</description>
+      <description>From this day on, this blog will contain only posts in English. </description>
     </item>
     
   </channel>

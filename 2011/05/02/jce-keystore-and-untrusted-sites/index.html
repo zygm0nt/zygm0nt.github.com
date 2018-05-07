@@ -1,72 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>JCE keystore and untrusted sites</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.15" />
-  <link href="" rel="alternate" type="application/rss+xml" title="Just a blog" />
-  <link href="http://marcin.cylke.com.pl/css/bootstrap.min.css" rel="stylesheet">
-  <link href="http://marcin.cylke.com.pl/css/hc.css" rel="stylesheet">
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.40.1" />
+
+
+<title>JCE keystore and untrusted sites - Just a blog</title>
+<meta property="og:title" content="JCE keystore and untrusted sites - Just a blog">
+
+
+
   
+
+
+
+
+
+
+<link rel="stylesheet" href="http://marcin.cylke.com.plcss/main.css" media="all">
+<link rel="stylesheet" href="http://marcin.cylke.com.plcss/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="http://marcin.cylke.com.pl" class="nav-logo">
+    <img src="http://marcin.cylke.com.plimages/" 
+         width="" 
+         height="" 
+         alt="">
+  </a>
+
+  <ul class="nav-links">
     
-    </head>
-    <body>
-<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
-      <div id = "wrapper">
+    <li><a href="/about/">about hugo</a></li>
+    
+    <li><a href="/getting-started/">getting started</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
 
 
-<div class="navbar navbar-default" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a href="http://marcin.cylke.com.pl/"><p class="navbar-brand">Just a blog</p></a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-					
-					
-          </ul>
-        </div>
-      </div>
-    </div>
-
-
-
-       
-       <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-					<img src="" />
-          <li class="sidebar-brand"><a href="http://marcin.cylke.com.pl/"><h1 class="brand">Just a blog</h1></a><h3></h3></li>
-          <hr />
-					
-          <hr />
-          <div id="social-wrapper">
-           
-           
-           
-           
-         </div>
-       </ul>
-     </div>
-
-
-
-     <div class="container">
-
-
-  <div id="article">
-   <div class="article-title">JCE keystore and untrusted sites</div>
-   <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 2011-05-02</small></p> <hr/>
-   <div class="post">
-     <div class='post'>
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">JCE keystore and untrusted sites</h1>
+    
+    <span class="article-date">2011-05-02</span>
+    
+    <ul class="article-taxonomy">
+                  
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/IT">IT</a><a href="/categories/Og%C3%B3lne">Ogólne</a><a href="/categories/Techblog">Techblog</a><a href="/categories/touk">touk</a>
+      </li>
+      
+    
+      
+    </ul>
+ 
+    <div class="article-content">
+      <div class='post'>
 <p>Recently at work I was in need of connecting to a web service exposed via
 HTTPS. I've been doing this from inside <a href="http://servicemix.apache.org/home.html">Servicemix 3.3.1</a>, which may seem
 a bit inhibiting, but that was a requirement. Nevertheless I've been
@@ -83,7 +79,7 @@ keystore. Read more to find out what happened!</p>
 <p>Ok, so I had my <em>xbean.xml</em> for http component looking like
 this:</p>
 
-{% gist 951474 servicemix-http-xbean.xml %}
+<script src="//gist.github.com/951474/servicemix-http-xbean.xml.js"></script>
 
 
 <p>As you can see this is a proxy adapter to some outside service
@@ -94,17 +90,17 @@ the keystore file and it's password.</p>
 <p>I've created my <em>keystore.jks</em> file in <em>smx_home/conf</em>
 with password <em>servicemix</em> in the following manner:</p>
 
-{% gist 951459 create_keystore.sh %}
+<script src="//gist.github.com/951459/create_keystore.sh.js"></script>
 
 <p>You can see what's in this file with this command:</p>
 
-{% gist 951459 list_keys.sh %}
+<script src="//gist.github.com/951459/list_keys.sh.js"></script>
 
 <p>At this point I thought, that having a configured keystore and my
 component would suffice. Wrong! As soon as I've tried to connect to the
 external service I got an exception:</p>
 
-{% gist 951458 untrusted_key_error.java %}
+<script src="//gist.github.com/951458/untrusted_key_error.java.js"></script>
 
 <p>Hmmm.. this looks pretty nasty, but it's not that bad. As one can
 read <a
@@ -127,7 +123,7 @@ src="https://gist.github.com/951459.js?file=add_untrusted_key.sh"></script>
 
 <p>What you'll probably see, when you execute this app is this:</p>
 
-{% gist 951458 add_untrusted_cert.sh %}
+<script src="//gist.github.com/951458/add_untrusted_cert.sh.js"></script>
 
 <p>Please note that there is a prompt (<em>Enter certificate to add to
 trusted keystore...</em>) in which you can enter the certificate number
@@ -141,7 +137,7 @@ query HTTPS service as long as I wanted to! Great!</p>
 <p>In my search for this problem's solution I've encountered this kind
 of exception:</p>
 
-{% gist 951458 keystore_key_error.java %}
+<script src="//gist.github.com/951458/keystore_key_error.java.js"></script>
 
 <p>A little googling led me to this <a
 href="http://stackoverflow.com">StackOverflow</a> <a
@@ -160,32 +156,43 @@ you know other ways of doing that thing?</p>
 
 </div>
 
-   </div>
- </div>
-
-
- <a href="https://twitter.com/share" class="twitter-share-button " data-size="small" data-count="none">Tweet</a>
- <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
- <ul class="pager">
-      &nbsp;<li class="previous"><a href="http://marcin.cylke.com.pl/2011/05/19/geecon-2011-day-1/"> Geecon 2011 - day 1</a></li>
-      &nbsp;<li class="next"><a href="http://marcin.cylke.com.pl/2011/04/01/advisory-messages-to-the-rescue/"> Advisory Messages to the rescue</a></li>
-</ul>
-
-
-
-    </ul>
     </div>
-    <footer>
-
-        <p class="text-muted credit">&copy; 2018. All rights reserved. </p>
-    </footer>
  
-    <script src="http://marcin.cylke.com.pl/js/jquery-1.10.2.min.js"></script>
-    <script src="http://marcin.cylke.com.pl/js/bootstrap.min.js"></script>
-    <script src="http://marcin.cylke.com.pl/js/bootstrap.js"></script>
-    <script type="text/javascript" src="http://marcin.cylke.com.pl/js/hc.js"></script>
-</body>
+     <div id="disqus_thread"></div>
+<script>
+    (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = '//marcinbloguje.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
+
+      <script id="dsq-count-scr" src="//careerboost.disqus.com/count.js" async></script>
+
+
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="http://marcin.cylke.com.pl/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/mobybit/hugo-natrium-theme"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="http://marcin.cylke.com.plsite-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
 </html>
 

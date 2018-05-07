@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 18 Jun 2012 09:08:09 +0000</lastBuildDate>
-    <atom:link href="http://marcin.cylke.com.pl/categories/techblog/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://marcin.cylke.com.pl/categories/techblog/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Hadoop for Enterprises</title>
@@ -15,123 +17,8 @@
       <pubDate>Mon, 18 Jun 2012 09:08:09 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2012/06/18/hadoop-for-enterprises/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
-&lt;p&gt;Hadoop&#39;s usage as a big data processing framework gains a lot of attention lately. Now, not only big players see, that they can embrace the data their sites or products are generating and develop their businesses on it. For that to happen two things are needed: the data itself and means of processing really big amounts of it.  &lt;/p&gt;
-
-&lt;p&gt;&lt;span class=&#34;image-wrap&#34; style=&#34;&#34;&gt;&lt;img src=&#34;http://blog.innovative-labs.com/blog/3488314950_453466f762_b.jpg&#34; style=&#34;border: 0px solid black; width: 400px;&#34; /&gt;&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;Gathering data is relatively easy. These are not necessarily structured data, you don&#39;t need to plan their usage at first. Just start collecting them and than you may experiment with their potential usage. If they&#39;ll come out as useless rubbish - deleting them won&#39;t be hard &lt;img class=&#34;emoticon&#34; src=&#34;http://marcin.cylke.com.pl/confluence/images/icons/emoticons/smile.gif&#34; height=&#34;20&#34; width=&#34;20&#34; align=&#34;absmiddle&#34; alt=&#34;&#34; border=&#34;0&#34;/&gt; But imagine the values it may contribute to your business:&lt;/p&gt;
-
-&lt;ul&gt;
-	&lt;li&gt;faster services - working on optimized data&lt;/li&gt;
-	&lt;li&gt;more clients - because of more relevant search results&lt;/li&gt;
-	&lt;li&gt;happy clients - your service can &#34;read their minds&#34; &lt;img class=&#34;emoticon&#34; src=&#34;http://marcin.cylke.com.pl/confluence/images/icons/emoticons/smile.gif&#34; height=&#34;20&#34; width=&#34;20&#34; align=&#34;absmiddle&#34; alt=&#34;&#34; border=&#34;0&#34;/&gt;&lt;/li&gt;
-	&lt;li&gt;etc.&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;p&gt;There are many companies that utilize Hadoop ecosystem for their own needs. You can read about some of them here: &lt;a href=&#34;http://wiki.apache.org/hadoop/PoweredBy&#34; class=&#34;external-link&#34; rel=&#34;nofollow&#34;&gt;http://wiki.apache.org/hadoop/PoweredBy&lt;/a&gt; But since that page lacks insight into specific applications of Hadoop I&#39;ve tried to delve into&lt;br/&gt;
-details of how Hadoop helped tame some companies&#39; big data sets.&lt;/p&gt;
-
-&lt;EXCERPT&gt;
-
-&lt;h2&gt;&lt;a name=&#34;test-Facebook&#34;&gt;&lt;/a&gt;Facebook&lt;/h2&gt;
-
-&lt;p&gt;Being a social network provider, a widely used one, they require no introduction. However if you&#39;ve lived under a rock for last couple years just visit their website &lt;a href=&#34;http://facebook.com&#34; class=&#34;external-link&#34; rel=&#34;nofollow&#34;&gt;http://facebook.com&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Their main usage is data warehousing. Since they require to be able to access the data fast and reliably they had a need for real-time querying of their huge, and always growing data set. Their switch from MySQL databases was required due to the increasing workloads they experienced with standard databases. What they got &#34;out of the box&#34; with Hadoop was all the benefits of distributed file system (HDFS features). They expanded the ideas behind that even further and implemented truly Highly Available file system without Single Point of Failure.&lt;/p&gt;
-
-&lt;p&gt;Facebook has 3 interesting usage scenarios in which Hadoop plays a major role:&lt;/p&gt;
-
-&lt;ul&gt;
-	&lt;li&gt;Titan - is Facebook&#39;s messaging system. It processes messages exchanged between users. Ensures that it happens fast and without glitches. Here Hadoop is used mainly as a huge, unlimited storage.&lt;/li&gt;
-	&lt;li&gt;Puma - Facebook Insights - a tool providing page statistics for  advanced Facebook users. Based on streams of data (clicks, likes, shares, comments and impressions) it graphs those data and makes it available near instantly.&lt;/li&gt;
-	&lt;li&gt;ODS - Operational Data Store - which stores Facebook&#39;s internal metrics - collections of OS and cluster health metrics. And it facilitates multiple accounting solutions.&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;h2&gt;&lt;a name=&#34;test-Twitter&#34;&gt;&lt;/a&gt;Twitter&lt;/h2&gt;
-
-&lt;p&gt;This popular micro-blogging platform, where you can register your account and follow friends and celebrities for their micro-messages does some pretty interesting things with their Hadoop cluster.&lt;/p&gt;
-
-&lt;p&gt;One of their motivations is to speed up their web-page&#39;s functionality. That is why the compute users&#39; friendships in Twitter&#39;s social graph with Hadoop. Using connections between users they calculate their relationship to each other and estimate groups of users.&lt;/p&gt;
-
-&lt;p&gt;Since this service&#39;s users generate lots of content, the company conducts researches based on natural language processing. They probe what could be told about a user from his tweets. They use tweets&#39; contents for advertisement purpose, trends analysis and many more.&lt;/p&gt;
-
-&lt;p&gt;From tweets and user&#39;s behaviours they characterise usage scenarios. Also, they gather usage statistics, like number of searches daily, number of tweets. Based on this seemingly irrelevant data they run comparisons of different types of users. Twitter analyzes data to determine whether mobile users, users who use third party clients or power users use Twitter differently from average users. Of course theses seem like really specific applications but nevertheless they are very original and base on the data that Twitter has been gathering for some time now. &lt;/p&gt;
-
-&lt;h2&gt;&lt;a name=&#34;test-EBay&#34;&gt;&lt;/a&gt;EBay&lt;/h2&gt;
-
-&lt;p&gt;Being the biggest auctioning site on the Internet, EBay uses Hadoop processing for increasing search relevance based on click-stream data, user data. This seems pretty obvious, considering their area of operation.&lt;/p&gt;
-
-&lt;p&gt;However the also have one other interesting thing - they try hard to automatically fill auctioned objects&#39; metadata, based on the descriptions and other data provided by users. They employ data mining approach for this tasks and judging from their constant growth it seems to work &lt;img class=&#34;emoticon&#34; src=&#34;http://marcin.cylke.com.pl/confluence/images/icons/emoticons/smile.gif&#34; height=&#34;20&#34; width=&#34;20&#34; align=&#34;absmiddle&#34; alt=&#34;&#34; border=&#34;0&#34;/&gt;&lt;/p&gt;
-
-&lt;h2&gt;&lt;a name=&#34;test-LinkedIn&#34;&gt;&lt;/a&gt;LinkedIn&lt;/h2&gt;
-
-&lt;p&gt;Social network for professionals, thou a lot smaller than Facebook. Based on click-streams they discover relations between users. All the data concerning latest visits on your profile or people you may know from other places - this comes from Hadoop based analysis of those clicks people make all the time on their sites.&lt;/p&gt;
-
-&lt;p&gt;Also a very neat feature, called InMaps (&lt;a href=&#34;http://inmaps.linkedinlabs.com/&#34; class=&#34;external-link&#34; rel=&#34;nofollow&#34;&gt;http://inmaps.linkedinlabs.com/&lt;/a&gt;) analyse declared schools and companies and generates data for graph with clustered friends of yours.&lt;/p&gt;
-
-&lt;h2&gt;&lt;a name=&#34;test-Last.fm&#34;&gt;&lt;/a&gt;Last.fm&lt;/h2&gt;
-
-&lt;p&gt;This on-line radio site, praised by many for its invaluable recommendations&#39; system seems like a rather small and simple service. But behind the facade of simple web page there are lots of data being processed, so that their services could match a certain level of perfection.&lt;/p&gt;
-
-&lt;p&gt;Such large volume of their data comes from scrobbles. Each users of their service listening to a song generates a note about this fact - called scrobble. Based on that and user profiles they calculate global band popularity charts, maps of bands&#39; popularity and many more usage statistics and timeline charts.&lt;/p&gt;
-
-&lt;p&gt;&lt;span class=&#34;image-wrap&#34; style=&#34;&#34;&gt;&lt;img src=&#34;http://blog.innovative-labs.com/blog/7346959440_71648c9fe7_b.jpg&#34; style=&#34;border: 0px solid black; width: 400px;&#34; /&gt;&lt;/span&gt;&lt;/p&gt;
-
-&lt;h2&gt;&lt;a name=&#34;test-Conclusion&#34;&gt;&lt;/a&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;They just try to detect and trace new patterns in seemingly chaotic data sets. Perhaps you could also do the same? Analyze your data and expand your business value?&lt;/p&gt;&lt;/div&gt;
-&lt;h2&gt;Comments&lt;/h2&gt;
-&lt;div class=&#39;comments&#39;&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://www.wedding-cake-decorations.net&#34;&gt;wedding cake decorations&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;We stumbled over here from a different web address and thought I might check things out.&lt;br /&gt;
-I like what I see so i am just following you.&lt;br /&gt;
-Look forward to checking out your web page yet again.&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://www.car-floor-mats.net&#34;&gt;rubber floor mats&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;I like what you guys are up too. This type of clever work and reporting!&lt;br /&gt;
-&lt;br /&gt;
-Keep up the awesome works guys I&#39;ve added you guys to my own blogroll.&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://www.bispioner.ru/phpBB3/memberlist.php?mode=viewprofile&amp;amp;u=119586&#34;&gt;Svayambhut Ghosh&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;Greetings from Florida! I&#39;m bored at work so I decided to browse your site on my iphone during lunch break. I enjoy the info you present here and can&#39;t wait to take a look &lt;br /&gt;
-when I get home. I&#39;m surprised at how quick your blog loaded on my cell phone .. I&#39;m not even using WIFI, just 3G .&lt;br /&gt;
-. Anyways, very good site!&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://www.salethenorthfacejackets.com&#34;&gt;north face jackets&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;Comfortableness &amp;lt;a href=&amp;quot;http://www.salethenorthfacejackets.com&amp;quot;&amp;gt;north face jackets&amp;lt;/a&amp;gt;&lt;br /&gt;
-is crucial when they get it that will &amp;lt;a href=&amp;quot;http://www.salethenorthfacejackets.com&amp;quot;&amp;gt;north face outlet&amp;lt;/a&amp;gt; get the best school bags pertaining to going camping &amp;lt;a href=&amp;quot;http://www.salethenorthfacejackets.com&amp;quot;&amp;gt;north face sale&amp;lt;/a&amp;gt;. Your easiest guarantee in the case of even larger delivers has become One with an inner metal framework, one that can wind &amp;lt;a href=&amp;quot;http://www.salethenorthfacejackets.com&amp;quot;&amp;gt;cheap north face&amp;lt;/a&amp;gt; up being aligned to help you appropriately fit your &amp;lt;a href=&amp;quot;http://www.salethenorthfacejackets.com/the-north-face-women-1&amp;quot;&amp;gt;north face women&amp;lt;/a&amp;gt; body. They should be now have http://www.salethenorthfacejackets.com secure which were wholly flexible, because essentially in the form of midsection belt to get more aid.&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://www.plants-for-sale.com&#34;&gt;plants sale&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;I never imagined how much stuff there was out there &lt;br /&gt;
-on this! Thanks for making it easy to get the picture&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://www.facebook.com/profile.php?id=100003406472249&#34;&gt;gWgVcetqzVZukd&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;What Programming Languages Do Jobs Require? | Regular Geek  regulargeek.com/2009/07/21/what-programming-languages-do-jobs-require   view page   cahecd  As a software engineer, you need to keep your skills sharp and current. This is a general requirement of the job. In addition to this, in the current economy you do not want to be without a job. Obviously, this means learning more about what your current company uses for all of its development. What if you do not have a job or you are looking to leave? What technologies or programming languages should you be looking into?   From the page&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://businesses.wickedlocal.com/MA-Westford/Computer-Service-and-Repair/15&#34;&gt;computer pc repair&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;Howdy are using Wordpress for your site platform? I&#39;m new to the blog world but I&#39;m trying to &lt;br /&gt;
-get started and create my own. Do you need any coding expertise to make your own &lt;br /&gt;
-blog? Any help would be greatly appreciated!&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
+      <description>Hadoop&#39;s usage as a big data processing framework gains a lot of attention lately. Now, not only big players see, that they can embrace the data their sites or products are generating and develop their businesses on it. For that to happen two things are needed: the data itself and means of processing really big amounts of it. 
+Gathering data is relatively easy. These are not necessarily structured data, you don&#39;t need to plan their usage at first.</description>
     </item>
     
     <item>
@@ -140,63 +27,7 @@ blog? Any help would be greatly appreciated!&lt;/p&gt;&lt;/div&gt;
       <pubDate>Wed, 02 Nov 2011 15:32:15 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/11/02/soapui-ext-libs-and-its-weirdness/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
-&lt;p&gt;Suppose you want to add some additional jars to your SoapUI installation. It all should work ok if you put them in &lt;b&gt;bin/ext&lt;/b&gt; directory. It is scanned at startup, and jars found there are automatically added to classpath.
-&lt;/p&gt;
-
-&lt;p&gt;
-However if you want to add some JDBC drivers, and happen to be using SoapUI version higher than 3.5.1 it is a bit more tricky.
-&lt;/p&gt;
-&lt;p&gt;You may face this NoClassDefFoundError:&lt;br/&gt;
-
-&lt;pre&gt;
-An error occured [oracle/jdbc/Driver], see error log for details
-java.lang.NoClassDefFoundError: oracle/jdbc/Driver
-&lt;/pre&gt;
-&lt;/p&gt; 
-
-&lt;p&gt;
-If so, try registering your drivers with &lt;b&gt;registerJdbcDriver&lt;/b&gt; function, like I did in this snippet of code:
-&lt;/p&gt;
-{% gist 1333768 jdbc-soapui.groovy %}
-
-
-&lt;p&gt;What a crappy thing!&lt;/p&gt;&lt;/div&gt;
-&lt;h2&gt;Comments&lt;/h2&gt;
-&lt;div class=&#39;comments&#39;&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://podzastaw.org&#34;&gt;Kelli&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;You can definitely see your expertise in the work you write.&lt;br /&gt;
-The world hopes for more passionate writers such as you who are not afraid to &lt;br /&gt;
-say how they believe. Always go after your heart.&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://www.052b.com&#34;&gt;Buford&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;It&#39;s going to be end of mine day, however before finish I am reading this fantastic paragraph to increase my experience.&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://www.hotelfocus.com.pl&#34;&gt;Chandra&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;My family every time say that I am wasting my time &lt;br /&gt;
-here at net, except I know I am getting knowledge every day by reading such pleasant articles.&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://www.wayn.com/waynblog.html?wci=viewentry&amp;amp;entry_key=265563&#34;&gt;Florene&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;Thanks , I&#39;ve just been looking for info approximately this topic for a long time and yours is the greatest I have found out till now. But, what concerning the bottom line? Are you positive in regards to the source?&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://www.hotelbookingwebsite.net&#34;&gt;Myron&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;Nice post. I was checking continuously this blog and I am impressed!&lt;br /&gt;
-Extremely helpful information specially the last part &lt;br /&gt;
-:) I care for such information much. I was looking for this &lt;br /&gt;
-particular info for a long time. Thank you and best of luck.&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
+      <description>Suppose you want to add some additional jars to your SoapUI installation. It all should work ok if you put them in bin/ext directory. It is scanned at startup, and jars found there are automatically added to classpath.  However if you want to add some JDBC drivers, and happen to be using SoapUI version higher than 3.5.1 it is a bit more tricky. You may face this NoClassDefFoundError:  An error occured [oracle/jdbc/Driver], see error log for details java.</description>
     </item>
     
     <item>
@@ -205,216 +36,8 @@ particular info for a long time. Thank you and best of luck.&lt;/p&gt;&lt;/div&g
       <pubDate>Wed, 21 Sep 2011 21:12:34 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/09/21/what-is-nosql-good-for/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
-&lt;b&gt;... or how I ended up writing a CouchDB proof of concept app?&lt;/b&gt;
-
-&lt;p&gt;Once upon a time I set out on a journey to discover the NoSQL land.
-I&#39;ve decided that doing simple queries wouldn&#39;t be interesting enough.
-That&#39;s why I&#39;ve chose to create an app that would be based on some NoSQL
-database.&lt;/p&gt;
-
-&lt;p&gt;
-The main idea was to create an app, that would dynamically update itself
-with geographic data flowing in. Since there are myriads of geo-data
-that are available on the internet, you can pick your favorite one and
-load them into your SQL database of choice.
-&lt;/p&gt;
-
-&lt;EXCERPT&gt;
-&lt;p&gt;
-In my case the primary source of data was a proprietary database, or more specifically - one table in it continuously updated with new data. To make that
-data visible on my map I needed to:
-&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt; buffer the huge amount of those records - so as not to overhoul
-other services with large traffic, and not to flood the frontend&lt;/li&gt;
-&lt;li&gt; convert then to my representation&lt;/li&gt;
-&lt;li&gt; display them - have presentation layer in a browser - since
-browser-based frontend was the easiest and fastest to develop&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;
-The idea of the front-end HTML page was to show new points on the map.
-From the moment of opening the page records that appear in database
-table should be shown interactively on the screen.
-&lt;/p&gt;
-
-&lt;h2&gt;Toys used&lt;/h2&gt;
-
-&lt;p&gt;
-For the first step I chose to use RabbitMQ broker. A queue on the broker would receive messages - one message per database table&#39;s row.
-Then I&#39;d use some simple groovy middle ware to convert the data to appropriate format and put it onto another db - this time db specific
-to my app. 
-&lt;/p&gt;
-
-&lt;p&gt;
-You may ask why incorporate another database. It would be
-good for separating environments - assuming the original data contains
-some vulnerable content that should be anatomised, or we just don&#39;t feel
-comfortable exposing the whole database of some XYZ-system just to have
-access to its one table.
-&lt;/p&gt;
-
-&lt;p&gt;
-Since for my presentation layer I chose HTML+JS without any application server-based back-end I&#39;ve decided on CouchDB . This seemed like
-a perfect match for this scenario. Why? - ease of use, REST API, with JSON responses - just great for interacting with my simple front-end.
-&lt;/p&gt;
-
-&lt;p&gt;
-The flow of things was as shown on the image below:
-&lt;/p&gt;
-
-&lt;IMG src=&#34;http://blog.innovative-labs.com/blog/gmapper.png&#34;
-alt=&#34;diagram&#34;/&gt;
-
-&lt;h2&gt;Avro - for the beginning&lt;/h2&gt;
-&lt;p&gt;
-As you can see, I&#39;ve chosen JSON as my data-format. I&#39;ve been considering
-&lt;a href=&#34;http://avro.apache.org&#34;&gt;Apache Avro&lt;/a&gt; in the first place but
-using it was a real pain in the ass. Avro itself is used in &lt;a
-href=&#34;http://hadoop.apache.org&#34;&gt;Apache Hadoop&lt;/a&gt; as a serialization
-layer, so it would seem OK, but it has virtually &lt;em&gt;no
-documentation&lt;/em&gt;. But once you tear through the unintuitive interface
-and manage to handle all those unthinkable exceptions you get a few pros
-for this library. It&#39;s great in that it does not require code generation - I
-like it being made on the fly. It also offers sending data in binary
-format, which was not necessary, but never the less is a nice feature.
-&lt;/p&gt;
-
-&lt;p&gt;
-What I certainly didn&#39;t like about it was its orientation on the files
-rather than chunks of data - so it was not so obvious how should I send
-data through the wire. 
-&lt;/p&gt;
-
-&lt;p&gt;
-Than I found out it can produce JSON output, which would work for me,
-except the output could not have been parsed by other JSON libraries :)
-(&lt;a
-href=&#34;http://stackoverflow.com/questions/5375243/jcouchdb-svenson-unable-to-parse-json-string&#34;&gt;I&#39;ve
-asked on stackoverflow about that, but with no luck&lt;/a&gt;). 
-&lt;/p&gt;
-
-&lt;p&gt;If my whining haven&#39;t put you back and still would like to see how to use Avro, try this unit
-test in project&#39;s GitHub repo: &lt;a
-href=&#34;https://github.com/zygm0nt/gmapped/blob/master/feeder/src/test/groovy/pl/ftang/example/feeder/avro/AvroSimpleTest.groovy&#34;&gt;AvroSimpleTest.groovy&lt;/a&gt;
-&lt;/p&gt;
-
-
-&lt;h2&gt;Svenson&lt;/h2&gt;
-
-&lt;p&gt;
-I&#39;ve dropped Avro in favour of a simple JSON lib called (&lt;a
-href=&#34;http://code.google.com/p/svenson/&#34;&gt;Svenson&lt;/a&gt; and that was
-painless. The only thing I was forced to do was create my model class in
-Java - the rest of the project is written in Groovy. I&#39;ve no idea why
-was that necessary, and didn&#39;t want to look into it.
-&lt;/p&gt;
-
-&lt;h2&gt;RabbitMQ&lt;/h2&gt;
-
-&lt;p&gt;
-Further on the way is &lt;a href=&#34;http://www.rabbitmq.com/&#34;&gt;RabbitMQ&lt;/a&gt;, to which records are filled by a feeding
-middle-ware written in Groovy. Since I use &lt;a
-href=&#34;http://activemq.apache.org&#34;&gt;ActiveMQ&lt;/a&gt; on a day-to-day basis,
-I&#39;ve decided to try something new. This broker is a really nice piece of
-software. Being written in Erlang makes it really fast. What&#39;s more it
-has some extensive capabilities and is easy to approach for anyone
-similar with messaging (JMS and friends). For such a lightweight product
-it is really powerful - implements AMQP! 
-&lt;/p&gt;
-
-&lt;h2&gt;CouchDB&lt;/h2&gt;
-
-&lt;p&gt;
-From the broker&#39;s queue messages are again fetched by a middle-ware just
-to be put into &lt;a href=&#34;http://couchdb.apache.org/&#34;&gt;CouchDB&lt;/a&gt; view.
-This database is also written in Erlang. It&#39;s very reliable, however the
-way it handles refreshing view isn&#39;t the most pleasant one -
-performance-wise. 
-&lt;/p&gt;
-
-&lt;p&gt;
-Word of advice - if you&#39;re on Debian derivative, be cautious with
-apt-repository version. It&#39;s rather _ancient_. Also remember to add
-&lt;b&gt;allow_jsonp = true&lt;/b&gt; to you config file
-&lt;i&gt;/opt/couchbase/etc/couchdb/local.ini&lt;/i&gt;. It&#39;s not enabled by
-default, and not having this set would result with empty responses from
-the CouchDB server.&lt;/p&gt;
-
-&lt;p&gt;The problem here is, that the browser doesn&#39;t allow quering a web server with hostname other than the one the script originates.
- More on this case &lt;a
-href=&#34;http://stackoverflow.com/questions/3386679/connection-ajax-couchdb-and-javascript&#34;&gt;here&lt;/a&gt;. Seems like my problem could be overcame by changing url in index.html and hostname couchdb listens on to the same address.
-&lt;/p&gt;
-
-&lt;p&gt;
-I&#39;ve also created a view, that would expose an event by key: &lt;a
-href=&#34;https://github.com/zygm0nt/gmapped/blame/master/couchdb/by_date_view.js&#34;&gt;view
-code&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;h2&gt;Presenting the dots&lt;/h2&gt;
-
-&lt;p&gt;
-As a back-end I&#39;ve done some JQuery based AJAX calls - nothing too
-fancy. All things necessary for presentation layer are in &lt;a
-href=&#34;https://github.com/zygm0nt/gmapped/blob/master/index.html&#34;&gt;this
-file&lt;/a&gt;.
-&lt;/p&gt;
-
-&lt;h2&gt;Things to consider&lt;/h2&gt;
-
-&lt;p&gt;
-Please bear in mind that this whole application is rather a playground,
-not a full-fledged project!! After creating all the parts I have some
-doubts about some architectural decisions I made. I don&#39;t think the
-security have been taken into account seriously enough. Also scalability
-was never an issue ;-)
-&lt;/p&gt;
-
-&lt;p&gt;
-If you have some thoughts about any of the aspects mentioned in this
-post, please feel free to comment or contact me directly :)
-&lt;/p&gt;
-
-&lt;p&gt;
-
-And also you may try the application by yourself - it&#39;s on the &lt;a
-href=&#34;https://github.com/zygm0nt/gmapped&#34;&gt;GitHub&lt;/a&gt;.
-&lt;/p&gt;&lt;/div&gt;
-&lt;h2&gt;Comments&lt;/h2&gt;
-&lt;div class=&#39;comments&#39;&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://mcl.jogger.pl&#34;&gt;Marcin&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;@Piotrek, here is a link to JIRA ticket concerning this feature. I think it is being discussed ATM: https://issues.apache.org/jira/browse/COUCHDB-431&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://blog.koszulinski.pl&#34;&gt;Piotrek Reinmar Koszuliński&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;About Same Origin Policy - now there&#39;s Cross Origin Resource Sharing available in most of common browsers. It should help You if CouchDB has support for it.&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://mcl.jogger.pl&#34;&gt;Marcin&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;@klausa, thanks for your advice. I&#39;ve made some changes to the post.&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://klausa.jogger.pl&#34;&gt;klausa&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;&amp;gt;The main idea was to create an app, that would dynamically update itself with geographic data flowing in. &lt;br /&gt;
-&lt;br /&gt;
-Not to nitpick, but that doesn&#39;t seem like an idea for app. I think you should explain what that displayed data is here.  If you moved your &#39;Presenting the dots&#39; paragraph just above &#39;Toys used&#39;, it would be clear what do you wanted to do with this app.&lt;br /&gt;
-&lt;br /&gt;
-&amp;gt;Also remember to add allow_jsonp = true to you config file /opt/couchbase/etc/couchdb/local.ini.&lt;br /&gt;
-&lt;br /&gt;
-I think you should explain what that option *really* does.&lt;br /&gt;
-&lt;br /&gt;
-Other than that, nice post!&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
+      <description>... or how I ended up writing a CouchDB proof of concept app? Once upon a time I set out on a journey to discover the NoSQL land. I&#39;ve decided that doing simple queries wouldn&#39;t be interesting enough. That&#39;s why I&#39;ve chose to create an app that would be based on some NoSQL database.
+ The main idea was to create an app, that would dynamically update itself with geographic data flowing in.</description>
     </item>
     
     <item>
@@ -423,157 +46,7 @@ Other than that, nice post!&lt;/p&gt;&lt;/div&gt;
       <pubDate>Mon, 22 Aug 2011 22:19:14 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/08/22/5-best-things-to-do-with-your-kindle/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
-
-
-&lt;p&gt;
-I bought a Kindle (3rd generation, Wi-Fi only) some time ago - like half
-a year ago. Read some
-books, done some web-browsing (awful, quite unpleasant). Gradually I
-became more and more curious of other things possible to achieve with
-this slate-looking piece of tech. These are my thoughts and ideas.
-&lt;/p&gt;
-
-&lt;p&gt;
-Got a Kindle? Use it every day? Feel like modding or extending your ways
-of usage? Great! Read on, and share your thoughts in comments!
-&lt;/p&gt;
-
-&lt;EXCERPT&gt;
-
-&lt;ol&gt;
-
-&lt;li&gt;
-Readability! - This web app is great! Generally this is a simple plug-in
-for your browser that will show a little button somewhere on the
-toolbar, and if you click it, the page you&#39;re reading now will be
-transformed into nice and sleek content-only page. Look on the screen
-below:&lt;br/&gt;
-
-&lt;a href=&#34;http://blog.innovative-labs.com/blog/readability_effect.png&#34;&gt;&lt;img border=&#34;0&#34;
-src=&#34;http://blog.innovative-labs.com/blog/readability_effect_small.png&#34;/&gt;&lt;/a&gt;
-&lt;br/&gt;
-
-This plug-ins additional function is sending to Kindle account. That&#39;s
-the nicest way to read those loads of RSS-sources articles :) The only
-limitation is that graphics won&#39;t be included if resulting file would
-exceed allowed size of kindle documents - that&#39;s 2MB AFAIR.
-
-&lt;br/&gt;
-
-&lt;img src=&#34;http://blog.innovative-labs.com/blog/readability_menu.png&#34;/&gt;
-
-&lt;/li&gt;
-
-
-&lt;li&gt;
-&lt;b&gt;Install some hacks!&lt;/b&gt; - be that serious hacks or rather some simple
-software modifications:
-
-&lt;ul&gt;
-    &lt;li&gt;read all book formats with Calibre - &lt;a
-href=&#34;http://www.hacktheday.com/quick-simple-guide-hacking-kindle-nook-ebooks/&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;play Zork on a Kindle!!! - &lt;a
-href=&#34;http://poptunes.org/howto-hack-your-kindle-to-run-zork-and-change-screensavers&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;alternative Kindle keyboard - &lt;a
-href=&#34;http://hackaday.com/2011/07/28/frankenkindle-building-an-alternate-kindle-keyboard/&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;custom fonts - &lt;a
-href=&#34;http://www.mobileread.com/forums/showthread.php?t=88004&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
-
-&lt;/ul&gt;
-
-&lt;/li&gt;
-
-&lt;li&gt;&lt;b&gt;Install custom screen-savers&lt;/b&gt; - &lt;a
-href=&#34;http://wiki.mobileread.com/wiki/Kindle_Screen_Saver_Hack_for_all_2.x_and_3.x_Kindles&#34;&gt;do
-this&lt;/a&gt; 
-to be able to install your own images. ...because you&#39;ve always wanted
-to have some other things on screen when your kindle is in standby mode. Of
-course, the original screen-savers look great, but there are only few.
-Installing this hack gave me an opportunity to have a multitude of new
-images. Now my Kindle looks even better!&lt;/li&gt;
-
-&lt;li&gt;&lt;b&gt;Try out Chinese kindle software - &lt;a
-href=&#34;http://www.duokan.com/forum/thread-16541-1-1.html&#34;&gt;doukan.com&lt;/a&gt;&lt;/b&gt; -  As a matter
-of fact, I haven&#39;t installed that software yet. It doesn&#39;t look good
-enough for me, and has some minor problems. However this is great, that
-there is actually some other option - I&#39;m not forced to use the official
-firmware. And this distribution has many nice features like PDF reflow.&lt;/li&gt;
-
-&lt;li&gt;&lt;b&gt;Enable Chinese fonts support on your kindle&lt;/b&gt; - damn! I&#39;d like
-a simple, step by step tutorial on how to set up chinese fonts on a
-kindle. I&#39;d like to put some font file on my device, fire some
-chinese book and be able to see the actual characters..&lt;/li&gt;
-
-&lt;li&gt;&lt;b&gt;Programming for Kindle&lt;/b&gt; - with &lt;a
-href=&#34;http://www.amazon.com/kdk&#34;&gt;Kindle Official SDK&lt;/a&gt; - well, not
-quite! - unfortunately this is reserved only for the Chosen Ones. I&#39;ve
-applied for the SDK but they
-haven&#39;t sent me my developer key yet, and it&#39;s been ~2 months. This is
-not &#34;being supportive&#34; or &#34;supporting the community&#34;.&lt;/li&gt;
-
-&lt;/ol&gt;
-
-&lt;p&gt;
-And how do You use your Kindle? Perhaps you&#39;re doing some serious, crazy
-things with it? Share your thoughts!&lt;/p&gt;&lt;/div&gt;
-&lt;h2&gt;Comments&lt;/h2&gt;
-&lt;div class=&#39;comments&#39;&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;&#34;&gt;Hoppke&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;Zgłosiłem się po kindlowe SDK prawie rok temu i niiic, cisza. Widać nie jestem dość cool, by dać mi tę zabawkę do ręki :)&lt;br /&gt;
-&lt;br /&gt;
-Co do książek, to fakt, DRM wszędzie. Ale DRM w ebookach działa jak każdy inny (czyli marnie -- da się zdjąć DRM Empiku, Amazona, itp.), więc użytkownik z odrobiną zacięcia da radę.&lt;br /&gt;
-&lt;br /&gt;
-PS. Mój kindel  postanowił wyzionąć ducha jakoś w zeszłym tygodniu, na 10 dni przed upływem gwarancji. Kindle znajomej padł ciut (tydzień-dwa?) wcześniej. Amazon bez szemrania wysyła nowe, ale... nie sposób oprzeć mi się uczuciu, że te urządzonka były obliczone na rok życia. A przynajmniej pierwsza seria z preorderów, obecne są (mam nadzieję) już trwalsze.&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://pecet.jogger.pl&#34;&gt;pecet&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;Dzięki za odpowiedzi :)&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;&#34;&gt;moher&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;Też kupowałem kindle ~6 m-cy temu więc się wtrącę:&lt;br /&gt;
-&lt;br /&gt;
-Ad  1. Ja kupowałem bezpośrednio w Amazonie i nie zapłaciłem VAT-u (OIDP cła na elektronikę z USA nie ma).&lt;br /&gt;
-Ad 2.  Przeglądarka IMHO z JS radzi sobie całkiem dobrze, ale jest cholernie wolna i nawigacja jest niewygodna.&lt;br /&gt;
-Ad 3.  Domyślnie tylko WPA2-PSK, ale jest tam nomalny wpa supplicant więc można edytować sobie konfig i szaleć.&lt;br /&gt;
-Ad 4. Ja całkiem sporo czytam i ładuje raz na miesiąc, może minimalnie częściej.&lt;br /&gt;
-Ad 5. Można kupować z Amazona, ja kupuje z Amazon UK, bo kiedy konfigurowałem Kindle to miał niższe ceny książek. Co do DRM to obsługuje tylko swój DRM (czyba azw, czyli mobi + Amazonowy DRM),  z innych trzeba zdjąć DRM i skonwertować na obsługiwany format (Calibre rulez!).&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://mcl.jogger.pl&#34;&gt;Marcin&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;Okej, no więc po koleji:&lt;br /&gt;
-&lt;br /&gt;
-1. Kupowałem bezpośrednio na Amazon - tyle że na amerykańskim, bo tylko z tamtego ślą Kindle do Polski. Uważam, że to jest najtańsza możliwa opcja. Cło opłaca Amazon, Ty niczym się nie przejmujesz, wszystko jest zrobione za Ciebie. Cała impreza kosztowała mnie coś koło 400zł (Kindle 3 wifi only). Z tego co widziałem to na Allegro jest zdecydowanie drożej.&lt;br /&gt;
-&lt;br /&gt;
-2. Przeglądanie stron na Kindlu to tylko w razie naprawdę dużej potrzeby. Mi się nie podoba, wyświetlacz jest na tyle mało responsywny, że swobodne surfowanie po sieci jest niewykonalne. Jak musisz koniecznie coś sprawdzić, to sprawdzisz, ale dla przyjemności to raczej w ten sposób się tego nie robi ;-)&lt;br /&gt;
-&lt;br /&gt;
-3. Nie mam dostępu do WPA2 z Radiusem. Używam na WPA2 z PSK - i działa bez zarzutu. Może pogooglaj gdzieś? &lt;br /&gt;
-&lt;br /&gt;
-4. To prawda, trzyma miesiąc, tylko trzeba pamiętać żeby Wi-Fi wyłączać, bo nawet na standbaju zrzera baterię.&lt;br /&gt;
-&lt;br /&gt;
-5. W Polsce można bez problemu kupować książki z Amazona (nadal, przez Wifi, bo przez 3G to nie wiem). Co do Polskich sklepów, to o ile oferują wspierane przez Kindla formaty, to nie powinno być problemu. Ja osobiście raczej mało książek kupuję na Kindla - korzystam z ogólno dostępnej klasyki + mam osobno kupione PDFy itp. Generalnie nie przeczytasz żadnych książek w pub&#39;ach ani tym podobnych formatach. Aczkolwiek są na to haki (między innymi chinski software, o którym pisałem).&lt;br /&gt;
-&lt;br /&gt;
-W każdym razie polecam zakup, bo naprawdę warto - chyba że wolałbyś coś w stylu IPada (kolory, łatwe surfowanie), to wtedy Kindle nie jest dla Ciebie :)&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://pecet.jogger.pl&#34;&gt;pecet&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;Sorry że po polsku, ale przymierzam się do kupna Kindla, i mam parę pytań, wybacz jeśli zaśmiecam ci notkę:&lt;br /&gt;
-&lt;br /&gt;
-1. Gdzie kupowałeś bezpośrednio na Amazonie czy przez pośrednika z Allegro, jak z cłem i innymi podatkami? &lt;br /&gt;
-2. Przeglądarka w Kindle 3 podobno na webkicie, jak w praktyce, dobrze sobie radzi ze stronami, co z JSem?&lt;br /&gt;
-3. WiFi obsługuje szyfrowanie WPA2 korporacyjne z serwerem RADIUS, czy tylko wersję WPA2 z PSK?&lt;br /&gt;
-4. Jak z bateryjką, słyszałem że miesiąc daje rady, prawda to?&lt;br /&gt;
-5. Można w Polandii kupować w Amazonie książki do Kindla? Są jakieś polskie sklepy z polskimi legalnymi ksiażkami, które później bez problemów wrzucę do Kindla, czy przez DRM nie da rady?&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
+      <description>I bought a Kindle (3rd generation, Wi-Fi only) some time ago - like half a year ago. Read some books, done some web-browsing (awful, quite unpleasant). Gradually I became more and more curious of other things possible to achieve with this slate-looking piece of tech. These are my thoughts and ideas.  Got a Kindle? Use it every day? Feel like modding or extending your ways of usage? Great! Read on, and share your thoughts in comments!</description>
     </item>
     
     <item>
@@ -582,121 +55,8 @@ W każdym razie polecam zakup, bo naprawdę warto - chyba że wolałbyś coś w 
       <pubDate>Thu, 14 Jul 2011 08:25:19 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
-&lt;p&gt;Some time ago one of the projects at work required me to validate
-some Java POJOs. Theses were my model classes and I&#39;ve been creating
-them from incoming WebService requests. One would say that XSD would be
-sufficient for the task, for parts of this validations - sure, it would.
-But there were some advanced rules XSD would not handle, or would render
-the schema document very complicated.&lt;/p&gt;
-
-&lt;p&gt;Rules I needed to express were like:
-
-&lt;ul&gt;
-
-&lt;li&gt;person&#39;s &lt;i&gt;first_name&lt;/i&gt; and &lt;i&gt;last_name&lt;/i&gt; should be of appropriate length -
-between 2 and 20, and additionally one could pass a zero-length string
-just to remove the previous value&lt;/li&gt;
-&lt;li&gt;&lt;i&gt;state&lt;/i&gt; field should consist only defined values - as in
-dictionary value - this one would be completable with XSD&#39;s
-enumerations, but would require often changing schema files and
-redistributing them to interested parties :(&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The library I&#39;ve decided to use for this task is &lt;a
-href=&#34;http://oval.sf.net&#34;&gt;OVal&lt;/a&gt; and it came out really nice! Read on
-to find out the details!&lt;/p&gt;
-
-&lt;EXCERPT&gt;
-
-&lt;p&gt;Oval is quite mature library that allows POJO validation, but is not
-JSR303 (bean validation) implementation. It has converters that enable
-it to understand those annotations, but I&#39;m not sure about the
-compatibility.&lt;/p&gt;
-
-&lt;p&gt;I&#39;ve tried only a subset of the available checks, among which
-were:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;NotNull&lt;/li&gt;
-&lt;li&gt;NotEmpty&lt;/li&gt;
-&lt;li&gt;Length&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;There are many more, and their attributes give interesting ways to
-configure the validation process. But using them was rather easy and did
-not require to much brainstorming. What I really needed were custom
-checks. And in this area OVal shows it&#39;s strength. Implementing a check
-is really easy.&lt;/p&gt;
-
-&lt;p&gt;I needed an annotation that would check a field against some values in
-a dictionary. If field&#39;s value was in the given set, than the validation
-would succeed, if not, an exception would be thrown. To accomplish this
-task it is required to implement two classes: annotation class and check
-class - called by the validation engine on a given field.&lt;/p&gt;
-
-&lt;p&gt;Let&#39;s start with our new annotation:&lt;/p&gt;
-
-{% gist 1077516 DictionaryValue.java %} 
-
-In the above snippet I&#39;ve defined a check-annotation, that would be used like
-this:
-
-{% gist 1077516 sample.java %} 
-
-You can pass &lt;i&gt;file&lt;/i&gt; - containing dictionary values for this field.
-There is also &lt;i&gt;message&lt;/i&gt; field in the annotation which is an error
-message returned by the validation engine of failed check - pretty
-handy. And can be expressed in &lt;i&gt;.properties&lt;/i&gt; file as:
-
-{% gist 1077516 validation.properties %} 
-
-&lt;p&gt;Placeholder, like &lt;i&gt;context&lt;/i&gt;, will be replaced with correct values supplied by the
-validation engine.&lt;/p&gt;
-
-Annotating a field is not enough. It is also needed to create a validator
-for this kind of check. The name of the class is already defined in
-&lt;i&gt;DictionaryValue&lt;/i&gt; annotation, it is called
-&lt;i&gt;DictionaryValueCheck&lt;/i&gt; and I&#39;ve done this check this way:
-
-{% gist 1077516 DictionaryValueCheck.java %}
-
-What this basically does is:
-&lt;ol&gt;
-&lt;li&gt;when &lt;i&gt;file&lt;/i&gt; is set - read dictionary content from the file into
-map&lt;/li&gt;
-&lt;li&gt;upon check request just lookup value in dictionary parsed from the
-input file&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;And that&#39;s it!&lt;/p&gt;
-
-&lt;p&gt;For me Oval is really great tool. With it at ones disposal it is extremely easy to create any
-imaginable validation you need. This library is really easy to use and
-offers lots of handy features.&lt;/p&gt;
-
-&lt;p&gt;But perhaps I&#39;m reinventing the wheel and all this can be done easily
-with some other library? Share Your opinion!&lt;/p&gt;
-&lt;/div&gt;
-&lt;h2&gt;Comments&lt;/h2&gt;
-&lt;div class=&#39;comments&#39;&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://mcl.jogger.pl&#34;&gt;Marcin&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;Now that&#39;s a great question. I&#39;ve forgotten to write about this, but OVal offers profiles, which you can disable or enable whenever you like. You set a profile for a specific annotation. In your case let&#39;s assume You have two operations: add and update. Your model has field annotated with @NotNull(profile=&amp;quot;UPDATE&amp;quot;), which means we don&#39;t want null values on it when updating. In _add_ operation you disable the profile called UPDATE, so the annotation is also disabled. When calling _update_ you enable the profile and the validation is performed. &lt;br /&gt;
-&lt;br /&gt;
-More on this here: http://oval.sourceforge.net/userguide.html#d4e561&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;&#34;&gt;querial&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;Question:&lt;br /&gt;
-Say, we have an object with a primary key, that is mandatory (in the database), but described as AUTOINCREMENT. When client sends new object data, the primary key is obviously null, but we need to validate it for not-nullity in other cases.&lt;br /&gt;
-&lt;br /&gt;
-Doea OVal handle variations / directions of validation?&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
+      <description>Some time ago one of the projects at work required me to validate some Java POJOs. Theses were my model classes and I&#39;ve been creating them from incoming WebService requests. One would say that XSD would be sufficient for the task, for parts of this validations - sure, it would. But there were some advanced rules XSD would not handle, or would render the schema document very complicated.
+Rules I needed to express were like:  person&#39;s first_name and last_name should be of appropriate length - between 2 and 20, and additionally one could pass a zero-length string just to remove the previous value state field should consist only defined values - as in dictionary value - this one would be completable with XSD&#39;s enumerations, but would require often changing schema files and redistributing them to interested parties :(  The library I&#39;ve decided to use for this task is OVal and it came out really nice!</description>
     </item>
     
     <item>
@@ -705,138 +65,8 @@ Doea OVal handle variations / directions of validation?&lt;/p&gt;&lt;/div&gt;
       <pubDate>Sun, 22 May 2011 16:39:31 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
-&lt;p&gt;And now for part 2 of my visit to Geecon 2011!&lt;/p&gt;
-&lt;EXCERPT&gt;
-&lt;h2&gt;1. &lt;a href=&#34;http://jim.webber.name/&#34;&gt;Jim Webber&lt;/a&gt; &#34;Revisiting SOA for the 21st
-century&#34;&lt;/h2&gt;
-
-&lt;p&gt;Now this was awesome! Jim Webber, a former &lt;a
-href=&#34;http://www.thoughtworks.com/&#34;&gt;ThoughtWorks&lt;/a&gt; employee, now
-Neo4j evangelist (in &lt;a href=&#34;http://neotechnology.com/&#34;&gt;Neotechnology&lt;/a&gt;) described his views
-on how SOA should look - according to him. This was presented
-previously, on other occasions as his &#34;Guerilla SOA&#34; talk - generally he
-advocated for REST based services, loose contracts (stating that WSDLs
-are too verbose and code generation is evil).&lt;/p&gt;
-
-&lt;p&gt;Jim mentioned Martin Fowler&#39;s article on integration databases but I
-couldn&#39;t find it anywhere - thou the topic looks interesting. He also
-recommended &lt;a
-href=&#34;http://en.wikipedia.org/wiki/Behavior_Driven_Development&#34;&gt;BDD&lt;/a&gt; and exposing tests on the web for the end
-user to use them as early as possible.&lt;/p&gt;
-
-&lt;p&gt; One big point he made his case with was &lt;b&gt;not relying on enterprise
-software&lt;/b&gt;. Simple tools can do much better job. He compared
-implementing Web Services security (Secured SOAP over HTTP over TCP IP)
-to REST based service accessed through &lt;i&gt;HTTPS&lt;/i&gt; - basic and easily
-testable with tools like &lt;a href=&#34;http://curl.haxx.se/&#34;&gt;curl&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Great talk. One of the best!&lt;/p&gt;
-
-&lt;h2&gt;2. &lt;a href=&#34;http://blog.staffannoteberg.com/&#34;&gt;Staffan Noteberg&lt;/a&gt; &#34;Regex - the future
-programming&#34;&lt;/h2&gt;
-
-&lt;p&gt;I must confess, that this did not go too well. The whole talk was
-well prepared and laid out but it lacked depth. It was pretty basic
-introduction to regex. From the presentation&#39;s subject I was rather
-prepared for some novel uses of regex - like for example: showing how to
-filter big volume of data with simple regex or sth.&lt;/p&gt;
-
-&lt;p&gt;But the talk was fun, Staffan is a good speaker. He is also an author
-of &lt;a href=&#34;http://www.pomodorotechnique.com/&#34;&gt; pomodoro technique&lt;/a&gt; book - I intend to read sth abut
-this technique and this may be a nice start&lt;/p&gt;
-
-&lt;h2&gt;3. Bartosz Kowalewski &#34;Is OSGI ready for wide
-adoption?&#34;&lt;/h2&gt;
-
-&lt;p&gt;If it comes to titles I tend to rely on them pretty heavily, however
-strange it may seem. This time I also did - and the whole talk did not
-give me a definitive answer to the stated question.&lt;/p&gt;
-
-&lt;p&gt;Sure, the presentation was informative, but it described some OSGI
-specific, quite low level stuff. Of course, if you want to use OSGI -
-even by leveraging application server with OSGI under the hood - you
-should know a fair bit about the technology itself. Even thou the AS
-does a good job of hiding OSGI container specifics from the developer,
-in case of problems it&#39;s better to be well informed. All in all - the
-talk gave too little information for me.&lt;/p&gt;
-
-&lt;h2&gt;4. &lt;a href=&#34;http://www.jetbrains.com/company/people/Pech_Vaclav.html&#34;&gt;Vaclav Pech&lt;/a&gt; &#34;Pick low hanging fruit&#34;&lt;/h2&gt;
-
-&lt;p&gt;&lt;b&gt;&#34;Parallelism is not hard, multithreading is&#34;&lt;/b&gt; - this was the
-key sentence of the presentation. The speaker showed how to introduce
-concurrency into normal java/groovy code by sprinkling it with
-concurrency powder. Easy enough! With &lt;a
-href=&#34;http://gpars.codehaus.org/&#34;&gt;GPars&lt;/a&gt; library he
-showed:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;running processing tasks with thread pools&lt;/li&gt;
-&lt;li&gt;testing concurrent code&lt;/li&gt;
-&lt;li&gt;Fork/join Thread Pool - multiple thread queues (note to self:
-fork/join is good for hierarchical problems)&lt;/li&gt;
-&lt;li&gt;low-hanging fruits:&lt;br&gt;
-
-    &lt;ul&gt;
-    &lt;li&gt;async calculations&lt;/li&gt;
-    &lt;li&gt;fork/join&lt;/li&gt;
-    &lt;li&gt;dataflow&lt;/li&gt;
-    &lt;li&gt;parallel collection processing&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Actors are great - use &lt;a
-href=&#34;http://gpars.codehaus.org/&#34;&gt;GPars&lt;/a&gt; or &lt;a href=&#34;http://akka.io/&#34;&gt;Akka&lt;/a&gt;,
-is sufficient to use &lt;i&gt;@ActiveMethod&lt;/i&gt; and &lt;i&gt;@ActiveObject&lt;/i&gt;
-annotations and Actors are usable in OO-world&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/p&gt;
-
-&lt;p&gt; Good talk, well received!&lt;/p&gt;
-
-&lt;h2&gt;5. &lt;a href=&#34;http://www.linkedin.com/in/antonarhipov&#34;&gt;Anton Arhipov&lt;/a&gt; &#34;Bytecode for discriminating
-developers&#34;&lt;/h2&gt;
-
-&lt;p&gt;Technical introduction to the world of bytecode, jvm specification
-details. I&#39;ve drifted away to some other topics - really - can&#39;t recall
-what this was all about.&lt;/p&gt;
-
-&lt;h2&gt;6. &lt;a href=&#34;http://jroller.com/aalmiray/&#34;&gt;Andreas Almiray&lt;/a&gt; &#34;Polyglot Programming&#34;&lt;/h2&gt;
-
-&lt;p&gt;This was a nice talk covering Groovy, Scala and Closure. The whole
-point of it was to show how cool it is to play with emerging JVM
-languages. They are not only fun but also useful. What&#39;s more, they
-bring freshness to java world, injecting it with some new paradigms and
-methodologies. It is easier to incorporate new ideas into younger JVM
-languages than to the mature Java.&lt;/p&gt;
-
-&lt;h2&gt;7. &lt;a href=&#34;http://jim.webber.name/&#34;&gt;Jim Webber&lt;/a&gt; &#34;A pragmatic introduction to
-Neo4j&#34;&lt;/h2&gt;
-
-&lt;p&gt;And Jim Webber again, this time with some &lt;a href=&#34;http://neo4j.org/&#34;&gt;Neo4j&lt;/a&gt; evangelism. First
-came some taxonomy information on NoSQL databases (Not Only SQL) as a
-whole - than some specific examples of problems solvable with graph
-databases - and Neo4j is a graph database. &lt;/p&gt;
-
-&lt;p&gt; Main points of Jim&#39;s talk were:
-&lt;ul&gt;
-&lt;li&gt;sharding a database is important for scalability&lt;/li&gt;
-&lt;li&gt;series data - should be OK to use Neo4j as their storage&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;These were all the sessions I attended. On Saturday there was a
-Hacker-garden, but neither I had time nor will to stay - the topics were
-very interesting and I&#39;d definitely like to experience such an event,
-but after 2 days of continuous talks I was rather tired.&lt;/p&gt;
-
-&lt;p&gt;To sum up, 2011&#39;s Geecon was a great experience, with lots of
-interesting talks and lots of new inspirations. Keep up the good work
-guys!&lt;/p&gt;&lt;/div&gt;
-&lt;h2&gt;Comments&lt;/h2&gt;
-&lt;div class=&#39;comments&#39;&gt;
-&lt;/div&gt;
-</description>
+      <description>And now for part 2 of my visit to Geecon 2011!
+ 1. Jim Webber &#34;Revisiting SOA for the 21st century&#34; Now this was awesome! Jim Webber, a former ThoughtWorks employee, now Neo4j evangelist (in Neotechnology) described his views on how SOA should look - according to him. This was presented previously, on other occasions as his &#34;Guerilla SOA&#34; talk - generally he advocated for REST based services, loose contracts (stating that WSDLs are too verbose and code generation is evil).</description>
     </item>
     
     <item>
@@ -845,191 +75,8 @@ guys!&lt;/p&gt;&lt;/div&gt;
       <pubDate>Thu, 19 May 2011 20:05:05 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/05/19/geecon-2011-day-1/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
-&lt;p&gt;Last week&#39;s Java conference - &lt;a href=&#34;http://2011.geecon.org&#34;&gt;Geecon&lt;/a&gt; was very
-interesting. It was well prepared, and gave an insight into the current
-Java related trends - concurrency, DSLs, polyglot programming. But not
-only that - there were also some pretty different talks from excellent
-speakers.&lt;/p&gt;
-
-&lt;p&gt;
-The whole event took 4 days:
-&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;University day (wednesday)&lt;/li&gt;
-&lt;li&gt;2 regular conference days (Thursday + Friday) &lt;/li&gt;
-&lt;li&gt;hacker garden (Sunday)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;
-I decided to attend only on Thursday and Friday - no time for more. Here
-is what interesting happened during those days.
-&lt;/p&gt;
-
-&lt;EXCERPT&gt;
-
-&lt;h1&gt;Day 1&lt;/h2&gt;
-
-&lt;p&gt;The morning got me unprepared. After hard enough, after work travel to
-Krakow on Wednesday, I wasn&#39;t in the best shape. However after arriving
-at the venue, being greeted with breakfast and refreshments I
-looked at the rest of the day with real hope.&lt;/p&gt;
-
-&lt;p&gt;Since the schedule was tight - three parallel tracks of lecture, I
-had to choose, so bare in mind, that is my account of what I&#39;ve seen and
-heard. Others may, of course, differ.&lt;/p&gt;
-
-&lt;h2&gt;1. &lt;a href=&#34;http://blogs.oracle.com/dannycoward/&#34;&gt;Danny Coward&lt;/a&gt; &#34;Java SE: The Road Ahead&#34;&lt;/h2&gt;
-
-&lt;p&gt;Danny, being on &lt;a href=&#34;http://www.oracle.com&#34;&gt;Oracle&lt;/a&gt; (considering being also former
-Sun&#39;s employee a plus) payroll, gave an insightful talk on new things to
-came in &lt;a
-href=&#34;http://blogs.oracle.com/dannycoward/entry/channeling_java_se_7&#34;&gt;Java 7&lt;/a&gt;. He drew rather serious plans for Java 8.
-According to Danny, the main trends in today&#39;s Java ecosystem are:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;parallel programming&lt;/li&gt;
-&lt;li&gt;language dynamics&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;and he probably is right :) The great things to come with new
-versions of Java are:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;closures in Java (finally!)&lt;/li&gt;
-&lt;li&gt;extending interfaces&lt;/li&gt;
-&lt;li&gt;map, filter - functions for collections&lt;/li&gt;
-&lt;li&gt;lambda expressions - thou in Java 8&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The talk itself was a nice keynote, but I doubt the road map for Java
-will be met in its full extent - the goals aren&#39;t that small.&lt;/p&gt;
-
-&lt;h2&gt;2. &lt;a href=&#34;http://www.springsource.com/people/jhoeller&#34;&gt;Juergen Hoeller&lt;/a&gt; &#34;Enterprise Java in 2011&#34;&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.springsource.com/&#34;&gt;Spring Source&lt;/a&gt; as one of the sponsors sent Juergen to
-evangelize about the world of enterprise and Java&#39;s place in it :) He
-emphasized different kinds of deployment: WAR, cloud deployment - and
-the latter&#39;s rise of importance.&lt;/p&gt;
-
-&lt;p&gt;He pointed out how outdated current application servers are - the
-usually lag ~3 years behind the main trends and developers&#39; needs - good
-point! He proposed looking under the hood of now-popular cloud
-environments: &lt;a href=&#34;http://code.google.com/appengine/&#34;&gt;Google App
-Engine&lt;/a&gt; or &lt;a href=&#34;http://aws.amazon.com/ec2/&#34;&gt;Amazon
-Elastic Cloud&lt;/a&gt; to look for schemas in them, etc - I intend to listen
-to his advice.&lt;/p&gt;
-
-&lt;p&gt;All in all this guy gave a great talk covering wide spectrum of
-technologies and not focusing on technical stuff too much.&lt;/p&gt;
-
-&lt;h2&gt;3. &lt;a href=&#34;http://www.javaspecialists.eu/contact.jsp&#34;&gt;Heinz Kabutz&lt;/a&gt; &#34;Reflection madness&#34;&lt;/h2&gt;
-
-&lt;p&gt;Despite living on a Greek island, this guy showed also how to whack
-ones mind with &lt;a
-href=&#34;http://download.oracle.com/javase/tutorial/reflect/&#34;&gt;Java Reflection API&lt;/a&gt;. Pure magic! Some
-highlights of his talk were:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;how to get &lt;i&gt;42 + 1 = 44&lt;/i&gt;&lt;/li&gt;
-&lt;li&gt;get the size of an object&lt;/li&gt;
-&lt;li&gt;get method caller&#39;s id&lt;/li&gt;
-&lt;li&gt;add enum values dynamically&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;With all this examples he pointed that using &lt;i&gt;SecurityManager&lt;/i&gt;
-will prevent such nasty coding practices.&lt;/p&gt;
-
-&lt;p&gt;Since he is an editor of &lt;a
-href=&#34;http://www.javaspecialists.eu/&#34;&gt;Javaspecialists.eu&lt;/a&gt;
-newsletter, all the answers to problems presented in his talk (and many
-many more) can be found there. &lt;/p&gt;
-&lt;p&gt;Well done, not to useful for me, nevertheless - interesting.&lt;/p&gt;
-
-&lt;h2&gt;4. &lt;a href=&#34;https://twitter.com/#!/mfiguiere&#34;&gt;Michael Figuiere&lt;/a&gt;,
-Cyrille Le Clere
-&#34;NoSQL &amp; Datagrid from developer perspective&#34;&lt;/h2&gt;
-&lt;p&gt;I don&#39;t know what to think of this talk. It consisted an introduction
-to NoSQL databases but also a bit of problem&#39;s description that can be
-encountered when dealing with them. Notable thoughts were on:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;creating a sharding ready data structure&lt;/li&gt;
-&lt;li&gt;denormalization as a useful process for NoSQL DBs&lt;/li&gt;
-&lt;li&gt;NoSQL usually means &lt;b&gt;no transactions&lt;/b&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;5. &lt;A href=&#34;http://hamletdarcy.blogspot.com/&#34;&gt;Hamlet D&#39;Arcy&lt;/a&gt; &#34;New Ideas for old code&#34;&lt;/h2&gt;
-
-&lt;p&gt;Since a lot of developers (all?) have to deal with legacy code - one
-way or another, this talk was &lt;i&gt;a must&lt;/i&gt;!&lt;/p&gt;. The speaker shared
-some ideas on how to work with such code and remain sane. The talk was
-vivid, interesting and entertaining, well, and the notable thought? Here
-they are:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;51% rule - if you&#39;re not committing 51% of your time/your tasks into
-fixing your situation than the whole battle &lt;b&gt;is already lost&lt;/b&gt;,&lt;/li&gt;
-&lt;li&gt;read some good stuff!:&lt;br/&gt;
-    &lt;ul&gt;
-        &lt;li&gt;&lt;a
-href=&#34;http://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672&#34;&gt;Martin Fowler&#39;s &#34;Refactoring&#34;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a
-href=&#34;http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1305828015&amp;sr=1-1&#34;&gt;George C. Martin &#34;Clean Code&#34;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;http://chadfowler.com/2006/12/27/the-big-rewrite&#34;&gt;Chad Fowler &#34;Big Rewrites&#34;&lt;/a&gt; - and why they
-failed, what&#39;s wrong with them&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;use static analysis - &lt;a href=&#34;http://findbugs.sourceforge.net/&#34;&gt;Find Bugz&lt;/a&gt;, 
-pmc&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Command-query_separation&#34;&gt;query-command&lt;/a&gt; - a method should be a query or a
-command:&lt;br/&gt;
-    &lt;ul&gt;
-        &lt;li&gt;query - returns sth&lt;/li&gt;
-        &lt;li&gt;command - change the state of an object&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;he also proposed &lt;b&gt;scratch refactoring&lt;/b&gt;&lt;br/&gt;
-    &lt;ol&gt;
-        &lt;li&gt;set a timer&lt;/li&gt;
-        &lt;li&gt;tag your code&lt;/li&gt;
-        &lt;li&gt;&lt;b&gt;refactor without tests&lt;/b&gt;&lt;/li&gt;
-        &lt;li&gt;step back and analyze&lt;/li&gt;
-        &lt;li&gt;is it better? if not, revert&lt;/li&gt;
-    &lt;/ol&gt;
-&lt;/li&gt;&lt;/ul&gt;
-
-&lt;p&gt;This was nice! - it assumed arriving at a project with no ( or
-little) tests.&lt;/p&gt;
-
-&lt;h2&gt;6. Aslan Knutsen &#34;Arquillian&#34;&lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;The last talk of that day was about some new library from JBoss that
-would allow to test your components with unit tests - test them in a
-destination container. The whole point of this library is to run the
-specific fragment of code as if it was build and deployed to some
-application server (let&#39;s say JBoss AS ;-) ). To be honest, I can&#39;t find
-much application for that - thou I&#39;m not doing any serious work in JEE
-world.&lt;/p&gt;
-
-&lt;h2&gt;Party&lt;/h2&gt;
-
-&lt;p&gt;And the day ended. But there was sth else to do after the official
-part - party time! It took place at &lt;a href=&#34;&#34;&gt;Klub Pauza&lt;/a&gt; on
-Floriańska street. It was a rather nice social event.&lt;/p&gt;
-
-
-&lt;p&gt;&lt;i&gt;... to be continued - stay tuned for part 2&lt;/i&gt;&lt;/p&gt;&lt;/div&gt;
-&lt;h2&gt;Comments&lt;/h2&gt;
-&lt;div class=&#39;comments&#39;&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://blog.patryk-dobrowolski.eu&#34;&gt;JedenPies&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;&amp;quot;how to get 42 + 1 = 44&amp;quot;?&lt;br /&gt;
-Tutaj ;)&lt;br /&gt;
-http://blog.patryk-dobrowolski.eu/2011/05/16/refleksja-moze-byc-niebezpieczna-zobacz-jak-zniszczyc-sobie/&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
+      <description>Last week&#39;s Java conference - Geecon was very interesting. It was well prepared, and gave an insight into the current Java related trends - concurrency, DSLs, polyglot programming. But not only that - there were also some pretty different talks from excellent speakers.
+ The whole event took 4 days:  University day (wednesday) 2 regular conference days (Thursday + Friday)  hacker garden (Sunday)   I decided to attend only on Thursday and Friday - no time for more.</description>
     </item>
     
     <item>
@@ -1038,100 +85,7 @@ http://blog.patryk-dobrowolski.eu/2011/05/16/refleksja-moze-byc-niebezpieczna-zo
       <pubDate>Mon, 02 May 2011 15:03:38 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/05/02/jce-keystore-and-untrusted-sites/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
-&lt;p&gt;Recently at work I was in need of connecting to a web service exposed via
-HTTPS. I&#39;ve been doing this from inside &lt;a href=&#34;http://servicemix.apache.org/home.html&#34;&gt;Servicemix 3.3.1&lt;/a&gt;, which may seem
-a bit inhibiting, but that was a requirement. Nevertheless I&#39;ve been
-trying my luck with the included &lt;em&gt;servicemix-http-2008.01&lt;/em&gt;
-component. I&#39;ve created a simple &lt;a
-href=&#34;http://servicemix.apache.org/working-with-service-units.html&#34;&gt;Service
-Unit&lt;/a&gt; using that component and made connection attempt.
-Unfortunately I&#39;ve encountered issues with the SSL conversation
-negotiation. I had to dig deeper into the &lt;em&gt;servicemix-http&lt;/em&gt; code
-to find out these had something to do with my &lt;a
-href=&#34;https://secure.wikimedia.org/wikipedia/en/wiki/Java_Cryptography_Extension&#34;&gt;JCE&lt;/a&gt;
-keystore. Read more to find out what happened!&lt;/p&gt;
-&lt;EXCERPT&gt;
-&lt;p&gt;Ok, so I had my &lt;em&gt;xbean.xml&lt;/em&gt; for http component looking like
-this:&lt;/p&gt;
-
-{% gist 951474 servicemix-http-xbean.xml %}
-
-
-&lt;p&gt;As you can see this is a proxy adapter to some outside service
-exposed via secured HTTP protocol. Since it&#39;s &lt;em&gt;HTTPS&lt;/em&gt; I&#39;ve
-specified some SSL parameters. It was sufficient in my case to just pass
-the keystore file and it&#39;s password.&lt;/p&gt;
-
-&lt;p&gt;I&#39;ve created my &lt;em&gt;keystore.jks&lt;/em&gt; file in &lt;em&gt;smx_home/conf&lt;/em&gt;
-with password &lt;em&gt;servicemix&lt;/em&gt; in the following manner:&lt;/p&gt;
-
-{% gist 951459 create_keystore.sh %}
-
-&lt;p&gt;You can see what&#39;s in this file with this command:&lt;/p&gt;
-
-{% gist 951459 list_keys.sh %}
-
-&lt;p&gt;At this point I thought, that having a configured keystore and my
-component would suffice. Wrong! As soon as I&#39;ve tried to connect to the
-external service I got an exception:&lt;/p&gt;
-
-{% gist 951458 untrusted_key_error.java %}
-
-&lt;p&gt;Hmmm.. this looks pretty nasty, but it&#39;s not that bad. As one can
-read &lt;a
-href=&#34;http://blogs.sun.com/gc/entry/unable_to_find_valid_certification&#34;&gt;here&lt;/a&gt;,
-it&#39;s associated with the other site&#39;s having an untrusted (unsigned)
-certificate. Assuming you actually trust the other end of the
-communication and this situation is ok for you, you should add the
-servers certificate to your keystore. The previously mentioned link
-contained a little java class that would do just that. You can find it
-here (original code) &lt;a
-href=&#34;http://blogs.sun.com/andreas/resource/InstallCert.java&#34;&gt;InstallCert.java&lt;/a&gt;
-or you can look into my slightly changed version here &lt;a
-href=&#34;https://gist.github.com/951492&#34;&gt;at github&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;You should call it as follows, assuming that file
-&lt;em&gt;keystore.jks&lt;/em&gt; is in the current directory:&lt;/p&gt;
-
-&lt;script
-src=&#34;https://gist.github.com/951459.js?file=add_untrusted_key.sh&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;What you&#39;ll probably see, when you execute this app is this:&lt;/p&gt;
-
-{% gist 951458 add_untrusted_cert.sh %}
-
-&lt;p&gt;Please note that there is a prompt (&lt;em&gt;Enter certificate to add to
-trusted keystore...&lt;/em&gt;) in which you can enter the certificate number
-you wish to add to your keystore.&lt;/p&gt;
-
-&lt;p&gt;After all those steps my request got through and I could happily
-query HTTPS service as long as I wanted to! Great!&lt;/p&gt;
-
-&lt;h2&gt;Possible problems&lt;/h2&gt;
-
-&lt;p&gt;In my search for this problem&#39;s solution I&#39;ve encountered this kind
-of exception:&lt;/p&gt;
-
-{% gist 951458 keystore_key_error.java %}
-
-&lt;p&gt;A little googling led me to this &lt;a
-href=&#34;http://stackoverflow.com&#34;&gt;StackOverflow&lt;/a&gt; &lt;a
-href=&#34;http://stackoverflow.com/questions/4926290/java-keystore-and-password-settings&#34;&gt;question&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;It seems that you cannot have multiple keys with different passwords
-in the same keystore and use &lt;a
-href=&#34;http://download.oracle.com/javase/6/docs/api/javax/net/ssl/KeyManagerFactory.html&#34;&gt;KeyManagerFactory&lt;/a&gt; class. Oh
-well...&lt;/p&gt;.
-
-&lt;h2&gt;Ending&lt;/h2&gt;
-
-&lt;p&gt;To sum up, the solution given works, but in my opinion using the
-&lt;em&gt;InstallCert.java&lt;/em&gt; app is rather dirty. I&#39;ve been wondering, do
-you know other ways of doing that thing?&lt;/p&gt;
-
-&lt;/div&gt;
-</description>
+      <description>Recently at work I was in need of connecting to a web service exposed via HTTPS. I&#39;ve been doing this from inside Servicemix 3.3.1, which may seem a bit inhibiting, but that was a requirement. Nevertheless I&#39;ve been trying my luck with the included servicemix-http-2008.01 component. I&#39;ve created a simple Service Unit using that component and made connection attempt. Unfortunately I&#39;ve encountered issues with the SSL conversation negotiation. I had to dig deeper into the servicemix-http code to find out these had something to do with my JCE keystore.</description>
     </item>
     
     <item>
@@ -1140,91 +94,7 @@ you know other ways of doing that thing?&lt;/p&gt;
       <pubDate>Fri, 01 Apr 2011 09:16:59 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/04/01/advisory-messages-to-the-rescue/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
-&lt;p&gt;
-The most crucial part of software development is testing. It should
-ensure us, that our code is correct, works according to given specs,
-etc. There are many kinds of tests: unit tests, integration, functional.
-In general you should try to test the smallest possible subset of your
-code and be able to check the state of the objects after the test.
-&lt;/p&gt;&lt;p&gt;
-This seems as rather easy task, but what if you have an integration
-end-to-end test to perform? In most cases asserting state in integration
-test is rather hard due to multiple systems interoperability. Let&#39;s
-focus on a specific situation.
-&lt;/p&gt;
-&lt;EXCERPT&gt;
-&lt;p&gt;
-What I needed to do the other day was write some integration test for
-Jms based system. The processing pipeline is easy:
-&lt;ul&gt;
-&lt;li&gt; fetch object from DB&lt;/li&gt;
-&lt;li&gt; process it&lt;/li&gt;
-&lt;li&gt; publish on JMS&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/p&gt;&lt;p&gt;
-some other system (X-system) polls JMS:
-&lt;ul&gt;
-&lt;li&gt; if message is found&lt;/li&gt;
-&lt;li&gt; fetch it (message disappears from the JMS queue)&lt;/li&gt;
-&lt;li&gt; do sth with it&lt;/li&gt;
-&lt;/p&gt;&lt;p&gt;
-Looks simple but since I didn&#39;t have any sane access to the X-system I
-wanted to be sure that my object was actually put into the queue. It was
-not acceptable to subscribe to the queue and fetch that object in my
-test - it would dusrupt the flow of the whole process.
-&lt;/p&gt;&lt;p&gt;
-Fortunately I&#39;ve been using &lt;a
-href=&#34;http://activemq.apache.org&#34;&gt;ActiveMQ&lt;/a&gt; and since it offers a
-thing called &lt;a
-href=&#34;http://activemq.apache.org/advisory-message.html&#34;&gt;Advisory
-Messages&lt;/a&gt; I&#39;ve decided to use just them.
-&lt;/p&gt;&lt;p&gt;
-What are advisory messages? They are a set of administrative messages
-that are generated on a specific event, like message consumption,
-message delivery, topic destruction, and many more. Each type of message
-is delivered to a separate topic - prefixed with 
-&lt;strong&gt;ActiveMQ.Advisory&lt;/strong&gt;. Since generation of such messages
-may be an overhead in production systems these features are turned off
-by default. You need to enable specific type of
-advisory message for a specific jms destination. You can do this with
-ths configuration change to &lt;strong&gt;activemq.xml&lt;/strong&gt;
-&lt;/p&gt;
-{% gist 897141 %}
-&lt;p&gt;
-As you can see, I&#39;ve specified which advisories I want enabled. The full
-list of available advisories can be found &lt;a
-href=&#34;http://activemq.apache.org/advisory-message.html&#34;&gt;here&lt;/a&gt;.
-&lt;/p&gt;&lt;p&gt;
-Since I wanted to read messages from that topic I&#39;ve added the following
-configuration to my spring context - there is one destination bean for
-inserting messages and one bean for advisory topic.
-&lt;/p&gt;
-{% gist 897150 %}
-&lt;p&gt;
-Thanks to this configuration I&#39;ve been able to check that my message was
-actually delivered to the queue. There&#39;ve been no need to worry about
-race conditions in consuming the message from original queue - if the
-X-system read the message, I&#39;d be unable to determine if it has ever
-been in JMS at all.
-&lt;/p&gt;&lt;p&gt;
-What&#39;s not so nice about that:
-&lt;ul&gt;
-&lt;li&gt; advisory messages can be thought of as counters rather than debugging
-  information&lt;/li&gt;
-&lt;li&gt; they don&#39;t contain any data that would allow us to match advisory
-  message to the original message - thou you could correlate by
-  timestamp&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/p&gt;
-&lt;p&gt;
-All in all, it&#39;s a good tool to have! But perhaps you have some other
-thoughts on this subject? How do you test JMS?
-&lt;/p&gt;&lt;/div&gt;
-&lt;h2&gt;Comments&lt;/h2&gt;
-&lt;div class=&#39;comments&#39;&gt;
-&lt;/div&gt;
-</description>
+      <description>The most crucial part of software development is testing. It should ensure us, that our code is correct, works according to given specs, etc. There are many kinds of tests: unit tests, integration, functional. In general you should try to test the smallest possible subset of your code and be able to check the state of the objects after the test.  This seems as rather easy task, but what if you have an integration end-to-end test to perform?</description>
     </item>
     
     <item>
@@ -1233,23 +103,7 @@ thoughts on this subject? How do you test JMS?
       <pubDate>Sun, 27 Mar 2011 18:47:11 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/03/27/how-to-run-multiple-guest-os-in-qemu/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
-This weekend I&#39;ve been fiddling with &lt;a href=&#34;http://www.qemu.org&#34;&gt;QEMU&lt;/a&gt;. I&#39;ve installed &lt;a href=&#34;http://openbsd.org&#34;&gt;OpenBSD&lt;/a&gt; on a single image and wanted to have two instances of it communicating via network. Installing the system was easy, but the networking setup was quite a pain. See how I did that...
-&lt;EXCERPT&gt;
-
-&lt;p&gt;To make QEMU instances communicate with each other I needed to plug them to a &#34;network&#34;. That&#39;s why I&#39;ve created a bridge to which Virtual Instances would connect to. I&#39;ve used the following script:&lt;/p&gt;
-
-{% gist 889357 %}
-
-&lt;p&gt;Then I just needed to start Qemu with this command line:&lt;/p&gt;
-
-{% gist 889359 %} 
-
-&lt;p&gt;Since I&#39;ve set up bridge for Qemu instances, I&#39;ve plugged &lt;a href=&#34;http://en.wikipedia.org/wiki/TUN/TAP&#34;&gt;TAP&lt;/a&gt; interfaces into it. That&#39;s why I&#39;ve needed to specify this in my qemu exec line. I&#39;ve also added macaddress setting since both my instances were getting the same one.&lt;/p&gt;
-
-&lt;p&gt;And that&#39;s all! It works like a charm. Now on to some harder things!&lt;/p&gt;&lt;/div&gt;
-
-</description>
+      <description>This weekend I&#39;ve been fiddling with QEMU. I&#39;ve installed OpenBSD on a single image and wanted to have two instances of it communicating via network. Installing the system was easy, but the networking setup was quite a pain. See how I did that...  To make QEMU instances communicate with each other I needed to plug them to a &#34;network&#34;. That&#39;s why I&#39;ve created a bridge to which Virtual Instances would connect to.</description>
     </item>
     
     <item>
@@ -1258,52 +112,9 @@ This weekend I&#39;ve been fiddling with &lt;a href=&#34;http://www.qemu.org&#34
       <pubDate>Sun, 20 Mar 2011 19:35:39 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/03/20/me-on-hadoop-on-parleys/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
-&lt;p&gt;Finally I&#39;ve managed to import my &lt;a href=&#34;http://mcl.jogger.pl/2011/02/17/hadoop-on-warsaw-jug/&#34;&gt;WarJUG presentation&lt;/a&gt; to parleys.com. See for yourself :)
-&lt;/p&gt;
-&lt;EXCERPT&gt;
-
-&lt;object width=&#34;474&#34; height=&#34;443&#34;&gt;
-  &lt;param name=&#34;movie&#34; value=&#34;http://www.parleys.com/share/parleysshare2.swf?pageId=2316&#34;/&gt;
-  &lt;param name=&#34;allowFullScreen&#34; value=&#34;true&#34;/&gt;
-  &lt;param name=&#34;pageId&#34; value=&#34;2316&#34;/&gt;
-  &lt;embed src=&#34;http://www.parleys.com/share/parleysshare2.swf?pageId=2316&#34; type=&#34;application/x-shockwave-flash&#34; allowfullscreen=&#34;true&#34; width=&#34;474&#34; height=&#34;443&#34;/&gt;
-&lt;/object&gt;
-
-&lt;p&gt;
-If you&#39;ve got problems with opening the parleys&#39; version try the ones uploaded to youtube.
-&lt;/p&gt;
-&lt;p&gt;
-Here is part 1:
-&lt;/p&gt;
-&lt;object width=&#34;425&#34; height=&#34;344&#34;&gt;&lt;param name=&#34;movie&#34;                            
-value=&#34;http://www.youtube.com/v/oUFUhZtsUFI?hl=en&amp;fs=1&#34;&gt;&lt;/param&gt;&lt;param
-name=&#34;allowFullScreen&#34; value=&#34;true&#34;&gt;&lt;/param&gt;&lt;param
-name=&#34;allowscriptaccess&#34; value=&#34;always&#34;&gt;&lt;/param&gt;&lt;embed
-src=&#34;http://www.youtube.com/v/oUFUhZtsUFI?hl=en&amp;fs=1&#34;
-type=&#34;application/x-shockwave-flash&#34; allowscriptaccess=&#34;always&#34;
-allowfullscreen=&#34;true&#34; width=&#34;425&#34; height=&#34;344&#34;&gt;&lt;/embed&gt;&lt;/object&gt;
-
-&lt;p&gt;And here is part 2:&lt;/p&gt;
-
-&lt;object width=&#34;425&#34; height=&#34;344&#34;&gt;&lt;param name=&#34;movie&#34;
-value=&#34;http://www.youtube.com/v/LqhmOHXaQEU?hl=en&amp;fs=1&#34;&gt;&lt;/param&gt;&lt;param
-name=&#34;allowFullScreen&#34; value=&#34;true&#34;&gt;&lt;/param&gt;&lt;param
-name=&#34;allowscriptaccess&#34; value=&#34;always&#34;&gt;&lt;/param&gt;&lt;embed
-src=&#34;http://www.youtube.com/v/LqhmOHXaQEU?hl=en&amp;fs=1&#34;
-type=&#34;application/x-shockwave-flash&#34; allowscriptaccess=&#34;always&#34;
-allowfullscreen=&#34;true&#34; width=&#34;425&#34; height=&#34;344&#34;&gt;&lt;/embed&gt;&lt;/object&gt;
-
-&lt;/div&gt;
-&lt;h2&gt;Comments&lt;/h2&gt;
-&lt;div class=&#39;comments&#39;&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://sigvatr.jogger.pl&#34;&gt;Sigvatr&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;I&#39;m sorry, but I don&#39;t understand  Polish :P&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
+      <description>Finally I&#39;ve managed to import my WarJUG presentation to parleys.com. See for yourself :)    If you&#39;ve got problems with opening the parleys&#39; version try the ones uploaded to youtube.  Here is part 1:  And here is part 2:
+  Comments Sigvatr I&#39;m sorry, but I don&#39;t understand Polish :P
+   </description>
     </item>
     
     <item>
@@ -1312,23 +123,9 @@ allowfullscreen=&#34;true&#34; width=&#34;425&#34; height=&#34;344&#34;&gt;&lt;/
       <pubDate>Wed, 23 Feb 2011 13:22:04 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/02/23/after-warjug/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
-&lt;p&gt;Some time ago I&#39;d written about my &lt;a href=&#34;http://mcl.jogger.pl/2011/02/17/hadoop-on-warsaw-jug/&#34;&gt;arsaw JUG presentation&lt;/a&gt;. I finally presented the the topic yesterday.&lt;/p&gt;
-
-&lt;p&gt;I must say I&#39;m fairly content with my yesterday&#39;s presentation :) Here are some slides and as soon as the video will be available I&#39;ll post it here too.&lt;/p&gt;
-
-&lt;div style=&#34;width:425px&#34; id=&#34;__ss_7026758&#34;&gt;&lt;strong style=&#34;display:block;margin:12px 0 4px&#34;&gt;&lt;a href=&#34;http://www.slideshare.net/zygm0nt/hadoop-i-okolice&#34; title=&#34;Hadoop i okolice&#34;&gt;Hadoop i okolice&lt;/a&gt;&lt;/strong&gt;&lt;object id=&#34;__sse7026758&#34; width=&#34;425&#34; height=&#34;355&#34;&gt;&lt;param name=&#34;movie&#34; value=&#34;http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=touktemplate-110223021208-phpapp02&amp;stripped_title=hadoop-i-okolice&amp;userName=zygm0nt&#34; /&gt;&lt;param name=&#34;allowFullScreen&#34; value=&#34;true&#34;/&gt;&lt;param name=&#34;allowScriptAccess&#34; value=&#34;always&#34;/&gt;&lt;embed name=&#34;__sse7026758&#34; src=&#34;http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=touktemplate-110223021208-phpapp02&amp;stripped_title=hadoop-i-okolice&amp;userName=zygm0nt&#34; type=&#34;application/x-shockwave-flash&#34; allowscriptaccess=&#34;always&#34; allowfullscreen=&#34;true&#34; width=&#34;425&#34; height=&#34;355&#34;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;div style=&#34;padding:5px 0 12px&#34;&gt;View more &lt;a href=&#34;http://www.slideshare.net/&#34;&gt;presentations&lt;/a&gt; from &lt;a href=&#34;http://www.slideshare.net/zygm0nt&#34;&gt;zygm0nt&lt;/a&gt;.&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h2&gt;Comments&lt;/h2&gt;
-&lt;div class=&#39;comments&#39;&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://sigvatr.jogger.pl&#34;&gt;Sigvatr&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;Czyli napisałeś ładny post po angielsku, tylko po to, by zaprosić do obejrzenia prezentacji po polsku?&lt;br /&gt;
-&lt;br /&gt;
-(przepraszam, ale mój angielski jest za słaby na pisanie w nim)&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
+      <description>Some time ago I&#39;d written about my arsaw JUG presentation. I finally presented the the topic yesterday.
+I must say I&#39;m fairly content with my yesterday&#39;s presentation :) Here are some slides and as soon as the video will be available I&#39;ll post it here too.
+Hadoop i okoliceView more presentations from zygm0nt. Comments Sigvatr Czyli napisałeś ładny post po angielsku, tylko po to, by zaprosić do obejrzenia prezentacji po polsku?</description>
     </item>
     
     <item>
@@ -1337,45 +134,10 @@ allowfullscreen=&#34;true&#34; width=&#34;425&#34; height=&#34;344&#34;&gt;&lt;/
       <pubDate>Thu, 17 Feb 2011 23:09:46 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/02/17/hadoop-on-warsaw-jug/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
-&lt;p&gt;I&#39;ll be speaking at the upcoming JUG meeting in Warsaw. The topic will be Apache Hadoop. If you&#39;re interested, feel invited. Attend and ask questions. But be aware I&#39;m not advanced in this technology :)&lt;/p&gt;
-
-&lt;p&gt;Full invitation text can be found &lt;a href=&#34;http://sites.google.com/site/warszawajug/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;P.S.: Do you know what Hadoop is? Do you use it anywhere? Have you played with it?&lt;/p&gt;&lt;/div&gt;
-&lt;h2&gt;Comments&lt;/h2&gt;
-&lt;div class=&#39;comments&#39;&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://mcl.jogger.pl&#34;&gt;Marcin&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;@teamon - prawdopodobnie będzie. Na 100% to nie wiem, ale teoretycznie wszystkie prezentacje WarJUGa są nagrywane&lt;br /&gt;
-&lt;br /&gt;
-@r2 - nie trzeba się zapisywać - wystarczy przyjść&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;&#34;&gt;r2&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;Trzeba się uprzednio zapisać (gdzie?) by przyjść?&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://blog.teamon.eu&#34;&gt;teamon&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;Prezentacja bedzie nagrywana?&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://mcl.jogger.pl&#34;&gt;mcl&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;Prezentację starałem się przygotować bardzo ogólnie. Nie będzie zbyt dużo Javy - nie będę omawiał API. &lt;br /&gt;
-&lt;br /&gt;
-Myślę, że będzie to ciekawe również dla administratora.&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;&#34;&gt;zdzichu&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;Czy prezentacja będzie dotyczyła tylko programistycznej strony? Czy admin nie znający javy może przyjść i dowie się czegoś ciekawego?&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
+      <description>I&#39;ll be speaking at the upcoming JUG meeting in Warsaw. The topic will be Apache Hadoop. If you&#39;re interested, feel invited. Attend and ask questions. But be aware I&#39;m not advanced in this technology :)
+Full invitation text can be found here.
+P.S.: Do you know what Hadoop is? Do you use it anywhere? Have you played with it?
+ Comments Marcin @teamon - prawdopodobnie będzie. Na 100% to nie wiem, ale teoretycznie wszystkie prezentacje WarJUGa są nagrywane</description>
     </item>
     
     <item>
@@ -1384,154 +146,7 @@ Myślę, że będzie to ciekawe również dla administratora.&lt;/p&gt;&lt;/div&
       <pubDate>Mon, 17 Jan 2011 08:56:29 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/01/17/jms-redelivery-with-activemq-and-servicemix/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
-&lt;p&gt;
-The other day I felt a compelling need to implement a JMS redelivery
-scenario. The exact scenario I&#39;d been trying to handle was:
-&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;my message is in an ActiveMQ queue or topic&lt;/li&gt;
-&lt;li&gt;its processing fails, because of some exception - ie. database
-access exception due to server nonavailability&lt;/li&gt;
-&lt;li&gt;since we get an exception, the message is not handled properly, we
-may want to retry processing attempt some time later&lt;/li&gt;
-&lt;li&gt;of course, for the redelivery to happen we need the message to stay
-in the ActiveMQ queue - fetching messages from the queue will be stopped
-until the redelivery succeeds or expires&lt;/li&gt;
-&lt;/ol&gt;
-
-See how this can be done after the jump :)
-
-&lt;EXCERPT/&gt;
-
-&lt;p&gt;
-For this to happen, I&#39;ve tried implementing Apache Camel route, but as
-it turns out, Camel fails to deliver facilities for exact JMS
-redelivery. It is possible to set JMS connection in &lt;i&gt;transacted&lt;/i&gt;
-mode, but the redeliveries happen one after another and fixed times.
-&lt;/p&gt;
-
-&lt;p&gt;
-What I&#39;ve ended up doing was implement a servicemix-jms endpoint. I&#39;ve
-used this configuration for it:
-&lt;/p&gt;
-&lt;pre class=&#34;brush: xml&#34;&gt;
-&lt;jms:endpoint service=&#34;ts:WorkflowConsumerService&#34;
-                  endpoint=&#34;default&#34;
-                  targetService=&#34;ts:WorkflowConsumerCamelService&#34;
-                  targetEndpoint=&#34;default&#34;
-                  role=&#34;consumer&#34;
-                  processorName=&#34;jca&#34;
-                  connectionFactory=&#34;#connectionFactory&#34;
-                  resourceAdapter=&#34;#ra&#34;
-                  activationSpec=&#34;#activationSpec&#34;
-                  bootstrapContext=&#34;#bootstrapContext&#34;
-                  synchronous=&#34;true&#34;
-                  rollbackOnError=&#34;true&#34;
-                  wsdlResource=&#34;classpath:LeadManagement.wsdl&#34;
-                  defaultMep=&#34;http://www.w3.org/2004/08/wsdl/in-only&#34;/&gt;
-
-    &lt;bean name=&#34;connectionFactory&#34; class=&#34;org.springframework.jndi.JndiObjectFactoryBean&#34;&gt;
-        &lt;property name=&#34;jndiName&#34;&gt;
-            &lt;value&gt;activemq/connectionFactory&lt;/value&gt;
-        &lt;/property&gt;
-    &lt;/bean&gt;
-
-    &lt;bean name=&#34;ra&#34; class=&#34;org.springframework.jndi.JndiObjectFactoryBean&#34;&gt;
-        &lt;property name=&#34;jndiName&#34;&gt;
-            &lt;value&gt;activemq/resourceAdapter&lt;/value&gt;
-        &lt;/property&gt;
-    &lt;/bean&gt;
-
-    &lt;bean id=&#34;activationSpec&#34; class=&#34;org.apache.activemq.ra.ActiveMQActivationSpec&#34;&gt;
-        &lt;property name=&#34;destination&#34; value=&#34;example/C&#34;/&gt;
-        &lt;property name=&#34;destinationType&#34; value=&#34;javax.jms.Queue&#34;/&gt;
-        &lt;property name=&#34;maximumRedeliveries&#34; value=&#34;10&#34;/&gt;
-        &lt;property name=&#34;initialRedeliveryDelay&#34; value=&#34;10000&#34;/&gt;
-    &lt;/bean&gt;
-
-    &lt;jee:jndi-lookup id=&#34;bootstrapContext&#34; jndi-name=&#34;java:comp/env/smx/BootstrapContext&#34;&gt;
-    &lt;/jee:jndi-lookup&gt;
-&lt;/pre&gt;
-&lt;p&gt;
-As you can see, we lookup a couple of things in JNDI registry, so you need to 
-have them configured on the Servicemix side - a sample config presented 
-farther in this entry. 
-&lt;/p&gt;&lt;p&gt;
-The bean responsible for configuring redelivery settings is &lt;b&gt;activationSpec&lt;/b&gt;.
-You can set various things with it, like:
-&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;initial redelivery delay&lt;/li&gt;
-&lt;li&gt;maximum number of redeliveries&lt;/li&gt;
-&lt;li&gt;backoff multiplier&lt;/li&gt;
-&lt;li&gt;...&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;
-What is really important in &lt;i&gt;jms:endpoint&lt;/i&gt; config for this to work are:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;i&gt;processorName=&#34;jca&#34;&lt;/i&gt;&lt;/li&gt;
-&lt;li&gt;&lt;i&gt;rollbackOnError=&#34;true&#34;&lt;/i&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;
-Servicemix should have the following entries in its jndi registry:
-&lt;/p&gt;
-&lt;pre class=&#34;brush: xml&#34;&gt;
-         &lt;entry key=&#34;activemq/resourceAdapter&#34; value-ref=&#34;activemqRA&#34; /&gt;
-
-         &lt;entry key=&#34;activemq/connectionFactory&#34; value-ref=&#34;activemqCF&#34; /&gt;
-
-(...) 
-&lt;!-- namespaces:--&gt;
-       xmlns:jencks=&#34;http://jencks.org/2.0&#34;
-       xmlns:amqra=&#34;http://activemq.apache.org/schema/ra&#34; --&gt;
-
-          &lt;amqra:resourceAdapter
-                  id=&#34;activemqRA&#34;
-                  serverUrl=&#34;${activemq.url}&#34; /&gt;
-          &lt;amqra:managedConnectionFactory
-                  id=&#34;activemqMCF&#34;
-                  resourceAdapter=&#34;#activemqRA&#34; /&gt;
-          &lt;jencks:connectionFactory
-                  id=&#34;activemqCF&#34;
-                  managedConnectionFactory=&#34;#activemqMCF&#34;
-                  connectionManager=&#34;#connectionManager&#34; /&gt;
-&lt;/pre&gt;
-
-&lt;p&gt;
-When the redeliveries are exhausted, message is routed to global Dead Letter Queue
-called ActiveMQ.DLQ. Since this is a single bag for all the failed messages
-from all queues, you may want to configure this aspect differently. For example
-you can tell ActiveMQ to create a single DLQ for each queue. Use this config 
-to achieve it - the changes should be made to Broker configuration.
-&lt;/p&gt;
-&lt;pre class=&#34;brush: xml&#34;&gt;
-&lt;broker...&gt;
-  &lt;destinationPolicy&gt;
-    &lt;policyMap&gt;
-      &lt;policyEntries&gt;
-        &lt;!-- Set the following policy on all queues using the &#39;&gt;&#39; wildcard --&gt;
-        &lt;policyEntry queue=&#34;&gt;&#34;&gt;
-          &lt;deadLetterStrategy&gt;
-            &lt;!--
-              Use the prefix &#39;DLQ.&#39; for the destination name, and make
-              the DLQ a queue rather than a topic
-            --&gt;
-            &lt;individualDeadLetterStrategy
-              queuePrefix=&#34;DLQ.&#34; useQueueForQueueMessages=&#34;true&#34; /&gt;
-          &lt;/deadLetterStrategy&gt;
-        &lt;/policyEntry&gt;
-      &lt;/policyEntries&gt;
-    &lt;/policyMap&gt;
-  &lt;/destinationPolicy&gt;
-  ...
-&lt;/broker&gt;
-&lt;/pre&gt;
-&lt;p&gt;
-More on the subject of redelivieries in ActiveMQ can be found at &lt;a href=&#34;http://activemq.apache.org/message-redelivery-and-dlq-handling.html&#34;&gt;http://activemq.apache.org/message-redelivery-and-dlq-handling.html&lt;/a&gt;.
-&lt;/p&gt;&lt;/div&gt;
-</description>
+      <description>The other day I felt a compelling need to implement a JMS redelivery scenario. The exact scenario I&#39;d been trying to handle was:  my message is in an ActiveMQ queue or topic its processing fails, because of some exception - ie. database access exception due to server nonavailability since we get an exception, the message is not handled properly, we may want to retry processing attempt some time later of course, for the redelivery to happen we need the message to stay in the ActiveMQ queue - fetching messages from the queue will be stopped until the redelivery succeeds or expires  See how this can be done after the jump :)   For this to happen, I&#39;ve tried implementing Apache Camel route, but as it turns out, Camel fails to deliver facilities for exact JMS redelivery.</description>
     </item>
     
     <item>
@@ -1540,125 +155,98 @@ More on the subject of redelivieries in ActiveMQ can be found at &lt;a href=&#34
       <pubDate>Wed, 08 Dec 2010 09:22:34 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2010/12/08/easier-and-nicer-jms/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
-&lt;table border=&#34;0&#34;&gt;
-&lt;tr&gt;&lt;td&gt;
-&lt;p&gt;
-JMS seems like a hostile ground. It has all it&#39;s quirks and strange
-behaviours. A couple of defining standards plus esoteric brokers, queues
-and topics.
-&lt;/p&gt;
-
-&lt;/td&gt;
-&lt;td&gt;&lt;img src=&#34;http://blog.innovative-labs.com/blog/Screwdriver.jpg&#34; width=&#34;150&#34; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-
-&lt;p&gt;
-At work, we mainly use open source Jms solutions, namely Apache
-ActiveMQ. This one is usually bundled with Apache Servicemix, as a
-message broker for this particular ESB. As there are some minor caveats
-in this scennerio, I&#39;d like to describe here some guidelines for getting
-to running JMS queues.
-&lt;/p&gt;
-&lt;EXCERPT/&gt;
-&lt;p&gt;
-Treat this post as a quick cheat sheet with the most common things about
-JMS I tend to forget :)
-&lt;/p&gt;
-
-&lt;p&gt;
-Minor glitches encountered during work with embedded broker led to some
-thoughts about switching to external broker. This is how I configure SMX
-and AcviteMQ.
-&lt;/p&gt;
-&lt;p&gt;
-Necessary steps:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt; change &lt;i&gt;apache-servicemix/conf/servicemix.properties&lt;/i&gt; &lt;b&gt;activemq.port&lt;/b&gt;
-to sth else than standard, for example 61626&lt;/li&gt;
-&lt;li&gt; change &lt;i&gt;apache-activemq/conf/activemq.xml&lt;/i&gt; with this settings:
- &lt;ul&gt;
-    &lt;li&gt; change port, the service listens on:
-
-&lt;pre class=&#34;brush: xml&#34;&gt;
-        &lt;transportConnectors&gt;
-            &lt;transportConnector name=&#34;openwire&#34; uri=&#34;tcp://localhost:61626&#34;/&gt;
-        &lt;/transportConnectors&gt;
-&lt;/pre&gt;&lt;/li&gt;
-    &lt;li&gt; setup separate JMX instance:
-&lt;pre class=&#34;brush: xml&#34;&gt;
-        &lt;managementContext&gt;
-            &lt;managementContext createConnector=&#34;true&#34; connectorPort=&#34;2011&#34;/&gt;
-        &lt;/managementContext&gt;
-&lt;/pre&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt; the nicest tool I found for browsing queues and topics is &lt;a href=&#34;http://www.hermesjms.com&#34;&gt;Hermes
-JMS&lt;/a&gt;. Sample config, that connects Hermes to ActiveMQ instance is on
-the picture below:
-
-&lt;img src=&#34;http://blog.innovative-labs.com/blog/easy_jms.png&#34; width=&#34;550&#34; alt=&#34;HermesJMS to ActiveMQ connection config&#34;/&gt;
-&lt;/li&gt;
-&lt;li&gt; sending simple messages with Hermes is basic, but what if you need to
-set some headers, send bulk messages, etc. Easy, just use Hermes xml
-format. Look like this code snippet below and is rather self-explanatory:
-
-&lt;pre class=&#34;brush: xml&#34;&gt;
-&lt;content&gt;
-    &lt;entry type=&#34;1&#34;&gt;
-        &lt;textMessage JMSDeliveryMode=&#34;2&#34; JMSExpiration=&#34;0&#34; JMSPriority=&#34;0&#34; JMSRedelivered=&#34;false&#34; JMSTimestamp=&#34;0&#34;&gt;
-            &lt;headerProperty name=&#34;caseId&#34; type=&#34;java.lang.String&#34; value=&#34;105&#34;/&gt;
-            &lt;text&gt;&lt;![CDATA[&lt;message&gt;
-  &lt;event&gt;
-    &lt;case&gt;
-      &lt;CASE_ID&gt;105&lt;/CASE_ID&gt;
-      &lt;EVENT&gt;1235&lt;/EVENT&gt;
-    &lt;/case&gt;
-  &lt;/event&gt;
-&lt;/message&gt;]]&gt;&lt;/text&gt;
-        &lt;/textMessage&gt;
-    &lt;/entry&gt;
-&lt;/content&gt;
-&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt; since we use lots of &lt;a href=&#34;http://camel.apache.org&#34;&gt;Apache
- Camel&lt;/a&gt; to consume messages, here is a simple way to start broker in
-your tests:
-&lt;ul&gt;
-    &lt;li&gt; start a broker
-&lt;pre class=&#34;brush: java&#34;&gt;
-        BrokerService broker = new org.apache.activemq.broker.BrokerService();
-        broker.setBrokerName(&#34;AMQ-1&#34;);
-        broker.addConnector(&#34;tcp://localhost:51616&#34;);
-        broker.setPersistent(false);
-        broker.start();
-&lt;/pre&gt;
-     Notice it has persistance disabled.
-&lt;/li&gt;
-    &lt;li&gt; initialize Camel&#39;s JMS component:
-&lt;pre class=&#34;brush: java&#34;&gt;
-    ctx.removeComponent(&#34;jms&#34;);
-    ctx.addComponent(&#34;jms&#34;, ActiveMQComponent.activeMQComponent(&#34;tcp://localhost:51616&#34;));
-&lt;/pre&gt;&lt;/li&gt;
-    &lt;li&gt; if you want to pass messages to reference endpoints, (like &lt;i&gt;ref:input&lt;/i&gt;), use this wrapper method:
-&lt;pre class=&#34;brush: java&#34;&gt;
-private JmsEndpoint createJmsEndpoint(String endpoint) throws JMSException {
-        ActiveMQComponent amqc = (ActiveMQComponent) ctx.getComponent(&#34;jms&#34;);
-        JmsEndpoint endp = JmsEndpoint.newInstance(new ActiveMQTopic(endpoint), amqc);
-        return endp;
-}
-
-createJmsEndpoint(&#34;ESB/XYZ&#34;)
-&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-These are all the tricks I&#39;ve got for now! But if you know some other
-good tools that handle JMS, feel free to comment!
-
-Got more advices, again, comment!
-&lt;/div&gt;
-</description>
+      <description>JMS seems like a hostile ground. It has all it&#39;s quirks and strange behaviours. A couple of defining standards plus esoteric brokers, queues and topics.    At work, we mainly use open source Jms solutions, namely Apache ActiveMQ. This one is usually bundled with Apache Servicemix, as a message broker for this particular ESB. As there are some minor caveats in this scennerio, I&#39;d like to describe here some guidelines for getting to running JMS queues.</description>
+    </item>
+    
+    <item>
+      <title>Schematron to the rescue!</title>
+      <link>http://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/</link>
+      <pubDate>Thu, 21 Oct 2010 08:40:37 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/</guid>
+      <description>In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be solved with it - the standardization processes is there for some reason. But that happens only in ideal world, which we&#39;re not living in.   In ideal world, when dealing with XML instances you&#39;d be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal definition language to declare your data structure.</description>
+    </item>
+    
+    <item>
+      <title>Complex flows with Apache Camel</title>
+      <link>http://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/</link>
+      <pubDate>Thu, 26 Aug 2010 20:23:52 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/</guid>
+      <description>At work, we&#39;re mainly integrating services and systems, and since we&#39;re on a constant lookout for new, better technologies, ways to do things easier, make them more sustainable, we&#39;re trying to  Usually we use Apache Camel for this task, which is a Swiss-knife for integration engineer. What&#39;s more, this tools corresponds well with our approach to integration solutions:   try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits,  don&#39;t convert XML into Java classes back and forth and be worried with problems like XML conversion,  try to get a simple flow of the process.</description>
+    </item>
+    
+    <item>
+      <title>Meetbsd 2010</title>
+      <link>http://marcin.cylke.com.pl/2010/08/18/meetbsd-2010/</link>
+      <pubDate>Wed, 18 Aug 2010 22:16:25 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/08/18/meetbsd-2010/</guid>
+      <description>Some time ago, I&#39;ve attended MeetBSD conference in Kraków. This BSD event is held yearly in either Warsaw, or Kraków. Due to relatively small group of people that registered there was only one track, which had both good and bad sides - you didn&#39;t have to choose from myriads of lectures, but there was no way to skip boring ones either. Well, I guess this kind of niche conference - about operating system :) - will not attract bigger attention.</description>
+    </item>
+    
+    <item>
+      <title>Generic Enum converter for iBatis</title>
+      <link>http://marcin.cylke.com.pl/2010/06/28/generic-enum-converter-for-ibatis/</link>
+      <pubDate>Mon, 28 Jun 2010 20:40:34 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/06/28/generic-enum-converter-for-ibatis/</guid>
+      <description>My goal was to create a simple, extensible Enum converter that would work with iBatis. This seems like a trivial problem, but took me a while to find a proper solution.
+ There were some additional preconditions:  all given Enums are jaxb generated objects - but any standard Java Enum should work conversion was 1-to-1, no special conditions and processing  The example Enum for this problem looks like this one (copy&amp;amp;paste from jaxb generated source):</description>
+    </item>
+    
+    <item>
+      <title>Javarsovia 2010</title>
+      <link>http://marcin.cylke.com.pl/2010/06/27/javarsovia-2010/</link>
+      <pubDate>Sun, 27 Jun 2010 15:08:43 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/06/27/javarsovia-2010/</guid>
+      <description>This year&#39;s Javarsovia conference took place on 26th june. It was held at Centrum Konferencyjno-Kongresowe, Bobrowiecka Street, Warsaw.
+First of all - the organization was very nice. Everything seemed smooth, maybe with the exception of conference registration, it was simply overcrowded. The agenda was split into four tracks, each hour 4 different presentations were given in different halls. So you just had to choose which one to attend. My path through the conference is described below, together with my views on each of the presentations I attended.</description>
+    </item>
+    
+    <item>
+      <title>Eclipse ecosystem</title>
+      <link>http://marcin.cylke.com.pl/2010/05/07/eclipse-ecosystem/</link>
+      <pubDate>Fri, 07 May 2010 09:55:59 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/05/07/eclipse-ecosystem/</guid>
+      <description>Do you use Eclipse? Or perhaps you use other IDE but would like to try &#34;the big E&#34;? Well, that&#39;s OK, and completely understandable, because Eclipse is actually a great, versatile tool. But Eclipse is not just an IDE, in fact it is a comp let, extensible platform. What&#39;s even more important, there are tones of valuable Eclipse-related projects gathered around the platform.
+Yes, there are lots. Some are good, some are bad, but the usual, stock ones, signed by Eclipse, are worth taking a closer look.</description>
+    </item>
+    
+    <item>
+      <title>Dmesg z Openbsd/sgi</title>
+      <link>http://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/</link>
+      <pubDate>Sun, 25 Apr 2010 12:20:34 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/</guid>
+      <description>Wracając do starego tematu OpenBSD na moim SGI O2, postanowiłem lekko odświeżyć tą maszynę. Dostałą uaktualnienie małe. Przysiedziałem również nad dostosowaniem systemu do swoich potrzeb, instalacji potrzebnego softu itp.
+Na początek dmesg z działąjącego systemu:
+ [ using 433608 bytes of bsd ELF symbol table ] Copyright (c) 1982, 1986, 1989, 1991, 1993 The Regents of the University of California. All rights reserved. Copyright (c) 1995-2009 OpenBSD. All rights reserved. http://www.</description>
+    </item>
+    
+    <item>
+      <title>Unicode w Pythonie</title>
+      <link>http://marcin.cylke.com.pl/2010/04/21/unicode-w-pythonie/</link>
+      <pubDate>Wed, 21 Apr 2010 22:54:24 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/04/21/unicode-w-pythonie/</guid>
+      <description>Szlag by to trafił! Czemu tak ciężko jest obsługiwać unicode w pythonie? No niby wszystko jest ładnie konwertowane wewnętrznie na odpowiednie reprezentacje, ale jeśli przychodzi co do czego, i chcemy wypisać sobie taki ciąg znaków na ekran, to już jest ciężej.
+Weźmy prosty przykład. Wczytywałem plik z polskimi znaczkami, o taki:
+ Roger Macdonald;Człowiek w żelaznej masce;25  a potem w kodzie pythonowym robiłem sobie tak:
+ for line in open(sys.</description>
+    </item>
+    
+    <item>
+      <title>Ludzie! Porzućcie F-Spot!</title>
+      <link>http://marcin.cylke.com.pl/2009/09/20/ludzie-porzuccie-f-spot/</link>
+      <pubDate>Sun, 20 Sep 2009 17:57:33 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/09/20/ludzie-porzuccie-f-spot/</guid>
+      <description>Dziś usiadłem do porządkowania zdjęć z wyjazdu wakacyjnego. Postanowiłem użyć do tego właśnie programu F-Spot. Wydawał się on odpowiedni. Zaimportował fotki, posortował według informacji EXIF. Schody zaczęły się w momencie edycji całej kolekcji.
+Ze zdjęciami było trochę problemów, którymi chciałem się zająć:
+ część trzeba było obrócić połowa była zrobiona na Nikonie, który nie miał ustawionej daty, tak więc ficzer sortowania po dacie z nagłówka EXIF wziął w łeb  Tak więc chciałem poobracać fotki i uporządkować wedle czasu.</description>
     </item>
     
   </channel>

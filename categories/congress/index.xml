@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 22 Jan 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://marcin.cylke.com.pl/categories/congress/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://marcin.cylke.com.pl/categories/congress/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>32c3 most interesting videos</title>
@@ -21,40 +23,7 @@ sift through some of the videos. Have a selection of those I&amp;rsquo;ve found
 most interesting to me. If there are others really worth watching - pass
 me a line! Cheers.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Tor onion services are more useful than most people realize — super
-packed 32c3 talk from @torproject devs:
-{% youtube wHmxCeLpveA %}&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;State of the Onion - what&amp;rsquo;s happend in 2015 around Tor project.
-Informative to say the least.
-{% youtube DqBFez4v_2I %}&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;A very interesting presentation. Especially in the light of Novena
-Laptop and the like:
-{% youtube rcwngbUrZNg %}&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;SO YOU WANT TO BUILD A SATELLITE? - ha!
-{% youtube FO68gG320SM %}&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;INSIDE GLORIOUS LEADER’S OPERATING SYSTEM - this one is actually
-great! No ridiculing, just a review of features. Go see what os-level
-surveilance looks like:
-{% youtube 8LGDM9exlZw %}&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;3D printing on the moon - just printing something on your 3d printer
-seems trivial compared to the challange of doing this under Moon
-conditions:&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;{% youtube _eYvMFipIQ4 %}&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;J. Alex Halderman, Nadia Heninger: Logjam: Diffie-Hellman, discrete
-logs, the NSA, and you
-{% youtube mS8gm-_rJgM %}&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
