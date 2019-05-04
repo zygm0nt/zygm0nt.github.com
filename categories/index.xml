@@ -6,10 +6,28 @@
     <description>Recent content in Categories on Just a blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 07 Jul 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://marcin.cylke.com.pl/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>it</title>
+      <link>http://marcin.cylke.com.pl/categories/it/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/categories/it/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vim</title>
+      <link>http://marcin.cylke.com.pl/categories/vim/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/categories/vim/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>hacking</title>
@@ -116,15 +134,6 @@
       <pubDate>Tue, 10 Dec 2013 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/categories/hbase/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>it</title>
-      <link>http://marcin.cylke.com.pl/categories/it/</link>
-      <pubDate>Tue, 10 Dec 2013 00:00:00 +0000</pubDate>
-      
-      <guid>http://marcin.cylke.com.pl/categories/it/</guid>
       <description></description>
     </item>
     
