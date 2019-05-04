@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hbase on Just a blog</title>
+    <title>hbase on Just a blog</title>
     <link>http://marcin.cylke.com.pl/categories/hbase/</link>
-    <description>Recent content in Hbase on Just a blog</description>
+    <description>Recent content in hbase on Just a blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 10 Dec 2013 00:00:00 +0000</lastBuildDate>
@@ -27,9 +27,7 @@ doesn&amp;rsquo;t use all the RegionServers at the same time. It is implemented
 that way to realize the contract of Scan command - which has to return
 results sorted by key.&lt;/p&gt;
 
-&lt;p&gt;So, how to do this efficiently?&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;So, how to do this efficiently?&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -48,9 +46,7 @@ those pains and fetch real objects from HBase.&lt;/p&gt;
 
 &lt;p&gt;And that&amp;rsquo;s how this simplistic, hackish ORM came to life. It is no match
 for projects like &lt;a href=&#34;https://github.com/impetus-opensource/Kundera&#34;&gt;Kundera&lt;/a&gt;
-(a JPA compliant solution), or &lt;a href=&#34;https://code.google.com/p/n-orm/&#34;&gt;n-orm&lt;/a&gt;. Nevertheless, it just suits my needs :)&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+(a JPA compliant solution), or &lt;a href=&#34;https://code.google.com/p/n-orm/&#34;&gt;n-orm&lt;/a&gt;. Nevertheless, it just suits my needs :)&lt;/p&gt;</description>
     </item>
     
   </channel>

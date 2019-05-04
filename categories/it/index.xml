@@ -1,91 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>It on Just a blog</title>
-    <link>http://marcin.cylke.com.pl/categories/it/</link>
-    <description>Recent content in It on Just a blog</description>
+    <title>IT on Just a blog</title>
+    <link>http://marcin.cylke.com.pl/categories/IT/</link>
+    <description>Recent content in IT on Just a blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Dec 2013 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 18 Jun 2012 09:08:09 +0000</lastBuildDate>
     
-	<atom:link href="http://marcin.cylke.com.pl/categories/it/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://marcin.cylke.com.pl/categories/IT/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Distributed scans with HBase</title>
-      <link>http://marcin.cylke.com.pl/2013/12/10/distributed-scans-with-hbase/</link>
-      <pubDate>Tue, 10 Dec 2013 00:00:00 +0000</pubDate>
-      
-      <guid>http://marcin.cylke.com.pl/2013/12/10/distributed-scans-with-hbase/</guid>
-      <description>&lt;p&gt;HBase is by design a columnar store, that is optimized for random reads.
-You just ask for a row using rowId as an identifier and you get your
-data instantaneously.&lt;/p&gt;
-
-&lt;p&gt;Performing a scan on part or whole table is a completely different thing.
-First of all, it is sequential. Meaning it is rather slow, because it
-doesn&amp;rsquo;t use all the RegionServers at the same time. It is implemented
-that way to realize the contract of Scan command - which has to return
-results sorted by key.&lt;/p&gt;
-
-&lt;p&gt;So, how to do this efficiently?&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Simple HBase ORM</title>
-      <link>http://marcin.cylke.com.pl/2013/12/08/simple-hbase-orm/</link>
-      <pubDate>Sun, 08 Dec 2013 00:00:00 +0000</pubDate>
-      
-      <guid>http://marcin.cylke.com.pl/2013/12/08/simple-hbase-orm/</guid>
-      <description>&lt;p&gt;When dealing with data stored in HBase, you are quick to come to a
-conclusion, that it is extremaly inconvenient to reach to it
-via HBase native API. It is very verbose and you always need to convert
-between bytes and simple types - a pain.&lt;/p&gt;
-
-&lt;p&gt;While I was working on a project of mine, I thought, why not to easy
-those pains and fetch real objects from HBase.&lt;/p&gt;
-
-&lt;p&gt;And that&amp;rsquo;s how this simplistic, hackish ORM came to life. It is no match
-for projects like &lt;a href=&#34;https://github.com/impetus-opensource/Kundera&#34;&gt;Kundera&lt;/a&gt;
-(a JPA compliant solution), or &lt;a href=&#34;https://code.google.com/p/n-orm/&#34;&gt;n-orm&lt;/a&gt;. Nevertheless, it just suits my needs :)&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Recently at storm-users</title>
-      <link>http://marcin.cylke.com.pl/2013/08/12/recently-at-storm-users/</link>
-      <pubDate>Mon, 12 Aug 2013 00:00:00 +0000</pubDate>
-      
-      <guid>http://marcin.cylke.com.pl/2013/08/12/recently-at-storm-users/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve been reading through storm-users Google Group recently. This
-resolution was heavily inspired by Adam Kawa&amp;rsquo;s post &lt;a href=&#34;http://hakunamapdata.com/football-zero-apache-pig-hero-the-essence-from-hundreds-of-posts-from-apache-pig-user-mailing-list/&#34;&gt;&amp;ldquo;Football zero, Apache Pig hero&amp;rdquo;&lt;/a&gt;. Since I&amp;rsquo;ve encountered a lot of insightful and very interesting information I&amp;rsquo;ve decided to describe some of those in this post.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>After WHUG meeting</title>
-      <link>http://marcin.cylke.com.pl/2012/11/30/after-whug/</link>
-      <pubDate>Fri, 30 Nov 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://marcin.cylke.com.pl/2012/11/30/after-whug/</guid>
-      <description>Here are the slides from the talk a gave yesterday. If you have any questions, please ask.
- </description>
-    </item>
-    
-    <item>
-      <title>WHUG 8. Beyond Hadoop - checking other options</title>
-      <link>http://marcin.cylke.com.pl/2012/11/26/whug-8-beyond-hadoop/</link>
-      <pubDate>Mon, 26 Nov 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://marcin.cylke.com.pl/2012/11/26/whug-8-beyond-hadoop/</guid>
-      <description>W najbliższy czwartek - czyli 29.11.2012 - poprowadzę prezentację w ramach Warsaw Hadoop User Group. Swoją obecność można odklinąć tu http://www.meetup.com/warsaw-hug/
-A o czym będę mówił? Przeklejka ze strony WHUG:
- Marcin skupi się na współpracy ekosystemu Hadoopa z innymi narzędziami. Pokaże jak prosto i wygodnie przetwarzać grafy i jak stosować podejście Big Data, w czasie rzeczywistym. Poruszy również temat łatwiejszego tworzenia algorytmów Map-Reduce
-Będzie to nieco mniej technicza (ale wciąż praktyczna) wycieczka po obrzeżach tematyki, która jest zwykle poruszana w połączeniu z Hadoop-em.</description>
-    </item>
     
     <item>
       <title>Hadoop for Enterprises</title>
@@ -113,7 +37,7 @@ Gathering data is relatively easy. These are not necessarily structured data, yo
       <pubDate>Mon, 22 Aug 2011 22:19:14 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/08/22/5-best-things-to-do-with-your-kindle/</guid>
-      <description>I bought a Kindle (3rd generation, Wi-Fi only) some time ago - like half a year ago. Read some books, done some web-browsing (awful, quite unpleasant). Gradually I became more and more curious of other things possible to achieve with this slate-looking piece of tech. These are my thoughts and ideas.  Got a Kindle? Use it every day? Feel like modding or extending your ways of usage? Great! Read on, and share your thoughts in comments!</description>
+      <description>I bought a Kindle (3rd generation, Wi-Fi only) some time ago - like half a year ago. Read some books, done some web-browsing (awful, quite unpleasant). Gradually I became more and more curious of other things possible to achieve with this slate-looking piece of tech. These are my thoughts and ideas.  Got a Kindle? Use it every day? Feel like modding or extending your ways of usage? Great!</description>
     </item>
     
     <item>
@@ -179,7 +103,7 @@ Rules I needed to express were like:  person&#39;s first_name and last_name shou
       <pubDate>Sun, 20 Mar 2011 19:35:39 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/03/20/me-on-hadoop-on-parleys/</guid>
-      <description>Finally I&#39;ve managed to import my WarJUG presentation to parleys.com. See for yourself :)    If you&#39;ve got problems with opening the parleys&#39; version try the ones uploaded to youtube.  Here is part 1:  And here is part 2:
+      <description> Finally I&#39;ve managed to import my WarJUG presentation to parleys.com. See for yourself :)    If you&#39;ve got problems with opening the parleys&#39; version try the ones uploaded to youtube.  Here is part 1:  And here is part 2:
   Comments Sigvatr I&#39;m sorry, but I don&#39;t understand Polish :P
    </description>
     </item>
@@ -293,7 +217,7 @@ Yes, there are lots. Some are good, some are bad, but the usual, stock ones, sig
       <guid>http://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/</guid>
       <description>Wracając do starego tematu OpenBSD na moim SGI O2, postanowiłem lekko odświeżyć tą maszynę. Dostałą uaktualnienie małe. Przysiedziałem również nad dostosowaniem systemu do swoich potrzeb, instalacji potrzebnego softu itp.
 Na początek dmesg z działąjącego systemu:
- [ using 433608 bytes of bsd ELF symbol table ] Copyright (c) 1982, 1986, 1989, 1991, 1993 The Regents of the University of California. All rights reserved. Copyright (c) 1995-2009 OpenBSD. All rights reserved. http://www.</description>
+ [ using 433608 bytes of bsd ELF symbol table ] Copyright (c) 1982, 1986, 1989, 1991, 1993 The Regents of the University of California. All rights reserved. Copyright (c) 1995-2009 OpenBSD. All rights reserved.</description>
     </item>
     
     <item>
@@ -356,7 +280,7 @@ poprawie zależności. Niemniej, plugin z wersją 3.5 Eclipse&#39;a działa
 sprawnie. W poprzednich wersjach miał tendencje do zacinania się, a
 przyczyny tego nie udało mi się namierzyć.
   A co to jest BPEL?
-Business Process Expression Language. Czyli XML do</description>
+Business Process Expression Language.</description>
     </item>
     
     <item>

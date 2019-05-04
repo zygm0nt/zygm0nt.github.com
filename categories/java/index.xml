@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Java on Just a blog</title>
+    <title>java on Just a blog</title>
     <link>http://marcin.cylke.com.pl/categories/java/</link>
-    <description>Recent content in Java on Just a blog</description>
+    <description>Recent content in java on Just a blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 24 Jun 2013 00:00:00 +0000</lastBuildDate>
@@ -17,7 +17,7 @@
       <pubDate>Mon, 24 Jun 2013 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/</guid>
-      <description>An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system&amp;rsquo;s components. Since I had already a few separate components I didn&amp;rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I&amp;rsquo;ve decided to go that way with my solution. What is Zookeeper?Just a crude distributed synchronization framework.</description>
+      <description>An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system&amp;rsquo;s components. Since I had already a few separate components I didn&amp;rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I&amp;rsquo;ve decided to go that way with my solution. What is Zookeeper?</description>
     </item>
     
     <item>
@@ -46,9 +46,7 @@ components, like
 It all is just neatly packed into Cloudera Hadoop distribution - the
 precursor of this solution.&lt;/p&gt;
 
-&lt;p&gt;Read on to find out how to use it.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Read on to find out how to use it.&lt;/p&gt;</description>
     </item>
     
   </channel>

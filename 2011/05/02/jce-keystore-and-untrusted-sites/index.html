@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.40.1" />
+<meta name="generator" content="Hugo 0.55.5" />
 
 
 <title>JCE keystore and untrusted sites - Just a blog</title>
@@ -62,7 +62,8 @@
     </ul>
  
     <div class="article-content">
-      <div class='post'>
+      
+<div class='post'>
 <p>Recently at work I was in need of connecting to a web service exposed via
 HTTPS. I've been doing this from inside <a href="http://servicemix.apache.org/home.html">Servicemix 3.3.1</a>, which may seem
 a bit inhibiting, but that was a requirement. Nevertheless I've been
@@ -79,7 +80,7 @@ keystore. Read more to find out what happened!</p>
 <p>Ok, so I had my <em>xbean.xml</em> for http component looking like
 this:</p>
 
-<script src="//gist.github.com/951474/servicemix-http-xbean.xml.js"></script>
+<script type="application/javascript" src="//gist.github.com/951474/servicemix-http-xbean.xml.js"></script>
 
 
 <p>As you can see this is a proxy adapter to some outside service
@@ -90,17 +91,17 @@ the keystore file and it's password.</p>
 <p>I've created my <em>keystore.jks</em> file in <em>smx_home/conf</em>
 with password <em>servicemix</em> in the following manner:</p>
 
-<script src="//gist.github.com/951459/create_keystore.sh.js"></script>
+<script type="application/javascript" src="//gist.github.com/951459/create_keystore.sh.js"></script>
 
 <p>You can see what's in this file with this command:</p>
 
-<script src="//gist.github.com/951459/list_keys.sh.js"></script>
+<script type="application/javascript" src="//gist.github.com/951459/list_keys.sh.js"></script>
 
 <p>At this point I thought, that having a configured keystore and my
 component would suffice. Wrong! As soon as I've tried to connect to the
 external service I got an exception:</p>
 
-<script src="//gist.github.com/951458/untrusted_key_error.java.js"></script>
+<script type="application/javascript" src="//gist.github.com/951458/untrusted_key_error.java.js"></script>
 
 <p>Hmmm.. this looks pretty nasty, but it's not that bad. As one can
 read <a
@@ -123,7 +124,7 @@ src="https://gist.github.com/951459.js?file=add_untrusted_key.sh"></script>
 
 <p>What you'll probably see, when you execute this app is this:</p>
 
-<script src="//gist.github.com/951458/add_untrusted_cert.sh.js"></script>
+<script type="application/javascript" src="//gist.github.com/951458/add_untrusted_cert.sh.js"></script>
 
 <p>Please note that there is a prompt (<em>Enter certificate to add to
 trusted keystore...</em>) in which you can enter the certificate number
@@ -137,7 +138,7 @@ query HTTPS service as long as I wanted to! Great!</p>
 <p>In my search for this problem's solution I've encountered this kind
 of exception:</p>
 
-<script src="//gist.github.com/951458/keystore_key_error.java.js"></script>
+<script type="application/javascript" src="//gist.github.com/951458/keystore_key_error.java.js"></script>
 
 <p>A little googling led me to this <a
 href="http://stackoverflow.com">StackOverflow</a> <a

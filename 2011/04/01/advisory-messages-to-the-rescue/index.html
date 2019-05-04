@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.40.1" />
+<meta name="generator" content="Hugo 0.55.5" />
 
 
 <title>Advisory Messages to the rescue - Just a blog</title>
@@ -62,7 +62,8 @@
     </ul>
  
     <div class="article-content">
-      <div class='post'>
+      
+<div class='post'>
 <p>
 The most crucial part of software development is testing. It should
 ensure us, that our code is correct, works according to given specs,
@@ -112,7 +113,7 @@ by default. You need to enable specific type of
 advisory message for a specific jms destination. You can do this with
 ths configuration change to <strong>activemq.xml</strong>
 </p>
-<script src="//gist.github.com/897141/activemq.xml.js"></script>
+<script type="application/javascript" src="//gist.github.com/897141/activemq.xml.js"></script>
 <p>
 As you can see, I've specified which advisories I want enabled. The full
 list of available advisories can be found <a
@@ -122,7 +123,7 @@ Since I wanted to read messages from that topic I've added the following
 configuration to my spring context - there is one destination bean for
 inserting messages and one bean for advisory topic.
 </p>
-<script src="//gist.github.com/897150/xml.js"></script>
+<script type="application/javascript" src="//gist.github.com/897150/xml.js"></script>
 <p>
 Thanks to this configuration I've been able to check that my message was
 actually delivered to the queue. There've been no need to worry about

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.40.1" />
+<meta name="generator" content="Hugo 0.55.5" />
 
 
 <title>SoapUI ext libs and its weirdness - Just a blog</title>
@@ -62,7 +62,8 @@
     </ul>
  
     <div class="article-content">
-      <div class='post'>
+      
+<div class='post'>
 <p>Suppose you want to add some additional jars to your SoapUI installation. It all should work ok if you put them in <b>bin/ext</b> directory. It is scanned at startup, and jars found there are automatically added to classpath.
 </p>
 
@@ -80,7 +81,7 @@ java.lang.NoClassDefFoundError: oracle/jdbc/Driver
 <p>
 If so, try registering your drivers with <b>registerJdbcDriver</b> function, like I did in this snippet of code:
 </p>
-<script src="//gist.github.com/1333768/jdbc-soapui.groovy.js"></script>
+<script type="application/javascript" src="//gist.github.com/1333768/jdbc-soapui.groovy.js"></script>
 
 
 <p>What a crappy thing!</p></div>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.40.1" />
+<meta name="generator" content="Hugo 0.55.5" />
 
 
 <title>Hadoop HA setup - Just a blog</title>
@@ -72,8 +72,6 @@ precursor of this solution.</p>
 
 <p>Read on to find out how to use it.</p>
 
-<p></p>
-
 <p>The most important weakness of previous Hadoop releases was the
 single-point-of-failure, which happend to be NameNode. NameNode as a key
 component of every Hadoop cluster, is responsible for managing
@@ -109,9 +107,9 @@ on sharing edits directory. Than, with CDH 4.1 came quorum based solution.</p>
 a shared storage directory. It should be deployed using some kind of
 network-based filesystem. You could try with NFS or GlusterFS.</p>
 
-<script src="//gist.github.com/3958555/core-site.xml.js"></script>
+<script type="application/javascript" src="//gist.github.com/3958555/core-site.xml.js"></script>
 
-<script src="//gist.github.com/3958555/hdfs-site.xml.js"></script>
+<script type="application/javascript" src="//gist.github.com/3958555/hdfs-site.xml.js"></script>
 
 <p>This setup is quite OK, as long as you&rsquo;re comfortable with maintaining a
 separate service (network storage) for handling the HA state. It seems
@@ -142,9 +140,9 @@ shared edits directory solution. The only difference is the value for
 <em>dfs.namenode.shared.edits.dir</em>. This now points to all the journal
 nodes deployed in our cluster.</p>
 
-<script src="//gist.github.com/3973262/core-site.xml.js"></script>
+<script type="application/javascript" src="//gist.github.com/3973262/core-site.xml.js"></script>
 
-<script src="//gist.github.com/3973262/hdfs-site.xml.js"></script>
+<script type="application/javascript" src="//gist.github.com/3973262/hdfs-site.xml.js"></script>
 
 <h1 id="infrastructure">Infrastructure</h1>
 

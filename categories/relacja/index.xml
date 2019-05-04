@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Relacja on Just a blog</title>
+    <title>relacja on Just a blog</title>
     <link>http://marcin.cylke.com.pl/categories/relacja/</link>
-    <description>Recent content in Relacja on Just a blog</description>
+    <description>Recent content in relacja on Just a blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 22 May 2011 16:39:31 +0000</lastBuildDate>
@@ -27,7 +27,7 @@
       <pubDate>Sun, 20 Mar 2011 19:35:39 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/03/20/me-on-hadoop-on-parleys/</guid>
-      <description>Finally I&#39;ve managed to import my WarJUG presentation to parleys.com. See for yourself :)    If you&#39;ve got problems with opening the parleys&#39; version try the ones uploaded to youtube.  Here is part 1:  And here is part 2:
+      <description> Finally I&#39;ve managed to import my WarJUG presentation to parleys.com. See for yourself :)    If you&#39;ve got problems with opening the parleys&#39; version try the ones uploaded to youtube.  Here is part 1:  And here is part 2:
   Comments Sigvatr I&#39;m sorry, but I don&#39;t understand Polish :P
    </description>
     </item>

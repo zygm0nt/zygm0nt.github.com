@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Scala on Just a blog</title>
+    <title>scala on Just a blog</title>
     <link>http://marcin.cylke.com.pl/categories/scala/</link>
-    <description>Recent content in Scala on Just a blog</description>
+    <description>Recent content in scala on Just a blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 29 Apr 2016 00:00:00 +0000</lastBuildDate>
@@ -23,8 +23,7 @@
 
 &lt;p&gt;This small conference had its third installment in (&lt;a href=&#34;http://www.polin.pl/en)[Polin&#34;&gt;http://www.polin.pl/en)[Polin&lt;/a&gt; - Museum of the History of Polish Jews]. Organizing Scala conference isn&amp;rsquo;t that obvious and having that kind of attention is really great - all the foreign speakers, etc.&lt;/p&gt;
 
-&lt;p&gt;Here is a quick recap of presentations I&amp;rsquo;ve attended.
-&lt;/p&gt;</description>
+&lt;p&gt;Here is a quick recap of presentations I&amp;rsquo;ve attended.&lt;/p&gt;</description>
     </item>
     
   </channel>
