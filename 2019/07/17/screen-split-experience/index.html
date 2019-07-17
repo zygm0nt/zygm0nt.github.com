@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.55.5" />
+
+
+<title>Screen shortcuts for split experience - Just a blog</title>
+<meta property="og:title" content="Screen shortcuts for split experience - Just a blog">
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="http://marcin.cylke.com.pl/css/main.css" media="all">
+<link rel="stylesheet" href="http://marcin.cylke.com.pl/css/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="http://marcin.cylke.com.pl/" class="nav-logo">
+    <img src="http://marcin.cylke.com.pl/images/" 
+         width="" 
+         height="" 
+         alt="">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">about hugo</a></li>
+    
+    <li><a href="/getting-started/">getting started</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">Screen shortcuts for split experience</h1>
+    
+    <span class="article-date">2019-07-17</span>
+    
+    <ul class="article-taxonomy">
+                  
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/screen">screen</a><a href="/categories/it">it</a>
+      </li>
+      
+    
+      
+    </ul>
+ 
+    <div class="article-content">
+      
+
+<h2 id="most-useful-shortcuts-to-operate-screen">Most useful shortcuts to operate screen</h2>
+
+<p>Aside from basic screen shortcuts for moving around, creating and
+changing windows there are things that create more of a window manager
+feel for terminal usage. And these are splits.</p>
+
+<p>You can <em>create a split</em> with <code>Ctrl-a |</code> - which creates a vertical split.
+There is also <code>Ctrl-A S</code> to <em>create a horizontal split</em>. To <em>cycle</em> between
+your open splits just use <code>Ctrl-a &lt;Tab&gt;</code>. To close the active split - just
+press <code>Ctrl-a X</code></p>
+
+<h2 id="keep-regions-saved-after-detach">Keep regions saved after detach</h2>
+
+<p>Unfortunately screen does not remember splits between detaches. So to
+fix this behavior there is one fix:</p>
+
+<pre><code>source .screen_layout // read and execute commands from $HOME/.screen_layout
+Regions now created.
+layout save def // save current regions as layout to keep it when you detach.
+</code></pre>
+
+<h2 id="other-useful-for-me">Other useful for me</h2>
+
+<p>I have a screen config that displays a list of all open windows with
+their names. This helps me figure out what&rsquo;s happening and where I&rsquo;m at
+given point in time. I also like to change windows&rsquo; names to reflect my
+current usage. Do this with <code>Ctrl-a Shift-a</code> and than enter the desired
+name.</p>
+
+<p>There are frequent times when I have a long running screen but have
+<em>just</em> found a new fancy option I want to put into my <code>.screenrc</code>. To
+reload it and apply to current screen instance I do <code>Ctrl-a :source
+~/.screenrc</code>.</p>
+
+    </div>
+ 
+     <div id="disqus_thread"></div>
+<script>
+    (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = '//marcinbloguje.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+      <script id="dsq-count-scr" src="//careerboost.disqus.com/count.js" async></script>
+
+
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="http://marcin.cylke.com.pl/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/mobybit/hugo-natrium-theme"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="http://marcin.cylke.com.pl/site-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
+

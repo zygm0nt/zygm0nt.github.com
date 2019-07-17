@@ -6,7 +6,7 @@
     <description>Recent content in Categories on Just a blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://marcin.cylke.com.pl/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,18 @@
     <item>
       <title>it</title>
       <link>http://marcin.cylke.com.pl/categories/it/</link>
-      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/categories/it/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>screen</title>
+      <link>http://marcin.cylke.com.pl/categories/screen/</link>
+      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/categories/screen/</guid>
       <description></description>
     </item>
     

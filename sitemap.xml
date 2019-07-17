@@ -4,31 +4,42 @@
   
   <url>
     <loc>http://marcin.cylke.com.pl/categories/</loc>
-    <lastmod>2019-05-05T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://marcin.cylke.com.pl/</loc>
-    <lastmod>2019-05-05T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/post/</loc>
+    <lastmod>2019-07-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/2019/07/17/screen-split-experience/</loc>
+    <lastmod>2019-07-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/it/</loc>
+    <lastmod>2019-07-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/screen/</loc>
+    <lastmod>2019-07-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://marcin.cylke.com.pl/2019/05/05/my-vim-setup/</loc>
     <lastmod>2019-05-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://marcin.cylke.com.pl/post/</loc>
-    <lastmod>2019-05-05T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://marcin.cylke.com.pl/categories/it/</loc>
-    <lastmod>2019-05-05T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Just a blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://marcin.cylke.com.pl/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Screen shortcuts for split experience</title>
+      <link>http://marcin.cylke.com.pl/2019/07/17/screen-split-experience/</link>
+      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2019/07/17/screen-split-experience/</guid>
+      <description>Most useful shortcuts to operate screen Aside from basic screen shortcuts for moving around, creating and changing windows there are things that create more of a window manager feel for terminal usage. And these are splits.
+You can create a split with Ctrl-a | - which creates a vertical split. There is also Ctrl-A S to create a horizontal split. To cycle between your open splits just use Ctrl-a &amp;lt;Tab&amp;gt;.</description>
+    </item>
     
     <item>
       <title>My Vim Setup</title>
