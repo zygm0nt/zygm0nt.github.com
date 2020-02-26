@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.65.3" />
+
+
+<title>I don&#39;t do backups - Just a blog</title>
+<meta property="og:title" content="I don&#39;t do backups - Just a blog">
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="http://marcin.cylke.com.pl/css/main.css" media="all">
+<link rel="stylesheet" href="http://marcin.cylke.com.pl/css/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="http://marcin.cylke.com.pl/" class="nav-logo">
+    <img src="http://marcin.cylke.com.pl/images/" 
+         width="" 
+         height="" 
+         alt="">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">about hugo</a></li>
+    
+    <li><a href="/getting-started/">getting started</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">I don&#39;t do backups</h1>
+    
+    <span class="article-date">2020-02-26</span>
+    
+    <ul class="article-taxonomy">
+                  
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/it">it</a>
+      </li>
+      
+    
+      
+    </ul>
+ 
+    <div class="article-content">
+      <p>I tend to not do backups. I used to but just didn’t like it. I wasn’t
+diligent enough, didn’t have a routine setup. It all felt fragile and
+error prone in the end. So I stopped. You probably wonder when this will
+actually hit me - I sometimes do, too.</p>
+<p><img src="/post_images/do_backups.jpg" alt="please do backups"></p>
+<p>But the truth is I do have backups. I just don’t keep them by myself, I
+delegate.</p>
+<p>I use the computer mainly to do web browsing, photo management,
+programming, exploration. Sometimes gaming. Sometimes document browsing
+or editing. This positions me in a pretty good place where I don’t need
+to worry about files taking a lot of space. Most of my creativity ends
+up as a text - one form or the other.</p>
+<p>As for Photos - I them keep in the cloud. With the advent of modern
+phones with their ubiquitous connected platforms and my lack of
+ability/interest in the intricacies of semi-pro photo taking - that’s
+more than enough for. Me I just let my photos be synced into cloud
+providers.</p>
+<p>Most of my creativity is in programming and exploration. And those are
+the things I care deeply not to lose. These range from simple code
+snippets, testing out new libraries, to personal projects etc. You name
+it. Sometimes it even contains just random notes - I keep my notes as a
+versioned repository nowadays.</p>
+<p>The strategy I currently use is to have all those small projects,
+directories with notes, etc. stored as Git repositories. Since there are
+many public Git providers I just use those. Be it Github, or anything
+else - they’re just Git repos. They might have different access methods,
+but as long as I use the standard Git repository paths - I’m safe with
+normal git tools to be able to access them. And so as long as I remember
+to push my changes into those repos after finishing my work, or at least
+from time to time - I’m on the safe side here.</p>
+<p>But there’s a problem with that. Having that repositories checked out in
+different places all along my home directory always ends up as major
+PITA. I had a few approaches into trying to write scripts, just for
+exploring all the directory structures and checking if my git repos,
+that I care so much about, are actually synced with upstream. Always, in
+the end the sources for those scripts were lost, in the end. Pity.</p>
+<p>And then came the enlightenment! Why not go with using Git facilities
+all along! Use submodules Marcin!</p>
+<p><img src="/post_images/luke_backups.png" alt="please do backups"></p>
+<p>And so I did!</p>
+<p>I now use Git submodules to create a nested repo. This not only lets me
+easily keep track of the sync state of all the projects, but also is a
+kind of workspace. I can add or remove projects from this workspace and
+when switching to different machine still have the same layout of
+directories in my workspace.</p>
+<p>My workflow for starting a new project:</p>
+<ol>
+<li>Either start with a fresh directory, but elsewhere than my git-based
+workspace, or just create an empty repo somewhere.</li>
+<li>Clone the repo into git-based workspace by doing: git submodule add
+&lt;repo_link&gt; dir/in/workspace</li>
+<li>Start working on the project</li>
+</ol>
+<p>Storing projects like this, using just the workflow above gives me a lot
+of benefits</p>
+<ul>
+<li>Single place to check for my projects and track their progress,</li>
+<li>Before I used to create projects and then after not working on them
+just completely forgot where’s the newest version, or even how the
+project is named - the problem with funnily named pet-projects. Now this
+problem is mostly gone.</li>
+<li>Peace of mind, serenity, good sleep at night ;-) - because it’s git,
+it gives me the great benefit of being usable. As one of the
+problems with backups, is to actually be able to recover data from them
+in case of emergency.</li>
+</ul>
+<p>With that in place, the only fragile part of my non-backup approach is
+web browsing. As I tend to have lots of <a href="http://marcin.cylke.com.pl/2016/07/24/it-minimalist/">browsers, browser’s windows,
+tabs open</a> I would
+just be very unhappy if all this mess would get lost in some disaster -
+like hardware failure or software error. But there is hope for this too,
+and I’m working to solve this one according to my liking :)</p>
+<p>Actually, there’s one category of things I do backups of. And they are
+cryptographic keys. Different ones. Obviously I store my ~/.ssh
+directory, but there are others. I store them in at least one location,
+just for the sake of safety and ease of life in the future.</p>
+<p>And what are your thoughts about backuping current work, and real-life
+backuping</p>
+<p>Useful links about submodules:</p>
+<ul>
+<li><a href="https://medium.com/@porteneuve/mastering-git-submodules-34c65e940407">https://medium.com/@porteneuve/mastering-git-submodules-34c65e940407</a></li>
+<li><a href="https://medium.com/@porteneuve/mastering-git-subtrees-943d29a798ec">https://medium.com/@porteneuve/mastering-git-subtrees-943d29a798ec</a></li>
+</ul>
+<p>Other approaches to backups:</p>
+<ul>
+<li><a href="https://hackaday.com/2020/01/20/new-year-habits-what-do-you-do-for-data-storage/">https://hackaday.com/2020/01/20/new-year-habits-what-do-you-do-for-data-storage/</a></li>
+</ul>
+
+    </div>
+ 
+     <div id="disqus_thread"></div>
+<script>
+    (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = '//marcinbloguje.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+      <script id="dsq-count-scr" src="//careerboost.disqus.com/count.js" async></script>
+
+
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="http://marcin.cylke.com.pl/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/mobybit/hugo-natrium-theme"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="http://marcin.cylke.com.pl/site-notice">Site notice</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
+
