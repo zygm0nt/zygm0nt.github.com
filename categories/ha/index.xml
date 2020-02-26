@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ha on Just a blog</title>
@@ -6,7 +6,7 @@
     <description>Recent content in ha on Just a blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Oct 2012 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 Jul 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://marcin.cylke.com.pl/categories/ha/index.xml" rel="self" type="application/rss+xml" />
     
@@ -24,7 +24,6 @@ components, like
 &lt;a href=&#34;http://blog.cloudera.com/blog/2009/07/hadoop-ha-configuration/&#34;&gt;DRBD&lt;/a&gt;.
 It all is just neatly packed into Cloudera Hadoop distribution - the
 precursor of this solution.&lt;/p&gt;
-
 &lt;p&gt;Read on to find out how to use it.&lt;/p&gt;</description>
     </item>
     

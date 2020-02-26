@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>screen on Just a blog</title>
@@ -18,7 +18,7 @@
       
       <guid>http://marcin.cylke.com.pl/2019/07/17/screen-split-experience/</guid>
       <description>Most useful shortcuts to operate screen Aside from basic screen shortcuts for moving around, creating and changing windows there are things that create more of a window manager feel for terminal usage. And these are splits.
-You can create a split with Ctrl-a | - which creates a vertical split. There is also Ctrl-A S to create a horizontal split. To cycle between your open splits just use Ctrl-a &amp;lt;Tab&amp;gt;.</description>
+You can create a split with Ctrl-a | - which creates a vertical split. There is also Ctrl-A S to create a horizontal split. To cycle between your open splits just use Ctrl-a &amp;lt;Tab&amp;gt;. To close the active split - just press Ctrl-a X</description>
     </item>
     
   </channel>

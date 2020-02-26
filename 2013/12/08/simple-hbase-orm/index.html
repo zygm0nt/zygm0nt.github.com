@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.55.5" />
+<meta name="generator" content="Hugo 0.65.3" />
 
 
 <title>Simple HBase ORM - Just a blog</title>
@@ -66,18 +66,13 @@
 conclusion, that it is extremaly inconvenient to reach to it
 via HBase native API. It is very verbose and you always need to convert
 between bytes and simple types - a pain.</p>
-
 <p>While I was working on a project of mine, I thought, why not to easy
 those pains and fetch real objects from HBase.</p>
-
 <p>And that&rsquo;s how this simplistic, hackish ORM came to life. It is no match
 for projects like <a href="https://github.com/impetus-opensource/Kundera">Kundera</a>
 (a JPA compliant solution), or <a href="https://code.google.com/p/n-orm/">n-orm</a>. Nevertheless, it just suits my needs :)</p>
-
 <p>Project sources are hosted on GitHub: <a href="https://github.com/zygm0nt/hbase-annotations">https://github.com/zygm0nt/hbase-annotations</a></p>
-
 <p>To make use of this, you need to have an entity class with annotations:</p>
-
 <ul>
 <li>@Column - with argument specifying column family and column name, ie.
 @Column(&ldquo;cf:column-name&rdquo;)</li>
@@ -85,40 +80,29 @@ for projects like <a href="https://github.com/impetus-opensource/Kundera">Kunder
 <li>and optionaly @Value - for Spring Expression Language, in case you
 need to perform some extraction on the value.</li>
 </ul>
-
 <p><em>Annotations should be on setter methods.</em></p>
-
 <p>Now you have your model annotated and ready to be fetched from HBase.</p>
-
 <p>The actual work is done with a service class, that should extend class
 <a href="https://github.com/zygm0nt/hbase-annotations/blob/master/src/main/java/pl/touk/hadoop/hbase/BaseHadoopInteraction.java">BaseHadoopInteraction</a> just as class
 <a href="https://github.com/zygm0nt/hbase-annotations/blob/master/src/test/java/pl/touk/hadoop/hbase/SampleHBaseClient.java">SimpleHBaseClient</a> does.</p>
-
 <p>Then it is possible to just call:</p>
-
-<script src="https://gist.github.com/zygm0nt/7863407.js"></script>
-
+<!-- raw HTML omitted -->
 <p>Note that there are more methods you can use on BaseHadoopInteraction.
 You can also do:</p>
-
 <ul>
 <li>scan</li>
 <li>scan with key ranges</li>
 <li>delete</li>
 </ul>
-
 <p>What you won&rsquo;t get from this simple ORM is:</p>
-
 <ul>
 <li>automatic object updating,</li>
 <li>nested objects,</li>
 <li>saving to HBase - &lsquo;cause I didn&rsquo;t have a need for that,</li>
 </ul>
-
 <p>Hope you&rsquo;ll find this piece of code useful. If you see room for
 improvements while staying in project&rsquo;s scope - please drop me a
 message.</p>
-
 <p>And if you are searching for a full-fledged ORM solution for interacting with HBase, just head
 straight to Kundera project website :)</p>
     </div>

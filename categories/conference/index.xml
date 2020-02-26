@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>conference on Just a blog</title>
@@ -18,11 +18,8 @@
       
       <guid>http://marcin.cylke.com.pl/2016/04/29/scalar-conf-2016/</guid>
       <description>&lt;p&gt;Scalar Conf 2016&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://marcin.cylke.com.pl/assets/POLIN-Museum-of-the-History-of-Polish-Jews-int02.jpg&#34; alt=&#34;Polin museum - interior&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This small conference had its third installment in (&lt;a href=&#34;http://www.polin.pl/en)[Polin&#34;&gt;http://www.polin.pl/en)[Polin&lt;/a&gt; - Museum of the History of Polish Jews]. Organizing Scala conference isn&amp;rsquo;t that obvious and having that kind of attention is really great - all the foreign speakers, etc.&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;http://marcin.cylke.com.pl/assets/POLIN-Museum-of-the-History-of-Polish-Jews-int02.jpg&#34; alt=&#34;Polin museum - interior&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This small conference had its third installment in (&lt;a href=&#34;http://www.polin.pl/en)%5BPolin&#34;&gt;http://www.polin.pl/en)[Polin&lt;/a&gt; - Museum of the History of Polish Jews]. Organizing Scala conference isn&amp;rsquo;t that obvious and having that kind of attention is really great - all the foreign speakers, etc.&lt;/p&gt;
 &lt;p&gt;Here is a quick recap of presentations I&amp;rsquo;ve attended.&lt;/p&gt;</description>
     </item>
     
@@ -33,7 +30,7 @@
       
       <guid>http://marcin.cylke.com.pl/2016/02/20/lambda-days-2016/</guid>
       <description>Lambda Days 2016 - Kraków This last two days I&amp;rsquo;ve spend on a conference in Kraków. The topics revolved around functional programming, with all the experimental stuff, popular languages, etc. Here are the talks I&amp;rsquo;ve been to and short summaries of those:
-Day 1:  Propositions as types - the keynote delivered by Philip Wadler - seen it already on YouTube. But the thing with Lambda t-shirt looked funny again :D</description>
+Day 1:   Propositions as types - the keynote delivered by Philip Wadler - seen it already on YouTube. But the thing with Lambda t-shirt looked funny again :D</description>
     </item>
     
   </channel>

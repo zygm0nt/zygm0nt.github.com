@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.55.5" />
+<meta name="generator" content="Hugo 0.65.3" />
 
 
 <title>Distributed scans with HBase - Just a blog</title>
@@ -65,20 +65,16 @@
       <p>HBase is by design a columnar store, that is optimized for random reads.
 You just ask for a row using rowId as an identifier and you get your
 data instantaneously.</p>
-
 <p>Performing a scan on part or whole table is a completely different thing.
 First of all, it is sequential. Meaning it is rather slow, because it
 doesn&rsquo;t use all the RegionServers at the same time. It is implemented
 that way to realize the contract of Scan command - which has to return
 results sorted by key.</p>
-
 <p>So, how to do this efficiently?</p>
-
 <p>The usual way of getting data from HBase is with the help of its API,
 mainly Scan objects. To accomplish the task I&rsquo;ll use just them. I&rsquo;ll
 specify startRow and stopRow, so that each Scan request will be looking
 through only part of the key space.</p>
-
 <p>It is crucial to note, that this whole solution works because of key
 sorting properties in HBase. So, HBase scans a table according to ascending key
 values. Since keys are of String type, key with value &ldquo;1&rdquo; is smaller
@@ -86,7 +82,6 @@ than &ldquo;2&rdquo;, because they are sorted lexicographicly. So, also key with
 leveraged this property so that I&rsquo;ve partitioned my whole key space according to
 the first character of the key. In my case keys contain only digits. So I
 have 10 ranges:</p>
-
 <ul>
 <li>null-1</li>
 <li>1-2</li>
@@ -99,52 +94,29 @@ have 10 ranges:</p>
 <li>8-9</li>
 <li>9-null</li>
 </ul>
-
 <p>The speedup comes from the fact, that each range resides in its own
 partition. That&rsquo;s right, I&rsquo;ve presplit the table to have 10 partitions.
 This corresponds rather nicely with my cluster&rsquo;s setup, because I have
 more than 10 RegionServers. So every partition should be on different
 RegionServer. It will allow the code to do the requested scan operations
 in parallel - giving me this exact performance boost.</p>
-
 <p>How I&rsquo;ve created the input table:</p>
-
-<p><code></p>
-
+<!-- raw HTML omitted -->
 <p>$ create &lsquo;tariff_changes&rsquo;, { NAME =&gt; &lsquo;cf&rsquo;, SPLITS_FILE =&gt; &lsquo;splits.txt&rsquo;, VERSIONS =&gt; 50, MAX_FILESIZE =&gt; 1073741824 }</p>
-
 <p>$ alter &lsquo;tariff_changes&rsquo;, { NAME =&gt; &lsquo;cf&rsquo;, SPLITS_FILE =&gt; &lsquo;splits.txt&rsquo;, VERSIONS =&gt; 50, MAX_FILESIZE =&gt; 1073741824 }</p>
-
-<p></code></p>
-
+<!-- raw HTML omitted -->
 <p>Split file is just something along this lines:</p>
-
-<p><code>
-1
-2
-3
-4
-5
-6
-7
-8
-9
-0
-</code></p>
-
+<!-- raw HTML omitted -->
 <p>This tells HBase what are the rowKeys starting and ending each of the
 partitions.</p>
-
 <p>Ok, so after this rather lengthy introduction, what the actual code
 does? It just spins of a few threads - one for each partition - and runs
 a Scan request tailored to that partitions key space. This way, I got a
 10x speedup for this particular scan. The execution time went down from
 30 minutes to 3 for my use case.</p>
-
 <p>I&rsquo;ve created an example implementation of this idea. You can find it on
 GitHub:
 <a href="https://github.com/zygm0nt/hbase-distributed-search">https://github.com/zygm0nt/hbase-distributed-search</a>.</p>
-
 <p>Any ideas on how to speed things up even more with HBase?</p>
     </div>
  

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Just a blog</title>
@@ -18,7 +18,7 @@
       
       <guid>http://marcin.cylke.com.pl/2019/07/17/screen-split-experience/</guid>
       <description>Most useful shortcuts to operate screen Aside from basic screen shortcuts for moving around, creating and changing windows there are things that create more of a window manager feel for terminal usage. And these are splits.
-You can create a split with Ctrl-a | - which creates a vertical split. There is also Ctrl-A S to create a horizontal split. To cycle between your open splits just use Ctrl-a &amp;lt;Tab&amp;gt;.</description>
+You can create a split with Ctrl-a | - which creates a vertical split. There is also Ctrl-A S to create a horizontal split. To cycle between your open splits just use Ctrl-a &amp;lt;Tab&amp;gt;. To close the active split - just press Ctrl-a X</description>
     </item>
     
     <item>
@@ -40,7 +40,6 @@ Nerdcommenter (https://github.com/scrooloose/nerdcommenter) - a pretty ubiquitus
       
       <guid>http://marcin.cylke.com.pl/2016/10/10/reading-research-papers/</guid>
       <description>&lt;p&gt;Research papers seemed to exist there for others to read. They were that strange thing some people produced and no one ever read. At least they looked to me like this for a long time. But that changed. Gradually, when I became interested first, in distributed systems, than in machine learning, they started appearing frequently along blogposts and tweets. With mentions all over internet. This made me think about their usefulness in solving general, everyday problems in those areas. They were no longer that unapproachable, academic papers I read at school. Nope, they became something else entirely.&lt;/p&gt;
-
 &lt;p&gt;Over time I&amp;rsquo;ve learned to gather insights, ideas and understanding from them. I&amp;rsquo;ve developed some technique and would like to share it. Is it really helpful? I don&amp;rsquo;t know. Perhaps it just works for me. Can&amp;rsquo;t say for sure.&lt;/p&gt;</description>
     </item>
     
@@ -51,7 +50,6 @@ Nerdcommenter (https://github.com/scrooloose/nerdcommenter) - a pretty ubiquitus
       
       <guid>http://marcin.cylke.com.pl/2016/07/24/it-minimalist/</guid>
       <description>&lt;p&gt;This is me at this moment in time:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;164 rss channels I&amp;rsquo;m subscribed to&lt;/li&gt;
 &lt;li&gt;47 opened browser tabs, in two different browsers (Chrome, Firefox), across two different machines,&lt;/li&gt;
@@ -59,7 +57,6 @@ Nerdcommenter (https://github.com/scrooloose/nerdcommenter) - a pretty ubiquitus
 &lt;li&gt;44 notes in google keep&lt;/li&gt;
 &lt;li&gt;78 books to read&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;This is information overload.&lt;/p&gt;</description>
     </item>
     
@@ -69,8 +66,7 @@ Nerdcommenter (https://github.com/scrooloose/nerdcommenter) - a pretty ubiquitus
       <pubDate>Thu, 07 Jul 2016 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2016/07/07/mac-os-x-switch/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://farm9.staticflickr.com/8064/8229071681_02ffdb91dc_z_d.jpg&#34; alt=&#34;enter image description here&#34; /&gt;&lt;em&gt;by Flick user &lt;a href=&#34;https://www.flickr.com/photos/raneko/8229071681/in/photolist-dxb9je-sEQEP-5gDCSr-PE6FE-7Pa2t3-5yhFqq-MsHbZ-tEVFv-kBEvsd-5uPrGV-a5wisf-Ea1We-5tX2pp-22ybhw-ivTix6-5yk9cA-kBCugR-gcSkD-8cdXjv-asK9Y-7ZM66R-8N4eSG-4mchWA-4pjwaT-Gy8BR-7HPwfe-dxb9hv-4rXMuz-h6gJgm-9jULZ6-5SPsfu-kBECo7-6UUwCT-5whRwW-4rujwZ-8Kye5Q-9hN1d6-5utN7V-k9drqQ-4QPsUy-8VEazh-8UB7Ms-8VEaEq-neQih-8EHChx-ecth3o-8yrLUn-o7oNS-kBCXKM-6UYBrs&#34;&gt;raneko&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
+      <description>&lt;p&gt;&lt;img src=&#34;https://farm9.staticflickr.com/8064/8229071681_02ffdb91dc_z_d.jpg&#34; alt=&#34;enter image description here&#34;&gt;&lt;em&gt;by Flick user &lt;a href=&#34;https://www.flickr.com/photos/raneko/8229071681/in/photolist-dxb9je-sEQEP-5gDCSr-PE6FE-7Pa2t3-5yhFqq-MsHbZ-tEVFv-kBEvsd-5uPrGV-a5wisf-Ea1We-5tX2pp-22ybhw-ivTix6-5yk9cA-kBCugR-gcSkD-8cdXjv-asK9Y-7ZM66R-8N4eSG-4mchWA-4pjwaT-Gy8BR-7HPwfe-dxb9hv-4rXMuz-h6gJgm-9jULZ6-5SPsfu-kBECo7-6UUwCT-5whRwW-4rujwZ-8Kye5Q-9hN1d6-5utN7V-k9drqQ-4QPsUy-8VEazh-8UB7Ms-8VEaEq-neQih-8EHChx-ecth3o-8yrLUn-o7oNS-kBCXKM-6UYBrs&#34;&gt;raneko&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Who would have thought? Me switching to Mac? But it actually happened. I&amp;rsquo;ve been a long time Linux user, so why actually do the switch now? Or ever? Have a look at my thoughts and insights of novice Mac user.&lt;/p&gt;</description>
     </item>
     
@@ -81,11 +77,8 @@ Nerdcommenter (https://github.com/scrooloose/nerdcommenter) - a pretty ubiquitus
       
       <guid>http://marcin.cylke.com.pl/2016/04/29/scalar-conf-2016/</guid>
       <description>&lt;p&gt;Scalar Conf 2016&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://marcin.cylke.com.pl/assets/POLIN-Museum-of-the-History-of-Polish-Jews-int02.jpg&#34; alt=&#34;Polin museum - interior&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This small conference had its third installment in (&lt;a href=&#34;http://www.polin.pl/en)[Polin&#34;&gt;http://www.polin.pl/en)[Polin&lt;/a&gt; - Museum of the History of Polish Jews]. Organizing Scala conference isn&amp;rsquo;t that obvious and having that kind of attention is really great - all the foreign speakers, etc.&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;http://marcin.cylke.com.pl/assets/POLIN-Museum-of-the-History-of-Polish-Jews-int02.jpg&#34; alt=&#34;Polin museum - interior&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This small conference had its third installment in (&lt;a href=&#34;http://www.polin.pl/en)%5BPolin&#34;&gt;http://www.polin.pl/en)[Polin&lt;/a&gt; - Museum of the History of Polish Jews]. Organizing Scala conference isn&amp;rsquo;t that obvious and having that kind of attention is really great - all the foreign speakers, etc.&lt;/p&gt;
 &lt;p&gt;Here is a quick recap of presentations I&amp;rsquo;ve attended.&lt;/p&gt;</description>
     </item>
     
@@ -96,7 +89,7 @@ Nerdcommenter (https://github.com/scrooloose/nerdcommenter) - a pretty ubiquitus
       
       <guid>http://marcin.cylke.com.pl/2016/02/20/lambda-days-2016/</guid>
       <description>Lambda Days 2016 - Kraków This last two days I&amp;rsquo;ve spend on a conference in Kraków. The topics revolved around functional programming, with all the experimental stuff, popular languages, etc. Here are the talks I&amp;rsquo;ve been to and short summaries of those:
-Day 1:  Propositions as types - the keynote delivered by Philip Wadler - seen it already on YouTube. But the thing with Lambda t-shirt looked funny again :D</description>
+Day 1:   Propositions as types - the keynote delivered by Philip Wadler - seen it already on YouTube. But the thing with Lambda t-shirt looked funny again :D</description>
     </item>
     
     <item>
@@ -118,12 +111,10 @@ me a line! Cheers.&lt;/p&gt;</description>
       <pubDate>Mon, 14 Jul 2014 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2014/07/14/super-confitura-man/</guid>
-      <description>&lt;h2 id=&#34;how-super-confitura-man-came-to-be&#34;&gt;How Super Confitura Man came to be :)&lt;/h2&gt;
-
+      <description>&lt;h2 id=&#34;how-super-confitura-man-came-to-be-&#34;&gt;How Super Confitura Man came to be :)&lt;/h2&gt;
 &lt;p&gt;Recently at TouK we had a one-day hackathon. There was no main theme for
 it, you just could post a project idea, gather people around it and hack
 on that idea for a whole day - drinks and pizza included.&lt;/p&gt;
-
 &lt;p&gt;My main idea was to create something that could be fun to build and be
 useful somehow to others. I’d figured out that since Confitura was just
 around a corner I could make a game, that would be playable at TouK’s
@@ -131,8 +122,7 @@ booth at the conference venue. This idea seemed good enough to attract
 Rafał Nowak &lt;a href=&#34;https://twitter.com/RNowak3&#34;&gt;@RNowak3&lt;/a&gt; and Marcin Jasion
 &lt;a href=&#34;https://twitter.com/marcinjasion&#34;&gt;@marcinjasion&lt;/a&gt; - two TouK employees, that with me
 formed a team for the hackathon.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://marcin.cylke.com.pl/assets/confitura-2014-01.jpg&#34; alt=&#34;Confitura 01&#34; /&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://marcin.cylke.com.pl/assets/confitura-2014-01.jpg&#34; alt=&#34;Confitura 01&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -144,13 +134,11 @@ formed a team for the hackathon.&lt;/p&gt;
       <description>&lt;p&gt;HBase is by design a columnar store, that is optimized for random reads.
 You just ask for a row using rowId as an identifier and you get your
 data instantaneously.&lt;/p&gt;
-
 &lt;p&gt;Performing a scan on part or whole table is a completely different thing.
 First of all, it is sequential. Meaning it is rather slow, because it
 doesn&amp;rsquo;t use all the RegionServers at the same time. It is implemented
 that way to realize the contract of Scan command - which has to return
 results sorted by key.&lt;/p&gt;
-
 &lt;p&gt;So, how to do this efficiently?&lt;/p&gt;</description>
     </item>
     
@@ -164,10 +152,8 @@ results sorted by key.&lt;/p&gt;
 conclusion, that it is extremaly inconvenient to reach to it
 via HBase native API. It is very verbose and you always need to convert
 between bytes and simple types - a pain.&lt;/p&gt;
-
 &lt;p&gt;While I was working on a project of mine, I thought, why not to easy
 those pains and fetch real objects from HBase.&lt;/p&gt;
-
 &lt;p&gt;And that&amp;rsquo;s how this simplistic, hackish ORM came to life. It is no match
 for projects like &lt;a href=&#34;https://github.com/impetus-opensource/Kundera&#34;&gt;Kundera&lt;/a&gt;
 (a JPA compliant solution), or &lt;a href=&#34;https://code.google.com/p/n-orm/&#34;&gt;n-orm&lt;/a&gt;. Nevertheless, it just suits my needs :)&lt;/p&gt;</description>
@@ -200,8 +186,8 @@ resolution was heavily inspired by Adam Kawa&amp;rsquo;s post &lt;a href=&#34;ht
       <guid>http://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/</guid>
       <description>This post is a summary of what has been presented by Kathleen Ting on StrangeLoop conference. You can watch the original here: http://www.infoq.com/presentations/Misconfiguration-ZooKeeper
 I&amp;rsquo;ve decided to put this selection here for quick reference.
-Connection mismanagement  too many connections
-WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - Too many connections from /xx.x.xx.xxx - max is 60   running out of ZK connections? set maxClientCnxns=200 in zoo.cfg HBase client leaking connections? fixed in HBASE-3777, HBASE-4773, HBASE-5466 manually close connections  connection closes prematurely</description>
+Connection mismanagement   too many connections
+ WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - Too many connections from /xx.x.xx.xxx - max is 60     running out of ZK connections?  set maxClientCnxns=200 in zoo.cfg   HBase client leaking connections?</description>
     </item>
     
     <item>
@@ -210,8 +196,7 @@ WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - To
       <pubDate>Fri, 30 Nov 2012 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2012/11/30/after-whug/</guid>
-      <description>Here are the slides from the talk a gave yesterday. If you have any questions, please ask.
- </description>
+      <description>Here are the slides from the talk a gave yesterday. If you have any questions, please ask.</description>
     </item>
     
     <item>
@@ -239,7 +224,6 @@ components, like
 &lt;a href=&#34;http://blog.cloudera.com/blog/2009/07/hadoop-ha-configuration/&#34;&gt;DRBD&lt;/a&gt;.
 It all is just neatly packed into Cloudera Hadoop distribution - the
 precursor of this solution.&lt;/p&gt;
-
 &lt;p&gt;Read on to find out how to use it.&lt;/p&gt;</description>
     </item>
     
@@ -1296,6 +1280,16 @@ Po prostu rzecz o rodzinnej tragedii.
     </item>
     
     <item>
+      <title>sekretna 5-ka</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/sekretna-5-ka/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/sekretna-5-ka/</guid>
+      <description>Jakiś czas temu zostałem wciągnięty do tej zabawy, polegającej na wymienianiu pięciu &#34;sekretów&#34;, o których niby nikt nie wie. Trochę się spuźniłem, bo moda na to już chyba minęła. W każdym razie nadganiam :)
+ oglądałem &#34;Nigdy w życiu&#34;, &#34;Tylko mnie kochaj&#34; i byłem zachwycony. &#34;wlubiam się&#34; w filmy, w których jest drobny, interesujący mnie fragment - konkretniej: bohaterowie jedzący coś w każdej scenie, w której są obecni mój młodzieńczy cykl uwielbień dla aktorek zawierał: Erice Eleniak (&#34;</description>
+    </item>
+    
+    <item>
       <title>Serenity</title>
       <link>http://marcin.cylke.com.pl/2007/11/08/serenity/</link>
       <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
@@ -1518,16 +1512,6 @@ Film opowiada o parze, świeżo po ślubie, są młodzi, piękni i odnoszą sukc
     </item>
     
     <item>
-      <title>sekretna 5-ka</title>
-      <link>http://marcin.cylke.com.pl/2007/11/08/sekretna-5-ka/</link>
-      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
-      
-      <guid>http://marcin.cylke.com.pl/2007/11/08/sekretna-5-ka/</guid>
-      <description>Jakiś czas temu zostałem wciągnięty do tej zabawy, polegającej na wymienianiu pięciu &#34;sekretów&#34;, o których niby nikt nie wie. Trochę się spuźniłem, bo moda na to już chyba minęła. W każdym razie nadganiam :)
- oglądałem &#34;Nigdy w życiu&#34;, &#34;Tylko mnie kochaj&#34; i byłem zachwycony. &#34;wlubiam się&#34; w filmy, w których jest drobny, interesujący mnie fragment - konkretniej: bohaterowie jedzący coś w każdej scenie, w której są obecni mój młodzieńczy cykl uwielbień dla aktorek zawierał: Erice Eleniak (&#34;</description>
-    </item>
-    
-    <item>
       <title></title>
       <link>http://marcin.cylke.com.pl/2007/11/07/pierwszy-wpis-na-moim-joggu-nie/</link>
       <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
@@ -1635,6 +1619,15 @@ Co dalej? Naprawde warto obejrzec. Bo jest to niestandardowa animacja.</descript
       <guid>http://marcin.cylke.com.pl/2007/11/07/crouching-tiger-hidden-dragon/</guid>
       <description>Ten film zapoczatkowal ekspansje wschodnich &#34;basni&#34; na swiecie. Po tym filmie dopiero popularnosc zdobyly takie produkcje jak &#34;Hero&#34;. I wydaje mi sie, ze bez tego nic by sie nie wydazylo.
 Mamy tu opowiedziana z pozoru prosta historie o zagubionym mieczu, milosci, zlodziejce i wojownikach. W tej swojej prostocie jest wlasnie urok tego filmu. Wiele przepieknych walk mieczami. Te wszelkie kocie ruchy, skoki itp. Cala esencja wschodnich sztuk walki plus dodatkowe bajery, zeby wszystko wygladalo prawie jak sceny z anime.</description>
+    </item>
+    
+    <item>
+      <title>czyżby reaktywacja?</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/czyby-reaktywacja/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/czyby-reaktywacja/</guid>
+      <description> Coś znów mnie wzięło na pisanie tutaj, więc może niebawem pokażą się kolejne wpisy ;) </description>
     </item>
     
     <item>
@@ -2016,15 +2009,6 @@ Batman: The Beginning Bardzo fajny film. Byłem, i nadal w sumie jestem, pod ogr
       <guid>http://marcin.cylke.com.pl/2007/11/07/wedding-crushers/</guid>
       <description>Kto by sie spodziewal, ze taka komedyjka, zapowiadajaca sie na calkowicie standardowa amerykanska komedyjke, okaze sie takim fajnym filmidlem. Nie znajdzie sie tu nic glebokiego. O nie, to nie tu. Raczej duzo smiesznych gagow i zartow. A na dokladke troche klimatow z romantycznej komedii, bo jakby nie bylo okolo polowy film zmienia sie wlasnie w cos takiego.
 Fabula skomplikowana nie jest. Owen Wilson gra w tym filmie weselnego podrywacza, ktory wraz z kolega odwiedza rozne wesela.</description>
-    </item>
-    
-    <item>
-      <title>czyżby reaktywacja?</title>
-      <link>http://marcin.cylke.com.pl/2007/11/07/czyby-reaktywacja/</link>
-      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
-      
-      <guid>http://marcin.cylke.com.pl/2007/11/07/czyby-reaktywacja/</guid>
-      <description> Coś znów mnie wzięło na pisanie tutaj, więc może niebawem pokażą się kolejne wpisy ;) </description>
     </item>
     
     <item>

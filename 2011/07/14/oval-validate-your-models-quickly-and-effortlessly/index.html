@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.55.5" />
+<meta name="generator" content="Hugo 0.65.3" />
 
 
 <title>OVal - validate your models quickly and effortlessly! - Just a blog</title>
@@ -118,19 +118,22 @@ class - called by the validation engine on a given field.</p>
 
 <p>Let's start with our new annotation:</p>
 
-<script type="application/javascript" src="//gist.github.com/1077516/DictionaryValue.java.js"></script> 
+<script type="application/javascript" src="https://gist.github.com/1077516/DictionaryValue.java.js"></script>
+ 
 
 In the above snippet I've defined a check-annotation, that would be used like
 this:
 
-<script type="application/javascript" src="//gist.github.com/1077516/sample.java.js"></script> 
+<script type="application/javascript" src="https://gist.github.com/1077516/sample.java.js"></script>
+ 
 
 You can pass <i>file</i> - containing dictionary values for this field.
 There is also <i>message</i> field in the annotation which is an error
 message returned by the validation engine of failed check - pretty
 handy. And can be expressed in <i>.properties</i> file as:
 
-<script type="application/javascript" src="//gist.github.com/1077516/validation.properties.js"></script> 
+<script type="application/javascript" src="https://gist.github.com/1077516/validation.properties.js"></script>
+ 
 
 <p>Placeholder, like <i>context</i>, will be replaced with correct values supplied by the
 validation engine.</p>
@@ -140,7 +143,8 @@ for this kind of check. The name of the class is already defined in
 <i>DictionaryValue</i> annotation, it is called
 <i>DictionaryValueCheck</i> and I've done this check this way:
 
-<script type="application/javascript" src="//gist.github.com/1077516/DictionaryValueCheck.java.js"></script>
+<script type="application/javascript" src="https://gist.github.com/1077516/DictionaryValueCheck.java.js"></script>
+
 
 What this basically does is:
 <ol>

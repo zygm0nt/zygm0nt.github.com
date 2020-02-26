@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ogólne on Just a blog</title>
+    <link>http://marcin.cylke.com.pl/categories/Og%C3%B3lne/</link>
+    <description>Recent content in Ogólne on Just a blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 Jun 2012 09:08:09 +0000</lastBuildDate>
+    
+	<atom:link href="http://marcin.cylke.com.pl/categories/Og%C3%B3lne/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hadoop for Enterprises</title>
+      <link>http://marcin.cylke.com.pl/2012/06/18/hadoop-for-enterprises/</link>
+      <pubDate>Mon, 18 Jun 2012 09:08:09 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2012/06/18/hadoop-for-enterprises/</guid>
+      <description>Hadoop&#39;s usage as a big data processing framework gains a lot of attention lately. Now, not only big players see, that they can embrace the data their sites or products are generating and develop their businesses on it. For that to happen two things are needed: the data itself and means of processing really big amounts of it. 
+Gathering data is relatively easy. These are not necessarily structured data, you don&#39;t need to plan their usage at first.</description>
+    </item>
+    
+    <item>
+      <title>SoapUI ext libs and its weirdness</title>
+      <link>http://marcin.cylke.com.pl/2011/11/02/soapui-ext-libs-and-its-weirdness/</link>
+      <pubDate>Wed, 02 Nov 2011 15:32:15 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/11/02/soapui-ext-libs-and-its-weirdness/</guid>
+      <description>Suppose you want to add some additional jars to your SoapUI installation. It all should work ok if you put them in bin/ext directory. It is scanned at startup, and jars found there are automatically added to classpath.  However if you want to add some JDBC drivers, and happen to be using SoapUI version higher than 3.5.1 it is a bit more tricky. You may face this NoClassDefFoundError:  An error occured [oracle/jdbc/Driver], see error log for details java.</description>
+    </item>
+    
+    <item>
+      <title>What is NoSQL good for?</title>
+      <link>http://marcin.cylke.com.pl/2011/09/21/what-is-nosql-good-for/</link>
+      <pubDate>Wed, 21 Sep 2011 21:12:34 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/09/21/what-is-nosql-good-for/</guid>
+      <description>... or how I ended up writing a CouchDB proof of concept app? Once upon a time I set out on a journey to discover the NoSQL land. I&#39;ve decided that doing simple queries wouldn&#39;t be interesting enough. That&#39;s why I&#39;ve chose to create an app that would be based on some NoSQL database.
+ The main idea was to create an app, that would dynamically update itself with geographic data flowing in.</description>
+    </item>
+    
+    <item>
+      <title>5 best things to do with your Kindle</title>
+      <link>http://marcin.cylke.com.pl/2011/08/22/5-best-things-to-do-with-your-kindle/</link>
+      <pubDate>Mon, 22 Aug 2011 22:19:14 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/08/22/5-best-things-to-do-with-your-kindle/</guid>
+      <description>I bought a Kindle (3rd generation, Wi-Fi only) some time ago - like half a year ago. Read some books, done some web-browsing (awful, quite unpleasant). Gradually I became more and more curious of other things possible to achieve with this slate-looking piece of tech. These are my thoughts and ideas.  Got a Kindle? Use it every day? Feel like modding or extending your ways of usage? Great!</description>
+    </item>
+    
+    <item>
+      <title>Great many ways to enjoy life!</title>
+      <link>http://marcin.cylke.com.pl/2011/08/07/great-many-ways-to-enjoy-life/</link>
+      <pubDate>Sun, 07 Aug 2011 22:44:39 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/08/07/great-many-ways-to-enjoy-life/</guid>
+      <description> This looks like a very nice art+video project. Look at those clips:  EAT from Rick Mereki on Vimeo.
+   LEARN from Rick Mereki on Vimeo.
+   MOVE from Rick Mereki on Vimeo.
+    Comments  </description>
+    </item>
+    
+    <item>
+      <title>OVal - validate your models quickly and effortlessly!</title>
+      <link>http://marcin.cylke.com.pl/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/</link>
+      <pubDate>Thu, 14 Jul 2011 08:25:19 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/</guid>
+      <description>Some time ago one of the projects at work required me to validate some Java POJOs. Theses were my model classes and I&#39;ve been creating them from incoming WebService requests. One would say that XSD would be sufficient for the task, for parts of this validations - sure, it would. But there were some advanced rules XSD would not handle, or would render the schema document very complicated.
+Rules I needed to express were like:  person&#39;s first_name and last_name should be of appropriate length - between 2 and 20, and additionally one could pass a zero-length string just to remove the previous value state field should consist only defined values - as in dictionary value - this one would be completable with XSD&#39;s enumerations, but would require often changing schema files and redistributing them to interested parties :(  The library I&#39;ve decided to use for this task is OVal and it came out really nice!</description>
+    </item>
+    
+    <item>
+      <title>Geecon 2011 - day 2</title>
+      <link>http://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/</link>
+      <pubDate>Sun, 22 May 2011 16:39:31 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/</guid>
+      <description>And now for part 2 of my visit to Geecon 2011!
+ 1. Jim Webber &#34;Revisiting SOA for the 21st century&#34; Now this was awesome! Jim Webber, a former ThoughtWorks employee, now Neo4j evangelist (in Neotechnology) described his views on how SOA should look - according to him. This was presented previously, on other occasions as his &#34;Guerilla SOA&#34; talk - generally he advocated for REST based services, loose contracts (stating that WSDLs are too verbose and code generation is evil).</description>
+    </item>
+    
+    <item>
+      <title>Geecon 2011 - day 1</title>
+      <link>http://marcin.cylke.com.pl/2011/05/19/geecon-2011-day-1/</link>
+      <pubDate>Thu, 19 May 2011 20:05:05 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/05/19/geecon-2011-day-1/</guid>
+      <description>Last week&#39;s Java conference - Geecon was very interesting. It was well prepared, and gave an insight into the current Java related trends - concurrency, DSLs, polyglot programming. But not only that - there were also some pretty different talks from excellent speakers.
+ The whole event took 4 days:  University day (wednesday) 2 regular conference days (Thursday + Friday)  hacker garden (Sunday)   I decided to attend only on Thursday and Friday - no time for more.</description>
+    </item>
+    
+    <item>
+      <title>JCE keystore and untrusted sites</title>
+      <link>http://marcin.cylke.com.pl/2011/05/02/jce-keystore-and-untrusted-sites/</link>
+      <pubDate>Mon, 02 May 2011 15:03:38 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/05/02/jce-keystore-and-untrusted-sites/</guid>
+      <description>Recently at work I was in need of connecting to a web service exposed via HTTPS. I&#39;ve been doing this from inside Servicemix 3.3.1, which may seem a bit inhibiting, but that was a requirement. Nevertheless I&#39;ve been trying my luck with the included servicemix-http-2008.01 component. I&#39;ve created a simple Service Unit using that component and made connection attempt. Unfortunately I&#39;ve encountered issues with the SSL conversation negotiation. I had to dig deeper into the servicemix-http code to find out these had something to do with my JCE keystore.</description>
+    </item>
+    
+    <item>
+      <title>Advisory Messages to the rescue</title>
+      <link>http://marcin.cylke.com.pl/2011/04/01/advisory-messages-to-the-rescue/</link>
+      <pubDate>Fri, 01 Apr 2011 09:16:59 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/04/01/advisory-messages-to-the-rescue/</guid>
+      <description>The most crucial part of software development is testing. It should ensure us, that our code is correct, works according to given specs, etc. There are many kinds of tests: unit tests, integration, functional. In general you should try to test the smallest possible subset of your code and be able to check the state of the objects after the test.  This seems as rather easy task, but what if you have an integration end-to-end test to perform?</description>
+    </item>
+    
+    <item>
+      <title>How to run multiple guest OS in QEMU?</title>
+      <link>http://marcin.cylke.com.pl/2011/03/27/how-to-run-multiple-guest-os-in-qemu/</link>
+      <pubDate>Sun, 27 Mar 2011 18:47:11 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/03/27/how-to-run-multiple-guest-os-in-qemu/</guid>
+      <description>This weekend I&#39;ve been fiddling with QEMU. I&#39;ve installed OpenBSD on a single image and wanted to have two instances of it communicating via network. Installing the system was easy, but the networking setup was quite a pain. See how I did that...  To make QEMU instances communicate with each other I needed to plug them to a &#34;network&#34;. That&#39;s why I&#39;ve created a bridge to which Virtual Instances would connect to.</description>
+    </item>
+    
+    <item>
+      <title>Me on Hadoop on Parleys</title>
+      <link>http://marcin.cylke.com.pl/2011/03/20/me-on-hadoop-on-parleys/</link>
+      <pubDate>Sun, 20 Mar 2011 19:35:39 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/03/20/me-on-hadoop-on-parleys/</guid>
+      <description> Finally I&#39;ve managed to import my WarJUG presentation to parleys.com. See for yourself :)    If you&#39;ve got problems with opening the parleys&#39; version try the ones uploaded to youtube.  Here is part 1:  And here is part 2:
+  Comments Sigvatr I&#39;m sorry, but I don&#39;t understand Polish :P
+   </description>
+    </item>
+    
+    <item>
+      <title>After WarJUG</title>
+      <link>http://marcin.cylke.com.pl/2011/02/23/after-warjug/</link>
+      <pubDate>Wed, 23 Feb 2011 13:22:04 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/02/23/after-warjug/</guid>
+      <description>Some time ago I&#39;d written about my arsaw JUG presentation. I finally presented the the topic yesterday.
+I must say I&#39;m fairly content with my yesterday&#39;s presentation :) Here are some slides and as soon as the video will be available I&#39;ll post it here too.
+Hadoop i okoliceView more presentations from zygm0nt. Comments Sigvatr Czyli napisałeś ładny post po angielsku, tylko po to, by zaprosić do obejrzenia prezentacji po polsku?</description>
+    </item>
+    
+    <item>
+      <title>Hadoop at Warsaw JUG</title>
+      <link>http://marcin.cylke.com.pl/2011/02/17/hadoop-on-warsaw-jug/</link>
+      <pubDate>Thu, 17 Feb 2011 23:09:46 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/02/17/hadoop-on-warsaw-jug/</guid>
+      <description>I&#39;ll be speaking at the upcoming JUG meeting in Warsaw. The topic will be Apache Hadoop. If you&#39;re interested, feel invited. Attend and ask questions. But be aware I&#39;m not advanced in this technology :)
+Full invitation text can be found here.
+P.S.: Do you know what Hadoop is? Do you use it anywhere? Have you played with it?
+ Comments Marcin @teamon - prawdopodobnie będzie. Na 100% to nie wiem, ale teoretycznie wszystkie prezentacje WarJUGa są nagrywane</description>
+    </item>
+    
+    <item>
+      <title>Deus Ex - what a game!</title>
+      <link>http://marcin.cylke.com.pl/2011/02/17/deus-ex-what-a-game/</link>
+      <pubDate>Thu, 17 Feb 2011 00:05:50 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/02/17/deus-ex-what-a-game/</guid>
+      <description>Some time ago I&#39;d become obsessed with one game. It kept me up late, fed my imagination, sucked all my free time - so basically did what good game should. It was not a new production, quite the contrary -it&#39;s release date was year 2000. And the game itself was Deus Ex.
+ The year is 2050 and you wake up as a rookie named JC Denton - you are an UNATCO (United Nations Anti Terrorism CoOperation) special agent.</description>
+    </item>
+    
+    <item>
+      <title>JMS redelivery with ActiveMQ and Servicemix</title>
+      <link>http://marcin.cylke.com.pl/2011/01/17/jms-redelivery-with-activemq-and-servicemix/</link>
+      <pubDate>Mon, 17 Jan 2011 08:56:29 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/01/17/jms-redelivery-with-activemq-and-servicemix/</guid>
+      <description>The other day I felt a compelling need to implement a JMS redelivery scenario. The exact scenario I&#39;d been trying to handle was:  my message is in an ActiveMQ queue or topic its processing fails, because of some exception - ie. database access exception due to server nonavailability since we get an exception, the message is not handled properly, we may want to retry processing attempt some time later of course, for the redelivery to happen we need the message to stay in the ActiveMQ queue - fetching messages from the queue will be stopped until the redelivery succeeds or expires  See how this can be done after the jump :)   For this to happen, I&#39;ve tried implementing Apache Camel route, but as it turns out, Camel fails to deliver facilities for exact JMS redelivery.</description>
+    </item>
+    
+    <item>
+      <title>Ku pamięci - o top-postingu</title>
+      <link>http://marcin.cylke.com.pl/2010/12/10/ku-pamieci-o-top-postingu/</link>
+      <pubDate>Fri, 10 Dec 2010 14:25:45 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/12/10/ku-pamieci-o-top-postingu/</guid>
+      <description> W celu niezagubienia i posiadaniu argumentu w przeróżnych dyskusjach:
+http://idallen.com/topposting.html  </description>
+    </item>
+    
+    <item>
+      <title>Easier and nicer JMS</title>
+      <link>http://marcin.cylke.com.pl/2010/12/08/easier-and-nicer-jms/</link>
+      <pubDate>Wed, 08 Dec 2010 09:22:34 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/12/08/easier-and-nicer-jms/</guid>
+      <description>JMS seems like a hostile ground. It has all it&#39;s quirks and strange behaviours. A couple of defining standards plus esoteric brokers, queues and topics.    At work, we mainly use open source Jms solutions, namely Apache ActiveMQ. This one is usually bundled with Apache Servicemix, as a message broker for this particular ESB. As there are some minor caveats in this scennerio, I&#39;d like to describe here some guidelines for getting to running JMS queues.</description>
+    </item>
+    
+    <item>
+      <title>Best pigsticking, EVER!</title>
+      <link>http://marcin.cylke.com.pl/2010/11/06/best-pigsticking-ever/</link>
+      <pubDate>Sat, 06 Nov 2010 19:41:28 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/11/06/best-pigsticking-ever/</guid>
+      <description> This looks like the best pigsticking ever! Look at that little girl! The blood, butcher&#39;s knife, and child&#39;s soother :)
+ Photo from Jamie Oliver&#39;s cookbook, &#34;Jamie&#39;s Italy&#34;. Available on Amazon. </description>
+    </item>
+    
+    <item>
+      <title>Schematron to the rescue!</title>
+      <link>http://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/</link>
+      <pubDate>Thu, 21 Oct 2010 08:40:37 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/</guid>
+      <description>In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be solved with it - the standardization processes is there for some reason. But that happens only in ideal world, which we&#39;re not living in.   In ideal world, when dealing with XML instances you&#39;d be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal definition language to declare your data structure.</description>
+    </item>
+    
+    <item>
+      <title>Complex flows with Apache Camel</title>
+      <link>http://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/</link>
+      <pubDate>Thu, 26 Aug 2010 20:23:52 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/</guid>
+      <description>At work, we&#39;re mainly integrating services and systems, and since we&#39;re on a constant lookout for new, better technologies, ways to do things easier, make them more sustainable, we&#39;re trying to  Usually we use Apache Camel for this task, which is a Swiss-knife for integration engineer. What&#39;s more, this tools corresponds well with our approach to integration solutions:   try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits,  don&#39;t convert XML into Java classes back and forth and be worried with problems like XML conversion,  try to get a simple flow of the process.</description>
+    </item>
+    
+    <item>
+      <title>Meetbsd 2010</title>
+      <link>http://marcin.cylke.com.pl/2010/08/18/meetbsd-2010/</link>
+      <pubDate>Wed, 18 Aug 2010 22:16:25 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/08/18/meetbsd-2010/</guid>
+      <description>Some time ago, I&#39;ve attended MeetBSD conference in Kraków. This BSD event is held yearly in either Warsaw, or Kraków. Due to relatively small group of people that registered there was only one track, which had both good and bad sides - you didn&#39;t have to choose from myriads of lectures, but there was no way to skip boring ones either. Well, I guess this kind of niche conference - about operating system :) - will not attract bigger attention.</description>
+    </item>
+    
+    <item>
+      <title>6&#43; hour layover in Stockholm</title>
+      <link>http://marcin.cylke.com.pl/2010/08/12/6-hour-layover-in-stockholm/</link>
+      <pubDate>Thu, 12 Aug 2010 22:22:01 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/08/12/6-hour-layover-in-stockholm/</guid>
+      <description>Last Monday, while coming home from Sweden, I had ~7h layover between my flights. Since Arlanda Airport does not offer a lot to do, at least not for me and not for 7h, I had decided to go to Stockholm. This post sums up a few nice places, that I&#39;d like to visit on my next trip there.
+I took Arlanda Express, fast train that takes you directly from the airport to Stockholm.</description>
+    </item>
+    
+    <item>
+      <title>Generic Enum converter for iBatis</title>
+      <link>http://marcin.cylke.com.pl/2010/06/28/generic-enum-converter-for-ibatis/</link>
+      <pubDate>Mon, 28 Jun 2010 20:40:34 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/06/28/generic-enum-converter-for-ibatis/</guid>
+      <description>My goal was to create a simple, extensible Enum converter that would work with iBatis. This seems like a trivial problem, but took me a while to find a proper solution.
+ There were some additional preconditions:  all given Enums are jaxb generated objects - but any standard Java Enum should work conversion was 1-to-1, no special conditions and processing  The example Enum for this problem looks like this one (copy&amp;amp;paste from jaxb generated source):</description>
+    </item>
+    
+    <item>
+      <title>Readability powala!</title>
+      <link>http://marcin.cylke.com.pl/2010/06/28/readability-powala/</link>
+      <pubDate>Mon, 28 Jun 2010 20:39:51 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/06/28/readability-powala/</guid>
+      <description>Już dziś możecie skorzystać z &#34;umilacza&#34; czytania artykułów. Od zawsze denerwowało mnie rozpraszające badziewie na stronach z artykułami. Teraz z tym koniec. Odkąd odkryłem Readability -- strona bookmarkletu,. Wszelkie instrukcje na temat korzystania są dostępne na stronie projektu, tak więc warto sprawdzić.
+ Comments Marcin Zgodnie z niektórymi źródłami, to jednak jest tam część kodu Readability. Polecam ten link:
+http://www.downloadsquad.com/2010/06/08/think-safari-reader-looks-familiar-thats-because-apple-used-op/
+  Dominik Porada &amp;gt; Z tego co gdzieś tam czytałem, to nawet Apple wykorzystał kawałki kodu JS z tej strony w Safari nowym.</description>
+    </item>
+    
+    <item>
+      <title>Javarsovia 2010</title>
+      <link>http://marcin.cylke.com.pl/2010/06/27/javarsovia-2010/</link>
+      <pubDate>Sun, 27 Jun 2010 15:08:43 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/06/27/javarsovia-2010/</guid>
+      <description>This year&#39;s Javarsovia conference took place on 26th june. It was held at Centrum Konferencyjno-Kongresowe, Bobrowiecka Street, Warsaw.
+First of all - the organization was very nice. Everything seemed smooth, maybe with the exception of conference registration, it was simply overcrowded. The agenda was split into four tracks, each hour 4 different presentations were given in different halls. So you just had to choose which one to attend. My path through the conference is described below, together with my views on each of the presentations I attended.</description>
+    </item>
+    
+    <item>
+      <title>osnews.com - hobby projects</title>
+      <link>http://marcin.cylke.com.pl/2010/06/10/osnews-com-hobby-projects/</link>
+      <pubDate>Thu, 10 Jun 2010 19:22:56 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/06/10/osnews-com-hobby-projects/</guid>
+      <description>Kilka dni temu na portalu OSNews pojawiła się notatka o skromym tytule: What Are You Working On?. Takie proste pytanie spowodowało lawinę komentarzy. Mnóstwo projektów, których ludzie się &#34;dopuszczają&#34; w czasie wolnym. Wszystkie można przeczytać tutaj: komentarze. Jest tam wiele do przeczytania, ale jeden komentarz naprawdę &#34;zrobił mój dzień&#34; :)
+  Come on people, you can do better than that. - trying to improve a tube theremin I built last year to get more linear response.</description>
+    </item>
+    
+    <item>
+      <title>Eclipse ecosystem</title>
+      <link>http://marcin.cylke.com.pl/2010/05/07/eclipse-ecosystem/</link>
+      <pubDate>Fri, 07 May 2010 09:55:59 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/05/07/eclipse-ecosystem/</guid>
+      <description>Do you use Eclipse? Or perhaps you use other IDE but would like to try &#34;the big E&#34;? Well, that&#39;s OK, and completely understandable, because Eclipse is actually a great, versatile tool. But Eclipse is not just an IDE, in fact it is a comp let, extensible platform. What&#39;s even more important, there are tones of valuable Eclipse-related projects gathered around the platform.
+Yes, there are lots. Some are good, some are bad, but the usual, stock ones, signed by Eclipse, are worth taking a closer look.</description>
+    </item>
+    
+    <item>
+      <title>Dmesg z Openbsd/sgi</title>
+      <link>http://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/</link>
+      <pubDate>Sun, 25 Apr 2010 12:20:34 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/</guid>
+      <description>Wracając do starego tematu OpenBSD na moim SGI O2, postanowiłem lekko odświeżyć tą maszynę. Dostałą uaktualnienie małe. Przysiedziałem również nad dostosowaniem systemu do swoich potrzeb, instalacji potrzebnego softu itp.
+Na początek dmesg z działąjącego systemu:
+ [ using 433608 bytes of bsd ELF symbol table ] Copyright (c) 1982, 1986, 1989, 1991, 1993 The Regents of the University of California. All rights reserved. Copyright (c) 1995-2009 OpenBSD. All rights reserved.</description>
+    </item>
+    
+    <item>
+      <title>Unicode w Pythonie</title>
+      <link>http://marcin.cylke.com.pl/2010/04/21/unicode-w-pythonie/</link>
+      <pubDate>Wed, 21 Apr 2010 22:54:24 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/04/21/unicode-w-pythonie/</guid>
+      <description>Szlag by to trafił! Czemu tak ciężko jest obsługiwać unicode w pythonie? No niby wszystko jest ładnie konwertowane wewnętrznie na odpowiednie reprezentacje, ale jeśli przychodzi co do czego, i chcemy wypisać sobie taki ciąg znaków na ekran, to już jest ciężej.
+Weźmy prosty przykład. Wczytywałem plik z polskimi znaczkami, o taki:
+ Roger Macdonald;Człowiek w żelaznej masce;25  a potem w kodzie pythonowym robiłem sobie tak:
+ for line in open(sys.</description>
+    </item>
+    
+    <item>
+      <title>Reaktywacja o-filmoramy?</title>
+      <link>http://marcin.cylke.com.pl/2010/04/21/reaktywacja-o-filmoramy/</link>
+      <pubDate>Wed, 21 Apr 2010 18:01:59 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/04/21/reaktywacja-o-filmoramy/</guid>
+      <description> Mam nadzieję, że wreszcie jednak ruszę z blogiem filmowym, po raz kolejny należy mu się reaktywacja.
+http://o-filmorama.blogspot.com  </description>
+    </item>
+    
+    <item>
+      <title>Mass Effect </title>
+      <link>http://marcin.cylke.com.pl/2010/04/21/mass-effect/</link>
+      <pubDate>Wed, 21 Apr 2010 17:59:39 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/04/21/mass-effect/</guid>
+      <description>Już dawno nie wciągnęła mnie tak żadna gra. To było olśnienie, ale dopiero za drugim razem wzięło mnie na dobre. Pierwsze podejście raczej mnie zniechęciło, bo choć fabuła zapowiadała się całkiem fajnie, to grając na XBoxie - przy użyciu pada - nie byłem w stanie poradzić sobie z celowaniem. Pewnie dziś byłoby lepiej, bo i technikę w tej dziedzinie podszkoliłem na licznych bijatykach i ef-pe-esach, ale i tak dorwałem werjsę na PC Mass Effect :D.</description>
+    </item>
+    
+    <item>
+      <title>Nokia bez certyfikatów :)</title>
+      <link>http://marcin.cylke.com.pl/2010/04/18/nokia-bez-certyfikatow/</link>
+      <pubDate>Sun, 18 Apr 2010 23:13:47 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/04/18/nokia-bez-certyfikatow/</guid>
+      <description>Od kilku dni walczyłem z wyłączeniem sprawdzania certyfikatów w Nokii E51. Okazało się, że to trywialna sprawa. Wystarczy:
+Tools -&amp;gt; App mgr -&amp;gt; Options -&amp;gt; Settings. Zmienić &#34;software installation&#34; z &#34;Signed Only&#34; na &#34;All&#34; i &#34;Onlline certificate check&#34; na &#34;Off&#34; :D
+Dzięki temu mogłem sobie zainstalować prostego i funkcjonalnego playera http://symbianoggplay.sourceforge.net/ i jest on o niebo lepszy niż ten domyślny dostarczany przez Nokie.
+ Comments Marcin Cylke U mnie akurat zadziałąło :) a wszelkie próby korzystania z chińskich &amp;quot;rozwiązań&amp;quot; do odblokowywania Nokii poległy.</description>
+    </item>
+    
+    <item>
+      <title>Inteligentny mock w SoapUI</title>
+      <link>http://marcin.cylke.com.pl/2009/11/18/inteligentny-mock-w-soapui/</link>
+      <pubDate>Wed, 18 Nov 2009 22:20:57 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/11/18/inteligentny-mock-w-soapui/</guid>
+      <description>Któż z nas nie testował WebService&#39;ów, a któż z nas nie używał do tego SoapUI :) Ok, z rzeczami oczywistymi dyskutować nie będę, ale przy okazji jednego projekciku okazało się, że fajnie by było gdyby mój mock potrafił zrobić coś więcej niż tylko odpowiedzieć na nadesłany komunikat.
+Oczywiście sam SoapUI posiada dosyć spory wachlarz możliwości, bo może wysłać losowy request spośród wprowadzonych, lub wysyłać wedle sekwencji, itp.
+Problem w tym, że moim wysublimowanym życzeniem było aby korelować komunikaty określonego typu na podstawie jednego pola z XMLa - nazwijmy je polem &#34;</description>
+    </item>
+    
+    <item>
+      <title>Czyżby BPEL wreszcie stał się bardziej użyteczny?</title>
+      <link>http://marcin.cylke.com.pl/2009/11/15/czyzby-bpel-wreszcie-stal-sie-bardziej-uzyteczny/</link>
+      <pubDate>Sun, 15 Nov 2009 23:24:41 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/11/15/czyzby-bpel-wreszcie-stal-sie-bardziej-uzyteczny/</guid>
+      <description>Nieee... to po prostu udało mi się uruchomić BPEL Designera - plugin
+do Eclipse&#39;a. Co prawda wymagało to grzebnięcia w źródłach, które nie
+były aktualizowane już od dłuższego czasu. Zmiany polegały głównie na
+poprawie zależności. Niemniej, plugin z wersją 3.5 Eclipse&#39;a działa
+sprawnie. W poprzednich wersjach miał tendencje do zacinania się, a
+przyczyny tego nie udało mi się namierzyć.
+  A co to jest BPEL?
+Business Process Expression Language.</description>
+    </item>
+    
+    <item>
+      <title>Solaris w TR</title>
+      <link>http://marcin.cylke.com.pl/2009/11/13/solaris-w-tr/</link>
+      <pubDate>Fri, 13 Nov 2009 08:51:17 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/11/13/solaris-w-tr/</guid>
+      <description>Wczoraj byłem w TR (http://www.trwarszawa.pl/). Na wejściówki, po
+taniości. Obejrzałem spektakl Solaris, bo to Lem, bo znam, bo jako jedną
+z niewielu rzeczy Lema czytałem. Powody były.
+Wrażenia? Bardzo fajnie się oglądało. Problem jedynie w tym, że z
+wydawałoby się dosyć prostej fabularnie książki zrobiono spektakl,
+którego nie da się w całości zrozumieć z powodu niedopowiedzeń. Czy to
+jest domena nowoczesnych interpretacji teatralnych??
+ Comments Marcin @Biały, tak, faktycznie. Ale ostatecznie na prawdę nie wyszło to tak źle.</description>
+    </item>
+    
+    <item>
+      <title>&lt;p&gt;Love - some kind of preview...&lt;/p&gt; </title>
+      <link>http://marcin.cylke.com.pl/2009/09/24/love-some-kind-of-preview/</link>
+      <pubDate>Thu, 24 Sep 2009 23:06:05 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/09/24/love-some-kind-of-preview/</guid>
+      <description>Czytając mój ulubiony serwis o grach, czyli Rock-Paper-Shutgun dowiedziałem się, że osobnik znany jako Eskil Steenberg wypuścił nieinteraktywne preview swojego &#34;multiplayer experience&#34; - LOVE.
+O co tyle szumu? Wystarczy spojrzeć na to jak gra wygląda. Nie chodzi w tym o jakąś wypasioną grafikę, a o frajdę z gry. Eskil pisze swoją grę w pojedynkę. Idzie mu to naprawdę sprawnie. A zestaw narzędzi jakich używa wprawia mnie za każdym razem w podziw.</description>
+    </item>
+    
+    <item>
+      <title>Demotywator mój</title>
+      <link>http://marcin.cylke.com.pl/2009/09/22/demotywator-moj/</link>
+      <pubDate>Tue, 22 Sep 2009 21:59:20 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/09/22/demotywator-moj/</guid>
+      <description>Z dwa tygodnie temu zrobiłem fotkę. Nadawała się na demotywator. Moim zdaniem przynajmnie :)
+Umieściłem ją więc w serwisie odpowiednim - demotywatory.pl Raczej nie pieją ludzie z zachwytu, ale mam radochę i tak :D.
+Link do demotywatora - LINK.
+ Comments Marcin @Voter101 - dzięki za słowa krytyki ;-)
+Jednak nadal dziwi mnie tak niesamowicie osobiste podejście do tego co ktoś sobie na blogu napisze. No ale trudno!
+A co do Twojej rady, żebym wracał do gimnazjum.</description>
+    </item>
+    
+    <item>
+      <title>Open Suse jest upośledzone!</title>
+      <link>http://marcin.cylke.com.pl/2009/09/20/open-suse-jest-uposledzone/</link>
+      <pubDate>Sun, 20 Sep 2009 14:45:13 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/09/20/open-suse-jest-uposledzone/</guid>
+      <description>Zarządzanie pakietami to droga przez mękę. Czemu? Proszę bardzo:
+marcin@byakshee:~&amp;gt; sudo zypper install f-spot
+Reading installed packages...
+&#39;f-spot&#39; is already installed.
+Nothing to do.
+ale już jakbym chciał upgrade paczki zrobić, to inna rozmowa:
+marcin@byakshee:~&amp;gt; sudo zypper update f-spot
+Reading installed packages...
+Package &#39;f-spot&#39; is not installed.
+Nothing to do.
+
+Wniosek z tego taki, że jak raz zetkniesz się z apt-getem, to już nic nie będzie później odpowiednie :D A OpenSuse oczywiście odradzam.</description>
+    </item>
+    
+    <item>
+      <title>Przydatne programy zdjęciowe</title>
+      <link>http://marcin.cylke.com.pl/2009/09/20/przydatne-programy-zdjeciowe/</link>
+      <pubDate>Sun, 20 Sep 2009 10:29:06 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/09/20/przydatne-programy-zdjeciowe/</guid>
+      <description>Od dawna używam hugina, który doskonale nadaje się do sklejania wielu zdjęć w panoramę. Robi to doskonale, wygładza, koryguje, dopasowuje. Wystarczy wrzucić sekwencję zdjęć w odpowiedniej kolejności, a program załatwi wszystko za mnie. Miód!
+Dziś znalazłem natomiast programik o dziwnej conieco nazwie tintii. On z koleii służy do przerabiana zdjęc na czarnobiałe, zostawiając pewien obszar w kolorze. Robienie podobnej rzeczy w Gimpie nigdy nie wychodziło mi łatwo. Dzięki temu narzędziu wszystko idzie łatwo i przyjemnie!</description>
+    </item>
+    
+    <item>
+      <title>Sycylijski IBM?</title>
+      <link>http://marcin.cylke.com.pl/2009/09/16/sycylijski-ibm/</link>
+      <pubDate>Wed, 16 Sep 2009 18:02:06 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/09/16/sycylijski-ibm/</guid>
+      <description>Ostatnio było tu ciszej, a to ze względu na wakacyjny wypad na Sycylię. Ładnie, pięknie, wino, kobiety, owoce morza. No, to tyle z relacji.
+
+
+Ja chciałem o czymś trochę innym. A mianowicie właśnie na Sycylii, konkretniej w Palermo zobaczyłem taką oto old-skulową reklamę IBM:
+
+
+
+  Urzekła mnie! Że to jeszcze tam wisi, że jest takie pikselowe. I totalnie od czapy, reklama była umieszczona w okolicach Teatro Maximo.</description>
+    </item>
+    
+    <item>
+      <title>System Shock 2</title>
+      <link>http://marcin.cylke.com.pl/2009/08/29/system-shock-2/</link>
+      <pubDate>Sat, 29 Aug 2009 14:23:24 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/08/29/system-shock-2/</guid>
+      <description>Pamiętacie taką grę? Ja pamiętam jedynie tytuł i obszerny opis części pierwszej zamieszczony w którymś numerze Secret Service. Wtedy ta gra była poza moim zasięgiem - za sprawą wymagań sprzętowych.
+Dopiero jakiś rok temu udało mi się zdobyć System Shock - część pierwszą. Zagrywałem się w nią bardzo długo, uruchomiłem całość pod DosBox&#39;em i działało pięknie.
+Po jej ukończeniu przyszła chrapka na część drugą. Zdobyłem jakąś wersję tej gry i co?</description>
+    </item>
+    
+    <item>
+      <title>Własny player audio?</title>
+      <link>http://marcin.cylke.com.pl/2009/08/29/wlasny-player-audio/</link>
+      <pubDate>Sat, 29 Aug 2009 01:37:59 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/08/29/wlasny-player-audio/</guid>
+      <description>Od jakiegoś czasu męczy mnie nędza wśród odtwarzaczy audio dostępnych na różne unixy. Niby są, ale jakieś takie wybrakowane, zupełnie nie przystające do moich potrzeb. Niby robią dużo, ale ja nie potrzebuję kombajnu do muzyki.
+Oczywiście, są różne takie jak:
+ Rhythmbox Amarok xmms i xmms2 musicpd bmpx cmus  No i wszystko fajnie, nie mam zamiaru negować ich użycia. Mi one po prostu nie do końca pasują. Rhythmbox, bo jest duży, ma za dużo featerów, niby umie dużo ale jak co do czego przyjdzie to bywają problemy.</description>
+    </item>
+    
+    <item>
+      <title>SGI O2 - upragiony</title>
+      <link>http://marcin.cylke.com.pl/2009/08/23/sgi-o2-upragiony/</link>
+      <pubDate>Sun, 23 Aug 2009 12:00:42 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/08/23/sgi-o2-upragiony/</guid>
+      <description>Od dawna marzyła mi się właśnie ta maszyna. Przez rodzinę i bliskich ochszczony został &#34;odkurzaczem&#34;. Nic to. Mi się podoba. Jest naprawdę ujmujący.
+Zapytace czemu?
+Proste!
+ nie jest to zwykły pc przy wejściu do &#34;biosu&#34; mamy tryb graficzny, obsługę myszy oraz dźwięki wydawane przez wbudowaną kartę muzyczną  Można by pomyśleć, że nie jest to warte uwagi, ale przecież standardowe PC nadal nie mają takich miłych ficzerów! A to jest sprzęt z 1996 roku.</description>
+    </item>
+    
+    <item>
+      <title>Brutal Assault 2009</title>
+      <link>http://marcin.cylke.com.pl/2009/08/17/brutal-assault-2009/</link>
+      <pubDate>Mon, 17 Aug 2009 09:11:22 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/08/17/brutal-assault-2009/</guid>
+      <description>W ostatni weekend odwiedziłem Czechy. Wraz z Radkiem, moim bratem pojechaliśmy zobaczyć wreszcie co to jest ten Brutal Assault - festiwal metalowy. Było na tyle ciekawie i przyjemnie, że postanowiłem Wam trochę opisać &#34;co i jak&#34; się robi na takich spędach.
+To była 14 edycja Brutal Assault i jak co roku odbyła się ~30km od polskiej granicy, w miasteczku Jaromir, a dokładniej w obrębie zabudowań twierdzy Józefów, która położona jest nieopodal miasta.</description>
+    </item>
+    
+    <item>
+      <title>O czym będzie?</title>
+      <link>http://marcin.cylke.com.pl/2009/08/15/o-czym-bedzie/</link>
+      <pubDate>Sat, 15 Aug 2009 23:55:06 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/08/15/o-czym-bedzie/</guid>
+      <description>W zasadzie to o wszystkim. Z uwagi na to, że pracuję w IT, to będzie częściowo o nowinkach z tego poletka, ale nie tylko. Mam nadzieję, że nudno nie będzie i stopniowo pojawią się też inne treści.
+ Comments konieckropka Dam szansę i zasubskrybuję ;)Powodzenia ;)
+  kip siema siema ;) to chętnie poczytam co nowego w &amp;quot;ajti&amp;quot;powodzonka
+  Quintasan Wielkie włochate dziesięciopalczaste yoł!Also, powodzenia!</description>
+    </item>
+    
+  </channel>
+</rss>

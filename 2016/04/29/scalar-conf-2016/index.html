@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.55.5" />
+<meta name="generator" content="Hugo 0.65.3" />
 
 
 <title>Scalar Conf 2016 - Just a blog</title>
@@ -63,77 +63,45 @@
  
     <div class="article-content">
       <p>Scalar Conf 2016</p>
-
-<p><img src="/assets/POLIN-Museum-of-the-History-of-Polish-Jews-int02.jpg" alt="Polin museum - interior" /></p>
-
-<p>This small conference had its third installment in (<a href="http://www.polin.pl/en)[Polin">http://www.polin.pl/en)[Polin</a> - Museum of the History of Polish Jews]. Organizing Scala conference isn&rsquo;t that obvious and having that kind of attention is really great - all the foreign speakers, etc.</p>
-
+<p><img src="/assets/POLIN-Museum-of-the-History-of-Polish-Jews-int02.jpg" alt="Polin museum - interior"></p>
+<p>This small conference had its third installment in (<a href="http://www.polin.pl/en)%5BPolin">http://www.polin.pl/en)[Polin</a> - Museum of the History of Polish Jews]. Organizing Scala conference isn&rsquo;t that obvious and having that kind of attention is really great - all the foreign speakers, etc.</p>
 <p>Here is a quick recap of presentations I&rsquo;ve attended.</p>
-
-<h3 id="having-a-cake-by-paweł-szulc">Having a cake &hellip; - by Paweł Szulc</h3>
-
+<h3 id="having-a-cake----by-paweł-szulc">Having a cake &hellip; - by Paweł Szulc</h3>
 <p>A keynote about typeclasses. I&rsquo;ve read the slides before the presentation  -and they are available <a href="http://www.slideshare.net/paulszulc/introduction-to-type-classes-in-30-min">here</a>, so it wasn&rsquo;t new to me. But I&rsquo;d strongly recommend to watch this talk.</p>
-
 <p>Also, there is another nice talk by Paweł: <a href="https://www.youtube.com/watch?v=ENtdZ9MBo5Y"> Category theory is absolute general nonsense!</a> This talk is in Polish only.</p>
-
-<h3 id="eff-monad-by-eric-torreborre">EFF Monad - by Eric Torreborre</h3>
-
+<h3 id="eff-monad---by-eric-torreborre">EFF Monad - by Eric Torreborre</h3>
 <p>Different way of monadic composition, implemented in a separate library: <a href="https://github.com/atnos-org/eff-cats">eff-cats</a> (there is also scalaz alternative). Technically it was a bit over my head, but after experimenting with the concept at home it seems interesting.</p>
-
 <p>I liked that Eric, being Zalando employee, developed that for their internal usage. Also the beauty of easily constructing different technological stacks with consistent API is very tempting.</p>
-
 <p>Interesting things used/mentioned were:</p>
-
 <ul>
 <li><a href="github.com/non/kind-projector">non/kind-projector</a>- for projections</li>
 <li><a href="http://haskell.cs.yale.edu/?post_type=publication&amp;p=319">Monad Transformers and Modular Interpreters</a></li>
 </ul>
-
-<h3 id="incremental-compiler-by-krzysztof-romanowski">Incremental compiler - by Krzysztof Romanowski</h3>
-
+<h3 id="incremental-compiler---by-krzysztof-romanowski">Incremental compiler - by Krzysztof Romanowski</h3>
 <p>Deep dive into scalac incremental compiler implementation. While the presentation itself, the way it was presented, was very nice, I didn&rsquo;t particularly enjoy the topic. It seemed more appropriate for tools&rsquo; developers.</p>
-
-<h3 id="akka-cluster-with-etcd-by-maciej-biłas">Akka cluster with Etcd - by Maciej Biłas</h3>
-
+<h3 id="akka-cluster-with-etcd---by-maciej-biłas">Akka cluster with Etcd - by Maciej Biłas</h3>
 <p>This one looked promising. Joining multiple exciting technologies seems often that way. Unfortunately it was rather tech preview of Kubernetes app setup rather than Scala presentation.</p>
-
 <p>I&rsquo;m a bit disappointed, because looking through the sources of the project <a href="https://github.com/rkrzewski/akka-cluster-etcd">akka-cluster-etcd</a> there are lots of things to describe. Kubernetes not being one of them ;-)</p>
-
-<h3 id="shapeless-easy-by-valentin-kasas">Shapeless? Easy! - by Valentin Kasas</h3>
-
+<h3 id="shapeless-easy---by-valentin-kasas">Shapeless? Easy! - by Valentin Kasas</h3>
 <p>Well, that was a clear introduction to shapeless. Till this presentation I&rsquo;ve treated shapeless as only some vague thingy you use when writing libraries. Valentin proved otherwise.</p>
-
 <p>He gave a clear and consistent tutorial on the basics of shapeless and its potential use in some example applications. He created a simple diff tool. Not that useful in real life application, but definitely helped make a point.</p>
-
 <p>Will look into real life examples in near future.</p>
-
 <p>Fun fact: The speaker had his presentation in <a href="https://github.com/marconilanna/REPLesent">REPLesent</a>, a sbt plugin for presentations - and performed most of the slide-jumping-fu with just one hand, other held in his pocket :D Looked quite hilarious.</p>
-
 <p>Valentin also mentioned shapeless&rsquo; typeclass derivation - this actually looks nice! Have a look at this <a href="https://meta.plasm.us/posts/2015/11/08/type-classes-and-generic-derivation/">question</a></p>
-
-<h3 id="cool-toolz-in-the-scalaz-and-cats-toolboxes-by-jan-pustelnik">Cool Toolz in the Scalaz and Cats Toolboxes - by Jan Pustelnik</h3>
-
+<h3 id="cool-toolz-in-the-scalaz-and-cats-toolboxes---by-jan-pustelnik">Cool Toolz in the Scalaz and Cats Toolboxes - by Jan Pustelnik</h3>
 <p>Functional Design Patterns - enjoyable talk. With a bit of theoretical background, lots of useful use-cases. The talk was about cats and scalaz - both being very similar, and patterns they contain.</p>
-
 <p>Key points being:</p>
-
 <ul>
 <li>Functor pattern for abstracting Big Data computations, to achieve easier testability</li>
 <li>composing functors - |@| scream operator - also know (officially) as Applicative Builder</li>
 <li>Applicative  - a list of computation into a computation of lists, list traversal</li>
 <li>Applicative pattern for reading config</li>
 </ul>
-
 <p>There is this nice video called &ldquo;A purely functional approach to building large applications&rdquo;. Go see <a href="https://www.youtube.com/watch?v=dS3IlDBDlvo">it</a>.</p>
-
 <h2 id="conclusion">Conclusion</h2>
-
 <p>To conclude - the conference was really great. Both the talks and social side of the event were enjoyable. I&rsquo;ve been blown away by the great architecture of the museum itself. Been there a couple times and enjoyed all of them.</p>
-
 <p>The much needed change would be to bring more tracks, because sometimes topics were too specific and I&rsquo;d gladly change lecture to some other.</p>
-
 <p>As for the usual conference merch, there were no bags with leaflets and pens etc. It came as a surprise to me, but I also really liked it. People infact throw away most of the contents from such bags. Also, no t-shirt as a default - great idea! If you like it - just buy one, otherwise don&rsquo;t bother.</p>
-
 <p>Overall - great job Softwaremill! Keep up the good work!.</p>
     </div>
  

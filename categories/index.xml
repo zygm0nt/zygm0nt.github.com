@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Just a blog</title>
@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>it</title>
-      <link>http://marcin.cylke.com.pl/categories/it/</link>
+      <title>IT</title>
+      <link>http://marcin.cylke.com.pl/categories/IT/</link>
       <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/it/</guid>
+      <guid>http://marcin.cylke.com.pl/categories/IT/</guid>
       <description></description>
     </item>
     
@@ -35,6 +35,24 @@
       <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/categories/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ha</title>
+      <link>http://marcin.cylke.com.pl/categories/ha/</link>
+      <pubDate>Thu, 07 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/categories/ha/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hack</title>
+      <link>http://marcin.cylke.com.pl/categories/hack/</link>
+      <pubDate>Thu, 07 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/categories/hack/</guid>
       <description></description>
     </item>
     
@@ -111,6 +129,15 @@
     </item>
     
     <item>
+      <title>java</title>
+      <link>http://marcin.cylke.com.pl/categories/java/</link>
+      <pubDate>Mon, 14 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>javascript</title>
       <link>http://marcin.cylke.com.pl/categories/javascript/</link>
       <pubDate>Mon, 14 Jul 2014 00:00:00 +0000</pubDate>
@@ -156,15 +183,6 @@
     </item>
     
     <item>
-      <title>java</title>
-      <link>http://marcin.cylke.com.pl/categories/java/</link>
-      <pubDate>Mon, 24 Jun 2013 00:00:00 +0000</pubDate>
-      
-      <guid>http://marcin.cylke.com.pl/categories/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>zookeeper</title>
       <link>http://marcin.cylke.com.pl/categories/zookeeper/</link>
       <pubDate>Mon, 24 Jun 2013 00:00:00 +0000</pubDate>
@@ -183,38 +201,11 @@
     </item>
     
     <item>
-      <title>ha</title>
-      <link>http://marcin.cylke.com.pl/categories/ha/</link>
-      <pubDate>Tue, 30 Oct 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://marcin.cylke.com.pl/categories/ha/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>electronics</title>
       <link>http://marcin.cylke.com.pl/categories/electronics/</link>
       <pubDate>Thu, 18 Oct 2012 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/categories/electronics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hack</title>
-      <link>http://marcin.cylke.com.pl/categories/hack/</link>
-      <pubDate>Thu, 18 Oct 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://marcin.cylke.com.pl/categories/hack/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>IT</title>
-      <link>http://marcin.cylke.com.pl/categories/IT/</link>
-      <pubDate>Mon, 18 Jun 2012 09:08:09 +0000</pubDate>
-      
-      <guid>http://marcin.cylke.com.pl/categories/IT/</guid>
       <description></description>
     </item>
     

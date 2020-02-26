@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Techblog on Just a blog</title>
+    <link>http://marcin.cylke.com.pl/categories/Techblog/</link>
+    <description>Recent content in Techblog on Just a blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 Jun 2012 09:08:09 +0000</lastBuildDate>
+    
+	<atom:link href="http://marcin.cylke.com.pl/categories/Techblog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hadoop for Enterprises</title>
+      <link>http://marcin.cylke.com.pl/2012/06/18/hadoop-for-enterprises/</link>
+      <pubDate>Mon, 18 Jun 2012 09:08:09 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2012/06/18/hadoop-for-enterprises/</guid>
+      <description>Hadoop&#39;s usage as a big data processing framework gains a lot of attention lately. Now, not only big players see, that they can embrace the data their sites or products are generating and develop their businesses on it. For that to happen two things are needed: the data itself and means of processing really big amounts of it. 
+Gathering data is relatively easy. These are not necessarily structured data, you don&#39;t need to plan their usage at first.</description>
+    </item>
+    
+    <item>
+      <title>SoapUI ext libs and its weirdness</title>
+      <link>http://marcin.cylke.com.pl/2011/11/02/soapui-ext-libs-and-its-weirdness/</link>
+      <pubDate>Wed, 02 Nov 2011 15:32:15 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/11/02/soapui-ext-libs-and-its-weirdness/</guid>
+      <description>Suppose you want to add some additional jars to your SoapUI installation. It all should work ok if you put them in bin/ext directory. It is scanned at startup, and jars found there are automatically added to classpath.  However if you want to add some JDBC drivers, and happen to be using SoapUI version higher than 3.5.1 it is a bit more tricky. You may face this NoClassDefFoundError:  An error occured [oracle/jdbc/Driver], see error log for details java.</description>
+    </item>
+    
+    <item>
+      <title>What is NoSQL good for?</title>
+      <link>http://marcin.cylke.com.pl/2011/09/21/what-is-nosql-good-for/</link>
+      <pubDate>Wed, 21 Sep 2011 21:12:34 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/09/21/what-is-nosql-good-for/</guid>
+      <description>... or how I ended up writing a CouchDB proof of concept app? Once upon a time I set out on a journey to discover the NoSQL land. I&#39;ve decided that doing simple queries wouldn&#39;t be interesting enough. That&#39;s why I&#39;ve chose to create an app that would be based on some NoSQL database.
+ The main idea was to create an app, that would dynamically update itself with geographic data flowing in.</description>
+    </item>
+    
+    <item>
+      <title>5 best things to do with your Kindle</title>
+      <link>http://marcin.cylke.com.pl/2011/08/22/5-best-things-to-do-with-your-kindle/</link>
+      <pubDate>Mon, 22 Aug 2011 22:19:14 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/08/22/5-best-things-to-do-with-your-kindle/</guid>
+      <description>I bought a Kindle (3rd generation, Wi-Fi only) some time ago - like half a year ago. Read some books, done some web-browsing (awful, quite unpleasant). Gradually I became more and more curious of other things possible to achieve with this slate-looking piece of tech. These are my thoughts and ideas.  Got a Kindle? Use it every day? Feel like modding or extending your ways of usage? Great!</description>
+    </item>
+    
+    <item>
+      <title>OVal - validate your models quickly and effortlessly!</title>
+      <link>http://marcin.cylke.com.pl/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/</link>
+      <pubDate>Thu, 14 Jul 2011 08:25:19 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/</guid>
+      <description>Some time ago one of the projects at work required me to validate some Java POJOs. Theses were my model classes and I&#39;ve been creating them from incoming WebService requests. One would say that XSD would be sufficient for the task, for parts of this validations - sure, it would. But there were some advanced rules XSD would not handle, or would render the schema document very complicated.
+Rules I needed to express were like:  person&#39;s first_name and last_name should be of appropriate length - between 2 and 20, and additionally one could pass a zero-length string just to remove the previous value state field should consist only defined values - as in dictionary value - this one would be completable with XSD&#39;s enumerations, but would require often changing schema files and redistributing them to interested parties :(  The library I&#39;ve decided to use for this task is OVal and it came out really nice!</description>
+    </item>
+    
+    <item>
+      <title>Geecon 2011 - day 2</title>
+      <link>http://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/</link>
+      <pubDate>Sun, 22 May 2011 16:39:31 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/</guid>
+      <description>And now for part 2 of my visit to Geecon 2011!
+ 1. Jim Webber &#34;Revisiting SOA for the 21st century&#34; Now this was awesome! Jim Webber, a former ThoughtWorks employee, now Neo4j evangelist (in Neotechnology) described his views on how SOA should look - according to him. This was presented previously, on other occasions as his &#34;Guerilla SOA&#34; talk - generally he advocated for REST based services, loose contracts (stating that WSDLs are too verbose and code generation is evil).</description>
+    </item>
+    
+    <item>
+      <title>Geecon 2011 - day 1</title>
+      <link>http://marcin.cylke.com.pl/2011/05/19/geecon-2011-day-1/</link>
+      <pubDate>Thu, 19 May 2011 20:05:05 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/05/19/geecon-2011-day-1/</guid>
+      <description>Last week&#39;s Java conference - Geecon was very interesting. It was well prepared, and gave an insight into the current Java related trends - concurrency, DSLs, polyglot programming. But not only that - there were also some pretty different talks from excellent speakers.
+ The whole event took 4 days:  University day (wednesday) 2 regular conference days (Thursday + Friday)  hacker garden (Sunday)   I decided to attend only on Thursday and Friday - no time for more.</description>
+    </item>
+    
+    <item>
+      <title>JCE keystore and untrusted sites</title>
+      <link>http://marcin.cylke.com.pl/2011/05/02/jce-keystore-and-untrusted-sites/</link>
+      <pubDate>Mon, 02 May 2011 15:03:38 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/05/02/jce-keystore-and-untrusted-sites/</guid>
+      <description>Recently at work I was in need of connecting to a web service exposed via HTTPS. I&#39;ve been doing this from inside Servicemix 3.3.1, which may seem a bit inhibiting, but that was a requirement. Nevertheless I&#39;ve been trying my luck with the included servicemix-http-2008.01 component. I&#39;ve created a simple Service Unit using that component and made connection attempt. Unfortunately I&#39;ve encountered issues with the SSL conversation negotiation. I had to dig deeper into the servicemix-http code to find out these had something to do with my JCE keystore.</description>
+    </item>
+    
+    <item>
+      <title>Advisory Messages to the rescue</title>
+      <link>http://marcin.cylke.com.pl/2011/04/01/advisory-messages-to-the-rescue/</link>
+      <pubDate>Fri, 01 Apr 2011 09:16:59 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/04/01/advisory-messages-to-the-rescue/</guid>
+      <description>The most crucial part of software development is testing. It should ensure us, that our code is correct, works according to given specs, etc. There are many kinds of tests: unit tests, integration, functional. In general you should try to test the smallest possible subset of your code and be able to check the state of the objects after the test.  This seems as rather easy task, but what if you have an integration end-to-end test to perform?</description>
+    </item>
+    
+    <item>
+      <title>How to run multiple guest OS in QEMU?</title>
+      <link>http://marcin.cylke.com.pl/2011/03/27/how-to-run-multiple-guest-os-in-qemu/</link>
+      <pubDate>Sun, 27 Mar 2011 18:47:11 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/03/27/how-to-run-multiple-guest-os-in-qemu/</guid>
+      <description>This weekend I&#39;ve been fiddling with QEMU. I&#39;ve installed OpenBSD on a single image and wanted to have two instances of it communicating via network. Installing the system was easy, but the networking setup was quite a pain. See how I did that...  To make QEMU instances communicate with each other I needed to plug them to a &#34;network&#34;. That&#39;s why I&#39;ve created a bridge to which Virtual Instances would connect to.</description>
+    </item>
+    
+    <item>
+      <title>Me on Hadoop on Parleys</title>
+      <link>http://marcin.cylke.com.pl/2011/03/20/me-on-hadoop-on-parleys/</link>
+      <pubDate>Sun, 20 Mar 2011 19:35:39 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/03/20/me-on-hadoop-on-parleys/</guid>
+      <description> Finally I&#39;ve managed to import my WarJUG presentation to parleys.com. See for yourself :)    If you&#39;ve got problems with opening the parleys&#39; version try the ones uploaded to youtube.  Here is part 1:  And here is part 2:
+  Comments Sigvatr I&#39;m sorry, but I don&#39;t understand Polish :P
+   </description>
+    </item>
+    
+    <item>
+      <title>After WarJUG</title>
+      <link>http://marcin.cylke.com.pl/2011/02/23/after-warjug/</link>
+      <pubDate>Wed, 23 Feb 2011 13:22:04 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/02/23/after-warjug/</guid>
+      <description>Some time ago I&#39;d written about my arsaw JUG presentation. I finally presented the the topic yesterday.
+I must say I&#39;m fairly content with my yesterday&#39;s presentation :) Here are some slides and as soon as the video will be available I&#39;ll post it here too.
+Hadoop i okoliceView more presentations from zygm0nt. Comments Sigvatr Czyli napisałeś ładny post po angielsku, tylko po to, by zaprosić do obejrzenia prezentacji po polsku?</description>
+    </item>
+    
+    <item>
+      <title>Hadoop at Warsaw JUG</title>
+      <link>http://marcin.cylke.com.pl/2011/02/17/hadoop-on-warsaw-jug/</link>
+      <pubDate>Thu, 17 Feb 2011 23:09:46 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/02/17/hadoop-on-warsaw-jug/</guid>
+      <description>I&#39;ll be speaking at the upcoming JUG meeting in Warsaw. The topic will be Apache Hadoop. If you&#39;re interested, feel invited. Attend and ask questions. But be aware I&#39;m not advanced in this technology :)
+Full invitation text can be found here.
+P.S.: Do you know what Hadoop is? Do you use it anywhere? Have you played with it?
+ Comments Marcin @teamon - prawdopodobnie będzie. Na 100% to nie wiem, ale teoretycznie wszystkie prezentacje WarJUGa są nagrywane</description>
+    </item>
+    
+    <item>
+      <title>JMS redelivery with ActiveMQ and Servicemix</title>
+      <link>http://marcin.cylke.com.pl/2011/01/17/jms-redelivery-with-activemq-and-servicemix/</link>
+      <pubDate>Mon, 17 Jan 2011 08:56:29 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/01/17/jms-redelivery-with-activemq-and-servicemix/</guid>
+      <description>The other day I felt a compelling need to implement a JMS redelivery scenario. The exact scenario I&#39;d been trying to handle was:  my message is in an ActiveMQ queue or topic its processing fails, because of some exception - ie. database access exception due to server nonavailability since we get an exception, the message is not handled properly, we may want to retry processing attempt some time later of course, for the redelivery to happen we need the message to stay in the ActiveMQ queue - fetching messages from the queue will be stopped until the redelivery succeeds or expires  See how this can be done after the jump :)   For this to happen, I&#39;ve tried implementing Apache Camel route, but as it turns out, Camel fails to deliver facilities for exact JMS redelivery.</description>
+    </item>
+    
+    <item>
+      <title>Easier and nicer JMS</title>
+      <link>http://marcin.cylke.com.pl/2010/12/08/easier-and-nicer-jms/</link>
+      <pubDate>Wed, 08 Dec 2010 09:22:34 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/12/08/easier-and-nicer-jms/</guid>
+      <description>JMS seems like a hostile ground. It has all it&#39;s quirks and strange behaviours. A couple of defining standards plus esoteric brokers, queues and topics.    At work, we mainly use open source Jms solutions, namely Apache ActiveMQ. This one is usually bundled with Apache Servicemix, as a message broker for this particular ESB. As there are some minor caveats in this scennerio, I&#39;d like to describe here some guidelines for getting to running JMS queues.</description>
+    </item>
+    
+    <item>
+      <title>Schematron to the rescue!</title>
+      <link>http://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/</link>
+      <pubDate>Thu, 21 Oct 2010 08:40:37 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/</guid>
+      <description>In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be solved with it - the standardization processes is there for some reason. But that happens only in ideal world, which we&#39;re not living in.   In ideal world, when dealing with XML instances you&#39;d be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal definition language to declare your data structure.</description>
+    </item>
+    
+    <item>
+      <title>Complex flows with Apache Camel</title>
+      <link>http://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/</link>
+      <pubDate>Thu, 26 Aug 2010 20:23:52 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/</guid>
+      <description>At work, we&#39;re mainly integrating services and systems, and since we&#39;re on a constant lookout for new, better technologies, ways to do things easier, make them more sustainable, we&#39;re trying to  Usually we use Apache Camel for this task, which is a Swiss-knife for integration engineer. What&#39;s more, this tools corresponds well with our approach to integration solutions:   try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits,  don&#39;t convert XML into Java classes back and forth and be worried with problems like XML conversion,  try to get a simple flow of the process.</description>
+    </item>
+    
+    <item>
+      <title>Meetbsd 2010</title>
+      <link>http://marcin.cylke.com.pl/2010/08/18/meetbsd-2010/</link>
+      <pubDate>Wed, 18 Aug 2010 22:16:25 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/08/18/meetbsd-2010/</guid>
+      <description>Some time ago, I&#39;ve attended MeetBSD conference in Kraków. This BSD event is held yearly in either Warsaw, or Kraków. Due to relatively small group of people that registered there was only one track, which had both good and bad sides - you didn&#39;t have to choose from myriads of lectures, but there was no way to skip boring ones either. Well, I guess this kind of niche conference - about operating system :) - will not attract bigger attention.</description>
+    </item>
+    
+    <item>
+      <title>Generic Enum converter for iBatis</title>
+      <link>http://marcin.cylke.com.pl/2010/06/28/generic-enum-converter-for-ibatis/</link>
+      <pubDate>Mon, 28 Jun 2010 20:40:34 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/06/28/generic-enum-converter-for-ibatis/</guid>
+      <description>My goal was to create a simple, extensible Enum converter that would work with iBatis. This seems like a trivial problem, but took me a while to find a proper solution.
+ There were some additional preconditions:  all given Enums are jaxb generated objects - but any standard Java Enum should work conversion was 1-to-1, no special conditions and processing  The example Enum for this problem looks like this one (copy&amp;amp;paste from jaxb generated source):</description>
+    </item>
+    
+    <item>
+      <title>Javarsovia 2010</title>
+      <link>http://marcin.cylke.com.pl/2010/06/27/javarsovia-2010/</link>
+      <pubDate>Sun, 27 Jun 2010 15:08:43 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/06/27/javarsovia-2010/</guid>
+      <description>This year&#39;s Javarsovia conference took place on 26th june. It was held at Centrum Konferencyjno-Kongresowe, Bobrowiecka Street, Warsaw.
+First of all - the organization was very nice. Everything seemed smooth, maybe with the exception of conference registration, it was simply overcrowded. The agenda was split into four tracks, each hour 4 different presentations were given in different halls. So you just had to choose which one to attend. My path through the conference is described below, together with my views on each of the presentations I attended.</description>
+    </item>
+    
+    <item>
+      <title>Eclipse ecosystem</title>
+      <link>http://marcin.cylke.com.pl/2010/05/07/eclipse-ecosystem/</link>
+      <pubDate>Fri, 07 May 2010 09:55:59 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/05/07/eclipse-ecosystem/</guid>
+      <description>Do you use Eclipse? Or perhaps you use other IDE but would like to try &#34;the big E&#34;? Well, that&#39;s OK, and completely understandable, because Eclipse is actually a great, versatile tool. But Eclipse is not just an IDE, in fact it is a comp let, extensible platform. What&#39;s even more important, there are tones of valuable Eclipse-related projects gathered around the platform.
+Yes, there are lots. Some are good, some are bad, but the usual, stock ones, signed by Eclipse, are worth taking a closer look.</description>
+    </item>
+    
+    <item>
+      <title>Dmesg z Openbsd/sgi</title>
+      <link>http://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/</link>
+      <pubDate>Sun, 25 Apr 2010 12:20:34 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/</guid>
+      <description>Wracając do starego tematu OpenBSD na moim SGI O2, postanowiłem lekko odświeżyć tą maszynę. Dostałą uaktualnienie małe. Przysiedziałem również nad dostosowaniem systemu do swoich potrzeb, instalacji potrzebnego softu itp.
+Na początek dmesg z działąjącego systemu:
+ [ using 433608 bytes of bsd ELF symbol table ] Copyright (c) 1982, 1986, 1989, 1991, 1993 The Regents of the University of California. All rights reserved. Copyright (c) 1995-2009 OpenBSD. All rights reserved.</description>
+    </item>
+    
+    <item>
+      <title>Unicode w Pythonie</title>
+      <link>http://marcin.cylke.com.pl/2010/04/21/unicode-w-pythonie/</link>
+      <pubDate>Wed, 21 Apr 2010 22:54:24 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/04/21/unicode-w-pythonie/</guid>
+      <description>Szlag by to trafił! Czemu tak ciężko jest obsługiwać unicode w pythonie? No niby wszystko jest ładnie konwertowane wewnętrznie na odpowiednie reprezentacje, ale jeśli przychodzi co do czego, i chcemy wypisać sobie taki ciąg znaków na ekran, to już jest ciężej.
+Weźmy prosty przykład. Wczytywałem plik z polskimi znaczkami, o taki:
+ Roger Macdonald;Człowiek w żelaznej masce;25  a potem w kodzie pythonowym robiłem sobie tak:
+ for line in open(sys.</description>
+    </item>
+    
+    <item>
+      <title>Ludzie! Porzućcie F-Spot!</title>
+      <link>http://marcin.cylke.com.pl/2009/09/20/ludzie-porzuccie-f-spot/</link>
+      <pubDate>Sun, 20 Sep 2009 17:57:33 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/09/20/ludzie-porzuccie-f-spot/</guid>
+      <description>Dziś usiadłem do porządkowania zdjęć z wyjazdu wakacyjnego. Postanowiłem użyć do tego właśnie programu F-Spot. Wydawał się on odpowiedni. Zaimportował fotki, posortował według informacji EXIF. Schody zaczęły się w momencie edycji całej kolekcji.
+Ze zdjęciami było trochę problemów, którymi chciałem się zająć:
+ część trzeba było obrócić połowa była zrobiona na Nikonie, który nie miał ustawionej daty, tak więc ficzer sortowania po dacie z nagłówka EXIF wziął w łeb  Tak więc chciałem poobracać fotki i uporządkować wedle czasu.</description>
+    </item>
+    
+  </channel>
+</rss>

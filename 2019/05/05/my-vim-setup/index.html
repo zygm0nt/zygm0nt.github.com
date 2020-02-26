@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.55.5" />
+<meta name="generator" content="Hugo 0.65.3" />
 
 
 <title>My Vim Setup - Just a blog</title>
@@ -62,106 +62,72 @@
     </ul>
  
     <div class="article-content">
-      
-
-<p>I use some plugins for my vim, they’re mainly some random, interesting additions. I’ve never really got to building whole language environment with vim plugins - like, say, complete Scala-lang ecosystem.</p>
-
+      <p>I use some plugins for my vim, they’re mainly some random, interesting additions. I’ve never really got to building whole language environment with vim plugins - like, say, complete Scala-lang ecosystem.</p>
 <p>So treat those as a bunch of semi-interesting plugins, that you may also find interesting.</p>
-
-<p><img src="/post_images/vim_nerdtree.png" alt="Slightly modified vim pane" /></p>
-
-<!-- more -->
-
+<p><img src="/post_images/vim_nerdtree.png" alt="Slightly modified vim pane"></p>
+<!-- raw HTML omitted -->
 <h2 id="usefulness">Usefulness</h2>
-
 <p><strong>Nerdtree</strong> (<a href="https://github.com/scrooloose/nerdtree">https://github.com/scrooloose/nerdtree</a>) - <em>the</em> most basic plugin, enables convenient file browsing in a separate vim pane.</p>
-
 <p><strong>Nerdcommenter</strong> (<a href="https://github.com/scrooloose/nerdcommenter">https://github.com/scrooloose/nerdcommenter</a>) - a pretty ubiquitus tool for commenting stuff out</p>
-
 <p><strong>Vim-sessions</strong> (<a href="https://github.com/xolox/vim-session">https://github.com/xolox/vim-session</a>) - I recently started to use sessions <em>a lot</em>. They’re super useful and they allow to save the whole context of my edits, reads, etc. And of course easily restore it :) There is also a good introductory post into the world of sessions: <a href="http://peterodding.com/code/vim/session/">http://peterodding.com/code/vim/session/</a></p>
-
 <p><strong>Tabline</strong> (<a href="https://github.com/mkitt/tabline.vim">https://github.com/mkitt/tabline.vim</a>) - just a simple script to handle tabs in vim</p>
-
 <p><strong>Ultisnips</strong> (<a href="https://github.com/SirVer/ultisnips">https://github.com/SirVer/ultisnips</a>) - a snippets plugin - borrowed from this splendid blogpost: <a href="https://castel.dev/post/lecture-notes-1/">https://castel.dev/post/lecture-notes-1/</a> This post is a treasure trove of interesting editing techniques and plugins to take from as you like. Also, there is part 2 available <a href="https://castel.dev/post/lecture-notes-2/">https://castel.dev/post/lecture-notes-2/</a> - equally wonderful.</p>
-
 <p><strong>Syntastic</strong> (<a href="https://github.com/vim-syntastic/syntastic">https://github.com/vim-syntastic/syntastic</a>) - this one is nice! Universal (as in “support a lot of languages”) syntax checker. If it doesn’t support you choice of programming language out of the box - check for associated plugins.</p>
-
 <h2 id="beautifiers">Beautifiers</h2>
-
 <p><strong>Landscape</strong> (<a href="https://github.com/itchyny/landscape.vim">https://github.com/itchyny/landscape.vim</a>) - my colorscheme of choice</p>
-
 <table>
 <thead>
 <tr>
 <th align="left">With default colorscheme</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td align="left"><img src="/post_images/vim_default_colorscheme.png" alt="With default colorscheme" /></td>
+<td align="left"><img src="/post_images/vim_default_colorscheme.png" alt="With default colorscheme"></td>
 </tr>
 </tbody>
 </table>
-
 <table>
 <thead>
 <tr>
 <th align="left">With landscape</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td align="left"><img src="/post_images/vim_landscape_colorscheme.png" alt="With landscape" /></td>
+<td align="left"><img src="/post_images/vim_landscape_colorscheme.png" alt="With landscape"></td>
 </tr>
 </tbody>
 </table>
-
 <p><strong>Vim-airline</strong> (<a href="https://github.com/vim-airline/vim-airline">https://github.com/vim-airline/vim-airline</a>) - beautiful and very useful statusline, just have a look at the project page</p>
-
 <p><strong>Vim-devicons</strong> (<a href="https://github.com/ryanoasis/vim-devicons">https://github.com/ryanoasis/vim-devicons</a>) - adds icons to specific file types in nerdtree</p>
-
 <p><strong>Vim-startify</strong> (<a href="https://github.com/mhinz/vim-startify">https://github.com/mhinz/vim-startify</a>) - adds a startup screen to vim, with recently closed files, sessions. Pretty convenient to use, I must say.</p>
-
 <h2 id="clojure-related">Clojure related</h2>
-
 <p>I lied about not trying to build a complete language env with vim. I did. And it was Clojure.</p>
-
 <p>So plugins I’ve used were:</p>
-
 <ul>
 <li><a href="https://github.com/tpope/vim-fireplace">https://github.com/tpope/vim-fireplace</a> - for running REPL and having constant code checks</li>
 <li><a href="https://github.com/kien/rainbow_parentheses.vim">https://github.com/kien/rainbow_parentheses.vim</a> - useful for matching nested parentheses - so useful with clojure</li>
 <li><a href="https://github.com/guns/vim-sexp">https://github.com/guns/vim-sexp</a> - used to edit S-expressions (? is it? check!)</li>
 </ul>
-
 <p><a href="https://github.com/tpope/vim-sexp-mappings-for-regular-people">https://github.com/tpope/vim-sexp-mappings-for-regular-people</a> - just a couple key-bindings to ease the pains of working with vanilla vim-sexp.</p>
-
 <h2 id="markdown">Markdown</h2>
-
 <p>Since I’m doing a lot of note-taking and editing in vim, I’ve recently settled on using Markdown. I also have multiple plugins for that</p>
-
 <ul>
-<li><p><a href="https://github.com/plasticboy/vim-markdown">https://github.com/plasticboy/vim-markdown</a> - the most basic plugin that handles almost all the necessary things regarding markdown support</p></li>
-
-<li><p><a href="https://github.com/mzlogin/vim-markdown-toc">https://github.com/mzlogin/vim-markdown-toc</a> - quickly produces table-of-contents for a given Markdown file. Very convenient, and does not use javascript for that, as other tools of this kind do!</p></li>
+<li>
+<p><a href="https://github.com/plasticboy/vim-markdown">https://github.com/plasticboy/vim-markdown</a> - the most basic plugin that handles almost all the necessary things regarding markdown support</p>
+</li>
+<li>
+<p><a href="https://github.com/mzlogin/vim-markdown-toc">https://github.com/mzlogin/vim-markdown-toc</a> - quickly produces table-of-contents for a given Markdown file. Very convenient, and does not use javascript for that, as other tools of this kind do!</p>
+</li>
 </ul>
-
 <h2 id="latex">Latex</h2>
-
 <p>From time to time I need to edit some Latex file, so my vim contains also a plugin for that world, which is <a href="https://github.com/lervag/vimtex">https://github.com/lervag/vimtex</a> - overaly it’s easy to use, although I’m completely sure I’ve just scratched the surface of its possibilities.</p>
-
 <h1 id="parting-words">Parting words</h1>
-
 <p>All my configs can be found in this repo: <a href="https://github.com/zygm0nt/dotvim">https://github.com/zygm0nt/dotvim</a></p>
-
 <p>I use pathogen as my plugin manager. Which is super cool to use. It’s really a no-ceremony tool to install new plugins :)</p>
-
 <p>If you have some advice as to my setup - please, feel free to leave those in the comments’ section.</p>
-
 <p>Also, don’t treat this as a complete list of plugins to use, just wander around and explore. Find your own way. During researching for this blogpost I’ve stumbled upon many more interesting plugins. For example, things I want to checkout in near future are:</p>
-
 <ul>
 <li><a href="https://github.com/gcmt/taboo.vim">https://github.com/gcmt/taboo.vim</a> - supposedly eases tab management</li>
 <li><a href="https://github.com/mbbill/undotree">https://github.com/mbbill/undotree</a> - an undo manager - thou I’m not sure if I really need one</li>

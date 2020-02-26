@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hbase on Just a blog</title>
@@ -20,13 +20,11 @@
       <description>&lt;p&gt;HBase is by design a columnar store, that is optimized for random reads.
 You just ask for a row using rowId as an identifier and you get your
 data instantaneously.&lt;/p&gt;
-
 &lt;p&gt;Performing a scan on part or whole table is a completely different thing.
 First of all, it is sequential. Meaning it is rather slow, because it
 doesn&amp;rsquo;t use all the RegionServers at the same time. It is implemented
 that way to realize the contract of Scan command - which has to return
 results sorted by key.&lt;/p&gt;
-
 &lt;p&gt;So, how to do this efficiently?&lt;/p&gt;</description>
     </item>
     
@@ -40,10 +38,8 @@ results sorted by key.&lt;/p&gt;
 conclusion, that it is extremaly inconvenient to reach to it
 via HBase native API. It is very verbose and you always need to convert
 between bytes and simple types - a pain.&lt;/p&gt;
-
 &lt;p&gt;While I was working on a project of mine, I thought, why not to easy
 those pains and fetch real objects from HBase.&lt;/p&gt;
-
 &lt;p&gt;And that&amp;rsquo;s how this simplistic, hackish ORM came to life. It is no match
 for projects like &lt;a href=&#34;https://github.com/impetus-opensource/Kundera&#34;&gt;Kundera&lt;/a&gt;
 (a JPA compliant solution), or &lt;a href=&#34;https://code.google.com/p/n-orm/&#34;&gt;n-orm&lt;/a&gt;. Nevertheless, it just suits my needs :)&lt;/p&gt;</description>
