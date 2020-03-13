@@ -1,48 +1,45 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.65.3" />
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="generator" content="Hugo 0.66.0" />
+		<title>How to run multiple guest OS in QEMU? - Tech ramblings by Marcin</title>
+
+		<meta name="description" content="This weekend I&#39;ve been fiddling with QEMU. I&#39;ve installed OpenBSD on a single image and wanted to have two instances of it communicating via network. Installing the system was easy, but the networking setup was quite a pain. See how I did that...  To make QEMU instances communicate with each other I needed to plug them to a &#34;network&#34;. That&#39;s why I&#39;ve created a bridge to which Virtual Instances would connect to.">
 
 
-<title>How to run multiple guest OS in QEMU? - Tech ramblings by Marcin</title>
-<meta property="og:title" content="How to run multiple guest OS in QEMU? - Tech ramblings by Marcin">
-
-
-
-  
-
-
+		
+	
+		
 
 
 
 
-<link rel="stylesheet" href="http://marcin.cylke.com.pl/css/main.css" media="all">
-<link rel="stylesheet" href="http://marcin.cylke.com.pl/css/fonts.css">
+<link rel="stylesheet" href="/css/ui.css">
 
-  </head>
-  <body>
-    <div class="wrapper">
-      <header class="header">
-        <nav class="nav">
-  <a href="http://marcin.cylke.com.pl/" class="nav-logo">
-    <img src="http://marcin.cylke.com.pl/images/" 
-         width="" 
-         height="" 
-         alt="">
-  </a>
+	
+		
 
-  <ul class="nav-links">
-    
-    <li><a href="/about/">about hugo</a></li>
-    
-    <li><a href="/getting-started/">getting started</a></li>
-    
-  </ul>
+		<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono|Lato|Raleway">
+
+		
+	</head>
+
+<body>
+<header class="container no-print">
+	<div class="u-header">
+		<nav class="bar">
+	<ul><li>
+			<a href="/">
+				<img class="icon-text" src="/img/prev.svg"/>
+			</a>
+		</li><li><a href="/about/">About Me</a></li></ul>
 </nav>
 
-      </header>
+	</div>
+</header>
+<main class="container">
 
 
 <main class="content" role="main">
@@ -69,12 +66,12 @@ This weekend I've been fiddling with <a href="http://www.qemu.org">QEMU</a>. I'v
 
 <p>To make QEMU instances communicate with each other I needed to plug them to a "network". That's why I've created a bridge to which Virtual Instances would connect to. I've used the following script:</p>
 
-<script type="application/javascript" src="https://gist.github.com/889357/script.sh.js"></script>
+<script type="application/javascript" src="https://gist.github.com/zygm0nt/889357.js?file=script.sh"></script>
 
 
 <p>Then I just needed to start Qemu with this command line:</p>
 
-<script type="application/javascript" src="https://gist.github.com/889359/cmd%20line.js"></script>
+<script type="application/javascript" src="https://gist.github.com/zygm0nt/889359.js?file=cmd%20line"></script>
  
 
 <p>Since I've set up bridge for Qemu instances, I've plugged <a href="http://en.wikipedia.org/wiki/TUN/TAP">TAP</a> interfaces into it. That's why I've needed to specify this in my qemu exec line. I've also added macaddress setting since both my instances were getting the same one.</p>
@@ -103,22 +100,31 @@ This weekend I've been fiddling with <a href="http://www.qemu.org">QEMU</a>. I'v
 
 </main>
 
-      <footer class="footer">
-        <ul class="footer-links">
-          <li>
-            <a href="http://marcin.cylke.com.pl/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
-          </li>
-          <li>
-            <a href="https://github.com/mobybit/hugo-natrium-theme"><i class="fa fa-github"></i> Code</a>
-          </li>
-          <li>
-            <a href="http://marcin.cylke.com.pl/site-notice">Site notice</a>
-          </li>
-        </ul>
-      </footer>
+			<hr class="sep" />
+		</main>
+		<footer class="container no-print">
+			<div class="u-footer">
+				
 
-    </div>
 
-  </body>
+<a href="http://marcin.cylke.com.pl/index.xml" target="_blank"><img class="icon-social" src="/img/feed.svg" alt="Feed"></a>
+
+				<p>
+					
+					Theme used: <a href="https://github.com/yursan9/manis-hugo-theme">Manis</a><br>
+					
+					
+					
+				</p>
+				
+				<a href="#brand">
+					<img class="icon-text" src="/img/toup.svg" alt="To Up"/>
+					<span>Back to Up</span>
+				</a>
+				
+			</div>
+		</footer>
+		
+	</body>
 </html>
 

@@ -6,10 +6,20 @@
     <description>Recent content in IT on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://marcin.cylke.com.pl/categories/IT/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>plotting data availability with matplotlib</title>
+      <link>http://marcin.cylke.com.pl/2020/03/13/plotting-with-matplotlib/</link>
+      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2020/03/13/plotting-with-matplotlib/</guid>
+      <description>Though somewhat strange I happen to come to a need of having a plot of dates that a particular dataset is available on. Doing my exploration in Jupyter notebook it just felt pretty natural to have it written in Python and generated as a graph, with matplotlib.
+This resulted in a visually appealing description of the dataset. Also, due to the ease of change, I could modify the plot to show additional elements.</description>
+    </item>
     
     <item>
       <title>I don&#39;t do backups</title>

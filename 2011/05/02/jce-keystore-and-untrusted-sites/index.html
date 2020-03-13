@@ -1,48 +1,45 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.65.3" />
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="generator" content="Hugo 0.66.0" />
+		<title>JCE keystore and untrusted sites - Tech ramblings by Marcin</title>
+
+		<meta name="description" content="Recently at work I was in need of connecting to a web service exposed via HTTPS. I&#39;ve been doing this from inside Servicemix 3.3.1, which may seem a bit inhibiting, but that was a requirement. Nevertheless I&#39;ve been trying my luck with the included servicemix-http-2008.01 component. I&#39;ve created a simple Service Unit using that component and made connection attempt. Unfortunately I&#39;ve encountered issues with the SSL conversation negotiation. I had to dig deeper into the servicemix-http code to find out these had something to do with my JCE keystore.">
 
 
-<title>JCE keystore and untrusted sites - Tech ramblings by Marcin</title>
-<meta property="og:title" content="JCE keystore and untrusted sites - Tech ramblings by Marcin">
-
-
-
-  
-
-
+		
+	
+		
 
 
 
 
-<link rel="stylesheet" href="http://marcin.cylke.com.pl/css/main.css" media="all">
-<link rel="stylesheet" href="http://marcin.cylke.com.pl/css/fonts.css">
+<link rel="stylesheet" href="/css/ui.css">
 
-  </head>
-  <body>
-    <div class="wrapper">
-      <header class="header">
-        <nav class="nav">
-  <a href="http://marcin.cylke.com.pl/" class="nav-logo">
-    <img src="http://marcin.cylke.com.pl/images/" 
-         width="" 
-         height="" 
-         alt="">
-  </a>
+	
+		
 
-  <ul class="nav-links">
-    
-    <li><a href="/about/">about hugo</a></li>
-    
-    <li><a href="/getting-started/">getting started</a></li>
-    
-  </ul>
+		<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono|Lato|Raleway">
+
+		
+	</head>
+
+<body>
+<header class="container no-print">
+	<div class="u-header">
+		<nav class="bar">
+	<ul><li>
+			<a href="/">
+				<img class="icon-text" src="/img/prev.svg"/>
+			</a>
+		</li><li><a href="/about/">About Me</a></li></ul>
 </nav>
 
-      </header>
+	</div>
+</header>
+<main class="container">
 
 
 <main class="content" role="main">
@@ -80,7 +77,7 @@ keystore. Read more to find out what happened!</p>
 <p>Ok, so I had my <em>xbean.xml</em> for http component looking like
 this:</p>
 
-<script type="application/javascript" src="https://gist.github.com/951474/servicemix-http-xbean.xml.js"></script>
+<script type="application/javascript" src="https://gist.github.com/zygm0nt/951474.js?file=servicemix-http-xbean.xml"></script>
 
 
 
@@ -92,19 +89,19 @@ the keystore file and it's password.</p>
 <p>I've created my <em>keystore.jks</em> file in <em>smx_home/conf</em>
 with password <em>servicemix</em> in the following manner:</p>
 
-<script type="application/javascript" src="https://gist.github.com/951459/create_keystore.sh.js"></script>
+<script type="application/javascript" src="https://gist.github.com/zygm0nt/951459.js?file=create_keystore.sh"></script>
 
 
 <p>You can see what's in this file with this command:</p>
 
-<script type="application/javascript" src="https://gist.github.com/951459/list_keys.sh.js"></script>
+<script type="application/javascript" src="https://gist.github.com/zygm0nt/951459.js?file=list_keys.sh"></script>
 
 
 <p>At this point I thought, that having a configured keystore and my
 component would suffice. Wrong! As soon as I've tried to connect to the
 external service I got an exception:</p>
 
-<script type="application/javascript" src="https://gist.github.com/951458/untrusted_key_error.java.js"></script>
+<script type="application/javascript" src="https://gist.github.com/zygm0nt/951458.js?file=untrusted_key_error.java"></script>
 
 
 <p>Hmmm.. this looks pretty nasty, but it's not that bad. As one can
@@ -118,17 +115,17 @@ contained a little java class that would do just that. You can find it
 here (original code) <a
 href="http://blogs.sun.com/andreas/resource/InstallCert.java">InstallCert.java</a>
 or you can look into my slightly changed version here <a
-href="https://gist.github.com/951492">at github</a>.</p>
+href="https://gist zygm0nt.github.com/951492">at github</a>.</p>
 
 <p>You should call it as follows, assuming that file
 <em>keystore.jks</em> is in the current directory:</p>
 
 <script
-src="https://gist.github.com/951459.js?file=add_untrusted_key.sh"></script>
+src="https://gist zygm0nt.github.com/951459.js?file=add_untrusted_key.sh"></script>
 
 <p>What you'll probably see, when you execute this app is this:</p>
 
-<script type="application/javascript" src="https://gist.github.com/951458/add_untrusted_cert.sh.js"></script>
+<script type="application/javascript" src="https://gist.github.com/zygm0nt/951458.js?file=add_untrusted_cert.sh"></script>
 
 
 <p>Please note that there is a prompt (<em>Enter certificate to add to
@@ -143,7 +140,7 @@ query HTTPS service as long as I wanted to! Great!</p>
 <p>In my search for this problem's solution I've encountered this kind
 of exception:</p>
 
-<script type="application/javascript" src="https://gist.github.com/951458/keystore_key_error.java.js"></script>
+<script type="application/javascript" src="https://gist.github.com/zygm0nt/951458.js?file=keystore_key_error.java"></script>
 
 
 <p>A little googling led me to this <a
@@ -184,22 +181,31 @@ you know other ways of doing that thing?</p>
 
 </main>
 
-      <footer class="footer">
-        <ul class="footer-links">
-          <li>
-            <a href="http://marcin.cylke.com.pl/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
-          </li>
-          <li>
-            <a href="https://github.com/mobybit/hugo-natrium-theme"><i class="fa fa-github"></i> Code</a>
-          </li>
-          <li>
-            <a href="http://marcin.cylke.com.pl/site-notice">Site notice</a>
-          </li>
-        </ul>
-      </footer>
+			<hr class="sep" />
+		</main>
+		<footer class="container no-print">
+			<div class="u-footer">
+				
 
-    </div>
 
-  </body>
+<a href="http://marcin.cylke.com.pl/index.xml" target="_blank"><img class="icon-social" src="/img/feed.svg" alt="Feed"></a>
+
+				<p>
+					
+					Theme used: <a href="https://github.com/yursan9/manis-hugo-theme">Manis</a><br>
+					
+					
+					
+				</p>
+				
+				<a href="#brand">
+					<img class="icon-text" src="/img/toup.svg" alt="To Up"/>
+					<span>Back to Up</span>
+				</a>
+				
+			</div>
+		</footer>
+		
+	</body>
 </html>
 

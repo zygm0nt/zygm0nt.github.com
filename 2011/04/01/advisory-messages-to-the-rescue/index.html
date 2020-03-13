@@ -1,48 +1,45 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.65.3" />
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="generator" content="Hugo 0.66.0" />
+		<title>Advisory Messages to the rescue - Tech ramblings by Marcin</title>
+
+		<meta name="description" content="The most crucial part of software development is testing. It should ensure us, that our code is correct, works according to given specs, etc. There are many kinds of tests: unit tests, integration, functional. In general you should try to test the smallest possible subset of your code and be able to check the state of the objects after the test.  This seems as rather easy task, but what if you have an integration end-to-end test to perform?">
 
 
-<title>Advisory Messages to the rescue - Tech ramblings by Marcin</title>
-<meta property="og:title" content="Advisory Messages to the rescue - Tech ramblings by Marcin">
-
-
-
-  
-
-
+		
+	
+		
 
 
 
 
-<link rel="stylesheet" href="http://marcin.cylke.com.pl/css/main.css" media="all">
-<link rel="stylesheet" href="http://marcin.cylke.com.pl/css/fonts.css">
+<link rel="stylesheet" href="/css/ui.css">
 
-  </head>
-  <body>
-    <div class="wrapper">
-      <header class="header">
-        <nav class="nav">
-  <a href="http://marcin.cylke.com.pl/" class="nav-logo">
-    <img src="http://marcin.cylke.com.pl/images/" 
-         width="" 
-         height="" 
-         alt="">
-  </a>
+	
+		
 
-  <ul class="nav-links">
-    
-    <li><a href="/about/">about hugo</a></li>
-    
-    <li><a href="/getting-started/">getting started</a></li>
-    
-  </ul>
+		<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono|Lato|Raleway">
+
+		
+	</head>
+
+<body>
+<header class="container no-print">
+	<div class="u-header">
+		<nav class="bar">
+	<ul><li>
+			<a href="/">
+				<img class="icon-text" src="/img/prev.svg"/>
+			</a>
+		</li><li><a href="/about/">About Me</a></li></ul>
 </nav>
 
-      </header>
+	</div>
+</header>
+<main class="container">
 
 
 <main class="content" role="main">
@@ -113,7 +110,7 @@ by default. You need to enable specific type of
 advisory message for a specific jms destination. You can do this with
 ths configuration change to <strong>activemq.xml</strong>
 </p>
-<script type="application/javascript" src="https://gist.github.com/897141/activemq.xml.js"></script>
+<script type="application/javascript" src="https://gist.github.com/zygm0nt/897141.js?file=activemq.xml"></script>
 
 <p>
 As you can see, I've specified which advisories I want enabled. The full
@@ -124,7 +121,7 @@ Since I wanted to read messages from that topic I've added the following
 configuration to my spring context - there is one destination bean for
 inserting messages and one bean for advisory topic.
 </p>
-<script type="application/javascript" src="https://gist.github.com/897150/xml.js"></script>
+<script type="application/javascript" src="https://gist.github.com/zygm0nt/897150.js?file=xml"></script>
 
 <p>
 Thanks to this configuration I've been able to check that my message was
@@ -171,22 +168,31 @@ thoughts on this subject? How do you test JMS?
 
 </main>
 
-      <footer class="footer">
-        <ul class="footer-links">
-          <li>
-            <a href="http://marcin.cylke.com.pl/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
-          </li>
-          <li>
-            <a href="https://github.com/mobybit/hugo-natrium-theme"><i class="fa fa-github"></i> Code</a>
-          </li>
-          <li>
-            <a href="http://marcin.cylke.com.pl/site-notice">Site notice</a>
-          </li>
-        </ul>
-      </footer>
+			<hr class="sep" />
+		</main>
+		<footer class="container no-print">
+			<div class="u-footer">
+				
 
-    </div>
 
-  </body>
+<a href="http://marcin.cylke.com.pl/index.xml" target="_blank"><img class="icon-social" src="/img/feed.svg" alt="Feed"></a>
+
+				<p>
+					
+					Theme used: <a href="https://github.com/yursan9/manis-hugo-theme">Manis</a><br>
+					
+					
+					
+				</p>
+				
+				<a href="#brand">
+					<img class="icon-text" src="/img/toup.svg" alt="To Up"/>
+					<span>Back to Up</span>
+				</a>
+				
+			</div>
+		</footer>
+		
+	</body>
 </html>
 

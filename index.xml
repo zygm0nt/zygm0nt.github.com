@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tech ramblings by Marcin</title>
@@ -5,21 +6,2042 @@
     <description>Recent content on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Mar 2020 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="http://marcin.cylke.com.pl/index.xml" rel="self" type="application/rss+xml" />
-    
+	<atom:link href="http://marcin.cylke.com.pl/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Posts</title>
-      <link>http://marcin.cylke.com.pl/post/</link>
-      <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
+      <title>plotting data availability with matplotlib</title>
+      <link>http://marcin.cylke.com.pl/2020/03/13/plotting-with-matplotlib/</link>
+      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/post/</guid>
-      <description></description>
+      <guid>http://marcin.cylke.com.pl/2020/03/13/plotting-with-matplotlib/</guid>
+      <description>Though somewhat strange I happen to come to a need of having a plot of dates that a particular dataset is available on. Doing my exploration in Jupyter notebook it just felt pretty natural to have it written in Python and generated as a graph, with matplotlib.
+This resulted in a visually appealing description of the dataset. Also, due to the ease of change, I could modify the plot to show additional elements.</description>
     </item>
     
+    <item>
+      <title>I don&#39;t do backups</title>
+      <link>http://marcin.cylke.com.pl/2020/02/26/i-dont-do-backups/</link>
+      <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2020/02/26/i-dont-do-backups/</guid>
+      <description>I tend to not do backups. I used to but just didn’t like it. I wasn’t diligent enough, didn’t have a routine setup. It all felt fragile and error prone in the end. So I stopped. You probably wonder when this will actually hit me - I sometimes do, too.
+But the truth is I do have backups. I just don’t keep them by myself, I delegate.
+I use the computer mainly to do web browsing, photo management, programming, exploration.</description>
+    </item>
+    
+    <item>
+      <title>Screen shortcuts for split experience</title>
+      <link>http://marcin.cylke.com.pl/2019/07/17/screen-split-experience/</link>
+      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2019/07/17/screen-split-experience/</guid>
+      <description>Most useful shortcuts to operate screen Aside from basic screen shortcuts for moving around, creating and changing windows there are things that create more of a window manager feel for terminal usage. And these are splits.
+You can create a split with Ctrl-a | - which creates a vertical split. There is also Ctrl-A S to create a horizontal split. To cycle between your open splits just use Ctrl-a &amp;lt;Tab&amp;gt;. To close the active split - just press Ctrl-a X</description>
+    </item>
+    
+    <item>
+      <title>My Vim Setup</title>
+      <link>http://marcin.cylke.com.pl/2019/05/05/my-vim-setup/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2019/05/05/my-vim-setup/</guid>
+      <description>I use some plugins for my vim, they’re mainly some random, interesting additions. I’ve never really got to building whole language environment with vim plugins - like, say, complete Scala-lang ecosystem.
+So treat those as a bunch of semi-interesting plugins, that you may also find interesting.
+Usefulness Nerdtree (https://github.com/scrooloose/nerdtree) - the most basic plugin, enables convenient file browsing in a separate vim pane.
+Nerdcommenter (https://github.com/scrooloose/nerdcommenter) - a pretty ubiquitus tool for commenting stuff out</description>
+    </item>
+    
+    <item>
+      <title>Reading research papers for fun and profit</title>
+      <link>http://marcin.cylke.com.pl/2016/10/10/reading-research-papers/</link>
+      <pubDate>Mon, 10 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2016/10/10/reading-research-papers/</guid>
+      <description>&lt;p&gt;Research papers seemed to exist there for others to read. They were that strange thing some people produced and no one ever read. At least they looked to me like this for a long time. But that changed. Gradually, when I became interested first, in distributed systems, than in machine learning, they started appearing frequently along blogposts and tweets. With mentions all over internet. This made me think about their usefulness in solving general, everyday problems in those areas. They were no longer that unapproachable, academic papers I read at school. Nope, they became something else entirely.&lt;/p&gt;
+&lt;p&gt;Over time I&amp;rsquo;ve learned to gather insights, ideas and understanding from them. I&amp;rsquo;ve developed some technique and would like to share it. Is it really helpful? I don&amp;rsquo;t know. Perhaps it just works for me. Can&amp;rsquo;t say for sure.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>IT minimalist</title>
+      <link>http://marcin.cylke.com.pl/2016/07/24/it-minimalist/</link>
+      <pubDate>Sun, 24 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2016/07/24/it-minimalist/</guid>
+      <description>&lt;p&gt;This is me at this moment in time:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;164 rss channels I&amp;rsquo;m subscribed to&lt;/li&gt;
+&lt;li&gt;47 opened browser tabs, in two different browsers (Chrome, Firefox), across two different machines,&lt;/li&gt;
+&lt;li&gt;29 movies to watch -&lt;/li&gt;
+&lt;li&gt;44 notes in google keep&lt;/li&gt;
+&lt;li&gt;78 books to read&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This is information overload.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Should you switch to Mac?</title>
+      <link>http://marcin.cylke.com.pl/2016/07/07/mac-os-x-switch/</link>
+      <pubDate>Thu, 07 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2016/07/07/mac-os-x-switch/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://farm9.staticflickr.com/8064/8229071681_02ffdb91dc_z_d.jpg&#34; alt=&#34;enter image description here&#34;&gt;&lt;em&gt;by Flick user &lt;a href=&#34;https://www.flickr.com/photos/raneko/8229071681/in/photolist-dxb9je-sEQEP-5gDCSr-PE6FE-7Pa2t3-5yhFqq-MsHbZ-tEVFv-kBEvsd-5uPrGV-a5wisf-Ea1We-5tX2pp-22ybhw-ivTix6-5yk9cA-kBCugR-gcSkD-8cdXjv-asK9Y-7ZM66R-8N4eSG-4mchWA-4pjwaT-Gy8BR-7HPwfe-dxb9hv-4rXMuz-h6gJgm-9jULZ6-5SPsfu-kBECo7-6UUwCT-5whRwW-4rujwZ-8Kye5Q-9hN1d6-5utN7V-k9drqQ-4QPsUy-8VEazh-8UB7Ms-8VEaEq-neQih-8EHChx-ecth3o-8yrLUn-o7oNS-kBCXKM-6UYBrs&#34;&gt;raneko&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Who would have thought? Me switching to Mac? But it actually happened. I&amp;rsquo;ve been a long time Linux user, so why actually do the switch now? Or ever? Have a look at my thoughts and insights of novice Mac user.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Scalar Conf 2016</title>
+      <link>http://marcin.cylke.com.pl/2016/04/29/scalar-conf-2016/</link>
+      <pubDate>Fri, 29 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2016/04/29/scalar-conf-2016/</guid>
+      <description>&lt;p&gt;Scalar Conf 2016&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://marcin.cylke.com.pl/assets/POLIN-Museum-of-the-History-of-Polish-Jews-int02.jpg&#34; alt=&#34;Polin museum - interior&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This small conference had its third installment in (&lt;a href=&#34;http://www.polin.pl/en)%5BPolin&#34;&gt;http://www.polin.pl/en)[Polin&lt;/a&gt; - Museum of the History of Polish Jews]. Organizing Scala conference isn&amp;rsquo;t that obvious and having that kind of attention is really great - all the foreign speakers, etc.&lt;/p&gt;
+&lt;p&gt;Here is a quick recap of presentations I&amp;rsquo;ve attended.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Lambda Days 2016</title>
+      <link>http://marcin.cylke.com.pl/2016/02/20/lambda-days-2016/</link>
+      <pubDate>Sat, 20 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2016/02/20/lambda-days-2016/</guid>
+      <description>Lambda Days 2016 - Kraków This last two days I&amp;rsquo;ve spend on a conference in Kraków. The topics revolved around functional programming, with all the experimental stuff, popular languages, etc. Here are the talks I&amp;rsquo;ve been to and short summaries of those:
+Day 1:   Propositions as types - the keynote delivered by Philip Wadler - seen it already on YouTube. But the thing with Lambda t-shirt looked funny again :D</description>
+    </item>
+    
+    <item>
+      <title>32c3 most interesting videos</title>
+      <link>http://marcin.cylke.com.pl/2016/01/22/ccc-interesting-videos/</link>
+      <pubDate>Fri, 22 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2016/01/22/ccc-interesting-videos/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s been some time since the most recent incarnation on Chaos Congress
+took place (&lt;a href=&#34;http://www.ccc.de/&#34;&gt;CCC site&lt;/a&gt;). I&amp;rsquo;ve finally managed to
+sift through some of the videos. Have a selection of those I&amp;rsquo;ve found
+most interesting to me. If there are others really worth watching - pass
+me a line! Cheers.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Super Confitura Man</title>
+      <link>http://marcin.cylke.com.pl/2014/07/14/super-confitura-man/</link>
+      <pubDate>Mon, 14 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2014/07/14/super-confitura-man/</guid>
+      <description>&lt;h2 id=&#34;how-super-confitura-man-came-to-be-&#34;&gt;How Super Confitura Man came to be :)&lt;/h2&gt;
+&lt;p&gt;Recently at TouK we had a one-day hackathon. There was no main theme for
+it, you just could post a project idea, gather people around it and hack
+on that idea for a whole day - drinks and pizza included.&lt;/p&gt;
+&lt;p&gt;My main idea was to create something that could be fun to build and be
+useful somehow to others. I’d figured out that since Confitura was just
+around a corner I could make a game, that would be playable at TouK’s
+booth at the conference venue. This idea seemed good enough to attract
+Rafał Nowak &lt;a href=&#34;https://twitter.com/RNowak3&#34;&gt;@RNowak3&lt;/a&gt; and Marcin Jasion
+&lt;a href=&#34;https://twitter.com/marcinjasion&#34;&gt;@marcinjasion&lt;/a&gt; - two TouK employees, that with me
+formed a team for the hackathon.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://marcin.cylke.com.pl/assets/confitura-2014-01.jpg&#34; alt=&#34;Confitura 01&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Distributed scans with HBase</title>
+      <link>http://marcin.cylke.com.pl/2013/12/10/distributed-scans-with-hbase/</link>
+      <pubDate>Tue, 10 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2013/12/10/distributed-scans-with-hbase/</guid>
+      <description>&lt;p&gt;HBase is by design a columnar store, that is optimized for random reads.
+You just ask for a row using rowId as an identifier and you get your
+data instantaneously.&lt;/p&gt;
+&lt;p&gt;Performing a scan on part or whole table is a completely different thing.
+First of all, it is sequential. Meaning it is rather slow, because it
+doesn&amp;rsquo;t use all the RegionServers at the same time. It is implemented
+that way to realize the contract of Scan command - which has to return
+results sorted by key.&lt;/p&gt;
+&lt;p&gt;So, how to do this efficiently?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Simple HBase ORM</title>
+      <link>http://marcin.cylke.com.pl/2013/12/08/simple-hbase-orm/</link>
+      <pubDate>Sun, 08 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2013/12/08/simple-hbase-orm/</guid>
+      <description>&lt;p&gt;When dealing with data stored in HBase, you are quick to come to a
+conclusion, that it is extremaly inconvenient to reach to it
+via HBase native API. It is very verbose and you always need to convert
+between bytes and simple types - a pain.&lt;/p&gt;
+&lt;p&gt;While I was working on a project of mine, I thought, why not to easy
+those pains and fetch real objects from HBase.&lt;/p&gt;
+&lt;p&gt;And that&amp;rsquo;s how this simplistic, hackish ORM came to life. It is no match
+for projects like &lt;a href=&#34;https://github.com/impetus-opensource/Kundera&#34;&gt;Kundera&lt;/a&gt;
+(a JPA compliant solution), or &lt;a href=&#34;https://code.google.com/p/n-orm/&#34;&gt;n-orm&lt;/a&gt;. Nevertheless, it just suits my needs :)&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Recently at storm-users</title>
+      <link>http://marcin.cylke.com.pl/2013/08/12/recently-at-storm-users/</link>
+      <pubDate>Mon, 12 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2013/08/12/recently-at-storm-users/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been reading through storm-users Google Group recently. This
+resolution was heavily inspired by Adam Kawa&amp;rsquo;s post &lt;a href=&#34;http://hakunamapdata.com/football-zero-apache-pig-hero-the-essence-from-hundreds-of-posts-from-apache-pig-user-mailing-list/&#34;&gt;&amp;ldquo;Football zero, Apache Pig hero&amp;rdquo;&lt;/a&gt;. Since I&amp;rsquo;ve encountered a lot of insightful and very interesting information I&amp;rsquo;ve decided to describe some of those in this post.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Zookeeper &#43; Curator = Distributed sync</title>
+      <link>http://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/</link>
+      <pubDate>Mon, 24 Jun 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/</guid>
+      <description>An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system&amp;rsquo;s components. Since I had already a few separate components I didn&amp;rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I&amp;rsquo;ve decided to go that way with my solution. What is Zookeeper?</description>
+    </item>
+    
+    <item>
+      <title>Operational problems with Zookeeper</title>
+      <link>http://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/</link>
+      <pubDate>Thu, 21 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/</guid>
+      <description>This post is a summary of what has been presented by Kathleen Ting on StrangeLoop conference. You can watch the original here: http://www.infoq.com/presentations/Misconfiguration-ZooKeeper
+I&amp;rsquo;ve decided to put this selection here for quick reference.
+Connection mismanagement   too many connections
+ WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - Too many connections from /xx.x.xx.xxx - max is 60     running out of ZK connections?  set maxClientCnxns=200 in zoo.cfg   HBase client leaking connections?</description>
+    </item>
+    
+    <item>
+      <title>After WHUG meeting</title>
+      <link>http://marcin.cylke.com.pl/2012/11/30/after-whug/</link>
+      <pubDate>Fri, 30 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2012/11/30/after-whug/</guid>
+      <description>Here are the slides from the talk a gave yesterday. If you have any questions, please ask.</description>
+    </item>
+    
+    <item>
+      <title>WHUG 8. Beyond Hadoop - checking other options</title>
+      <link>http://marcin.cylke.com.pl/2012/11/26/whug-8-beyond-hadoop/</link>
+      <pubDate>Mon, 26 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2012/11/26/whug-8-beyond-hadoop/</guid>
+      <description>W najbliższy czwartek - czyli 29.11.2012 - poprowadzę prezentację w ramach Warsaw Hadoop User Group. Swoją obecność można odklinąć tu http://www.meetup.com/warsaw-hug/
+A o czym będę mówił? Przeklejka ze strony WHUG:
+ Marcin skupi się na współpracy ekosystemu Hadoopa z innymi narzędziami. Pokaże jak prosto i wygodnie przetwarzać grafy i jak stosować podejście Big Data, w czasie rzeczywistym. Poruszy również temat łatwiejszego tworzenia algorytmów Map-Reduce
+Będzie to nieco mniej technicza (ale wciąż praktyczna) wycieczka po obrzeżach tematyki, która jest zwykle poruszana w połączeniu z Hadoop-em.</description>
+    </item>
+    
+    <item>
+      <title>Hadoop HA setup</title>
+      <link>http://marcin.cylke.com.pl/2012/10/30/hadoop-ha/</link>
+      <pubDate>Tue, 30 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2012/10/30/hadoop-ha/</guid>
+      <description>&lt;p&gt;With the advent of Hadoop&amp;rsquo;s 2.x version, there finally is a working
+High-Availability solution. Even two of those. Now it really is easy to
+configure and use those solutions. It no longer require external
+components, like
+&lt;a href=&#34;http://blog.cloudera.com/blog/2009/07/hadoop-ha-configuration/&#34;&gt;DRBD&lt;/a&gt;.
+It all is just neatly packed into Cloudera Hadoop distribution - the
+precursor of this solution.&lt;/p&gt;
+&lt;p&gt;Read on to find out how to use it.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>raspberry-pi</title>
+      <link>http://marcin.cylke.com.pl/2012/10/18/raspberry-pi/</link>
+      <pubDate>Thu, 18 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2012/10/18/raspberry-pi/</guid>
+      <description>About a month ago I finally received my very own Raspberry Pi board! Don&amp;rsquo;t know what that is? Here, read some at their website.
+For the sake of completness let me just describe that as prototyping platform with ARM processor. It is really similar in concept to what Arduino is, except it has not that many extensions available (none? or very little, I&amp;rsquo;ve only found those on Adafruit pages).
+So, here is the obligatory picture.</description>
+    </item>
+    
+    <item>
+      <title>Hadoop for Enterprises</title>
+      <link>http://marcin.cylke.com.pl/2012/06/18/hadoop-for-enterprises/</link>
+      <pubDate>Mon, 18 Jun 2012 09:08:09 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2012/06/18/hadoop-for-enterprises/</guid>
+      <description>Hadoop&#39;s usage as a big data processing framework gains a lot of attention lately. Now, not only big players see, that they can embrace the data their sites or products are generating and develop their businesses on it. For that to happen two things are needed: the data itself and means of processing really big amounts of it. 
+Gathering data is relatively easy. These are not necessarily structured data, you don&#39;t need to plan their usage at first.</description>
+    </item>
+    
+    <item>
+      <title>SoapUI ext libs and its weirdness</title>
+      <link>http://marcin.cylke.com.pl/2011/11/02/soapui-ext-libs-and-its-weirdness/</link>
+      <pubDate>Wed, 02 Nov 2011 15:32:15 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/11/02/soapui-ext-libs-and-its-weirdness/</guid>
+      <description>Suppose you want to add some additional jars to your SoapUI installation. It all should work ok if you put them in bin/ext directory. It is scanned at startup, and jars found there are automatically added to classpath.  However if you want to add some JDBC drivers, and happen to be using SoapUI version higher than 3.5.1 it is a bit more tricky. You may face this NoClassDefFoundError:  An error occured [oracle/jdbc/Driver], see error log for details java.</description>
+    </item>
+    
+    <item>
+      <title>What is NoSQL good for?</title>
+      <link>http://marcin.cylke.com.pl/2011/09/21/what-is-nosql-good-for/</link>
+      <pubDate>Wed, 21 Sep 2011 21:12:34 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/09/21/what-is-nosql-good-for/</guid>
+      <description>... or how I ended up writing a CouchDB proof of concept app? Once upon a time I set out on a journey to discover the NoSQL land. I&#39;ve decided that doing simple queries wouldn&#39;t be interesting enough. That&#39;s why I&#39;ve chose to create an app that would be based on some NoSQL database.
+ The main idea was to create an app, that would dynamically update itself with geographic data flowing in.</description>
+    </item>
+    
+    <item>
+      <title>5 best things to do with your Kindle</title>
+      <link>http://marcin.cylke.com.pl/2011/08/22/5-best-things-to-do-with-your-kindle/</link>
+      <pubDate>Mon, 22 Aug 2011 22:19:14 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/08/22/5-best-things-to-do-with-your-kindle/</guid>
+      <description>I bought a Kindle (3rd generation, Wi-Fi only) some time ago - like half a year ago. Read some books, done some web-browsing (awful, quite unpleasant). Gradually I became more and more curious of other things possible to achieve with this slate-looking piece of tech. These are my thoughts and ideas.  Got a Kindle? Use it every day? Feel like modding or extending your ways of usage? Great!</description>
+    </item>
+    
+    <item>
+      <title>Great many ways to enjoy life!</title>
+      <link>http://marcin.cylke.com.pl/2011/08/07/great-many-ways-to-enjoy-life/</link>
+      <pubDate>Sun, 07 Aug 2011 22:44:39 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/08/07/great-many-ways-to-enjoy-life/</guid>
+      <description> This looks like a very nice art+video project. Look at those clips:  EAT from Rick Mereki on Vimeo.
+   LEARN from Rick Mereki on Vimeo.
+   MOVE from Rick Mereki on Vimeo.
+    Comments  </description>
+    </item>
+    
+    <item>
+      <title>OVal - validate your models quickly and effortlessly!</title>
+      <link>http://marcin.cylke.com.pl/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/</link>
+      <pubDate>Thu, 14 Jul 2011 08:25:19 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/</guid>
+      <description>Some time ago one of the projects at work required me to validate some Java POJOs. Theses were my model classes and I&#39;ve been creating them from incoming WebService requests. One would say that XSD would be sufficient for the task, for parts of this validations - sure, it would. But there were some advanced rules XSD would not handle, or would render the schema document very complicated.
+Rules I needed to express were like:  person&#39;s first_name and last_name should be of appropriate length - between 2 and 20, and additionally one could pass a zero-length string just to remove the previous value state field should consist only defined values - as in dictionary value - this one would be completable with XSD&#39;s enumerations, but would require often changing schema files and redistributing them to interested parties :(  The library I&#39;ve decided to use for this task is OVal and it came out really nice!</description>
+    </item>
+    
+    <item>
+      <title>Geecon 2011 - day 2</title>
+      <link>http://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/</link>
+      <pubDate>Sun, 22 May 2011 16:39:31 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/</guid>
+      <description>And now for part 2 of my visit to Geecon 2011!
+ 1. Jim Webber &#34;Revisiting SOA for the 21st century&#34; Now this was awesome! Jim Webber, a former ThoughtWorks employee, now Neo4j evangelist (in Neotechnology) described his views on how SOA should look - according to him. This was presented previously, on other occasions as his &#34;Guerilla SOA&#34; talk - generally he advocated for REST based services, loose contracts (stating that WSDLs are too verbose and code generation is evil).</description>
+    </item>
+    
+    <item>
+      <title>Geecon 2011 - day 1</title>
+      <link>http://marcin.cylke.com.pl/2011/05/19/geecon-2011-day-1/</link>
+      <pubDate>Thu, 19 May 2011 20:05:05 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/05/19/geecon-2011-day-1/</guid>
+      <description>Last week&#39;s Java conference - Geecon was very interesting. It was well prepared, and gave an insight into the current Java related trends - concurrency, DSLs, polyglot programming. But not only that - there were also some pretty different talks from excellent speakers.
+ The whole event took 4 days:  University day (wednesday) 2 regular conference days (Thursday + Friday)  hacker garden (Sunday)   I decided to attend only on Thursday and Friday - no time for more.</description>
+    </item>
+    
+    <item>
+      <title>JCE keystore and untrusted sites</title>
+      <link>http://marcin.cylke.com.pl/2011/05/02/jce-keystore-and-untrusted-sites/</link>
+      <pubDate>Mon, 02 May 2011 15:03:38 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/05/02/jce-keystore-and-untrusted-sites/</guid>
+      <description>Recently at work I was in need of connecting to a web service exposed via HTTPS. I&#39;ve been doing this from inside Servicemix 3.3.1, which may seem a bit inhibiting, but that was a requirement. Nevertheless I&#39;ve been trying my luck with the included servicemix-http-2008.01 component. I&#39;ve created a simple Service Unit using that component and made connection attempt. Unfortunately I&#39;ve encountered issues with the SSL conversation negotiation. I had to dig deeper into the servicemix-http code to find out these had something to do with my JCE keystore.</description>
+    </item>
+    
+    <item>
+      <title>Advisory Messages to the rescue</title>
+      <link>http://marcin.cylke.com.pl/2011/04/01/advisory-messages-to-the-rescue/</link>
+      <pubDate>Fri, 01 Apr 2011 09:16:59 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/04/01/advisory-messages-to-the-rescue/</guid>
+      <description>The most crucial part of software development is testing. It should ensure us, that our code is correct, works according to given specs, etc. There are many kinds of tests: unit tests, integration, functional. In general you should try to test the smallest possible subset of your code and be able to check the state of the objects after the test.  This seems as rather easy task, but what if you have an integration end-to-end test to perform?</description>
+    </item>
+    
+    <item>
+      <title>How to run multiple guest OS in QEMU?</title>
+      <link>http://marcin.cylke.com.pl/2011/03/27/how-to-run-multiple-guest-os-in-qemu/</link>
+      <pubDate>Sun, 27 Mar 2011 18:47:11 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/03/27/how-to-run-multiple-guest-os-in-qemu/</guid>
+      <description>This weekend I&#39;ve been fiddling with QEMU. I&#39;ve installed OpenBSD on a single image and wanted to have two instances of it communicating via network. Installing the system was easy, but the networking setup was quite a pain. See how I did that...  To make QEMU instances communicate with each other I needed to plug them to a &#34;network&#34;. That&#39;s why I&#39;ve created a bridge to which Virtual Instances would connect to.</description>
+    </item>
+    
+    <item>
+      <title>Me on Hadoop on Parleys</title>
+      <link>http://marcin.cylke.com.pl/2011/03/20/me-on-hadoop-on-parleys/</link>
+      <pubDate>Sun, 20 Mar 2011 19:35:39 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/03/20/me-on-hadoop-on-parleys/</guid>
+      <description> Finally I&#39;ve managed to import my WarJUG presentation to parleys.com. See for yourself :)    If you&#39;ve got problems with opening the parleys&#39; version try the ones uploaded to youtube.  Here is part 1:  And here is part 2:
+  Comments Sigvatr I&#39;m sorry, but I don&#39;t understand Polish :P
+   </description>
+    </item>
+    
+    <item>
+      <title>After WarJUG</title>
+      <link>http://marcin.cylke.com.pl/2011/02/23/after-warjug/</link>
+      <pubDate>Wed, 23 Feb 2011 13:22:04 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/02/23/after-warjug/</guid>
+      <description>Some time ago I&#39;d written about my arsaw JUG presentation. I finally presented the the topic yesterday.
+I must say I&#39;m fairly content with my yesterday&#39;s presentation :) Here are some slides and as soon as the video will be available I&#39;ll post it here too.
+Hadoop i okoliceView more presentations from zygm0nt. Comments Sigvatr Czyli napisałeś ładny post po angielsku, tylko po to, by zaprosić do obejrzenia prezentacji po polsku?</description>
+    </item>
+    
+    <item>
+      <title>Hadoop at Warsaw JUG</title>
+      <link>http://marcin.cylke.com.pl/2011/02/17/hadoop-on-warsaw-jug/</link>
+      <pubDate>Thu, 17 Feb 2011 23:09:46 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/02/17/hadoop-on-warsaw-jug/</guid>
+      <description>I&#39;ll be speaking at the upcoming JUG meeting in Warsaw. The topic will be Apache Hadoop. If you&#39;re interested, feel invited. Attend and ask questions. But be aware I&#39;m not advanced in this technology :)
+Full invitation text can be found here.
+P.S.: Do you know what Hadoop is? Do you use it anywhere? Have you played with it?
+ Comments Marcin @teamon - prawdopodobnie będzie. Na 100% to nie wiem, ale teoretycznie wszystkie prezentacje WarJUGa są nagrywane</description>
+    </item>
+    
+    <item>
+      <title>Deus Ex - what a game!</title>
+      <link>http://marcin.cylke.com.pl/2011/02/17/deus-ex-what-a-game/</link>
+      <pubDate>Thu, 17 Feb 2011 00:05:50 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/02/17/deus-ex-what-a-game/</guid>
+      <description>Some time ago I&#39;d become obsessed with one game. It kept me up late, fed my imagination, sucked all my free time - so basically did what good game should. It was not a new production, quite the contrary -it&#39;s release date was year 2000. And the game itself was Deus Ex.
+ The year is 2050 and you wake up as a rookie named JC Denton - you are an UNATCO (United Nations Anti Terrorism CoOperation) special agent.</description>
+    </item>
+    
+    <item>
+      <title>JMS redelivery with ActiveMQ and Servicemix</title>
+      <link>http://marcin.cylke.com.pl/2011/01/17/jms-redelivery-with-activemq-and-servicemix/</link>
+      <pubDate>Mon, 17 Jan 2011 08:56:29 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2011/01/17/jms-redelivery-with-activemq-and-servicemix/</guid>
+      <description>The other day I felt a compelling need to implement a JMS redelivery scenario. The exact scenario I&#39;d been trying to handle was:  my message is in an ActiveMQ queue or topic its processing fails, because of some exception - ie. database access exception due to server nonavailability since we get an exception, the message is not handled properly, we may want to retry processing attempt some time later of course, for the redelivery to happen we need the message to stay in the ActiveMQ queue - fetching messages from the queue will be stopped until the redelivery succeeds or expires  See how this can be done after the jump :)   For this to happen, I&#39;ve tried implementing Apache Camel route, but as it turns out, Camel fails to deliver facilities for exact JMS redelivery.</description>
+    </item>
+    
+    <item>
+      <title>Ku pamięci - o top-postingu</title>
+      <link>http://marcin.cylke.com.pl/2010/12/10/ku-pamieci-o-top-postingu/</link>
+      <pubDate>Fri, 10 Dec 2010 14:25:45 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/12/10/ku-pamieci-o-top-postingu/</guid>
+      <description> W celu niezagubienia i posiadaniu argumentu w przeróżnych dyskusjach:
+http://idallen.com/topposting.html  </description>
+    </item>
+    
+    <item>
+      <title>Easier and nicer JMS</title>
+      <link>http://marcin.cylke.com.pl/2010/12/08/easier-and-nicer-jms/</link>
+      <pubDate>Wed, 08 Dec 2010 09:22:34 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/12/08/easier-and-nicer-jms/</guid>
+      <description>JMS seems like a hostile ground. It has all it&#39;s quirks and strange behaviours. A couple of defining standards plus esoteric brokers, queues and topics.    At work, we mainly use open source Jms solutions, namely Apache ActiveMQ. This one is usually bundled with Apache Servicemix, as a message broker for this particular ESB. As there are some minor caveats in this scennerio, I&#39;d like to describe here some guidelines for getting to running JMS queues.</description>
+    </item>
+    
+    <item>
+      <title>Best pigsticking, EVER!</title>
+      <link>http://marcin.cylke.com.pl/2010/11/06/best-pigsticking-ever/</link>
+      <pubDate>Sat, 06 Nov 2010 19:41:28 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/11/06/best-pigsticking-ever/</guid>
+      <description> This looks like the best pigsticking ever! Look at that little girl! The blood, butcher&#39;s knife, and child&#39;s soother :)
+ Photo from Jamie Oliver&#39;s cookbook, &#34;Jamie&#39;s Italy&#34;. Available on Amazon. </description>
+    </item>
+    
+    <item>
+      <title>Schematron to the rescue!</title>
+      <link>http://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/</link>
+      <pubDate>Thu, 21 Oct 2010 08:40:37 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/</guid>
+      <description>In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be solved with it - the standardization processes is there for some reason. But that happens only in ideal world, which we&#39;re not living in.   In ideal world, when dealing with XML instances you&#39;d be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal definition language to declare your data structure.</description>
+    </item>
+    
+    <item>
+      <title>Complex flows with Apache Camel</title>
+      <link>http://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/</link>
+      <pubDate>Thu, 26 Aug 2010 20:23:52 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/</guid>
+      <description>At work, we&#39;re mainly integrating services and systems, and since we&#39;re on a constant lookout for new, better technologies, ways to do things easier, make them more sustainable, we&#39;re trying to  Usually we use Apache Camel for this task, which is a Swiss-knife for integration engineer. What&#39;s more, this tools corresponds well with our approach to integration solutions:   try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits,  don&#39;t convert XML into Java classes back and forth and be worried with problems like XML conversion,  try to get a simple flow of the process.</description>
+    </item>
+    
+    <item>
+      <title>Meetbsd 2010</title>
+      <link>http://marcin.cylke.com.pl/2010/08/18/meetbsd-2010/</link>
+      <pubDate>Wed, 18 Aug 2010 22:16:25 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/08/18/meetbsd-2010/</guid>
+      <description>Some time ago, I&#39;ve attended MeetBSD conference in Kraków. This BSD event is held yearly in either Warsaw, or Kraków. Due to relatively small group of people that registered there was only one track, which had both good and bad sides - you didn&#39;t have to choose from myriads of lectures, but there was no way to skip boring ones either. Well, I guess this kind of niche conference - about operating system :) - will not attract bigger attention.</description>
+    </item>
+    
+    <item>
+      <title>6&#43; hour layover in Stockholm</title>
+      <link>http://marcin.cylke.com.pl/2010/08/12/6-hour-layover-in-stockholm/</link>
+      <pubDate>Thu, 12 Aug 2010 22:22:01 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/08/12/6-hour-layover-in-stockholm/</guid>
+      <description>Last Monday, while coming home from Sweden, I had ~7h layover between my flights. Since Arlanda Airport does not offer a lot to do, at least not for me and not for 7h, I had decided to go to Stockholm. This post sums up a few nice places, that I&#39;d like to visit on my next trip there.
+I took Arlanda Express, fast train that takes you directly from the airport to Stockholm.</description>
+    </item>
+    
+    <item>
+      <title>Generic Enum converter for iBatis</title>
+      <link>http://marcin.cylke.com.pl/2010/06/28/generic-enum-converter-for-ibatis/</link>
+      <pubDate>Mon, 28 Jun 2010 20:40:34 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/06/28/generic-enum-converter-for-ibatis/</guid>
+      <description>My goal was to create a simple, extensible Enum converter that would work with iBatis. This seems like a trivial problem, but took me a while to find a proper solution.
+ There were some additional preconditions:  all given Enums are jaxb generated objects - but any standard Java Enum should work conversion was 1-to-1, no special conditions and processing  The example Enum for this problem looks like this one (copy&amp;amp;paste from jaxb generated source):</description>
+    </item>
+    
+    <item>
+      <title>Readability powala!</title>
+      <link>http://marcin.cylke.com.pl/2010/06/28/readability-powala/</link>
+      <pubDate>Mon, 28 Jun 2010 20:39:51 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/06/28/readability-powala/</guid>
+      <description>Już dziś możecie skorzystać z &#34;umilacza&#34; czytania artykułów. Od zawsze denerwowało mnie rozpraszające badziewie na stronach z artykułami. Teraz z tym koniec. Odkąd odkryłem Readability -- strona bookmarkletu,. Wszelkie instrukcje na temat korzystania są dostępne na stronie projektu, tak więc warto sprawdzić.
+ Comments Marcin Zgodnie z niektórymi źródłami, to jednak jest tam część kodu Readability. Polecam ten link:
+http://www.downloadsquad.com/2010/06/08/think-safari-reader-looks-familiar-thats-because-apple-used-op/
+  Dominik Porada &amp;gt; Z tego co gdzieś tam czytałem, to nawet Apple wykorzystał kawałki kodu JS z tej strony w Safari nowym.</description>
+    </item>
+    
+    <item>
+      <title>Javarsovia 2010</title>
+      <link>http://marcin.cylke.com.pl/2010/06/27/javarsovia-2010/</link>
+      <pubDate>Sun, 27 Jun 2010 15:08:43 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/06/27/javarsovia-2010/</guid>
+      <description>This year&#39;s Javarsovia conference took place on 26th june. It was held at Centrum Konferencyjno-Kongresowe, Bobrowiecka Street, Warsaw.
+First of all - the organization was very nice. Everything seemed smooth, maybe with the exception of conference registration, it was simply overcrowded. The agenda was split into four tracks, each hour 4 different presentations were given in different halls. So you just had to choose which one to attend. My path through the conference is described below, together with my views on each of the presentations I attended.</description>
+    </item>
+    
+    <item>
+      <title>osnews.com - hobby projects</title>
+      <link>http://marcin.cylke.com.pl/2010/06/10/osnews-com-hobby-projects/</link>
+      <pubDate>Thu, 10 Jun 2010 19:22:56 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/06/10/osnews-com-hobby-projects/</guid>
+      <description>Kilka dni temu na portalu OSNews pojawiła się notatka o skromym tytule: What Are You Working On?. Takie proste pytanie spowodowało lawinę komentarzy. Mnóstwo projektów, których ludzie się &#34;dopuszczają&#34; w czasie wolnym. Wszystkie można przeczytać tutaj: komentarze. Jest tam wiele do przeczytania, ale jeden komentarz naprawdę &#34;zrobił mój dzień&#34; :)
+  Come on people, you can do better than that. - trying to improve a tube theremin I built last year to get more linear response.</description>
+    </item>
+    
+    <item>
+      <title>Eclipse ecosystem</title>
+      <link>http://marcin.cylke.com.pl/2010/05/07/eclipse-ecosystem/</link>
+      <pubDate>Fri, 07 May 2010 09:55:59 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/05/07/eclipse-ecosystem/</guid>
+      <description>Do you use Eclipse? Or perhaps you use other IDE but would like to try &#34;the big E&#34;? Well, that&#39;s OK, and completely understandable, because Eclipse is actually a great, versatile tool. But Eclipse is not just an IDE, in fact it is a comp let, extensible platform. What&#39;s even more important, there are tones of valuable Eclipse-related projects gathered around the platform.
+Yes, there are lots. Some are good, some are bad, but the usual, stock ones, signed by Eclipse, are worth taking a closer look.</description>
+    </item>
+    
+    <item>
+      <title>Dmesg z Openbsd/sgi</title>
+      <link>http://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/</link>
+      <pubDate>Sun, 25 Apr 2010 12:20:34 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/</guid>
+      <description>Wracając do starego tematu OpenBSD na moim SGI O2, postanowiłem lekko odświeżyć tą maszynę. Dostałą uaktualnienie małe. Przysiedziałem również nad dostosowaniem systemu do swoich potrzeb, instalacji potrzebnego softu itp.
+Na początek dmesg z działąjącego systemu:
+ [ using 433608 bytes of bsd ELF symbol table ] Copyright (c) 1982, 1986, 1989, 1991, 1993 The Regents of the University of California. All rights reserved. Copyright (c) 1995-2009 OpenBSD. All rights reserved.</description>
+    </item>
+    
+    <item>
+      <title>Unicode w Pythonie</title>
+      <link>http://marcin.cylke.com.pl/2010/04/21/unicode-w-pythonie/</link>
+      <pubDate>Wed, 21 Apr 2010 22:54:24 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/04/21/unicode-w-pythonie/</guid>
+      <description>Szlag by to trafił! Czemu tak ciężko jest obsługiwać unicode w pythonie? No niby wszystko jest ładnie konwertowane wewnętrznie na odpowiednie reprezentacje, ale jeśli przychodzi co do czego, i chcemy wypisać sobie taki ciąg znaków na ekran, to już jest ciężej.
+Weźmy prosty przykład. Wczytywałem plik z polskimi znaczkami, o taki:
+ Roger Macdonald;Człowiek w żelaznej masce;25  a potem w kodzie pythonowym robiłem sobie tak:
+ for line in open(sys.</description>
+    </item>
+    
+    <item>
+      <title>Reaktywacja o-filmoramy?</title>
+      <link>http://marcin.cylke.com.pl/2010/04/21/reaktywacja-o-filmoramy/</link>
+      <pubDate>Wed, 21 Apr 2010 18:01:59 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/04/21/reaktywacja-o-filmoramy/</guid>
+      <description> Mam nadzieję, że wreszcie jednak ruszę z blogiem filmowym, po raz kolejny należy mu się reaktywacja.
+http://o-filmorama.blogspot.com  </description>
+    </item>
+    
+    <item>
+      <title>Mass Effect </title>
+      <link>http://marcin.cylke.com.pl/2010/04/21/mass-effect/</link>
+      <pubDate>Wed, 21 Apr 2010 17:59:39 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/04/21/mass-effect/</guid>
+      <description>Już dawno nie wciągnęła mnie tak żadna gra. To było olśnienie, ale dopiero za drugim razem wzięło mnie na dobre. Pierwsze podejście raczej mnie zniechęciło, bo choć fabuła zapowiadała się całkiem fajnie, to grając na XBoxie - przy użyciu pada - nie byłem w stanie poradzić sobie z celowaniem. Pewnie dziś byłoby lepiej, bo i technikę w tej dziedzinie podszkoliłem na licznych bijatykach i ef-pe-esach, ale i tak dorwałem werjsę na PC Mass Effect :D.</description>
+    </item>
+    
+    <item>
+      <title>Nokia bez certyfikatów :)</title>
+      <link>http://marcin.cylke.com.pl/2010/04/18/nokia-bez-certyfikatow/</link>
+      <pubDate>Sun, 18 Apr 2010 23:13:47 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/04/18/nokia-bez-certyfikatow/</guid>
+      <description>Od kilku dni walczyłem z wyłączeniem sprawdzania certyfikatów w Nokii E51. Okazało się, że to trywialna sprawa. Wystarczy:
+Tools -&amp;gt; App mgr -&amp;gt; Options -&amp;gt; Settings. Zmienić &#34;software installation&#34; z &#34;Signed Only&#34; na &#34;All&#34; i &#34;Onlline certificate check&#34; na &#34;Off&#34; :D
+Dzięki temu mogłem sobie zainstalować prostego i funkcjonalnego playera http://symbianoggplay.sourceforge.net/ i jest on o niebo lepszy niż ten domyślny dostarczany przez Nokie.
+ Comments Marcin Cylke U mnie akurat zadziałąło :) a wszelkie próby korzystania z chińskich &amp;quot;rozwiązań&amp;quot; do odblokowywania Nokii poległy.</description>
+    </item>
+    
+    <item>
+      <title>Recenzja - Drools JBoss Rules 5.0 Developer&#39;s Guide</title>
+      <link>http://marcin.cylke.com.pl/2010/04/14/recenzja-drools-jboss-rules-5-0-developer-s-guide/</link>
+      <pubDate>Wed, 14 Apr 2010 20:11:46 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/04/14/recenzja-drools-jboss-rules-5-0-developer-s-guide/</guid>
+      <description>Kilka dni temu skończyłem czytać niezbyt grubą - jak na standardy branżowej literatury - książeczkę o Droolsach.
+
+
+A co to jest Drools? Ot taki silnik reguł od JBossa, stronę ma o tu: http://jboss.org/drools. Umożliwia on wydzielenie reguł biznesowych do oddzielnego komponentu przez co możemy zyskać na przejrzystości naszego kodu oraz odseparować potencjalnie podatny na zmiany fragment - logikę biznesową właśnie :) Oczywiście można przy pomocy Droolsów zrobić dużo więcej fajnych rzeczy, ale jest to dalekie od podstawowych informacji.</description>
+    </item>
+    
+    <item>
+      <title>Here cometh English :)</title>
+      <link>http://marcin.cylke.com.pl/2010/04/10/here-cometh-english/</link>
+      <pubDate>Sat, 10 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2010/04/10/here-cometh-english/</guid>
+      <description> From this day on, this blog will contain only posts in English. </description>
+    </item>
+    
+    <item>
+      <title>Inteligentny mock w SoapUI</title>
+      <link>http://marcin.cylke.com.pl/2009/11/18/inteligentny-mock-w-soapui/</link>
+      <pubDate>Wed, 18 Nov 2009 22:20:57 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/11/18/inteligentny-mock-w-soapui/</guid>
+      <description>Któż z nas nie testował WebService&#39;ów, a któż z nas nie używał do tego SoapUI :) Ok, z rzeczami oczywistymi dyskutować nie będę, ale przy okazji jednego projekciku okazało się, że fajnie by było gdyby mój mock potrafił zrobić coś więcej niż tylko odpowiedzieć na nadesłany komunikat.
+Oczywiście sam SoapUI posiada dosyć spory wachlarz możliwości, bo może wysłać losowy request spośród wprowadzonych, lub wysyłać wedle sekwencji, itp.
+Problem w tym, że moim wysublimowanym życzeniem było aby korelować komunikaty określonego typu na podstawie jednego pola z XMLa - nazwijmy je polem &#34;</description>
+    </item>
+    
+    <item>
+      <title>Czyżby BPEL wreszcie stał się bardziej użyteczny?</title>
+      <link>http://marcin.cylke.com.pl/2009/11/15/czyzby-bpel-wreszcie-stal-sie-bardziej-uzyteczny/</link>
+      <pubDate>Sun, 15 Nov 2009 23:24:41 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/11/15/czyzby-bpel-wreszcie-stal-sie-bardziej-uzyteczny/</guid>
+      <description>Nieee... to po prostu udało mi się uruchomić BPEL Designera - plugin
+do Eclipse&#39;a. Co prawda wymagało to grzebnięcia w źródłach, które nie
+były aktualizowane już od dłuższego czasu. Zmiany polegały głównie na
+poprawie zależności. Niemniej, plugin z wersją 3.5 Eclipse&#39;a działa
+sprawnie. W poprzednich wersjach miał tendencje do zacinania się, a
+przyczyny tego nie udało mi się namierzyć.
+  A co to jest BPEL?
+Business Process Expression Language.</description>
+    </item>
+    
+    <item>
+      <title>Solaris w TR</title>
+      <link>http://marcin.cylke.com.pl/2009/11/13/solaris-w-tr/</link>
+      <pubDate>Fri, 13 Nov 2009 08:51:17 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/11/13/solaris-w-tr/</guid>
+      <description>Wczoraj byłem w TR (http://www.trwarszawa.pl/). Na wejściówki, po
+taniości. Obejrzałem spektakl Solaris, bo to Lem, bo znam, bo jako jedną
+z niewielu rzeczy Lema czytałem. Powody były.
+Wrażenia? Bardzo fajnie się oglądało. Problem jedynie w tym, że z
+wydawałoby się dosyć prostej fabularnie książki zrobiono spektakl,
+którego nie da się w całości zrozumieć z powodu niedopowiedzeń. Czy to
+jest domena nowoczesnych interpretacji teatralnych??
+ Comments Marcin @Biały, tak, faktycznie. Ale ostatecznie na prawdę nie wyszło to tak źle.</description>
+    </item>
+    
+    <item>
+      <title>&lt;p&gt;Love - some kind of preview...&lt;/p&gt; </title>
+      <link>http://marcin.cylke.com.pl/2009/09/24/love-some-kind-of-preview/</link>
+      <pubDate>Thu, 24 Sep 2009 23:06:05 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/09/24/love-some-kind-of-preview/</guid>
+      <description>Czytając mój ulubiony serwis o grach, czyli Rock-Paper-Shutgun dowiedziałem się, że osobnik znany jako Eskil Steenberg wypuścił nieinteraktywne preview swojego &#34;multiplayer experience&#34; - LOVE.
+O co tyle szumu? Wystarczy spojrzeć na to jak gra wygląda. Nie chodzi w tym o jakąś wypasioną grafikę, a o frajdę z gry. Eskil pisze swoją grę w pojedynkę. Idzie mu to naprawdę sprawnie. A zestaw narzędzi jakich używa wprawia mnie za każdym razem w podziw.</description>
+    </item>
+    
+    <item>
+      <title>Demotywator mój</title>
+      <link>http://marcin.cylke.com.pl/2009/09/22/demotywator-moj/</link>
+      <pubDate>Tue, 22 Sep 2009 21:59:20 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/09/22/demotywator-moj/</guid>
+      <description>Z dwa tygodnie temu zrobiłem fotkę. Nadawała się na demotywator. Moim zdaniem przynajmnie :)
+Umieściłem ją więc w serwisie odpowiednim - demotywatory.pl Raczej nie pieją ludzie z zachwytu, ale mam radochę i tak :D.
+Link do demotywatora - LINK.
+ Comments Marcin @Voter101 - dzięki za słowa krytyki ;-)
+Jednak nadal dziwi mnie tak niesamowicie osobiste podejście do tego co ktoś sobie na blogu napisze. No ale trudno!
+A co do Twojej rady, żebym wracał do gimnazjum.</description>
+    </item>
+    
+    <item>
+      <title>Ludzie! Porzućcie F-Spot!</title>
+      <link>http://marcin.cylke.com.pl/2009/09/20/ludzie-porzuccie-f-spot/</link>
+      <pubDate>Sun, 20 Sep 2009 17:57:33 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/09/20/ludzie-porzuccie-f-spot/</guid>
+      <description>Dziś usiadłem do porządkowania zdjęć z wyjazdu wakacyjnego. Postanowiłem użyć do tego właśnie programu F-Spot. Wydawał się on odpowiedni. Zaimportował fotki, posortował według informacji EXIF. Schody zaczęły się w momencie edycji całej kolekcji.
+Ze zdjęciami było trochę problemów, którymi chciałem się zająć:
+ część trzeba było obrócić połowa była zrobiona na Nikonie, który nie miał ustawionej daty, tak więc ficzer sortowania po dacie z nagłówka EXIF wziął w łeb  Tak więc chciałem poobracać fotki i uporządkować wedle czasu.</description>
+    </item>
+    
+    <item>
+      <title>Open Suse jest upośledzone!</title>
+      <link>http://marcin.cylke.com.pl/2009/09/20/open-suse-jest-uposledzone/</link>
+      <pubDate>Sun, 20 Sep 2009 14:45:13 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/09/20/open-suse-jest-uposledzone/</guid>
+      <description>Zarządzanie pakietami to droga przez mękę. Czemu? Proszę bardzo:
+marcin@byakshee:~&amp;gt; sudo zypper install f-spot
+Reading installed packages...
+&#39;f-spot&#39; is already installed.
+Nothing to do.
+ale już jakbym chciał upgrade paczki zrobić, to inna rozmowa:
+marcin@byakshee:~&amp;gt; sudo zypper update f-spot
+Reading installed packages...
+Package &#39;f-spot&#39; is not installed.
+Nothing to do.
+
+Wniosek z tego taki, że jak raz zetkniesz się z apt-getem, to już nic nie będzie później odpowiednie :D A OpenSuse oczywiście odradzam.</description>
+    </item>
+    
+    <item>
+      <title>Przydatne programy zdjęciowe</title>
+      <link>http://marcin.cylke.com.pl/2009/09/20/przydatne-programy-zdjeciowe/</link>
+      <pubDate>Sun, 20 Sep 2009 10:29:06 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/09/20/przydatne-programy-zdjeciowe/</guid>
+      <description>Od dawna używam hugina, który doskonale nadaje się do sklejania wielu zdjęć w panoramę. Robi to doskonale, wygładza, koryguje, dopasowuje. Wystarczy wrzucić sekwencję zdjęć w odpowiedniej kolejności, a program załatwi wszystko za mnie. Miód!
+Dziś znalazłem natomiast programik o dziwnej conieco nazwie tintii. On z koleii służy do przerabiana zdjęc na czarnobiałe, zostawiając pewien obszar w kolorze. Robienie podobnej rzeczy w Gimpie nigdy nie wychodziło mi łatwo. Dzięki temu narzędziu wszystko idzie łatwo i przyjemnie!</description>
+    </item>
+    
+    <item>
+      <title>Battlestar Galactica</title>
+      <link>http://marcin.cylke.com.pl/2009/09/20/battlestar-galactica/</link>
+      <pubDate>Sun, 20 Sep 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/09/20/battlestar-galactica/</guid>
+      <description>Wszystko zaczęło się w 2005, kiedy to wypuszczony został pierwszy odcinek odświeżonego serialu Battlestar Galactica. Początkowo zapowiadał się po prostu remake serialu z lat 70. Jednak z czasem, gdy rozwijała się fabuła a kolejne odcinki puchły od mnogości bohaterów i ich różnorodności, serial stał się czymś nowym. Całkiem odrębnym.
+Przez te lata pozwolił przeżyć z bohaterami zagładę planety Caprice, ucieczkę grupy 50 000 niedobitków, partyzancką walkę z przeważającymi siłami Cylonów.</description>
+    </item>
+    
+    <item>
+      <title>Sycylijski IBM?</title>
+      <link>http://marcin.cylke.com.pl/2009/09/16/sycylijski-ibm/</link>
+      <pubDate>Wed, 16 Sep 2009 18:02:06 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/09/16/sycylijski-ibm/</guid>
+      <description>Ostatnio było tu ciszej, a to ze względu na wakacyjny wypad na Sycylię. Ładnie, pięknie, wino, kobiety, owoce morza. No, to tyle z relacji.
+
+
+Ja chciałem o czymś trochę innym. A mianowicie właśnie na Sycylii, konkretniej w Palermo zobaczyłem taką oto old-skulową reklamę IBM:
+
+
+
+  Urzekła mnie! Że to jeszcze tam wisi, że jest takie pikselowe. I totalnie od czapy, reklama była umieszczona w okolicach Teatro Maximo.</description>
+    </item>
+    
+    <item>
+      <title>Public Enemies</title>
+      <link>http://marcin.cylke.com.pl/2009/09/16/public-enemies/</link>
+      <pubDate>Wed, 16 Sep 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/09/16/public-enemies/</guid>
+      <description>Na ten film czekałem dosyć długo. Może nie jakoś szczególnie, ale jednak zrobiło na mnie wrażenie, że kręci go Michael Mann. Że w rolach głównych sama śmietanka. Że o gangsterach. Zapowiadało się super.
+Film opowiada historię Johna Dillingera, który napadał na banki, rabował z klasą, uciekał z więzień. A wszystko to robił w złotych latach gangsterki w USA, czyli latach 20. Mamy tu wszystko co gangsterskie kino zawierać powinno. Jest dużo przemocy, romans, zajadły policjant ścigający Johna.</description>
+    </item>
+    
+    <item>
+      <title>System Shock 2</title>
+      <link>http://marcin.cylke.com.pl/2009/08/29/system-shock-2/</link>
+      <pubDate>Sat, 29 Aug 2009 14:23:24 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/08/29/system-shock-2/</guid>
+      <description>Pamiętacie taką grę? Ja pamiętam jedynie tytuł i obszerny opis części pierwszej zamieszczony w którymś numerze Secret Service. Wtedy ta gra była poza moim zasięgiem - za sprawą wymagań sprzętowych.
+Dopiero jakiś rok temu udało mi się zdobyć System Shock - część pierwszą. Zagrywałem się w nią bardzo długo, uruchomiłem całość pod DosBox&#39;em i działało pięknie.
+Po jej ukończeniu przyszła chrapka na część drugą. Zdobyłem jakąś wersję tej gry i co?</description>
+    </item>
+    
+    <item>
+      <title>Własny player audio?</title>
+      <link>http://marcin.cylke.com.pl/2009/08/29/wlasny-player-audio/</link>
+      <pubDate>Sat, 29 Aug 2009 01:37:59 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/08/29/wlasny-player-audio/</guid>
+      <description>Od jakiegoś czasu męczy mnie nędza wśród odtwarzaczy audio dostępnych na różne unixy. Niby są, ale jakieś takie wybrakowane, zupełnie nie przystające do moich potrzeb. Niby robią dużo, ale ja nie potrzebuję kombajnu do muzyki.
+Oczywiście, są różne takie jak:
+ Rhythmbox Amarok xmms i xmms2 musicpd bmpx cmus  No i wszystko fajnie, nie mam zamiaru negować ich użycia. Mi one po prostu nie do końca pasują. Rhythmbox, bo jest duży, ma za dużo featerów, niby umie dużo ale jak co do czego przyjdzie to bywają problemy.</description>
+    </item>
+    
+    <item>
+      <title>SGI O2 - upragiony</title>
+      <link>http://marcin.cylke.com.pl/2009/08/23/sgi-o2-upragiony/</link>
+      <pubDate>Sun, 23 Aug 2009 12:00:42 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/08/23/sgi-o2-upragiony/</guid>
+      <description>Od dawna marzyła mi się właśnie ta maszyna. Przez rodzinę i bliskich ochszczony został &#34;odkurzaczem&#34;. Nic to. Mi się podoba. Jest naprawdę ujmujący.
+Zapytace czemu?
+Proste!
+ nie jest to zwykły pc przy wejściu do &#34;biosu&#34; mamy tryb graficzny, obsługę myszy oraz dźwięki wydawane przez wbudowaną kartę muzyczną  Można by pomyśleć, że nie jest to warte uwagi, ale przecież standardowe PC nadal nie mają takich miłych ficzerów! A to jest sprzęt z 1996 roku.</description>
+    </item>
+    
+    <item>
+      <title>Brutal Assault 2009</title>
+      <link>http://marcin.cylke.com.pl/2009/08/17/brutal-assault-2009/</link>
+      <pubDate>Mon, 17 Aug 2009 09:11:22 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/08/17/brutal-assault-2009/</guid>
+      <description>W ostatni weekend odwiedziłem Czechy. Wraz z Radkiem, moim bratem pojechaliśmy zobaczyć wreszcie co to jest ten Brutal Assault - festiwal metalowy. Było na tyle ciekawie i przyjemnie, że postanowiłem Wam trochę opisać &#34;co i jak&#34; się robi na takich spędach.
+To była 14 edycja Brutal Assault i jak co roku odbyła się ~30km od polskiej granicy, w miasteczku Jaromir, a dokładniej w obrębie zabudowań twierdzy Józefów, która położona jest nieopodal miasta.</description>
+    </item>
+    
+    <item>
+      <title>O czym będzie?</title>
+      <link>http://marcin.cylke.com.pl/2009/08/15/o-czym-bedzie/</link>
+      <pubDate>Sat, 15 Aug 2009 23:55:06 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/08/15/o-czym-bedzie/</guid>
+      <description>W zasadzie to o wszystkim. Z uwagi na to, że pracuję w IT, to będzie częściowo o nowinkach z tego poletka, ale nie tylko. Mam nadzieję, że nudno nie będzie i stopniowo pojawią się też inne treści.
+ Comments konieckropka Dam szansę i zasubskrybuję ;)Powodzenia ;)
+  kip siema siema ;) to chętnie poczytam co nowego w &amp;quot;ajti&amp;quot;powodzonka
+  Quintasan Wielkie włochate dziesięciopalczaste yoł!Also, powodzenia!</description>
+    </item>
+    
+    <item>
+      <title>Slumdog Millionaire</title>
+      <link>http://marcin.cylke.com.pl/2009/02/14/slumdog-millionaire/</link>
+      <pubDate>Sat, 14 Feb 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/02/14/slumdog-millionaire/</guid>
+      <description>Co prawda zwykle staram się opisywać filmy w takiej kolejności w jakiej je oglądam. Tym razem postanowiłem zrobić wyjątek. I to nie byle jaki film jest tego przyczyną. Film ów opowiada historię chłopaczka ze slumsów jednego z indyjskich miast, który po zabójstwie jego rodziców ląduje na ulicy, bez środków do życia. Przechodzi przez życie na wysypisku, pracę jako żebrak, i inne. Ciągle walczy o swoje, czasem surfując na fali szczęścia, ale zwykle dostaje w kość od brutalnego świata.</description>
+    </item>
+    
+    <item>
+      <title>Southland Tales</title>
+      <link>http://marcin.cylke.com.pl/2009/02/14/southland-tales/</link>
+      <pubDate>Sat, 14 Feb 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/02/14/southland-tales/</guid>
+      <description>Kiedy zabrałem się po raz pierwszy do oglądania tego filmu, bardzo szybko się zniechęciłem. Ciężko było w niego brnąć, fabuła nie trzymała się kupy, film był dziwny i podzielony na jakieś nieskładne części.
+Dopiero po jakimś czasie przeczytałem, całkiem przypadkiem zresztą, że to jak najbardziej zamierzony efekt. Dziwne? Nie, nawet nie zupełnie. Sęk w tym, że kompletną opowieść podzielono na 6 części. Pierwsze 3 zostały opowiedziane w formie komiksu, natomiast pozostałe składają się na opisywane właśnie film.</description>
+    </item>
+    
+    <item>
+      <title>RocknRolla</title>
+      <link>http://marcin.cylke.com.pl/2009/02/07/rocknrolla/</link>
+      <pubDate>Sat, 07 Feb 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/02/07/rocknrolla/</guid>
+      <description>I otrzymujemy nową produkcję Guya Ritchiego. Reżyser ów zasłynął filmami &#34;Snatch&#34; oraz &#34;Lock, stock and two smoking barrels&#34;. Zdecydowanie były to dobre filmy i z ciekawą (nowatorską nawet) konstrukcją fabularną. Mile się oglądało itp, no ale nie można ciągle jechać na tym dobrym wrażeniu.
+Fabuła filmu opiera się na pomyśle &#34;każdy każdego chce przekręcić&#34;. Zabawa powoli się rozkręca gdy pomysłowy gangster oszukuje, układając się po drodze z urzędnikami miasta, dwóch typów spod ciemnej gwiazdy, którzy chcą kupić kawałek ziemi w centrum Londynu.</description>
+    </item>
+    
+    <item>
+      <title>The Curious Case of Benjamin Button</title>
+      <link>http://marcin.cylke.com.pl/2009/02/07/curious-case-of-benjamin-button/</link>
+      <pubDate>Sat, 07 Feb 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/02/07/curious-case-of-benjamin-button/</guid>
+      <description>Doskonała obsada, zasłużony reżyser, nieprzeciętna fabuła i podsycanie niepewności przed premierą. Zmieszajmy to razem i wyjdzie mniej więcej film jak co drugi dziś dostępny w kinach. Jednakże tym razem dodano jeszcze &#34;tego czegoś&#34;, co elektryzuje i powoduje, że film przykuwa na długo. Nie pozwala się oderwać.
+David Fincher serwuje nam opowieść o człowieku, który urodził się stary ciałem i młodniał z wiekiem. Na początku był tak brzydki i schorowany (artretyzm itp.</description>
+    </item>
+    
+    <item>
+      <title>The Darjeeling Limited</title>
+      <link>http://marcin.cylke.com.pl/2009/02/07/darjeeling-limited/</link>
+      <pubDate>Sat, 07 Feb 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2009/02/07/darjeeling-limited/</guid>
+      <description>Trzech braci spotyka się po roku przerwy i wyibera w podróż przez Indie. Ma to być ich duchowe odnowienie i inne bzdury. Jak się okazuje jest to jedynie pretekst do odnalezienia matki, za którą wszyscy tęsknią.
+Nie, nie jest to ckliwy melodramat. Adrian Brody, Owen Wilson i &#34;ten trzeci&#34; w swej podróży napotykają różne dziwne sytuacje, ale częściej zmagają się z niezgodnościami swych charakterów, skrywanymi urazami i niedopowiedzeniami. A wszystko to, aby oczyścić się duchowo.</description>
+    </item>
+    
+    <item>
+      <title>Joaquin Phoenix - OUT!</title>
+      <link>http://marcin.cylke.com.pl/2008/10/30/joaquin-phoenix-out/</link>
+      <pubDate>Thu, 30 Oct 2008 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2008/10/30/joaquin-phoenix-out/</guid>
+      <description> Zaczytane na Gazeta.pl:
+
+Joaquin Phoenix kończy z filmem i zaczyna śpiewać/grać czy coś tam jeszcze. Pewnie spragniony groupies. Co zrobić, szkoda dobrego aktora.
+ </description>
+    </item>
+    
+    <item>
+      <title>The Incredible Hulk</title>
+      <link>http://marcin.cylke.com.pl/2008/10/29/incredible-hulk/</link>
+      <pubDate>Wed, 29 Oct 2008 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2008/10/29/incredible-hulk/</guid>
+      <description>No i wreszcie dostajemy przyzwoity film o Zielonym Potworze! Nie żadne tam moralne dylematy, jak w poprzedniej części. Czy Hulk wygląda na kogoś kto ma przemyślenia? Owszem Bruce Banner to czuły jajogłowy, ale co z tego? Skoro osobowość Bruce&#39;a działa na Hulka, to czemu Zielony Pierwiastek nie miałby wpływać w pewien sposób na Bannera? - chociażby pozbawiając go moralności.
+Jednakże... mimo braku przemyśleń i innego niepotrzebnego gówna, bardzo mądrze pomyślany jest motyw z ograniczaniem się Bannera, z uspakajaniem samego siebie - ćwiczenia opanowania itp.</description>
+    </item>
+    
+    <item>
+      <title>Kung Fu Panda</title>
+      <link>http://marcin.cylke.com.pl/2008/10/24/kung-fu-panda/</link>
+      <pubDate>Fri, 24 Oct 2008 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2008/10/24/kung-fu-panda/</guid>
+      <description>Można by pomyśleć, że to kolejna animowana bajeczka. Tym bardziej, że szał zabawek dodawanych do zestawów Happy Meal w McDonalds dotyczył również bohaterów tej produkcji. I tak naprawdę to jest to &#34;kolejna taka bajeczka&#34;, kolejna którą ogląda się miło, ale nic z tego nie zostaje. Ile można? Ciągle i bez przerwy dostajemy taką lub inną animowaną szmirę. Tym razem przynajmniej aktorzy, którzy podłożyli głos są warci uwagi.
+Weźmy takiego Jacka Blacka - wciela się w pandę Po, głównego bohatera filmu.</description>
+    </item>
+    
+    <item>
+      <title>Na co czekamy w 2009?</title>
+      <link>http://marcin.cylke.com.pl/2008/10/23/na-co-czekamy-w-2009/</link>
+      <pubDate>Thu, 23 Oct 2008 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2008/10/23/na-co-czekamy-w-2009/</guid>
+      <description>Obecny 2008 powoli się kończy, tak więc warto przyjrzeć się nadchodzącym niebawem filmom. Zapowiada się bardzo ciekawie, ze względu na premiery długo oczekiwanych filmów - hitów.  Jak dla mnie dużym wydarzeniem wydaje się być nowy film Tarantino o zwinnym tytule &#34;Inglorious Bastards&#34;. Co prawda tytuł uległ już drobnej korekcie, ale jest ona na tyle niezauważalna, że spokojnie będe korzstał z tego tytułu. Jak to przystało na Tarantino znów zapowiada się pewien mix filmów z określonego gatunku.</description>
+    </item>
+    
+    <item>
+      <title>Get it moving....</title>
+      <link>http://marcin.cylke.com.pl/2008/10/22/get-it-moving/</link>
+      <pubDate>Wed, 22 Oct 2008 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2008/10/22/get-it-moving/</guid>
+      <description>Po kolejnym okresie ciszy wracam ze zdwojoną siłą i pasją! No a przynajmniej zobaczę co z tego wyjdzie ;-)
+Na pierwszy ogień idzie krótki przegląd filmów, które planowałem obejrzeć, czyli te które opisałem w tym wpisie.
+Babylon A.D. - zdecydowanie powrót do korzeni dla Vina Disela. Film nie powala na kolana, ale da się obejrzeć. Co do zarysu akcji, to mamy świat po jakiejś tam globalnej katastrofie. Tylko Stany Zjednoczone są ostoją człowieczeństwa, a nasi wschodni sąsiedzi</description>
+    </item>
+    
+    <item>
+      <title>Artur C. Clark is no more</title>
+      <link>http://marcin.cylke.com.pl/2008/03/20/artur-c-clark-is-no-more/</link>
+      <pubDate>Thu, 20 Mar 2008 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2008/03/20/artur-c-clark-is-no-more/</guid>
+      <description>Dnia wczorajszego, czyly 19.03.2008 zmarł w swoim domu na Sri Lance sir Artur C. Clark. Zawdzięczamy mu masę świetnych książek, trochę średniaków firmowanych nazwyskiem, idee wyniesienia satelitów geostacjonarnych na orbitę (to było w 1952!), &#34;terraforming&#34; Marsa, wizjonerstwo.
+Mimo tego, że to blog filmowy, to jednak ktoś taki jak Artur C. Clark będzie tutaj wymieniony! Zresztą żeby nie było, a &#34;2001: Odyseja kosmiczna&#34; to niby co?
+A tutaj wspomnienia osoby, która co prawda nie znała go osobiście, ale z nim korespondowała:</description>
+    </item>
+    
+    <item>
+      <title>Filmy, które przybędą</title>
+      <link>http://marcin.cylke.com.pl/2008/01/07/filmy-ktre-przybd/</link>
+      <pubDate>Mon, 07 Jan 2008 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2008/01/07/filmy-ktre-przybd/</guid>
+      <description>Afer.Life - &#34;A young woman caught between life and death fights against the funeral director who has a hand in her fate. - hmmm.. Kate Bosworth? Może i się da obejrzeć.
+Babylon A.D. - &#34;Veteran-turned-mercenary Thoorop (Diesel) takes the high-risk job of escorting a woman from Russia to China. Little does he know that she is host to an organism that a cult wants to harvest in order to produce a genetically modified Messiah.</description>
+    </item>
+    
+    <item>
+      <title>The Invasion a.k.a Invasion of the Body Snatchers</title>
+      <link>http://marcin.cylke.com.pl/2008/01/07/invasion-aka-invasion-of-body-snatchers/</link>
+      <pubDate>Mon, 07 Jan 2008 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2008/01/07/invasion-aka-invasion-of-body-snatchers/</guid>
+      <description>Kto by pomyślał! Zanim zabrałem się za ten film, bez czytania recenzji, bez wgłębniania się w fabułę, myślałem, że to jakaś sensacja, w najlepszym razie lekkie SF. A tu się okazuje, że to filmik na podstawie książki &#34;Inwazja porywaczy ciał&#34;! Jeśli ktoś czytał, to wie jakiego typu to książka. Klasyczna :) to na pewno, a czy dobra, to już inna kwestia. Mi się akurat podobała, wciągnęła, była miłym czytadłem.</description>
+    </item>
+    
+    <item>
+      <title>Podsumowanie przeglądu</title>
+      <link>http://marcin.cylke.com.pl/2007/12/11/podsumowanie-przegldu/</link>
+      <pubDate>Tue, 11 Dec 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/12/11/podsumowanie-przegldu/</guid>
+      <description>Jakiś czas temu (a dokładniej tu) wspominałem o grupie filmów, które chętnie bym obejrzał. Minęło trochę czasu, a i zaległości narosły, więc opędzę ten temat dwoma wpisami, jednocześnie opisując po krótce te filmy.
+Children of Men
+Napisałem: Ludzkość jest bezpłodna. Ludzkość właśnie zamierza wymrzeć. Ale pojawia się nadzieja w postaci jednej jedynej kobiety w ciąży. Chce zobaczyć, czy jedno dziecko może nas ocalić.
+ A w rzeczywistości ... film bardzo mi się podobał.</description>
+    </item>
+    
+    <item>
+      <title>Dollars Trilogy</title>
+      <link>http://marcin.cylke.com.pl/2007/12/05/dollars-trilogy/</link>
+      <pubDate>Wed, 05 Dec 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/12/05/dollars-trilogy/</guid>
+      <description>Spagetti westerny na wypasie! Wspaniała muzyka Enio Morricone + Sergio Leone jako reżyser, no i jaka obsada! Aż szacunek dla Eastwooda mi skoczył!
+
+A Fistful of Dollars IMDB
+
+
+For a Few Dollars More IMDB
+
+
+The Good, The Bad, The Ugly IMDB Comments Zygmunt Jak chcesz, to mam :) W dobrej jakości, w kolorze :)A Brzydki to super jest!! Chociażby scena jak się kopie w wannie na froncie.</description>
+    </item>
+    
+    <item>
+      <title>Before Night Falls</title>
+      <link>http://marcin.cylke.com.pl/2007/11/19/before-night-falls/</link>
+      <pubDate>Mon, 19 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/19/before-night-falls/</guid>
+      <description>Ten mało znaany film to opowieść o kubańskim pisarzu i jego zmaganiach ze sobą i z ustrojem panującym w jego ojczyźnie.
+Ze sobą - bo był gejem, i lekko nie miał
+Z ustrojem - bo chciał być rewolucjonistą, ale będąc gejem nie można wtedy było być rewolucjonistą... So much drama :D Cieszy to, że wątek homoseksualny nie jest nadmiernie eksponowany. Natomiast dobrze przedstawiona jest sytuacja na Kubie i pokazuje jak Ci ludzie mieli przerąbane (i dalej mają, bo Fidel pewnie nadal żyje).</description>
+    </item>
+    
+    <item>
+      <title>Casino Royale</title>
+      <link>http://marcin.cylke.com.pl/2007/11/19/casino-royale/</link>
+      <pubDate>Mon, 19 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/19/casino-royale/</guid>
+      <description>Kolejna już część przygód dziarskiego agenta Bonda. Oparta na pierwszej książce o agencie Jej Królewskiej Mości, autorstwa Iana Fleminga - jeśli chodzi o mnie, to książka zdecydowanie ustępuje pola filmowi. Jest przede wszystkim mniej dynamiczna i bardziej nastawiona na grę w karty niż na agenta :)
+Jest nowy aktor, Daniel Craig, jest nowa kobieta (jak zwykle :D) - Eva Green, jest mniej gadgetów, za to więcej akcji i mięsistych, prawdziwych bohaterów.</description>
+    </item>
+    
+    <item>
+      <title>One flew over coco&#39;s nest</title>
+      <link>http://marcin.cylke.com.pl/2007/11/19/one-flew-over-cocos-nest/</link>
+      <pubDate>Mon, 19 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/19/one-flew-over-cocos-nest/</guid>
+      <description>Coż, trochę ciężko pisać o tak klasycznym filmie. Szczególnie, gdy ogląda się go tak póżno. Toż to klasyk jakich mało.
+Tak więc mamy tu Jacka Nicholsona - jeszcze jako młodzieniaszka, który aby wyrwać się z więzienia próbuje zasymulować chorobę psychiczną. Trafia do szpitala psychatrycznego z nadzieją, że uda mu się uciec w sposób łatwiejszy niż z więzienia.
+Tymczasem zaczyna się zaprzyjaźniać z mieszkańcami instytucji i odkrywa, że nie są to tak do końca ninormalni ludzie - niektórzy niedużo bardziej niż personel tam pracujący.</description>
+    </item>
+    
+    <item>
+      <title>WTC</title>
+      <link>http://marcin.cylke.com.pl/2007/11/19/wtc/</link>
+      <pubDate>Mon, 19 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/19/wtc/</guid>
+      <description>Jej, ja myślałem, że film &#34;United 93&#34; był nudną opowiastką o 11.09.2001. Ta produkcja bije go na głowę, na łeb - całością go bije.
+Otóż mamy tu nudny pean o bohaterskich strażakach, którzy brali udział w ratowaniu ludzi z walących się wież. Sami nawet znaleźli się pod ich gruzami, aby ostatecznie zostać uratowanymi.
+Nuda. Nue ujmuję samym bohaterskim strażakom, no ale ten film to istna propagandowa ściema. A dodajmy jeszcze do tego obrazu rozpaczy drewnianego Nicholasa Cage&#39;a, który się sprawdza w innych rolach, ale jako strażak z wąsami jest tylko i wyłącznie śmieszny.</description>
+    </item>
+    
+    <item>
+      <title>Borat: Cultural Learnings of America for Make Benefit Glorious Nation of Kazakhstan</title>
+      <link>http://marcin.cylke.com.pl/2007/11/09/borat-cultural-learnings-of-america-for/</link>
+      <pubDate>Fri, 09 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/09/borat-cultural-learnings-of-america-for/</guid>
+      <description>&#34;Jak-sie-masz!&#34;, tak wita widza Borat, czyli kazahski reporter, bohater filmu pseudo-dokumentalnego o USA. Film ma już kilka miesięcy, trochę się uspokoiły nastroje po jego premierze, szkoda że dopiero teraz znalazłem czas, żeby o nim napisać.
+W filmie chodzi jedynie o pokazanie podróży Borata z rodzinnego Kazahstanu do USA, i przejażdżka po kraju z misją znalezienia remedium na sytuację w ojczyźnie. W między czasie zakochuje się w Pameli Anderson i postanawia wziąć ją sobie za żonę.</description>
+    </item>
+    
+    <item>
+      <title>Przejście z joggera na bloggera</title>
+      <link>http://marcin.cylke.com.pl/2007/11/09/przejcie-z-joggera-na-bloggera/</link>
+      <pubDate>Fri, 09 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/09/przejcie-z-joggera-na-bloggera/</guid>
+      <description> Teraz wreszcie mogę uznać przejście z jednej platformy na drugą za zakończone. Było to lekko uciążliwe, z uwagi na ograniczenia API Bloggera i wymagało 3 dni!!!Szczęśliwie dało radę i opr&amp;#243;cz komentarzy mam już wszystkie wpisy w tym miejscu.Może coś się ruszy z nowymi wpisami nawet? </description>
+    </item>
+    
+    <item>
+      <title>Timeline vs A Sound of Thunder</title>
+      <link>http://marcin.cylke.com.pl/2007/11/09/timeline-vs-sound-of-thunder/</link>
+      <pubDate>Fri, 09 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/09/timeline-vs-sound-of-thunder/</guid>
+      <description>O czym by tu dziś? Może o dwóch filmach sci-fi, które obejrzałem. Co prawda od tego wydarzenia minęło już trochę czasu, ale filmy dosyć nieznane, więc co tam :)
+Pierwszy z nich to &#34;Timeline&#34;. Opowiastka o grupie dzielnych i zapalonych archeologów, pracujących na wykopaliskach w okolicach jakiegoś francuskiego grodu (a raczej ruin jego). Z archeologią to zwykle tak, że trochę się rzeczy znajdzie, resztę się dopowiada - przynajmniej z perspektywy laika tak sprawa się przedstawia.</description>
+    </item>
+    
+    <item>
+      <title>3000 Miles to Graceland</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/3000-miles-to-graceland/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/3000-miles-to-graceland/</guid>
+      <description>Kto by pomyślał, że wśród filmów z Kevinem Costnerem znajdzie się taki rodzynek? Przecież ten aktor jest tak niesamowicie sztuczny i nędzny, że to istny cud! No ale jest, i przyznać trzeba, że robi ogromne wrażenie. A do tego towarzyszą mu na ekranie Courtney Cox oraz Kurt Russell.
+Dosyć psychodeliczna czołówka może zmylić. Film nie jest kolejnym &#34;Fearing and Loathing Las Vegas&#34;, mimo że jest jak najbardziej o Vegas. Mamy tu opowieść o grupie kryminalistów chcących obrobić jedno z kasyn w Las Vegas.</description>
+    </item>
+    
+    <item>
+      <title>A Scanner Darkly</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/scanner-darkly/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/scanner-darkly/</guid>
+      <description>I wreszcie ktoś zrobił film, który można nazwać ekranizacją Dicka. Na wstępie muszę zaznaczyć, że pomimo wielu innych, tego konkretnego opowiadania nie czytałem, a klimat i tak jest wyczuwalny doskonale. Wreszcie jest psychodela, paranoiczny strach no i wizje. Dosyć istotny jest okres z którego pochodzi opowiadanie będące fabularną ostoją dla filmu - autor napisał je już pod koniec swej kariery, gdy jego stan psychiczny był już bardzo poważny.
+Na treści skupiać się nie zamierzam, jak wspominałem, nie czytałem opowiadania :) Bardzo ciekawa i nowatorska jest strona wizualna.</description>
+    </item>
+    
+    <item>
+      <title>Atame! (Tie me up)</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/atame-tie-me-up/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/atame-tie-me-up/</guid>
+      <description>  </description>
+    </item>
+    
+    <item>
+      <title>Babel</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/babel/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/babel/</guid>
+      <description>Kolejny film dosyć niesamowitego reżysera, który stoi za takimi filmami jak &#34;21 grams&#34; czy &#34;Amores Peros&#34;. Mowa oczywiście o Alejandro Inarritu. Tym razem film o dźwięcznym tytule &#34;Babel&#34;.
+Jest to obraz pokazujący kilka wątków jednocześnie, wiążący je ze sobą dosyć ściśle. Choć każdy z nich jest tak naprawdę o czymś innym, to mówią wiele w temacie filmu, czyli &#34;if you want to be understood... listen&#34;.
+Co więc może łączyć amerykańskich turystów podróżujących po Maroku z japońską rodziną w środku tragicznych wydarzeń oraz z Meksykaninami przekraczającymi granicę z USA?</description>
+    </item>
+    
+    <item>
+      <title>Blood Diamond</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/blood-diamond/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/blood-diamond/</guid>
+      <description>Żeby filmy o Afryce były w kupie, to dodam jeszcze notkę o najnowszym filmie z Leo. Tym razem jest to zwykła sensacja, tyle że ociera się o realia afrykańskie.
+W tej produkcji zapoznajemy się z okrutnym światem diamentowych &#34;kopalni&#34; działających w Afryce. Mamy tu proceder zdobywania nowych pracowników do takich kopalni, jest też proces tworzenia afrykańskich armi. Muszę przyznać, że te elementy są dosyć spektakularne, i do tej pory tak naprawdę sobie nie zdawałem sprawy z tego jak się to przedstawia.</description>
+    </item>
+    
+    <item>
+      <title>Butterfly Effect 2</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/butterfly-effect-2/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/butterfly-effect-2/</guid>
+      <description>Czasem niezbyt mądrym jest odcinanie kuponów od starych pomysłów. Otóż wzmiankowany film jest prawie o tym samym co część pierwsza, ale jednak gorszy. A różnica w podejściu do tematu jest minimalna. Widać natomiast, że nie za wiele ktoś posiedział nad tym, bo momentami jest idiotyczne i niespójne.
+Ciężko nawet opisać fabułę.. Zaczyna się od tego, że grupka znajomych ma mały piknik za miastem, mnóstwo drobnych zdarzeń podczas niego, wracają do miasta.</description>
+    </item>
+    
+    <item>
+      <title>Capote</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/capote/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/capote/</guid>
+      <description>Kiedy pierwszy raz zobaczyłem plakat dotyczący tego filmu wydał mi się dziwny i pretensjonalny. Stwierdziłem, że nie będę go oglądał, bo i po co niby. Przekonałęm się, że jednak bym chciał go zobaczyć dopiero po jakimś czasie, gdy przeczytałem czego dotyczy, z tyłu książki właśnie. Natomiast samo obejrzenie go od decyzji dzieliło też kilka &#34;chwil&#34;.
+W tym biograficznym filmie możemy poznać postać Trumana Copote, niby że znamienitego pisarza amerykańskiego. A w zasadzie to jest tu tylko o tym, jak pisał swoją najbardziej chyba znaną książkę &#34;</description>
+    </item>
+    
+    <item>
+      <title>Casanova</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/casanova/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/casanova/</guid>
+      <description>Film twórcy bardzo dobrej &#34;Czekolady&#34;, ale nie czuje się w nim aż takiej świeżości jak w tamtej produkcji. Mimo to trzeba przyznać, że opowieść o największym podrywaczu w historii jest bardzo udana, zgrabnie prowadzona i z wyraźnymi postaciami. Podpada pod rodzaj komedii romantycznej, tyle że z akcją umieszczoną w Wenecji. Dzięki temu mamy ładne scenerie tego włoskiego miasta z jego licznymi pięknymi uliczkami, kanałami i wplecionymi w to wszystko gondolami.</description>
+    </item>
+    
+    <item>
+      <title>Chaos</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/chaos/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/chaos/</guid>
+      <description>Myśl przewodnia filmu to wyłanianie się wzorca z chaosu. Widać scenarzysta przeczytał jakiś artykuł popularnonaukowy na ten temat i od razu wymyślił fabułę. Może to i dobrze, miał chłop pomysł. Generalnie chodzi o to, że grupa banydtów napada na banki, rabuje je pomimo alarmów policyjnych i licznych oblężeń owych instytucji. To jak udaje im się wymykać jest właśnie sednem filmu.
+W niezbyt ekscytującej obsadzie mamy Snipes&#39;a, w roli złego, Stetham&#39;a, w roli detektywa, który próbuje przeciwdziałać rabunkom i jeszcze jednego człowieka, który ma nadzorować pracę Stetham&#39;a.</description>
+    </item>
+    
+    <item>
+      <title>Click</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/click/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/click/</guid>
+      <description>Mamy tu do czynienia z komedją opowiadającą historię architekta a zarazem pracocholika. Niby nic dziwnego, poza tym że nagminnie psuje on życie sobie i najbliższej rodzinie. Aż tu nagle dostaje &#34;szansę&#34; od losu - robiąc wypad do supermarketu po pilot uniwersalny do wszystkiego udaje mu się kupić coś ponad to. Jak się okazuje, sam Christopher Walken sprzedaje mu pilot do uniwersum (po angielsku to nawet fajna gra słów :) ).</description>
+    </item>
+    
+    <item>
+      <title>Crank</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/crank/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/crank/</guid>
+      <description>Tragedia!! Gdyby nie piwo, które piłem podczas to nie byłby to film wart uwagi. Brak tam jakiejkolwiek fabuły. Bo obsadzenie w głównej roli Jasona Stethama, który dostał zastrzyk z jakiegoś dziwnego specyfiku powodującego śmierć jeśli tętno spadnie poniżej pewnej granicy nie jest żadną konkretą fabułą. Skłania tylko głównego bohatera do nieustannego szukania okazji do ostrzejszych akcji.
+Muszę przyznać, że czasem był tak głupi, że aż śmieszny. Choć nie potrafię zrozumieć jakim cudem dostał tyle dobrych recenzji i not na serwisach filmowych.</description>
+    </item>
+    
+    <item>
+      <title>Date Movie</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/date-movie/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/date-movie/</guid>
+      <description>Głupi, mało śmieszny film. Mimo beznadziejnego poczucia humoru udało się w tej produkcji zawrzeć tyle obleśnych i obrzydliwych scen, że aż dziw bierze. Zdecydowanie nie polecam. Na film składa się seria parodi innych filmów z dopasowaniem ich do scenariusza. Zero własnej inwencji, a poza tym jak można parodiować komedie?!
+Jedynie pomysł z wykorzystaniem motywu z programu &#34;Pimp my ride&#34; był akceptowalny.
+ Date Movie (2006) Reżyser:  Obsada: Alyson Hannigan, Meera Simhan, Carmen Electra  Comments Sztukateria Wskocz, zajrzyj, napisz.</description>
+    </item>
+    
+    <item>
+      <title>Employee of the Month: 2004 vs 2006</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/employee-of-month-2004-vs-2006/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/employee-of-month-2004-vs-2006/</guid>
+      <description>W dzisiejszym odcinku proponuję małe porównanie. Na warsztat biorę dwa filmy o tym samym tytule, ale z różnych lat. Różnica może nie wydaje się zbyt duża, bo to w końcu tylko dwa lata. Jeden z filmów, o tytule &#34;Employee of the Month&#34; został nakręcony w 2004 roku, natomiast ten drugi, czyli &#34;Employee of the Month&#34; datuje się na 2006. Niby tylko dwa lata, a różnica w treści diametralna.
+Tak więc po koleji.</description>
+    </item>
+    
+    <item>
+      <title>Hable con ella (Talk to her)</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/hable-con-ella-talk-to-her/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/hable-con-ella-talk-to-her/</guid>
+      <description>  </description>
+    </item>
+    
+    <item>
+      <title>Hoodwinked!</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/hoodwinked/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/hoodwinked/</guid>
+      <description>W tym przypadku do czynienia mamy z bajeczką opowiadającą historię Czerwonego Kapturka. Zachodzi przestępstwo - czyli cała sytuacja w domku babci (z wilkiem itp.), zjawia się policja i bada zaistniałą sytuację. Kto co zrobił, jak to zrobił i czy powinien to zrobić. Dosyć niekonwencjonalne podejście do bajek, choć wydaje się lekką kopią Shreka, z przeniesieniem rzeczywistych służb i zachowań (jak właśnie policja) do świata bajek.
+Tak naprawdę nie wiadomo do kogo skierowana jest ta bajeczka.</description>
+    </item>
+    
+    <item>
+      <title>Idiocracy</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/idiocracy/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/idiocracy/</guid>
+      <description>Ludzie! Czytajcie ksiązki, gazety, oglądajcie mądre filmy, myślcie. Bo jak nie to czeka nas to co w tym filmie pokazane :P
+No.. Trochę koloryzuję. Joe miał przeciętną pracę w wojsku, był bibliotekarzem i nic nie robił całymi dniami. Więc wojsko wybrało go do eksperymentu z hibernacją. Kilka rzeczy poszło nie tak i Joe budzi się kilka stuleci później, w świecie idiotów. Jako że jest tam najmądrzejszym człowiekiem to zostaje nawet prezydentem.</description>
+    </item>
+    
+    <item>
+      <title>Infernal Affairs - Mou gaan dou</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/infernal-affairs-mou-gaan-dou/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/infernal-affairs-mou-gaan-dou/</guid>
+      <description>Miód! Poprostu cudowny film. Niby od małego się ogląda wszelkie filmy sensacyjne, o policjantach, o gangach, o czym sobie tylko człowiek nie zamarzy, a i tak nie wie czego się może jeszcze spodziewać. Tytułowy film jest sensacją pełną gębą. Nakręcony przez środowisko z Hong Kongu wybija się ponad inne popularne aktualnie produkcje. A czym się wybija? Otóż świeżością, nietypowym podejściem do tematu i realizacją.
+Film opowiada o walce tamtejszej policji (akcja oczywiście dzieje się w Hong Kongu) z mafią (Triada).</description>
+    </item>
+    
+    <item>
+      <title>Kebab Connection</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/kebab-connection/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/kebab-connection/</guid>
+      <description>Pod tak dziwnym tytułem kryje się komedyjka niemieckiej produkcji, ale o bardzo tureckim zabarwieniu.
+Film prezentuje losy jednego takiego Turka, który chce zostać reżyserem filmowym, czy może kimś innym, ale o tym dalej. Zaczyna od robienia reklam dla sieci kebabów. Same reklamy są zdecydowanie bardzo pomysłowe i warte uwagi :) i zyskują bardzo dużą popularność, a co za tym idzie przyczyniają się do wzrostu popularności owej sieci restauracji. Pojawiają się inni chętni do takich reklam itp.</description>
+    </item>
+    
+    <item>
+      <title>La Leggenda del pianista sull&#39;oceano</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/la-leggenda-del-pianista-sull/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/la-leggenda-del-pianista-sull/</guid>
+      <description>Od dawna chciałem obejrzeć ten film. Przegapiłem jakiś czas temu jego emisję w telewizji. Wydawało się, że już go raczej nie zobaczę, albo będą z tym nie lada problemy. Aż tu pewnego dnia trafiłem na DVD z tym filmem w pewnym sklepie (a co! nie będzie kryptoreklamy) i się skusiłem. Film przeleżał na półce swoje, aż wreszcie trafił do odtwarzacza.
+Tytuł filmu to zarazem imię głównego bohatera, chłopca, który urodził się na statku i nie zszedł z niego do końca życia.</description>
+    </item>
+    
+    <item>
+      <title>Lola rennt</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/lola-rennt/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/lola-rennt/</guid>
+      <description>Co przyciągnęło mnie do tego filmu? Chyba osba reżysera, niejasne skojarzenia i opinia, że w filmie trochę zalatuje fantastyką. Jak dla mnie wystarczyło. I racja, jest tego trochę. Ale jest też trochę innych wartych uwagi rzeczy. Mamy chociażby niezłą obsadę, w postaci Franki Potente i Moritz Bleibtreu.
+Lola to młoda dziewczyna, która jest zakochana w swoim chłopaku, Mannim - złodzieju i tak naprawdę nie wiadomo kim jeszcze. Rzecz w tym, że Manni zgubił 100.</description>
+    </item>
+    
+    <item>
+      <title>Lucky Number Slevin</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/lucky-number-slevin/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/lucky-number-slevin/</guid>
+      <description>Wydawałoby się, że Bruce Willis nie da rady zagrać już pożądnej roli. A jednak mnie zaskoczył. Fakt faktem, że sprawdził się znów na swoim standardowym poletku - sensacja. Niby znany gatunek filmowy, ale ta produkcja całkiem odświeża to pojęcie. Do czynienia mamy z historią pewnego chłopaka, którego żekomo pobito, okradziono i jeszcze wrobiono w jakąś grubszą aferę. Owo &#34;żekomo&#34; jest tutaj bardzo istotne, i tu przestanę ze zdradzaniem szczegółów. Brzmi niewinnie, ale rozkręca się w naprawdę ciekawie pomyślaną historię z morderstwami i różnymi podejrzanymi zbiegami okoliczności.</description>
+    </item>
+    
+    <item>
+      <title>Miami Vice</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/miami-vice/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/miami-vice/</guid>
+      <description>Zasadzałem się na ten film już jakiś czas, aż tu pewnego wieczora się zdobyłem i obejrzałem. Takie ociąganie wynikało trochę z braku czasu, bo sama tematyka jest jak najbardziej atrakcyjna.
+O czym jest film? No cóż... Para policjantów z sekcji narkotykowej próbuje infiltrować mafijny światek Miami. Jest to oczywiście remake, choć to nie jest za dobra nazwa, no bo wcześniej był tylko serial ;) W każdym razie tematyką się zgadza, ale jedynie ogólnie.</description>
+    </item>
+    
+    <item>
+      <title>Mission: Impossible III</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/mission-impossible-iii/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/mission-impossible-iii/</guid>
+      <description>I kolejny raz zaszczycił nas Tom Cruise występująć w roli agenta Ethana Hawka. Niech mu tam będzie. Film da się oglądać, choć fabuła jest tak naprawdę szczątkowa. Mało ciekawa i nastawiona na wyeksponowanie postaci granej przez Toma. Jest oczywiście dużo efektów specjalnych, ale raczej nie rekompensują one braku ciekawej fabułu.
+No to skoro już psioczę na nią, to trochę o samej treści filmu. Ktoś coś kradnie, nie wiadomo co, ucieka i trzeba go złapać.</description>
+    </item>
+    
+    <item>
+      <title>My Super Ex-Girlfriend</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/my-super-ex-girlfriend/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/my-super-ex-girlfriend/</guid>
+      <description>To ptak... nie, to samolot... nie, to super-laska. W mieście X jest sobie lokalna superbohaterka, kobieta obdarzona mocą (lata, silna jest i faceta nie może znaleźć). Tak więc pomaga jego mieszkańcom jak może, aż tu pewnego razu spotyka (wpada na) niezwykłego faceta, który się w niej zakochuje. Ona w nim, wszystko układa się dosyć dobrze, lecz do czasu, bo w pewnym momencie facet ma już kompletnie dosyć jej niebywałego charakteru i zostawia ją.</description>
+    </item>
+    
+    <item>
+      <title>Plac Zbawiciela</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/plac-zbawiciela/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/plac-zbawiciela/</guid>
+      <description> Smutny, ale nie jestem przekonany czy takie filmy to jest to, co powinno się z takim niesamowitym uporem promować.
+Po prostu rzecz o rodzinnej tragedii.
+  Plac Zbawiciela (2006)  Reżyser: Krzysztof Krauze, Joanna Kos-Krauze  Obsada: nie znani mi, więc nie wspominam   </description>
+    </item>
+    
+    <item>
+      <title>Przegląd nowości</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/przegld-nowoci/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/przegld-nowoci/</guid>
+      <description>The Departed Jak już wspominałem w poprzednim wpisie, jest to remake &#34;Infernal Affairs&#34;. Wygląda całkiem przyzwoicie. Wydaje się, że odpowiednie osoby na odpowiednich miejscach (może tylko ten Matt Damon nie). Razi tylko to, że to remake. Chyba jednak nie dorówna oryginałowi, szczególnie jeśli najpierw się go widziało. trailer  Babel Postać reżysera to już duża rekomendacja. Do tego zapowiada się ciekawie, bardzo. Jak zwykle Inarritu o życiu :) trailer  Haven Film reżysera z Kajmanów.</description>
+    </item>
+    
+    <item>
+      <title>sekretna 5-ka</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/sekretna-5-ka/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/sekretna-5-ka/</guid>
+      <description>Jakiś czas temu zostałem wciągnięty do tej zabawy, polegającej na wymienianiu pięciu &#34;sekretów&#34;, o których niby nikt nie wie. Trochę się spuźniłem, bo moda na to już chyba minęła. W każdym razie nadganiam :)
+ oglądałem &#34;Nigdy w życiu&#34;, &#34;Tylko mnie kochaj&#34; i byłem zachwycony. &#34;wlubiam się&#34; w filmy, w których jest drobny, interesujący mnie fragment - konkretniej: bohaterowie jedzący coś w każdej scenie, w której są obecni mój młodzieńczy cykl uwielbień dla aktorek zawierał: Erice Eleniak (&#34;</description>
+    </item>
+    
+    <item>
+      <title>Serenity</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/serenity/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/serenity/</guid>
+      <description>Już dosyć sporo czasu upłynęło odkąd zachwycałem się serialem Firefly. Dziś trochę o jego pełnometrażowej kontynuacji. Film wyszedł spod ręki tego samego człowieka, który zajmował się serialem. Nadal mamy tu kowbojskie podejście do tematu podboju kosmosu. Statki itp są jak najbardziej sci-f&#39;owe, ale juz zachowanie ludzi na planetach to typowy western. Przez analogię można każdą z takich planet przyrównać do miast dzikiego zachodu. Mimo to w filmie jest to troszkę mniej widoczne, serial w tym przodował.</description>
+    </item>
+    
+    <item>
+      <title>Sommer vorm Balkon</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/sommer-vorm-balkon/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/sommer-vorm-balkon/</guid>
+      <description>Film ten obejrzałem na auli wykładowej, z dvd, z rzutnika. Wydawało by się, że warunki świetne. I jasne, tyle że film był po niemiecku, z niemieckimi napisami. Całe szczęście, że dosyć sporo rozumiałem, a w trudniejszych momentach miałem wsparcie.
+Otóż film jest historią dwóch kobiet, samotnych. Jedna z nich wychowuje dziecko. A łączy je to, że są przyjaciółkami, robią na balkonie mieszkania należącego do jednej z nich głupie żarty, i piją sporo alkoholu.</description>
+    </item>
+    
+    <item>
+      <title>Step Up</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/step-up/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/step-up/</guid>
+      <description>I mamy kolejny film o tańcu. Jako że aktualnie na topie są rytmy latino-disco-hip-hop-etc, to tutaj właśnie do takich cudów się fika. No cóż, jeśli muzycznie komuś to nie pasuje, to może sobie chociaż popatrzeć jak tańcują.
+Mamy tu niezbyt znanych aktorów, sporo tańca i wątki poboczne. Wszystko ładnie zmieszane. Dzięki temu dostajemy historyjkę o chopakach z getta. Jeden z nich w ramach odrabiania kary ma sprzątać w szkole pełnej artystów (po angielskiemu jest to School of Art, u nas raczej nic takiego nie ma).</description>
+    </item>
+    
+    <item>
+      <title>The Break-Up</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/break-up/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/break-up/</guid>
+      <description>Czekałem na ten film już dłuższy czas. Nie miałem gdzie i kiedy go obejrzeć, aż tu wreszcie przyszła ta chwila. Może trochę za bardzo czekałem, a może za dużo się spodziewałem po tym duecie, ale jakoś tak nie powalił mnie ten film na kolana.
+Po krótce o czym to jest. No więc Gary i Brooke są parą. Poznali się w dosyć nietypowych okolicznościach. Gary to Polak (tak BTW ;-) ), który ma gadane więc prowadzi firmę wycieczkową - organizują wycieczki po Nowym Jorku.</description>
+    </item>
+    
+    <item>
+      <title>The Constant Gardener</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/constant-gardener/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/constant-gardener/</guid>
+      <description>Co zobaczymy w tym filmie poza piękną Rachel Weisz? No cóż, całkiem sporo. Świetnej akcji, jaką oferuje ta produkcja, toważyszą świetne zdjęcia. No ale po koleji.
+Pewien dyplomata rezydujący w Kenii, i z zamiłowania ogrodnik, traci żonę. A dokładniej, zostaje ona zamordowana. Jako że była dziennikarką, a jej zwłoki znaleziono wraz z trupem jej współpracownika, nie daje wiary oficjalnej wersji (kochankowie) i dochodzi do wniosku, że morderstwo miało związek z jej pracą.</description>
+    </item>
+    
+    <item>
+      <title>The Da Vinci Code</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/da-vinci-code/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/da-vinci-code/</guid>
+      <description>Filmu tego raczej przedstawiać specjalnie nie trzeba. No ale jakby komuś był on nieznany, to niech wie, że to obraz nakręcony na podstawie książki Dana Browna, pod tym samym tytułem. Film miał zniszczyć pozycję kościoła katolickiego, sprowadzić ludzi z drogi wiary, szatan miał rządzić światem, masoni powrócić do łask, itp. Nic z tego się nie sprawdziło i cała propaganda kościoła tak usilnie upubliczniana przed ukazaniem się filmu albo nie była potrzebna, albo spełniła swoje zadanie :) Jak kto woli.</description>
+    </item>
+    
+    <item>
+      <title>The Departed</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/departed/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/departed/</guid>
+      <description>Film ten to remake &#34;Infernal Affairs&#34;, z Hong Kongu. Moją opinię na temat tego filmu można sobie przeczytać gdzieś wcześniej na tym blogu. No ale Amerykanie postanowili zrobić swoją wersję tego filmu. Niestety niezbyt się to udało, choć po trailerach zapowiadało się całkiem całkiem. A tymczasem co wyszło z tego przedsięwzięcia? Nie za wiele.
+Fabuła jest kalką z oryginału, choć niektóre wątki są bardziej rozbudowane. Z grubsza chodzi o pojedynek pomiędzy dwoma kretami, jeden to kret irlandzkiej mafii w policji, a drugi to policjant w mafii.</description>
+    </item>
+    
+    <item>
+      <title>The Devil Wears Prada</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/devil-wears-prada/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/devil-wears-prada/</guid>
+      <description>Ekranizacja kultowej (?!) książki dla kobiet. Film też niby dla kobiet jedynie. A tu proszę, obejrzałem i mi się bardzo spodobał :P Fabuła filmy kręci się wokół magazynu Vogue (w filmie to akurat jakaś inna nazwa, ale idea ta sama) oraz nowej dziewczyny, która tam zaczyna pracować. Na początku nie poddaje się panującemu tam uwielbieniu dla bycia glamour, ale później jednak tonie w tym całkowicie. Bo przyznać trzeba, że rzecz wygląda na nie do przeskoczenia mając taką szefową jak Meryl Streep.</description>
+    </item>
+    
+    <item>
+      <title>The Hills Have Eyes</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/hills-have-eyes/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/hills-have-eyes/</guid>
+      <description>Argh!! Kolejny remake, ileż można!
+Rodzinka wyrusza sobie na wakacje samochodem z przyczepą. Jadą do słonecznej Kalifornii przecinając równie słoneczną pustynię. Przypadkiem skręcają z właściwej drogi szukajac skrótu, co okazuje się niezyt trafionym pomysłem. Okazuje się, że na pustyni żyją ludzie, nie do końca normalni, którzy zaczynają na nich polować. W trakcie filmu okazuje się, że owi ludzie to dzieci z mutacjami popromiennymi, gdyż na owej pustyni rząd przeprowadzał próby nuklearne.</description>
+    </item>
+    
+    <item>
+      <title>The Illusionist</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/illusionist/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/illusionist/</guid>
+      <description>Wreszcie, po dosyć długiej przerwie pojawił się kolejny film z Edwardem Nortonem w roli głównej. Tym razem zagrał on iluzjonistę, a akcja całej historii ma miejsce w Wiedniu. Czas akcji, to bodajże XIX wiek. Fajnie pokazane miasto robi wrażenie, choć tu od razu przyczepię się do tego, że tak naprawdę pokazano tylko drobne wycinki. Zabrakło jakiejś sceny z rozmachem, do pokazania architektury.
+No ale wracając do akcji filmu, jest ona ciekawa, ale nie wprowadza specjalnych nowości.</description>
+    </item>
+    
+    <item>
+      <title>The Libertine</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/libertine/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/libertine/</guid>
+      <description>Dziś na warsztacie biograficzny film o lordzie Rochester, niejakim Johnie Wilmot&#39;ie. Widać z samego tytułu, że osobnik powinien być rozpustnikiem jakich mało. I tak też mamy w filmie pokazane. W roli lorda mamy Johnny&#39;ego, który sprawuje się wyśmienicie w lokowanej peruce i stroju z epoki. Jak przystało na rozpustnika bardzo dużo miesza, obraża i uwodzi. Jako że zna króla, to dużo rzeczy uchodzi mu na sucho, jednakże nie zawsze i tylko do pewnego momentu - nie będę wyjawiał co i jak, bo jest w miarę to zabawne.</description>
+    </item>
+    
+    <item>
+      <title>The Prestige</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/prestige/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/prestige/</guid>
+      <description>Every great magic trick consists of three acts. The first act is called  &#34;The Pledge&#34;; The magician shows you something ordinary, but of course... it probably isn&#39;t.  The second act is called &#34;The Turn&#34;; The magician makes his ordinary some thing do something extraordinary.  Now if you&#39;re looking for the secret... you won&#39;t find it, that&#39;s why there&#39;s a third act called, &#34;The Prestige&#34;; this is the part with the twists and turns, where lives hang in the balance, and you see something shocking you&#39;ve never seen before.</description>
+    </item>
+    
+    <item>
+      <title>The Sentinel</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/sentinel/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/sentinel/</guid>
+      <description>Tym razem od reżysera filmu &#34;S.W.A.T.&#34;, który nie błysnął, dostajemy sensację na temat zamachu na prezydenta. Akcja filmu jak najbardziej na czasie, jeśli chodzi o wredne czarne charaktery, które mają się tego czynu podjąć. Otóż stoją za tym byli agenci KGB o pochodzeniu arabskim. Tak więc jak zwykle - terroryzm. Całe szczęście czujny Douglas, który gra tu ochroniarza w otoczeniu prezydenta, trafia na ślad spisku.
+Nie jest zbyt ambitnie, ale nie jest też zbyt głupio i naiwnie.</description>
+    </item>
+    
+    <item>
+      <title>The World&#39;s Fastest Indian</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/world-fastest-indian/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/world-fastest-indian/</guid>
+      <description>Wydawało się, że będzie to nudny film. Zacząłem go oglądać jedynie ze względu na Hopkinsa. Okazało się, że to świetny film, można powiedzieć nawet że film drogi. Bardzo fajna rola Anthonego Hopkinsa, który wciela się w postać miłośnika motocykli, który na swoim ukochanym Indianie próbuje jechać jak najszybciej się da. A wszystko to na końcu świata, w Nowej Zelandii. Jego mażeniem jest wybrać się do Bonnevile w USA, aby przetestować tam osiągi swego motocykla.</description>
+    </item>
+    
+    <item>
+      <title>Tomcats</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/tomcats/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/tomcats/</guid>
+      <description> Film ten opowiada o grupce kumpli, którzy są sporymi kobieciarzami, a do tego na pierwszym weselu członka paczki ustalają pewną zasadę: zakładają fundusz, na który będą wpłacać kasę. Ostatni kawaler spośród nich, dostaje całą sumę uzbieraną do tego czasu.
+Głupie, naiwne i obleśne. Stanowczo odradzam, bo to strata czasu.
+  Tomcats (2001)  Reżyser: Gregory Poirier  Obsada: Jerry O&#39;Connell, Shannon Elizabeth, Jake Busey   </description>
+    </item>
+    
+    <item>
+      <title>Ultraviolet</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/ultraviolet/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/ultraviolet/</guid>
+      <description>Milla Jovovich nie zagra już pewnie żadnej zwykłej, w miarę dobrej roli. Od czasu gdy najęła się do filmu Resident Evil spotkać ją można już tylko w takich dziwnych produkcjach. I o ile Resident Evil było nawet nawet, to Ultraviolet jest koszmarnie słaby.
+Jeśli kogoś ciekawi fabuła filmu, to jest sobie świat przyszłości, pogrążony w walce pomiędzy wampirami (hemofagi, czyli nie kto inny jak żywiące się krwią potworki), a ludźmi.</description>
+    </item>
+    
+    <item>
+      <title>United 93</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/united-93/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/united-93/</guid>
+      <description>Dosyć głośno było o tym filmie jeszcze jakiś czas temu. A wszystko to z powodu treści jakich dotyczy. Otóż jest to historia jednego z samolotów porwanych 11 września 2001, w dniu zamachów na na WTC. Historia jak najbardziej wymyślona, i bazująca jedynie na faktach, bo tak naprawdę nikt nie wie co się wydarzyło na pokładzie tego samolotu.
+Dodatkowo, w samym filmie wydarzeń z samego pokładu samolotu jest stosunkowo niewiel. Jest trochę restrospekcji na temat terrorystów.</description>
+    </item>
+    
+    <item>
+      <title>V for Vendetta</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/v-for-vendetta/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/v-for-vendetta/</guid>
+      <description> Szacun...
+   V for Vendetta (2006)  Reżyser: James McTeigue  Obsada: Natalie Portman, John Hurt   </description>
+    </item>
+    
+    <item>
+      <title>Volver</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/volver/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/volver/</guid>
+      <description>  </description>
+    </item>
+    
+    <item>
+      <title>X-Men: The Last Stand</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/x-men-last-stand/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/x-men-last-stand/</guid>
+      <description>Oto kolejna odsłona sagi o mutantach. Bo to już jednak saga. Film oczywiście oparty w jakimś tam stopniu na komiksie. Wszystko jest pięknie, fabuła się kręci, pojawia się mutant, który potrafi zatrzymywać mutację innych, w ten sposób, że przestają działać ich moce i stają się zwykłymi ludźmi. Wszechmocny rząd robi ekstrakt z tego mutanta i szczepionka dla mutantów gotowa. Jednak nie wszyscy są z tego faktu zadowoleni, na pewno nie mutanci.</description>
+    </item>
+    
+    <item>
+      <title>You, Me and Dupree</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/you-me-and-dupree/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/you-me-and-dupree/</guid>
+      <description>I znów komedyjka! Tym razem pomimo słabego Owena Wilsona dostajemy jeszcze duet Matt Dillon i Kate Hudson, którzy sprawóją się wspaniale. Stanowią esencję tego filmu.
+Film opowiada o parze, świeżo po ślubie, są młodzi, piękni i odnoszą sukcesy. Carl, grany przez Matta Dillona, ma przyjaciela, właśnie Owena Wilsona - tytułowego Dupree, który przypadkiem stracił pracę. W swej dobroduszności postanawia przyjąć go na trochę do swojego domu. I tu zaczynają się kłopoty, i to jest oś całego filmu.</description>
+    </item>
+    
+    <item>
+      <title>Zivot je cudo</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/zivot-je-cudo/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/zivot-je-cudo/</guid>
+      <description>Wspaniały film w reżyserii Kusturicy. Opowieść o wojnie na Bałkanach w dosyć niezwykłym stylu. Z racji tego, że jest to długa opowieść, jakieś 2 godzinki z kawałkiem, można tu wyróżnić kilka części. Zacznę może od pierwszej, która jest wprowadzeniem do całej historii. Daje bardzo ładny obraz społeczności małej wioski w górach, przy granicy Bośni i Serbii (tak mi się wydaje - ani z geografii mocny nie byłem, ani nie pamiętam z filmu dokładni).</description>
+    </item>
+    
+    <item>
+      <title>Zmiany idą</title>
+      <link>http://marcin.cylke.com.pl/2007/11/08/zmiany-id/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/08/zmiany-id/</guid>
+      <description> Jak narazie nowy wygląd, ale to jeden z domyślnych na jogger.pl :) Mam nadzieję, że niebawem znajdę czas na więcej modyfikacji. Stay tuned.
+ </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/pierwszy-wpis-na-moim-joggu-nie/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/pierwszy-wpis-na-moim-joggu-nie/</guid>
+      <description> Pierwszy wpis na moim joggu :) Nie znajdziesz tutaj wynurzeń na temat tego, co jadłem na śniadanie, ani tym podobnych.. Ale bedziesz mógł poczytać moje &#34;obiektywne&#34; opinie na temat ostatnio oglądanych filmów. Będzie dużo jadu ;-P
+Oraz oczywiście dużo filmów -- tyle, ile może ogladać student mieszkający w akademiku z zasobną w filmidła siecią akademikca
+ </description>
+    </item>
+    
+    <item>
+      <title>Anacondas: The hunt for the blood orchid</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/anacondas-hunt-for-blood-orchid/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/anacondas-hunt-for-blood-orchid/</guid>
+      <description>Buahhhahaha :-D No nie moge, co za film. Poprostu żenada. Kilka dużych anakond siedzi sobie w środku dżungli i robi sobie orgie... Ech, głupia akcja, tendencyjni bohaterowie.
+No ale czego chcieć od następcy pierwszego filmu o anakondzie. Mamy tu kupe zabawnych gagów. Możliwe że nie zostały pomyślane jako takowe przez reżyserów.  Uśmiałem się jak głupi. Super rozrywka przed śniadaniem. Albo w trakcie... I do tego te wielkie, głupie anakondy.</description>
+    </item>
+    
+    <item>
+      <title>Battlestar Galactica (season 2)</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/battlestar-galactica-season-2/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/battlestar-galactica-season-2/</guid>
+      <description>Początek miał ten serial wiele lat temu w USA. Nie wiem, czy dotarł do Polski i zdobył większą popularność. Ja usłyszałem o nim dopiero przy okazji nowej realizacji tego pomysłu. Właśnie kończę oglądać drugi sezon. I o ile przy pierwszym jakoś specjalnie nie było czym się podniecać, o tyle teraz naprawdę jest co obejrzeć.
+Wreszcie fabuła zrobiła się ciekawa i wciągająca. Nadal oczywiście mamy pozostałości ludzkości uciekające przed rasą robotów.</description>
+    </item>
+    
+    <item>
+      <title>Broken Flowers</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/broken-flowers/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/broken-flowers/</guid>
+      <description>W tym filmie mamy Billa Murraya, któremu jakaś zeszła miłość podsyła informację, że ma z nią syna. Nie podpisuje się oczywiście na liście, więc, jak to się mawia - szukaj wiatru w polu. Całe szczęście, Bill ma przyjaciela, którego hobby jest pisanie opowiadań detektywistycznych. I on to właśnie namawia Billa, aby ten poszukał tej kobiety i ją odwiedził. Bill wysila szare komórki i tworzy listę byłych ukochanych. Na podstawie tej listy kumpel-detektyw dopasowywuje adresy, i Bill może ruszyć w podróż po kraju.</description>
+    </item>
+    
+    <item>
+      <title>Brunet wieczorową porą</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/brunet-wieczorow-por/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/brunet-wieczorow-por/</guid>
+      <description> No i jednak wreszcie obejrzałem. Co prawda nie jest to najlepszy film Bareji, ale ma wiele cech filmów tego reżysera. Zważywszy na to, że już wczesniej słyszałem troche tekstów z tego filmu, to nie da się powiedzieć nic więcej niż:
+ -- Danka jaka jest taka jest, ale tolerancyjna jest! -- Noooo.. tolerancyjna jest Świetny humor i mnóstwo dobrych sytuacji, a do tego niezła obsada. W sumie to tylko dla maniaków ;-P  </description>
+    </item>
+    
+    <item>
+      <title>Catch me if you can</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/catch-me-if-you-can/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/catch-me-if-you-can/</guid>
+      <description>  Długo zwklekałem zanim obejrzałem ten film. Cóż, muszę przyznać, że jak nie lubie Hanksa i Leo, którzy to grają pierwsze skrzypce w tym filmie, tak film całkiem przypadł mi do gustu. Bardzo dobry scenariusz -- oczywiście, na faktach autentycznych. Dziw bierze jacy ludzie chodzą po świecie.
+ </description>
+    </item>
+    
+    <item>
+      <title>Charlie and the Chocolate Factory</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/charlie-and-chocolate-factory/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/charlie-and-chocolate-factory/</guid>
+      <description>Niesamowity, baśniowy, przepiękny. Nowa adaptacja książki Dahl&#39;a zachwyca. Jest świetna. Przepięknie nakręcona baśń opowiadająca o magicznej fabryce czekolady, której nikt od wielu lat nie odwiedzał. Właścicielem tajemniczej fabryki jest Willie Wonka (grany przez Jonhny&#39;ego Depp&#39;a) - całkiem socjopatyczna osobowość.
+Film jest śmieszny, zabawny, kolorowy. Niby jest dla dzieci. W końcu w kinach przeważa wersja z dubbingiem. Tyle że na sali kinowej nie było żadnego (!) dziecka.
+Podczas oglądania filmu należy spożywać czekoladę.</description>
+    </item>
+    
+    <item>
+      <title>Code 46</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/code-46/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/code-46/</guid>
+      <description>Zaprezenotwane zostaje nam spoleczenstwo przyszlosci, w ktorym jest sporo udziwnien w stosunku do tego co znamy dzis. Glowna cecha tego swiata to powszechne stosowanie klonowania. A wprowadzenie tego elementu do zycia codziennego powoduje niebezpiecznstwo wystapienia zwiazku pomiedzy osobami o podobnych (albo nawet takich samych) zestawach genow. Skoro prowadzi to do powiklan, na strazy tego stoi wlasnie Kodeks 46 - zwykly przepis. I jest to zdecydowanie fajny element fabuly. Pomyslano o tym skutku klonowania, za co chwala tworcom filmu.</description>
+    </item>
+    
+    <item>
+      <title>Collateral</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/collateral/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/collateral/</guid>
+      <description>Jaki dobry film. A już myślałem, że z Tomem Cruisem nic ciekawego nie obejrze. Wykazał się, nie ma co. Gra zimnego płatnego morderce.
+Wszystko rozgrywa się w mrocznej scenerii amerykańskiej metropolii. Klimatem przypomina to 25th Hour, z Nortonem (też wyśmienity film, żeby nie było :-D). Jest dużo akcji. Momentami dużo sztampowych scenek. Ogólnie mogłoby być lepiej, no ale wtedy trzebaby zmienić cały film. I tak wyszło dużo lepiej niż myślałem</description>
+    </item>
+    
+    <item>
+      <title>Corpse Bride</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/corpse-bride/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/corpse-bride/</guid>
+      <description>Wiktor i Wiktoria maja sie pobrac, z polecenia rodzicow. Malzenstwo to w konc u zbyt powazna sprawa, by zostawiac decyzje o nim mlodym. Chodzi o kase. Co ciek awe, mlodzi po wstepnym zapoznaniu sie przypadaja sobie do gustu, i zakochuja w sobie. Wszystko pieknie ladnie, tylko ze Wiktor przez przypadek oswiadcza sie in nej &#34;pannie mlodej&#34; - od jakiegos czasu juz martwej.
+Co dalej? Naprawde warto obejrzec. Bo jest to niestandardowa animacja.</description>
+    </item>
+    
+    <item>
+      <title>Crouching Tiger, Hidden Dragon</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/crouching-tiger-hidden-dragon/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/crouching-tiger-hidden-dragon/</guid>
+      <description>Ten film zapoczatkowal ekspansje wschodnich &#34;basni&#34; na swiecie. Po tym filmie dopiero popularnosc zdobyly takie produkcje jak &#34;Hero&#34;. I wydaje mi sie, ze bez tego nic by sie nie wydazylo.
+Mamy tu opowiedziana z pozoru prosta historie o zagubionym mieczu, milosci, zlodziejce i wojownikach. W tej swojej prostocie jest wlasnie urok tego filmu. Wiele przepieknych walk mieczami. Te wszelkie kocie ruchy, skoki itp. Cala esencja wschodnich sztuk walki plus dodatkowe bajery, zeby wszystko wygladalo prawie jak sceny z anime.</description>
+    </item>
+    
+    <item>
+      <title>czyżby reaktywacja?</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/czyby-reaktywacja/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/czyby-reaktywacja/</guid>
+      <description> Coś znów mnie wzięło na pisanie tutaj, więc może niebawem pokażą się kolejne wpisy ;) </description>
+    </item>
+    
+    <item>
+      <title>Dawn of the Dead</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/dawn-of-dead/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/dawn-of-dead/</guid>
+      <description>Obejrzane. I bez gadania, że kiczowate czy jakieś. Całkiem dobre oglądadło. Wiadomo, że schematyczne. Ja jednak lubie takie horrory :) Sam film jest przewidywalny co do akcji, ale zaskoczyło mnie kilka fajnych (śmiesznych) rozwiązań, których parają się bohaterowie. Jest też wiele akcentów śmiesznych. Szczególnie w środku filmu, gdy cała grupa ludzi zamknietych w ogromnym centrum handlowym wymyśla sobie różne zabawy.
+ Bardzo zaskoczyło mnie również ciekawie pomyślane zakończenie. I przynajmniej nie było kitu na temat szans przetrwania takiej katastrofy.</description>
+    </item>
+    
+    <item>
+      <title>Don Juan DeMarco</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/don-juan-demarco/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/don-juan-demarco/</guid>
+      <description> Bardzo dobry film. Johny Depp i Marlon Brando, jeden w roli pacjenta szpitala psychiatrycznego, drugi w roli jego lekarza. Zgrabna romantyczna historyjka o czlowieku uważającym się za Don Juan&#39;a. Dobre kino. Zawiera dużo fajnych żartów i wartościowe wnioski ;)
+  </description>
+    </item>
+    
+    <item>
+      <title>Don&#39;t come knocking</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/don-come-knocking/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/don-come-knocking/</guid>
+      <description>Tak sie sklada, ze w kinie na tym filmie znalazlem sie dosyc niespodziewanie. Bez zadnych specjalnych planow, zeby na niego isc. Wczesniej nawet pomyslalem, ze moglbym sie tym zainteresowac, ale kto by sie spodziewal, ze tak przypadnie mi film do gustu.
+Nie ma tu strzelanin, sensacyjnych pogoni. Jest za to prosta historia tracacego popularnosc aktora. Film jest prosty, mowi o podstawowych uczuciach, i robi to bardzo fajnie. A uczucia owe, to chec odnalezienia dziecka, o istnieniu ktorego aktor ow nie mial pojecia - doroslego dziecka, jego dziecka.</description>
+    </item>
+    
+    <item>
+      <title>Eternal sunshine of a spotless mind</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/eternal-sunshine-of-spotless-mind/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/eternal-sunshine-of-spotless-mind/</guid>
+      <description>Niesamowicie dobry film wręcz. Świetna historia, świetnie opowiedziana. Z bardzo fajnymi zwrotami akcji... Polecam
+Nie myślałem, że mi się to spodoba. Trailer był dosyć średni, no ale całość jest poprostu wyśmienita. To chyba jedyna rola, w której Kate Hudson pasuje -- oraz wygląda ładnie.
+Do tego jeszcze tylko niech ktoś mi zasugeruje tłumaczenie tytułu -- bo to co zrobili tłumacze nie nadaje się do niczego. Wiadomo -- stała tendencja wśród tłumaczeń filmowych, najpierw obejrzeć film, a potem go nazwać.</description>
+    </item>
+    
+    <item>
+      <title>Eurotrip</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/eurotrip/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/eurotrip/</guid>
+      <description>Głupie, głupie, głupie -- i to strasznie. Nie jest to kontynuacja filmu &#34;Road Trip&#34;, ale w sumie o treści baaardzo podobnej. Zmienia się tylko poziom żartów. Oczywiście jest kilka fajnych. Ale jest też całe mnóstwo głupich i nieśmiesznych.
+Pewnie przepuściłbym temu filmowi, gdyby nie to jak pokazano amerykanow Europe. Zachód Europy jest jeszcze ok. No ale jakie zdanie wyrobią sobie ci biedni amerykanie o krajach europy środkowej, które pokazano w filmie jako zupełnie zrujnowane, zacofane i generalnie dzikie obszary.</description>
+    </item>
+    
+    <item>
+      <title>Fantastic Four</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/fantastic-four/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/fantastic-four/</guid>
+      <description>Wbrew dosyc popularnej i co by nie mowic, slusznej opinii, ze amerykanskie filmy o superbohaterach sa glupie i nie ma sensu ich ogladac, ten sie troche ponad to wybija. Nie jest tak strasznie glupkowaty. Jest momentami smieszny. A do tego prezentuje postacie, ktore nie sa u nas specjalnie dobrze znane, ale jednak troche ludzi je rozpoznaje.
+Problemem tego filmu, jak i innych podobnych mu, jest mialkosc. Tu nie chodzi o zbyt wiele.</description>
+    </item>
+    
+    <item>
+      <title>Farscape: The Peacekeeper Wars</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/farscape-peacekeeper-wars/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/farscape-peacekeeper-wars/</guid>
+      <description>Cóż ja mogę napisać o Farscape? No... ten film akurat to kontynuacja serialu -- podejmuje akcje w momencie gdzie kończy się czwarty sezon. Sporo akcji, sporo mędrkowania na jakieś tematy, fajna fabuła.
+Tu mógłbym posypać pewnymi spoilerami... w sumie to czemu nie ;-P Cryton dowiaduje się, że cała rasa Peacekeeperów to tak naprawde jakies odgałęzienie ludzi. Cryton i Aeryn biorą ślub oraz rodzi im sie dziecko.. Przy okazji świetnie określa siebie Aeryn -- jako &#34;</description>
+    </item>
+    
+    <item>
+      <title>FireFly</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/firefly/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/firefly/</guid>
+      <description>Zdaje się mi, że na początku ustaliłem sobie cel: nie pisać o serialach. Teraz właśnie zmieniam zdanie. Czemuby nie wspominać o dobrych serialach. Streszczeń poszczególnych odcinków na pewno nie będzie :P To już by była przesada.
+Serial SF, w sumie głównie takie oglądam. Całkiem dobry. Opowieść o grupie ludzi z różnymi perypetiami życiowymi, podróżujących po galaktyce i sprzeciwiających się Sojuszowi. Nie, nie jest aż tak beznadziejnie :) To taki western, z całkiem wyraźnymi wskazaniami właśnie, w stylistyce podruży międzygwiezdnych.</description>
+    </item>
+    
+    <item>
+      <title>Football Factory</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/football-factory/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/football-factory/</guid>
+      <description>Widziałeś Human Traffic? Tutaj jest mniej więcej o tym samym, tyle że narkotyki zastąpiła piłka nożna. Film angielski, więc i o tamtejszych kibicach. Bardzo dobry. Świetny montaż (specem nie jestem, ale poprostu fajnie wygląda ;-) ) i nieźle nakręcony film. W filmie występują aktorzy, którzy są obecni w połowie angielskich filmów. Może i aktorów na wyspach brakuje, mi to w każdym razie nie przeszkadza.
+ Wbrew pozorom film ma całkiem dobre i wyraźne przesłanie.</description>
+    </item>
+    
+    <item>
+      <title>Ghost in the Shell 2: Innocence</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/ghost-in-shell-2-innocence/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/ghost-in-shell-2-innocence/</guid>
+      <description> Świetny film (anime ;-) ). Trochę za dużo komputerowej animacji jak dla mnie, ale to przeboleje. Za to rekompensuje ciekawa akcja oraz jak zwykle cała Sekcja 9 (razem z Major!!!). Jest wiele cytatów z filozofów różnych, to tak, jakby ktoś się chciał pozastanawiać nad sensem człowieczeństwa, czy innymi podobnymi. W każdym razie nie jest to obowiązkowe. Można się równie dobrze bawić poprostu chłonąc akcje. Trzyma poziom :)
+ </description>
+    </item>
+    
+    <item>
+      <title>Green Street Hooligans</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/green-street-hooligans/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/green-street-hooligans/</guid>
+      <description>Tematyka jest dosyc jasna. Mozna sie zorientowac z tytulu. Chodzi zwyczajnie o opowiedzenie historyjki o kibicach pilkarskich. W zasadzie to bardziej chodzi o huliganow, ale to juz tylko kwestia podejscia. Rzecz dzieje sie w Zjednoczonym Krolestwie, gdzie po wyrzuceniu z Harvardu przybywa Elijah Woods.
+Bedac calkiem slabym aktorem, daje jakos rade wkrecic sie w swiatek kibicow. Zaczyna mu sie nawet podobac bycie bitym - no i oczywiscie bicie innych. Wyzwala to w nim agresje, pierwotne instynkty oraz ble, ble, ble.</description>
+    </item>
+    
+    <item>
+      <title>Hellboy</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/hellboy/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/hellboy/</guid>
+      <description>Okazało się, że początek semestru udał sie :) Wczoraj, zaraz po tym jak sie zwiozłem do akademika dowiedziałem się, że wpadają znajome. Zapowiadało sie niewinnie, a impreza ostatecznie skończyła się o 3 nad ranem. A po jej zakończeniu nastąpiła projekcja Hellboy&#39;a.
+Cóż, to może drobne oszustwo, bo film widziałem już wcześniej, i nie będzie to pierwsze wrażenie. Ale co tam, zasługuje on na wspomnienie.
+Film wyśmienity jest. Trzyma klimat -- jeśli ktoś czytał komiks, to od razu załapie o co chodzi.</description>
+    </item>
+    
+    <item>
+      <title>Intacto</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/intacto/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/intacto/</guid>
+      <description>Przypadkowy film, z przypadkowej półki o przypadkowej godzinie. Od tak. Wszedłem do wypożyczalni i wziąłem dvd.
+I okazało się, że bardzo dobrze zrobiłem, bo film wart jest uwagi. Nieprzeciętna fabuła. Lekko zakręcona, ale bez przegięc w stylu Lyncha. Treścią są zakłady (o różne rzeczy z niebezpiecznymi ludzmi). Treścią są ludzie, którzy są w tym dobrzy. Generalnie -- szczęściarze.
+Polecam -- więcej z fabuły nie zdradzę, a do reszty to się nie ma co czepiać.</description>
+    </item>
+    
+    <item>
+      <title>Komornik</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/komornik/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/komornik/</guid>
+      <description>Historia opowiedziana w tym filmie to historia odnoszacego sukcesy w malym miescie komornika. Jest twardy, bezwzgledny i ma swietne wyniki w zajmowaniu czyjejs wlasnosci. Zadnych wyrzutow sumienia, czysta zabawa i zadowolenie z siebie.
+Swietny dramat. Swietna rola Andrzeja Chyry w roli komornika. Film potrafi przemowic nawet do mnie. Bo co by o nim nie mowic, to pokazuje przemiane wewnetrzna wlasnie owego komornika, ktory po jednym takim kiepskim dniu, podczas ktorego nic mu sie nie udaje, zaczyna byc zupelnie innym czlowiekiem.</description>
+    </item>
+    
+    <item>
+      <title>Lord of War</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/lord-of-war/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/lord-of-war/</guid>
+      <description>&#34;The first and most important rule of gun-running is: never get shot with your own merchandise.&#34; Mamy to opowiesc (niby na faktach) o handlarzu bronia. Przyjechal z Ukrainy, zaczynal wraz z rodzina od malej restauracji w New York City. W ktoryms momencie stwierdzil, ze chce wiecej. Sprzedal swe pierwsze uzi i wszedl do interesu. Potem bylo juz tylko lepiej.
+Sprzedawal bron wszystkim, nie przejmowal sie niczym. Mial kobiete, ktora kochal i dziecko z nia.</description>
+    </item>
+    
+    <item>
+      <title>Lost (season 1)</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/lost-season-1/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/lost-season-1/</guid>
+      <description>I kolejny serial. Jak narazie wyświetlono jeden sezon. Oczywiście nie w Polsce. Samolot rozbija sie na bezludnej wyspie. Przeżywa grupka ludzi. Kto przeżył? Czemu przeżył? Co się z nimi stanie? O tym wszystkim jest właśnie serial. Polecam. Za dużo nie mogę napisać o fabule, bo to zwykły, i to bardzo duży do tego, spoiler by był. Dobra obsada, wyraziste postacie, ładne scenografie. No i wisząca w powietrzu tajemnica. I na zachęte kadr z serialu:</description>
+    </item>
+    
+    <item>
+      <title>Madagascar</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/madagascar/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/madagascar/</guid>
+      <description>Dlugo sie wstrzymywalem przed obejrzeniem tej animacji. Stwierdzilem juz jakis czas temu, ze mam dosyc tych animowanych w 3d gowien. Do tej pory ogladalem wszelkie duze produkcje - jak lecialo. Teraz juz koniec. Mam nadzieje, ze definitywnie. Po obejrzeniu tej produkcji mam juz kompletnie dosyc.
+Od pewnego czasu kazda z tych bajek wyglada tak samo. I naprawde malo mnie interesuje, ze wlosy na glowie lwa sa robione super nowoczesna technika Polerowania Talerzy (TM).</description>
+    </item>
+    
+    <item>
+      <title>Magnolia</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/magnolia/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/magnolia/</guid>
+      <description>Film ma juz te kilka lat, ale sie nie zestarzal zbytnio. I nadal jest wspanialy tak jak kiedys. Czasem dziwi mnie jak mozna zrobic wlasnie taki film. Tak swietny.
+Opowiada on o zyciu kilku osob, ktorych losy w pewnym momencie lacza sie. Nie wszystkich razem, ale wyraznie widac ten lancuch polaczen. Widac ich rozterki i radosci, oraz ich sukcesy i porazki. A wszystko to przyprawione jest odrobina absurdu, niezwyklosci i pewna doza prawdopodobienstwa.</description>
+    </item>
+    
+    <item>
+      <title>Memoirs of Geisha</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/memoirs-of-geisha/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/memoirs-of-geisha/</guid>
+      <description>I mamy oto kolejny film o Japonii. Zdawałoby się, że ot taki, zwykły, z grupy tych, do których zdążyliśmy się już przyzwyczaić - niezwykłe akrobacje, spowolnienia, walki w powietrzu. Ogólnie dużo walki.. Otóż nie, tym razem jest zupełnie inaczej. Tym razem mamy film o znacząco innym nastawieni.
+Film ten jest historią małej dziewczynki, która zostaje sprzedana z domu przez własnych rodziców, do jakby się zdawało lepszego świata. W Japonii znaczy to tyle, że sprzedano ją, aby została gejszą.</description>
+    </item>
+    
+    <item>
+      <title>Nemesis Game</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/nemesis-game/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/nemesis-game/</guid>
+      <description>Znalazlem ten film dosyc przypadkowo. Zaciekawil mnie tytul. Dopiero po jakims czasie sprawdzilem co to jest na imDB. Wygladalo tak sobie Wreszcie zabralem sie za ogladanie. A wtedy to juz stwierdzilem, ze naprawde warto sie temu blizej przyjrzec. Film opowiada o kobiecie i mezczyznie (mozna ich raczej uznac za glownych bohaterow), ktorzy zabawiaja sie dosyc wyszukiwanymi zagadkami. Tworza dla siebie cykle zagadek, jedna prowadzi do nastepnej. Calosc traktuja jak gre.</description>
+    </item>
+    
+    <item>
+      <title>Nicotina</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/nicotina/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/nicotina/</guid>
+      <description>I wreszcie trochę wolnego czasu na obejrzenie filmu :-)  Akurat padlo na ten film. I dobrze się stało, że taki zbieg okoliczności nastąpił. Z relacji wszelkich ludzi miałem dziwne wrażenie, że to jakis dramat, czy inny dołujący film. A tu nie! Dupa Jasio! Świetna komedia pomyłek -- wyśmienita realizacja, w egzotycznej scenerii Meksyku.
+Mnóstwo wątków, które oczywiście się łączą i przeplatają. Super kompozycja. A wszystko to krąży wokół papierosów.</description>
+    </item>
+    
+    <item>
+      <title>Pitbull</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/pitbull/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/pitbull/</guid>
+      <description> Godny następca &#34;Psów&#34;. Nie jest to w żadnym wypadku kontynuacja. Jest to natomiast film o polskiej policji. A konkretniej, o policjantach z warszawskiego wydziału zabójstw. Porządne kino. Pomysłowo zrobiony, z ciekawą fabuła i zwrotami akcji.
+Nakręcone jak prawdziwe życie, bo to miał być taki film, o zwykłym życiu. O tym jak jest czasem popieprzone.
+Dramat, ale w jakim stylu
+  
+ </description>
+    </item>
+    
+    <item>
+      <title>Resident Evil 2</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/resident-evil-2/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/resident-evil-2/</guid>
+      <description>I znów piękna Mila prezentuje swoje wdzięki na ekranie. Może to i lepiej jakby została przy pozowaniu do zdjęć i bieganiu po wybiegach? Ale to nie ona powoduje, że film ten ledwie da się obejrzeć.
+Jakby ktoś nie pamiętał, pierwsza część miała bardzo otwarte zakończenie. Akcje można było rozwinąć wyśmienicie, w super scenografii. I pomijam tu nawet fakt, że komuś sie owa otoczka nie podoba. W każdym razie sklecono wreszcie kontynuacje.</description>
+    </item>
+    
+    <item>
+      <title>Salem&#39;s Lot</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/salem-lot/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/salem-lot/</guid>
+      <description>Kolejny horror na podstawie jakiejś książki Kinga. W sumie jak ktoś lubi.. Ale ile można? Rozumiem, że te jego książki to komercyjne sukcesy, film w sumie źle zrobiony nie jest -- ale akcje to ma słabą.
+Strasznie długi, jak na zwykły film, bo ma aż 3 godziny. I te wampiry, idiotycznie głupi wątek z wampirami. Już miałem nadzieję, że to fajna, lekka i przyjemna historyjka o nawiedzonym domu, albo innym mniej popularnym temaci.</description>
+    </item>
+    
+    <item>
+      <title>Shaun of the Dead</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/shaun-of-dead/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/shaun-of-dead/</guid>
+      <description> Ostatnio było &#34;Dawn of the Dead&#34;, a teraz kolejny film o trupach. Tyle że zupełnie inny. Jest to świetna komedia nakręcona i osadzona w sumie właśnie w konwencji horroru. Tytuowy Shaun jest sprzedawcą w sklepie. Ale staje się bohaterem, kiedy zaczyna sie piekło ;)
+ Dużo śmiesznych scen, wiele świetnych parodii no i na koniec happyend :-D
+Już dawno nie było tak inteligentnie pomyślanego komedio-horroru.
+ </description>
+    </item>
+    
+    <item>
+      <title>Skeleton Key</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/skeleton-key/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/skeleton-key/</guid>
+      <description>Horror. I to calkiem niezly. Takim juz mi sie wydal po obejrzeniu trailera. N iby zwykla opowiesc o dziewczynie, ktora opiekuje sie umierajacymi ludzmi - jezd zace hospicjum. Po smierci ostatniego podopiecznego szuka nowej pracy. Znajduje ja w pewnej rezydencji. Wszystko fajnie, pieknie. Poza tym, ze w domu dzieja sie jakies dziwne rzeczy.
+Brzmi pospolicie, ale jest porzadnie. Ciary chodza po plecach. Historia o mag ii voodoo. Pelna uroku Nowego Orleanu - tego sprzed tegorocznej powodzi.</description>
+    </item>
+    
+    <item>
+      <title>Sky Captain and the World of Tomorrow</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/sky-captain-and-world-of-tomorrow/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/sky-captain-and-world-of-tomorrow/</guid>
+      <description>Pewnie wiele osób na niego poszło do kin, bo przed pokazem puszczali &#34;Fallen Art&#34; Bagińskiego. Ja obejrzałem obie rzeczy no ale raczej nie w kinie.
+Wbrew temu co słyszałem o tym filmie, i czego sam się obawiałem, nie jest tak źle. Zbyt cukierkowo i tendencyjnie, ale to zastrzeżenia do fabuły. Swoją drogą to ona raczej głównym elementem filmu nie jest. No ale jeśli nie ona to co? Przecież poziom efektów specjalnych prezentowanych przez to filmidło chowa się przy tym co robią japończycy w podrzędnych produkcjach.</description>
+    </item>
+    
+    <item>
+      <title>Spider Man 2</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/spider-man-2/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/spider-man-2/</guid>
+      <description> Ach ci ckliwi amerykanie. Pół filmu na rozterki moralne głównego bohatera. Nuda i żenada momentami.
+ Dobre efekty, czasem jakiś akcent humorystyczny. W sumie jak się czytało komiks, to wiele postaci wygląda baardzo podobnie. Ciągle razi mnie ten aktor, grający Spider Mana -- nie mogli wziąć kogoś innego? Słabizna
+Generalnie lepiej niż w pierwszej części, ale świetnie to to się nie prezentuje.
+ </description>
+    </item>
+    
+    <item>
+      <title>The Children of Leningradsky</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/children-of-leningradsky/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/children-of-leningradsky/</guid>
+      <description> O bezdomnych dzieciach z moskiewskiej stacji metra...
+Przejmujacy, poruszajacy, smutny.
+   </description>
+    </item>
+    
+    <item>
+      <title>The Chronicles of Riddick</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/chronicles-of-riddick/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/chronicles-of-riddick/</guid>
+      <description>Wczoraj miałem za dużo czasu i odwiedziłem kino. Od dawna planowałem to obejrzeć.
+Prawdę mówiąc to się zawiodłem. Spodziewałem sie fajnego filmu science-fiction. W sumie to podstawy do tego miałem, &#34;Pitch Black&#34; był świetnym filmem. Natomiast tutaj oparto się głównie na efektach specjalnych i scenach walki. Efekty są super. Ale sceny walki... często tendencyjne, zazwyczaj nudne -- no bo ile już można tego oglądać.
+Miałem za to fajny pokaz świata filmu - dobrze pomyślany, i całe szczęście ma nawiązania do pierwszej części.</description>
+    </item>
+    
+    <item>
+      <title>The Forgotten</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/forgotten/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/forgotten/</guid>
+      <description> Trailer fajnie sie zapowiadał. Pół filmu też nieźle się oglądało. Cały czas miałem nadzieje, że dojdzie do efektownego finału. Niestety zawiodłem się właśnie na końcówce. Całość trzyma w napięciu. Nieźle poskładane jest to, ale stanowczo traci na prędkości końcówka. Fajny wątek został troszkę zmiękczony. Wyszło pospolicie, jak to w każdej historyjce o amerykańskiej matce, których było już kilkanaście.
+Bardzo dobry film do obejrzenia, ale bez specjalnych zachwytów.  </description>
+    </item>
+    
+    <item>
+      <title>Troy</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/troy/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/troy/</guid>
+      <description>Same gwiazdki, scenariusz zerżnięty z ksiązki. Tak więc cóż można z takiego czegoś ukręcić? W każdym razie nie za wiele. Pewnie, dobry jest to film dla mieszkańców USA, którzy nie czytają książek, ale reszta nie ma zbytnio czego tam szukać. Ani zbytniej ekspresji nie ma, ani za specjalnie porywającej akcji. Takie to jest nijakie.
+ Po trosze to przypomina mi to sytuację polskiego filmu, gdzie przeważająca część filmów to jakieś adaptacje książek (klasyki albo czegoś bliskiego klasyce) i nie produkuje się zwykłych filmów, ze scenariuszem poprostu pisanym dla konkretnego filmu, a nie zjechanego z istniejącej książki.</description>
+    </item>
+    
+    <item>
+      <title>Trzeci</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/trzeci/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/trzeci/</guid>
+      <description> Miekne. Rozczulil mnie ten film.
+Pozytywny, ladny i milo sie jeszcze oglada. Swietna rola Marka Kondrata - nie widac go cos ostatnio w filmach, ale moze to i dobrze. Lepiej zadziej, a w lepszej formie.
+Taki tam, zwykly film o zyciu. Zeby zwolnic. Zeby korzystac z chwili. I cieszy sie nia. Polecam dla zagonionych.
+   </description>
+    </item>
+    
+    <item>
+      <title>Unleashed</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/unleashed/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/unleashed/</guid>
+      <description>Zenada. Nie wiele da sie pochlebnego napisac o tym filmie. Jest sobie chlopak, z obroza na szyi. Zachowuje sie jak najzwyklejszy pies, spuszczony ze smyczy przez swojego &#34;pana&#34; potrafi zabic bez mrugniecia okiem. Z obroza nic nie zrobi. Fajny pomysl. Fajne wykonanie kilku scen - pokazuje cala idee &#34;w akcji&#34;. Ale co z tego?! Potem przychodza rozterki. Koles (pies) zakochuje sie itp, zrywa sie ze smyczy. Jest nudno i slabo.</description>
+    </item>
+    
+    <item>
+      <title>Uprowadzenie Agaty</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/uprowadzenie-agaty/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/uprowadzenie-agaty/</guid>
+      <description> Jakiś romantyczny weekend :P się zrobił. Najpierw Don Juan, a teraz to. Polskie filmidło. Dosyć znane chyba. Fabuła to właściwie historia pewnej miłości (nieszczęśliwej trzeba dodać). Gra wielu znanych polskich aktorów. Jest nawet Stanisław Tym, w jednej ze scen, nic nie mówi, ale cieszy, że jest. Film jest zwyczajnie ładny. Dziwne, że dopiero teraz go widziałem, bo to z 1995 roku produkcja.
+   </description>
+    </item>
+    
+    <item>
+      <title>Wakacyjne podsumowanie</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/wakacyjne-podsumowanie/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/wakacyjne-podsumowanie/</guid>
+      <description>Jako że od dosyć dawna nic nie napisałem o filmach, to lekkie podsumowanie wakacyjnych produkcji. W sumie są też filmy, które zrobiono wcześniej, ale niech tam...
+Batman: The Beginning Bardzo fajny film. Byłem, i nadal w sumie jestem, pod ogromnym wrażeniem. Chrystek Bale to bardzo dobry aktor. Lubię go za te wszystkie filmy jak Equilibrium czy też Mechanik. A tutaj zagrał bardzo fajnie. Niby twardziel, Bruce Wayne, ale i z niezłą dozą autorironii.</description>
+    </item>
+    
+    <item>
+      <title>Wedding Crushers</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/wedding-crushers/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/wedding-crushers/</guid>
+      <description>Kto by sie spodziewal, ze taka komedyjka, zapowiadajaca sie na calkowicie standardowa amerykanska komedyjke, okaze sie takim fajnym filmidlem. Nie znajdzie sie tu nic glebokiego. O nie, to nie tu. Raczej duzo smiesznych gagow i zartow. A na dokladke troche klimatow z romantycznej komedii, bo jakby nie bylo okolo polowy film zmienia sie wlasnie w cos takiego.
+Fabula skomplikowana nie jest. Owen Wilson gra w tym filmie weselnego podrywacza, ktory wraz z kolega odwiedza rozne wesela.</description>
+    </item>
+    
+    <item>
+      <title>Ławeczka</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/aweczka/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/aweczka/</guid>
+      <description>Co? Powie ktoś, że ckliwe romansidła oglądam?
+Niech mówi, oglądam też kupę innych filmów ;-D
+Średniawy ten film. Chociaż tyle dobrego, że niezbyt szczęśliwie się skończył. Żmijewski gra niezłego cwaniaka, pasuje lepiej do tej roli, niż do wspaniałego i wszechmocnego lekarza z &#34;Na dobre i na złe&#34;. Okazało się też, przynajmniej dla mnie dopiero teraz, że Jola Fraszyńska nadaje się nie tylko do głupich komedyjek jak Killer, szacunek za tą rolę ;)</description>
+    </item>
     
   </channel>
 </rss>

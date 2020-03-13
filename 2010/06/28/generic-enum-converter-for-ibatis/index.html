@@ -1,48 +1,46 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.65.3" />
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="generator" content="Hugo 0.66.0" />
+		<title>Generic Enum converter for iBatis - Tech ramblings by Marcin</title>
+
+		<meta name="description" content="My goal was to create a simple, extensible Enum converter that would work with iBatis. This seems like a trivial problem, but took me a while to find a proper solution.
+ There were some additional preconditions:  all given Enums are jaxb generated objects - but any standard Java Enum should work conversion was 1-to-1, no special conditions and processing  The example Enum for this problem looks like this one (copy&amp;paste from jaxb generated source):">
 
 
-<title>Generic Enum converter for iBatis - Tech ramblings by Marcin</title>
-<meta property="og:title" content="Generic Enum converter for iBatis - Tech ramblings by Marcin">
-
-
-
-  
-
+		
+	
+		
 
 
 
 
+<link rel="stylesheet" href="/css/ui.css">
 
-<link rel="stylesheet" href="http://marcin.cylke.com.pl/css/main.css" media="all">
-<link rel="stylesheet" href="http://marcin.cylke.com.pl/css/fonts.css">
+	
+		
 
-  </head>
-  <body>
-    <div class="wrapper">
-      <header class="header">
-        <nav class="nav">
-  <a href="http://marcin.cylke.com.pl/" class="nav-logo">
-    <img src="http://marcin.cylke.com.pl/images/" 
-         width="" 
-         height="" 
-         alt="">
-  </a>
+		<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono|Lato|Raleway">
 
-  <ul class="nav-links">
-    
-    <li><a href="/about/">about hugo</a></li>
-    
-    <li><a href="/getting-started/">getting started</a></li>
-    
-  </ul>
+		
+	</head>
+
+<body>
+<header class="container no-print">
+	<div class="u-header">
+		<nav class="bar">
+	<ul><li>
+			<a href="/">
+				<img class="icon-text" src="/img/prev.svg"/>
+			</a>
+		</li><li><a href="/about/">About Me</a></li></ul>
 </nav>
 
-      </header>
+	</div>
+</header>
+<main class="container">
 
 
 <main class="content" role="main">
@@ -185,22 +183,31 @@ public abstract class CommonEnumTypeHandler<T extends Enum> implements TypeHandl
 
 </main>
 
-      <footer class="footer">
-        <ul class="footer-links">
-          <li>
-            <a href="http://marcin.cylke.com.pl/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
-          </li>
-          <li>
-            <a href="https://github.com/mobybit/hugo-natrium-theme"><i class="fa fa-github"></i> Code</a>
-          </li>
-          <li>
-            <a href="http://marcin.cylke.com.pl/site-notice">Site notice</a>
-          </li>
-        </ul>
-      </footer>
+			<hr class="sep" />
+		</main>
+		<footer class="container no-print">
+			<div class="u-footer">
+				
 
-    </div>
 
-  </body>
+<a href="http://marcin.cylke.com.pl/index.xml" target="_blank"><img class="icon-social" src="/img/feed.svg" alt="Feed"></a>
+
+				<p>
+					
+					Theme used: <a href="https://github.com/yursan9/manis-hugo-theme">Manis</a><br>
+					
+					
+					
+				</p>
+				
+				<a href="#brand">
+					<img class="icon-text" src="/img/toup.svg" alt="To Up"/>
+					<span>Back to Up</span>
+				</a>
+				
+			</div>
+		</footer>
+		
+	</body>
 </html>
 

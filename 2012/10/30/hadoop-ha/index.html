@@ -1,48 +1,52 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.65.3" />
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="generator" content="Hugo 0.66.0" />
+		<title>Hadoop HA setup - Tech ramblings by Marcin</title>
+
+		<meta name="description" content="With the advent of Hadoop&rsquo;s 2.x version, there finally is a working
+High-Availability solution. Even two of those. Now it really is easy to
+configure and use those solutions. It no longer require external
+components, like
+DRBD.
+It all is just neatly packed into Cloudera Hadoop distribution - the
+precursor of this solution.
+Read on to find out how to use it.">
 
 
-<title>Hadoop HA setup - Tech ramblings by Marcin</title>
-<meta property="og:title" content="Hadoop HA setup - Tech ramblings by Marcin">
-
-
-
-  
-
+		
+	
+		
 
 
 
 
+<link rel="stylesheet" href="/css/ui.css">
 
-<link rel="stylesheet" href="http://marcin.cylke.com.pl/css/main.css" media="all">
-<link rel="stylesheet" href="http://marcin.cylke.com.pl/css/fonts.css">
+	
+		
 
-  </head>
-  <body>
-    <div class="wrapper">
-      <header class="header">
-        <nav class="nav">
-  <a href="http://marcin.cylke.com.pl/" class="nav-logo">
-    <img src="http://marcin.cylke.com.pl/images/" 
-         width="" 
-         height="" 
-         alt="">
-  </a>
+		<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono|Lato|Raleway">
 
-  <ul class="nav-links">
-    
-    <li><a href="/about/">about hugo</a></li>
-    
-    <li><a href="/getting-started/">getting started</a></li>
-    
-  </ul>
+		
+	</head>
+
+<body>
+<header class="container no-print">
+	<div class="u-header">
+		<nav class="bar">
+	<ul><li>
+			<a href="/">
+				<img class="icon-text" src="/img/prev.svg"/>
+			</a>
+		</li><li><a href="/about/">About Me</a></li></ul>
 </nav>
 
-      </header>
+	</div>
+</header>
+<main class="container">
 
 
 <main class="content" role="main">
@@ -97,8 +101,10 @@ on sharing edits directory. Than, with CDH 4.1 came quorum based solution.</p>
 <p>For this kind of setup, there is an assumption, that in a cluster exists
 a shared storage directory. It should be deployed using some kind of
 network-based filesystem. You could try with NFS or GlusterFS.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<script type="application/javascript" src="https://gist.github.com/zygm0nt/3958555.js?file=core-site.xml"></script>
+
+<script type="application/javascript" src="https://gist.github.com/zygm0nt/3958555.js?file=hdfs-site.xml"></script>
+
 <p>This setup is quite OK, as long as you&rsquo;re comfortable with maintaining a
 separate service (network storage) for handling the HA state. It seems
 error prone to me, because it adds another service which high
@@ -120,8 +126,10 @@ that daemons.</p>
 shared edits directory solution. The only difference is the value for
 <em>dfs.namenode.shared.edits.dir</em>. This now points to all the journal
 nodes deployed in our cluster.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<script type="application/javascript" src="https://gist.github.com/zygm0nt/3973262.js?file=core-site.xml"></script>
+
+<script type="application/javascript" src="https://gist.github.com/zygm0nt/3973262.js?file=hdfs-site.xml"></script>
+
 <h1 id="infrastructure">Infrastructure</h1>
 <p>In both cases you need to run Zookeeper-based Failover Controller
 (<em>hadoop-hdfs-zkfc</em>). This daemon negotiates which NameNode should
@@ -168,22 +176,31 @@ start using Hadoop in HA setup.</p>
 
 </main>
 
-      <footer class="footer">
-        <ul class="footer-links">
-          <li>
-            <a href="http://marcin.cylke.com.pl/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
-          </li>
-          <li>
-            <a href="https://github.com/mobybit/hugo-natrium-theme"><i class="fa fa-github"></i> Code</a>
-          </li>
-          <li>
-            <a href="http://marcin.cylke.com.pl/site-notice">Site notice</a>
-          </li>
-        </ul>
-      </footer>
+			<hr class="sep" />
+		</main>
+		<footer class="container no-print">
+			<div class="u-footer">
+				
 
-    </div>
 
-  </body>
+<a href="http://marcin.cylke.com.pl/index.xml" target="_blank"><img class="icon-social" src="/img/feed.svg" alt="Feed"></a>
+
+				<p>
+					
+					Theme used: <a href="https://github.com/yursan9/manis-hugo-theme">Manis</a><br>
+					
+					
+					
+				</p>
+				
+				<a href="#brand">
+					<img class="icon-text" src="/img/toup.svg" alt="To Up"/>
+					<span>Back to Up</span>
+				</a>
+				
+			</div>
+		</footer>
+		
+	</body>
 </html>
 
