@@ -18,7 +18,7 @@ const authEndpoint = 'https://accounts.spotify.com/authorize';
 
 // Replace with your app's client ID, redirect URI and desired scopes
 const clientId = 'de59d7eac13a45c988f6cfff77a83a73'
-const redirectUri = 'https://marcin.cylke.com.pl/spotify-cover-viewer/
+const redirectUri = 'https://marcin.cylke.com.pl/spotify-cover-viewer/'
 const scopes = [
   'user-top-read',
   'user-library-read'
