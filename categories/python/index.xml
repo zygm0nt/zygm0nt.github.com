@@ -6,11 +6,7 @@
     <description>Recent content in python on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Mar 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://marcin.cylke.com.pl/categories/python/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 13 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://marcin.cylke.com.pl/categories/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>plotting data availability with matplotlib</title>
       <link>http://marcin.cylke.com.pl/2020/03/13/plotting-with-matplotlib/</link>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>anki on Tech ramblings by Marcin</title>
+    <link>http://marcin.cylke.com.pl/categories/anki/</link>
+    <description>Recent content in anki on Tech ramblings by Marcin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://marcin.cylke.com.pl/categories/anki/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Anki as a learning trampoline</title>
+      <link>http://marcin.cylke.com.pl/2020/11/24/anki-trampoline/</link>
+      <pubDate>Tue, 24 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2020/11/24/anki-trampoline/</guid>
+      <description>tips and tricks
+https://senrigan.io/blog/everything-i-know-strategies-tips-and-tricks-for-spaced-repetition-anki/
+Anki Tips: What I Learned Making 10,000 Flashcards https://rs.io/anki-tips/
+Better Anki Usage Guide https://andrewzah.com/posts/2019/better-anki-usage-guide/
+augmenting long-term memory http://augmentingcognition.com/ltm.html
+as a bonus - really nice writeup about cognition from Michael Nielsen: http://cognitivemedium.com/tat/</description>
+    </item>
+    
+  </channel>
+</rss>

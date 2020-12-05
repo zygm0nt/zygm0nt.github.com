@@ -6,11 +6,7 @@
     <description>Recent content in zookeeper on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Jun 2013 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://marcin.cylke.com.pl/categories/zookeeper/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 24 Jun 2013 00:00:00 +0000</lastBuildDate><atom:link href="http://marcin.cylke.com.pl/categories/zookeeper/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Zookeeper &#43; Curator = Distributed sync</title>
       <link>http://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/</link>

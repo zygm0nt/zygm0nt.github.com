@@ -6,11 +6,7 @@
     <description>Recent content in storm on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Aug 2013 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://marcin.cylke.com.pl/categories/storm/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 12 Aug 2013 00:00:00 +0000</lastBuildDate><atom:link href="http://marcin.cylke.com.pl/categories/storm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Recently at storm-users</title>
       <link>http://marcin.cylke.com.pl/2013/08/12/recently-at-storm-users/</link>

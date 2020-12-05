@@ -6,11 +6,7 @@
     <description>Recent content in electronics on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Oct 2012 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://marcin.cylke.com.pl/categories/electronics/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 18 Oct 2012 00:00:00 +0000</lastBuildDate><atom:link href="http://marcin.cylke.com.pl/categories/electronics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>raspberry-pi</title>
       <link>http://marcin.cylke.com.pl/2012/10/18/raspberry-pi/</link>

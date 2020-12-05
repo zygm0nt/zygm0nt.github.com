@@ -4,12 +4,97 @@
   
   <url>
     <loc>http://marcin.cylke.com.pl/categories/</loc>
-    <lastmod>2020-03-13T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/freebsd/</loc>
+    <lastmod>2020-12-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://marcin.cylke.com.pl/categories/IT/</loc>
-    <lastmod>2020-03-13T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/linux/</loc>
+    <lastmod>2020-12-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/openbsd/</loc>
+    <lastmod>2020-12-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/2020/12/05/operating-systems-showdown/</loc>
+    <lastmod>2020-12-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/operating-systems/</loc>
+    <lastmod>2020-12-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/post/</loc>
+    <lastmod>2020-12-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/</loc>
+    <lastmod>2020-12-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/anki/</loc>
+    <lastmod>2020-11-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/2020/11/24/anki-trampoline/</loc>
+    <lastmod>2020-11-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/2020/11/24/awesomewm-multiple-monitors/</loc>
+    <lastmod>2020-11-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/awesomeWM/</loc>
+    <lastmod>2020-11-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/learning/</loc>
+    <lastmod>2020-11-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/window-manager/</loc>
+    <lastmod>2020-11-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/gamecube/</loc>
+    <lastmod>2020-11-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/nintendo/</loc>
+    <lastmod>2020-11-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/retro/</loc>
+    <lastmod>2020-11-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/2020/11/19/running-gamecube-on-linux/</loc>
+    <lastmod>2020-11-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -18,17 +103,7 @@
   </url>
   
   <url>
-    <loc>http://marcin.cylke.com.pl/post/</loc>
-    <lastmod>2020-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://marcin.cylke.com.pl/categories/python/</loc>
-    <lastmod>2020-03-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://marcin.cylke.com.pl/</loc>
     <lastmod>2020-03-13T00:00:00+00:00</lastmod>
   </url>
   
@@ -65,16 +140,6 @@
   <url>
     <loc>http://marcin.cylke.com.pl/2016/07/24/it-minimalist/</loc>
     <lastmod>2016-07-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://marcin.cylke.com.pl/categories/ha/</loc>
-    <lastmod>2016-07-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://marcin.cylke.com.pl/categories/hack/</loc>
-    <lastmod>2016-07-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -138,11 +203,6 @@
   </url>
   
   <url>
-    <loc>http://marcin.cylke.com.pl/categories/java/</loc>
-    <lastmod>2014-07-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://marcin.cylke.com.pl/categories/javascript/</loc>
     <lastmod>2014-07-14T00:00:00+00:00</lastmod>
   </url>
@@ -188,6 +248,11 @@
   </url>
   
   <url>
+    <loc>http://marcin.cylke.com.pl/categories/java/</loc>
+    <lastmod>2013-06-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://marcin.cylke.com.pl/categories/zookeeper/</loc>
     <lastmod>2013-06-24T00:00:00+00:00</lastmod>
   </url>
@@ -218,12 +283,22 @@
   </url>
   
   <url>
+    <loc>http://marcin.cylke.com.pl/categories/ha/</loc>
+    <lastmod>2012-10-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://marcin.cylke.com.pl/2012/10/30/hadoop-ha/</loc>
     <lastmod>2012-10-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://marcin.cylke.com.pl/categories/electronics/</loc>
+    <lastmod>2012-10-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://marcin.cylke.com.pl/categories/hack/</loc>
     <lastmod>2012-10-18T00:00:00+00:00</lastmod>
   </url>
   

@@ -6,11 +6,7 @@
     <description>Recent content in vim on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 May 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://marcin.cylke.com.pl/categories/vim/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 05 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://marcin.cylke.com.pl/categories/vim/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My Vim Setup</title>
       <link>http://marcin.cylke.com.pl/2019/05/05/my-vim-setup/</link>

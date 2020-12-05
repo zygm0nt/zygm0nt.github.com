@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="generator" content="Hugo 0.80.0-DEV" />
+		<title>operating systems showdown - Tech ramblings by Marcin</title>
+
+		<meta name="description" content="Modern open source operating systems vs modern software development practices The reason to write this blog post was a presentation I watched some time ago, and commented on it on Twitter:
+One of the slides from the presentation. How can you develop an operating system and follow *that* kind of process?! :sadpanda: pic.twitter.com/3XuHMXc0My
+&mdash; Marcin Cylke (@zygm0nt) January 5, 2020  So to be specific - the whole presentation was rather negative towards security model used along OpenBSD development.">
+
+
+		
+	
+		
+
+
+
+
+<link rel="stylesheet" href="/css/ui.css">
+
+	
+		
+
+		<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono|Lato|Raleway">
+
+		
+	</head>
+
+<body>
+<header class="container no-print">
+	<div class="u-header">
+		<nav class="bar">
+	<ul><li>
+			<a href="/">
+				<img class="icon-text" src="/img/prev.svg"/>
+			</a>
+		</li><li><a href="/about/">About Me</a></li><li><a href="/map-my-dreams/">Map-My-Dreams</a></li><li><a href="/spotify-cover-viewer/">Spotify-Cover-Viewer</a></li></ul>
+</nav>
+
+	</div>
+</header>
+<main class="container">
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">operating systems showdown</h1>
+    
+    <span class="article-date">2020-12-05</span>
+    
+    <ul class="article-taxonomy">
+                  
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/it">it</a><a href="/categories/operating-systems">operating-systems</a><a href="/categories/freebsd">freebsd</a><a href="/categories/linux">linux</a><a href="/categories/openbsd">openbsd</a>
+      </li>
+      
+    
+      
+    </ul>
+ 
+    <div class="article-content">
+      <h2 id="modern-open-source-operating-systems-vs-modern-software-development-practices">Modern open source operating systems vs modern software development practices</h2>
+<p>The reason to write this blog post was a presentation I watched some time ago, and commented on it on Twitter:</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">One of the slides from the presentation. How can you develop an operating system and follow *that* kind of process?! :sadpanda: <a href="https://t.co/3XuHMXc0My">pic.twitter.com/3XuHMXc0My</a></p>&mdash; Marcin Cylke (@zygm0nt) <a href="https://twitter.com/zygm0nt/status/1213955061409292290?ref_src=twsrc%5Etfw">January 5, 2020</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>So to be specific - the whole presentation was rather negative towards security model used along OpenBSD development. The presentation itself took a lot of time to go over recent security issues, false claims, etc.</p>
+<p>What strikes me in it was how the development process for that particular operating system actually looks like. Working with software for quite some time now I have a pretty decent idea of how the development process of my half baked, security-assed code actually look like.</p>
+<p>All that got me wondered - how OS developers actually deal with their daily load of issues? How do they fix bugs, monitor simple security issues, regressions, etc? And also what&rsquo;s their tooling around that?
+It&rsquo;s easy to say - just use git, or JIRA, or any other &ldquo;normal&rdquo; dev tool. But since you&rsquo;re developing an actual OS things are' perhaps' not that obvious anymore. The code bases tend to be huge. With the multitude of contributions, mighty loads of bugreports.</p>
+<p>The comment was about OpenBSD, but then I started wondering - how does this process actually look like for other major (or not necessarily) operating systems?</p>
+<p>So I&rsquo;ve decided to take some time and look into that space. I wanted to look into a few operating systems I tend to use, used to use, or just keep an eye for. Some of those are the key players in the OS space, some are just hobby projects. For all of them I just wanted to get a picture of how the development process looks.</p>
+<p>Please keep in mind that this should be regarded mostly as a beginners guide, I have no significant experience in contributing to any of those code bases, so I was also looking into how approachable each of those communities is for newcomers. Also there may be a lot of obvious omissions for experienced contributions, but if it&rsquo;s not mentioned in this post than I had a hard time finding relevant information - so anything that is a &ldquo;secret lore&rdquo; circulating among experienced contributors is not enough for me, a newbie.</p>
+<p>With that disclaimer out of the way, I&rsquo;d really welcome comments about my findings, so if you have any fell free to reach out to me and help with clarifying things here.</p>
+<h2 id="the-process-as-i-see-it">The process as I see it</h2>
+<p>So what actually constitutes the development process of a software project? Well for me this can be summed up into how the project handles the following key areas:</p>
+<ul>
+<li>how should I approach the codebase when I want to start contributing to the code</li>
+<li>what if I find a bug? how that looks like?</li>
+<li>what happens when I submit the bugreport?</li>
+<li>how the code is tested for regressions, or tested in general?</li>
+</ul>
+<p>A good deal of this questions can actually be answered by discovering how each of those systems approach:</p>
+<ul>
+<li>VCS</li>
+<li>Testing</li>
+<li>code-review process</li>
+</ul>
+<h2 id="rationale-for-including-each-of-the-systems-in-this-comparison">Rationale for including each of the systems in this comparison</h2>
+<ul>
+<li>Linux - well, I just use it the most theses days. Which is fine, since the kernel is such a great code with a lot of innovative things happening. But since with just the kernel you can&rsquo;t actually do that much, you always choose a specific distro that serves all your user needs. This comparison thou focuses solely on the kernel development process. I don&rsquo;t want to delve into the fragmented space of Linux distros and they&rsquo;re own ideas. I feel it would just dilute the overall impression of the efforts around Linux as a platform.</li>
+<li>FreeBSD - a system I&rsquo;ve been using for a really long time. It has all the great ideas of the BSD family, is extremely coherent in vision, as are all BSD systems since they&rsquo;re not just a kernel but a whole package. You get kernel and userland with all the tools and basic integrations, which in my opinion is great. Choosing a specific BSD flavor actually means something, and not just a different UI experience as in the case of Linux.</li>
+<li>OpenBSD - the reason this blogpost came to being, but I wouldn&rsquo;t watch the presentation in the first place if not for me previous interest in this flavor of BSD. It was actually the first of the BSDs I&rsquo;d started using. Liked it for it&rsquo;s compactness, great documentation, ease of installation,</li>
+<li>NetBSD - I&rsquo;ve actually haven&rsquo;t installed it, not even once. But this is such a great example of a system that tries to keep all those obsolete machines (which I adore) alive, I just couldn&rsquo;t omit it from this comparison. Also what&rsquo;s even more important, OpenBSD at some point forked from NetBSD due to difference in opinions between core developers. So both systems have common roots, let&rsquo;s see how they actually compare,</li>
+<li>FreeDOS - a free reimplementation of DOS - seems pretty complete and finished at this point, but since it&rsquo;s still used in multiple places the community around it is quite vibrant,</li>
+<li>ReactOS - another reimplementation - but this time of the Windows 95/2000 line of systems. It has this ambitious goal to be able to run Windows programs without problems. All this being accomplished with a lot of reverse engineering and of the original implementations. Last time I&rsquo;ve check I still couldn&rsquo;t run some programs I needed, but the effort is impressive enough for me to keep an eye on it from time to time.</li>
+</ul>
+<h3 id="linux">Linux</h3>
+<p><img src="/post_images/os-code/ut7zowm3f4tz.png" alt="Alt text"></p>
+<p>This is somewhat different, as due to its nature refers solely to the kernel. Other OSes in this comparison store kernel+base system in their repos.</p>
+<ul>
+<li>Docs
+<ul>
+<li>Good first-timer commiter guide <a href="https://kernelnewbies.org/UpstreamMerge">https://kernelnewbies.org/UpstreamMerge</a></li>
+<li>Comprehensive guide to dealing with kernel development: <a href="https://www.kernel.org/doc/html/latest/">https://www.kernel.org/doc/html/latest/</a></li>
+<li>With tools like <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git">https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git</a> it’s easy to trace what changed with every commit</li>
+</ul>
+</li>
+<li>Bug reporting</li>
+<li>VCS
+<ul>
+<li>Git: <a href="https://github.com/torvalds/linux">https://github.com/torvalds/linux</a></li>
+<li>Another view on the kernel sources: <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git">https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git</a></li>
+<li>Awesome kernel repositories: <a href="https://www.kernel.org/">https://www.kernel.org/</a></li>
+<li>Multiple categories of releases: <a href="https://www.kernel.org/category/releases.html">https://www.kernel.org/category/releases.html</a></li>
+</ul>
+</li>
+<li>Testing
+<ul>
+<li>There’s some initiative for Continuous testing of kernel branches: <a href="https://kernelci.org/">https://kernelci.org/</a> - <em>“It is our mission to detect, bisect, report and fix regressions on upstream Kernel trees before they even reach «mainline».”</em></li>
+<li><a href="https://embeddedbits.org/how-is-the-linux-kernel-tested/">https://embeddedbits.org/how-is-the-linux-kernel-tested/</a></li>
+</ul>
+</li>
+<li>Reviews
+<ul>
+<li>Why Patches are still submitted via email: <a href="https://lwn.net/Articles/702177/">https://lwn.net/Articles/702177/</a></li>
+<li>Generally no performant solution to keep track of changes Linux Kernel sees,</li>
+<li><em>“ the quality of email clients is not uniformly good. Some systems, like Outlook, will uniformly corrupt patches; as a result, companies doing kernel development tend to keep a Linux machine that they can use to send patches in a corner somewhere. Gmail is painful for sending patches, but it works very well as an IMAP server. Project managers, he noted, tend not to like email. He seemed to think of that as an advantage, or, at worst, an irrelevance, since the kernel&rsquo;s workflow doesn&rsquo;t really have any project-manager involvement anyway.”</em></li>
+<li>There’s a trace of review process in each commit: <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=dcf23ac3e846ca0cf626c155a0e3fcbbcf4fae8a">https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=dcf23ac3e846ca0cf626c155a0e3fcbbcf4fae8a</a></li>
+<li>&lt; Screenshot of the signature metadata&gt;</li>
+<li>All commits are signed by their respective authors</li>
+<li>Description of the patch submit process : <a href="https://www.kernel.org/doc/html/v4.17/process/submitting-patches.html">https://www.kernel.org/doc/html/v4.17/process/submitting-patches.html</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="freebsd">FreeBSD</h3>
+<p><img src="https://www.jeremymorgan.com/images/free-bsd/free-bsd-04.jpg" alt="an image from splendid article"> -&gt; <a href="https://www.jeremymorgan.com/blog/freebsd/freebsd-developer-2020/">splendid article</a></p>
+<ul>
+<li>Docs
+<ul>
+<li>There’s a commiter’s Handbook: <a href="https://www.freebsd.org/doc/en_US.ISO8859-1/articles/committers-guide/article.html">https://www.freebsd.org/doc/en_US.ISO8859-1/articles/committers-guide/article.html</a></li>
+</ul>
+</li>
+<li>Bug reporting
+<ul>
+<li>Done via Bugzilla: <a href="https://www.freebsd.org/doc/en_US.ISO8859-1/articles/committers-guide/article.html#bugzilla">https://www.freebsd.org/doc/en_US.ISO8859-1/articles/committers-guide/article.html#bugzilla</a></li>
+<li><a href="https://bugs.freebsd.org/bugzilla/">https://bugs.freebsd.org/bugzilla/</a></li>
+</ul>
+</li>
+<li>VCS
+<ul>
+<li>Subversion as primary VCS: <a href="https://www.freebsd.org/doc/en_US.ISO8859-1/articles/committers-guide/article.html#subversion-primer">https://www.freebsd.org/doc/en_US.ISO8859-1/articles/committers-guide/article.html#subversion-primer</a></li>
+<li>in the process of moving to git:
+<ul>
+<li><a href="https://bsdimp.blogspot.com/2020/09/freebsd-subversion-to-git-migration.html">https://bsdimp.blogspot.com/2020/09/freebsd-subversion-to-git-migration.html</a></li>
+<li><a href="https://bsdimp.blogspot.com/2020/10/freebsd-git-primer-for-users.html">https://bsdimp.blogspot.com/2020/10/freebsd-git-primer-for-users.html</a></li>
+</ul>
+</li>
+<li>Multiple branches</li>
+<li>Separate repos for ports, docs, base system</li>
+<li>CURRENT as the development branch, with release cut offs along the way</li>
+<li>There is a read-only mirror of the code repo on GitHub: <a href="https://github.com/freebsd/freebsd">https://github.com/freebsd/freebsd</a></li>
+<li>At some point in time I’ve heard that FreeBSD uses Perforce repo, but found only mentions that it’s used for experimental stuff or work for Google Summer of Code:
+<ul>
+<li>An article from 2013 about the use of perforce: <a href="https://docs.freebsd.org/doc/10.0-RELEASE/usr/local/share/doc/freebsd/en/articles/p4-primer/article.html">https://docs.freebsd.org/doc/10.0-RELEASE/usr/local/share/doc/freebsd/en/articles/p4-primer/article.html</a></li>
+<li><a href="https://wiki.freebsd.org/Perforce">https://wiki.freebsd.org/Perforce</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Testing
+<ul>
+<li>Each change has build status, and automatic test status: <a href="https://reviews.freebsd.org/D24120">https://reviews.freebsd.org/D24120</a></li>
+<li>Even linting</li>
+<li>Seems that CI server being used is <a href="https://cirrus-ci.com/">https://cirrus-ci.com/</a> - but the integration is unclear. I was unable to access CirrusCI from Phabricator</li>
+<li>Testing with Coverity: <a href="https://wiki.freebsd.org/CoverityPrevent">https://wiki.freebsd.org/CoverityPrevent</a></li>
+</ul>
+</li>
+<li>Review
+<ul>
+<li>Phabricator: <a href="https://wiki.freebsd.org/Phabricator">https://wiki.freebsd.org/Phabricator</a>, <a href="https://reviews.freebsd.org/">https://reviews.freebsd.org/</a></li>
+<li>Documented here: <a href="https://www.freebsd.org/doc/en_US.ISO8859-1/articles/committers-guide/pre-commit-review.html">https://www.freebsd.org/doc/en_US.ISO8859-1/articles/committers-guide/pre-commit-review.html</a></li>
+<li>So according to that - for pre-commit reviews there are multiple ways: <em>email, in Bugzilla, in Phabricator, or by another mechanism.</em></li>
+</ul>
+</li>
+<li></li>
+</ul>
+<h3 id="openbsd">OpenBSD</h3>
+<p><img src="/post_images/os-code/1920px-OpenBSD_Logo_-_Cartoon_Puffy_with_textual_logo_below.svg.png" alt="Alt text"></p>
+<ul>
+<li>Docs
+<ul>
+<li>the docs are very well written. They&rsquo;re consistent and easy to follow. The official docs can be found <a href="https://www.openbsd.org/faq/index.html">here</a></li>
+</ul>
+</li>
+<li>Bug reporting
+<ul>
+<li>Docs on creating bug report: <a href="https://www.openbsd.org/report.html">https://www.openbsd.org/report.html</a></li>
+<li>This quote is taken from the official docs -  <em>If possible, use the sendbug(1) command to help generate your bug report. It will automatically include some useful information about your hardware that helps diagnose many issues. This tool requires that your system can properly send email. If you cannot use sendbug on a functional OpenBSD machine, please send your bug report to <a href="mailto:bugs@openbsd.org">bugs@openbsd.org</a>.</em></li>
+<li>and here is the description of this tool for bugreports <a href="https://man.openbsd.org/sendbug">https://man.openbsd.org/sendbug</a></li>
+<li>Bugs' archive available here: <a href="https://marc.info/?l=openbsd-bugs">https://marc.info/?l=openbsd-bugs</a></li>
+<li>No intention to actually have a bugtracker:
+<ul>
+<li><a href="http://openbsd-archive.7691.n7.nabble.com/bug-tracking-system-for-OpenBSD-td321009.html">http://openbsd-archive.7691.n7.nabble.com/bug-tracking-system-for-OpenBSD-td321009.html</a> - or to be more precise there&rsquo;s none willing to commit time to this project. Also here&rsquo;s a nice quote from Ted Unangst about the potential approach:</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>not underestimate the effort involved.</p>
+<p>so this has come up before, and the answer remains the same. anyone can setup
+a bug tracker, and feed bugs into it. close the ones that get fixed,
+categorize the rest, etc.. do that for a few months and see how it goes.</p>
+<p>i&rsquo;m not really interested in looking at an empty bug database. nor one that&rsquo;s
+filled with crap. so yeah, there&rsquo;s a bootstrapping problem.</p>
+<p>you don&rsquo;t have to announce your bug database the first day you set it up. in
+fact, it&rsquo;s better not to. but in a few months time, when somebody inevitably
+asks misc how do i contribute, where&rsquo;s the todo list, you&rsquo;ll have this handy
+list of unresolved bugs to point them at.</p>
+<p>like a lot of projects that seem really easy, you&rsquo;d think somebody would just
+do it if it were that simple. but the idea that nobody wants to chance
+investing time in a deadend project suggests they kind of know the time
+investment isn&rsquo;t just a saturday afternoon.</p>
+</blockquote>
+<ul>
+<li>Here&rsquo;s more on no intention to have a bugtracker <a href="https://www.mail-archive.com/misc@openbsd.org/msg160396.html">https://www.mail-archive.com/misc@openbsd.org/msg160396.html</a> with the quote being:</li>
+</ul>
+<blockquote>
+<p>If you look at a successful bug tracker, you will not be able to see
+most of this work without grovelling through dead tickets because
+the already-fixed issues and veiled support requests will no longer
+be visible.</p>
+</blockquote>
+<ul>
+<li>
+<p>With hostile attitude like this one: <a href="https://www.mail-archive.com/misc@openbsd.org/msg160410.html">https://www.mail-archive.com/misc@openbsd.org/msg160410.html</a></p>
+</li>
+<li>
+<p>VCS</p>
+<ul>
+<li>CVS</li>
+<li>Read only mirror: <a href="https://github.com/openbsd">https://github.com/openbsd</a> <em>“Public git conversion mirror of OpenBSD&rsquo;s official CVS src repository. Pull requests not accepted - send diffs to the tech@ mailing list.”</em></li>
+<li>There are certain parts of OpenBSD or those that were developed as part of the project, which are available outside CVS, and accept patches via GitHub:
+<ul>
+<li>OpenBGP <a href="https://github.com/openbgpd-portable/openbgpd-portable">https://github.com/openbgpd-portable/openbgpd-portable</a></li>
+<li>OpenSMTPD <a href="https://github.com/OpenSMTPD/OpenSMTPD">https://github.com/OpenSMTPD/OpenSMTPD</a></li>
+<li>LibreSSL <a href="https://github.com/libressl-portable/portable">https://github.com/libressl-portable/portable</a></li>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Testing</p>
+<ul>
+<li>Haven’t found any build farm, continuous integration</li>
+<li>Possible to run distributed port builder <a href="https://man.openbsd.org/dpb.1">https://man.openbsd.org/dpb.1</a> - but no effort to do this officially</li>
+</ul>
+</li>
+<li>
+<p>Review process</p>
+<ul>
+<li>no formalized process in place, except for reviews on mailing lists</li>
+</ul>
+</li>
+<li>
+<p>Hackathons</p>
+<ul>
+<li>Themed hack events a few times a year</li>
+<li><a href="https://www.openbsd.org/hackathons.html">https://www.openbsd.org/hackathons.html</a></li>
+<li>Good summaries of those to be found here: <a href="https://undeadly.org/cgi?action=front">https://undeadly.org/cgi?action=front</a></li>
+</ul>
+</li>
+<li>
+<p>Update process</p>
+<ul>
+<li>Patches for the system <a href="https://www.openbsd.org/errata66.html">https://www.openbsd.org/errata66.html</a></li>
+<li><a href="https://man.openbsd.org/syspatch">syspatch(8)</a> - apply <a href="https://www.openbsd.org/faq/faq10.html#Patches">security and reliability updates</a>.</li>
+<li><a href="https://man.openbsd.org/sysupgrade">sysupgrade(8)</a> - upgrade to the next OpenBSD release or a newer snapshot.</li>
+<li><a href="https://flak.tedunangst.com/post/rethinking-openbsd-security">https://flak.tedunangst.com/post/rethinking-openbsd-security</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="netbsd">NetBSD</h3>
+<p><img src="/post_images/os-code/netbsd.jpg" alt="Alt text"></p>
+<ul>
+<li>Docs
+<ul>
+<li>Useful commiter docs here: <a href="https://www.netbsd.org/developers/commit-guidelines.html">https://www.netbsd.org/developers/commit-guidelines.html</a></li>
+</ul>
+</li>
+<li>VCS
+<ul>
+<li>Still uses CVS <a href="https://www.netbsd.org/developers/restricted.html#rsync">https://www.netbsd.org/developers/restricted.html#rsync</a></li>
+</ul>
+</li>
+<li>Testing
+<ul>
+<li>there&rsquo;s a set of automated tests, and also documentation on how to write more of that: <a href="https://wiki.netbsd.org/tutorials/atf/">https://wiki.netbsd.org/tutorials/atf/</a></li>
+<li>there&rsquo;s a build farm with somewhat automated testing process <a href="https://gdb-buildbot.osci.io/#/builders/10">https://gdb-buildbot.osci.io/#/builders/10</a></li>
+<li>also there&rsquo;s a daily build log for a few major branches <a href="https://releng.netbsd.org/cgi-bin/builds.cgi">https://releng.netbsd.org/cgi-bin/builds.cgi</a></li>
+</ul>
+</li>
+<li>Review</li>
+<li>Tickets and release engineering
+<ul>
+<li>the whole release engineering process is described here <a href="https://releng.netbsd.org/">https://releng.netbsd.org/</a></li>
+<li>bug reporting is done by email - posting bug messages into a specific mailing list</li>
+<li>there are bug status logs for each release: <a href="https://releng.netbsd.org/index-9.html">https://releng.netbsd.org/index-9.html</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="freedos">FreeDOS</h3>
+<p><img src="/post_images/os-code/freedos12.png" alt="Alt text"></p>
+<ul>
+<li>Docs
+<ul>
+<li>main wiki for the project can be found here <a href="http://wiki.freedos.org/wiki/index.php/Main_Page">http://wiki.freedos.org/wiki/index.php/Main_Page</a></li>
+<li>they have this awesome notion of intentional releases <a href="http://wiki.freedos.org/wiki/index.php/Releases/1.3">http://wiki.freedos.org/wiki/index.php/Releases/1.3</a> which is very nice because it brings focus to the process. Although I&rsquo;ve found just two of those pages :)</li>
+<li>a complete docs can be found on FTP servers, they&rsquo;re compressed and best viewed after downloading and unzipping <a href="http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/dos/help/1.08/">http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/dos/help/1.08/</a></li>
+</ul>
+</li>
+<li>VCS
+<ul>
+<li>Github based <a href="https://github.com/FDOS/kernel">https://github.com/FDOS/kernel</a></li>
+</ul>
+</li>
+<li>Bugs
+<ul>
+<li>Sourceforge bugtracker: <a href="https://sourceforge.net/p/freedos/bugs/">https://sourceforge.net/p/freedos/bugs/</a></li>
+<li>this is quite sad. For me sourceforge is quite a legacy platform, dated and slow. Seems everything alive have already moved elsewhere, so I hope this does not mean some stagnation for FreeDOS.</li>
+</ul>
+</li>
+<li>Testing
+<ul>
+<li>Travis-CI checks for PRs: <a href="https://github.com/FDOS/kernel/pull/16/checks">https://github.com/FDOS/kernel/pull/16/checks</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="reactos">ReactOS</h3>
+<p><img src="/post_images/os-code/reactos.png" alt="Alt text"></p>
+<ul>
+<li>Docs
+<ul>
+<li>Decent docs on how to start contributing: <a href="https://reactos.org/wiki/Development_Introduction">https://reactos.org/wiki/Development_Introduction</a></li>
+</ul>
+</li>
+<li>VCS
+<ul>
+<li>Git: <a href="https://reactos.org/wiki/Building_ReactOS">https://reactos.org/wiki/Building_ReactOS</a></li>
+<li>Changes maintained via Git pull requests</li>
+</ul>
+</li>
+<li>Testing
+<ul>
+<li>There’s automatic regression testing: <a href="https://reactos.org/testman/">https://reactos.org/testman/</a></li>
+<li>Don’t see any automatic testing on per-Pull Request level</li>
+</ul>
+</li>
+<li>Review
+<ul>
+<li>Tasks kept in Jira <a href="https://jira.reactos.org/browse/CORE-13950">https://jira.reactos.org/browse/CORE-13950</a></li>
+<li>Review in Git</li>
+</ul>
+</li>
+</ul>
+<h2 id="comparison-table">Comparison table</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">OS name</th>
+<th style="text-align:center">VCS</th>
+<th style="text-align:right">Code review</th>
+<th style="text-align:right">Bug reporting</th>
+<th style="text-align:right">Contributors guide</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Linux</td>
+<td style="text-align:center">Git</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">Freebsd</td>
+<td style="text-align:center">SVN / migrating to Git</td>
+<td style="text-align:right">Phabricator</td>
+<td style="text-align:right">Bugzilla</td>
+<td style="text-align:right"><a href="https://www.freebsd.org/doc/en_US.ISO8859-1/articles/committers-guide/article.html">commiters guide</a></td>
+</tr>
+<tr>
+<td style="text-align:left">Openbsd</td>
+<td style="text-align:center">CVS / Github based Git readonly mirror</td>
+<td style="text-align:right">CVS - core system, review via email, / Github pull-requests for GH-based projects</td>
+<td style="text-align:right">No intention to have a bugtracker</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">Netbsd</td>
+<td style="text-align:center">CVS</td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:right"><a href="https://www.netbsd.org/developers/commit-guidelines.htm">commiters guide</a></td>
+</tr>
+<tr>
+<td style="text-align:left">FreeDOS</td>
+<td style="text-align:center">Git</td>
+<td style="text-align:right">Github-based</td>
+<td style="text-align:right">sourceforge tracker</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">ReactOS</td>
+<td style="text-align:center">Git</td>
+<td style="text-align:right">reviews in git</td>
+<td style="text-align:right"><a href="https://jira.reactos.org">JIRA</a></td>
+<td style="text-align:right"><a href="https://reactos.org/wiki/Development_Introductio">how to start contributing</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="conclusion">Conclusion</h2>
+<p>The mentioned operating systems differ greatly in terms of modern tools adoption. The whole endeavor started as a way to compare how grounded in reality accusations towards OpenBSD really are. And from what I’ve found, also judging by the seemingly strong security concerns of Openbsd&rsquo;s maintainers, and relative popularity of the OS itself, I must say that it now seems nothing more than a hobby OS, or a niche one, with usage in specific places like isolated network infrastructure. Not the one that should really be accessible from the outside world in any way. The effort around the OS has brought us a good deal of really useful and secure solutions, but as a whole its development process seems dubious.</p>
+<p>As for the other Operating Systems - the clear contenders here are Linux and FreeBSD.The former as an unprecedented leader in terms of focus and the amount of contributions from various vendors and independent developers, and the latter because of the exquisite quality of the source code and value it brings to the table despite being foreshadowed by The Penguin.</p>
+<h4 id="a-few-more-links-on-the-subject">A few more links on the subject:</h4>
+<ul>
+<li><a href="https://www.freebsdnews.com/2018/01/05/bsds-created-equally/">https://www.freebsdnews.com/2018/01/05/bsds-created-equally/</a></li>
+<li><a href="https://media.ccc.de/v/34c3-8968-are_all_bsds_created_equally">https://media.ccc.de/v/34c3-8968-are_all_bsds_created_equally</a></li>
+<li><a href="https://www.bsdfrog.org/pub/events/my_bsd_sucks_less_than_yours-AsiaBSDCon2017-paper.pdf">https://www.bsdfrog.org/pub/events/my_bsd_sucks_less_than_yours-AsiaBSDCon2017-paper.pdf</a></li>
+</ul>
+
+    </div>
+ 
+     <div id="disqus_thread"></div>
+<script>
+    (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = '//marcinbloguje.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+      <script id="dsq-count-scr" src="//careerboost.disqus.com/count.js" async></script>
+
+
+  </article>
+
+</main>
+
+			<hr class="sep" />
+		</main>
+		<footer class="container no-print">
+			<div class="u-footer">
+				
+
+
+<a href="http://marcin.cylke.com.pl/index.xml" target="_blank"><img class="icon-social" src="/img/feed.svg" alt="Feed"></a>
+
+				<p>
+					
+					Theme used: <a href="https://github.com/yursan9/manis-hugo-theme">Manis</a><br>
+					
+					
+					
+				</p>
+				
+				<a href="#brand">
+					<img class="icon-text" src="/img/toup.svg" alt="To Up"/>
+					<span>Back to Up</span>
+				</a>
+				
+			</div>
+		</footer>
+		
+	</body>
+</html>
+
