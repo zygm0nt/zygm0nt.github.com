@@ -18,15 +18,5 @@ One of the slides from the presentation. How can you develop an operating system
 &amp;mdash; Marcin Cylke (@zygm0nt) January 5, 2020  So to be specific - the whole presentation was rather negative towards security model used along OpenBSD development.</description>
     </item>
     
-    <item>
-      <title>awesome WM and how to handle multiple monitors</title>
-      <link>http://marcin.cylke.com.pl/2020/11/24/awesomewm-multiple-monitors/</link>
-      <pubDate>Tue, 24 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://marcin.cylke.com.pl/2020/11/24/awesomewm-multiple-monitors/</guid>
-      <description>Recently I&amp;rsquo;ve started using new window manager. Since I&amp;rsquo;ve always wanted to try some kind of tiling window manager I thought that a fresh installation of an OS on a new machine is good time to have a go at that.
-From the multitude of possibilities I&amp;rsquo;ve chosen AwesomeWM. It&amp;rsquo;s reasonable enough in its standard configuration so I&amp;rsquo;ve decided to stick with it at least for the time being. In fact the only important feature I look for in a tiling window manager is the tiling behavior.</description>
-    </item>
-    
   </channel>
 </rss>
