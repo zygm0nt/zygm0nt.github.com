@@ -6,7 +6,26 @@
     <description>Recent content on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 05 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://marcin.cylke.com.pl/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://marcin.cylke.com.pl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>running gamecube emulator on Linux</title>
+      <link>http://marcin.cylke.com.pl/2021/02/07/running-gamecube-on-linux/</link>
+      <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2021/02/07/running-gamecube-on-linux/</guid>
+      <description>I have a fondness for all the retro things in tech, and try to hone this when I have time with exploring old tech. This time I tried running one of the retro consoles&#39; emulators. I chose Nintendo Gamecube - because of many reasons, but one of them being I own a quite recent incarnation of the Nintendo spirit, namely Nintendo Switch. So with the older one I&amp;rsquo;ve wanted to see how the games look like back than and how much the landscape of gaming on Nintendo has changed with that big of an age gap.</description>
+    </item>
+    
+    <item>
+      <title>awesome WM and how to handle multiple monitors</title>
+      <link>http://marcin.cylke.com.pl/2021/02/06/awesomewm-multiple-monitors/</link>
+      <pubDate>Sat, 06 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2021/02/06/awesomewm-multiple-monitors/</guid>
+      <description>Recently I&amp;rsquo;ve started using new window manager. Since I&amp;rsquo;ve always wanted to try some kind of tiling window manager I thought that a fresh installation of an OS on a new machine is good time to have a go at that.
+From the multitude of possibilities I&amp;rsquo;ve chosen AwesomeWM. It&amp;rsquo;s reasonable enough in its standard configuration so I&amp;rsquo;ve decided to stick with it at least for the time being. In fact the only important feature I look for in a tiling window manager is the tiling behavior.</description>
+    </item>
+    
     <item>
       <title>operating systems showdown</title>
       <link>http://marcin.cylke.com.pl/2020/12/05/operating-systems-showdown/</link>
@@ -16,6 +35,20 @@
       <description>Modern open source operating systems vs modern software development practices The reason to write this blog post was a presentation I watched some time ago, and commented on it on Twitter:
 One of the slides from the presentation. How can you develop an operating system and follow *that* kind of process?! :sadpanda: pic.twitter.com/3XuHMXc0My
 &amp;mdash; Marcin Cylke (@zygm0nt) January 5, 2020  So to be specific - the whole presentation was rather negative towards security model used along OpenBSD development.</description>
+    </item>
+    
+    <item>
+      <title>Anki as a learning trampoline</title>
+      <link>http://marcin.cylke.com.pl/2020/11/24/anki-trampoline/</link>
+      <pubDate>Tue, 24 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2020/11/24/anki-trampoline/</guid>
+      <description>tips and tricks
+https://senrigan.io/blog/everything-i-know-strategies-tips-and-tricks-for-spaced-repetition-anki/
+Anki Tips: What I Learned Making 10,000 Flashcards https://rs.io/anki-tips/
+Better Anki Usage Guide https://andrewzah.com/posts/2019/better-anki-usage-guide/
+augmenting long-term memory http://augmentingcognition.com/ltm.html
+as a bonus - really nice writeup about cognition from Michael Nielsen: http://cognitivemedium.com/tat/</description>
     </item>
     
     <item>

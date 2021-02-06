@@ -6,31 +6,76 @@
     <description>Recent content in Categories on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 05 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://marcin.cylke.com.pl/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://marcin.cylke.com.pl/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>freebsd</title>
-      <link>http://marcin.cylke.com.pl/categories/freebsd/</link>
-      <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
+      <title>gamecube</title>
+      <link>http://marcin.cylke.com.pl/categories/gamecube/</link>
+      <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/freebsd/</guid>
+      <guid>http://marcin.cylke.com.pl/categories/gamecube/</guid>
       <description></description>
     </item>
     
     <item>
       <title>IT</title>
       <link>http://marcin.cylke.com.pl/categories/IT/</link>
-      <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/categories/IT/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>nintendo</title>
+      <link>http://marcin.cylke.com.pl/categories/nintendo/</link>
+      <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/categories/nintendo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>retro</title>
+      <link>http://marcin.cylke.com.pl/categories/retro/</link>
+      <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/categories/retro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>awesomeWM</title>
+      <link>http://marcin.cylke.com.pl/categories/awesomeWM/</link>
+      <pubDate>Sat, 06 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/categories/awesomeWM/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>linux</title>
       <link>http://marcin.cylke.com.pl/categories/linux/</link>
-      <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 06 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>window-manager</title>
+      <link>http://marcin.cylke.com.pl/categories/window-manager/</link>
+      <pubDate>Sat, 06 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/categories/window-manager/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>freebsd</title>
+      <link>http://marcin.cylke.com.pl/categories/freebsd/</link>
+      <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/categories/freebsd/</guid>
       <description></description>
     </item>
     
@@ -49,6 +94,24 @@
       <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/categories/operating-systems/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>anki</title>
+      <link>http://marcin.cylke.com.pl/categories/anki/</link>
+      <pubDate>Tue, 24 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/categories/anki/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>learning</title>
+      <link>http://marcin.cylke.com.pl/categories/learning/</link>
+      <pubDate>Tue, 24 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/categories/learning/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="generator" content="Hugo 0.80.0-DEV" />
+		<title>running gamecube emulator on Linux - Tech ramblings by Marcin</title>
+
+		<meta name="description" content="I have a fondness for all the retro things in tech, and try to hone this when I have time with exploring old tech. This time I tried running one of the retro consoles&#39; emulators. I chose Nintendo Gamecube - because of many reasons, but one of them being I own a quite recent incarnation of the Nintendo spirit, namely Nintendo Switch. So with the older one I&rsquo;ve wanted to see how the games look like back than and how much the landscape of gaming on Nintendo has changed with that big of an age gap.">
+
+
+		
+	
+		
+
+
+
+
+<link rel="stylesheet" href="/css/ui.css">
+
+	
+		
+
+		<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono|Lato|Raleway">
+
+		
+        
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-172194-10', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+	</head>
+
+<body>
+<header class="container no-print">
+	<div class="u-header">
+		<nav class="bar">
+	<ul><li>
+			<a href="/">
+				<img class="icon-text" src="/img/prev.svg"/>
+			</a>
+		</li><li><a href="/about/">About Me</a></li></ul>
+</nav>
+
+	</div>
+</header>
+<main class="container">
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">running gamecube emulator on Linux</h1>
+    
+    <span class="article-date">2021-02-07</span>
+    
+    <ul class="article-taxonomy">
+                  
+      <li>
+        <i class="fa fa-category"></i><a href="/categories/it">it</a>
+        <span>|</span><a href="/categories/retro">retro</a>
+        <span>|</span><a href="/categories/nintendo">nintendo</a>
+        <span>|</span><a href="/categories/gamecube">gamecube</a>
+        <span>|</span>
+      </li>
+      
+    
+      
+    </ul>
+ 
+    <div class="article-content">
+      <p>I have a fondness for all the retro things in tech, and try to hone this when I have time with exploring old tech. This time I tried running one of the retro consoles' emulators. I chose Nintendo Gamecube - because of many reasons, but one of them being I own a quite recent incarnation of the Nintendo spirit, namely Nintendo Switch. So with the older one I&rsquo;ve wanted to see how the games look like back than and how much the landscape of gaming on Nintendo has changed with that big of an age gap.</p>
+<p>The only Gamecube emulator I know of is called <a href="https://dolphin-emu.org/">Dolphin</a>.</p>
+<p>Since my current retro gaming machine is linux-based and there is no prebuilt version for my os version I&rsquo;ve just compiled it from sources. Pretty astonished that for such a big project, with lots of changes there are only 5 major tags in the repo. And so since I didn&rsquo;t want to have a lagging version by building from 5.0 stable tag I&rsquo;ve decided to go full-on on build from the top of master branch.</p>
+<p>Following the build instructions, the whole process went rather smoothly. Starting games is easy and as long as they&rsquo;re well supported by the emulator there really aren&rsquo;t any issues with them.</p>
+<p>My main problem however is with the controls. The original controller for Gamecube is quite an elaborate one. Emulating that behavior with the keyboard seems too cumbersome, too inconvenient. That&rsquo;s why I&rsquo;ve tried using Xbox 360 controller I had lying around. Which proved to be somewhat of a success but not a complete one. There is an implemented way to do it in Dolphin, there&rsquo;s even a very nice tool to assign keys. But unfortunately stick calibration does not work, at least for me, at least not now.</p>
+<p>After asking on the DolphinEmu forums about this &ldquo;glitch&rdquo; it actually came out as my error. I should have chosen the &ldquo;keys&rdquo; for the sticks first. This not being that obvious in the first place now seems like something obvious considering other steps of the calibration process :D</p>
+
+    </div>
+ 
+     <div id="disqus_thread"></div>
+<script>
+    (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = '//marcinbloguje.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+      <script id="dsq-count-scr" src="//careerboost.disqus.com/count.js" async></script>
+
+
+  </article>
+
+</main>
+
+			<hr class="sep" />
+		</main>
+		<footer class="container no-print">
+			<div class="u-footer">
+				
+
+
+<a href="http://marcin.cylke.com.pl/index.xml" target="_blank"><img class="icon-social" src="/img/feed.svg" alt="Feed"></a>
+
+				<p>
+					
+					Theme used: <a href="https://github.com/yursan9/manis-hugo-theme">Manis</a><br>
+					
+					
+					
+				</p>
+				
+				<a href="#brand">
+					<img class="icon-text" src="/img/toup.svg" alt="To Up"/>
+					<span>Back to Up</span>
+				</a>
+				
+			</div>
+		</footer>
+		
+	</body>
+</html>
+
