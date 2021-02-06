@@ -38,20 +38,6 @@ One of the slides from the presentation. How can you develop an operating system
     </item>
     
     <item>
-      <title>Anki as a learning trampoline</title>
-      <link>http://marcin.cylke.com.pl/2020/11/24/anki-trampoline/</link>
-      <pubDate>Tue, 24 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://marcin.cylke.com.pl/2020/11/24/anki-trampoline/</guid>
-      <description>tips and tricks
-https://senrigan.io/blog/everything-i-know-strategies-tips-and-tricks-for-spaced-repetition-anki/
-Anki Tips: What I Learned Making 10,000 Flashcards https://rs.io/anki-tips/
-Better Anki Usage Guide https://andrewzah.com/posts/2019/better-anki-usage-guide/
-augmenting long-term memory http://augmentingcognition.com/ltm.html
-as a bonus - really nice writeup about cognition from Michael Nielsen: http://cognitivemedium.com/tat/</description>
-    </item>
-    
-    <item>
       <title>plotting data availability with matplotlib</title>
       <link>http://marcin.cylke.com.pl/2020/03/13/plotting-with-matplotlib/</link>
       <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
