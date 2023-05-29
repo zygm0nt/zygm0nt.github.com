@@ -47,7 +47,7 @@ for projects like &lt;a href=&#34;https://github.com/impetus-opensource/Kundera&
       <pubDate>Mon, 24 Jun 2013 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/</guid>
-      <description>An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system&amp;rsquo;s components. Since I had already a few separate components I didn&amp;rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I&amp;rsquo;ve decided to go that way with my solution. What is Zookeeper?</description>
+      <description>An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system&amp;rsquo;s components. Since I had already a few separate components I didn&amp;rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I&amp;rsquo;ve decided to go that way with my solution. What is Zookeeper?Just a crude distributed synchronization framework.</description>
     </item>
     
     <item>
@@ -58,8 +58,8 @@ for projects like &lt;a href=&#34;https://github.com/impetus-opensource/Kundera&
       <guid>http://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/</guid>
       <description>This post is a summary of what has been presented by Kathleen Ting on StrangeLoop conference. You can watch the original here: http://www.infoq.com/presentations/Misconfiguration-ZooKeeper
 I&amp;rsquo;ve decided to put this selection here for quick reference.
-Connection mismanagement   too many connections
- WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - Too many connections from /xx.x.xx.xxx - max is 60     running out of ZK connections?  set maxClientCnxns=200 in zoo.cfg   HBase client leaking connections?</description>
+Connection mismanagement too many connections
+WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - Too many connections from /xx.x.xx.xxx - max is 60 running out of ZK connections? set maxClientCnxns=200 in zoo.cfg HBase client leaking connections? fixed in HBASE-3777, HBASE-4773, HBASE-5466 manually close connections connection closes prematurely</description>
     </item>
     
     <item>
@@ -79,7 +79,7 @@ Connection mismanagement   too many connections
       <guid>http://marcin.cylke.com.pl/2012/11/26/whug-8-beyond-hadoop/</guid>
       <description>W najbliższy czwartek - czyli 29.11.2012 - poprowadzę prezentację w ramach Warsaw Hadoop User Group. Swoją obecność można odklinąć tu http://www.meetup.com/warsaw-hug/
 A o czym będę mówił? Przeklejka ze strony WHUG:
- Marcin skupi się na współpracy ekosystemu Hadoopa z innymi narzędziami. Pokaże jak prosto i wygodnie przetwarzać grafy i jak stosować podejście Big Data, w czasie rzeczywistym. Poruszy również temat łatwiejszego tworzenia algorytmów Map-Reduce
+Marcin skupi się na współpracy ekosystemu Hadoopa z innymi narzędziami. Pokaże jak prosto i wygodnie przetwarzać grafy i jak stosować podejście Big Data, w czasie rzeczywistym. Poruszy również temat łatwiejszego tworzenia algorytmów Map-Reduce
 Będzie to nieco mniej technicza (ale wciąż praktyczna) wycieczka po obrzeżach tematyki, która jest zwykle poruszana w połączeniu z Hadoop-em.</description>
     </item>
     

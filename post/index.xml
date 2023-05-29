@@ -6,14 +6,24 @@
     <description>Recent content in Posts on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 07 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://marcin.cylke.com.pl/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://marcin.cylke.com.pl/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>an ode to fzf</title>
+      <link>http://marcin.cylke.com.pl/2023/05/29/an-ode-to-fzf/</link>
+      <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2023/05/29/an-ode-to-fzf/</guid>
+      <description>What is fzf? How could I&amp;rsquo;ve lived without it for so long?! It&amp;rsquo;s just a pretty little fuzzy search tool, written in go. You can find it here: https://github.com/junegunn/fzf
+Important features fuzzy search in a list of lines - thanks to that, it&amp;rsquo;s really easy to find something in a considerably big list of items it&amp;rsquo;s blazingly fast! very nice shell integrations many additional features - like preview for files (go here to see examples: https://github.</description>
+    </item>
+    
     <item>
       <title>running gamecube emulator on Linux</title>
       <link>http://marcin.cylke.com.pl/2021/02/07/running-gamecube-on-linux/</link>
       <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2021/02/07/running-gamecube-on-linux/</guid>
-      <description>I have a fondness for all the retro things in tech, and try to hone this when I have time with exploring old tech. This time I tried running one of the retro consoles&#39; emulators. I chose Nintendo Gamecube - because of many reasons, but one of them being I own a quite recent incarnation of the Nintendo spirit, namely Nintendo Switch. So with the older one I&amp;rsquo;ve wanted to see how the games look like back than and how much the landscape of gaming on Nintendo has changed with that big of an age gap.</description>
+      <description>I have a fondness for all the retro things in tech, and try to hone this when I have time with exploring old tech. This time I tried running one of the retro consoles&amp;rsquo; emulators. I chose Nintendo Gamecube - because of many reasons, but one of them being I own a quite recent incarnation of the Nintendo spirit, namely Nintendo Switch. So with the older one I&amp;rsquo;ve wanted to see how the games look like back than and how much the landscape of gaming on Nintendo has changed with that big of an age gap.</description>
     </item>
     
     <item>
@@ -34,7 +44,7 @@ From the multitude of possibilities I&amp;rsquo;ve chosen AwesomeWM. It&amp;rsqu
       <guid>http://marcin.cylke.com.pl/2020/12/05/operating-systems-showdown/</guid>
       <description>Modern open source operating systems vs modern software development practices The reason to write this blog post was a presentation I watched some time ago, and commented on it on Twitter:
 One of the slides from the presentation. How can you develop an operating system and follow *that* kind of process?! :sadpanda: pic.twitter.com/3XuHMXc0My
-&amp;mdash; Marcin Cylke (@zygm0nt) January 5, 2020  So to be specific - the whole presentation was rather negative towards security model used along OpenBSD development.</description>
+&amp;mdash; Marcin Cylke (@zygm0nt) January 5, 2020 So to be specific - the whole presentation was rather negative towards security model used along OpenBSD development.</description>
     </item>
     
     <item>
@@ -136,7 +146,7 @@ Nerdcommenter (https://github.com/scrooloose/nerdcommenter) - a pretty ubiquitus
       
       <guid>http://marcin.cylke.com.pl/2016/02/20/lambda-days-2016/</guid>
       <description>Lambda Days 2016 - Kraków This last two days I&amp;rsquo;ve spend on a conference in Kraków. The topics revolved around functional programming, with all the experimental stuff, popular languages, etc. Here are the talks I&amp;rsquo;ve been to and short summaries of those:
-Day 1:   Propositions as types - the keynote delivered by Philip Wadler - seen it already on YouTube. But the thing with Lambda t-shirt looked funny again :D</description>
+Day 1: Propositions as types - the keynote delivered by Philip Wadler - seen it already on YouTube. But the thing with Lambda t-shirt looked funny again :D</description>
     </item>
     
     <item>
@@ -222,7 +232,7 @@ resolution was heavily inspired by Adam Kawa&amp;rsquo;s post &lt;a href=&#34;ht
       <pubDate>Mon, 24 Jun 2013 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/</guid>
-      <description>An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system&amp;rsquo;s components. Since I had already a few separate components I didn&amp;rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I&amp;rsquo;ve decided to go that way with my solution. What is Zookeeper?</description>
+      <description>An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system&amp;rsquo;s components. Since I had already a few separate components I didn&amp;rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I&amp;rsquo;ve decided to go that way with my solution. What is Zookeeper?Just a crude distributed synchronization framework.</description>
     </item>
     
     <item>
@@ -233,8 +243,8 @@ resolution was heavily inspired by Adam Kawa&amp;rsquo;s post &lt;a href=&#34;ht
       <guid>http://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/</guid>
       <description>This post is a summary of what has been presented by Kathleen Ting on StrangeLoop conference. You can watch the original here: http://www.infoq.com/presentations/Misconfiguration-ZooKeeper
 I&amp;rsquo;ve decided to put this selection here for quick reference.
-Connection mismanagement   too many connections
- WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - Too many connections from /xx.x.xx.xxx - max is 60     running out of ZK connections?  set maxClientCnxns=200 in zoo.cfg   HBase client leaking connections?</description>
+Connection mismanagement too many connections
+WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - Too many connections from /xx.x.xx.xxx - max is 60 running out of ZK connections? set maxClientCnxns=200 in zoo.cfg HBase client leaking connections? fixed in HBASE-3777, HBASE-4773, HBASE-5466 manually close connections connection closes prematurely</description>
     </item>
     
     <item>
@@ -254,7 +264,7 @@ Connection mismanagement   too many connections
       <guid>http://marcin.cylke.com.pl/2012/11/26/whug-8-beyond-hadoop/</guid>
       <description>W najbliższy czwartek - czyli 29.11.2012 - poprowadzę prezentację w ramach Warsaw Hadoop User Group. Swoją obecność można odklinąć tu http://www.meetup.com/warsaw-hug/
 A o czym będę mówił? Przeklejka ze strony WHUG:
- Marcin skupi się na współpracy ekosystemu Hadoopa z innymi narzędziami. Pokaże jak prosto i wygodnie przetwarzać grafy i jak stosować podejście Big Data, w czasie rzeczywistym. Poruszy również temat łatwiejszego tworzenia algorytmów Map-Reduce
+Marcin skupi się na współpracy ekosystemu Hadoopa z innymi narzędziami. Pokaże jak prosto i wygodnie przetwarzać grafy i jak stosować podejście Big Data, w czasie rzeczywistym. Poruszy również temat łatwiejszego tworzenia algorytmów Map-Reduce
 Będzie to nieco mniej technicza (ale wciąż praktyczna) wycieczka po obrzeżach tematyki, która jest zwykle poruszana w połączeniu z Hadoop-em.</description>
     </item>
     
@@ -291,8 +301,7 @@ So, here is the obligatory picture.</description>
       <pubDate>Mon, 18 Jun 2012 09:08:09 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2012/06/18/hadoop-for-enterprises/</guid>
-      <description>Hadoop&#39;s usage as a big data processing framework gains a lot of attention lately. Now, not only big players see, that they can embrace the data their sites or products are generating and develop their businesses on it. For that to happen two things are needed: the data itself and means of processing really big amounts of it. 
-Gathering data is relatively easy. These are not necessarily structured data, you don&#39;t need to plan their usage at first.</description>
+      <description>Hadoop&#39;s usage as a big data processing framework gains a lot of attention lately. Now, not only big players see, that they can embrace the data their sites or products are generating and develop their businesses on it. For that to happen two things are needed: the data itself and means of processing really big amounts of it. Gathering data is relatively easy. These are not necessarily structured data, you don&#39;t need to plan their usage at first.</description>
     </item>
     
     <item>
@@ -301,7 +310,7 @@ Gathering data is relatively easy. These are not necessarily structured data, yo
       <pubDate>Wed, 02 Nov 2011 15:32:15 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/11/02/soapui-ext-libs-and-its-weirdness/</guid>
-      <description>Suppose you want to add some additional jars to your SoapUI installation. It all should work ok if you put them in bin/ext directory. It is scanned at startup, and jars found there are automatically added to classpath.  However if you want to add some JDBC drivers, and happen to be using SoapUI version higher than 3.5.1 it is a bit more tricky. You may face this NoClassDefFoundError:  An error occured [oracle/jdbc/Driver], see error log for details java.</description>
+      <description>Suppose you want to add some additional jars to your SoapUI installation. It all should work ok if you put them in bin/ext directory. It is scanned at startup, and jars found there are automatically added to classpath. However if you want to add some JDBC drivers, and happen to be using SoapUI version higher than 3.5.1 it is a bit more tricky. You may face this NoClassDefFoundError: An error occured [oracle/jdbc/Driver], see error log for details java.</description>
     </item>
     
     <item>
@@ -311,7 +320,7 @@ Gathering data is relatively easy. These are not necessarily structured data, yo
       
       <guid>http://marcin.cylke.com.pl/2011/09/21/what-is-nosql-good-for/</guid>
       <description>... or how I ended up writing a CouchDB proof of concept app? Once upon a time I set out on a journey to discover the NoSQL land. I&#39;ve decided that doing simple queries wouldn&#39;t be interesting enough. That&#39;s why I&#39;ve chose to create an app that would be based on some NoSQL database.
- The main idea was to create an app, that would dynamically update itself with geographic data flowing in.</description>
+The main idea was to create an app, that would dynamically update itself with geographic data flowing in.</description>
     </item>
     
     <item>
@@ -320,7 +329,7 @@ Gathering data is relatively easy. These are not necessarily structured data, yo
       <pubDate>Mon, 22 Aug 2011 22:19:14 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/08/22/5-best-things-to-do-with-your-kindle/</guid>
-      <description>I bought a Kindle (3rd generation, Wi-Fi only) some time ago - like half a year ago. Read some books, done some web-browsing (awful, quite unpleasant). Gradually I became more and more curious of other things possible to achieve with this slate-looking piece of tech. These are my thoughts and ideas.  Got a Kindle? Use it every day? Feel like modding or extending your ways of usage? Great!</description>
+      <description>I bought a Kindle (3rd generation, Wi-Fi only) some time ago - like half a year ago. Read some books, done some web-browsing (awful, quite unpleasant). Gradually I became more and more curious of other things possible to achieve with this slate-looking piece of tech. These are my thoughts and ideas. Got a Kindle? Use it every day? Feel like modding or extending your ways of usage? Great! Read on, and share your thoughts in comments!</description>
     </item>
     
     <item>
@@ -329,10 +338,10 @@ Gathering data is relatively easy. These are not necessarily structured data, yo
       <pubDate>Sun, 07 Aug 2011 22:44:39 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/08/07/great-many-ways-to-enjoy-life/</guid>
-      <description> This looks like a very nice art+video project. Look at those clips:  EAT from Rick Mereki on Vimeo.
-   LEARN from Rick Mereki on Vimeo.
-   MOVE from Rick Mereki on Vimeo.
-    Comments  </description>
+      <description> This looks like a very nice art+video project. Look at those clips: EAT from Rick Mereki on Vimeo.
+LEARN from Rick Mereki on Vimeo.
+MOVE from Rick Mereki on Vimeo.
+Comments </description>
     </item>
     
     <item>
@@ -342,7 +351,7 @@ Gathering data is relatively easy. These are not necessarily structured data, yo
       
       <guid>http://marcin.cylke.com.pl/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/</guid>
       <description>Some time ago one of the projects at work required me to validate some Java POJOs. Theses were my model classes and I&#39;ve been creating them from incoming WebService requests. One would say that XSD would be sufficient for the task, for parts of this validations - sure, it would. But there were some advanced rules XSD would not handle, or would render the schema document very complicated.
-Rules I needed to express were like:  person&#39;s first_name and last_name should be of appropriate length - between 2 and 20, and additionally one could pass a zero-length string just to remove the previous value state field should consist only defined values - as in dictionary value - this one would be completable with XSD&#39;s enumerations, but would require often changing schema files and redistributing them to interested parties :(  The library I&#39;ve decided to use for this task is OVal and it came out really nice!</description>
+Rules I needed to express were like: person&#39;s first_name and last_name should be of appropriate length - between 2 and 20, and additionally one could pass a zero-length string just to remove the previous value state field should consist only defined values - as in dictionary value - this one would be completable with XSD&#39;s enumerations, but would require often changing schema files and redistributing them to interested parties :( The library I&#39;ve decided to use for this task is OVal and it came out really nice!</description>
     </item>
     
     <item>
@@ -352,7 +361,7 @@ Rules I needed to express were like:  person&#39;s first_name and last_name shou
       
       <guid>http://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/</guid>
       <description>And now for part 2 of my visit to Geecon 2011!
- 1. Jim Webber &#34;Revisiting SOA for the 21st century&#34; Now this was awesome! Jim Webber, a former ThoughtWorks employee, now Neo4j evangelist (in Neotechnology) described his views on how SOA should look - according to him. This was presented previously, on other occasions as his &#34;Guerilla SOA&#34; talk - generally he advocated for REST based services, loose contracts (stating that WSDLs are too verbose and code generation is evil).</description>
+1. Jim Webber &#34;Revisiting SOA for the 21st century&#34; Now this was awesome! Jim Webber, a former ThoughtWorks employee, now Neo4j evangelist (in Neotechnology) described his views on how SOA should look - according to him. This was presented previously, on other occasions as his &#34;Guerilla SOA&#34; talk - generally he advocated for REST based services, loose contracts (stating that WSDLs are too verbose and code generation is evil).</description>
     </item>
     
     <item>
@@ -362,7 +371,7 @@ Rules I needed to express were like:  person&#39;s first_name and last_name shou
       
       <guid>http://marcin.cylke.com.pl/2011/05/19/geecon-2011-day-1/</guid>
       <description>Last week&#39;s Java conference - Geecon was very interesting. It was well prepared, and gave an insight into the current Java related trends - concurrency, DSLs, polyglot programming. But not only that - there were also some pretty different talks from excellent speakers.
- The whole event took 4 days:  University day (wednesday) 2 regular conference days (Thursday + Friday)  hacker garden (Sunday)   I decided to attend only on Thursday and Friday - no time for more.</description>
+The whole event took 4 days: University day (wednesday) 2 regular conference days (Thursday + Friday) hacker garden (Sunday) I decided to attend only on Thursday and Friday - no time for more.</description>
     </item>
     
     <item>
@@ -380,7 +389,7 @@ Rules I needed to express were like:  person&#39;s first_name and last_name shou
       <pubDate>Fri, 01 Apr 2011 09:16:59 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/04/01/advisory-messages-to-the-rescue/</guid>
-      <description>The most crucial part of software development is testing. It should ensure us, that our code is correct, works according to given specs, etc. There are many kinds of tests: unit tests, integration, functional. In general you should try to test the smallest possible subset of your code and be able to check the state of the objects after the test.  This seems as rather easy task, but what if you have an integration end-to-end test to perform?</description>
+      <description>The most crucial part of software development is testing. It should ensure us, that our code is correct, works according to given specs, etc. There are many kinds of tests: unit tests, integration, functional. In general you should try to test the smallest possible subset of your code and be able to check the state of the objects after the test. This seems as rather easy task, but what if you have an integration end-to-end test to perform?</description>
     </item>
     
     <item>
@@ -389,7 +398,7 @@ Rules I needed to express were like:  person&#39;s first_name and last_name shou
       <pubDate>Sun, 27 Mar 2011 18:47:11 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/03/27/how-to-run-multiple-guest-os-in-qemu/</guid>
-      <description>This weekend I&#39;ve been fiddling with QEMU. I&#39;ve installed OpenBSD on a single image and wanted to have two instances of it communicating via network. Installing the system was easy, but the networking setup was quite a pain. See how I did that...  To make QEMU instances communicate with each other I needed to plug them to a &#34;network&#34;. That&#39;s why I&#39;ve created a bridge to which Virtual Instances would connect to.</description>
+      <description>This weekend I&#39;ve been fiddling with QEMU. I&#39;ve installed OpenBSD on a single image and wanted to have two instances of it communicating via network. Installing the system was easy, but the networking setup was quite a pain. See how I did that... To make QEMU instances communicate with each other I needed to plug them to a &#34;network&#34;. That&#39;s why I&#39;ve created a bridge to which Virtual Instances would connect to.</description>
     </item>
     
     <item>
@@ -398,9 +407,8 @@ Rules I needed to express were like:  person&#39;s first_name and last_name shou
       <pubDate>Sun, 20 Mar 2011 19:35:39 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/03/20/me-on-hadoop-on-parleys/</guid>
-      <description> Finally I&#39;ve managed to import my WarJUG presentation to parleys.com. See for yourself :)    If you&#39;ve got problems with opening the parleys&#39; version try the ones uploaded to youtube.  Here is part 1:  And here is part 2:
-  Comments Sigvatr I&#39;m sorry, but I don&#39;t understand Polish :P
-   </description>
+      <description>Finally I&#39;ve managed to import my WarJUG presentation to parleys.com. See for yourself :) If you&#39;ve got problems with opening the parleys&#39; version try the ones uploaded to youtube. Here is part 1: And here is part 2:
+Comments Sigvatr I&#39;m sorry, but I don&#39;t understand Polish :P</description>
     </item>
     
     <item>
@@ -423,7 +431,7 @@ Hadoop i okoliceView more presentations from zygm0nt. Comments Sigvatr Czyli nap
       <description>I&#39;ll be speaking at the upcoming JUG meeting in Warsaw. The topic will be Apache Hadoop. If you&#39;re interested, feel invited. Attend and ask questions. But be aware I&#39;m not advanced in this technology :)
 Full invitation text can be found here.
 P.S.: Do you know what Hadoop is? Do you use it anywhere? Have you played with it?
- Comments Marcin @teamon - prawdopodobnie będzie. Na 100% to nie wiem, ale teoretycznie wszystkie prezentacje WarJUGa są nagrywane</description>
+Comments Marcin @teamon - prawdopodobnie będzie. Na 100% to nie wiem, ale teoretycznie wszystkie prezentacje WarJUGa są nagrywane</description>
     </item>
     
     <item>
@@ -433,7 +441,7 @@ P.S.: Do you know what Hadoop is? Do you use it anywhere? Have you played with i
       
       <guid>http://marcin.cylke.com.pl/2011/02/17/deus-ex-what-a-game/</guid>
       <description>Some time ago I&#39;d become obsessed with one game. It kept me up late, fed my imagination, sucked all my free time - so basically did what good game should. It was not a new production, quite the contrary -it&#39;s release date was year 2000. And the game itself was Deus Ex.
- The year is 2050 and you wake up as a rookie named JC Denton - you are an UNATCO (United Nations Anti Terrorism CoOperation) special agent.</description>
+The year is 2050 and you wake up as a rookie named JC Denton - you are an UNATCO (United Nations Anti Terrorism CoOperation) special agent.</description>
     </item>
     
     <item>
@@ -442,7 +450,7 @@ P.S.: Do you know what Hadoop is? Do you use it anywhere? Have you played with i
       <pubDate>Mon, 17 Jan 2011 08:56:29 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/01/17/jms-redelivery-with-activemq-and-servicemix/</guid>
-      <description>The other day I felt a compelling need to implement a JMS redelivery scenario. The exact scenario I&#39;d been trying to handle was:  my message is in an ActiveMQ queue or topic its processing fails, because of some exception - ie. database access exception due to server nonavailability since we get an exception, the message is not handled properly, we may want to retry processing attempt some time later of course, for the redelivery to happen we need the message to stay in the ActiveMQ queue - fetching messages from the queue will be stopped until the redelivery succeeds or expires  See how this can be done after the jump :)   For this to happen, I&#39;ve tried implementing Apache Camel route, but as it turns out, Camel fails to deliver facilities for exact JMS redelivery.</description>
+      <description>The other day I felt a compelling need to implement a JMS redelivery scenario. The exact scenario I&#39;d been trying to handle was: my message is in an ActiveMQ queue or topic its processing fails, because of some exception - ie. database access exception due to server nonavailability since we get an exception, the message is not handled properly, we may want to retry processing attempt some time later of course, for the redelivery to happen we need the message to stay in the ActiveMQ queue - fetching messages from the queue will be stopped until the redelivery succeeds or expires See how this can be done after the jump :) For this to happen, I&#39;ve tried implementing Apache Camel route, but as it turns out, Camel fails to deliver facilities for exact JMS redelivery.</description>
     </item>
     
     <item>
@@ -452,7 +460,7 @@ P.S.: Do you know what Hadoop is? Do you use it anywhere? Have you played with i
       
       <guid>http://marcin.cylke.com.pl/2010/12/10/ku-pamieci-o-top-postingu/</guid>
       <description> W celu niezagubienia i posiadaniu argumentu w przeróżnych dyskusjach:
-http://idallen.com/topposting.html  </description>
+http://idallen.com/topposting.html </description>
     </item>
     
     <item>
@@ -461,7 +469,7 @@ http://idallen.com/topposting.html  </description>
       <pubDate>Wed, 08 Dec 2010 09:22:34 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2010/12/08/easier-and-nicer-jms/</guid>
-      <description>JMS seems like a hostile ground. It has all it&#39;s quirks and strange behaviours. A couple of defining standards plus esoteric brokers, queues and topics.    At work, we mainly use open source Jms solutions, namely Apache ActiveMQ. This one is usually bundled with Apache Servicemix, as a message broker for this particular ESB. As there are some minor caveats in this scennerio, I&#39;d like to describe here some guidelines for getting to running JMS queues.</description>
+      <description>JMS seems like a hostile ground. It has all it&#39;s quirks and strange behaviours. A couple of defining standards plus esoteric brokers, queues and topics. At work, we mainly use open source Jms solutions, namely Apache ActiveMQ. This one is usually bundled with Apache Servicemix, as a message broker for this particular ESB. As there are some minor caveats in this scennerio, I&#39;d like to describe here some guidelines for getting to running JMS queues.</description>
     </item>
     
     <item>
@@ -471,7 +479,7 @@ http://idallen.com/topposting.html  </description>
       
       <guid>http://marcin.cylke.com.pl/2010/11/06/best-pigsticking-ever/</guid>
       <description> This looks like the best pigsticking ever! Look at that little girl! The blood, butcher&#39;s knife, and child&#39;s soother :)
- Photo from Jamie Oliver&#39;s cookbook, &#34;Jamie&#39;s Italy&#34;. Available on Amazon. </description>
+Photo from Jamie Oliver&#39;s cookbook, &#34;Jamie&#39;s Italy&#34;. Available on Amazon. </description>
     </item>
     
     <item>
@@ -480,7 +488,7 @@ http://idallen.com/topposting.html  </description>
       <pubDate>Thu, 21 Oct 2010 08:40:37 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/</guid>
-      <description>In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be solved with it - the standardization processes is there for some reason. But that happens only in ideal world, which we&#39;re not living in.   In ideal world, when dealing with XML instances you&#39;d be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal definition language to declare your data structure.</description>
+      <description>In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be solved with it - the standardization processes is there for some reason. But that happens only in ideal world, which we&#39;re not living in. In ideal world, when dealing with XML instances you&#39;d be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal definition language to declare your data structure.</description>
     </item>
     
     <item>
@@ -489,7 +497,7 @@ http://idallen.com/topposting.html  </description>
       <pubDate>Thu, 26 Aug 2010 20:23:52 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/</guid>
-      <description>At work, we&#39;re mainly integrating services and systems, and since we&#39;re on a constant lookout for new, better technologies, ways to do things easier, make them more sustainable, we&#39;re trying to  Usually we use Apache Camel for this task, which is a Swiss-knife for integration engineer. What&#39;s more, this tools corresponds well with our approach to integration solutions:   try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits,  don&#39;t convert XML into Java classes back and forth and be worried with problems like XML conversion,  try to get a simple flow of the process.</description>
+      <description>At work, we&#39;re mainly integrating services and systems, and since we&#39;re on a constant lookout for new, better technologies, ways to do things easier, make them more sustainable, we&#39;re trying to Usually we use Apache Camel for this task, which is a Swiss-knife for integration engineer. What&#39;s more, this tools corresponds well with our approach to integration solutions: try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits, don&#39;t convert XML into Java classes back and forth and be worried with problems like XML conversion, try to get a simple flow of the process.</description>
     </item>
     
     <item>
@@ -518,7 +526,7 @@ I took Arlanda Express, fast train that takes you directly from the airport to S
       
       <guid>http://marcin.cylke.com.pl/2010/06/28/generic-enum-converter-for-ibatis/</guid>
       <description>My goal was to create a simple, extensible Enum converter that would work with iBatis. This seems like a trivial problem, but took me a while to find a proper solution.
- There were some additional preconditions:  all given Enums are jaxb generated objects - but any standard Java Enum should work conversion was 1-to-1, no special conditions and processing  The example Enum for this problem looks like this one (copy&amp;amp;paste from jaxb generated source):</description>
+There were some additional preconditions: all given Enums are jaxb generated objects - but any standard Java Enum should work conversion was 1-to-1, no special conditions and processing The example Enum for this problem looks like this one (copy&amp;amp;paste from jaxb generated source):</description>
     </item>
     
     <item>
@@ -528,9 +536,9 @@ I took Arlanda Express, fast train that takes you directly from the airport to S
       
       <guid>http://marcin.cylke.com.pl/2010/06/28/readability-powala/</guid>
       <description>Już dziś możecie skorzystać z &#34;umilacza&#34; czytania artykułów. Od zawsze denerwowało mnie rozpraszające badziewie na stronach z artykułami. Teraz z tym koniec. Odkąd odkryłem Readability -- strona bookmarkletu,. Wszelkie instrukcje na temat korzystania są dostępne na stronie projektu, tak więc warto sprawdzić.
- Comments Marcin Zgodnie z niektórymi źródłami, to jednak jest tam część kodu Readability. Polecam ten link:
+Comments Marcin Zgodnie z niektórymi źródłami, to jednak jest tam część kodu Readability. Polecam ten link:
 http://www.downloadsquad.com/2010/06/08/think-safari-reader-looks-familiar-thats-because-apple-used-op/
-  Dominik Porada &amp;gt; Z tego co gdzieś tam czytałem, to nawet Apple wykorzystał kawałki kodu JS z tej strony w Safari nowym.</description>
+Dominik Porada &amp;gt; Z tego co gdzieś tam czytałem, to nawet Apple wykorzystał kawałki kodu JS z tej strony w Safari nowym.</description>
     </item>
     
     <item>
@@ -550,7 +558,7 @@ First of all - the organization was very nice. Everything seemed smooth, maybe w
       
       <guid>http://marcin.cylke.com.pl/2010/06/10/osnews-com-hobby-projects/</guid>
       <description>Kilka dni temu na portalu OSNews pojawiła się notatka o skromym tytule: What Are You Working On?. Takie proste pytanie spowodowało lawinę komentarzy. Mnóstwo projektów, których ludzie się &#34;dopuszczają&#34; w czasie wolnym. Wszystkie można przeczytać tutaj: komentarze. Jest tam wiele do przeczytania, ale jeden komentarz naprawdę &#34;zrobił mój dzień&#34; :)
-  Come on people, you can do better than that. - trying to improve a tube theremin I built last year to get more linear response.</description>
+Come on people, you can do better than that. - trying to improve a tube theremin I built last year to get more linear response.</description>
     </item>
     
     <item>
@@ -571,7 +579,7 @@ Yes, there are lots. Some are good, some are bad, but the usual, stock ones, sig
       <guid>http://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/</guid>
       <description>Wracając do starego tematu OpenBSD na moim SGI O2, postanowiłem lekko odświeżyć tą maszynę. Dostałą uaktualnienie małe. Przysiedziałem również nad dostosowaniem systemu do swoich potrzeb, instalacji potrzebnego softu itp.
 Na początek dmesg z działąjącego systemu:
- [ using 433608 bytes of bsd ELF symbol table ] Copyright (c) 1982, 1986, 1989, 1991, 1993 The Regents of the University of California. All rights reserved. Copyright (c) 1995-2009 OpenBSD. All rights reserved.</description>
+[ using 433608 bytes of bsd ELF symbol table ] Copyright (c) 1982, 1986, 1989, 1991, 1993 The Regents of the University of California. All rights reserved. Copyright (c) 1995-2009 OpenBSD. All rights reserved. http://www.</description>
     </item>
     
     <item>
@@ -582,8 +590,8 @@ Na początek dmesg z działąjącego systemu:
       <guid>http://marcin.cylke.com.pl/2010/04/21/unicode-w-pythonie/</guid>
       <description>Szlag by to trafił! Czemu tak ciężko jest obsługiwać unicode w pythonie? No niby wszystko jest ładnie konwertowane wewnętrznie na odpowiednie reprezentacje, ale jeśli przychodzi co do czego, i chcemy wypisać sobie taki ciąg znaków na ekran, to już jest ciężej.
 Weźmy prosty przykład. Wczytywałem plik z polskimi znaczkami, o taki:
- Roger Macdonald;Człowiek w żelaznej masce;25  a potem w kodzie pythonowym robiłem sobie tak:
- for line in open(sys.</description>
+Roger Macdonald;Człowiek w żelaznej masce;25 a potem w kodzie pythonowym robiłem sobie tak:
+for line in open(sys.argv[1],&#39;r&#39;).readlines(): print line.</description>
     </item>
     
     <item>
@@ -593,7 +601,7 @@ Weźmy prosty przykład. Wczytywałem plik z polskimi znaczkami, o taki:
       
       <guid>http://marcin.cylke.com.pl/2010/04/21/reaktywacja-o-filmoramy/</guid>
       <description> Mam nadzieję, że wreszcie jednak ruszę z blogiem filmowym, po raz kolejny należy mu się reaktywacja.
-http://o-filmorama.blogspot.com  </description>
+http://o-filmorama.blogspot.com </description>
     </item>
     
     <item>
@@ -614,7 +622,7 @@ http://o-filmorama.blogspot.com  </description>
       <description>Od kilku dni walczyłem z wyłączeniem sprawdzania certyfikatów w Nokii E51. Okazało się, że to trywialna sprawa. Wystarczy:
 Tools -&amp;gt; App mgr -&amp;gt; Options -&amp;gt; Settings. Zmienić &#34;software installation&#34; z &#34;Signed Only&#34; na &#34;All&#34; i &#34;Onlline certificate check&#34; na &#34;Off&#34; :D
 Dzięki temu mogłem sobie zainstalować prostego i funkcjonalnego playera http://symbianoggplay.sourceforge.net/ i jest on o niebo lepszy niż ten domyślny dostarczany przez Nokie.
- Comments Marcin Cylke U mnie akurat zadziałąło :) a wszelkie próby korzystania z chińskich &amp;quot;rozwiązań&amp;quot; do odblokowywania Nokii poległy.</description>
+Comments Marcin Cylke U mnie akurat zadziałąło :) a wszelkie próby korzystania z chińskich &amp;quot;rozwiązań&amp;quot; do odblokowywania Nokii poległy.</description>
     </item>
     
     <item>
@@ -624,8 +632,6 @@ Dzięki temu mogłem sobie zainstalować prostego i funkcjonalnego playera http:
       
       <guid>http://marcin.cylke.com.pl/2010/04/14/recenzja-drools-jboss-rules-5-0-developer-s-guide/</guid>
       <description>Kilka dni temu skończyłem czytać niezbyt grubą - jak na standardy branżowej literatury - książeczkę o Droolsach.
-
-
 A co to jest Drools? Ot taki silnik reguł od JBossa, stronę ma o tu: http://jboss.org/drools. Umożliwia on wydzielenie reguł biznesowych do oddzielnego komponentu przez co możemy zyskać na przejrzystości naszego kodu oraz odseparować potencjalnie podatny na zmiany fragment - logikę biznesową właśnie :) Oczywiście można przy pomocy Droolsów zrobić dużo więcej fajnych rzeczy, ale jest to dalekie od podstawowych informacji.</description>
     </item>
     
@@ -661,8 +667,8 @@ były aktualizowane już od dłuższego czasu. Zmiany polegały głównie na
 poprawie zależności. Niemniej, plugin z wersją 3.5 Eclipse&#39;a działa
 sprawnie. W poprzednich wersjach miał tendencje do zacinania się, a
 przyczyny tego nie udało mi się namierzyć.
-  A co to jest BPEL?
-Business Process Expression Language.</description>
+A co to jest BPEL?
+Business Process Expression Language. Czyli XML do</description>
     </item>
     
     <item>
@@ -678,7 +684,7 @@ Wrażenia? Bardzo fajnie się oglądało. Problem jedynie w tym, że z
 wydawałoby się dosyć prostej fabularnie książki zrobiono spektakl,
 którego nie da się w całości zrozumieć z powodu niedopowiedzeń. Czy to
 jest domena nowoczesnych interpretacji teatralnych??
- Comments Marcin @Biały, tak, faktycznie. Ale ostatecznie na prawdę nie wyszło to tak źle.</description>
+Comments Marcin @Biały, tak, faktycznie. Ale ostatecznie na prawdę nie wyszło to tak źle.</description>
     </item>
     
     <item>
@@ -700,7 +706,7 @@ O co tyle szumu? Wystarczy spojrzeć na to jak gra wygląda. Nie chodzi w tym o 
       <description>Z dwa tygodnie temu zrobiłem fotkę. Nadawała się na demotywator. Moim zdaniem przynajmnie :)
 Umieściłem ją więc w serwisie odpowiednim - demotywatory.pl Raczej nie pieją ludzie z zachwytu, ale mam radochę i tak :D.
 Link do demotywatora - LINK.
- Comments Marcin @Voter101 - dzięki za słowa krytyki ;-)
+Comments Marcin @Voter101 - dzięki za słowa krytyki ;-)
 Jednak nadal dziwi mnie tak niesamowicie osobiste podejście do tego co ktoś sobie na blogu napisze. No ale trudno!
 A co do Twojej rady, żebym wracał do gimnazjum.</description>
     </item>
@@ -713,7 +719,7 @@ A co do Twojej rady, żebym wracał do gimnazjum.</description>
       <guid>http://marcin.cylke.com.pl/2009/09/20/ludzie-porzuccie-f-spot/</guid>
       <description>Dziś usiadłem do porządkowania zdjęć z wyjazdu wakacyjnego. Postanowiłem użyć do tego właśnie programu F-Spot. Wydawał się on odpowiedni. Zaimportował fotki, posortował według informacji EXIF. Schody zaczęły się w momencie edycji całej kolekcji.
 Ze zdjęciami było trochę problemów, którymi chciałem się zająć:
- część trzeba było obrócić połowa była zrobiona na Nikonie, który nie miał ustawionej daty, tak więc ficzer sortowania po dacie z nagłówka EXIF wziął w łeb  Tak więc chciałem poobracać fotki i uporządkować wedle czasu.</description>
+część trzeba było obrócić połowa była zrobiona na Nikonie, który nie miał ustawionej daty, tak więc ficzer sortowania po dacie z nagłówka EXIF wziął w łeb Tak więc chciałem poobracać fotki i uporządkować wedle czasu.</description>
     </item>
     
     <item>
@@ -732,7 +738,6 @@ marcin@byakshee:~&amp;gt; sudo zypper update f-spot
 Reading installed packages...
 Package &#39;f-spot&#39; is not installed.
 Nothing to do.
-
 Wniosek z tego taki, że jak raz zetkniesz się z apt-getem, to już nic nie będzie później odpowiednie :D A OpenSuse oczywiście odradzam.</description>
     </item>
     
@@ -763,13 +768,9 @@ Przez te lata pozwolił przeżyć z bohaterami zagładę planety Caprice, uciecz
       
       <guid>http://marcin.cylke.com.pl/2009/09/16/sycylijski-ibm/</guid>
       <description>Ostatnio było tu ciszej, a to ze względu na wakacyjny wypad na Sycylię. Ładnie, pięknie, wino, kobiety, owoce morza. No, to tyle z relacji.
-
-
 Ja chciałem o czymś trochę innym. A mianowicie właśnie na Sycylii, konkretniej w Palermo zobaczyłem taką oto old-skulową reklamę IBM:
-
-
-
-  Urzekła mnie! Że to jeszcze tam wisi, że jest takie pikselowe. I totalnie od czapy, reklama była umieszczona w okolicach Teatro Maximo.</description>
+Urzekła mnie! Że to jeszcze tam wisi, że jest takie pikselowe. I totalnie od czapy, reklama była umieszczona w okolicach Teatro Maximo.
+Jak Wam się podoba?</description>
     </item>
     
     <item>
@@ -801,7 +802,7 @@ Po jej ukończeniu przyszła chrapka na część drugą. Zdobyłem jakąś wersj
       <guid>http://marcin.cylke.com.pl/2009/08/29/wlasny-player-audio/</guid>
       <description>Od jakiegoś czasu męczy mnie nędza wśród odtwarzaczy audio dostępnych na różne unixy. Niby są, ale jakieś takie wybrakowane, zupełnie nie przystające do moich potrzeb. Niby robią dużo, ale ja nie potrzebuję kombajnu do muzyki.
 Oczywiście, są różne takie jak:
- Rhythmbox Amarok xmms i xmms2 musicpd bmpx cmus  No i wszystko fajnie, nie mam zamiaru negować ich użycia. Mi one po prostu nie do końca pasują. Rhythmbox, bo jest duży, ma za dużo featerów, niby umie dużo ale jak co do czego przyjdzie to bywają problemy.</description>
+Rhythmbox Amarok xmms i xmms2 musicpd bmpx cmus No i wszystko fajnie, nie mam zamiaru negować ich użycia. Mi one po prostu nie do końca pasują. Rhythmbox, bo jest duży, ma za dużo featerów, niby umie dużo ale jak co do czego przyjdzie to bywają problemy.</description>
     </item>
     
     <item>
@@ -813,7 +814,7 @@ Oczywiście, są różne takie jak:
       <description>Od dawna marzyła mi się właśnie ta maszyna. Przez rodzinę i bliskich ochszczony został &#34;odkurzaczem&#34;. Nic to. Mi się podoba. Jest naprawdę ujmujący.
 Zapytace czemu?
 Proste!
- nie jest to zwykły pc przy wejściu do &#34;biosu&#34; mamy tryb graficzny, obsługę myszy oraz dźwięki wydawane przez wbudowaną kartę muzyczną  Można by pomyśleć, że nie jest to warte uwagi, ale przecież standardowe PC nadal nie mają takich miłych ficzerów! A to jest sprzęt z 1996 roku.</description>
+nie jest to zwykły pc przy wejściu do &#34;biosu&#34; mamy tryb graficzny, obsługę myszy oraz dźwięki wydawane przez wbudowaną kartę muzyczną Można by pomyśleć, że nie jest to warte uwagi, ale przecież standardowe PC nadal nie mają takich miłych ficzerów! A to jest sprzęt z 1996 roku.</description>
     </item>
     
     <item>
@@ -833,9 +834,10 @@ To była 14 edycja Brutal Assault i jak co roku odbyła się ~30km od polskiej g
       
       <guid>http://marcin.cylke.com.pl/2009/08/15/o-czym-bedzie/</guid>
       <description>W zasadzie to o wszystkim. Z uwagi na to, że pracuję w IT, to będzie częściowo o nowinkach z tego poletka, ale nie tylko. Mam nadzieję, że nudno nie będzie i stopniowo pojawią się też inne treści.
- Comments konieckropka Dam szansę i zasubskrybuję ;)Powodzenia ;)
-  kip siema siema ;) to chętnie poczytam co nowego w &amp;quot;ajti&amp;quot;powodzonka
-  Quintasan Wielkie włochate dziesięciopalczaste yoł!Also, powodzenia!</description>
+Comments konieckropka Dam szansę i zasubskrybuję ;)Powodzenia ;)
+kip siema siema ;) to chętnie poczytam co nowego w &amp;quot;ajti&amp;quot;powodzonka
+Quintasan Wielkie włochate dziesięciopalczaste yoł!Also, powodzenia!
+Valin Miesiąc temu pisałem podobny wpis.</description>
     </item>
     
     <item>
@@ -893,10 +895,8 @@ Nie, nie jest to ckliwy melodramat. Adrian Brody, Owen Wilson i &#34;ten trzeci&
       <pubDate>Thu, 30 Oct 2008 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2008/10/30/joaquin-phoenix-out/</guid>
-      <description> Zaczytane na Gazeta.pl:
-
-Joaquin Phoenix kończy z filmem i zaczyna śpiewać/grać czy coś tam jeszcze. Pewnie spragniony groupies. Co zrobić, szkoda dobrego aktora.
- </description>
+      <description>Zaczytane na Gazeta.pl:
+Joaquin Phoenix kończy z filmem i zaczyna śpiewać/grać czy coś tam jeszcze. Pewnie spragniony groupies. Co zrobić, szkoda dobrego aktora.</description>
     </item>
     
     <item>
@@ -925,7 +925,7 @@ Weźmy takiego Jacka Blacka - wciela się w pandę Po, głównego bohatera filmu
       <pubDate>Thu, 23 Oct 2008 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2008/10/23/na-co-czekamy-w-2009/</guid>
-      <description>Obecny 2008 powoli się kończy, tak więc warto przyjrzeć się nadchodzącym niebawem filmom. Zapowiada się bardzo ciekawie, ze względu na premiery długo oczekiwanych filmów - hitów.  Jak dla mnie dużym wydarzeniem wydaje się być nowy film Tarantino o zwinnym tytule &#34;Inglorious Bastards&#34;. Co prawda tytuł uległ już drobnej korekcie, ale jest ona na tyle niezauważalna, że spokojnie będe korzstał z tego tytułu. Jak to przystało na Tarantino znów zapowiada się pewien mix filmów z określonego gatunku.</description>
+      <description>Obecny 2008 powoli się kończy, tak więc warto przyjrzeć się nadchodzącym niebawem filmom. Zapowiada się bardzo ciekawie, ze względu na premiery długo oczekiwanych filmów - hitów. Jak dla mnie dużym wydarzeniem wydaje się być nowy film Tarantino o zwinnym tytule &#34;Inglorious Bastards&#34;. Co prawda tytuł uległ już drobnej korekcie, ale jest ona na tyle niezauważalna, że spokojnie będe korzstał z tego tytułu. Jak to przystało na Tarantino znów zapowiada się pewien mix filmów z określonego gatunku.</description>
     </item>
     
     <item>
@@ -978,7 +978,7 @@ Babylon A.D. - &#34;Veteran-turned-mercenary Thoorop (Diesel) takes the high-ris
       <description>Jakiś czas temu (a dokładniej tu) wspominałem o grupie filmów, które chętnie bym obejrzał. Minęło trochę czasu, a i zaległości narosły, więc opędzę ten temat dwoma wpisami, jednocześnie opisując po krótce te filmy.
 Children of Men
 Napisałem: Ludzkość jest bezpłodna. Ludzkość właśnie zamierza wymrzeć. Ale pojawia się nadzieja w postaci jednej jedynej kobiety w ciąży. Chce zobaczyć, czy jedno dziecko może nas ocalić.
- A w rzeczywistości ... film bardzo mi się podobał.</description>
+A w rzeczywistości ... film bardzo mi się podobał.</description>
     </item>
     
     <item>
@@ -988,14 +988,9 @@ Napisałem: Ludzkość jest bezpłodna. Ludzkość właśnie zamierza wymrzeć. 
       
       <guid>http://marcin.cylke.com.pl/2007/12/05/dollars-trilogy/</guid>
       <description>Spagetti westerny na wypasie! Wspaniała muzyka Enio Morricone + Sergio Leone jako reżyser, no i jaka obsada! Aż szacunek dla Eastwooda mi skoczył!
-
 A Fistful of Dollars IMDB
-
-
 For a Few Dollars More IMDB
-
-
-The Good, The Bad, The Ugly IMDB Comments Zygmunt Jak chcesz, to mam :) W dobrej jakości, w kolorze :)A Brzydki to super jest!! Chociażby scena jak się kopie w wannie na froncie.</description>
+The Good, The Bad, The Ugly IMDB Comments Zygmunt Jak chcesz, to mam :) W dobrej jakości, w kolorze :)A Brzydki to super jest!! Chociażby scena jak się kopie w wannie na froncie. Totalny luzak i chaos przez niego przemawia.</description>
     </item>
     
     <item>
@@ -1096,7 +1091,7 @@ Na treści skupiać się nie zamierzam, jak wspominałem, nie czytałem opowiada
       <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2007/11/08/atame-tie-me-up/</guid>
-      <description>  </description>
+      <description> </description>
     </item>
     
     <item>
@@ -1186,7 +1181,7 @@ Muszę przyznać, że czasem był tak głupi, że aż śmieszny. Choć nie potra
       <guid>http://marcin.cylke.com.pl/2007/11/08/date-movie/</guid>
       <description>Głupi, mało śmieszny film. Mimo beznadziejnego poczucia humoru udało się w tej produkcji zawrzeć tyle obleśnych i obrzydliwych scen, że aż dziw bierze. Zdecydowanie nie polecam. Na film składa się seria parodi innych filmów z dopasowaniem ich do scenariusza. Zero własnej inwencji, a poza tym jak można parodiować komedie?!
 Jedynie pomysł z wykorzystaniem motywu z programu &#34;Pimp my ride&#34; był akceptowalny.
- Date Movie (2006) Reżyser:  Obsada: Alyson Hannigan, Meera Simhan, Carmen Electra  Comments Sztukateria Wskocz, zajrzyj, napisz.</description>
+Date Movie (2006) Reżyser: Obsada: Alyson Hannigan, Meera Simhan, Carmen Electra Comments Sztukateria Wskocz, zajrzyj, napisz.</description>
     </item>
     
     <item>
@@ -1205,7 +1200,7 @@ Tak więc po koleji.</description>
       <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2007/11/08/hable-con-ella-talk-to-her/</guid>
-      <description>  </description>
+      <description> </description>
     </item>
     
     <item>
@@ -1314,7 +1309,7 @@ No to skoro już psioczę na nią, to trochę o samej treści filmu. Ktoś coś 
       <guid>http://marcin.cylke.com.pl/2007/11/08/plac-zbawiciela/</guid>
       <description> Smutny, ale nie jestem przekonany czy takie filmy to jest to, co powinno się z takim niesamowitym uporem promować.
 Po prostu rzecz o rodzinnej tragedii.
-  Plac Zbawiciela (2006)  Reżyser: Krzysztof Krauze, Joanna Kos-Krauze  Obsada: nie znani mi, więc nie wspominam   </description>
+Plac Zbawiciela (2006) Reżyser: Krzysztof Krauze, Joanna Kos-Krauze Obsada: nie znani mi, więc nie wspominam </description>
     </item>
     
     <item>
@@ -1323,7 +1318,7 @@ Po prostu rzecz o rodzinnej tragedii.
       <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2007/11/08/przegld-nowoci/</guid>
-      <description>The Departed Jak już wspominałem w poprzednim wpisie, jest to remake &#34;Infernal Affairs&#34;. Wygląda całkiem przyzwoicie. Wydaje się, że odpowiednie osoby na odpowiednich miejscach (może tylko ten Matt Damon nie). Razi tylko to, że to remake. Chyba jednak nie dorówna oryginałowi, szczególnie jeśli najpierw się go widziało. trailer  Babel Postać reżysera to już duża rekomendacja. Do tego zapowiada się ciekawie, bardzo. Jak zwykle Inarritu o życiu :) trailer  Haven Film reżysera z Kajmanów.</description>
+      <description>The Departed Jak już wspominałem w poprzednim wpisie, jest to remake &#34;Infernal Affairs&#34;. Wygląda całkiem przyzwoicie. Wydaje się, że odpowiednie osoby na odpowiednich miejscach (może tylko ten Matt Damon nie). Razi tylko to, że to remake. Chyba jednak nie dorówna oryginałowi, szczególnie jeśli najpierw się go widziało. trailer Babel Postać reżysera to już duża rekomendacja. Do tego zapowiada się ciekawie, bardzo. Jak zwykle Inarritu o życiu :) trailer Haven Film reżysera z Kajmanów.</description>
     </item>
     
     <item>
@@ -1333,7 +1328,7 @@ Po prostu rzecz o rodzinnej tragedii.
       
       <guid>http://marcin.cylke.com.pl/2007/11/08/sekretna-5-ka/</guid>
       <description>Jakiś czas temu zostałem wciągnięty do tej zabawy, polegającej na wymienianiu pięciu &#34;sekretów&#34;, o których niby nikt nie wie. Trochę się spuźniłem, bo moda na to już chyba minęła. W każdym razie nadganiam :)
- oglądałem &#34;Nigdy w życiu&#34;, &#34;Tylko mnie kochaj&#34; i byłem zachwycony. &#34;wlubiam się&#34; w filmy, w których jest drobny, interesujący mnie fragment - konkretniej: bohaterowie jedzący coś w każdej scenie, w której są obecni mój młodzieńczy cykl uwielbień dla aktorek zawierał: Erice Eleniak (&#34;</description>
+oglądałem &#34;Nigdy w życiu&#34;, &#34;Tylko mnie kochaj&#34; i byłem zachwycony. &#34;wlubiam się&#34; w filmy, w których jest drobny, interesujący mnie fragment - konkretniej: bohaterowie jedzący coś w każdej scenie, w której są obecni mój młodzieńczy cykl uwielbień dla aktorek zawierał: Erice Eleniak (&#34;</description>
     </item>
     
     <item>
@@ -1448,7 +1443,7 @@ No ale wracając do akcji filmu, jest ona ciekawa, ale nie wprowadza specjalnych
       <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2007/11/08/prestige/</guid>
-      <description>Every great magic trick consists of three acts. The first act is called  &#34;The Pledge&#34;; The magician shows you something ordinary, but of course... it probably isn&#39;t.  The second act is called &#34;The Turn&#34;; The magician makes his ordinary some thing do something extraordinary.  Now if you&#39;re looking for the secret... you won&#39;t find it, that&#39;s why there&#39;s a third act called, &#34;The Prestige&#34;; this is the part with the twists and turns, where lives hang in the balance, and you see something shocking you&#39;ve never seen before.</description>
+      <description>Every great magic trick consists of three acts. The first act is called &#34;The Pledge&#34;; The magician shows you something ordinary, but of course... it probably isn&#39;t. The second act is called &#34;The Turn&#34;; The magician makes his ordinary some thing do something extraordinary. Now if you&#39;re looking for the secret... you won&#39;t find it, that&#39;s why there&#39;s a third act called, &#34;The Prestige&#34;; this is the part with the twists and turns, where lives hang in the balance, and you see something shocking you&#39;ve never seen before.</description>
     </item>
     
     <item>
@@ -1478,7 +1473,7 @@ Nie jest zbyt ambitnie, ale nie jest też zbyt głupio i naiwnie.</description>
       <guid>http://marcin.cylke.com.pl/2007/11/08/tomcats/</guid>
       <description> Film ten opowiada o grupce kumpli, którzy są sporymi kobieciarzami, a do tego na pierwszym weselu członka paczki ustalają pewną zasadę: zakładają fundusz, na który będą wpłacać kasę. Ostatni kawaler spośród nich, dostaje całą sumę uzbieraną do tego czasu.
 Głupie, naiwne i obleśne. Stanowczo odradzam, bo to strata czasu.
-  Tomcats (2001)  Reżyser: Gregory Poirier  Obsada: Jerry O&#39;Connell, Shannon Elizabeth, Jake Busey   </description>
+Tomcats (2001) Reżyser: Gregory Poirier Obsada: Jerry O&#39;Connell, Shannon Elizabeth, Jake Busey </description>
     </item>
     
     <item>
@@ -1508,7 +1503,7 @@ Dodatkowo, w samym filmie wydarzeń z samego pokładu samolotu jest stosunkowo n
       
       <guid>http://marcin.cylke.com.pl/2007/11/08/v-for-vendetta/</guid>
       <description> Szacun...
-   V for Vendetta (2006)  Reżyser: James McTeigue  Obsada: Natalie Portman, John Hurt   </description>
+V for Vendetta (2006) Reżyser: James McTeigue Obsada: Natalie Portman, John Hurt </description>
     </item>
     
     <item>
@@ -1517,7 +1512,7 @@ Dodatkowo, w samym filmie wydarzeń z samego pokładu samolotu jest stosunkowo n
       <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2007/11/08/volver/</guid>
-      <description>  </description>
+      <description> </description>
     </item>
     
     <item>
@@ -1554,8 +1549,7 @@ Film opowiada o parze, świeżo po ślubie, są młodzi, piękni i odnoszą sukc
       <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2007/11/08/zmiany-id/</guid>
-      <description> Jak narazie nowy wygląd, ale to jeden z domyślnych na jogger.pl :) Mam nadzieję, że niebawem znajdę czas na więcej modyfikacji. Stay tuned.
- </description>
+      <description>Jak narazie nowy wygląd, ale to jeden z domyślnych na jogger.pl :) Mam nadzieję, że niebawem znajdę czas na więcej modyfikacji. Stay tuned.</description>
     </item>
     
     <item>
@@ -1564,9 +1558,8 @@ Film opowiada o parze, świeżo po ślubie, są młodzi, piękni i odnoszą sukc
       <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2007/11/07/pierwszy-wpis-na-moim-joggu-nie/</guid>
-      <description> Pierwszy wpis na moim joggu :) Nie znajdziesz tutaj wynurzeń na temat tego, co jadłem na śniadanie, ani tym podobnych.. Ale bedziesz mógł poczytać moje &#34;obiektywne&#34; opinie na temat ostatnio oglądanych filmów. Będzie dużo jadu ;-P
-Oraz oczywiście dużo filmów -- tyle, ile może ogladać student mieszkający w akademiku z zasobną w filmidła siecią akademikca
- </description>
+      <description>Pierwszy wpis na moim joggu :) Nie znajdziesz tutaj wynurzeń na temat tego, co jadłem na śniadanie, ani tym podobnych.. Ale bedziesz mógł poczytać moje &#34;obiektywne&#34; opinie na temat ostatnio oglądanych filmów. Będzie dużo jadu ;-P
+Oraz oczywiście dużo filmów -- tyle, ile może ogladać student mieszkający w akademiku z zasobną w filmidła siecią akademikca</description>
     </item>
     
     <item>
@@ -1576,7 +1569,7 @@ Oraz oczywiście dużo filmów -- tyle, ile może ogladać student mieszkający 
       
       <guid>http://marcin.cylke.com.pl/2007/11/07/anacondas-hunt-for-blood-orchid/</guid>
       <description>Buahhhahaha :-D No nie moge, co za film. Poprostu żenada. Kilka dużych anakond siedzi sobie w środku dżungli i robi sobie orgie... Ech, głupia akcja, tendencyjni bohaterowie.
-No ale czego chcieć od następcy pierwszego filmu o anakondzie. Mamy tu kupe zabawnych gagów. Możliwe że nie zostały pomyślane jako takowe przez reżyserów.  Uśmiałem się jak głupi. Super rozrywka przed śniadaniem. Albo w trakcie... I do tego te wielkie, głupie anakondy.</description>
+No ale czego chcieć od następcy pierwszego filmu o anakondzie. Mamy tu kupe zabawnych gagów. Możliwe że nie zostały pomyślane jako takowe przez reżyserów. &lt;/&gt; Uśmiałem się jak głupi. Super rozrywka przed śniadaniem. Albo w trakcie... I do tego te wielkie, głupie anakondy.</description>
     </item>
     
     <item>
@@ -1605,7 +1598,7 @@ Wreszcie fabuła zrobiła się ciekawa i wciągająca. Nadal oczywiście mamy po
       
       <guid>http://marcin.cylke.com.pl/2007/11/07/brunet-wieczorow-por/</guid>
       <description> No i jednak wreszcie obejrzałem. Co prawda nie jest to najlepszy film Bareji, ale ma wiele cech filmów tego reżysera. Zważywszy na to, że już wczesniej słyszałem troche tekstów z tego filmu, to nie da się powiedzieć nic więcej niż:
- -- Danka jaka jest taka jest, ale tolerancyjna jest! -- Noooo.. tolerancyjna jest Świetny humor i mnóstwo dobrych sytuacji, a do tego niezła obsada. W sumie to tylko dla maniaków ;-P  </description>
+-- Danka jaka jest taka jest, ale tolerancyjna jest! -- Noooo.. tolerancyjna jest Świetny humor i mnóstwo dobrych sytuacji, a do tego niezła obsada. W sumie to tylko dla maniaków ;-P </description>
     </item>
     
     <item>
@@ -1614,8 +1607,7 @@ Wreszcie fabuła zrobiła się ciekawa i wciągająca. Nadal oczywiście mamy po
       <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2007/11/07/catch-me-if-you-can/</guid>
-      <description>  Długo zwklekałem zanim obejrzałem ten film. Cóż, muszę przyznać, że jak nie lubie Hanksa i Leo, którzy to grają pierwsze skrzypce w tym filmie, tak film całkiem przypadł mi do gustu. Bardzo dobry scenariusz -- oczywiście, na faktach autentycznych. Dziw bierze jacy ludzie chodzą po świecie.
- </description>
+      <description>Długo zwklekałem zanim obejrzałem ten film. Cóż, muszę przyznać, że jak nie lubie Hanksa i Leo, którzy to grają pierwsze skrzypce w tym filmie, tak film całkiem przypadł mi do gustu. Bardzo dobry scenariusz -- oczywiście, na faktach autentycznych. Dziw bierze jacy ludzie chodzą po świecie.</description>
     </item>
     
     <item>
@@ -1684,7 +1676,7 @@ Mamy tu opowiedziana z pozoru prosta historie o zagubionym mieczu, milosci, zlod
       
       <guid>http://marcin.cylke.com.pl/2007/11/07/dawn-of-dead/</guid>
       <description>Obejrzane. I bez gadania, że kiczowate czy jakieś. Całkiem dobre oglądadło. Wiadomo, że schematyczne. Ja jednak lubie takie horrory :) Sam film jest przewidywalny co do akcji, ale zaskoczyło mnie kilka fajnych (śmiesznych) rozwiązań, których parają się bohaterowie. Jest też wiele akcentów śmiesznych. Szczególnie w środku filmu, gdy cała grupa ludzi zamknietych w ogromnym centrum handlowym wymyśla sobie różne zabawy.
- Bardzo zaskoczyło mnie również ciekawie pomyślane zakończenie. I przynajmniej nie było kitu na temat szans przetrwania takiej katastrofy.</description>
+Bardzo zaskoczyło mnie również ciekawie pomyślane zakończenie. I przynajmniej nie było kitu na temat szans przetrwania takiej katastrofy.</description>
     </item>
     
     <item>
@@ -1693,8 +1685,7 @@ Mamy tu opowiedziana z pozoru prosta historie o zagubionym mieczu, milosci, zlod
       <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2007/11/07/don-juan-demarco/</guid>
-      <description> Bardzo dobry film. Johny Depp i Marlon Brando, jeden w roli pacjenta szpitala psychiatrycznego, drugi w roli jego lekarza. Zgrabna romantyczna historyjka o czlowieku uważającym się za Don Juan&#39;a. Dobre kino. Zawiera dużo fajnych żartów i wartościowe wnioski ;)
-  </description>
+      <description>Bardzo dobry film. Johny Depp i Marlon Brando, jeden w roli pacjenta szpitala psychiatrycznego, drugi w roli jego lekarza. Zgrabna romantyczna historyjka o czlowieku uważającym się za Don Juan&#39;a. Dobre kino. Zawiera dużo fajnych żartów i wartościowe wnioski ;)</description>
     </item>
     
     <item>
@@ -1765,7 +1756,7 @@ Serial SF, w sumie głównie takie oglądam. Całkiem dobry. Opowieść o grupie
       
       <guid>http://marcin.cylke.com.pl/2007/11/07/football-factory/</guid>
       <description>Widziałeś Human Traffic? Tutaj jest mniej więcej o tym samym, tyle że narkotyki zastąpiła piłka nożna. Film angielski, więc i o tamtejszych kibicach. Bardzo dobry. Świetny montaż (specem nie jestem, ale poprostu fajnie wygląda ;-) ) i nieźle nakręcony film. W filmie występują aktorzy, którzy są obecni w połowie angielskich filmów. Może i aktorów na wyspach brakuje, mi to w każdym razie nie przeszkadza.
- Wbrew pozorom film ma całkiem dobre i wyraźne przesłanie.</description>
+Wbrew pozorom film ma całkiem dobre i wyraźne przesłanie.</description>
     </item>
     
     <item>
@@ -1774,8 +1765,7 @@ Serial SF, w sumie głównie takie oglądam. Całkiem dobry. Opowieść o grupie
       <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2007/11/07/ghost-in-shell-2-innocence/</guid>
-      <description> Świetny film (anime ;-) ). Trochę za dużo komputerowej animacji jak dla mnie, ale to przeboleje. Za to rekompensuje ciekawa akcja oraz jak zwykle cała Sekcja 9 (razem z Major!!!). Jest wiele cytatów z filozofów różnych, to tak, jakby ktoś się chciał pozastanawiać nad sensem człowieczeństwa, czy innymi podobnymi. W każdym razie nie jest to obowiązkowe. Można się równie dobrze bawić poprostu chłonąc akcje. Trzyma poziom :)
- </description>
+      <description>Świetny film (anime ;-) ). Trochę za dużo komputerowej animacji jak dla mnie, ale to przeboleje. Za to rekompensuje ciekawa akcja oraz jak zwykle cała Sekcja 9 (razem z Major!!!). Jest wiele cytatów z filozofów różnych, to tak, jakby ktoś się chciał pozastanawiać nad sensem człowieczeństwa, czy innymi podobnymi. W każdym razie nie jest to obowiązkowe. Można się równie dobrze bawić poprostu chłonąc akcje. Trzyma poziom :)</description>
     </item>
     
     <item>
@@ -1818,6 +1808,17 @@ Polecam -- więcej z fabuły nie zdradzę, a do reszty to się nie ma co czepia�
       <guid>http://marcin.cylke.com.pl/2007/11/07/komornik/</guid>
       <description>Historia opowiedziana w tym filmie to historia odnoszacego sukcesy w malym miescie komornika. Jest twardy, bezwzgledny i ma swietne wyniki w zajmowaniu czyjejs wlasnosci. Zadnych wyrzutow sumienia, czysta zabawa i zadowolenie z siebie.
 Swietny dramat. Swietna rola Andrzeja Chyry w roli komornika. Film potrafi przemowic nawet do mnie. Bo co by o nim nie mowic, to pokazuje przemiane wewnetrzna wlasnie owego komornika, ktory po jednym takim kiepskim dniu, podczas ktorego nic mu sie nie udaje, zaczyna byc zupelnie innym czlowiekiem.</description>
+    </item>
+    
+    <item>
+      <title>Ławeczka</title>
+      <link>http://marcin.cylke.com.pl/2007/11/07/aweczka/</link>
+      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2007/11/07/aweczka/</guid>
+      <description>Co? Powie ktoś, że ckliwe romansidła oglądam?
+Niech mówi, oglądam też kupę innych filmów ;-D
+Średniawy ten film. Chociaż tyle dobrego, że niezbyt szczęśliwie się skończył. Żmijewski gra niezłego cwaniaka, pasuje lepiej do tej roli, niż do wspaniałego i wszechmocnego lekarza z &#34;Na dobre i na złe&#34;. Okazało się też, przynajmniej dla mnie dopiero teraz, że Jola Fraszyńska nadaje się nie tylko do głupich komedyjek jak Killer, szacunek za tą rolę ;)</description>
     </item>
     
     <item>
@@ -1884,8 +1885,8 @@ Film ten jest historią małej dziewczynki, która zostaje sprzedana z domu prze
       <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2007/11/07/nicotina/</guid>
-      <description>I wreszcie trochę wolnego czasu na obejrzenie filmu :-)  Akurat padlo na ten film. I dobrze się stało, że taki zbieg okoliczności nastąpił. Z relacji wszelkich ludzi miałem dziwne wrażenie, że to jakis dramat, czy inny dołujący film. A tu nie! Dupa Jasio! Świetna komedia pomyłek -- wyśmienita realizacja, w egzotycznej scenerii Meksyku.
-Mnóstwo wątków, które oczywiście się łączą i przeplatają. Super kompozycja. A wszystko to krąży wokół papierosów.</description>
+      <description>I wreszcie trochę wolnego czasu na obejrzenie filmu :-) Akurat padlo na ten film. I dobrze się stało, że taki zbieg okoliczności nastąpił. Z relacji wszelkich ludzi miałem dziwne wrażenie, że to jakis dramat, czy inny dołujący film. A tu nie! Dupa Jasio! Świetna komedia pomyłek -- wyśmienita realizacja, w egzotycznej scenerii Meksyku.
+Mnóstwo wątków, które oczywiście się łączą i przeplatają. Super kompozycja. A wszystko to krąży wokół papierosów. No może nie w taki sposób jak w &#34;</description>
     </item>
     
     <item>
@@ -1894,11 +1895,9 @@ Mnóstwo wątków, które oczywiście się łączą i przeplatają. Super kompoz
       <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2007/11/07/pitbull/</guid>
-      <description> Godny następca &#34;Psów&#34;. Nie jest to w żadnym wypadku kontynuacja. Jest to natomiast film o polskiej policji. A konkretniej, o policjantach z warszawskiego wydziału zabójstw. Porządne kino. Pomysłowo zrobiony, z ciekawą fabuła i zwrotami akcji.
+      <description>Godny następca &#34;Psów&#34;. Nie jest to w żadnym wypadku kontynuacja. Jest to natomiast film o polskiej policji. A konkretniej, o policjantach z warszawskiego wydziału zabójstw. Porządne kino. Pomysłowo zrobiony, z ciekawą fabuła i zwrotami akcji.
 Nakręcone jak prawdziwe życie, bo to miał być taki film, o zwykłym życiu. O tym jak jest czasem popieprzone.
-Dramat, ale w jakim stylu
-  
- </description>
+Dramat, ale w jakim stylu</description>
     </item>
     
     <item>
@@ -1927,10 +1926,9 @@ Strasznie długi, jak na zwykły film, bo ma aż 3 godziny. I te wampiry, idioty
       <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2007/11/07/shaun-of-dead/</guid>
-      <description> Ostatnio było &#34;Dawn of the Dead&#34;, a teraz kolejny film o trupach. Tyle że zupełnie inny. Jest to świetna komedia nakręcona i osadzona w sumie właśnie w konwencji horroru. Tytuowy Shaun jest sprzedawcą w sklepie. Ale staje się bohaterem, kiedy zaczyna sie piekło ;)
- Dużo śmiesznych scen, wiele świetnych parodii no i na koniec happyend :-D
-Już dawno nie było tak inteligentnie pomyślanego komedio-horroru.
- </description>
+      <description>Ostatnio było &#34;Dawn of the Dead&#34;, a teraz kolejny film o trupach. Tyle że zupełnie inny. Jest to świetna komedia nakręcona i osadzona w sumie właśnie w konwencji horroru. Tytuowy Shaun jest sprzedawcą w sklepie. Ale staje się bohaterem, kiedy zaczyna sie piekło ;)
+Dużo śmiesznych scen, wiele świetnych parodii no i na koniec happyend :-D
+Już dawno nie było tak inteligentnie pomyślanego komedio-horroru.</description>
     </item>
     
     <item>
@@ -1959,10 +1957,9 @@ Wbrew temu co słyszałem o tym filmie, i czego sam się obawiałem, nie jest ta
       <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2007/11/07/spider-man-2/</guid>
-      <description> Ach ci ckliwi amerykanie. Pół filmu na rozterki moralne głównego bohatera. Nuda i żenada momentami.
- Dobre efekty, czasem jakiś akcent humorystyczny. W sumie jak się czytało komiks, to wiele postaci wygląda baardzo podobnie. Ciągle razi mnie ten aktor, grający Spider Mana -- nie mogli wziąć kogoś innego? Słabizna
-Generalnie lepiej niż w pierwszej części, ale świetnie to to się nie prezentuje.
- </description>
+      <description>Ach ci ckliwi amerykanie. Pół filmu na rozterki moralne głównego bohatera. Nuda i żenada momentami.
+Dobre efekty, czasem jakiś akcent humorystyczny. W sumie jak się czytało komiks, to wiele postaci wygląda baardzo podobnie. Ciągle razi mnie ten aktor, grający Spider Mana -- nie mogli wziąć kogoś innego? Słabizna
+Generalnie lepiej niż w pierwszej części, ale świetnie to to się nie prezentuje.</description>
     </item>
     
     <item>
@@ -1971,9 +1968,8 @@ Generalnie lepiej niż w pierwszej części, ale świetnie to to się nie prezen
       <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2007/11/07/children-of-leningradsky/</guid>
-      <description> O bezdomnych dzieciach z moskiewskiej stacji metra...
-Przejmujacy, poruszajacy, smutny.
-   </description>
+      <description>O bezdomnych dzieciach z moskiewskiej stacji metra...
+Przejmujacy, poruszajacy, smutny.</description>
     </item>
     
     <item>
@@ -1994,7 +1990,7 @@ Miałem za to fajny pokaz świata filmu - dobrze pomyślany, i całe szczęście
       
       <guid>http://marcin.cylke.com.pl/2007/11/07/forgotten/</guid>
       <description> Trailer fajnie sie zapowiadał. Pół filmu też nieźle się oglądało. Cały czas miałem nadzieje, że dojdzie do efektownego finału. Niestety zawiodłem się właśnie na końcówce. Całość trzyma w napięciu. Nieźle poskładane jest to, ale stanowczo traci na prędkości końcówka. Fajny wątek został troszkę zmiękczony. Wyszło pospolicie, jak to w każdej historyjce o amerykańskiej matce, których było już kilkanaście.
-Bardzo dobry film do obejrzenia, ale bez specjalnych zachwytów.  </description>
+Bardzo dobry film do obejrzenia, ale bez specjalnych zachwytów. </description>
     </item>
     
     <item>
@@ -2004,7 +2000,7 @@ Bardzo dobry film do obejrzenia, ale bez specjalnych zachwytów.  </description>
       
       <guid>http://marcin.cylke.com.pl/2007/11/07/troy/</guid>
       <description>Same gwiazdki, scenariusz zerżnięty z ksiązki. Tak więc cóż można z takiego czegoś ukręcić? W każdym razie nie za wiele. Pewnie, dobry jest to film dla mieszkańców USA, którzy nie czytają książek, ale reszta nie ma zbytnio czego tam szukać. Ani zbytniej ekspresji nie ma, ani za specjalnie porywającej akcji. Takie to jest nijakie.
- Po trosze to przypomina mi to sytuację polskiego filmu, gdzie przeważająca część filmów to jakieś adaptacje książek (klasyki albo czegoś bliskiego klasyce) i nie produkuje się zwykłych filmów, ze scenariuszem poprostu pisanym dla konkretnego filmu, a nie zjechanego z istniejącej książki.</description>
+Po trosze to przypomina mi to sytuację polskiego filmu, gdzie przeważająca część filmów to jakieś adaptacje książek (klasyki albo czegoś bliskiego klasyce) i nie produkuje się zwykłych filmów, ze scenariuszem poprostu pisanym dla konkretnego filmu, a nie zjechanego z istniejącej książki.</description>
     </item>
     
     <item>
@@ -2013,10 +2009,9 @@ Bardzo dobry film do obejrzenia, ale bez specjalnych zachwytów.  </description>
       <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2007/11/07/trzeci/</guid>
-      <description> Miekne. Rozczulil mnie ten film.
+      <description>Miekne. Rozczulil mnie ten film.
 Pozytywny, ladny i milo sie jeszcze oglada. Swietna rola Marka Kondrata - nie widac go cos ostatnio w filmach, ale moze to i dobrze. Lepiej zadziej, a w lepszej formie.
-Taki tam, zwykly film o zyciu. Zeby zwolnic. Zeby korzystac z chwili. I cieszy sie nia. Polecam dla zagonionych.
-   </description>
+Taki tam, zwykly film o zyciu. Zeby zwolnic. Zeby korzystac z chwili. I cieszy sie nia. Polecam dla zagonionych.</description>
     </item>
     
     <item>
@@ -2034,8 +2029,7 @@ Taki tam, zwykly film o zyciu. Zeby zwolnic. Zeby korzystac z chwili. I cieszy s
       <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2007/11/07/uprowadzenie-agaty/</guid>
-      <description> Jakiś romantyczny weekend :P się zrobił. Najpierw Don Juan, a teraz to. Polskie filmidło. Dosyć znane chyba. Fabuła to właściwie historia pewnej miłości (nieszczęśliwej trzeba dodać). Gra wielu znanych polskich aktorów. Jest nawet Stanisław Tym, w jednej ze scen, nic nie mówi, ale cieszy, że jest. Film jest zwyczajnie ładny. Dziwne, że dopiero teraz go widziałem, bo to z 1995 roku produkcja.
-   </description>
+      <description>Jakiś romantyczny weekend :P się zrobił. Najpierw Don Juan, a teraz to. Polskie filmidło. Dosyć znane chyba. Fabuła to właściwie historia pewnej miłości (nieszczęśliwej trzeba dodać). Gra wielu znanych polskich aktorów. Jest nawet Stanisław Tym, w jednej ze scen, nic nie mówi, ale cieszy, że jest. Film jest zwyczajnie ładny. Dziwne, że dopiero teraz go widziałem, bo to z 1995 roku produkcja.</description>
     </item>
     
     <item>
@@ -2056,17 +2050,6 @@ Batman: The Beginning Bardzo fajny film. Byłem, i nadal w sumie jestem, pod ogr
       <guid>http://marcin.cylke.com.pl/2007/11/07/wedding-crushers/</guid>
       <description>Kto by sie spodziewal, ze taka komedyjka, zapowiadajaca sie na calkowicie standardowa amerykanska komedyjke, okaze sie takim fajnym filmidlem. Nie znajdzie sie tu nic glebokiego. O nie, to nie tu. Raczej duzo smiesznych gagow i zartow. A na dokladke troche klimatow z romantycznej komedii, bo jakby nie bylo okolo polowy film zmienia sie wlasnie w cos takiego.
 Fabula skomplikowana nie jest. Owen Wilson gra w tym filmie weselnego podrywacza, ktory wraz z kolega odwiedza rozne wesela.</description>
-    </item>
-    
-    <item>
-      <title>Ławeczka</title>
-      <link>http://marcin.cylke.com.pl/2007/11/07/aweczka/</link>
-      <pubDate>Wed, 07 Nov 2007 00:00:00 +0000</pubDate>
-      
-      <guid>http://marcin.cylke.com.pl/2007/11/07/aweczka/</guid>
-      <description>Co? Powie ktoś, że ckliwe romansidła oglądam?
-Niech mówi, oglądam też kupę innych filmów ;-D
-Średniawy ten film. Chociaż tyle dobrego, że niezbyt szczęśliwie się skończył. Żmijewski gra niezłego cwaniaka, pasuje lepiej do tej roli, niż do wspaniałego i wszechmocnego lekarza z &#34;Na dobre i na złe&#34;. Okazało się też, przynajmniej dla mnie dopiero teraz, że Jola Fraszyńska nadaje się nie tylko do głupich komedyjek jak Killer, szacunek za tą rolę ;)</description>
     </item>
     
   </channel>

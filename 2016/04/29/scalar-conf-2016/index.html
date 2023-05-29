@@ -1,83 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="generator" content="Hugo 0.80.0-DEV" />
-		<title>Scalar Conf 2016 - Tech ramblings by Marcin</title>
-
-		<meta name="description" content="Scalar Conf 2016
-
-This small conference had its third installment in (http://www.polin.pl/en)[Polin - Museum of the History of Polish Jews]. Organizing Scala conference isn&rsquo;t that obvious and having that kind of attention is really great - all the foreign speakers, etc.
-Here is a quick recap of presentations I&rsquo;ve attended.">
-
-
-		
-	
-		
-
-
-
-
-<link rel="stylesheet" href="/css/ui.css">
-
-	
-		
-
-		<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono|Lato|Raleway">
-
-		
-        
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-172194-10', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-
-	</head>
-
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="http://marcin.cylke.com.pl/">
+  <title>Scalar Conf 2016 - Tech ramblings by Marcin</title>
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
 <body>
-<header class="container no-print">
-	<div class="u-header">
-		<nav class="bar">
-	<ul><li>
-			<a href="/">
-				<img class="icon-text" src="/img/prev.svg"/>
-			</a>
-		</li><li><a href="/about/">About Me</a></li></ul>
-</nav>
-
-	</div>
+  <header>
+<div>
+    <h1><a href="http://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></h1>
+  </div>
+  <nav><a href="/about/">about me</a>
+  </nav>
 </header>
-<main class="container">
-
-
-<main class="content" role="main">
-  <article class="article">
-    <h1 class="article-title">Scalar Conf 2016</h1>
-    
-    <span class="article-date">2016-04-29</span>
-    
-    <ul class="article-taxonomy">
-                  
-      <li>
-        <i class="fa fa-category"></i><a href="/categories/scala">scala</a>
-        <span>|</span><a href="/categories/conference">conference</a>
-        <span>|</span>
-      </li>
-      
-    
-      
-    </ul>
- 
-    <div class="article-content">
+<main>
+    <article>
+  <div class="title">
+    <h1>Scalar Conf 2016</h1>
+    </div>
+  <div class="meta">2016-04-29 00:00</div>
+  <div class="artical-body">
+  
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#having-a-cake----by-paweł-szulc">Having a cake &hellip; - by Paweł Szulc</a></li>
+        <li><a href="#eff-monad---by-eric-torreborre">EFF Monad - by Eric Torreborre</a></li>
+        <li><a href="#incremental-compiler---by-krzysztof-romanowski">Incremental compiler - by Krzysztof Romanowski</a></li>
+        <li><a href="#akka-cluster-with-etcd---by-maciej-biłas">Akka cluster with Etcd - by Maciej Biłas</a></li>
+        <li><a href="#shapeless-easy---by-valentin-kasas">Shapeless? Easy! - by Valentin Kasas</a></li>
+        <li><a href="#cool-toolz-in-the-scalaz-and-cats-toolboxes---by-jan-pustelnik">Cool Toolz in the Scalaz and Cats Toolboxes - by Jan Pustelnik</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    <div class="content-with-toc">
       <p>Scalar Conf 2016</p>
 <p><img src="/assets/POLIN-Museum-of-the-History-of-Polish-Jews-int02.jpg" alt="Polin museum - interior"></p>
 <p>This small conference had its third installment in (<a href="http://www.polin.pl/en)%5BPolin">http://www.polin.pl/en)[Polin</a> - Museum of the History of Polish Jews]. Organizing Scala conference isn&rsquo;t that obvious and having that kind of attention is really great - all the foreign speakers, etc.</p>
@@ -94,7 +55,7 @@ if (!doNotTrack) {
 <li><a href="http://haskell.cs.yale.edu/?post_type=publication&amp;p=319">Monad Transformers and Modular Interpreters</a></li>
 </ul>
 <h3 id="incremental-compiler---by-krzysztof-romanowski">Incremental compiler - by Krzysztof Romanowski</h3>
-<p>Deep dive into scalac incremental compiler implementation. While the presentation itself, the way it was presented, was very nice, I didn&rsquo;t particularly enjoy the topic. It seemed more appropriate for tools' developers.</p>
+<p>Deep dive into scalac incremental compiler implementation. While the presentation itself, the way it was presented, was very nice, I didn&rsquo;t particularly enjoy the topic. It seemed more appropriate for tools&rsquo; developers.</p>
 <h3 id="akka-cluster-with-etcd---by-maciej-biłas">Akka cluster with Etcd - by Maciej Biłas</h3>
 <p>This one looked promising. Joining multiple exciting technologies seems often that way. Unfortunately it was rather tech preview of Kubernetes app setup rather than Scala presentation.</p>
 <p>I&rsquo;m a bit disappointed, because looking through the sources of the project <a href="https://github.com/rkrzewski/akka-cluster-etcd">akka-cluster-etcd</a> there are lots of things to describe. Kubernetes not being one of them ;-)</p>
@@ -103,7 +64,7 @@ if (!doNotTrack) {
 <p>He gave a clear and consistent tutorial on the basics of shapeless and its potential use in some example applications. He created a simple diff tool. Not that useful in real life application, but definitely helped make a point.</p>
 <p>Will look into real life examples in near future.</p>
 <p>Fun fact: The speaker had his presentation in <a href="https://github.com/marconilanna/REPLesent">REPLesent</a>, a sbt plugin for presentations - and performed most of the slide-jumping-fu with just one hand, other held in his pocket :D Looked quite hilarious.</p>
-<p>Valentin also mentioned shapeless' typeclass derivation - this actually looks nice! Have a look at this <a href="https://meta.plasm.us/posts/2015/11/08/type-classes-and-generic-derivation/">question</a></p>
+<p>Valentin also mentioned shapeless&rsquo; typeclass derivation - this actually looks nice! Have a look at this <a href="https://meta.plasm.us/posts/2015/11/08/type-classes-and-generic-derivation/">question</a></p>
 <h3 id="cool-toolz-in-the-scalaz-and-cats-toolboxes---by-jan-pustelnik">Cool Toolz in the Scalaz and Cats Toolboxes - by Jan Pustelnik</h3>
 <p>Functional Design Patterns - enjoyable talk. With a bit of theoretical background, lots of useful use-cases. The talk was about cats and scalaz - both being very similar, and patterns they contain.</p>
 <p>Key points being:</p>
@@ -118,53 +79,13 @@ if (!doNotTrack) {
 <p>To conclude - the conference was really great. Both the talks and social side of the event were enjoyable. I&rsquo;ve been blown away by the great architecture of the museum itself. Been there a couple times and enjoyed all of them.</p>
 <p>The much needed change would be to bring more tracks, because sometimes topics were too specific and I&rsquo;d gladly change lecture to some other.</p>
 <p>As for the usual conference merch, there were no bags with leaflets and pens etc. It came as a surprise to me, but I also really liked it. People infact throw away most of the contents from such bags. Also, no t-shirt as a default - great idea! If you like it - just buy one, otherwise don&rsquo;t bother.</p>
-<p>Overall - great job Softwaremill! Keep up the good work!.</p>
-    </div>
- 
-     <div id="disqus_thread"></div>
-<script>
-    (function() { 
-        var d = document, s = d.createElement('script');
-        s.src = '//marcinbloguje.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<p>Overall - great job Softwaremill! Keep up the good work!.</p></div>
+  
+  </div>
+</article>
 
+  </main><footer>
+  <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
 
-      <script id="dsq-count-scr" src="//careerboost.disqus.com/count.js" async></script>
-
-
-  </article>
-
-</main>
-
-			<hr class="sep" />
-		</main>
-		<footer class="container no-print">
-			<div class="u-footer">
-				
-
-
-<a href="http://marcin.cylke.com.pl/index.xml" target="_blank"><img class="icon-social" src="/img/feed.svg" alt="Feed"></a>
-
-				<p>
-					
-					Theme used: <a href="https://github.com/yursan9/manis-hugo-theme">Manis</a><br>
-					
-					
-					
-				</p>
-				
-				<a href="#brand">
-					<img class="icon-text" src="/img/toup.svg" alt="To Up"/>
-					<span>Back to Up</span>
-				</a>
-				
-			</div>
-		</footer>
-		
-	</body>
+</body>
 </html>
-

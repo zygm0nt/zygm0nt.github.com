@@ -1,85 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="generator" content="Hugo 0.80.0-DEV" />
-		<title>operating systems showdown - Tech ramblings by Marcin</title>
-
-		<meta name="description" content="Modern open source operating systems vs modern software development practices The reason to write this blog post was a presentation I watched some time ago, and commented on it on Twitter:
-One of the slides from the presentation. How can you develop an operating system and follow *that* kind of process?! :sadpanda: pic.twitter.com/3XuHMXc0My
-&mdash; Marcin Cylke (@zygm0nt) January 5, 2020  So to be specific - the whole presentation was rather negative towards security model used along OpenBSD development.">
-
-
-		
-	
-		
-
-
-
-
-<link rel="stylesheet" href="/css/ui.css">
-
-	
-		
-
-		<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono|Lato|Raleway">
-
-		
-        
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-172194-10', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-
-	</head>
-
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="http://marcin.cylke.com.pl/">
+  <title>operating systems showdown - Tech ramblings by Marcin</title>
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
 <body>
-<header class="container no-print">
-	<div class="u-header">
-		<nav class="bar">
-	<ul><li>
-			<a href="/">
-				<img class="icon-text" src="/img/prev.svg"/>
-			</a>
-		</li><li><a href="/about/">About Me</a></li></ul>
-</nav>
-
-	</div>
+  <header>
+<div>
+    <h1><a href="http://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></h1>
+  </div>
+  <nav><a href="/about/">about me</a>
+  </nav>
 </header>
-<main class="container">
-
-
-<main class="content" role="main">
-  <article class="article">
-    <h1 class="article-title">operating systems showdown</h1>
-    
-    <span class="article-date">2020-12-05</span>
-    
-    <ul class="article-taxonomy">
-                  
-      <li>
-        <i class="fa fa-category"></i><a href="/categories/it">it</a>
-        <span>|</span><a href="/categories/operating-systems">operating-systems</a>
-        <span>|</span><a href="/categories/freebsd">freebsd</a>
-        <span>|</span><a href="/categories/linux">linux</a>
-        <span>|</span><a href="/categories/openbsd">openbsd</a>
-        <span>|</span>
-      </li>
-      
-    
-      
-    </ul>
- 
-    <div class="article-content">
+<main>
+    <article>
+  <div class="title">
+    <h1>operating systems showdown</h1>
+    </div>
+  <div class="meta">2020-12-05 00:00</div>
+  <div class="artical-body">
+  
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#modern-open-source-operating-systems-vs-modern-software-development-practices">Modern open source operating systems vs modern software development practices</a></li>
+    <li><a href="#the-process-as-i-see-it">The process as I see it</a></li>
+    <li><a href="#rationale-for-including-each-of-the-systems-in-this-comparison">Rationale for including each of the systems in this comparison</a>
+      <ul>
+        <li><a href="#linux">Linux</a></li>
+        <li><a href="#freebsd">FreeBSD</a></li>
+        <li><a href="#openbsd">OpenBSD</a></li>
+        <li><a href="#netbsd">NetBSD</a></li>
+        <li><a href="#freedos">FreeDOS</a></li>
+        <li><a href="#reactos">ReactOS</a></li>
+      </ul>
+    </li>
+    <li><a href="#comparison-table">Comparison table</a></li>
+    <li><a href="#conclusion">Conclusion</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    <div class="content-with-toc">
       <h2 id="modern-open-source-operating-systems-vs-modern-software-development-practices">Modern open source operating systems vs modern software development practices</h2>
 <p>The reason to write this blog post was a presentation I watched some time ago, and commented on it on Twitter:</p>
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">One of the slides from the presentation. How can you develop an operating system and follow *that* kind of process?! :sadpanda: <a href="https://t.co/3XuHMXc0My">pic.twitter.com/3XuHMXc0My</a></p>&mdash; Marcin Cylke (@zygm0nt) <a href="https://twitter.com/zygm0nt/status/1213955061409292290?ref_src=twsrc%5Etfw">January 5, 2020</a></blockquote>
@@ -88,7 +54,7 @@ if (!doNotTrack) {
 <p>So to be specific - the whole presentation was rather negative towards security model used along OpenBSD development. The presentation itself took a lot of time to go over recent security issues, false claims, etc.</p>
 <p>What strikes me in it was how the development process for that particular operating system actually looks like. Working with software for quite some time now I have a pretty decent idea of how the development process of my half baked, security-assed code actually look like.</p>
 <p>All that got me wondered - how OS developers actually deal with their daily load of issues? How do they fix bugs, monitor simple security issues, regressions, etc? And also what&rsquo;s their tooling around that?
-It&rsquo;s easy to say - just use git, or JIRA, or any other &ldquo;normal&rdquo; dev tool. But since you&rsquo;re developing an actual OS things are' perhaps' not that obvious anymore. The code bases tend to be huge. With the multitude of contributions, mighty loads of bugreports.</p>
+It&rsquo;s easy to say - just use git, or JIRA, or any other &ldquo;normal&rdquo; dev tool. But since you&rsquo;re developing an actual OS things are&rsquo; perhaps&rsquo; not that obvious anymore. The code bases tend to be huge. With the multitude of contributions, mighty loads of bugreports.</p>
 <p>The comment was about OpenBSD, but then I started wondering - how does this process actually look like for other major (or not necessarily) operating systems?</p>
 <p>So I&rsquo;ve decided to take some time and look into that space. I wanted to look into a few operating systems I tend to use, used to use, or just keep an eye for. Some of those are the key players in the OS space, some are just hobby projects. For all of them I just wanted to get a picture of how the development process looks.</p>
 <p>Please keep in mind that this should be regarded mostly as a beginners guide, I have no significant experience in contributing to any of those code bases, so I was also looking into how approachable each of those communities is for newcomers. Also there may be a lot of obvious omissions for experienced contributions, but if it&rsquo;s not mentioned in this post than I had a hard time finding relevant information - so anything that is a &ldquo;secret lore&rdquo; circulating among experienced contributors is not enough for me, a newbie.</p>
@@ -219,7 +185,7 @@ It&rsquo;s easy to say - just use git, or JIRA, or any other &ldquo;normal&rdquo
 <li>Docs on creating bug report: <a href="https://www.openbsd.org/report.html">https://www.openbsd.org/report.html</a></li>
 <li>This quote is taken from the official docs -  <em>If possible, use the sendbug(1) command to help generate your bug report. It will automatically include some useful information about your hardware that helps diagnose many issues. This tool requires that your system can properly send email. If you cannot use sendbug on a functional OpenBSD machine, please send your bug report to <a href="mailto:bugs@openbsd.org">bugs@openbsd.org</a>.</em></li>
 <li>and here is the description of this tool for bugreports <a href="https://man.openbsd.org/sendbug">https://man.openbsd.org/sendbug</a></li>
-<li>Bugs' archive available here: <a href="https://marc.info/?l=openbsd-bugs">https://marc.info/?l=openbsd-bugs</a></li>
+<li>Bugs&rsquo; archive available here: <a href="https://marc.info/?l=openbsd-bugs">https://marc.info/?l=openbsd-bugs</a></li>
 <li>No intention to actually have a bugtracker:
 <ul>
 <li><a href="http://openbsd-archive.7691.n7.nabble.com/bug-tracking-system-for-OpenBSD-td321009.html">http://openbsd-archive.7691.n7.nabble.com/bug-tracking-system-for-OpenBSD-td321009.html</a> - or to be more precise there&rsquo;s none willing to commit time to this project. Also here&rsquo;s a nice quote from Ted Unangst about the potential approach:</li>
@@ -451,53 +417,13 @@ be visible.</p>
 <li><a href="https://media.ccc.de/v/34c3-8968-are_all_bsds_created_equally">https://media.ccc.de/v/34c3-8968-are_all_bsds_created_equally</a></li>
 <li><a href="https://www.bsdfrog.org/pub/events/my_bsd_sucks_less_than_yours-AsiaBSDCon2017-paper.pdf">https://www.bsdfrog.org/pub/events/my_bsd_sucks_less_than_yours-AsiaBSDCon2017-paper.pdf</a></li>
 </ul>
+</div>
+  
+  </div>
+</article>
 
-    </div>
- 
-     <div id="disqus_thread"></div>
-<script>
-    (function() { 
-        var d = document, s = d.createElement('script');
-        s.src = '//marcinbloguje.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </main><footer>
+  <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
 
-
-      <script id="dsq-count-scr" src="//careerboost.disqus.com/count.js" async></script>
-
-
-  </article>
-
-</main>
-
-			<hr class="sep" />
-		</main>
-		<footer class="container no-print">
-			<div class="u-footer">
-				
-
-
-<a href="http://marcin.cylke.com.pl/index.xml" target="_blank"><img class="icon-social" src="/img/feed.svg" alt="Feed"></a>
-
-				<p>
-					
-					Theme used: <a href="https://github.com/yursan9/manis-hugo-theme">Manis</a><br>
-					
-					
-					
-				</p>
-				
-				<a href="#brand">
-					<img class="icon-text" src="/img/toup.svg" alt="To Up"/>
-					<span>Back to Up</span>
-				</a>
-				
-			</div>
-		</footer>
-		
-	</body>
+</body>
 </html>
-

@@ -77,7 +77,7 @@ resolution was heavily inspired by Adam Kawa&amp;rsquo;s post &lt;a href=&#34;ht
       <pubDate>Mon, 24 Jun 2013 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/</guid>
-      <description>An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system&amp;rsquo;s components. Since I had already a few separate components I didn&amp;rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I&amp;rsquo;ve decided to go that way with my solution. What is Zookeeper?</description>
+      <description>An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system&amp;rsquo;s components. Since I had already a few separate components I didn&amp;rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I&amp;rsquo;ve decided to go that way with my solution. What is Zookeeper?Just a crude distributed synchronization framework.</description>
     </item>
     
     <item>
@@ -88,8 +88,8 @@ resolution was heavily inspired by Adam Kawa&amp;rsquo;s post &lt;a href=&#34;ht
       <guid>http://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/</guid>
       <description>This post is a summary of what has been presented by Kathleen Ting on StrangeLoop conference. You can watch the original here: http://www.infoq.com/presentations/Misconfiguration-ZooKeeper
 I&amp;rsquo;ve decided to put this selection here for quick reference.
-Connection mismanagement   too many connections
- WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - Too many connections from /xx.x.xx.xxx - max is 60     running out of ZK connections?  set maxClientCnxns=200 in zoo.cfg   HBase client leaking connections?</description>
+Connection mismanagement too many connections
+WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - Too many connections from /xx.x.xx.xxx - max is 60 running out of ZK connections? set maxClientCnxns=200 in zoo.cfg HBase client leaking connections? fixed in HBASE-3777, HBASE-4773, HBASE-5466 manually close connections connection closes prematurely</description>
     </item>
     
     <item>
@@ -109,7 +109,7 @@ Connection mismanagement   too many connections
       <guid>http://marcin.cylke.com.pl/2012/11/26/whug-8-beyond-hadoop/</guid>
       <description>W najbliższy czwartek - czyli 29.11.2012 - poprowadzę prezentację w ramach Warsaw Hadoop User Group. Swoją obecność można odklinąć tu http://www.meetup.com/warsaw-hug/
 A o czym będę mówił? Przeklejka ze strony WHUG:
- Marcin skupi się na współpracy ekosystemu Hadoopa z innymi narzędziami. Pokaże jak prosto i wygodnie przetwarzać grafy i jak stosować podejście Big Data, w czasie rzeczywistym. Poruszy również temat łatwiejszego tworzenia algorytmów Map-Reduce
+Marcin skupi się na współpracy ekosystemu Hadoopa z innymi narzędziami. Pokaże jak prosto i wygodnie przetwarzać grafy i jak stosować podejście Big Data, w czasie rzeczywistym. Poruszy również temat łatwiejszego tworzenia algorytmów Map-Reduce
 Będzie to nieco mniej technicza (ale wciąż praktyczna) wycieczka po obrzeżach tematyki, która jest zwykle poruszana w połączeniu z Hadoop-em.</description>
     </item>
     
@@ -135,8 +135,7 @@ precursor of this solution.&lt;/p&gt;
       <pubDate>Mon, 18 Jun 2012 09:08:09 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2012/06/18/hadoop-for-enterprises/</guid>
-      <description>Hadoop&#39;s usage as a big data processing framework gains a lot of attention lately. Now, not only big players see, that they can embrace the data their sites or products are generating and develop their businesses on it. For that to happen two things are needed: the data itself and means of processing really big amounts of it. 
-Gathering data is relatively easy. These are not necessarily structured data, you don&#39;t need to plan their usage at first.</description>
+      <description>Hadoop&#39;s usage as a big data processing framework gains a lot of attention lately. Now, not only big players see, that they can embrace the data their sites or products are generating and develop their businesses on it. For that to happen two things are needed: the data itself and means of processing really big amounts of it. Gathering data is relatively easy. These are not necessarily structured data, you don&#39;t need to plan their usage at first.</description>
     </item>
     
     <item>
@@ -145,7 +144,7 @@ Gathering data is relatively easy. These are not necessarily structured data, yo
       <pubDate>Wed, 02 Nov 2011 15:32:15 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/11/02/soapui-ext-libs-and-its-weirdness/</guid>
-      <description>Suppose you want to add some additional jars to your SoapUI installation. It all should work ok if you put them in bin/ext directory. It is scanned at startup, and jars found there are automatically added to classpath.  However if you want to add some JDBC drivers, and happen to be using SoapUI version higher than 3.5.1 it is a bit more tricky. You may face this NoClassDefFoundError:  An error occured [oracle/jdbc/Driver], see error log for details java.</description>
+      <description>Suppose you want to add some additional jars to your SoapUI installation. It all should work ok if you put them in bin/ext directory. It is scanned at startup, and jars found there are automatically added to classpath. However if you want to add some JDBC drivers, and happen to be using SoapUI version higher than 3.5.1 it is a bit more tricky. You may face this NoClassDefFoundError: An error occured [oracle/jdbc/Driver], see error log for details java.</description>
     </item>
     
     <item>
@@ -155,7 +154,7 @@ Gathering data is relatively easy. These are not necessarily structured data, yo
       
       <guid>http://marcin.cylke.com.pl/2011/09/21/what-is-nosql-good-for/</guid>
       <description>... or how I ended up writing a CouchDB proof of concept app? Once upon a time I set out on a journey to discover the NoSQL land. I&#39;ve decided that doing simple queries wouldn&#39;t be interesting enough. That&#39;s why I&#39;ve chose to create an app that would be based on some NoSQL database.
- The main idea was to create an app, that would dynamically update itself with geographic data flowing in.</description>
+The main idea was to create an app, that would dynamically update itself with geographic data flowing in.</description>
     </item>
     
     <item>
@@ -165,7 +164,7 @@ Gathering data is relatively easy. These are not necessarily structured data, yo
       
       <guid>http://marcin.cylke.com.pl/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/</guid>
       <description>Some time ago one of the projects at work required me to validate some Java POJOs. Theses were my model classes and I&#39;ve been creating them from incoming WebService requests. One would say that XSD would be sufficient for the task, for parts of this validations - sure, it would. But there were some advanced rules XSD would not handle, or would render the schema document very complicated.
-Rules I needed to express were like:  person&#39;s first_name and last_name should be of appropriate length - between 2 and 20, and additionally one could pass a zero-length string just to remove the previous value state field should consist only defined values - as in dictionary value - this one would be completable with XSD&#39;s enumerations, but would require often changing schema files and redistributing them to interested parties :(  The library I&#39;ve decided to use for this task is OVal and it came out really nice!</description>
+Rules I needed to express were like: person&#39;s first_name and last_name should be of appropriate length - between 2 and 20, and additionally one could pass a zero-length string just to remove the previous value state field should consist only defined values - as in dictionary value - this one would be completable with XSD&#39;s enumerations, but would require often changing schema files and redistributing them to interested parties :( The library I&#39;ve decided to use for this task is OVal and it came out really nice!</description>
     </item>
     
     <item>
@@ -175,7 +174,7 @@ Rules I needed to express were like:  person&#39;s first_name and last_name shou
       
       <guid>http://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/</guid>
       <description>And now for part 2 of my visit to Geecon 2011!
- 1. Jim Webber &#34;Revisiting SOA for the 21st century&#34; Now this was awesome! Jim Webber, a former ThoughtWorks employee, now Neo4j evangelist (in Neotechnology) described his views on how SOA should look - according to him. This was presented previously, on other occasions as his &#34;Guerilla SOA&#34; talk - generally he advocated for REST based services, loose contracts (stating that WSDLs are too verbose and code generation is evil).</description>
+1. Jim Webber &#34;Revisiting SOA for the 21st century&#34; Now this was awesome! Jim Webber, a former ThoughtWorks employee, now Neo4j evangelist (in Neotechnology) described his views on how SOA should look - according to him. This was presented previously, on other occasions as his &#34;Guerilla SOA&#34; talk - generally he advocated for REST based services, loose contracts (stating that WSDLs are too verbose and code generation is evil).</description>
     </item>
     
     <item>
@@ -185,7 +184,7 @@ Rules I needed to express were like:  person&#39;s first_name and last_name shou
       
       <guid>http://marcin.cylke.com.pl/2011/05/19/geecon-2011-day-1/</guid>
       <description>Last week&#39;s Java conference - Geecon was very interesting. It was well prepared, and gave an insight into the current Java related trends - concurrency, DSLs, polyglot programming. But not only that - there were also some pretty different talks from excellent speakers.
- The whole event took 4 days:  University day (wednesday) 2 regular conference days (Thursday + Friday)  hacker garden (Sunday)   I decided to attend only on Thursday and Friday - no time for more.</description>
+The whole event took 4 days: University day (wednesday) 2 regular conference days (Thursday + Friday) hacker garden (Sunday) I decided to attend only on Thursday and Friday - no time for more.</description>
     </item>
     
     <item>
@@ -203,7 +202,7 @@ Rules I needed to express were like:  person&#39;s first_name and last_name shou
       <pubDate>Fri, 01 Apr 2011 09:16:59 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/04/01/advisory-messages-to-the-rescue/</guid>
-      <description>The most crucial part of software development is testing. It should ensure us, that our code is correct, works according to given specs, etc. There are many kinds of tests: unit tests, integration, functional. In general you should try to test the smallest possible subset of your code and be able to check the state of the objects after the test.  This seems as rather easy task, but what if you have an integration end-to-end test to perform?</description>
+      <description>The most crucial part of software development is testing. It should ensure us, that our code is correct, works according to given specs, etc. There are many kinds of tests: unit tests, integration, functional. In general you should try to test the smallest possible subset of your code and be able to check the state of the objects after the test. This seems as rather easy task, but what if you have an integration end-to-end test to perform?</description>
     </item>
     
     <item>
@@ -212,7 +211,7 @@ Rules I needed to express were like:  person&#39;s first_name and last_name shou
       <pubDate>Sun, 27 Mar 2011 18:47:11 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/03/27/how-to-run-multiple-guest-os-in-qemu/</guid>
-      <description>This weekend I&#39;ve been fiddling with QEMU. I&#39;ve installed OpenBSD on a single image and wanted to have two instances of it communicating via network. Installing the system was easy, but the networking setup was quite a pain. See how I did that...  To make QEMU instances communicate with each other I needed to plug them to a &#34;network&#34;. That&#39;s why I&#39;ve created a bridge to which Virtual Instances would connect to.</description>
+      <description>This weekend I&#39;ve been fiddling with QEMU. I&#39;ve installed OpenBSD on a single image and wanted to have two instances of it communicating via network. Installing the system was easy, but the networking setup was quite a pain. See how I did that... To make QEMU instances communicate with each other I needed to plug them to a &#34;network&#34;. That&#39;s why I&#39;ve created a bridge to which Virtual Instances would connect to.</description>
     </item>
     
     <item>
@@ -221,9 +220,8 @@ Rules I needed to express were like:  person&#39;s first_name and last_name shou
       <pubDate>Sun, 20 Mar 2011 19:35:39 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/03/20/me-on-hadoop-on-parleys/</guid>
-      <description> Finally I&#39;ve managed to import my WarJUG presentation to parleys.com. See for yourself :)    If you&#39;ve got problems with opening the parleys&#39; version try the ones uploaded to youtube.  Here is part 1:  And here is part 2:
-  Comments Sigvatr I&#39;m sorry, but I don&#39;t understand Polish :P
-   </description>
+      <description>Finally I&#39;ve managed to import my WarJUG presentation to parleys.com. See for yourself :) If you&#39;ve got problems with opening the parleys&#39; version try the ones uploaded to youtube. Here is part 1: And here is part 2:
+Comments Sigvatr I&#39;m sorry, but I don&#39;t understand Polish :P</description>
     </item>
     
     <item>
@@ -243,7 +241,7 @@ Hadoop i okoliceView more presentations from zygm0nt. Comments Sigvatr Czyli nap
       <pubDate>Mon, 17 Jan 2011 08:56:29 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/01/17/jms-redelivery-with-activemq-and-servicemix/</guid>
-      <description>The other day I felt a compelling need to implement a JMS redelivery scenario. The exact scenario I&#39;d been trying to handle was:  my message is in an ActiveMQ queue or topic its processing fails, because of some exception - ie. database access exception due to server nonavailability since we get an exception, the message is not handled properly, we may want to retry processing attempt some time later of course, for the redelivery to happen we need the message to stay in the ActiveMQ queue - fetching messages from the queue will be stopped until the redelivery succeeds or expires  See how this can be done after the jump :)   For this to happen, I&#39;ve tried implementing Apache Camel route, but as it turns out, Camel fails to deliver facilities for exact JMS redelivery.</description>
+      <description>The other day I felt a compelling need to implement a JMS redelivery scenario. The exact scenario I&#39;d been trying to handle was: my message is in an ActiveMQ queue or topic its processing fails, because of some exception - ie. database access exception due to server nonavailability since we get an exception, the message is not handled properly, we may want to retry processing attempt some time later of course, for the redelivery to happen we need the message to stay in the ActiveMQ queue - fetching messages from the queue will be stopped until the redelivery succeeds or expires See how this can be done after the jump :) For this to happen, I&#39;ve tried implementing Apache Camel route, but as it turns out, Camel fails to deliver facilities for exact JMS redelivery.</description>
     </item>
     
     <item>
@@ -252,7 +250,7 @@ Hadoop i okoliceView more presentations from zygm0nt. Comments Sigvatr Czyli nap
       <pubDate>Wed, 08 Dec 2010 09:22:34 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2010/12/08/easier-and-nicer-jms/</guid>
-      <description>JMS seems like a hostile ground. It has all it&#39;s quirks and strange behaviours. A couple of defining standards plus esoteric brokers, queues and topics.    At work, we mainly use open source Jms solutions, namely Apache ActiveMQ. This one is usually bundled with Apache Servicemix, as a message broker for this particular ESB. As there are some minor caveats in this scennerio, I&#39;d like to describe here some guidelines for getting to running JMS queues.</description>
+      <description>JMS seems like a hostile ground. It has all it&#39;s quirks and strange behaviours. A couple of defining standards plus esoteric brokers, queues and topics. At work, we mainly use open source Jms solutions, namely Apache ActiveMQ. This one is usually bundled with Apache Servicemix, as a message broker for this particular ESB. As there are some minor caveats in this scennerio, I&#39;d like to describe here some guidelines for getting to running JMS queues.</description>
     </item>
     
     <item>
@@ -261,7 +259,7 @@ Hadoop i okoliceView more presentations from zygm0nt. Comments Sigvatr Czyli nap
       <pubDate>Thu, 21 Oct 2010 08:40:37 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/</guid>
-      <description>In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be solved with it - the standardization processes is there for some reason. But that happens only in ideal world, which we&#39;re not living in.   In ideal world, when dealing with XML instances you&#39;d be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal definition language to declare your data structure.</description>
+      <description>In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be solved with it - the standardization processes is there for some reason. But that happens only in ideal world, which we&#39;re not living in. In ideal world, when dealing with XML instances you&#39;d be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal definition language to declare your data structure.</description>
     </item>
     
     <item>
@@ -270,7 +268,7 @@ Hadoop i okoliceView more presentations from zygm0nt. Comments Sigvatr Czyli nap
       <pubDate>Thu, 26 Aug 2010 20:23:52 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/</guid>
-      <description>At work, we&#39;re mainly integrating services and systems, and since we&#39;re on a constant lookout for new, better technologies, ways to do things easier, make them more sustainable, we&#39;re trying to  Usually we use Apache Camel for this task, which is a Swiss-knife for integration engineer. What&#39;s more, this tools corresponds well with our approach to integration solutions:   try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits,  don&#39;t convert XML into Java classes back and forth and be worried with problems like XML conversion,  try to get a simple flow of the process.</description>
+      <description>At work, we&#39;re mainly integrating services and systems, and since we&#39;re on a constant lookout for new, better technologies, ways to do things easier, make them more sustainable, we&#39;re trying to Usually we use Apache Camel for this task, which is a Swiss-knife for integration engineer. What&#39;s more, this tools corresponds well with our approach to integration solutions: try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits, don&#39;t convert XML into Java classes back and forth and be worried with problems like XML conversion, try to get a simple flow of the process.</description>
     </item>
     
     <item>
@@ -289,7 +287,7 @@ Hadoop i okoliceView more presentations from zygm0nt. Comments Sigvatr Czyli nap
       
       <guid>http://marcin.cylke.com.pl/2010/06/28/generic-enum-converter-for-ibatis/</guid>
       <description>My goal was to create a simple, extensible Enum converter that would work with iBatis. This seems like a trivial problem, but took me a while to find a proper solution.
- There were some additional preconditions:  all given Enums are jaxb generated objects - but any standard Java Enum should work conversion was 1-to-1, no special conditions and processing  The example Enum for this problem looks like this one (copy&amp;amp;paste from jaxb generated source):</description>
+There were some additional preconditions: all given Enums are jaxb generated objects - but any standard Java Enum should work conversion was 1-to-1, no special conditions and processing The example Enum for this problem looks like this one (copy&amp;amp;paste from jaxb generated source):</description>
     </item>
     
     <item>

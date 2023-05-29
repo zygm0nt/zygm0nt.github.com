@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fzf on Tech ramblings by Marcin</title>
+    <link>http://marcin.cylke.com.pl/categories/fzf/</link>
+    <description>Recent content in fzf on Tech ramblings by Marcin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 29 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://marcin.cylke.com.pl/categories/fzf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>an ode to fzf</title>
+      <link>http://marcin.cylke.com.pl/2023/05/29/an-ode-to-fzf/</link>
+      <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://marcin.cylke.com.pl/2023/05/29/an-ode-to-fzf/</guid>
+      <description>What is fzf? How could I&amp;rsquo;ve lived without it for so long?! It&amp;rsquo;s just a pretty little fuzzy search tool, written in go. You can find it here: https://github.com/junegunn/fzf
+Important features fuzzy search in a list of lines - thanks to that, it&amp;rsquo;s really easy to find something in a considerably big list of items it&amp;rsquo;s blazingly fast! very nice shell integrations many additional features - like preview for files (go here to see examples: https://github.</description>
+    </item>
+    
+  </channel>
+</rss>

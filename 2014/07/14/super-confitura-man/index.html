@@ -1,92 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="generator" content="Hugo 0.80.0-DEV" />
-		<title>Super Confitura Man - Tech ramblings by Marcin</title>
-
-		<meta name="description" content="How Super Confitura Man came to be :)
-Recently at TouK we had a one-day hackathon. There was no main theme for
-it, you just could post a project idea, gather people around it and hack
-on that idea for a whole day - drinks and pizza included.
-My main idea was to create something that could be fun to build and be
-useful somehow to others. I’d figured out that since Confitura was just
-around a corner I could make a game, that would be playable at TouK’s
-booth at the conference venue. This idea seemed good enough to attract
-Rafał Nowak @RNowak3 and Marcin Jasion
-@marcinjasion - two TouK employees, that with me
-formed a team for the hackathon.
-">
-
-
-		
-	
-		
-
-
-
-
-<link rel="stylesheet" href="/css/ui.css">
-
-	
-		
-
-		<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono|Lato|Raleway">
-
-		
-        
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-172194-10', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-
-	</head>
-
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="http://marcin.cylke.com.pl/">
+  <title>Super Confitura Man - Tech ramblings by Marcin</title>
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
 <body>
-<header class="container no-print">
-	<div class="u-header">
-		<nav class="bar">
-	<ul><li>
-			<a href="/">
-				<img class="icon-text" src="/img/prev.svg"/>
-			</a>
-		</li><li><a href="/about/">About Me</a></li></ul>
-</nav>
-
-	</div>
+  <header>
+<div>
+    <h1><a href="http://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></h1>
+  </div>
+  <nav><a href="/about/">about me</a>
+  </nav>
 </header>
-<main class="container">
-
-
-<main class="content" role="main">
-  <article class="article">
-    <h1 class="article-title">Super Confitura Man</h1>
-    
-    <span class="article-date">2014-07-14</span>
-    
-    <ul class="article-taxonomy">
-                  
-      <li>
-        <i class="fa fa-category"></i><a href="/categories/touk">touk</a>
-        <span>|</span><a href="/categories/clojure">clojure</a>
-        <span>|</span><a href="/categories/javascript">javascript</a>
-        <span>|</span>
-      </li>
-      
-    
-      
-    </ul>
- 
-    <div class="article-content">
+<main>
+    <article>
+  <div class="title">
+    <h1>Super Confitura Man</h1>
+    </div>
+  <div class="meta">2014-07-14 00:00</div>
+  <div class="artical-body">
+  
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-super-confitura-man-came-to-be-">How Super Confitura Man came to be :)</a></li>
+    <li><a href="#how-the-game-is-played">How the game is played?</a></li>
+    <li><a href="#technicalities">Technicalities</a></li>
+    <li><a href="#statistics">Statistics</a></li>
+    <li><a href="#obstacles">Obstacles</a></li>
+    <li><a href="#source-code">Source code</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#thanks-to-rafał-and-michał-for-great-coding-experience-and-thanks-to-all-the-players-of-our-stupid-little-game-if-youd-like-to-ask-me-about-anything---feel-free-to-contact-me-by-mail-or-twitter-zygm0nthttpstwittercomzygm0nt">Thanks to Rafał and Michał for great coding experience, and thanks to all the players of our stupid little game. If you’d like to ask me about anything - feel free to contact me by mail or twitter <a href="https://twitter.com/zygm0nt">@zygm0nt</a></a></li>
+  </ul>
+</nav>
+    <div class="content-with-toc">
       <h2 id="how-super-confitura-man-came-to-be-">How Super Confitura Man came to be :)</h2>
 <p>Recently at TouK we had a one-day hackathon. There was no main theme for
 it, you just could post a project idea, gather people around it and hack
@@ -180,11 +129,11 @@ its ecosystem.</p>
 </ul>
 <p>To run the server you need to have a local MongoDB installation. Than in
 server’s directory run:</p>
-<pre><code>$ lein ring server-headless 
+<pre tabindex="0"><code>$ lein ring server-headless 
 </code></pre><p>This will start a server on <code>http://localhost:3000</code></p>
 <p>To run the game you need to install dependencies with bower and than
 run</p>
-<pre><code>$ grunt
+<pre tabindex="0"><code>$ grunt
 </code></pre><p>from game’s directory.</p>
 <p>To launch the QR reading part of the game, you enter
 <code>http://localhost:9000/start.html</code>. After scanning the code you’ll be
@@ -194,53 +143,13 @@ redirected to <code>http://localhost:9000/index.html</code> - and the game start
 watch people playing the game. And even with all those glitches and
 stupid graphics, there were people vigorously playing it, which was
 awesome.</p>
-<h2 id="thanks-to-rafał-and-michał-for-great-coding-experience-and-thanks-to-all-the-players-of-our-stupid-little-game-if-youd-like-to-ask-me-about-anything---feel-free-to-contact-me-by-mail-or-twitter-zygm0nthttpstwittercomzygm0nt">Thanks to Rafał and Michał for great coding experience, and thanks to all the players of our stupid little game. If you’d like to ask me about anything - feel free to contact me by mail or twitter <a href="https://twitter.com/zygm0nt">@zygm0nt</a></h2>
-    </div>
- 
-     <div id="disqus_thread"></div>
-<script>
-    (function() { 
-        var d = document, s = d.createElement('script');
-        s.src = '//marcinbloguje.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<h2 id="thanks-to-rafał-and-michał-for-great-coding-experience-and-thanks-to-all-the-players-of-our-stupid-little-game-if-youd-like-to-ask-me-about-anything---feel-free-to-contact-me-by-mail-or-twitter-zygm0nthttpstwittercomzygm0nt">Thanks to Rafał and Michał for great coding experience, and thanks to all the players of our stupid little game. If you’d like to ask me about anything - feel free to contact me by mail or twitter <a href="https://twitter.com/zygm0nt">@zygm0nt</a></h2></div>
+  
+  </div>
+</article>
 
+  </main><footer>
+  <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
 
-      <script id="dsq-count-scr" src="//careerboost.disqus.com/count.js" async></script>
-
-
-  </article>
-
-</main>
-
-			<hr class="sep" />
-		</main>
-		<footer class="container no-print">
-			<div class="u-footer">
-				
-
-
-<a href="http://marcin.cylke.com.pl/index.xml" target="_blank"><img class="icon-social" src="/img/feed.svg" alt="Feed"></a>
-
-				<p>
-					
-					Theme used: <a href="https://github.com/yursan9/manis-hugo-theme">Manis</a><br>
-					
-					
-					
-				</p>
-				
-				<a href="#brand">
-					<img class="icon-text" src="/img/toup.svg" alt="To Up"/>
-					<span>Back to Up</span>
-				</a>
-				
-			</div>
-		</footer>
-		
-	</body>
+</body>
 </html>
-

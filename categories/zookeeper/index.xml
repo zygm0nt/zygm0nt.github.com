@@ -13,7 +13,7 @@
       <pubDate>Mon, 24 Jun 2013 00:00:00 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/</guid>
-      <description>An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system&amp;rsquo;s components. Since I had already a few separate components I didn&amp;rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I&amp;rsquo;ve decided to go that way with my solution. What is Zookeeper?</description>
+      <description>An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system&amp;rsquo;s components. Since I had already a few separate components I didn&amp;rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I&amp;rsquo;ve decided to go that way with my solution. What is Zookeeper?Just a crude distributed synchronization framework.</description>
     </item>
     
     <item>
@@ -24,8 +24,8 @@
       <guid>http://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/</guid>
       <description>This post is a summary of what has been presented by Kathleen Ting on StrangeLoop conference. You can watch the original here: http://www.infoq.com/presentations/Misconfiguration-ZooKeeper
 I&amp;rsquo;ve decided to put this selection here for quick reference.
-Connection mismanagement   too many connections
- WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - Too many connections from /xx.x.xx.xxx - max is 60     running out of ZK connections?  set maxClientCnxns=200 in zoo.cfg   HBase client leaking connections?</description>
+Connection mismanagement too many connections
+WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - Too many connections from /xx.x.xx.xxx - max is 60 running out of ZK connections? set maxClientCnxns=200 in zoo.cfg HBase client leaking connections? fixed in HBASE-3777, HBASE-4773, HBASE-5466 manually close connections connection closes prematurely</description>
     </item>
     
   </channel>

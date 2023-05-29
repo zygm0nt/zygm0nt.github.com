@@ -15,8 +15,8 @@
       <guid>http://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/</guid>
       <description>This post is a summary of what has been presented by Kathleen Ting on StrangeLoop conference. You can watch the original here: http://www.infoq.com/presentations/Misconfiguration-ZooKeeper
 I&amp;rsquo;ve decided to put this selection here for quick reference.
-Connection mismanagement   too many connections
- WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - Too many connections from /xx.x.xx.xxx - max is 60     running out of ZK connections?  set maxClientCnxns=200 in zoo.cfg   HBase client leaking connections?</description>
+Connection mismanagement too many connections
+WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - Too many connections from /xx.x.xx.xxx - max is 60 running out of ZK connections? set maxClientCnxns=200 in zoo.cfg HBase client leaking connections? fixed in HBASE-3777, HBASE-4773, HBASE-5466 manually close connections connection closes prematurely</description>
     </item>
     
   </channel>

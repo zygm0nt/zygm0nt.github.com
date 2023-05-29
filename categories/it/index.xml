@@ -1,158 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>It on Tech ramblings by Marcin</title>
-    <link>http://marcin.cylke.com.pl/categories/it/</link>
-    <description>Recent content in It on Tech ramblings by Marcin</description>
+    <title>IT on Tech ramblings by Marcin</title>
+    <link>http://marcin.cylke.com.pl/categories/IT/</link>
+    <description>Recent content in IT on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 06 Feb 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://marcin.cylke.com.pl/categories/it/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>awesome WM and how to handle multiple monitors</title>
-      <link>http://marcin.cylke.com.pl/2021/02/06/awesomewm-multiple-monitors/</link>
-      <pubDate>Sat, 06 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://marcin.cylke.com.pl/2021/02/06/awesomewm-multiple-monitors/</guid>
-      <description>Recently I&amp;rsquo;ve started using new window manager. Since I&amp;rsquo;ve always wanted to try some kind of tiling window manager I thought that a fresh installation of an OS on a new machine is good time to have a go at that.
-From the multitude of possibilities I&amp;rsquo;ve chosen AwesomeWM. It&amp;rsquo;s reasonable enough in its standard configuration so I&amp;rsquo;ve decided to stick with it at least for the time being. In fact the only important feature I look for in a tiling window manager is the tiling behavior.</description>
-    </item>
-    
-    <item>
-      <title>operating systems showdown</title>
-      <link>http://marcin.cylke.com.pl/2020/12/05/operating-systems-showdown/</link>
-      <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://marcin.cylke.com.pl/2020/12/05/operating-systems-showdown/</guid>
-      <description>Modern open source operating systems vs modern software development practices The reason to write this blog post was a presentation I watched some time ago, and commented on it on Twitter:
-One of the slides from the presentation. How can you develop an operating system and follow *that* kind of process?! :sadpanda: pic.twitter.com/3XuHMXc0My
-&amp;mdash; Marcin Cylke (@zygm0nt) January 5, 2020  So to be specific - the whole presentation was rather negative towards security model used along OpenBSD development.</description>
-    </item>
-    
-    <item>
-      <title>plotting data availability with matplotlib</title>
-      <link>http://marcin.cylke.com.pl/2020/03/13/plotting-with-matplotlib/</link>
-      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://marcin.cylke.com.pl/2020/03/13/plotting-with-matplotlib/</guid>
-      <description>Though somewhat strange I happen to come to a need of having a plot of dates that a particular dataset is available on. Doing my exploration in Jupyter notebook it just felt pretty natural to have it written in Python and generated as a graph, with matplotlib.
-This resulted in a visually appealing description of the dataset. Also, due to the ease of change, I could modify the plot to show additional elements.</description>
-    </item>
-    
-    <item>
-      <title>I don&#39;t do backups</title>
-      <link>http://marcin.cylke.com.pl/2020/02/26/i-dont-do-backups/</link>
-      <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://marcin.cylke.com.pl/2020/02/26/i-dont-do-backups/</guid>
-      <description>I tend to not do backups. I used to but just didn’t like it. I wasn’t diligent enough, didn’t have a routine setup. It all felt fragile and error prone in the end. So I stopped. You probably wonder when this will actually hit me - I sometimes do, too.
-But the truth is I do have backups. I just don’t keep them by myself, I delegate.
-I use the computer mainly to do web browsing, photo management, programming, exploration.</description>
-    </item>
-    
-    <item>
-      <title>Screen shortcuts for split experience</title>
-      <link>http://marcin.cylke.com.pl/2019/07/17/screen-split-experience/</link>
-      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://marcin.cylke.com.pl/2019/07/17/screen-split-experience/</guid>
-      <description>Most useful shortcuts to operate screen Aside from basic screen shortcuts for moving around, creating and changing windows there are things that create more of a window manager feel for terminal usage. And these are splits.
-You can create a split with Ctrl-a | - which creates a vertical split. There is also Ctrl-A S to create a horizontal split. To cycle between your open splits just use Ctrl-a &amp;lt;Tab&amp;gt;.</description>
-    </item>
-    
-    <item>
-      <title>My Vim Setup</title>
-      <link>http://marcin.cylke.com.pl/2019/05/05/my-vim-setup/</link>
-      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://marcin.cylke.com.pl/2019/05/05/my-vim-setup/</guid>
-      <description>I use some plugins for my vim, they’re mainly some random, interesting additions. I’ve never really got to building whole language environment with vim plugins - like, say, complete Scala-lang ecosystem.
-So treat those as a bunch of semi-interesting plugins, that you may also find interesting.
-Usefulness Nerdtree (https://github.com/scrooloose/nerdtree) - the most basic plugin, enables convenient file browsing in a separate vim pane.
-Nerdcommenter (https://github.com/scrooloose/nerdcommenter) - a pretty ubiquitus tool for commenting stuff out</description>
-    </item>
-    
-    <item>
-      <title>Distributed scans with HBase</title>
-      <link>http://marcin.cylke.com.pl/2013/12/10/distributed-scans-with-hbase/</link>
-      <pubDate>Tue, 10 Dec 2013 00:00:00 +0000</pubDate>
-      
-      <guid>http://marcin.cylke.com.pl/2013/12/10/distributed-scans-with-hbase/</guid>
-      <description>&lt;p&gt;HBase is by design a columnar store, that is optimized for random reads.
-You just ask for a row using rowId as an identifier and you get your
-data instantaneously.&lt;/p&gt;
-
-&lt;p&gt;Performing a scan on part or whole table is a completely different thing.
-First of all, it is sequential. Meaning it is rather slow, because it
-doesn&amp;rsquo;t use all the RegionServers at the same time. It is implemented
-that way to realize the contract of Scan command - which has to return
-results sorted by key.&lt;/p&gt;
-
-&lt;p&gt;So, how to do this efficiently?&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Simple HBase ORM</title>
-      <link>http://marcin.cylke.com.pl/2013/12/08/simple-hbase-orm/</link>
-      <pubDate>Sun, 08 Dec 2013 00:00:00 +0000</pubDate>
-      
-      <guid>http://marcin.cylke.com.pl/2013/12/08/simple-hbase-orm/</guid>
-      <description>&lt;p&gt;When dealing with data stored in HBase, you are quick to come to a
-conclusion, that it is extremaly inconvenient to reach to it
-via HBase native API. It is very verbose and you always need to convert
-between bytes and simple types - a pain.&lt;/p&gt;
-
-&lt;p&gt;While I was working on a project of mine, I thought, why not to easy
-those pains and fetch real objects from HBase.&lt;/p&gt;
-
-&lt;p&gt;And that&amp;rsquo;s how this simplistic, hackish ORM came to life. It is no match
-for projects like &lt;a href=&#34;https://github.com/impetus-opensource/Kundera&#34;&gt;Kundera&lt;/a&gt;
-(a JPA compliant solution), or &lt;a href=&#34;https://code.google.com/p/n-orm/&#34;&gt;n-orm&lt;/a&gt;. Nevertheless, it just suits my needs :)&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Recently at storm-users</title>
-      <link>http://marcin.cylke.com.pl/2013/08/12/recently-at-storm-users/</link>
-      <pubDate>Mon, 12 Aug 2013 00:00:00 +0000</pubDate>
-      
-      <guid>http://marcin.cylke.com.pl/2013/08/12/recently-at-storm-users/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve been reading through storm-users Google Group recently. This
-resolution was heavily inspired by Adam Kawa&amp;rsquo;s post &lt;a href=&#34;http://hakunamapdata.com/football-zero-apache-pig-hero-the-essence-from-hundreds-of-posts-from-apache-pig-user-mailing-list/&#34;&gt;&amp;ldquo;Football zero, Apache Pig hero&amp;rdquo;&lt;/a&gt;. Since I&amp;rsquo;ve encountered a lot of insightful and very interesting information I&amp;rsquo;ve decided to describe some of those in this post.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>After WHUG meeting</title>
-      <link>http://marcin.cylke.com.pl/2012/11/30/after-whug/</link>
-      <pubDate>Fri, 30 Nov 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://marcin.cylke.com.pl/2012/11/30/after-whug/</guid>
-      <description>Here are the slides from the talk a gave yesterday. If you have any questions, please ask.
- </description>
-    </item>
-    
-    <item>
-      <title>WHUG 8. Beyond Hadoop - checking other options</title>
-      <link>http://marcin.cylke.com.pl/2012/11/26/whug-8-beyond-hadoop/</link>
-      <pubDate>Mon, 26 Nov 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://marcin.cylke.com.pl/2012/11/26/whug-8-beyond-hadoop/</guid>
-      <description>W najbliższy czwartek - czyli 29.11.2012 - poprowadzę prezentację w ramach Warsaw Hadoop User Group. Swoją obecność można odklinąć tu http://www.meetup.com/warsaw-hug/
-A o czym będę mówił? Przeklejka ze strony WHUG:
- Marcin skupi się na współpracy ekosystemu Hadoopa z innymi narzędziami. Pokaże jak prosto i wygodnie przetwarzać grafy i jak stosować podejście Big Data, w czasie rzeczywistym. Poruszy również temat łatwiejszego tworzenia algorytmów Map-Reduce
-Będzie to nieco mniej technicza (ale wciąż praktyczna) wycieczka po obrzeżach tematyki, która jest zwykle poruszana w połączeniu z Hadoop-em.</description>
-    </item>
-    
+    <lastBuildDate>Mon, 29 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://marcin.cylke.com.pl/categories/IT/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hadoop for Enterprises</title>
       <link>http://marcin.cylke.com.pl/2012/06/18/hadoop-for-enterprises/</link>
       <pubDate>Mon, 18 Jun 2012 09:08:09 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2012/06/18/hadoop-for-enterprises/</guid>
-      <description>Hadoop&#39;s usage as a big data processing framework gains a lot of attention lately. Now, not only big players see, that they can embrace the data their sites or products are generating and develop their businesses on it. For that to happen two things are needed: the data itself and means of processing really big amounts of it. 
-Gathering data is relatively easy. These are not necessarily structured data, you don&#39;t need to plan their usage at first.</description>
+      <description>Hadoop&#39;s usage as a big data processing framework gains a lot of attention lately. Now, not only big players see, that they can embrace the data their sites or products are generating and develop their businesses on it. For that to happen two things are needed: the data itself and means of processing really big amounts of it. Gathering data is relatively easy. These are not necessarily structured data, you don&#39;t need to plan their usage at first.</description>
     </item>
     
     <item>
@@ -162,7 +23,7 @@ Gathering data is relatively easy. These are not necessarily structured data, yo
       
       <guid>http://marcin.cylke.com.pl/2011/09/21/what-is-nosql-good-for/</guid>
       <description>... or how I ended up writing a CouchDB proof of concept app? Once upon a time I set out on a journey to discover the NoSQL land. I&#39;ve decided that doing simple queries wouldn&#39;t be interesting enough. That&#39;s why I&#39;ve chose to create an app that would be based on some NoSQL database.
- The main idea was to create an app, that would dynamically update itself with geographic data flowing in.</description>
+The main idea was to create an app, that would dynamically update itself with geographic data flowing in.</description>
     </item>
     
     <item>
@@ -171,7 +32,7 @@ Gathering data is relatively easy. These are not necessarily structured data, yo
       <pubDate>Mon, 22 Aug 2011 22:19:14 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/08/22/5-best-things-to-do-with-your-kindle/</guid>
-      <description>I bought a Kindle (3rd generation, Wi-Fi only) some time ago - like half a year ago. Read some books, done some web-browsing (awful, quite unpleasant). Gradually I became more and more curious of other things possible to achieve with this slate-looking piece of tech. These are my thoughts and ideas.  Got a Kindle? Use it every day? Feel like modding or extending your ways of usage? Great!</description>
+      <description>I bought a Kindle (3rd generation, Wi-Fi only) some time ago - like half a year ago. Read some books, done some web-browsing (awful, quite unpleasant). Gradually I became more and more curious of other things possible to achieve with this slate-looking piece of tech. These are my thoughts and ideas. Got a Kindle? Use it every day? Feel like modding or extending your ways of usage? Great! Read on, and share your thoughts in comments!</description>
     </item>
     
     <item>
@@ -181,7 +42,7 @@ Gathering data is relatively easy. These are not necessarily structured data, yo
       
       <guid>http://marcin.cylke.com.pl/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/</guid>
       <description>Some time ago one of the projects at work required me to validate some Java POJOs. Theses were my model classes and I&#39;ve been creating them from incoming WebService requests. One would say that XSD would be sufficient for the task, for parts of this validations - sure, it would. But there were some advanced rules XSD would not handle, or would render the schema document very complicated.
-Rules I needed to express were like:  person&#39;s first_name and last_name should be of appropriate length - between 2 and 20, and additionally one could pass a zero-length string just to remove the previous value state field should consist only defined values - as in dictionary value - this one would be completable with XSD&#39;s enumerations, but would require often changing schema files and redistributing them to interested parties :(  The library I&#39;ve decided to use for this task is OVal and it came out really nice!</description>
+Rules I needed to express were like: person&#39;s first_name and last_name should be of appropriate length - between 2 and 20, and additionally one could pass a zero-length string just to remove the previous value state field should consist only defined values - as in dictionary value - this one would be completable with XSD&#39;s enumerations, but would require often changing schema files and redistributing them to interested parties :( The library I&#39;ve decided to use for this task is OVal and it came out really nice!</description>
     </item>
     
     <item>
@@ -191,7 +52,7 @@ Rules I needed to express were like:  person&#39;s first_name and last_name shou
       
       <guid>http://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/</guid>
       <description>And now for part 2 of my visit to Geecon 2011!
- 1. Jim Webber &#34;Revisiting SOA for the 21st century&#34; Now this was awesome! Jim Webber, a former ThoughtWorks employee, now Neo4j evangelist (in Neotechnology) described his views on how SOA should look - according to him. This was presented previously, on other occasions as his &#34;Guerilla SOA&#34; talk - generally he advocated for REST based services, loose contracts (stating that WSDLs are too verbose and code generation is evil).</description>
+1. Jim Webber &#34;Revisiting SOA for the 21st century&#34; Now this was awesome! Jim Webber, a former ThoughtWorks employee, now Neo4j evangelist (in Neotechnology) described his views on how SOA should look - according to him. This was presented previously, on other occasions as his &#34;Guerilla SOA&#34; talk - generally he advocated for REST based services, loose contracts (stating that WSDLs are too verbose and code generation is evil).</description>
     </item>
     
     <item>
@@ -201,7 +62,7 @@ Rules I needed to express were like:  person&#39;s first_name and last_name shou
       
       <guid>http://marcin.cylke.com.pl/2011/05/19/geecon-2011-day-1/</guid>
       <description>Last week&#39;s Java conference - Geecon was very interesting. It was well prepared, and gave an insight into the current Java related trends - concurrency, DSLs, polyglot programming. But not only that - there were also some pretty different talks from excellent speakers.
- The whole event took 4 days:  University day (wednesday) 2 regular conference days (Thursday + Friday)  hacker garden (Sunday)   I decided to attend only on Thursday and Friday - no time for more.</description>
+The whole event took 4 days: University day (wednesday) 2 regular conference days (Thursday + Friday) hacker garden (Sunday) I decided to attend only on Thursday and Friday - no time for more.</description>
     </item>
     
     <item>
@@ -219,7 +80,7 @@ Rules I needed to express were like:  person&#39;s first_name and last_name shou
       <pubDate>Fri, 01 Apr 2011 09:16:59 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/04/01/advisory-messages-to-the-rescue/</guid>
-      <description>The most crucial part of software development is testing. It should ensure us, that our code is correct, works according to given specs, etc. There are many kinds of tests: unit tests, integration, functional. In general you should try to test the smallest possible subset of your code and be able to check the state of the objects after the test.  This seems as rather easy task, but what if you have an integration end-to-end test to perform?</description>
+      <description>The most crucial part of software development is testing. It should ensure us, that our code is correct, works according to given specs, etc. There are many kinds of tests: unit tests, integration, functional. In general you should try to test the smallest possible subset of your code and be able to check the state of the objects after the test. This seems as rather easy task, but what if you have an integration end-to-end test to perform?</description>
     </item>
     
     <item>
@@ -228,7 +89,7 @@ Rules I needed to express were like:  person&#39;s first_name and last_name shou
       <pubDate>Sun, 27 Mar 2011 18:47:11 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/03/27/how-to-run-multiple-guest-os-in-qemu/</guid>
-      <description>This weekend I&#39;ve been fiddling with QEMU. I&#39;ve installed OpenBSD on a single image and wanted to have two instances of it communicating via network. Installing the system was easy, but the networking setup was quite a pain. See how I did that...  To make QEMU instances communicate with each other I needed to plug them to a &#34;network&#34;. That&#39;s why I&#39;ve created a bridge to which Virtual Instances would connect to.</description>
+      <description>This weekend I&#39;ve been fiddling with QEMU. I&#39;ve installed OpenBSD on a single image and wanted to have two instances of it communicating via network. Installing the system was easy, but the networking setup was quite a pain. See how I did that... To make QEMU instances communicate with each other I needed to plug them to a &#34;network&#34;. That&#39;s why I&#39;ve created a bridge to which Virtual Instances would connect to.</description>
     </item>
     
     <item>
@@ -237,9 +98,8 @@ Rules I needed to express were like:  person&#39;s first_name and last_name shou
       <pubDate>Sun, 20 Mar 2011 19:35:39 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/03/20/me-on-hadoop-on-parleys/</guid>
-      <description> Finally I&#39;ve managed to import my WarJUG presentation to parleys.com. See for yourself :)    If you&#39;ve got problems with opening the parleys&#39; version try the ones uploaded to youtube.  Here is part 1:  And here is part 2:
-  Comments Sigvatr I&#39;m sorry, but I don&#39;t understand Polish :P
-   </description>
+      <description>Finally I&#39;ve managed to import my WarJUG presentation to parleys.com. See for yourself :) If you&#39;ve got problems with opening the parleys&#39; version try the ones uploaded to youtube. Here is part 1: And here is part 2:
+Comments Sigvatr I&#39;m sorry, but I don&#39;t understand Polish :P</description>
     </item>
     
     <item>
@@ -262,7 +122,7 @@ Hadoop i okoliceView more presentations from zygm0nt. Comments Sigvatr Czyli nap
       <description>I&#39;ll be speaking at the upcoming JUG meeting in Warsaw. The topic will be Apache Hadoop. If you&#39;re interested, feel invited. Attend and ask questions. But be aware I&#39;m not advanced in this technology :)
 Full invitation text can be found here.
 P.S.: Do you know what Hadoop is? Do you use it anywhere? Have you played with it?
- Comments Marcin @teamon - prawdopodobnie będzie. Na 100% to nie wiem, ale teoretycznie wszystkie prezentacje WarJUGa są nagrywane</description>
+Comments Marcin @teamon - prawdopodobnie będzie. Na 100% to nie wiem, ale teoretycznie wszystkie prezentacje WarJUGa są nagrywane</description>
     </item>
     
     <item>
@@ -271,7 +131,7 @@ P.S.: Do you know what Hadoop is? Do you use it anywhere? Have you played with i
       <pubDate>Mon, 17 Jan 2011 08:56:29 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2011/01/17/jms-redelivery-with-activemq-and-servicemix/</guid>
-      <description>The other day I felt a compelling need to implement a JMS redelivery scenario. The exact scenario I&#39;d been trying to handle was:  my message is in an ActiveMQ queue or topic its processing fails, because of some exception - ie. database access exception due to server nonavailability since we get an exception, the message is not handled properly, we may want to retry processing attempt some time later of course, for the redelivery to happen we need the message to stay in the ActiveMQ queue - fetching messages from the queue will be stopped until the redelivery succeeds or expires  See how this can be done after the jump :)   For this to happen, I&#39;ve tried implementing Apache Camel route, but as it turns out, Camel fails to deliver facilities for exact JMS redelivery.</description>
+      <description>The other day I felt a compelling need to implement a JMS redelivery scenario. The exact scenario I&#39;d been trying to handle was: my message is in an ActiveMQ queue or topic its processing fails, because of some exception - ie. database access exception due to server nonavailability since we get an exception, the message is not handled properly, we may want to retry processing attempt some time later of course, for the redelivery to happen we need the message to stay in the ActiveMQ queue - fetching messages from the queue will be stopped until the redelivery succeeds or expires See how this can be done after the jump :) For this to happen, I&#39;ve tried implementing Apache Camel route, but as it turns out, Camel fails to deliver facilities for exact JMS redelivery.</description>
     </item>
     
     <item>
@@ -280,7 +140,7 @@ P.S.: Do you know what Hadoop is? Do you use it anywhere? Have you played with i
       <pubDate>Wed, 08 Dec 2010 09:22:34 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2010/12/08/easier-and-nicer-jms/</guid>
-      <description>JMS seems like a hostile ground. It has all it&#39;s quirks and strange behaviours. A couple of defining standards plus esoteric brokers, queues and topics.    At work, we mainly use open source Jms solutions, namely Apache ActiveMQ. This one is usually bundled with Apache Servicemix, as a message broker for this particular ESB. As there are some minor caveats in this scennerio, I&#39;d like to describe here some guidelines for getting to running JMS queues.</description>
+      <description>JMS seems like a hostile ground. It has all it&#39;s quirks and strange behaviours. A couple of defining standards plus esoteric brokers, queues and topics. At work, we mainly use open source Jms solutions, namely Apache ActiveMQ. This one is usually bundled with Apache Servicemix, as a message broker for this particular ESB. As there are some minor caveats in this scennerio, I&#39;d like to describe here some guidelines for getting to running JMS queues.</description>
     </item>
     
     <item>
@@ -289,7 +149,7 @@ P.S.: Do you know what Hadoop is? Do you use it anywhere? Have you played with i
       <pubDate>Thu, 21 Oct 2010 08:40:37 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/</guid>
-      <description>In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be solved with it - the standardization processes is there for some reason. But that happens only in ideal world, which we&#39;re not living in.   In ideal world, when dealing with XML instances you&#39;d be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal definition language to declare your data structure.</description>
+      <description>In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be solved with it - the standardization processes is there for some reason. But that happens only in ideal world, which we&#39;re not living in. In ideal world, when dealing with XML instances you&#39;d be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal definition language to declare your data structure.</description>
     </item>
     
     <item>
@@ -298,7 +158,7 @@ P.S.: Do you know what Hadoop is? Do you use it anywhere? Have you played with i
       <pubDate>Thu, 26 Aug 2010 20:23:52 +0000</pubDate>
       
       <guid>http://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/</guid>
-      <description>At work, we&#39;re mainly integrating services and systems, and since we&#39;re on a constant lookout for new, better technologies, ways to do things easier, make them more sustainable, we&#39;re trying to  Usually we use Apache Camel for this task, which is a Swiss-knife for integration engineer. What&#39;s more, this tools corresponds well with our approach to integration solutions:   try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits,  don&#39;t convert XML into Java classes back and forth and be worried with problems like XML conversion,  try to get a simple flow of the process.</description>
+      <description>At work, we&#39;re mainly integrating services and systems, and since we&#39;re on a constant lookout for new, better technologies, ways to do things easier, make them more sustainable, we&#39;re trying to Usually we use Apache Camel for this task, which is a Swiss-knife for integration engineer. What&#39;s more, this tools corresponds well with our approach to integration solutions: try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits, don&#39;t convert XML into Java classes back and forth and be worried with problems like XML conversion, try to get a simple flow of the process.</description>
     </item>
     
     <item>
@@ -308,7 +168,7 @@ P.S.: Do you know what Hadoop is? Do you use it anywhere? Have you played with i
       
       <guid>http://marcin.cylke.com.pl/2010/06/28/generic-enum-converter-for-ibatis/</guid>
       <description>My goal was to create a simple, extensible Enum converter that would work with iBatis. This seems like a trivial problem, but took me a while to find a proper solution.
- There were some additional preconditions:  all given Enums are jaxb generated objects - but any standard Java Enum should work conversion was 1-to-1, no special conditions and processing  The example Enum for this problem looks like this one (copy&amp;amp;paste from jaxb generated source):</description>
+There were some additional preconditions: all given Enums are jaxb generated objects - but any standard Java Enum should work conversion was 1-to-1, no special conditions and processing The example Enum for this problem looks like this one (copy&amp;amp;paste from jaxb generated source):</description>
     </item>
     
     <item>
@@ -318,9 +178,9 @@ P.S.: Do you know what Hadoop is? Do you use it anywhere? Have you played with i
       
       <guid>http://marcin.cylke.com.pl/2010/06/28/readability-powala/</guid>
       <description>Już dziś możecie skorzystać z &#34;umilacza&#34; czytania artykułów. Od zawsze denerwowało mnie rozpraszające badziewie na stronach z artykułami. Teraz z tym koniec. Odkąd odkryłem Readability -- strona bookmarkletu,. Wszelkie instrukcje na temat korzystania są dostępne na stronie projektu, tak więc warto sprawdzić.
- Comments Marcin Zgodnie z niektórymi źródłami, to jednak jest tam część kodu Readability. Polecam ten link:
+Comments Marcin Zgodnie z niektórymi źródłami, to jednak jest tam część kodu Readability. Polecam ten link:
 http://www.downloadsquad.com/2010/06/08/think-safari-reader-looks-familiar-thats-because-apple-used-op/
-  Dominik Porada &amp;gt; Z tego co gdzieś tam czytałem, to nawet Apple wykorzystał kawałki kodu JS z tej strony w Safari nowym.</description>
+Dominik Porada &amp;gt; Z tego co gdzieś tam czytałem, to nawet Apple wykorzystał kawałki kodu JS z tej strony w Safari nowym.</description>
     </item>
     
     <item>
@@ -330,7 +190,7 @@ http://www.downloadsquad.com/2010/06/08/think-safari-reader-looks-familiar-thats
       
       <guid>http://marcin.cylke.com.pl/2010/06/10/osnews-com-hobby-projects/</guid>
       <description>Kilka dni temu na portalu OSNews pojawiła się notatka o skromym tytule: What Are You Working On?. Takie proste pytanie spowodowało lawinę komentarzy. Mnóstwo projektów, których ludzie się &#34;dopuszczają&#34; w czasie wolnym. Wszystkie można przeczytać tutaj: komentarze. Jest tam wiele do przeczytania, ale jeden komentarz naprawdę &#34;zrobił mój dzień&#34; :)
-  Come on people, you can do better than that. - trying to improve a tube theremin I built last year to get more linear response.</description>
+Come on people, you can do better than that. - trying to improve a tube theremin I built last year to get more linear response.</description>
     </item>
     
     <item>
@@ -351,7 +211,7 @@ Yes, there are lots. Some are good, some are bad, but the usual, stock ones, sig
       <guid>http://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/</guid>
       <description>Wracając do starego tematu OpenBSD na moim SGI O2, postanowiłem lekko odświeżyć tą maszynę. Dostałą uaktualnienie małe. Przysiedziałem również nad dostosowaniem systemu do swoich potrzeb, instalacji potrzebnego softu itp.
 Na początek dmesg z działąjącego systemu:
- [ using 433608 bytes of bsd ELF symbol table ] Copyright (c) 1982, 1986, 1989, 1991, 1993 The Regents of the University of California. All rights reserved. Copyright (c) 1995-2009 OpenBSD. All rights reserved.</description>
+[ using 433608 bytes of bsd ELF symbol table ] Copyright (c) 1982, 1986, 1989, 1991, 1993 The Regents of the University of California. All rights reserved. Copyright (c) 1995-2009 OpenBSD. All rights reserved. http://www.</description>
     </item>
     
     <item>
@@ -362,8 +222,8 @@ Na początek dmesg z działąjącego systemu:
       <guid>http://marcin.cylke.com.pl/2010/04/21/unicode-w-pythonie/</guid>
       <description>Szlag by to trafił! Czemu tak ciężko jest obsługiwać unicode w pythonie? No niby wszystko jest ładnie konwertowane wewnętrznie na odpowiednie reprezentacje, ale jeśli przychodzi co do czego, i chcemy wypisać sobie taki ciąg znaków na ekran, to już jest ciężej.
 Weźmy prosty przykład. Wczytywałem plik z polskimi znaczkami, o taki:
- Roger Macdonald;Człowiek w żelaznej masce;25  a potem w kodzie pythonowym robiłem sobie tak:
- for line in open(sys.</description>
+Roger Macdonald;Człowiek w żelaznej masce;25 a potem w kodzie pythonowym robiłem sobie tak:
+for line in open(sys.argv[1],&#39;r&#39;).readlines(): print line.</description>
     </item>
     
     <item>
@@ -375,7 +235,7 @@ Weźmy prosty przykład. Wczytywałem plik z polskimi znaczkami, o taki:
       <description>Od kilku dni walczyłem z wyłączeniem sprawdzania certyfikatów w Nokii E51. Okazało się, że to trywialna sprawa. Wystarczy:
 Tools -&amp;gt; App mgr -&amp;gt; Options -&amp;gt; Settings. Zmienić &#34;software installation&#34; z &#34;Signed Only&#34; na &#34;All&#34; i &#34;Onlline certificate check&#34; na &#34;Off&#34; :D
 Dzięki temu mogłem sobie zainstalować prostego i funkcjonalnego playera http://symbianoggplay.sourceforge.net/ i jest on o niebo lepszy niż ten domyślny dostarczany przez Nokie.
- Comments Marcin Cylke U mnie akurat zadziałąło :) a wszelkie próby korzystania z chińskich &amp;quot;rozwiązań&amp;quot; do odblokowywania Nokii poległy.</description>
+Comments Marcin Cylke U mnie akurat zadziałąło :) a wszelkie próby korzystania z chińskich &amp;quot;rozwiązań&amp;quot; do odblokowywania Nokii poległy.</description>
     </item>
     
     <item>
@@ -385,8 +245,6 @@ Dzięki temu mogłem sobie zainstalować prostego i funkcjonalnego playera http:
       
       <guid>http://marcin.cylke.com.pl/2010/04/14/recenzja-drools-jboss-rules-5-0-developer-s-guide/</guid>
       <description>Kilka dni temu skończyłem czytać niezbyt grubą - jak na standardy branżowej literatury - książeczkę o Droolsach.
-
-
 A co to jest Drools? Ot taki silnik reguł od JBossa, stronę ma o tu: http://jboss.org/drools. Umożliwia on wydzielenie reguł biznesowych do oddzielnego komponentu przez co możemy zyskać na przejrzystości naszego kodu oraz odseparować potencjalnie podatny na zmiany fragment - logikę biznesową właśnie :) Oczywiście można przy pomocy Droolsów zrobić dużo więcej fajnych rzeczy, ale jest to dalekie od podstawowych informacji.</description>
     </item>
     
@@ -413,8 +271,8 @@ były aktualizowane już od dłuższego czasu. Zmiany polegały głównie na
 poprawie zależności. Niemniej, plugin z wersją 3.5 Eclipse&#39;a działa
 sprawnie. W poprzednich wersjach miał tendencje do zacinania się, a
 przyczyny tego nie udało mi się namierzyć.
-  A co to jest BPEL?
-Business Process Expression Language.</description>
+A co to jest BPEL?
+Business Process Expression Language. Czyli XML do</description>
     </item>
     
     <item>
@@ -430,7 +288,7 @@ Wrażenia? Bardzo fajnie się oglądało. Problem jedynie w tym, że z
 wydawałoby się dosyć prostej fabularnie książki zrobiono spektakl,
 którego nie da się w całości zrozumieć z powodu niedopowiedzeń. Czy to
 jest domena nowoczesnych interpretacji teatralnych??
- Comments Marcin @Biały, tak, faktycznie. Ale ostatecznie na prawdę nie wyszło to tak źle.</description>
+Comments Marcin @Biały, tak, faktycznie. Ale ostatecznie na prawdę nie wyszło to tak źle.</description>
     </item>
     
     <item>
@@ -441,7 +299,7 @@ jest domena nowoczesnych interpretacji teatralnych??
       <guid>http://marcin.cylke.com.pl/2009/09/20/ludzie-porzuccie-f-spot/</guid>
       <description>Dziś usiadłem do porządkowania zdjęć z wyjazdu wakacyjnego. Postanowiłem użyć do tego właśnie programu F-Spot. Wydawał się on odpowiedni. Zaimportował fotki, posortował według informacji EXIF. Schody zaczęły się w momencie edycji całej kolekcji.
 Ze zdjęciami było trochę problemów, którymi chciałem się zająć:
- część trzeba było obrócić połowa była zrobiona na Nikonie, który nie miał ustawionej daty, tak więc ficzer sortowania po dacie z nagłówka EXIF wziął w łeb  Tak więc chciałem poobracać fotki i uporządkować wedle czasu.</description>
+część trzeba było obrócić połowa była zrobiona na Nikonie, który nie miał ustawionej daty, tak więc ficzer sortowania po dacie z nagłówka EXIF wziął w łeb Tak więc chciałem poobracać fotki i uporządkować wedle czasu.</description>
     </item>
     
     <item>
@@ -460,7 +318,6 @@ marcin@byakshee:~&amp;gt; sudo zypper update f-spot
 Reading installed packages...
 Package &#39;f-spot&#39; is not installed.
 Nothing to do.
-
 Wniosek z tego taki, że jak raz zetkniesz się z apt-getem, to już nic nie będzie później odpowiednie :D A OpenSuse oczywiście odradzam.</description>
     </item>
     
@@ -481,13 +338,9 @@ Dziś znalazłem natomiast programik o dziwnej conieco nazwie tintii. On z kolei
       
       <guid>http://marcin.cylke.com.pl/2009/09/16/sycylijski-ibm/</guid>
       <description>Ostatnio było tu ciszej, a to ze względu na wakacyjny wypad na Sycylię. Ładnie, pięknie, wino, kobiety, owoce morza. No, to tyle z relacji.
-
-
 Ja chciałem o czymś trochę innym. A mianowicie właśnie na Sycylii, konkretniej w Palermo zobaczyłem taką oto old-skulową reklamę IBM:
-
-
-
-  Urzekła mnie! Że to jeszcze tam wisi, że jest takie pikselowe. I totalnie od czapy, reklama była umieszczona w okolicach Teatro Maximo.</description>
+Urzekła mnie! Że to jeszcze tam wisi, że jest takie pikselowe. I totalnie od czapy, reklama była umieszczona w okolicach Teatro Maximo.
+Jak Wam się podoba?</description>
     </item>
     
     <item>
@@ -498,7 +351,7 @@ Ja chciałem o czymś trochę innym. A mianowicie właśnie na Sycylii, konkretn
       <guid>http://marcin.cylke.com.pl/2009/08/29/wlasny-player-audio/</guid>
       <description>Od jakiegoś czasu męczy mnie nędza wśród odtwarzaczy audio dostępnych na różne unixy. Niby są, ale jakieś takie wybrakowane, zupełnie nie przystające do moich potrzeb. Niby robią dużo, ale ja nie potrzebuję kombajnu do muzyki.
 Oczywiście, są różne takie jak:
- Rhythmbox Amarok xmms i xmms2 musicpd bmpx cmus  No i wszystko fajnie, nie mam zamiaru negować ich użycia. Mi one po prostu nie do końca pasują. Rhythmbox, bo jest duży, ma za dużo featerów, niby umie dużo ale jak co do czego przyjdzie to bywają problemy.</description>
+Rhythmbox Amarok xmms i xmms2 musicpd bmpx cmus No i wszystko fajnie, nie mam zamiaru negować ich użycia. Mi one po prostu nie do końca pasują. Rhythmbox, bo jest duży, ma za dużo featerów, niby umie dużo ale jak co do czego przyjdzie to bywają problemy.</description>
     </item>
     
     <item>
@@ -510,7 +363,7 @@ Oczywiście, są różne takie jak:
       <description>Od dawna marzyła mi się właśnie ta maszyna. Przez rodzinę i bliskich ochszczony został &#34;odkurzaczem&#34;. Nic to. Mi się podoba. Jest naprawdę ujmujący.
 Zapytace czemu?
 Proste!
- nie jest to zwykły pc przy wejściu do &#34;biosu&#34; mamy tryb graficzny, obsługę myszy oraz dźwięki wydawane przez wbudowaną kartę muzyczną  Można by pomyśleć, że nie jest to warte uwagi, ale przecież standardowe PC nadal nie mają takich miłych ficzerów! A to jest sprzęt z 1996 roku.</description>
+nie jest to zwykły pc przy wejściu do &#34;biosu&#34; mamy tryb graficzny, obsługę myszy oraz dźwięki wydawane przez wbudowaną kartę muzyczną Można by pomyśleć, że nie jest to warte uwagi, ale przecież standardowe PC nadal nie mają takich miłych ficzerów! A to jest sprzęt z 1996 roku.</description>
     </item>
     
   </channel>
