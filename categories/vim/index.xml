@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vim on Tech ramblings by Marcin</title>
-    <link>http://marcin.cylke.com.pl/categories/vim/</link>
+    <link>https://marcin.cylke.com.pl/categories/vim/</link>
     <description>Recent content in vim on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://marcin.cylke.com.pl/categories/vim/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/vim/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My Vim Setup</title>
-      <link>http://marcin.cylke.com.pl/2019/05/05/my-vim-setup/</link>
+      <link>https://marcin.cylke.com.pl/2019/05/05/my-vim-setup/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/2019/05/05/my-vim-setup/</guid>
+      <guid>https://marcin.cylke.com.pl/2019/05/05/my-vim-setup/</guid>
       <description>I use some plugins for my vim, they’re mainly some random, interesting additions. I’ve never really got to building whole language environment with vim plugins - like, say, complete Scala-lang ecosystem.
 So treat those as a bunch of semi-interesting plugins, that you may also find interesting.
 Usefulness Nerdtree (https://github.com/scrooloose/nerdtree) - the most basic plugin, enables convenient file browsing in a separate vim pane.

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>storm on Tech ramblings by Marcin</title>
-    <link>http://marcin.cylke.com.pl/categories/storm/</link>
+    <link>https://marcin.cylke.com.pl/categories/storm/</link>
     <description>Recent content in storm on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Aug 2013 00:00:00 +0000</lastBuildDate><atom:link href="http://marcin.cylke.com.pl/categories/storm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Aug 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/storm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Recently at storm-users</title>
-      <link>http://marcin.cylke.com.pl/2013/08/12/recently-at-storm-users/</link>
+      <link>https://marcin.cylke.com.pl/2013/08/12/recently-at-storm-users/</link>
       <pubDate>Mon, 12 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/2013/08/12/recently-at-storm-users/</guid>
+      <guid>https://marcin.cylke.com.pl/2013/08/12/recently-at-storm-users/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve been reading through storm-users Google Group recently. This
 resolution was heavily inspired by Adam Kawa&amp;rsquo;s post &lt;a href=&#34;http://hakunamapdata.com/football-zero-apache-pig-hero-the-essence-from-hundreds-of-posts-from-apache-pig-user-mailing-list/&#34;&gt;&amp;ldquo;Football zero, Apache Pig hero&amp;rdquo;&lt;/a&gt;. Since I&amp;rsquo;ve encountered a lot of insightful and very interesting information I&amp;rsquo;ve decided to describe some of those in this post.&lt;/p&gt;</description>
     </item>

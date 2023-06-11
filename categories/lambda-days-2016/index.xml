@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>lambda days 2016 on Tech ramblings by Marcin</title>
-    <link>http://marcin.cylke.com.pl/categories/lambda-days-2016/</link>
+    <link>https://marcin.cylke.com.pl/categories/lambda-days-2016/</link>
     <description>Recent content in lambda days 2016 on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Feb 2016 00:00:00 +0000</lastBuildDate><atom:link href="http://marcin.cylke.com.pl/categories/lambda-days-2016/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Feb 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/lambda-days-2016/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lambda Days 2016</title>
-      <link>http://marcin.cylke.com.pl/2016/02/20/lambda-days-2016/</link>
+      <link>https://marcin.cylke.com.pl/2016/02/20/lambda-days-2016/</link>
       <pubDate>Sat, 20 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/2016/02/20/lambda-days-2016/</guid>
+      <guid>https://marcin.cylke.com.pl/2016/02/20/lambda-days-2016/</guid>
       <description>Lambda Days 2016 - Kraków This last two days I&amp;rsquo;ve spend on a conference in Kraków. The topics revolved around functional programming, with all the experimental stuff, popular languages, etc. Here are the talks I&amp;rsquo;ve been to and short summaries of those:
 Day 1: Propositions as types - the keynote delivered by Philip Wadler - seen it already on YouTube. But the thing with Lambda t-shirt looked funny again :D</description>
     </item>

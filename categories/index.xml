@@ -2,413 +2,413 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Tech ramblings by Marcin</title>
-    <link>http://marcin.cylke.com.pl/categories/</link>
+    <link>https://marcin.cylke.com.pl/categories/</link>
     <description>Recent content in Categories on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://marcin.cylke.com.pl/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>fzf</title>
-      <link>http://marcin.cylke.com.pl/categories/fzf/</link>
+      <link>https://marcin.cylke.com.pl/categories/fzf/</link>
       <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/fzf/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/fzf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>IT</title>
-      <link>http://marcin.cylke.com.pl/categories/IT/</link>
+      <link>https://marcin.cylke.com.pl/categories/IT/</link>
       <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/IT/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/IT/</guid>
       <description></description>
     </item>
     
     <item>
       <title>shell</title>
-      <link>http://marcin.cylke.com.pl/categories/shell/</link>
+      <link>https://marcin.cylke.com.pl/categories/shell/</link>
       <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/shell/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/shell/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gamecube</title>
-      <link>http://marcin.cylke.com.pl/categories/gamecube/</link>
+      <link>https://marcin.cylke.com.pl/categories/gamecube/</link>
       <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/gamecube/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/gamecube/</guid>
       <description></description>
     </item>
     
     <item>
       <title>nintendo</title>
-      <link>http://marcin.cylke.com.pl/categories/nintendo/</link>
+      <link>https://marcin.cylke.com.pl/categories/nintendo/</link>
       <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/nintendo/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/nintendo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>retro</title>
-      <link>http://marcin.cylke.com.pl/categories/retro/</link>
+      <link>https://marcin.cylke.com.pl/categories/retro/</link>
       <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/retro/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/retro/</guid>
       <description></description>
     </item>
     
     <item>
       <title>awesomeWM</title>
-      <link>http://marcin.cylke.com.pl/categories/awesomeWM/</link>
+      <link>https://marcin.cylke.com.pl/categories/awesomeWM/</link>
       <pubDate>Sat, 06 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/awesomeWM/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/awesomeWM/</guid>
       <description></description>
     </item>
     
     <item>
       <title>linux</title>
-      <link>http://marcin.cylke.com.pl/categories/linux/</link>
+      <link>https://marcin.cylke.com.pl/categories/linux/</link>
       <pubDate>Sat, 06 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/linux/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>window-manager</title>
-      <link>http://marcin.cylke.com.pl/categories/window-manager/</link>
+      <link>https://marcin.cylke.com.pl/categories/window-manager/</link>
       <pubDate>Sat, 06 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/window-manager/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/window-manager/</guid>
       <description></description>
     </item>
     
     <item>
       <title>freebsd</title>
-      <link>http://marcin.cylke.com.pl/categories/freebsd/</link>
+      <link>https://marcin.cylke.com.pl/categories/freebsd/</link>
       <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/freebsd/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/freebsd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>openbsd</title>
-      <link>http://marcin.cylke.com.pl/categories/openbsd/</link>
+      <link>https://marcin.cylke.com.pl/categories/openbsd/</link>
       <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/openbsd/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/openbsd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>operating-systems</title>
-      <link>http://marcin.cylke.com.pl/categories/operating-systems/</link>
+      <link>https://marcin.cylke.com.pl/categories/operating-systems/</link>
       <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/operating-systems/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/operating-systems/</guid>
       <description></description>
     </item>
     
     <item>
       <title>python</title>
-      <link>http://marcin.cylke.com.pl/categories/python/</link>
+      <link>https://marcin.cylke.com.pl/categories/python/</link>
       <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/python/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>screen</title>
-      <link>http://marcin.cylke.com.pl/categories/screen/</link>
+      <link>https://marcin.cylke.com.pl/categories/screen/</link>
       <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/screen/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/screen/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vim</title>
-      <link>http://marcin.cylke.com.pl/categories/vim/</link>
+      <link>https://marcin.cylke.com.pl/categories/vim/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/vim/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/vim/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hacking</title>
-      <link>http://marcin.cylke.com.pl/categories/hacking/</link>
+      <link>https://marcin.cylke.com.pl/categories/hacking/</link>
       <pubDate>Thu, 07 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/hacking/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/hacking/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mac os x</title>
-      <link>http://marcin.cylke.com.pl/categories/mac-os-x/</link>
+      <link>https://marcin.cylke.com.pl/categories/mac-os-x/</link>
       <pubDate>Thu, 07 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/mac-os-x/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/mac-os-x/</guid>
       <description></description>
     </item>
     
     <item>
       <title>conference</title>
-      <link>http://marcin.cylke.com.pl/categories/conference/</link>
+      <link>https://marcin.cylke.com.pl/categories/conference/</link>
       <pubDate>Fri, 29 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/conference/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/conference/</guid>
       <description></description>
     </item>
     
     <item>
       <title>scala</title>
-      <link>http://marcin.cylke.com.pl/categories/scala/</link>
+      <link>https://marcin.cylke.com.pl/categories/scala/</link>
       <pubDate>Fri, 29 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/scala/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/scala/</guid>
       <description></description>
     </item>
     
     <item>
       <title>krakow</title>
-      <link>http://marcin.cylke.com.pl/categories/krakow/</link>
+      <link>https://marcin.cylke.com.pl/categories/krakow/</link>
       <pubDate>Sat, 20 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/krakow/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/krakow/</guid>
       <description></description>
     </item>
     
     <item>
       <title>lambda days 2016</title>
-      <link>http://marcin.cylke.com.pl/categories/lambda-days-2016/</link>
+      <link>https://marcin.cylke.com.pl/categories/lambda-days-2016/</link>
       <pubDate>Sat, 20 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/lambda-days-2016/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/lambda-days-2016/</guid>
       <description></description>
     </item>
     
     <item>
       <title>congress</title>
-      <link>http://marcin.cylke.com.pl/categories/congress/</link>
+      <link>https://marcin.cylke.com.pl/categories/congress/</link>
       <pubDate>Fri, 22 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/congress/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/congress/</guid>
       <description></description>
     </item>
     
     <item>
       <title>clojure</title>
-      <link>http://marcin.cylke.com.pl/categories/clojure/</link>
+      <link>https://marcin.cylke.com.pl/categories/clojure/</link>
       <pubDate>Mon, 14 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/clojure/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/clojure/</guid>
       <description></description>
     </item>
     
     <item>
       <title>javascript</title>
-      <link>http://marcin.cylke.com.pl/categories/javascript/</link>
+      <link>https://marcin.cylke.com.pl/categories/javascript/</link>
       <pubDate>Mon, 14 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/javascript/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>touk</title>
-      <link>http://marcin.cylke.com.pl/categories/touk/</link>
+      <link>https://marcin.cylke.com.pl/categories/touk/</link>
       <pubDate>Mon, 14 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/touk/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/touk/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hadoop</title>
-      <link>http://marcin.cylke.com.pl/categories/hadoop/</link>
+      <link>https://marcin.cylke.com.pl/categories/hadoop/</link>
       <pubDate>Tue, 10 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/hadoop/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/hadoop/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hbase</title>
-      <link>http://marcin.cylke.com.pl/categories/hbase/</link>
+      <link>https://marcin.cylke.com.pl/categories/hbase/</link>
       <pubDate>Tue, 10 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/hbase/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/hbase/</guid>
       <description></description>
     </item>
     
     <item>
       <title>storm</title>
-      <link>http://marcin.cylke.com.pl/categories/storm/</link>
+      <link>https://marcin.cylke.com.pl/categories/storm/</link>
       <pubDate>Mon, 12 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/storm/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/storm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>java</title>
-      <link>http://marcin.cylke.com.pl/categories/java/</link>
+      <link>https://marcin.cylke.com.pl/categories/java/</link>
       <pubDate>Mon, 24 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/java/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>zookeeper</title>
-      <link>http://marcin.cylke.com.pl/categories/zookeeper/</link>
+      <link>https://marcin.cylke.com.pl/categories/zookeeper/</link>
       <pubDate>Mon, 24 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/zookeeper/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/zookeeper/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tips</title>
-      <link>http://marcin.cylke.com.pl/categories/tips/</link>
+      <link>https://marcin.cylke.com.pl/categories/tips/</link>
       <pubDate>Thu, 21 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/tips/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/tips/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ha</title>
-      <link>http://marcin.cylke.com.pl/categories/ha/</link>
+      <link>https://marcin.cylke.com.pl/categories/ha/</link>
       <pubDate>Tue, 30 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/ha/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/ha/</guid>
       <description></description>
     </item>
     
     <item>
       <title>electronics</title>
-      <link>http://marcin.cylke.com.pl/categories/electronics/</link>
+      <link>https://marcin.cylke.com.pl/categories/electronics/</link>
       <pubDate>Thu, 18 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/electronics/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/electronics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hack</title>
-      <link>http://marcin.cylke.com.pl/categories/hack/</link>
+      <link>https://marcin.cylke.com.pl/categories/hack/</link>
       <pubDate>Thu, 18 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/hack/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/hack/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ogólne</title>
-      <link>http://marcin.cylke.com.pl/categories/Og%C3%B3lne/</link>
+      <link>https://marcin.cylke.com.pl/categories/Og%C3%B3lne/</link>
       <pubDate>Mon, 18 Jun 2012 09:08:09 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/Og%C3%B3lne/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/Og%C3%B3lne/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Techblog</title>
-      <link>http://marcin.cylke.com.pl/categories/Techblog/</link>
+      <link>https://marcin.cylke.com.pl/categories/Techblog/</link>
       <pubDate>Mon, 18 Jun 2012 09:08:09 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/Techblog/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/Techblog/</guid>
       <description></description>
     </item>
     
     <item>
       <title>relacja</title>
-      <link>http://marcin.cylke.com.pl/categories/relacja/</link>
+      <link>https://marcin.cylke.com.pl/categories/relacja/</link>
       <pubDate>Sun, 22 May 2011 16:39:31 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/relacja/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/relacja/</guid>
       <description></description>
     </item>
     
     <item>
       <title>była taka gra</title>
-      <link>http://marcin.cylke.com.pl/categories/by%C5%82a-taka-gra/</link>
+      <link>https://marcin.cylke.com.pl/categories/by%C5%82a-taka-gra/</link>
       <pubDate>Thu, 17 Feb 2011 00:05:50 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/by%C5%82a-taka-gra/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/by%C5%82a-taka-gra/</guid>
       <description></description>
     </item>
     
     <item>
       <title>giercownia</title>
-      <link>http://marcin.cylke.com.pl/categories/giercownia/</link>
+      <link>https://marcin.cylke.com.pl/categories/giercownia/</link>
       <pubDate>Thu, 17 Feb 2011 00:05:50 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/giercownia/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/giercownia/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Miniblog</title>
-      <link>http://marcin.cylke.com.pl/categories/Miniblog/</link>
+      <link>https://marcin.cylke.com.pl/categories/Miniblog/</link>
       <pubDate>Wed, 21 Apr 2010 18:01:59 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/Miniblog/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/Miniblog/</guid>
       <description></description>
     </item>
     
     <item>
       <title>announcement</title>
-      <link>http://marcin.cylke.com.pl/categories/announcement/</link>
+      <link>https://marcin.cylke.com.pl/categories/announcement/</link>
       <pubDate>Sat, 10 Apr 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/announcement/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/announcement/</guid>
       <description></description>
     </item>
     
     <item>
       <title>zdjęcia</title>
-      <link>http://marcin.cylke.com.pl/categories/zdj%C4%99cia/</link>
+      <link>https://marcin.cylke.com.pl/categories/zdj%C4%99cia/</link>
       <pubDate>Sun, 20 Sep 2009 10:29:06 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/zdj%C4%99cia/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/zdj%C4%99cia/</guid>
       <description></description>
     </item>
     
     <item>
       <title>kult</title>
-      <link>http://marcin.cylke.com.pl/categories/kult/</link>
+      <link>https://marcin.cylke.com.pl/categories/kult/</link>
       <pubDate>Sun, 20 Sep 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/kult/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/kult/</guid>
       <description></description>
     </item>
     
     <item>
       <title>review</title>
-      <link>http://marcin.cylke.com.pl/categories/review/</link>
+      <link>https://marcin.cylke.com.pl/categories/review/</link>
       <pubDate>Sun, 20 Sep 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/review/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/review/</guid>
       <description></description>
     </item>
     
     <item>
       <title>scifi</title>
-      <link>http://marcin.cylke.com.pl/categories/scifi/</link>
+      <link>https://marcin.cylke.com.pl/categories/scifi/</link>
       <pubDate>Sun, 20 Sep 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/categories/scifi/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/scifi/</guid>
       <description></description>
     </item>
     

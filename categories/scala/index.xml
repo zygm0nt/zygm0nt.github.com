@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>scala on Tech ramblings by Marcin</title>
-    <link>http://marcin.cylke.com.pl/categories/scala/</link>
+    <link>https://marcin.cylke.com.pl/categories/scala/</link>
     <description>Recent content in scala on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 29 Apr 2016 00:00:00 +0000</lastBuildDate><atom:link href="http://marcin.cylke.com.pl/categories/scala/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Apr 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/scala/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Scalar Conf 2016</title>
-      <link>http://marcin.cylke.com.pl/2016/04/29/scalar-conf-2016/</link>
+      <link>https://marcin.cylke.com.pl/2016/04/29/scalar-conf-2016/</link>
       <pubDate>Fri, 29 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://marcin.cylke.com.pl/2016/04/29/scalar-conf-2016/</guid>
+      <guid>https://marcin.cylke.com.pl/2016/04/29/scalar-conf-2016/</guid>
       <description>&lt;p&gt;Scalar Conf 2016&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://marcin.cylke.com.pl/assets/POLIN-Museum-of-the-History-of-Polish-Jews-int02.jpg&#34; alt=&#34;Polin museum - interior&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://marcin.cylke.com.pl/assets/POLIN-Museum-of-the-History-of-Polish-Jews-int02.jpg&#34; alt=&#34;Polin museum - interior&#34;&gt;&lt;/p&gt;
 &lt;p&gt;This small conference had its third installment in (&lt;a href=&#34;http://www.polin.pl/en)%5BPolin&#34;&gt;http://www.polin.pl/en)[Polin&lt;/a&gt; - Museum of the History of Polish Jews]. Organizing Scala conference isn&amp;rsquo;t that obvious and having that kind of attention is really great - all the foreign speakers, etc.&lt;/p&gt;
 &lt;p&gt;Here is a quick recap of presentations I&amp;rsquo;ve attended.&lt;/p&gt;</description>
     </item>
