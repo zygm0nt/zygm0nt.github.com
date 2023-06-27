@@ -6,20 +6,29 @@
     <description>Recent content in Categories on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>fzf</title>
       <link>https://marcin.cylke.com.pl/categories/fzf/</link>
-      <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 27 Jun 2023 00:00:00 +0000</pubDate>
       
       <guid>https://marcin.cylke.com.pl/categories/fzf/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>git</title>
+      <link>https://marcin.cylke.com.pl/categories/git/</link>
+      <pubDate>Tue, 27 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/categories/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>IT</title>
       <link>https://marcin.cylke.com.pl/categories/IT/</link>
-      <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 27 Jun 2023 00:00:00 +0000</pubDate>
       
       <guid>https://marcin.cylke.com.pl/categories/IT/</guid>
       <description></description>
@@ -28,7 +37,7 @@
     <item>
       <title>shell</title>
       <link>https://marcin.cylke.com.pl/categories/shell/</link>
-      <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 27 Jun 2023 00:00:00 +0000</pubDate>
       
       <guid>https://marcin.cylke.com.pl/categories/shell/</guid>
       <description></description>

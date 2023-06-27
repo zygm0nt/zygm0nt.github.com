@@ -6,7 +6,17 @@
     <description>Recent content in fzf on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/fzf/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/fzf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>git-commit script</title>
+      <link>https://marcin.cylke.com.pl/2023/06/27/git-commit-script/</link>
+      <pubDate>Tue, 27 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/2023/06/27/git-commit-script/</guid>
+      <description>The organization I work in, has this practice of annotating commit messages with ticket numbers. From what I know this tends to be quite a common them all around the IT industry. It serves the purpose of accountability for future checks, current information for others on what the commit is actually about, etc. There may be many more things to add here - as an adventage of such a
+Some time ago I&amp;rsquo;ve started using this small snippet of code as my pre-commit hook.</description>
+    </item>
+    
     <item>
       <title>an ode to fzf</title>
       <link>https://marcin.cylke.com.pl/2023/05/29/an-ode-to-fzf/</link>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="https://marcin.cylke.com.pl/">
+  <title>git-commit script - Tech ramblings by Marcin</title>
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body>
+  <header>
+<div>
+    <h1><a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></h1>
+  </div>
+  <nav><a href="/about/">about me</a>
+  </nav>
+</header>
+<main>
+    <article>
+  <div class="title">
+    <h1>git-commit script</h1>
+    </div>
+  <div class="meta">2023-06-27 00:00</div>
+  <div class="artical-body">
+  
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#tools-i-use-here">Tools I use here:</a></li>
+    <li><a href="#how-to-use">How to use</a></li>
+  </ul>
+</nav>
+    <div class="content-with-toc">
+      <p>The organization I work in, has this practice of annotating commit messages with ticket numbers. From what I know this tends to be quite a common them all around the IT industry. It serves the purpose of accountability for future checks, current information for others on what the commit is actually about, etc.
+There may be many more things to add here - as an adventage of such a</p>
+<p>Some time ago I&rsquo;ve started using this small snippet of code as my <code>pre-commit</code> hook. It&rsquo;s main purpose is to free me from remembering or checking which JIRA ticket should I prepend to my Git message.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e"># To enable this hook, rename this file to &#34;prepare-commit-msg&#34;.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>GO_JIRA<span style="color:#f92672">=</span>~/go/bin/jira
+</span></span><span style="display:flex;"><span>FZF<span style="color:#f92672">=</span>fzf
+</span></span><span style="display:flex;"><span>export JIRA_PROJECT<span style="color:#f92672">=</span>XYZ
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>COMMIT_MSG_FILE<span style="color:#f92672">=</span>$1
+</span></span><span style="display:flex;"><span>COMMIT_SOURCE<span style="color:#f92672">=</span>$2
+</span></span><span style="display:flex;"><span>SHA1<span style="color:#f92672">=</span>$3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -e $GO_JIRA <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span> 
+</span></span><span style="display:flex;"><span>    exit
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! command -v $FZF <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    exit
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>trim<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    local var<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$*<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># remove leading whitespace characters</span>
+</span></span><span style="display:flex;"><span>    var<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>var#<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>var%%[![:space:]]*<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># remove trailing whitespace characters</span>
+</span></span><span style="display:flex;"><span>    var<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>var%<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>var##*[![:space:]]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    printf <span style="color:#e6db74">&#39;%s&#39;</span> <span style="color:#e6db74">&#34;</span>$var<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>COMMIT_TYPE<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>cat <span style="color:#e6db74">&lt;&lt;EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   Add = Create a capability e.g. feature, test, dependency.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   Drop = Delete a capability e.g. feature, test, dependency.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   Fix = Fix an issue e.g. bug, typo, accident, misstatement.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   Bump = Increase the version of something e.g. a dependency.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   Make = Change the build process, or tools, or infrastructure.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   Start = Begin doing something; e.g. enable a toggle, feature flag, etc.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   Stop = End doing something; e.g. disable a toggle, feature flag, etc.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   Optimize = A change that MUST be just about performance, e.g. speed up code.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   Document = A change that MUST be only in the documentation, e.g. help files.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   Refactor = A change that MUST be just refactoring.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   Reformat = A change that MUST be just format, e.g. indent line, trim space, etc.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   Rephrase = A change that MUST be just textual, e.g. edit a comment, doc, etc.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span><span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>current_tasks<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>$GO_JIRA list --template list --query <span style="color:#e6db74">&#34;resolution = unresolved and assignee=currentuser() and project = </span>$JIRA_PROJECT<span style="color:#e6db74"> ORDER BY priority asc, created&#34;</span><span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>TICKET_NUM<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>echo <span style="color:#e6db74">&#34;</span>$current_tasks<span style="color:#e6db74">&#34;</span> | $FZF |awk -F: <span style="color:#e6db74">&#39;{print $1 }&#39;</span><span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>CHOSEN_COMMIT_TYPE<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>echo <span style="color:#e6db74">&#34;</span>$COMMIT_TYPE<span style="color:#e6db74">&#34;</span> | $FZF | awk -F<span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;{ print $1 }&#39;</span><span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>CURRENT_COMMIT_MSG<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>cat $COMMIT_MSG_FILE<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$GO_JIRA login
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;</span>$TICKET_NUM<span style="color:#e6db74"> | `trim </span>$CHOSEN_COMMIT_TYPE<span style="color:#e6db74">` | </span>$CURRENT_COMMIT_MSG<span style="color:#e6db74">&#34;</span>  &gt; $COMMIT_MSG_FILE
+</span></span></code></pre></div><p>Aside from it&rsquo;s main function, there&rsquo;s also an auxilary thing that I add here. There is this notion of &ldquo;good commit message&rdquo;. So that it&rsquo;s not something cryptic, dummy or non-informative. This, too, is quite a big obstacle in tech companies. The places I&rsquo;ve worked at rarely had any longer commit messages than two lines, and perhaps it&rsquo;s for a reason. Since commits are already connected with tickets in some external system - why bother to duplicate the content here?
+Right, but what about implementation details, important considerations, thought process. Still, not that common to see in the wild. At least for me.
+With the whole block of different types of commits I try to make the commits as atomic as possible, do just one thing. Or at least as few things as possible. If the commit is about docummentation, then let it change just that. If that&rsquo;s a fix for a previously commited buggy commit - so be it, mark it with &ldquo;Fix&rdquo;.</p>
+<h2 id="tools-i-use-here">Tools I use here:</h2>
+<ul>
+<li><a href="https://github.com/go-jira/jira">go-jira</a> - because my organization&rsquo;s ticketing system is Jira, but it can be anything else,</li>
+<li><a href="https://github.com/junegunn/fzf">fzf</a> - a brilliant CLI tool to quickly sift through data</li>
+</ul>
+<h2 id="how-to-use">How to use</h2>
+<ol>
+<li>install tools, <code>go-jira</code> and <code>fzf</code></li>
+<li>setup <code>$JIRA_PROJECT</code> in the script</li>
+<li>copy the script to <code>.git/hooks/prepare-commit-msg</code> in your repo</li>
+<li>enjoy</li>
+</ol>
+<p>I use it in all my work-related projects and it may become somewhat hard to track changes in the script if I&rsquo;d copy it all over the place, to all the different <code>hooks</code> directories. That&rsquo;s why I keep the main file in my home dir, under <code>~/prepare-commit-msg</code> and then in places I want to use it I add just the symbolic link to it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ cd .git/hooks
+</span></span><span style="display:flex;"><span>$ ln -s ~/prepare-commit-msg prepare-commit-msg
+</span></span></code></pre></div></div>
+  
+  </div>
+</article>
+
+  </main><footer>
+  <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
+
+</body>
+</html>
