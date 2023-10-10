@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tools on Tech ramblings by Marcin</title>
+    <link>https://marcin.cylke.com.pl/categories/tools/</link>
+    <description>Recent content in tools on Tech ramblings by Marcin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 10 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>useful CLI tools from other planet</title>
+      <link>https://marcin.cylke.com.pl/2023/10/10/useful-cli-tools-from-other-planet/</link>
+      <pubDate>Tue, 10 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/2023/10/10/useful-cli-tools-from-other-planet/</guid>
+      <description>I&amp;rsquo;ve already written a short post about me using fzf on this blog. And I still use it, it still is awesome! :)
+But there are more tools like that. Maybe this is just my optics, but with the recent (at least 2 last years) rust&amp;rsquo;s rise to popularity, there are a lot of small tools doing a single task, or focusing on specific kind of problems. And they of course target terminals!</description>
+    </item>
+    
+  </channel>
+</rss>

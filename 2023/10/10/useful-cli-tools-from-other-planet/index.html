@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="https://marcin.cylke.com.pl/">
+  <title>useful CLI tools from other planet - Tech ramblings by Marcin</title>
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body>
+  <header>
+<div>
+    <h1><a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></h1>
+  </div>
+  <nav><a href="/about/">about me</a>
+  </nav>
+</header>
+<main>
+    <article>
+  <div class="title">
+    <h1>useful CLI tools from other planet</h1>
+    </div>
+  <div class="meta">2023-10-10 00:00</div>
+  <div class="artical-body">
+  
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#fx---terminal-json-viewer"><code>fx</code> - terminal json viewer</a></li>
+    <li><a href="#entr---run-arbitrary-commands-when-file-change"><code>entr</code> - run arbitrary commands when file change</a></li>
+    <li><a href="#tig---just-a-cli-based-gitk-replacement"><code>tig</code> - just a CLI based gitk replacement</a></li>
+    <li><a href="#jc---convert-command-line-tool-output-to-json-or-dictionary"><code>jc</code> - convert command-line tool output to json or dictionary</a></li>
+    <li><a href="#xsv---a-fast-csv-parser"><code>xsv</code> - a fast csv parser</a></li>
+    <li><a href="#other-nice-tools">Other nice tools</a></li>
+    <li><a href="#to-conclude">To conclude</a></li>
+  </ul>
+</nav>
+    <div class="content-with-toc">
+      <p>I&rsquo;ve already written a short post about me using <code>fzf</code> on this blog. And I still use it, it still is awesome! :)</p>
+<p>But there are more tools like that. Maybe this is just my optics, but with the recent (at least 2 last years) <code>rust</code>&rsquo;s rise to popularity, there are a lot of small tools doing a single task, or focusing on specific kind of problems. And they of course target terminals! Because it&rsquo;s obvious you can do many things on the web, but terminals are way cooler, and way more useful if you stick to them for the majority of your workflow.</p>
+<p>I&rsquo;ve mentioned <code>rust</code> and part of those apps is written in it, but it&rsquo;s not the only language used of course. There&rsquo;s <code>c++</code>, <code>c</code>, <code>go</code> and many more. What I find really interesting is to have those domain or task specific tools as self-contained as possible. Of course you can write all that in <code>python</code>, <code>php</code>, <code>java</code> - or you name it, what kind of language, but I&rsquo;m here for the quality, speed, and ease of use - as I target those as my daily drivers for the terminal environment.</p>
+<p>So, let&rsquo;s try to do a short summary of those tools!</p>
+<h2 id="fx---terminal-json-viewer"><code>fx</code> - terminal json viewer</h2>
+<p><a href="https://github.com/antonmedv/fx">https://github.com/antonmedv/fx</a></p>
+<p>Yep - you probably have <code>jq</code> already installed, as it&rsquo;s somewhat a go-to tool for JSON exploration, but what I like in <code>fx</code> is it&rsquo;s interactivity. It makes sifting through big JSON files pretty sweet!
+<img src="/post_images/useful_cli_tools_from_other_planet_01.png" alt="Alt text"></p>
+<h2 id="entr---run-arbitrary-commands-when-file-change"><code>entr</code> - run arbitrary commands when file change</h2>
+<p><a href="https://eradman.com/entrproject/">https://eradman.com/entrproject/</a></p>
+<p>It does what it says - and just that. Seems awesome for all those small tasks, when you want to track changes in a dir structure!
+There&rsquo;s a great section with examples on the project&rsquo;s page, but this one is just for an illustration.</p>
+<p>This snippet will rebuild project if files change.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ ls | entr make
+</span></span></code></pre></div><h2 id="tig---just-a-cli-based-gitk-replacement"><code>tig</code> - just a CLI based gitk replacement</h2>
+<p><a href="https://jonas.github.io/tig/">https://jonas.github.io/tig/</a></p>
+<p>For all those times, when you&rsquo;d like to have a view of your git repository in the terminal. Of course, you can get similar stuff with git aliases, like <a href="https://github.com/jakubnabrdalik/gitkurwa">https://github.com/jakubnabrdalik/gitkurwa</a> provided <code>git llog</code>. <code>tig</code> is for cases, when you want more, or you just don&rsquo;t want to setup your own, custom git env on remote host.</p>
+<p><img src="/post_images/useful_cli_tools_from_other_planet_02.png" alt="Alt text"></p>
+<h2 id="jc---convert-command-line-tool-output-to-json-or-dictionary"><code>jc</code> - convert command-line tool output to json or dictionary</h2>
+<p><a href="https://github.com/kellyjonbrazil/jc">https://github.com/kellyjonbrazil/jc</a></p>
+<p>This is actually a python library - but CLI related. You can use it both, as a python library, in other programs, or as a command-line tool.</p>
+<p>It&rsquo;s useful if you want to interface with already established unix-based programs. Suppose there&rsquo;s already a decent CLI tool to do sth on Linux machine. You can either look for the reimplementation of its functionality in <code>python</code> - or you can try to use the original tool. But then how to use it&rsquo;s output in an elegant way? Well, that&rsquo;s where <code>jc</code> comes in.
+It offers a bunch of parsers, to be used depending on the command executed. Full list is here: <a href="https://github.com/kellyjonbrazil/jc#parsers">https://github.com/kellyjonbrazil/jc#parsers</a></p>
+<pre tabindex="0"><code>&gt;&gt;&gt; import subprocess
+&gt;&gt;&gt; import jc
+&gt;&gt;&gt;
+&gt;&gt;&gt; cmd_output = subprocess.check_output([&#39;dig&#39;, &#39;example.com&#39;], text=True)
+&gt;&gt;&gt; data = jc.parse(&#39;dig&#39;, cmd_output)
+&gt;&gt;&gt;
+&gt;&gt;&gt; data[0][&#39;answer&#39;]
+[{&#39;name&#39;: &#39;example.com.&#39;, &#39;class&#39;: &#39;IN&#39;, &#39;type&#39;: &#39;A&#39;, &#39;ttl&#39;: 29658, &#39;data&#39;:
+&#39;93.184.216.34&#39;}]
+</code></pre><h2 id="xsv---a-fast-csv-parser"><code>xsv</code> - a fast csv parser</h2>
+<p><a href="https://github.com/BurntSushi/xsv">https://github.com/BurntSushi/xsv</a></p>
+<p>Rust-based csv parser. Blazingly fast, have a bunch of good enough features. Actually all it&rsquo;s analytical functions can be rather easily implemented in <code>python</code> using <code>pandas</code>. But would it fit everyone? Probably not, as you need to know both <code>python</code> and <code>pandas</code>, with all its finices.</p>
+<p>Whereas here, you get an ordinary text parsing tool, that can help with a lot of basic</p>
+<pre tabindex="0"><code>$ xsv stats worldcitiespop.csv --everything | xsv table
+field       type     min            max            min_length  max_length  mean          stddev         median     mode         cardinality
+Country     Unicode  ad             zw             2           2                                                   cn           234
+City        Unicode   bab el ahmar  Þykkvibaer     1           91                                                  san jose     2351892
+AccentCity  Unicode   Bâb el Ahmar  ïn Bou Chella  1           91                                                  San Antonio  2375760
+Region      Unicode  00             Z9             0           2                                        13         04           397
+Population  Integer  7              31480498       0           8           47719.570634  302885.559204  10779                   28754
+Latitude    Float    -54.933333     82.483333      1           12          27.188166     21.952614      32.497222  51.15        1038349
+Longitude   Float    -179.983333    180            1           14          37.08886      63.223
+</code></pre><h2 id="other-nice-tools">Other nice tools</h2>
+<ul>
+<li><a href="https://github.com/sxyazi/yazi">https://github.com/sxyazi/yazi</a> - file manager</li>
+<li><a href="https://github.com/BurntSushi/ripgrep">https://github.com/BurntSushi/ripgrep</a> - a grep alternative</li>
+<li><a href="https://github.com/eza-community/eza">https://github.com/eza-community/eza</a> (replacement for <a href="https://github.com/ogham/exa">https://github.com/ogham/exa</a>, which is now an abandoned project) - a modern ls replacement</li>
+</ul>
+<p><img src="/post_images/useful_cli_tools_from_other_planet_03.png" alt="Alt text"></p>
+<ul>
+<li><a href="https://www.visidata.org/">https://www.visidata.org/</a> - interactive tool for tabular data
+<img src="/post_images/useful_cli_tools_from_other_planet_04.png" alt="Alt text"></li>
+</ul>
+<h2 id="to-conclude">To conclude</h2>
+<p>There are a lot of great tools like those mentioned above. Some will fit you, some won&rsquo;t. It&rsquo;s nice to have a diverse set of tools in your tool belt, to be used in the time of need!</p>
+</div>
+  
+  </div>
+</article>
+
+  </main><footer>
+  <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
+
+</body>
+</html>

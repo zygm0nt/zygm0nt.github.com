@@ -3,7 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://marcin.cylke.com.pl/categories/</loc>
-    <lastmod>2023-06-27T00:00:00+00:00</lastmod>
+    <lastmod>2023-10-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://marcin.cylke.com.pl/categories/IT/</loc>
+    <lastmod>2023-10-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://marcin.cylke.com.pl/post/</loc>
+    <lastmod>2023-10-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://marcin.cylke.com.pl/categories/shell/</loc>
+    <lastmod>2023-10-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://marcin.cylke.com.pl/</loc>
+    <lastmod>2023-10-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://marcin.cylke.com.pl/categories/tools/</loc>
+    <lastmod>2023-10-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://marcin.cylke.com.pl/2023/10/10/useful-cli-tools-from-other-planet/</loc>
+    <lastmod>2023-10-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://marcin.cylke.com.pl/categories/fzf/</loc>
     <lastmod>2023-06-27T00:00:00+00:00</lastmod>
@@ -12,18 +30,6 @@
     <lastmod>2023-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://marcin.cylke.com.pl/2023/06/27/git-commit-script/</loc>
-    <lastmod>2023-06-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://marcin.cylke.com.pl/categories/IT/</loc>
-    <lastmod>2023-06-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://marcin.cylke.com.pl/post/</loc>
-    <lastmod>2023-06-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://marcin.cylke.com.pl/categories/shell/</loc>
-    <lastmod>2023-06-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://marcin.cylke.com.pl/</loc>
     <lastmod>2023-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://marcin.cylke.com.pl/2023/05/29/an-ode-to-fzf/</loc>
