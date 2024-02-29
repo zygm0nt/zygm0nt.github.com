@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href="https://marcin.cylke.com.pl/">
+
+
   <title>OVal - validate your models quickly and effortlessly! - Tech ramblings by Marcin</title>
   <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
@@ -81,13 +83,13 @@ class - called by the validation engine on a given field.</p>
 
 <p>Let's start with our new annotation:</p>
 
-<script type="application/javascript" src="https://gist.github.com/zygm0nt/1077516.js?file=DictionaryValue.java"></script>
+<script src="https://gist.github.com/zygm0nt/1077516.js?file=DictionaryValue.java"></script>
  
 
 In the above snippet I've defined a check-annotation, that would be used like
 this:
 
-<script type="application/javascript" src="https://gist.github.com/zygm0nt/1077516.js?file=sample.java"></script>
+<script src="https://gist.github.com/zygm0nt/1077516.js?file=sample.java"></script>
  
 
 You can pass <i>file</i> - containing dictionary values for this field.
@@ -95,7 +97,7 @@ There is also <i>message</i> field in the annotation which is an error
 message returned by the validation engine of failed check - pretty
 handy. And can be expressed in <i>.properties</i> file as:
 
-<script type="application/javascript" src="https://gist.github.com/zygm0nt/1077516.js?file=validation.properties"></script>
+<script src="https://gist.github.com/zygm0nt/1077516.js?file=validation.properties"></script>
  
 
 <p>Placeholder, like <i>context</i>, will be replaced with correct values supplied by the
@@ -106,7 +108,7 @@ for this kind of check. The name of the class is already defined in
 <i>DictionaryValue</i> annotation, it is called
 <i>DictionaryValueCheck</i> and I've done this check this way:
 
-<script type="application/javascript" src="https://gist.github.com/zygm0nt/1077516.js?file=DictionaryValueCheck.java"></script>
+<script src="https://gist.github.com/zygm0nt/1077516.js?file=DictionaryValueCheck.java"></script>
 
 
 What this basically does is:

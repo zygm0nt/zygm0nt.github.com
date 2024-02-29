@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href="https://marcin.cylke.com.pl/">
+
+
   <title>How to run multiple guest OS in QEMU? - Tech ramblings by Marcin</title>
   <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
@@ -32,12 +34,12 @@ This weekend I've been fiddling with <a href="http://www.qemu.org">QEMU</a>. I'v
 
 <p>To make QEMU instances communicate with each other I needed to plug them to a "network". That's why I've created a bridge to which Virtual Instances would connect to. I've used the following script:</p>
 
-<script type="application/javascript" src="https://gist.github.com/zygm0nt/889357.js?file=script.sh"></script>
+<script src="https://gist.github.com/zygm0nt/889357.js?file=script.sh"></script>
 
 
 <p>Then I just needed to start Qemu with this command line:</p>
 
-<script type="application/javascript" src="https://gist.github.com/zygm0nt/889359.js?file=cmd%20line"></script>
+<script src="https://gist.github.com/zygm0nt/889359.js?file=cmd%20line"></script>
  
 
 <p>Since I've set up bridge for Qemu instances, I've plugged <a href="http://en.wikipedia.org/wiki/TUN/TAP">TAP</a> interfaces into it. That's why I've needed to specify this in my qemu exec line. I've also added macaddress setting since both my instances were getting the same one.</p>

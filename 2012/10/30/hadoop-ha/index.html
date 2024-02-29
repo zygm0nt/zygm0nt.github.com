@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href="https://marcin.cylke.com.pl/">
+
+
   <title>Hadoop HA setup - Tech ramblings by Marcin</title>
   <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
@@ -70,9 +72,9 @@ on sharing edits directory. Than, with CDH 4.1 came quorum based solution.</p>
 <p>For this kind of setup, there is an assumption, that in a cluster exists
 a shared storage directory. It should be deployed using some kind of
 network-based filesystem. You could try with NFS or GlusterFS.</p>
-<script type="application/javascript" src="https://gist.github.com/zygm0nt/3958555.js?file=core-site.xml"></script>
+<script src="https://gist.github.com/zygm0nt/3958555.js?file=core-site.xml"></script>
 
-<script type="application/javascript" src="https://gist.github.com/zygm0nt/3958555.js?file=hdfs-site.xml"></script>
+<script src="https://gist.github.com/zygm0nt/3958555.js?file=hdfs-site.xml"></script>
 
 <p>This setup is quite OK, as long as you&rsquo;re comfortable with maintaining a
 separate service (network storage) for handling the HA state. It seems
@@ -95,9 +97,9 @@ that daemons.</p>
 shared edits directory solution. The only difference is the value for
 <em>dfs.namenode.shared.edits.dir</em>. This now points to all the journal
 nodes deployed in our cluster.</p>
-<script type="application/javascript" src="https://gist.github.com/zygm0nt/3973262.js?file=core-site.xml"></script>
+<script src="https://gist.github.com/zygm0nt/3973262.js?file=core-site.xml"></script>
 
-<script type="application/javascript" src="https://gist.github.com/zygm0nt/3973262.js?file=hdfs-site.xml"></script>
+<script src="https://gist.github.com/zygm0nt/3973262.js?file=hdfs-site.xml"></script>
 
 <h1 id="infrastructure">Infrastructure</h1>
 <p>In both cases you need to run Zookeeper-based Failover Controller

@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href="https://marcin.cylke.com.pl/">
+
+
   <title>Advisory Messages to the rescue - Tech ramblings by Marcin</title>
   <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
@@ -76,7 +78,7 @@ by default. You need to enable specific type of
 advisory message for a specific jms destination. You can do this with
 ths configuration change to <strong>activemq.xml</strong>
 </p>
-<script type="application/javascript" src="https://gist.github.com/zygm0nt/897141.js?file=activemq.xml"></script>
+<script src="https://gist.github.com/zygm0nt/897141.js?file=activemq.xml"></script>
 
 <p>
 As you can see, I've specified which advisories I want enabled. The full
@@ -87,7 +89,7 @@ Since I wanted to read messages from that topic I've added the following
 configuration to my spring context - there is one destination bean for
 inserting messages and one bean for advisory topic.
 </p>
-<script type="application/javascript" src="https://gist.github.com/zygm0nt/897150.js?file=xml"></script>
+<script src="https://gist.github.com/zygm0nt/897150.js?file=xml"></script>
 
 <p>
 Thanks to this configuration I've been able to check that my message was

@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href="https://marcin.cylke.com.pl/">
+
+
   <title>JCE keystore and untrusted sites - Tech ramblings by Marcin</title>
   <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
@@ -43,7 +45,7 @@ keystore. Read more to find out what happened!</p>
 <p>Ok, so I had my <em>xbean.xml</em> for http component looking like
 this:</p>
 
-<script type="application/javascript" src="https://gist.github.com/zygm0nt/951474.js?file=servicemix-http-xbean.xml"></script>
+<script src="https://gist.github.com/zygm0nt/951474.js?file=servicemix-http-xbean.xml"></script>
 
 
 
@@ -55,19 +57,19 @@ the keystore file and it's password.</p>
 <p>I've created my <em>keystore.jks</em> file in <em>smx_home/conf</em>
 with password <em>servicemix</em> in the following manner:</p>
 
-<script type="application/javascript" src="https://gist.github.com/zygm0nt/951459.js?file=create_keystore.sh"></script>
+<script src="https://gist.github.com/zygm0nt/951459.js?file=create_keystore.sh"></script>
 
 
 <p>You can see what's in this file with this command:</p>
 
-<script type="application/javascript" src="https://gist.github.com/zygm0nt/951459.js?file=list_keys.sh"></script>
+<script src="https://gist.github.com/zygm0nt/951459.js?file=list_keys.sh"></script>
 
 
 <p>At this point I thought, that having a configured keystore and my
 component would suffice. Wrong! As soon as I've tried to connect to the
 external service I got an exception:</p>
 
-<script type="application/javascript" src="https://gist.github.com/zygm0nt/951458.js?file=untrusted_key_error.java"></script>
+<script src="https://gist.github.com/zygm0nt/951458.js?file=untrusted_key_error.java"></script>
 
 
 <p>Hmmm.. this looks pretty nasty, but it's not that bad. As one can
@@ -91,7 +93,7 @@ src="https://gist zygm0nt.github.com/951459.js?file=add_untrusted_key.sh"></scri
 
 <p>What you'll probably see, when you execute this app is this:</p>
 
-<script type="application/javascript" src="https://gist.github.com/zygm0nt/951458.js?file=add_untrusted_cert.sh"></script>
+<script src="https://gist.github.com/zygm0nt/951458.js?file=add_untrusted_cert.sh"></script>
 
 
 <p>Please note that there is a prompt (<em>Enter certificate to add to
@@ -106,7 +108,7 @@ query HTTPS service as long as I wanted to! Great!</p>
 <p>In my search for this problem's solution I've encountered this kind
 of exception:</p>
 
-<script type="application/javascript" src="https://gist.github.com/zygm0nt/951458.js?file=keystore_key_error.java"></script>
+<script src="https://gist.github.com/zygm0nt/951458.js?file=keystore_key_error.java"></script>
 
 
 <p>A little googling led me to this <a

@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href="https://marcin.cylke.com.pl/">
+
+
   <title>plotting data availability with matplotlib - Tech ramblings by Marcin</title>
   <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
@@ -39,28 +41,28 @@ confusing, with the need of legend, more insight into it, etc.</p>
 <p>Now for a short description of how this is done.</p>
 <p>First we need some data points. In my case I was just listing a
 directory on S3 share:</p>
-<script type="application/javascript" src="https://gist.github.com/zygm0nt/41c66bd1dfec8b6b803ffb1807a50096.js?file=00-load_data.py"></script>
+<script src="https://gist.github.com/zygm0nt/41c66bd1dfec8b6b803ffb1807a50096.js?file=00-load_data.py"></script>
 
 <p>Was running that in a notebook, that’s the reason for strange syntax
 with asterisk. The resulting variable’s contents were:</p>
-<script type="application/javascript" src="https://gist.github.com/zygm0nt/41c66bd1dfec8b6b803ffb1807a50096.js?file=01-sample-output.md"></script>
+<script src="https://gist.github.com/zygm0nt/41c66bd1dfec8b6b803ffb1807a50096.js?file=01-sample-output.md"></script>
 
 <p>I wanted to reformat that data a bit. Especially since every directory
 had internally multiple files and depending what kind of files there
 were - I wanted to have that fact reflected on the plot:</p>
-<script type="application/javascript" src="https://gist.github.com/zygm0nt/41c66bd1dfec8b6b803ffb1807a50096.js?file=02-data-processing.py"></script>
+<script src="https://gist.github.com/zygm0nt/41c66bd1dfec8b6b803ffb1807a50096.js?file=02-data-processing.py"></script>
 
 <p>Main motivation here is to get appropriate data format in
 <code>available_dates_with_details</code> . This snippet shows how the data is
 formatted:</p>
-<script type="application/javascript" src="https://gist.github.com/zygm0nt/41c66bd1dfec8b6b803ffb1807a50096.js?file=02-a-output.py"></script>
+<script src="https://gist.github.com/zygm0nt/41c66bd1dfec8b6b803ffb1807a50096.js?file=02-a-output.py"></script>
 
 <p>And now the real meat - plotting the dataset:</p>
-<script type="application/javascript" src="https://gist.github.com/zygm0nt/41c66bd1dfec8b6b803ffb1807a50096.js?file=04-plotting.py"></script>
+<script src="https://gist.github.com/zygm0nt/41c66bd1dfec8b6b803ffb1807a50096.js?file=04-plotting.py"></script>
 
 <p>All this functions and data need to be glued together. This snippet does
 exactly that:</p>
-<script type="application/javascript" src="https://gist.github.com/zygm0nt/41c66bd1dfec8b6b803ffb1807a50096.js?file=05-execution.py"></script>
+<script src="https://gist.github.com/zygm0nt/41c66bd1dfec8b6b803ffb1807a50096.js?file=05-execution.py"></script>
 
 </div>
   
