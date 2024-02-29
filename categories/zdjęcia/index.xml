@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>zdjęcia on Tech ramblings by Marcin</title>
+    <title>Zdjęcia on Tech ramblings by Marcin</title>
     <link>https://marcin.cylke.com.pl/categories/zdj%C4%99cia/</link>
-    <description>Recent content in zdjęcia on Tech ramblings by Marcin</description>
+    <description>Recent content in Zdjęcia on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 20 Sep 2009 10:29:06 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/zdj%C4%99cia/index.xml" rel="self" type="application/rss+xml" />

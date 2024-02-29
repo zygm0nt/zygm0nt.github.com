@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>nintendo on Tech ramblings by Marcin</title>
+    <title>Nintendo on Tech ramblings by Marcin</title>
     <link>https://marcin.cylke.com.pl/categories/nintendo/</link>
-    <description>Recent content in nintendo on Tech ramblings by Marcin</description>
+    <description>Recent content in Nintendo on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 07 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/nintendo/index.xml" rel="self" type="application/rss+xml" />

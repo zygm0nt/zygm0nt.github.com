@@ -1,369 +1,112 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>IT on Tech ramblings by Marcin</title>
+    <title>It on Tech ramblings by Marcin</title>
     <link>https://marcin.cylke.com.pl/categories/IT/</link>
-    <description>Recent content in IT on Tech ramblings by Marcin</description>
+    <description>Recent content in It on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/IT/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/IT/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hadoop for Enterprises</title>
-      <link>https://marcin.cylke.com.pl/2012/06/18/hadoop-for-enterprises/</link>
-      <pubDate>Mon, 18 Jun 2012 09:08:09 +0000</pubDate>
+      <title>Payload after load, really</title>
+      <link>https://marcin.cylke.com.pl/2024/02/29/payload-after-load/</link>
+      <pubDate>Thu, 29 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2012/06/18/hadoop-for-enterprises/</guid>
-      <description>Hadoop&#39;s usage as a big data processing framework gains a lot of attention lately. Now, not only big players see, that they can embrace the data their sites or products are generating and develop their businesses on it. For that to happen two things are needed: the data itself and means of processing really big amounts of it. Gathering data is relatively easy. These are not necessarily structured data, you don&#39;t need to plan their usage at first.</description>
+      <guid>https://marcin.cylke.com.pl/2024/02/29/payload-after-load/</guid>
+      <description>![Alt text](/post_images/Pasted image 20240218223426.png]) &amp;ldquo;source: Dall-E, prompt: generate an image for blogpost titled &amp;ldquo;breaking a paywall&amp;rdquo;, about exploiting newssite paywall using browser extension&amp;rdquo;
+Today&amp;rsquo;s internet is progressively becoming more and more hostile. It is actually a bunch of walled gardens, in the form of Facebook, Instagram, Linkedin, all the other social media outlets. Now, also news sites are increasingly becoming a payed instances.
+I totally get it, authoring all that content is not cheap.</description>
     </item>
     
     <item>
-      <title>What is NoSQL good for?</title>
-      <link>https://marcin.cylke.com.pl/2011/09/21/what-is-nosql-good-for/</link>
-      <pubDate>Wed, 21 Sep 2011 21:12:34 +0000</pubDate>
+      <title>useful CLI tools from other planet</title>
+      <link>https://marcin.cylke.com.pl/2023/10/10/useful-cli-tools-from-other-planet/</link>
+      <pubDate>Tue, 10 Oct 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2011/09/21/what-is-nosql-good-for/</guid>
-      <description>... or how I ended up writing a CouchDB proof of concept app? Once upon a time I set out on a journey to discover the NoSQL land. I&#39;ve decided that doing simple queries wouldn&#39;t be interesting enough. That&#39;s why I&#39;ve chose to create an app that would be based on some NoSQL database.
-The main idea was to create an app, that would dynamically update itself with geographic data flowing in.</description>
+      <guid>https://marcin.cylke.com.pl/2023/10/10/useful-cli-tools-from-other-planet/</guid>
+      <description>I&amp;rsquo;ve already written a short post about me using fzf on this blog. And I still use it, it still is awesome! :)
+But there are more tools like that. Maybe this is just my optics, but with the recent (at least 2 last years) rust&amp;rsquo;s rise to popularity, there are a lot of small tools doing a single task, or focusing on specific kind of problems. And they of course target terminals!</description>
     </item>
     
     <item>
-      <title>5 best things to do with your Kindle</title>
-      <link>https://marcin.cylke.com.pl/2011/08/22/5-best-things-to-do-with-your-kindle/</link>
-      <pubDate>Mon, 22 Aug 2011 22:19:14 +0000</pubDate>
+      <title>git-commit script</title>
+      <link>https://marcin.cylke.com.pl/2023/06/27/git-commit-script/</link>
+      <pubDate>Tue, 27 Jun 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2011/08/22/5-best-things-to-do-with-your-kindle/</guid>
-      <description>I bought a Kindle (3rd generation, Wi-Fi only) some time ago - like half a year ago. Read some books, done some web-browsing (awful, quite unpleasant). Gradually I became more and more curious of other things possible to achieve with this slate-looking piece of tech. These are my thoughts and ideas. Got a Kindle? Use it every day? Feel like modding or extending your ways of usage? Great! Read on, and share your thoughts in comments!</description>
+      <guid>https://marcin.cylke.com.pl/2023/06/27/git-commit-script/</guid>
+      <description>The organization I work in, has this practice of annotating commit messages with ticket numbers. From what I know this tends to be quite a common them all around the IT industry. It serves the purpose of accountability for future checks, current information for others on what the commit is actually about, etc. There may be many more things to add here - as an adventage of such a
+Some time ago I&amp;rsquo;ve started using this small snippet of code as my pre-commit hook.</description>
     </item>
     
     <item>
-      <title>OVal - validate your models quickly and effortlessly!</title>
-      <link>https://marcin.cylke.com.pl/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/</link>
-      <pubDate>Thu, 14 Jul 2011 08:25:19 +0000</pubDate>
+      <title>an ode to fzf</title>
+      <link>https://marcin.cylke.com.pl/2023/05/29/an-ode-to-fzf/</link>
+      <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/</guid>
-      <description>Some time ago one of the projects at work required me to validate some Java POJOs. Theses were my model classes and I&#39;ve been creating them from incoming WebService requests. One would say that XSD would be sufficient for the task, for parts of this validations - sure, it would. But there were some advanced rules XSD would not handle, or would render the schema document very complicated.
-Rules I needed to express were like: person&#39;s first_name and last_name should be of appropriate length - between 2 and 20, and additionally one could pass a zero-length string just to remove the previous value state field should consist only defined values - as in dictionary value - this one would be completable with XSD&#39;s enumerations, but would require often changing schema files and redistributing them to interested parties :( The library I&#39;ve decided to use for this task is OVal and it came out really nice!</description>
+      <guid>https://marcin.cylke.com.pl/2023/05/29/an-ode-to-fzf/</guid>
+      <description>What is fzf? How could I&amp;rsquo;ve lived without it for so long?! It&amp;rsquo;s just a pretty little fuzzy search tool, written in go. You can find it here: https://github.com/junegunn/fzf
+Important features fuzzy search in a list of lines - thanks to that, it&amp;rsquo;s really easy to find something in a considerably big list of items it&amp;rsquo;s blazingly fast! very nice shell integrations many additional features - like preview for files (go here to see examples: https://github.</description>
     </item>
     
     <item>
-      <title>Geecon 2011 - day 2</title>
-      <link>https://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/</link>
-      <pubDate>Sun, 22 May 2011 16:39:31 +0000</pubDate>
+      <title>running gamecube emulator on Linux</title>
+      <link>https://marcin.cylke.com.pl/2021/02/07/running-gamecube-on-linux/</link>
+      <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/</guid>
-      <description>And now for part 2 of my visit to Geecon 2011!
-1. Jim Webber &#34;Revisiting SOA for the 21st century&#34; Now this was awesome! Jim Webber, a former ThoughtWorks employee, now Neo4j evangelist (in Neotechnology) described his views on how SOA should look - according to him. This was presented previously, on other occasions as his &#34;Guerilla SOA&#34; talk - generally he advocated for REST based services, loose contracts (stating that WSDLs are too verbose and code generation is evil).</description>
+      <guid>https://marcin.cylke.com.pl/2021/02/07/running-gamecube-on-linux/</guid>
+      <description>I have a fondness for all the retro things in tech, and try to hone this when I have time with exploring old tech. This time I tried running one of the retro consoles&amp;rsquo; emulators. I chose Nintendo Gamecube - because of many reasons, but one of them being I own a quite recent incarnation of the Nintendo spirit, namely Nintendo Switch. So with the older one I&amp;rsquo;ve wanted to see how the games look like back than and how much the landscape of gaming on Nintendo has changed with that big of an age gap.</description>
     </item>
     
     <item>
-      <title>Geecon 2011 - day 1</title>
-      <link>https://marcin.cylke.com.pl/2011/05/19/geecon-2011-day-1/</link>
-      <pubDate>Thu, 19 May 2011 20:05:05 +0000</pubDate>
+      <title>awesome WM and how to handle multiple monitors</title>
+      <link>https://marcin.cylke.com.pl/2021/02/06/awesomewm-multiple-monitors/</link>
+      <pubDate>Sat, 06 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2011/05/19/geecon-2011-day-1/</guid>
-      <description>Last week&#39;s Java conference - Geecon was very interesting. It was well prepared, and gave an insight into the current Java related trends - concurrency, DSLs, polyglot programming. But not only that - there were also some pretty different talks from excellent speakers.
-The whole event took 4 days: University day (wednesday) 2 regular conference days (Thursday + Friday) hacker garden (Sunday) I decided to attend only on Thursday and Friday - no time for more.</description>
+      <guid>https://marcin.cylke.com.pl/2021/02/06/awesomewm-multiple-monitors/</guid>
+      <description>Recently I&amp;rsquo;ve started using new window manager. Since I&amp;rsquo;ve always wanted to try some kind of tiling window manager I thought that a fresh installation of an OS on a new machine is good time to have a go at that.
+From the multitude of possibilities I&amp;rsquo;ve chosen AwesomeWM. It&amp;rsquo;s reasonable enough in its standard configuration so I&amp;rsquo;ve decided to stick with it at least for the time being. In fact the only important feature I look for in a tiling window manager is the tiling behavior.</description>
     </item>
     
     <item>
-      <title>JCE keystore and untrusted sites</title>
-      <link>https://marcin.cylke.com.pl/2011/05/02/jce-keystore-and-untrusted-sites/</link>
-      <pubDate>Mon, 02 May 2011 15:03:38 +0000</pubDate>
+      <title>operating systems showdown</title>
+      <link>https://marcin.cylke.com.pl/2020/12/05/operating-systems-showdown/</link>
+      <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2011/05/02/jce-keystore-and-untrusted-sites/</guid>
-      <description>Recently at work I was in need of connecting to a web service exposed via HTTPS. I&#39;ve been doing this from inside Servicemix 3.3.1, which may seem a bit inhibiting, but that was a requirement. Nevertheless I&#39;ve been trying my luck with the included servicemix-http-2008.01 component. I&#39;ve created a simple Service Unit using that component and made connection attempt. Unfortunately I&#39;ve encountered issues with the SSL conversation negotiation. I had to dig deeper into the servicemix-http code to find out these had something to do with my JCE keystore.</description>
+      <guid>https://marcin.cylke.com.pl/2020/12/05/operating-systems-showdown/</guid>
+      <description>Modern open source operating systems vs modern software development practices The reason to write this blog post was a presentation I watched some time ago, and commented on it on Twitter:
+One of the slides from the presentation. How can you develop an operating system and follow *that* kind of process?! :sadpanda: pic.twitter.com/3XuHMXc0My
+&amp;mdash; Marcin Cylke (@zygm0nt) January 5, 2020 So to be specific - the whole presentation was rather negative towards security model used along OpenBSD development.</description>
     </item>
     
     <item>
-      <title>Advisory Messages to the rescue</title>
-      <link>https://marcin.cylke.com.pl/2011/04/01/advisory-messages-to-the-rescue/</link>
-      <pubDate>Fri, 01 Apr 2011 09:16:59 +0000</pubDate>
+      <title>plotting data availability with matplotlib</title>
+      <link>https://marcin.cylke.com.pl/2020/03/13/plotting-with-matplotlib/</link>
+      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2011/04/01/advisory-messages-to-the-rescue/</guid>
-      <description>The most crucial part of software development is testing. It should ensure us, that our code is correct, works according to given specs, etc. There are many kinds of tests: unit tests, integration, functional. In general you should try to test the smallest possible subset of your code and be able to check the state of the objects after the test. This seems as rather easy task, but what if you have an integration end-to-end test to perform?</description>
+      <guid>https://marcin.cylke.com.pl/2020/03/13/plotting-with-matplotlib/</guid>
+      <description>Though somewhat strange I happen to come to a need of having a plot of dates that a particular dataset is available on. Doing my exploration in Jupyter notebook it just felt pretty natural to have it written in Python and generated as a graph, with matplotlib.
+This resulted in a visually appealing description of the dataset. Also, due to the ease of change, I could modify the plot to show additional elements.</description>
     </item>
     
     <item>
-      <title>How to run multiple guest OS in QEMU?</title>
-      <link>https://marcin.cylke.com.pl/2011/03/27/how-to-run-multiple-guest-os-in-qemu/</link>
-      <pubDate>Sun, 27 Mar 2011 18:47:11 +0000</pubDate>
+      <title>I don&#39;t do backups</title>
+      <link>https://marcin.cylke.com.pl/2020/02/26/i-dont-do-backups/</link>
+      <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2011/03/27/how-to-run-multiple-guest-os-in-qemu/</guid>
-      <description>This weekend I&#39;ve been fiddling with QEMU. I&#39;ve installed OpenBSD on a single image and wanted to have two instances of it communicating via network. Installing the system was easy, but the networking setup was quite a pain. See how I did that... To make QEMU instances communicate with each other I needed to plug them to a &#34;network&#34;. That&#39;s why I&#39;ve created a bridge to which Virtual Instances would connect to.</description>
+      <guid>https://marcin.cylke.com.pl/2020/02/26/i-dont-do-backups/</guid>
+      <description>I tend to not do backups. I used to but just didn’t like it. I wasn’t diligent enough, didn’t have a routine setup. It all felt fragile and error prone in the end. So I stopped. You probably wonder when this will actually hit me - I sometimes do, too.
+But the truth is I do have backups. I just don’t keep them by myself, I delegate.
+I use the computer mainly to do web browsing, photo management, programming, exploration.</description>
     </item>
     
     <item>
-      <title>Me on Hadoop on Parleys</title>
-      <link>https://marcin.cylke.com.pl/2011/03/20/me-on-hadoop-on-parleys/</link>
-      <pubDate>Sun, 20 Mar 2011 19:35:39 +0000</pubDate>
+      <title>Screen shortcuts for split experience</title>
+      <link>https://marcin.cylke.com.pl/2019/07/17/screen-split-experience/</link>
+      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2011/03/20/me-on-hadoop-on-parleys/</guid>
-      <description>Finally I&#39;ve managed to import my WarJUG presentation to parleys.com. See for yourself :) If you&#39;ve got problems with opening the parleys&#39; version try the ones uploaded to youtube. Here is part 1: And here is part 2:
-Comments Sigvatr I&#39;m sorry, but I don&#39;t understand Polish :P</description>
-    </item>
-    
-    <item>
-      <title>After WarJUG</title>
-      <link>https://marcin.cylke.com.pl/2011/02/23/after-warjug/</link>
-      <pubDate>Wed, 23 Feb 2011 13:22:04 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2011/02/23/after-warjug/</guid>
-      <description>Some time ago I&#39;d written about my arsaw JUG presentation. I finally presented the the topic yesterday.
-I must say I&#39;m fairly content with my yesterday&#39;s presentation :) Here are some slides and as soon as the video will be available I&#39;ll post it here too.
-Hadoop i okoliceView more presentations from zygm0nt. Comments Sigvatr Czyli napisałeś ładny post po angielsku, tylko po to, by zaprosić do obejrzenia prezentacji po polsku?</description>
-    </item>
-    
-    <item>
-      <title>Hadoop at Warsaw JUG</title>
-      <link>https://marcin.cylke.com.pl/2011/02/17/hadoop-on-warsaw-jug/</link>
-      <pubDate>Thu, 17 Feb 2011 23:09:46 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2011/02/17/hadoop-on-warsaw-jug/</guid>
-      <description>I&#39;ll be speaking at the upcoming JUG meeting in Warsaw. The topic will be Apache Hadoop. If you&#39;re interested, feel invited. Attend and ask questions. But be aware I&#39;m not advanced in this technology :)
-Full invitation text can be found here.
-P.S.: Do you know what Hadoop is? Do you use it anywhere? Have you played with it?
-Comments Marcin @teamon - prawdopodobnie będzie. Na 100% to nie wiem, ale teoretycznie wszystkie prezentacje WarJUGa są nagrywane</description>
-    </item>
-    
-    <item>
-      <title>JMS redelivery with ActiveMQ and Servicemix</title>
-      <link>https://marcin.cylke.com.pl/2011/01/17/jms-redelivery-with-activemq-and-servicemix/</link>
-      <pubDate>Mon, 17 Jan 2011 08:56:29 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2011/01/17/jms-redelivery-with-activemq-and-servicemix/</guid>
-      <description>The other day I felt a compelling need to implement a JMS redelivery scenario. The exact scenario I&#39;d been trying to handle was: my message is in an ActiveMQ queue or topic its processing fails, because of some exception - ie. database access exception due to server nonavailability since we get an exception, the message is not handled properly, we may want to retry processing attempt some time later of course, for the redelivery to happen we need the message to stay in the ActiveMQ queue - fetching messages from the queue will be stopped until the redelivery succeeds or expires See how this can be done after the jump :) For this to happen, I&#39;ve tried implementing Apache Camel route, but as it turns out, Camel fails to deliver facilities for exact JMS redelivery.</description>
-    </item>
-    
-    <item>
-      <title>Easier and nicer JMS</title>
-      <link>https://marcin.cylke.com.pl/2010/12/08/easier-and-nicer-jms/</link>
-      <pubDate>Wed, 08 Dec 2010 09:22:34 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2010/12/08/easier-and-nicer-jms/</guid>
-      <description>JMS seems like a hostile ground. It has all it&#39;s quirks and strange behaviours. A couple of defining standards plus esoteric brokers, queues and topics. At work, we mainly use open source Jms solutions, namely Apache ActiveMQ. This one is usually bundled with Apache Servicemix, as a message broker for this particular ESB. As there are some minor caveats in this scennerio, I&#39;d like to describe here some guidelines for getting to running JMS queues.</description>
-    </item>
-    
-    <item>
-      <title>Schematron to the rescue!</title>
-      <link>https://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/</link>
-      <pubDate>Thu, 21 Oct 2010 08:40:37 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/</guid>
-      <description>In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be solved with it - the standardization processes is there for some reason. But that happens only in ideal world, which we&#39;re not living in. In ideal world, when dealing with XML instances you&#39;d be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal definition language to declare your data structure.</description>
-    </item>
-    
-    <item>
-      <title>Complex flows with Apache Camel</title>
-      <link>https://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/</link>
-      <pubDate>Thu, 26 Aug 2010 20:23:52 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/</guid>
-      <description>At work, we&#39;re mainly integrating services and systems, and since we&#39;re on a constant lookout for new, better technologies, ways to do things easier, make them more sustainable, we&#39;re trying to Usually we use Apache Camel for this task, which is a Swiss-knife for integration engineer. What&#39;s more, this tools corresponds well with our approach to integration solutions: try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits, don&#39;t convert XML into Java classes back and forth and be worried with problems like XML conversion, try to get a simple flow of the process.</description>
-    </item>
-    
-    <item>
-      <title>Generic Enum converter for iBatis</title>
-      <link>https://marcin.cylke.com.pl/2010/06/28/generic-enum-converter-for-ibatis/</link>
-      <pubDate>Mon, 28 Jun 2010 20:40:34 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2010/06/28/generic-enum-converter-for-ibatis/</guid>
-      <description>My goal was to create a simple, extensible Enum converter that would work with iBatis. This seems like a trivial problem, but took me a while to find a proper solution.
-There were some additional preconditions: all given Enums are jaxb generated objects - but any standard Java Enum should work conversion was 1-to-1, no special conditions and processing The example Enum for this problem looks like this one (copy&amp;amp;paste from jaxb generated source):</description>
-    </item>
-    
-    <item>
-      <title>Readability powala!</title>
-      <link>https://marcin.cylke.com.pl/2010/06/28/readability-powala/</link>
-      <pubDate>Mon, 28 Jun 2010 20:39:51 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2010/06/28/readability-powala/</guid>
-      <description>Już dziś możecie skorzystać z &#34;umilacza&#34; czytania artykułów. Od zawsze denerwowało mnie rozpraszające badziewie na stronach z artykułami. Teraz z tym koniec. Odkąd odkryłem Readability -- strona bookmarkletu,. Wszelkie instrukcje na temat korzystania są dostępne na stronie projektu, tak więc warto sprawdzić.
-Comments Marcin Zgodnie z niektórymi źródłami, to jednak jest tam część kodu Readability. Polecam ten link:
-http://www.downloadsquad.com/2010/06/08/think-safari-reader-looks-familiar-thats-because-apple-used-op/
-Dominik Porada &amp;gt; Z tego co gdzieś tam czytałem, to nawet Apple wykorzystał kawałki kodu JS z tej strony w Safari nowym.</description>
-    </item>
-    
-    <item>
-      <title>osnews.com - hobby projects</title>
-      <link>https://marcin.cylke.com.pl/2010/06/10/osnews-com-hobby-projects/</link>
-      <pubDate>Thu, 10 Jun 2010 19:22:56 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2010/06/10/osnews-com-hobby-projects/</guid>
-      <description>Kilka dni temu na portalu OSNews pojawiła się notatka o skromym tytule: What Are You Working On?. Takie proste pytanie spowodowało lawinę komentarzy. Mnóstwo projektów, których ludzie się &#34;dopuszczają&#34; w czasie wolnym. Wszystkie można przeczytać tutaj: komentarze. Jest tam wiele do przeczytania, ale jeden komentarz naprawdę &#34;zrobił mój dzień&#34; :)
-Come on people, you can do better than that. - trying to improve a tube theremin I built last year to get more linear response.</description>
-    </item>
-    
-    <item>
-      <title>Eclipse ecosystem</title>
-      <link>https://marcin.cylke.com.pl/2010/05/07/eclipse-ecosystem/</link>
-      <pubDate>Fri, 07 May 2010 09:55:59 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2010/05/07/eclipse-ecosystem/</guid>
-      <description>Do you use Eclipse? Or perhaps you use other IDE but would like to try &#34;the big E&#34;? Well, that&#39;s OK, and completely understandable, because Eclipse is actually a great, versatile tool. But Eclipse is not just an IDE, in fact it is a comp let, extensible platform. What&#39;s even more important, there are tones of valuable Eclipse-related projects gathered around the platform.
-Yes, there are lots. Some are good, some are bad, but the usual, stock ones, signed by Eclipse, are worth taking a closer look.</description>
-    </item>
-    
-    <item>
-      <title>Dmesg z Openbsd/sgi</title>
-      <link>https://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/</link>
-      <pubDate>Sun, 25 Apr 2010 12:20:34 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/</guid>
-      <description>Wracając do starego tematu OpenBSD na moim SGI O2, postanowiłem lekko odświeżyć tą maszynę. Dostałą uaktualnienie małe. Przysiedziałem również nad dostosowaniem systemu do swoich potrzeb, instalacji potrzebnego softu itp.
-Na początek dmesg z działąjącego systemu:
-[ using 433608 bytes of bsd ELF symbol table ] Copyright (c) 1982, 1986, 1989, 1991, 1993 The Regents of the University of California. All rights reserved. Copyright (c) 1995-2009 OpenBSD. All rights reserved. http://www.</description>
-    </item>
-    
-    <item>
-      <title>Unicode w Pythonie</title>
-      <link>https://marcin.cylke.com.pl/2010/04/21/unicode-w-pythonie/</link>
-      <pubDate>Wed, 21 Apr 2010 22:54:24 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2010/04/21/unicode-w-pythonie/</guid>
-      <description>Szlag by to trafił! Czemu tak ciężko jest obsługiwać unicode w pythonie? No niby wszystko jest ładnie konwertowane wewnętrznie na odpowiednie reprezentacje, ale jeśli przychodzi co do czego, i chcemy wypisać sobie taki ciąg znaków na ekran, to już jest ciężej.
-Weźmy prosty przykład. Wczytywałem plik z polskimi znaczkami, o taki:
-Roger Macdonald;Człowiek w żelaznej masce;25 a potem w kodzie pythonowym robiłem sobie tak:
-for line in open(sys.argv[1],&#39;r&#39;).readlines(): print line.</description>
-    </item>
-    
-    <item>
-      <title>Nokia bez certyfikatów :)</title>
-      <link>https://marcin.cylke.com.pl/2010/04/18/nokia-bez-certyfikatow/</link>
-      <pubDate>Sun, 18 Apr 2010 23:13:47 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2010/04/18/nokia-bez-certyfikatow/</guid>
-      <description>Od kilku dni walczyłem z wyłączeniem sprawdzania certyfikatów w Nokii E51. Okazało się, że to trywialna sprawa. Wystarczy:
-Tools -&amp;gt; App mgr -&amp;gt; Options -&amp;gt; Settings. Zmienić &#34;software installation&#34; z &#34;Signed Only&#34; na &#34;All&#34; i &#34;Onlline certificate check&#34; na &#34;Off&#34; :D
-Dzięki temu mogłem sobie zainstalować prostego i funkcjonalnego playera http://symbianoggplay.sourceforge.net/ i jest on o niebo lepszy niż ten domyślny dostarczany przez Nokie.
-Comments Marcin Cylke U mnie akurat zadziałąło :) a wszelkie próby korzystania z chińskich &amp;quot;rozwiązań&amp;quot; do odblokowywania Nokii poległy.</description>
-    </item>
-    
-    <item>
-      <title>Recenzja - Drools JBoss Rules 5.0 Developer&#39;s Guide</title>
-      <link>https://marcin.cylke.com.pl/2010/04/14/recenzja-drools-jboss-rules-5-0-developer-s-guide/</link>
-      <pubDate>Wed, 14 Apr 2010 20:11:46 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2010/04/14/recenzja-drools-jboss-rules-5-0-developer-s-guide/</guid>
-      <description>Kilka dni temu skończyłem czytać niezbyt grubą - jak na standardy branżowej literatury - książeczkę o Droolsach.
-A co to jest Drools? Ot taki silnik reguł od JBossa, stronę ma o tu: http://jboss.org/drools. Umożliwia on wydzielenie reguł biznesowych do oddzielnego komponentu przez co możemy zyskać na przejrzystości naszego kodu oraz odseparować potencjalnie podatny na zmiany fragment - logikę biznesową właśnie :) Oczywiście można przy pomocy Droolsów zrobić dużo więcej fajnych rzeczy, ale jest to dalekie od podstawowych informacji.</description>
-    </item>
-    
-    <item>
-      <title>Inteligentny mock w SoapUI</title>
-      <link>https://marcin.cylke.com.pl/2009/11/18/inteligentny-mock-w-soapui/</link>
-      <pubDate>Wed, 18 Nov 2009 22:20:57 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2009/11/18/inteligentny-mock-w-soapui/</guid>
-      <description>Któż z nas nie testował WebService&#39;ów, a któż z nas nie używał do tego SoapUI :) Ok, z rzeczami oczywistymi dyskutować nie będę, ale przy okazji jednego projekciku okazało się, że fajnie by było gdyby mój mock potrafił zrobić coś więcej niż tylko odpowiedzieć na nadesłany komunikat.
-Oczywiście sam SoapUI posiada dosyć spory wachlarz możliwości, bo może wysłać losowy request spośród wprowadzonych, lub wysyłać wedle sekwencji, itp.
-Problem w tym, że moim wysublimowanym życzeniem było aby korelować komunikaty określonego typu na podstawie jednego pola z XMLa - nazwijmy je polem &#34;</description>
-    </item>
-    
-    <item>
-      <title>Czyżby BPEL wreszcie stał się bardziej użyteczny?</title>
-      <link>https://marcin.cylke.com.pl/2009/11/15/czyzby-bpel-wreszcie-stal-sie-bardziej-uzyteczny/</link>
-      <pubDate>Sun, 15 Nov 2009 23:24:41 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2009/11/15/czyzby-bpel-wreszcie-stal-sie-bardziej-uzyteczny/</guid>
-      <description>Nieee... to po prostu udało mi się uruchomić BPEL Designera - plugin
-do Eclipse&#39;a. Co prawda wymagało to grzebnięcia w źródłach, które nie
-były aktualizowane już od dłuższego czasu. Zmiany polegały głównie na
-poprawie zależności. Niemniej, plugin z wersją 3.5 Eclipse&#39;a działa
-sprawnie. W poprzednich wersjach miał tendencje do zacinania się, a
-przyczyny tego nie udało mi się namierzyć.
-A co to jest BPEL?
-Business Process Expression Language. Czyli XML do</description>
-    </item>
-    
-    <item>
-      <title>Solaris w TR</title>
-      <link>https://marcin.cylke.com.pl/2009/11/13/solaris-w-tr/</link>
-      <pubDate>Fri, 13 Nov 2009 08:51:17 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2009/11/13/solaris-w-tr/</guid>
-      <description>Wczoraj byłem w TR (http://www.trwarszawa.pl/). Na wejściówki, po
-taniości. Obejrzałem spektakl Solaris, bo to Lem, bo znam, bo jako jedną
-z niewielu rzeczy Lema czytałem. Powody były.
-Wrażenia? Bardzo fajnie się oglądało. Problem jedynie w tym, że z
-wydawałoby się dosyć prostej fabularnie książki zrobiono spektakl,
-którego nie da się w całości zrozumieć z powodu niedopowiedzeń. Czy to
-jest domena nowoczesnych interpretacji teatralnych??
-Comments Marcin @Biały, tak, faktycznie. Ale ostatecznie na prawdę nie wyszło to tak źle.</description>
-    </item>
-    
-    <item>
-      <title>Ludzie! Porzućcie F-Spot!</title>
-      <link>https://marcin.cylke.com.pl/2009/09/20/ludzie-porzuccie-f-spot/</link>
-      <pubDate>Sun, 20 Sep 2009 17:57:33 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2009/09/20/ludzie-porzuccie-f-spot/</guid>
-      <description>Dziś usiadłem do porządkowania zdjęć z wyjazdu wakacyjnego. Postanowiłem użyć do tego właśnie programu F-Spot. Wydawał się on odpowiedni. Zaimportował fotki, posortował według informacji EXIF. Schody zaczęły się w momencie edycji całej kolekcji.
-Ze zdjęciami było trochę problemów, którymi chciałem się zająć:
-część trzeba było obrócić połowa była zrobiona na Nikonie, który nie miał ustawionej daty, tak więc ficzer sortowania po dacie z nagłówka EXIF wziął w łeb Tak więc chciałem poobracać fotki i uporządkować wedle czasu.</description>
-    </item>
-    
-    <item>
-      <title>Open Suse jest upośledzone!</title>
-      <link>https://marcin.cylke.com.pl/2009/09/20/open-suse-jest-uposledzone/</link>
-      <pubDate>Sun, 20 Sep 2009 14:45:13 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2009/09/20/open-suse-jest-uposledzone/</guid>
-      <description>Zarządzanie pakietami to droga przez mękę. Czemu? Proszę bardzo:
-marcin@byakshee:~&amp;gt; sudo zypper install f-spot
-Reading installed packages...
-&#39;f-spot&#39; is already installed.
-Nothing to do.
-ale już jakbym chciał upgrade paczki zrobić, to inna rozmowa:
-marcin@byakshee:~&amp;gt; sudo zypper update f-spot
-Reading installed packages...
-Package &#39;f-spot&#39; is not installed.
-Nothing to do.
-Wniosek z tego taki, że jak raz zetkniesz się z apt-getem, to już nic nie będzie później odpowiednie :D A OpenSuse oczywiście odradzam.</description>
-    </item>
-    
-    <item>
-      <title>Przydatne programy zdjęciowe</title>
-      <link>https://marcin.cylke.com.pl/2009/09/20/przydatne-programy-zdjeciowe/</link>
-      <pubDate>Sun, 20 Sep 2009 10:29:06 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2009/09/20/przydatne-programy-zdjeciowe/</guid>
-      <description>Od dawna używam hugina, który doskonale nadaje się do sklejania wielu zdjęć w panoramę. Robi to doskonale, wygładza, koryguje, dopasowuje. Wystarczy wrzucić sekwencję zdjęć w odpowiedniej kolejności, a program załatwi wszystko za mnie. Miód!
-Dziś znalazłem natomiast programik o dziwnej conieco nazwie tintii. On z koleii służy do przerabiana zdjęc na czarnobiałe, zostawiając pewien obszar w kolorze. Robienie podobnej rzeczy w Gimpie nigdy nie wychodziło mi łatwo. Dzięki temu narzędziu wszystko idzie łatwo i przyjemnie!</description>
-    </item>
-    
-    <item>
-      <title>Sycylijski IBM?</title>
-      <link>https://marcin.cylke.com.pl/2009/09/16/sycylijski-ibm/</link>
-      <pubDate>Wed, 16 Sep 2009 18:02:06 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2009/09/16/sycylijski-ibm/</guid>
-      <description>Ostatnio było tu ciszej, a to ze względu na wakacyjny wypad na Sycylię. Ładnie, pięknie, wino, kobiety, owoce morza. No, to tyle z relacji.
-Ja chciałem o czymś trochę innym. A mianowicie właśnie na Sycylii, konkretniej w Palermo zobaczyłem taką oto old-skulową reklamę IBM:
-Urzekła mnie! Że to jeszcze tam wisi, że jest takie pikselowe. I totalnie od czapy, reklama była umieszczona w okolicach Teatro Maximo.
-Jak Wam się podoba?</description>
-    </item>
-    
-    <item>
-      <title>Własny player audio?</title>
-      <link>https://marcin.cylke.com.pl/2009/08/29/wlasny-player-audio/</link>
-      <pubDate>Sat, 29 Aug 2009 01:37:59 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2009/08/29/wlasny-player-audio/</guid>
-      <description>Od jakiegoś czasu męczy mnie nędza wśród odtwarzaczy audio dostępnych na różne unixy. Niby są, ale jakieś takie wybrakowane, zupełnie nie przystające do moich potrzeb. Niby robią dużo, ale ja nie potrzebuję kombajnu do muzyki.
-Oczywiście, są różne takie jak:
-Rhythmbox Amarok xmms i xmms2 musicpd bmpx cmus No i wszystko fajnie, nie mam zamiaru negować ich użycia. Mi one po prostu nie do końca pasują. Rhythmbox, bo jest duży, ma za dużo featerów, niby umie dużo ale jak co do czego przyjdzie to bywają problemy.</description>
-    </item>
-    
-    <item>
-      <title>SGI O2 - upragiony</title>
-      <link>https://marcin.cylke.com.pl/2009/08/23/sgi-o2-upragiony/</link>
-      <pubDate>Sun, 23 Aug 2009 12:00:42 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2009/08/23/sgi-o2-upragiony/</guid>
-      <description>Od dawna marzyła mi się właśnie ta maszyna. Przez rodzinę i bliskich ochszczony został &#34;odkurzaczem&#34;. Nic to. Mi się podoba. Jest naprawdę ujmujący.
-Zapytace czemu?
-Proste!
-nie jest to zwykły pc przy wejściu do &#34;biosu&#34; mamy tryb graficzny, obsługę myszy oraz dźwięki wydawane przez wbudowaną kartę muzyczną Można by pomyśleć, że nie jest to warte uwagi, ale przecież standardowe PC nadal nie mają takich miłych ficzerów! A to jest sprzęt z 1996 roku.</description>
+      <guid>https://marcin.cylke.com.pl/2019/07/17/screen-split-experience/</guid>
+      <description>Most useful shortcuts to operate screen Aside from basic screen shortcuts for moving around, creating and changing windows there are things that create more of a window manager feel for terminal usage. And these are splits.
+You can create a split with Ctrl-a | - which creates a vertical split. There is also Ctrl-A S to create a horizontal split. To cycle between your open splits just use Ctrl-a &amp;lt;Tab&amp;gt;. To close the active split - just press Ctrl-a X</description>
     </item>
     
   </channel>
