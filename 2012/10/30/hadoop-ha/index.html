@@ -68,7 +68,27 @@ two steps. The first one with the release of CDH 4 beta - solution based
 on sharing edits directory. Than, with CDH 4.1 came quorum based solution.</p>
 <p>Find out how to configure those on your cluster.</p>
 <h2 id="shared-edits-directory-solution">Shared edits directory solution</h2>
-<p><img src="http://blog.innovative-labs.com/blog/hadoop_ha-nfs.png" alt="Hadoop HA - NFS based edits share"></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <picture>
+  <img class="img-fluid" src="http://blog.innovative-labs.com/blog/hadoop_ha-nfs.png" alt="Hadoop HA - NFS based edits share" loading="lazy" />
+</picture>
+</p>
 <p>For this kind of setup, there is an assumption, that in a cluster exists
 a shared storage directory. It should be deployed using some kind of
 network-based filesystem. You could try with NFS or GlusterFS.</p>
@@ -86,7 +106,27 @@ you can deploy on multiple bricks and increase the replication level.</p>
 <p>Nevertheless, it still brings additional burden of another service to
 maintain.</p>
 <h2 id="quorum-based-solution">Quorum based solution</h2>
-<p><img src="http://blog.innovative-labs.com/blog/hadoop_ha-quorum.png" alt="Hadoop HA - Quorum based edits share"></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <picture>
+  <img class="img-fluid" src="http://blog.innovative-labs.com/blog/hadoop_ha-quorum.png" alt="Hadoop HA - Quorum based edits share" loading="lazy" />
+</picture>
+</p>
 <p>With the release of CDH 4.1.0 we are now able to use a much better
 integrated solution called JournalNode. Now all the updates are
 synchronized through a JournalNode. Each JournalNode have the same data
@@ -131,6 +171,17 @@ start using Hadoop in HA setup.</p>
 </article>
 
   </main><footer>
+
+
+  <script
+    src="https://utteranc.es/client.js"
+    repo="zygm0nt/hugo-blog-incarnation"
+    issue-term="pathname"
+    label="comments"
+    theme="preferred-color-scheme"
+    crossorigin="anonymous"
+    async
+  ></script>
   <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
 
 </body>
