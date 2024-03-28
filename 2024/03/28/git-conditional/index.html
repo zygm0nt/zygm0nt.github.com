@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="https://marcin.cylke.com.pl/">
+
+
+  <title>Git - conditional configs and commit signing - Tech ramblings by Marcin</title>
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body>
+  <header>
+<div>
+    <h1><a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></h1>
+  </div>
+  <nav><a href="/about/">about me</a>
+  </nav>
+</header>
+<main>
+    <article>
+  <div class="title">
+    <h1>Git - conditional configs and commit signing</h1>
+    </div>
+  <div class="meta">2024-03-28 00:00</div>
+  <div class="artical-body">
+  
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#conditional-configs">Conditional configs</a></li>
+    <li><a href="#commit-signing">Commit signing</a>
+      <ul>
+        <li><a href="#how-to-check-if-a-commit-is-verified-web-ui">How to check if a commit is verified (Web UI)</a></li>
+        <li><a href="#how-to-check-if-a-commit-is-verified-local">How to check if a commit is verified (local)</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    <div class="content-with-toc">
+      <p>Recently I came across two very interesting options in <code>git</code> that I wanted to make a note of.</p>
+<p>One is a general feature - conditional configs - that you can probably utilise in a myriad of ways.
+The second - commit signing - might seem a bit obscure.</p>
+<h2 id="conditional-configs">Conditional configs</h2>
+<p>It appears it&rsquo;s really easy to put conditional properties into your <code>.gitconfig</code> file. This way, you can have a separate entities depending on which repositories you commit to.
+It enables work/hobby project separation. With this setup in place I don&rsquo;t need to ever remember about switching email accounts, or other specific configs.</p>
+<p>And it&rsquo;s really simple! Look:</p>
+<pre tabindex="0"><code>[includeIf &#34;hasconfig:remote.*.url:git@ssh.gitlab.your-company.io:**/**&#34;]
+    path = work.local  
+</code></pre><p>So, this piece of config, when put into <code>.gitconfig</code>, will check in what repository are you, if its remote address matches this expression, in which case it will include some specific config file.</p>
+<p>And of course you can put a multitude of custom options. Starting with your work e-mail, so as not to pollute work repos with some private email aliases.</p>
+<h2 id="commit-signing">Commit signing</h2>
+<p>That, I&rsquo;m not so sure it&rsquo;s necessary. I haven&rsquo;t been obliged by any company I&rsquo;ve worked for to do this step, but it&rsquo;s generally about vouching for your own commits with some cryptograhic signature.</p>
+<p>On one hand this might seem like an overkill. But on the other, this is really easy to do. And once done, it does not require any further maintenance. Also, with the proliferation of security issues cropping up all over the places, maybe it&rsquo;s just a good habit to start signing your commits. When signed, it will be possible to <em>verify</em> them at some point.</p>
+<p>I&rsquo;ll build upon the previous conditional config, and show how this exact config can look like, when written to an external, work related config file:</p>
+<pre tabindex="0"><code>[user]
+	email = marcin.cylke@XYZ.com
+	signingkey = /Users/marcin.cylke/.ssh/id_rsa.pub
+[gpg &#34;ssh&#34;] 
+    allowedSignersFile = &#34;/Users/marcin.cylke/.ssh/allowed_signers&#34;
+
+[commit]
+    gpgSign = true
+
+[tag]
+    gpgSign = true 
+
+[gpg]
+    format = ssh  
+</code></pre><p>Of course, you could set this up with <code>gpg</code> - but my trust in this tool is not exactly stellar. <code>ssh</code> is just easier for me and more accessible.
+If your key has a password set (<strong>which it should!</strong>), you&rsquo;ll be prompted for that. But using some agent to store passwords on your machine will cache that for some specified time, making the process even less cumbersome.</p>
+<h3 id="how-to-check-if-a-commit-is-verified-web-ui">How to check if a commit is verified (Web UI)</h3>
+<p>If you&rsquo;re using GitHub or GitLab verified commits are marked appropriately (both images are taken from documentation):</p>
+<ul>
+<li>
+<p>GitHub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="https://marcin.cylke.com.pl/post_images/2024-03-28-git-conditional/Pasted_image_20240328230239.png?v=dab5e60b1fb4cfc2ef7bf412525549f2" alt="github illustration" loading="lazy" height="164" width="1440" />
+</picture>
+</p>
+</li>
+<li>
+<p>GitLab
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="https://marcin.cylke.com.pl/post_images/2024-03-28-git-conditional/Pasted_image_20240328230351.png?v=dab5e60b1fb4cfc2ef7bf412525549f2" alt="gitlab illustration" loading="lazy" height="635" width="1268" />
+</picture>
+</p>
+</li>
+</ul>
+<h3 id="how-to-check-if-a-commit-is-verified-local">How to check if a commit is verified (local)</h3>
+<p>You need to have <code>allowed_signers</code> file:</p>
+<pre tabindex="0"><code>echo &#34;$(git config --get user.email) namespaces=\&#34;git\&#34; $(cat ~/.ssh/id_rsa.pub)&#34; &gt;&gt; ~/.ssh/allowed_signers
+</code></pre><p>In the CLI, you can just call:</p>
+<pre tabindex="0"><code>$ git verify-commit abc1234
+</code></pre><p>or to be more verbose:</p>
+<pre tabindex="0"><code>$ git log --show-signature
+
+commit e2406b6cd8ebe146835ceab67ff4a5a116e09154 (HEAD -&gt; main, origin/main, origin/HEAD)
+Good &#34;git&#34; signature for johndoe@example.com with ED25519 key SHA256:Ar44iySGgxic+U6Dph4Z9Rp+KDaix5SFGFawovZLAcc
+Author: John Doe &lt;johndoe@example.com&gt;
+Date:   Tue Nov 29 06:54:15 2022 -0600
+
+    SSH signed commit
+</code></pre><h2 id="conclusion">Conclusion</h2>
+<p>These are just two random options that I came across. I bet there&rsquo;s a lot more. If you think some would be of use in my case, please share!</p>
+<p>Also, if you see some interesting use-cases for the above two - let me know, maybe this blogpost can have more details, or examples.</p>
+<p>Links:</p>
+<ul>
+<li>Gitlab: <a href="https://docs.gitlab.com/ee/user/project/repository/signed_commits/ssh.html">https://docs.gitlab.com/ee/user/project/repository/signed_commits/ssh.html</a></li>
+<li>GitHub: <a href="https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification">https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification</a></li>
+</ul>
+</div>
+  
+  </div>
+</article>
+
+  </main><footer>
+
+
+  <script
+    src="https://utteranc.es/client.js"
+    repo="zygm0nt/hugo-blog-incarnation"
+    issue-term="pathname"
+    label="comments"
+    theme="preferred-color-scheme"
+    crossorigin="anonymous"
+    async
+  ></script>
+  <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
+
+</body>
+</html>

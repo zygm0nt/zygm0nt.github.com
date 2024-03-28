@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git - conditional configs and commit signing</title>
+      <link>https://marcin.cylke.com.pl/2024/03/28/git-conditional/</link>
+      <pubDate>Thu, 28 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/2024/03/28/git-conditional/</guid>
+      <description>Recently I came across two very interesting options in git that I wanted to make a note of.
+One is a general feature - conditional configs - that you can probably utilise in a myriad of ways. The second - commit signing - might seem a bit obscure.
+Conditional configs It appears it&amp;rsquo;s really easy to put conditional properties into your .gitconfig file. This way, you can have a separate entities depending on which repositories you commit to.</description>
+    </item>
+    
     <item>
       <title>Payload after load, really?!</title>
       <link>https://marcin.cylke.com.pl/2024/02/29/payload-after-load/</link>
@@ -97,16 +108,6 @@ This resulted in a visually appealing description of the dataset. Also, due to t
       <description>I tend to not do backups. I used to but just didn’t like it. I wasn’t diligent enough, didn’t have a routine setup. It all felt fragile and error prone in the end. So I stopped. You probably wonder when this will actually hit me - I sometimes do, too.
 But the truth is I do have backups. I just don’t keep them by myself, I delegate.
 I use the computer mainly to do web browsing, photo management, programming, exploration.</description>
-    </item>
-    
-    <item>
-      <title>Screen shortcuts for split experience</title>
-      <link>https://marcin.cylke.com.pl/2019/07/17/screen-split-experience/</link>
-      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2019/07/17/screen-split-experience/</guid>
-      <description>Most useful shortcuts to operate screen Aside from basic screen shortcuts for moving around, creating and changing windows there are things that create more of a window manager feel for terminal usage. And these are splits.
-You can create a split with Ctrl-a | - which creates a vertical split. There is also Ctrl-A S to create a horizontal split. To cycle between your open splits just use Ctrl-a &amp;lt;Tab&amp;gt;. To close the active split - just press Ctrl-a X</description>
     </item>
     
   </channel>
