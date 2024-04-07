@@ -3,24 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://marcin.cylke.com.pl/categories/</loc>
-    <lastmod>2024-03-28T00:00:00+00:00</lastmod>
+    <lastmod>2024-04-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://marcin.cylke.com.pl/tags/it/</loc>
+    <lastmod>2024-04-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://marcin.cylke.com.pl/categories/IT/</loc>
+    <lastmod>2024-04-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://marcin.cylke.com.pl/post/</loc>
+    <lastmod>2024-04-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://marcin.cylke.com.pl/tags/security/</loc>
+    <lastmod>2024-04-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://marcin.cylke.com.pl/categories/security/</loc>
+    <lastmod>2024-04-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://marcin.cylke.com.pl/2024/04/07/solarwinds-supply-chain-attack/</loc>
+    <lastmod>2024-04-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://marcin.cylke.com.pl/tags/</loc>
+    <lastmod>2024-04-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://marcin.cylke.com.pl/</loc>
+    <lastmod>2024-04-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://marcin.cylke.com.pl/categories/git/</loc>
     <lastmod>2024-03-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://marcin.cylke.com.pl/2024/03/28/git-conditional/</loc>
-    <lastmod>2024-03-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://marcin.cylke.com.pl/categories/IT/</loc>
-    <lastmod>2024-03-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://marcin.cylke.com.pl/post/</loc>
-    <lastmod>2024-03-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://marcin.cylke.com.pl/categories/security/</loc>
-    <lastmod>2024-03-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://marcin.cylke.com.pl/</loc>
     <lastmod>2024-03-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://marcin.cylke.com.pl/2024/02/29/payload-after-load/</loc>
@@ -761,6 +773,14 @@
     <loc>https://marcin.cylke.com.pl/2007/11/07/wedding-crushers/</loc>
     <lastmod>2007-11-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://marcin.cylke.com.pl/tags/</loc>
+    <loc>https://marcin.cylke.com.pl/about/</loc>
+  </url><url>
+    <loc>https://marcin.cylke.com.pl/tags/about-me/</loc>
+  </url><url>
+    <loc>https://marcin.cylke.com.pl/categories/Hugo/</loc>
+  </url><url>
+    <loc>https://marcin.cylke.com.pl/tags/short/</loc>
+  </url><url>
+    <loc>https://marcin.cylke.com.pl/categories/Theme/</loc>
   </url>
 </urlset>
