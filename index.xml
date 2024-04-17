@@ -6,7 +6,19 @@
     <description>Recent content on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 07 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Propaganda posters by GenAI</title>
+      <link>https://marcin.cylke.com.pl/2024/04/09/propaganda-posters/</link>
+      <pubDate>Tue, 09 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/2024/04/09/propaganda-posters/</guid>
+      <description>generate a Chinese propaganda poster advocating for &amp;ldquo;all people should eat pringles&amp;rdquo;
+generate something similar in style but advocating for &amp;ldquo;the only good person is the one eating sour crout&#39;
+generate a Russian propaganda poster from soviet era with a single person with a gun advocating for &amp;ldquo;all work and no play makes Ivan a dull boy&amp;rdquo;
+make this less realistic and more soviet propaganda poster</description>
+    </item>
+    
     <item>
       <title>SolarWinds supply chain attack</title>
       <link>https://marcin.cylke.com.pl/2024/04/07/solarwinds-supply-chain-attack/</link>
@@ -98,16 +110,6 @@ From the multitude of possibilities I&amp;rsquo;ve chosen AwesomeWM. It&amp;rsqu
       <description>Modern open source operating systems vs modern software development practices The reason to write this blog post was a presentation I watched some time ago, and commented on it on Twitter:
 One of the slides from the presentation. How can you develop an operating system and follow *that* kind of process?! :sadpanda: pic.twitter.com/3XuHMXc0My
 &amp;mdash; Marcin Cylke (@zygm0nt) January 5, 2020 So to be specific - the whole presentation was rather negative towards security model used along OpenBSD development.</description>
-    </item>
-    
-    <item>
-      <title>plotting data availability with matplotlib</title>
-      <link>https://marcin.cylke.com.pl/2020/03/13/plotting-with-matplotlib/</link>
-      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2020/03/13/plotting-with-matplotlib/</guid>
-      <description>Though somewhat strange I happen to come to a need of having a plot of dates that a particular dataset is available on. Doing my exploration in Jupyter notebook it just felt pretty natural to have it written in Python and generated as a graph, with matplotlib.
-This resulted in a visually appealing description of the dataset. Also, due to the ease of change, I could modify the plot to show additional elements.</description>
     </item>
     
   </channel>
