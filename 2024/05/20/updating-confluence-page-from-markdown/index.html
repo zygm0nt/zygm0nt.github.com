@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="https://marcin.cylke.com.pl/">
+
+
+  <title>Updating Confluence page from Markdown - Tech ramblings by Marcin</title>
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body>
+  <header>
+<div>
+    <h1><a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></h1>
+  </div>
+  <nav><a href="/about/">about me</a>
+  </nav>
+</header>
+<main>
+    <article>
+  <div class="title">
+    <h1>Updating Confluence page from Markdown</h1>
+    </div>
+  <div class="meta">2024-05-20 00:00</div>
+  <div class="artical-body">
+  
+    <div class="content">
+      <p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="https://marcin.cylke.com.pl/post_images/updating-confluence-page-from-markdown-0.png?v=d5b472ec5c163df95ea99db2ec6707a0" alt="Image" loading="lazy" height="1024" width="1792" />
+</picture>
+</p>
+<p>Prompt: generate an image for blogpost titled &ldquo;Moving markdown files to confluence&rdquo;</p>
+<p>Assume you want to have your documentation close to the code. Ideally in your project&rsquo;s repo. But then there&rsquo;s always this request, that other people might want to look through that documentation, they&rsquo;re not too tech savy, no nothing about Git.</p>
+<p>A few past companies I&rsquo;ve worked for have had their internal wikis built on Atlassian Confluence. It seems there&rsquo;s quite nice way to upload pages stored in repository to arbitrary location in Confluence.</p>
+<p>Assuming you want to move Markdown files to Confluence pages, you can do the following:</p>
+<pre tabindex="0"><code>pip install markdown-to-confluence
+</code></pre><p>More info about this package can be found here: <a href="https://pypi.org/project/markdown-to-confluence/">https://pypi.org/project/markdown-to-confluence/</a></p>
+<p>Then,  in the CI of your choice:</p>
+<pre tabindex="0"><code>export CONFLUENCE_DOMAIN=&#39;your-confluence-instance&#39;  
+export CONFLUENCE_PATH=&#39;/wiki/&#39;  # should work, but change accordingly  
+export CONFLUENCE_SPACE_KEY=&#39;YOUR-SPACE-KEY&#39;   
+export CONFLUENCE_USER_NAME=$CONFLUENCE_USER_NAME  
+export CONFLUENCE_API_KEY=$CONFLUENCE_API_KEY  
+
+python3 -m md2conf docs/some_sample.md --generated-by &#34;This page is generated from markdown documentation in xyz/your-repo&#34;  
+</code></pre><p>This snippet uses some environment variables, <code>CONFLUENCE_USER_NAME</code>, <code>CONFLUENCE_API_KEY</code> - so just add them when accordingly.</p>
+<p>Also, each markdown file needs to have a reference page in its header - this will be the page contents replaced by the markdown contents:</p>
+<pre tabindex="0"><code>&lt;!-- confluence-page-id: 3765011024 --&gt;
+
+### some markdown header
+
+.... Contents of the file
+</code></pre><p>And that&rsquo;s basically it!</p>
+</div>
+  
+  </div>
+</article>
+
+  </main><footer>
+
+
+  <script
+    src="https://utteranc.es/client.js"
+    repo="zygm0nt/hugo-blog-incarnation"
+    issue-term="pathname"
+    label="comments"
+    theme="preferred-color-scheme"
+    crossorigin="anonymous"
+    async
+  ></script>
+  <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
+
+</body>
+</html>

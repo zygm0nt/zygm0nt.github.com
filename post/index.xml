@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Updating Confluence page from Markdown</title>
+      <link>https://marcin.cylke.com.pl/2024/05/20/updating-confluence-page-from-markdown/</link>
+      <pubDate>Mon, 20 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/2024/05/20/updating-confluence-page-from-markdown/</guid>
+      <description>Prompt: generate an image for blogpost titled &amp;ldquo;Moving markdown files to confluence&amp;rdquo;
+Assume you want to have your documentation close to the code. Ideally in your project&amp;rsquo;s repo. But then there&amp;rsquo;s always this request, that other people might want to look through that documentation, they&amp;rsquo;re not too tech savy, no nothing about Git.
+A few past companies I&amp;rsquo;ve worked for have had their internal wikis built on Atlassian Confluence. It seems there&amp;rsquo;s quite nice way to upload pages stored in repository to arbitrary location in Confluence.</description>
+    </item>
+    
     <item>
       <title>Propaganda posters by GenAI</title>
       <link>https://marcin.cylke.com.pl/2024/04/09/propaganda-posters/</link>
@@ -99,17 +110,6 @@ Important features fuzzy search in a list of lines - thanks to that, it&amp;rsqu
       <guid>https://marcin.cylke.com.pl/2021/02/06/awesomewm-multiple-monitors/</guid>
       <description>Recently I&amp;rsquo;ve started using new window manager. Since I&amp;rsquo;ve always wanted to try some kind of tiling window manager I thought that a fresh installation of an OS on a new machine is good time to have a go at that.
 From the multitude of possibilities I&amp;rsquo;ve chosen AwesomeWM. It&amp;rsquo;s reasonable enough in its standard configuration so I&amp;rsquo;ve decided to stick with it at least for the time being. In fact the only important feature I look for in a tiling window manager is the tiling behavior.</description>
-    </item>
-    
-    <item>
-      <title>operating systems showdown</title>
-      <link>https://marcin.cylke.com.pl/2020/12/05/operating-systems-showdown/</link>
-      <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2020/12/05/operating-systems-showdown/</guid>
-      <description>Modern open source operating systems vs modern software development practices The reason to write this blog post was a presentation I watched some time ago, and commented on it on Twitter:
-One of the slides from the presentation. How can you develop an operating system and follow *that* kind of process?! :sadpanda: pic.twitter.com/3XuHMXc0My
-&amp;mdash; Marcin Cylke (@zygm0nt) January 5, 2020 So to be specific - the whole presentation was rather negative towards security model used along OpenBSD development.</description>
     </item>
     
   </channel>

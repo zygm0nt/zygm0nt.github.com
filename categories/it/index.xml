@@ -6,7 +6,18 @@
     <description>Recent content in It on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 07 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/IT/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/IT/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Updating Confluence page from Markdown</title>
+      <link>https://marcin.cylke.com.pl/2024/05/20/updating-confluence-page-from-markdown/</link>
+      <pubDate>Mon, 20 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/2024/05/20/updating-confluence-page-from-markdown/</guid>
+      <description>Prompt: generate an image for blogpost titled &amp;ldquo;Moving markdown files to confluence&amp;rdquo;
+Assume you want to have your documentation close to the code. Ideally in your project&amp;rsquo;s repo. But then there&amp;rsquo;s always this request, that other people might want to look through that documentation, they&amp;rsquo;re not too tech savy, no nothing about Git.
+A few past companies I&amp;rsquo;ve worked for have had their internal wikis built on Atlassian Confluence. It seems there&amp;rsquo;s quite nice way to upload pages stored in repository to arbitrary location in Confluence.</description>
+    </item>
+    
     <item>
       <title>SolarWinds supply chain attack</title>
       <link>https://marcin.cylke.com.pl/2024/04/07/solarwinds-supply-chain-attack/</link>
@@ -98,16 +109,6 @@ From the multitude of possibilities I&amp;rsquo;ve chosen AwesomeWM. It&amp;rsqu
       <description>Modern open source operating systems vs modern software development practices The reason to write this blog post was a presentation I watched some time ago, and commented on it on Twitter:
 One of the slides from the presentation. How can you develop an operating system and follow *that* kind of process?! :sadpanda: pic.twitter.com/3XuHMXc0My
 &amp;mdash; Marcin Cylke (@zygm0nt) January 5, 2020 So to be specific - the whole presentation was rather negative towards security model used along OpenBSD development.</description>
-    </item>
-    
-    <item>
-      <title>plotting data availability with matplotlib</title>
-      <link>https://marcin.cylke.com.pl/2020/03/13/plotting-with-matplotlib/</link>
-      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2020/03/13/plotting-with-matplotlib/</guid>
-      <description>Though somewhat strange I happen to come to a need of having a plot of dates that a particular dataset is available on. Doing my exploration in Jupyter notebook it just felt pretty natural to have it written in Python and generated as a graph, with matplotlib.
-This resulted in a visually appealing description of the dataset. Also, due to the ease of change, I could modify the plot to show additional elements.</description>
     </item>
     
   </channel>
