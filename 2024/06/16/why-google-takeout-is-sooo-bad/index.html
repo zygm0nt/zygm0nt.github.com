@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="https://marcin.cylke.com.pl/">
+
+
+  <title>Why Google Takeout is sooo bad! - Tech ramblings by Marcin</title>
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="274179a3-6fd7-434b-8b9e-b745ec841ca2"></script>
+
+</head>
+<body>
+  <header>
+<div>
+    <h1><a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></h1>
+  </div>
+  <nav><a href="/about/">about me</a>
+  </nav>
+</header>
+<main>
+    <article>
+  <div class="title">
+    <h1>Why Google Takeout is sooo bad!</h1>
+    </div>
+  <div class="meta">2024-06-16 00:00</div>
+  <div class="artical-body">
+  
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#first-attempts">First attempts</a></li>
+    <li><a href="#so-theres-google-takeout">So there&rsquo;s Google Takeout</a></li>
+    <li><a href="#issues">Issues</a></li>
+    <li><a href="#important-considerations-that-i-may-have-missed">Important considerations that I may have missed</a></li>
+    <li><a href="#follow-up-actions">Follow-up actions</a></li>
+    <li><a href="#closing-notes">Closing notes</a></li>
+    <li><a href="#do-you-have-any-recommendations-on-better-backup-solutions-for-google-photos-leave-your-thoughts-in-the-comments">Do you have any recommendations on better backup solutions for Google Photos? Leave your thoughts in the comments!</a></li>
+  </ul>
+</nav>
+    <div class="content-with-toc">
+      <p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="https://marcin.cylke.com.pl/post_images/why-google-takeout-is-sooo-bad-0.png?v=583ac1f00b55e860bec2435a9f014ec7" alt="Image" loading="lazy" height="1024" width="1024" />
+</picture>
+
+<em>Author: <a href="https://ideogram.ai">IdeogramAI</a> Prompt: The image shows a typical Google Takeout interface with a large error message indicating that the service is unavailable. In the background, there are frustrated users trying to download their data with unsuccessful attempts, represented by repeated &ldquo;Failed&rdquo; and &ldquo;Retry&rdquo; notifications.</em></p>
+<hr>
+<p>My current data setup is centered around Google Cloud as a place where I store my data. That&rsquo;s also related to how I use the whole vendor ecosystem.</p>
+<p>The main issue I have with keeping the data only in Google Cloud is data safety. I just don&rsquo;t want either identity theft or accidental block on my account (by Google) to cut me off from all of my previous photos. You might think it&rsquo;s something close to impossible, but there are numerous examples of that happening to people - eg. look here <a href="https://www.nytimes.com/2022/08/21/technology/google-surveillance-toddler-photo.html">https://www.nytimes.com/2022/08/21/technology/google-surveillance-toddler-photo.html</a> And ok, this might be a reasonable approach from Google, but who knows what else can trigger that kind of blockage.</p>
+<p>So, to be safe against anything similar or just any other data lose, it would be good to have some backup in place.</p>
+<p>An ideal solution right now would be to:</p>
+<ul>
+<li>copy all the photos to some other cloud</li>
+<li>have an offline copy of those files/photos</li>
+</ul>
+<p>Ideally both of those should happen automatically, according to some predefined schedule. Of course be as maintenance-free as possible.</p>
+<p>I have ~200GB of data that I would like backed up on a regular basis. I&rsquo;d imagine this is not the biggest set of photos a person can have stored there.</p>
+<h2 id="first-attempts">First attempts</h2>
+<p>My first approach was to synchronize all the files and all the photos using some syncing tools. Store them on a local hard drive, for future use. But that was less then satisfying. Mainly due to how long the process would take for my size of data.</p>
+<p>There&rsquo;s this open-source python tool <a href="https://github.com/gilesknap/gphotos-sync">https://github.com/gilesknap/gphotos-sync</a> - but I&rsquo;m yet to try that. Although they also note on their project page issues with the backup process. Citing from there:</p>
+<ul>
+<li>Videos are transcoded to lower quality</li>
+<li>Raw or Original photos are converted to &lsquo;High Quality&rsquo;</li>
+<li>GPS info is removed from photos metadata</li>
+</ul>
+<p>Bad, but I could live with that, if treating this as a backup.</p>
+<p>There&rsquo;s also a paid tool <a href="https://photovaultone.com/">https://photovaultone.com/</a> - but it&rsquo;s just another small vendor lock-in. I&rsquo;d like to avoid getting deeper into other vendor to be protected from Google.</p>
+<h2 id="so-theres-google-takeout">So there&rsquo;s Google Takeout</h2>
+<p>And yet, there&rsquo;s this Google-offered option, that&rsquo;s designed as a way to take all your data out of Google Cloud and potentially go to some other vendor, or host that on your own. Great idea! Of course Google, as other BigTech companies was coherced to implement it mainly due to GDPR restrictions - so that any user can take the data he/she owns and move out to other place.
+Naturally, I thought I&rsquo;d use this approach to backup my data.
+This seemed even more amazing, as there&rsquo;s an option to backup directly to other providers - the options are Dropbox, Microsoft OneDrive, Box.</p>
+<p>I thought that using Microsoft OneDrive is a good alternative! Especially in terms of provider diversification. Also, the options of the backup would allow me to create a couple of bigger files - and copying those to my local backup would be much easier then doing so with hundreds of thousands of photos.</p>
+<p>Choosing Microsoft OneDrive as an intermediate solution is just using another vendor. But the goal is to:</p>
+<ul>
+<li>have the data backed up in another cloud</li>
+<li>be able to download the data in bigger chunks</li>
+</ul>
+<p>On the surface, it looks nice. You can create a scheduled backup process - that may happen at specified intervals, or you can do it one-time.
+You can select data you want to export - be it just Photos, or maybe whole Google Drive, and Calendar, Gmail. Everything is there.</p>
+<p>But when it actually needs to happen - that&rsquo;s where the issues happen.</p>
+<h2 id="issues">Issues</h2>
+<ul>
+<li>the process always fails - no matter what&rsquo;s the size of a chunk I choose</li>
+<li>the logs are kept only for some time, afer 7 days I&rsquo;m not able to see what happened with the chunks. It&rsquo;s easy to spot missing files - when you have parts from 1 to 10, but there&rsquo;s a 7th missing. But what if there are 10 parts but should be 11?</li>
+<li>no logs of the process</li>
+<li>errors are very cryptic &ldquo;Failed to backup&rdquo;</li>
+<li>tech support is non-existent - I&rsquo;ve reached out to the tech support, but they were just passing my issue between different support divisions. Ultimately there were hints like &ldquo;reinstall your operating system&rdquo;, &ldquo;turn it off and on&rdquo;</li>
+</ul>
+<p>All in all I don&rsquo;t see this whole process as <strong>extremely</strong> hard. Also, I totally understand those things may fail. But we, as an industry, know what to do with that. There are retries, informative logging. And here I got none of the above.</p>
+<p>So for me, this broadly looks like Google just does not want people to backup their data outside of their cloud, which is super bad!</p>
+<h2 id="important-considerations-that-i-may-have-missed">Important considerations that I may have missed</h2>
+<p>I share my photo collection with my closest family. I suspect that Google Takeout won&rsquo;t backup those shared photos. But my purpose <strong>is</strong> to do also copy those.</p>
+<p>If I&rsquo;ll be able to make this process reliable, I&rsquo;d need to think of data retention on target.</p>
+<p>Right now I backup just Google Photos - wanted to move to other parts of the ecosystem, when the backup issues are sorted out.</p>
+<h2 id="follow-up-actions">Follow-up actions</h2>
+<ul>
+<li>try other providers - I don&rsquo;t want to use Dropbox, but perhaps Box would work better then OneDrive?</li>
+<li>are there tools that I&rsquo;ve missed that might actually work?</li>
+<li>schedule separate backup processes for other parts of the data stored in Google - they&rsquo;ll be smaller and maybe that will result in successful backups</li>
+<li>monitor the backup process state - based on target drive contents</li>
+</ul>
+<h2 id="closing-notes">Closing notes</h2>
+<p>So, for know I still do the backups. I accept the issues with Google Takeout. It&rsquo;s just better to have majority of my data, then to not have any of that.</p>
+<h2 id="do-you-have-any-recommendations-on-better-backup-solutions-for-google-photos-leave-your-thoughts-in-the-comments">Do you have any recommendations on better backup solutions for Google Photos? Leave your thoughts in the comments!</h2>
+</div>
+  
+  </div>
+</article>
+
+  </main><footer>
+
+
+  <script
+    src="https://utteranc.es/client.js"
+    repo="zygm0nt/hugo-blog-incarnation"
+    issue-term="pathname"
+    label="comments"
+    theme="preferred-color-scheme"
+    crossorigin="anonymous"
+    async
+  ></script>
+  <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
+
+</body>
+</html>
