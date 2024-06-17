@@ -8,11 +8,29 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 16 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Google</title>
+      <link>https://marcin.cylke.com.pl/categories/google/</link>
+      <pubDate>Sun, 16 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/categories/google/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>It</title>
       <link>https://marcin.cylke.com.pl/categories/IT/</link>
       <pubDate>Sun, 16 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://marcin.cylke.com.pl/categories/IT/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Photos</title>
+      <link>https://marcin.cylke.com.pl/categories/photos/</link>
+      <pubDate>Sun, 16 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/categories/photos/</guid>
       <description></description>
     </item>
     
@@ -76,24 +94,6 @@
       <pubDate>Tue, 10 Oct 2023 00:00:00 +0000</pubDate>
       
       <guid>https://marcin.cylke.com.pl/categories/tools/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fzf</title>
-      <link>https://marcin.cylke.com.pl/categories/fzf/</link>
-      <pubDate>Tue, 27 Jun 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/categories/fzf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gamecube</title>
-      <link>https://marcin.cylke.com.pl/categories/gamecube/</link>
-      <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/categories/gamecube/</guid>
       <description></description>
     </item>
     
