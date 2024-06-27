@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Freebsd on Tech ramblings by Marcin</title>
-    <link>http://localhost:1313/categories/freebsd/</link>
+    <link>https://marcin.cylke.com.pl/categories/freebsd/</link>
     <description>Recent content in Freebsd on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 05 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/freebsd/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/freebsd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>operating systems showdown</title>
-      <link>http://localhost:1313/2020/12/05/operating-systems-showdown/</link>
+      <link>https://marcin.cylke.com.pl/2020/12/05/operating-systems-showdown/</link>
       <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/2020/12/05/operating-systems-showdown/</guid>
+      <guid>https://marcin.cylke.com.pl/2020/12/05/operating-systems-showdown/</guid>
       <description>Modern open source operating systems vs modern software development practices The reason to write this blog post was a presentation I watched some time ago, and commented on it on Twitter:
 One of the slides from the presentation. How can you develop an operating system and follow *that* kind of process?! :sadpanda: pic.twitter.com/3XuHMXc0My
 &amp;mdash; Marcin Cylke (@zygm0nt) January 5, 2020 So to be specific - the whole presentation was rather negative towards security model used along OpenBSD development.</description>

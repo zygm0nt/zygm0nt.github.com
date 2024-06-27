@@ -2,102 +2,102 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Techblog on Tech ramblings by Marcin</title>
-    <link>http://localhost:1313/categories/Techblog/</link>
+    <link>https://marcin.cylke.com.pl/categories/Techblog/</link>
     <description>Recent content in Techblog on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Jun 2012 09:08:09 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/Techblog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Jun 2012 09:08:09 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/Techblog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hadoop for Enterprises</title>
-      <link>http://localhost:1313/2012/06/18/hadoop-for-enterprises/</link>
+      <link>https://marcin.cylke.com.pl/2012/06/18/hadoop-for-enterprises/</link>
       <pubDate>Mon, 18 Jun 2012 09:08:09 +0000</pubDate>
       
-      <guid>http://localhost:1313/2012/06/18/hadoop-for-enterprises/</guid>
+      <guid>https://marcin.cylke.com.pl/2012/06/18/hadoop-for-enterprises/</guid>
       <description>Hadoop&#39;s usage as a big data processing framework gains a lot of attention lately. Now, not only big players see, that they can embrace the data their sites or products are generating and develop their businesses on it. For that to happen two things are needed: the data itself and means of processing really big amounts of it. Gathering data is relatively easy. These are not necessarily structured data, you don&#39;t need to plan their usage at first.</description>
     </item>
     
     <item>
       <title>SoapUI ext libs and its weirdness</title>
-      <link>http://localhost:1313/2011/11/02/soapui-ext-libs-and-its-weirdness/</link>
+      <link>https://marcin.cylke.com.pl/2011/11/02/soapui-ext-libs-and-its-weirdness/</link>
       <pubDate>Wed, 02 Nov 2011 15:32:15 +0000</pubDate>
       
-      <guid>http://localhost:1313/2011/11/02/soapui-ext-libs-and-its-weirdness/</guid>
+      <guid>https://marcin.cylke.com.pl/2011/11/02/soapui-ext-libs-and-its-weirdness/</guid>
       <description>Suppose you want to add some additional jars to your SoapUI installation. It all should work ok if you put them in bin/ext directory. It is scanned at startup, and jars found there are automatically added to classpath. However if you want to add some JDBC drivers, and happen to be using SoapUI version higher than 3.5.1 it is a bit more tricky. You may face this NoClassDefFoundError: An error occured [oracle/jdbc/Driver], see error log for details java.</description>
     </item>
     
     <item>
       <title>What is NoSQL good for?</title>
-      <link>http://localhost:1313/2011/09/21/what-is-nosql-good-for/</link>
+      <link>https://marcin.cylke.com.pl/2011/09/21/what-is-nosql-good-for/</link>
       <pubDate>Wed, 21 Sep 2011 21:12:34 +0000</pubDate>
       
-      <guid>http://localhost:1313/2011/09/21/what-is-nosql-good-for/</guid>
+      <guid>https://marcin.cylke.com.pl/2011/09/21/what-is-nosql-good-for/</guid>
       <description>... or how I ended up writing a CouchDB proof of concept app? Once upon a time I set out on a journey to discover the NoSQL land. I&#39;ve decided that doing simple queries wouldn&#39;t be interesting enough. That&#39;s why I&#39;ve chose to create an app that would be based on some NoSQL database.
 The main idea was to create an app, that would dynamically update itself with geographic data flowing in.</description>
     </item>
     
     <item>
       <title>5 best things to do with your Kindle</title>
-      <link>http://localhost:1313/2011/08/22/5-best-things-to-do-with-your-kindle/</link>
+      <link>https://marcin.cylke.com.pl/2011/08/22/5-best-things-to-do-with-your-kindle/</link>
       <pubDate>Mon, 22 Aug 2011 22:19:14 +0000</pubDate>
       
-      <guid>http://localhost:1313/2011/08/22/5-best-things-to-do-with-your-kindle/</guid>
+      <guid>https://marcin.cylke.com.pl/2011/08/22/5-best-things-to-do-with-your-kindle/</guid>
       <description>I bought a Kindle (3rd generation, Wi-Fi only) some time ago - like half a year ago. Read some books, done some web-browsing (awful, quite unpleasant). Gradually I became more and more curious of other things possible to achieve with this slate-looking piece of tech. These are my thoughts and ideas. Got a Kindle? Use it every day? Feel like modding or extending your ways of usage? Great! Read on, and share your thoughts in comments!</description>
     </item>
     
     <item>
       <title>OVal - validate your models quickly and effortlessly!</title>
-      <link>http://localhost:1313/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/</link>
+      <link>https://marcin.cylke.com.pl/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/</link>
       <pubDate>Thu, 14 Jul 2011 08:25:19 +0000</pubDate>
       
-      <guid>http://localhost:1313/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/</guid>
+      <guid>https://marcin.cylke.com.pl/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/</guid>
       <description>Some time ago one of the projects at work required me to validate some Java POJOs. Theses were my model classes and I&#39;ve been creating them from incoming WebService requests. One would say that XSD would be sufficient for the task, for parts of this validations - sure, it would. But there were some advanced rules XSD would not handle, or would render the schema document very complicated.
 Rules I needed to express were like: person&#39;s first_name and last_name should be of appropriate length - between 2 and 20, and additionally one could pass a zero-length string just to remove the previous value state field should consist only defined values - as in dictionary value - this one would be completable with XSD&#39;s enumerations, but would require often changing schema files and redistributing them to interested parties :( The library I&#39;ve decided to use for this task is OVal and it came out really nice!</description>
     </item>
     
     <item>
       <title>Geecon 2011 - day 2</title>
-      <link>http://localhost:1313/2011/05/22/geecon-2011-day-2/</link>
+      <link>https://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/</link>
       <pubDate>Sun, 22 May 2011 16:39:31 +0000</pubDate>
       
-      <guid>http://localhost:1313/2011/05/22/geecon-2011-day-2/</guid>
+      <guid>https://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/</guid>
       <description>And now for part 2 of my visit to Geecon 2011!
 1. Jim Webber &#34;Revisiting SOA for the 21st century&#34; Now this was awesome! Jim Webber, a former ThoughtWorks employee, now Neo4j evangelist (in Neotechnology) described his views on how SOA should look - according to him. This was presented previously, on other occasions as his &#34;Guerilla SOA&#34; talk - generally he advocated for REST based services, loose contracts (stating that WSDLs are too verbose and code generation is evil).</description>
     </item>
     
     <item>
       <title>Geecon 2011 - day 1</title>
-      <link>http://localhost:1313/2011/05/19/geecon-2011-day-1/</link>
+      <link>https://marcin.cylke.com.pl/2011/05/19/geecon-2011-day-1/</link>
       <pubDate>Thu, 19 May 2011 20:05:05 +0000</pubDate>
       
-      <guid>http://localhost:1313/2011/05/19/geecon-2011-day-1/</guid>
+      <guid>https://marcin.cylke.com.pl/2011/05/19/geecon-2011-day-1/</guid>
       <description>Last week&#39;s Java conference - Geecon was very interesting. It was well prepared, and gave an insight into the current Java related trends - concurrency, DSLs, polyglot programming. But not only that - there were also some pretty different talks from excellent speakers.
 The whole event took 4 days: University day (wednesday) 2 regular conference days (Thursday + Friday) hacker garden (Sunday) I decided to attend only on Thursday and Friday - no time for more.</description>
     </item>
     
     <item>
       <title>JCE keystore and untrusted sites</title>
-      <link>http://localhost:1313/2011/05/02/jce-keystore-and-untrusted-sites/</link>
+      <link>https://marcin.cylke.com.pl/2011/05/02/jce-keystore-and-untrusted-sites/</link>
       <pubDate>Mon, 02 May 2011 15:03:38 +0000</pubDate>
       
-      <guid>http://localhost:1313/2011/05/02/jce-keystore-and-untrusted-sites/</guid>
+      <guid>https://marcin.cylke.com.pl/2011/05/02/jce-keystore-and-untrusted-sites/</guid>
       <description>Recently at work I was in need of connecting to a web service exposed via HTTPS. I&#39;ve been doing this from inside Servicemix 3.3.1, which may seem a bit inhibiting, but that was a requirement. Nevertheless I&#39;ve been trying my luck with the included servicemix-http-2008.01 component. I&#39;ve created a simple Service Unit using that component and made connection attempt. Unfortunately I&#39;ve encountered issues with the SSL conversation negotiation. I had to dig deeper into the servicemix-http code to find out these had something to do with my JCE keystore.</description>
     </item>
     
     <item>
       <title>Advisory Messages to the rescue</title>
-      <link>http://localhost:1313/2011/04/01/advisory-messages-to-the-rescue/</link>
+      <link>https://marcin.cylke.com.pl/2011/04/01/advisory-messages-to-the-rescue/</link>
       <pubDate>Fri, 01 Apr 2011 09:16:59 +0000</pubDate>
       
-      <guid>http://localhost:1313/2011/04/01/advisory-messages-to-the-rescue/</guid>
+      <guid>https://marcin.cylke.com.pl/2011/04/01/advisory-messages-to-the-rescue/</guid>
       <description>The most crucial part of software development is testing. It should ensure us, that our code is correct, works according to given specs, etc. There are many kinds of tests: unit tests, integration, functional. In general you should try to test the smallest possible subset of your code and be able to check the state of the objects after the test. This seems as rather easy task, but what if you have an integration end-to-end test to perform?</description>
     </item>
     
     <item>
       <title>How to run multiple guest OS in QEMU?</title>
-      <link>http://localhost:1313/2011/03/27/how-to-run-multiple-guest-os-in-qemu/</link>
+      <link>https://marcin.cylke.com.pl/2011/03/27/how-to-run-multiple-guest-os-in-qemu/</link>
       <pubDate>Sun, 27 Mar 2011 18:47:11 +0000</pubDate>
       
-      <guid>http://localhost:1313/2011/03/27/how-to-run-multiple-guest-os-in-qemu/</guid>
+      <guid>https://marcin.cylke.com.pl/2011/03/27/how-to-run-multiple-guest-os-in-qemu/</guid>
       <description>This weekend I&#39;ve been fiddling with QEMU. I&#39;ve installed OpenBSD on a single image and wanted to have two instances of it communicating via network. Installing the system was easy, but the networking setup was quite a pain. See how I did that... To make QEMU instances communicate with each other I needed to plug them to a &#34;network&#34;. That&#39;s why I&#39;ve created a bridge to which Virtual Instances would connect to.</description>
     </item>
     

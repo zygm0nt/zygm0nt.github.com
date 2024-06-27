@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Javascript on Tech ramblings by Marcin</title>
-    <link>http://localhost:1313/categories/javascript/</link>
+    <link>https://marcin.cylke.com.pl/categories/javascript/</link>
     <description>Recent content in Javascript on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Jul 2014 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Jul 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Super Confitura Man</title>
-      <link>http://localhost:1313/2014/07/14/super-confitura-man/</link>
+      <link>https://marcin.cylke.com.pl/2014/07/14/super-confitura-man/</link>
       <pubDate>Mon, 14 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/2014/07/14/super-confitura-man/</guid>
+      <guid>https://marcin.cylke.com.pl/2014/07/14/super-confitura-man/</guid>
       <description>&lt;h2 id=&#34;how-super-confitura-man-came-to-be-&#34;&gt;How Super Confitura Man came to be :)&lt;/h2&gt;
 &lt;p&gt;Recently at TouK we had a one-day hackathon. There was no main theme for
 it, you just could post a project idea, gather people around it and hack
@@ -45,7 +45,7 @@ formed a team for the hackathon.&lt;/p&gt;
       
       
   &lt;picture&gt;
-  &lt;img class=&#34;img-fluid&#34; src=&#34;http://localhost:1313/assets/confitura-2014-01.jpg?v=06b2b14756d696ffa222e69e68d540d5&#34; alt=&#34;Confitura 01&#34; loading=&#34;lazy&#34; height=&#34;576&#34; width=&#34;1024&#34; /&gt;
+  &lt;img class=&#34;img-fluid&#34; src=&#34;https://marcin.cylke.com.pl/assets/confitura-2014-01.jpg?v=06b2b14756d696ffa222e69e68d540d5&#34; alt=&#34;Confitura 01&#34; loading=&#34;lazy&#34; height=&#34;576&#34; width=&#34;1024&#34; /&gt;
 &lt;/picture&gt;
 &lt;/p&gt;</description>
     </item>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+
+  <title>Get to your AWS host with ease - Tech ramblings by Marcin</title>
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="274179a3-6fd7-434b-8b9e-b745ec841ca2"></script>
+
+</head>
+<body>
+  <header>
+<div>
+    <h1><a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></h1>
+  </div>
+  <nav><a href="/about/">about me</a>
+  </nav>
+</header>
+<main>
+    <article>
+  <div class="title">
+    <h1>Get to your AWS host with ease</h1>
+    </div>
+  <div class="meta">2024-06-27 00:00</div>
+  <div class="artical-body">
+  
+    <div class="content">
+      <p>If you deploy to cloud, ideally you should be able to analyze and debug your system using observability tools. There should be no need to log in to your hosts directly. But life is life, and there might be issues with this or that, and to debug them, direct access to a host is just much easier.</p>
+<p>Instead of doing a long sequence of clicks through your WebUI in AWS console, you can also access your host with a script.</p>
+<p>This one is mine, works pretty well :)</p>
+<pre tabindex="0"><code>#!/bin/bash
+
+if [[ -z ${AWS_PROFILE} ]]; then
+    echo &#34;ERROR: Please set AWS_PROFILE variable&#34;
+    exit 1
+fi
+
+echo &#34;Working with $AWS_PROFILE&#34;
+
+
+en=`aws configure export-credentials --profile $AWS_PROFILE --format env`
+
+eval $en
+
+cluster=`aws ecs list-clusters`
+
+if [[ ! $? -eq 0 ]]; then
+    exit 1
+fi
+
+cluster=`echo &#34;$cluster&#34; | jq -r &#34;.clusterArns[]&#34; | fzf | sed &#34;s/.*cluster\///&#34;`
+service=`aws ecs list-services --cluster $cluster | jq -r &#34;.serviceArns[]&#34; | fzf`
+task_id=`aws ecs list-tasks --cluster $cluster --service-name $service | jq -r &#34;.taskArns[]&#34; | fzf`;
+task_id=`sed &#34;s/.*$cluster\///&#34; &lt;&lt;&lt; $task_id`;
+
+echo &#34;Processing for $cluster / $service&#34;
+echo &#34;[+] got task_id: $task_id&#34;;
+
+container_id=`aws ecs describe-tasks --cluster $cluster --task $task_id  | jq -r &#34;.tasks[].containerInstanceArn&#34;`
+echo &#34;[+] got container_id: $container_id&#34;;
+
+instance_id=`aws ecs describe-container-instances --cluster $cluster --container-instance $container_id | jq -r &#34;.containerInstances[].ec2InstanceId&#34;`
+echo &#34;[+] got instance_id: $instance_id&#34;;
+
+ip=`aws ec2 describe-instances --instance-ids $instance_id | jq -r &#34;.Reservations[].Instances[].PrivateIpAddress&#34;`
+echo &#34;[*] got ip: $ip&#34;
+echo &#34;[*] logging you in...&#34;;
+
+key=$(a-script-to-generate-ssh-key for $IP)
+set -x 
+export IP=$ip; ssh -i $key -o IdentitiesOnly=yes \
+  $@ \
+  ec2-user@$IP
+</code></pre><p>In this script, there&rsquo;s an additional piece used <code>a-script-to-generate-ssh-key</code> - which interfaces with AWS infrastructure and uploads a temporary ssh key there.</p>
+</div>
+  
+  </div>
+</article>
+
+  </main><footer>
+
+
+  <script
+    src="https://utteranc.es/client.js"
+    repo="zygm0nt/hugo-blog-incarnation"
+    issue-term="pathname"
+    label="comments"
+    theme="preferred-color-scheme"
+    crossorigin="anonymous"
+    async
+  ></script>
+  <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
+
+</body>
+</html>

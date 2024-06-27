@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tips on Tech ramblings by Marcin</title>
-    <link>http://localhost:1313/categories/tips/</link>
+    <link>https://marcin.cylke.com.pl/categories/tips/</link>
     <description>Recent content in Tips on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Mar 2013 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/tips/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Mar 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/tips/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Operational problems with Zookeeper</title>
-      <link>http://localhost:1313/2013/03/21/zookeeper-tips/</link>
+      <link>https://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/</link>
       <pubDate>Thu, 21 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/2013/03/21/zookeeper-tips/</guid>
+      <guid>https://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/</guid>
       <description>This post is a summary of what has been presented by Kathleen Ting on StrangeLoop conference. You can watch the original here: http://www.infoq.com/presentations/Misconfiguration-ZooKeeper
 I&amp;rsquo;ve decided to put this selection here for quick reference.
 Connection mismanagement too many connections

@@ -2,62 +2,62 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Tech ramblings by Marcin</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://marcin.cylke.com.pl/tags/</link>
     <description>Recent content in Tags on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Funny</title>
-      <link>http://localhost:1313/tags/funny/</link>
+      <link>https://marcin.cylke.com.pl/tags/funny/</link>
       <pubDate>Tue, 09 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/funny/</guid>
+      <guid>https://marcin.cylke.com.pl/tags/funny/</guid>
       <description></description>
     </item>
     
     <item>
       <title>GenAI</title>
-      <link>http://localhost:1313/tags/genAI/</link>
+      <link>https://marcin.cylke.com.pl/tags/genAI/</link>
       <pubDate>Tue, 09 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/genAI/</guid>
+      <guid>https://marcin.cylke.com.pl/tags/genAI/</guid>
       <description></description>
     </item>
     
     <item>
       <title>It</title>
-      <link>http://localhost:1313/tags/it/</link>
+      <link>https://marcin.cylke.com.pl/tags/it/</link>
       <pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/it/</guid>
+      <guid>https://marcin.cylke.com.pl/tags/it/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Security</title>
-      <link>http://localhost:1313/tags/security/</link>
+      <link>https://marcin.cylke.com.pl/tags/security/</link>
       <pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/security/</guid>
+      <guid>https://marcin.cylke.com.pl/tags/security/</guid>
       <description></description>
     </item>
     
     <item>
       <title>About-Me</title>
-      <link>http://localhost:1313/tags/about-me/</link>
+      <link>https://marcin.cylke.com.pl/tags/about-me/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/about-me/</guid>
+      <guid>https://marcin.cylke.com.pl/tags/about-me/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Short</title>
-      <link>http://localhost:1313/tags/short/</link>
+      <link>https://marcin.cylke.com.pl/tags/short/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/short/</guid>
+      <guid>https://marcin.cylke.com.pl/tags/short/</guid>
       <description></description>
     </item>
     

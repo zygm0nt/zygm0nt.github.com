@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Java on Tech ramblings by Marcin</title>
-    <link>http://localhost:1313/categories/java/</link>
+    <link>https://marcin.cylke.com.pl/categories/java/</link>
     <description>Recent content in Java on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Jun 2013 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Jun 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Zookeeper &#43; Curator = Distributed sync</title>
-      <link>http://localhost:1313/2013/06/24/zookeeper-curator/</link>
+      <link>https://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/</link>
       <pubDate>Mon, 24 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/2013/06/24/zookeeper-curator/</guid>
+      <guid>https://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/</guid>
       <description>An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system&amp;rsquo;s components. Since I had already a few separate components I didn&amp;rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I&amp;rsquo;ve decided to go that way with my solution. What is Zookeeper?Just a crude distributed synchronization framework.</description>
     </item>
     
     <item>
       <title>Operational problems with Zookeeper</title>
-      <link>http://localhost:1313/2013/03/21/zookeeper-tips/</link>
+      <link>https://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/</link>
       <pubDate>Thu, 21 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/2013/03/21/zookeeper-tips/</guid>
+      <guid>https://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/</guid>
       <description>This post is a summary of what has been presented by Kathleen Ting on StrangeLoop conference. You can watch the original here: http://www.infoq.com/presentations/Misconfiguration-ZooKeeper
 I&amp;rsquo;ve decided to put this selection here for quick reference.
 Connection mismanagement too many connections
@@ -30,10 +30,10 @@ WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - To
     
     <item>
       <title>Hadoop HA setup</title>
-      <link>http://localhost:1313/2012/10/30/hadoop-ha/</link>
+      <link>https://marcin.cylke.com.pl/2012/10/30/hadoop-ha/</link>
       <pubDate>Tue, 30 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/2012/10/30/hadoop-ha/</guid>
+      <guid>https://marcin.cylke.com.pl/2012/10/30/hadoop-ha/</guid>
       <description>&lt;p&gt;With the advent of Hadoop&amp;rsquo;s 2.x version, there finally is a working
 High-Availability solution. Even two of those. Now it really is easy to
 configure and use those solutions. It no longer require external

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>It on Tech ramblings by Marcin</title>
-    <link>http://localhost:1313/tags/it/</link>
+    <link>https://marcin.cylke.com.pl/tags/it/</link>
     <description>Recent content in It on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 07 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/it/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/tags/it/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SolarWinds supply chain attack</title>
-      <link>http://localhost:1313/2024/04/07/solarwinds-supply-chain-attack/</link>
+      <link>https://marcin.cylke.com.pl/2024/04/07/solarwinds-supply-chain-attack/</link>
       <pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/2024/04/07/solarwinds-supply-chain-attack/</guid>
+      <guid>https://marcin.cylke.com.pl/2024/04/07/solarwinds-supply-chain-attack/</guid>
       <description>Some time ago, I read a good writeup about the SolarWinds incident that happened in 2020. You can get to that article by clicking this link. This article is well-written and portrays multiple persons involved in solving the case. Really enjoyable piece.
 This blog post sums up the incident from the technical perspective and also goes deeper into multiple aspects of it, using data taken from different sources.
 Note: Another, more recent supply-chain attack is the xz backdoor.</description>

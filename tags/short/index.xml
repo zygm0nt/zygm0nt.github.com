@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Short on Tech ramblings by Marcin</title>
-    <link>http://localhost:1313/tags/short/</link>
+    <link>https://marcin.cylke.com.pl/tags/short/</link>
     <description>Recent content in Short on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://localhost:1313/tags/short/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://marcin.cylke.com.pl/tags/short/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About me</title>
-      <link>http://localhost:1313/about/</link>
+      <link>https://marcin.cylke.com.pl/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/about/</guid>
+      <guid>https://marcin.cylke.com.pl/about/</guid>
       <description>Welcome to my corner of the digital world! I&amp;rsquo;m Marcin Cylke 👋, a multifaceted individual with a passion for software development 💻, the written word 📚, outdoor adventures 🏃‍♂️, and the nostalgic charm of retro computers 🕹️.
 Professionally, I thrive in the realm of software development, where I craft elegant solutions to complex problems, fueled by creativity and a meticulous attention to detail. From designing user-friendly interfaces to optimizing backend processes, I love diving into the intricacies of code and technology to bring ideas to life.</description>
     </item>
