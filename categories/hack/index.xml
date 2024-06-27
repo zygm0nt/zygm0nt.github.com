@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hack on Tech ramblings by Marcin</title>
-    <link>https://marcin.cylke.com.pl/categories/hack/</link>
+    <link>http://localhost:1313/categories/hack/</link>
     <description>Recent content in Hack on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Oct 2012 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/hack/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Oct 2012 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/hack/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>raspberry-pi</title>
-      <link>https://marcin.cylke.com.pl/2012/10/18/raspberry-pi/</link>
+      <link>http://localhost:1313/2012/10/18/raspberry-pi/</link>
       <pubDate>Thu, 18 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2012/10/18/raspberry-pi/</guid>
+      <guid>http://localhost:1313/2012/10/18/raspberry-pi/</guid>
       <description>About a month ago I finally received my very own Raspberry Pi board! Don&amp;rsquo;t know what that is? Here, read some at their website.
 For the sake of completness let me just describe that as prototyping platform with ARM processor. It is really similar in concept to what Arduino is, except it has not that many extensions available (none? or very little, I&amp;rsquo;ve only found those on Adafruit pages).
 So, here is the obligatory picture.</description>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on Tech ramblings by Marcin</title>
-    <link>https://marcin.cylke.com.pl/categories/git/</link>
+    <link>http://localhost:1313/categories/git/</link>
     <description>Recent content in Git on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git - conditional configs and commit signing</title>
-      <link>https://marcin.cylke.com.pl/2024/03/28/git-conditional/</link>
+      <link>http://localhost:1313/2024/03/28/git-conditional/</link>
       <pubDate>Thu, 28 Mar 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2024/03/28/git-conditional/</guid>
+      <guid>http://localhost:1313/2024/03/28/git-conditional/</guid>
       <description>Recently I came across two very interesting options in git that I wanted to make a note of.
 One is a general feature - conditional configs - that you can probably utilise in a myriad of ways. The second - commit signing - might seem a bit obscure.
 Conditional configs It appears it&amp;rsquo;s really easy to put conditional properties into your .gitconfig file. This way, you can have a separate entities depending on which repositories you commit to.</description>
@@ -20,10 +20,10 @@ Conditional configs It appears it&amp;rsquo;s really easy to put conditional pro
     
     <item>
       <title>git-commit script</title>
-      <link>https://marcin.cylke.com.pl/2023/06/27/git-commit-script/</link>
+      <link>http://localhost:1313/2023/06/27/git-commit-script/</link>
       <pubDate>Tue, 27 Jun 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2023/06/27/git-commit-script/</guid>
+      <guid>http://localhost:1313/2023/06/27/git-commit-script/</guid>
       <description>The organization I work in, has this practice of annotating commit messages with ticket numbers. From what I know this tends to be quite a common them all around the IT industry. It serves the purpose of accountability for future checks, current information for others on what the commit is actually about, etc. There may be many more things to add here - as an adventage of such a
 Some time ago I&amp;rsquo;ve started using this small snippet of code as my pre-commit hook.</description>
     </item>

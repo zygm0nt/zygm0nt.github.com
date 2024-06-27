@@ -2,56 +2,56 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Relacja on Tech ramblings by Marcin</title>
-    <link>https://marcin.cylke.com.pl/categories/relacja/</link>
+    <link>http://localhost:1313/categories/relacja/</link>
     <description>Recent content in Relacja on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 May 2011 16:39:31 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/relacja/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 May 2011 16:39:31 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/relacja/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Geecon 2011 - day 2</title>
-      <link>https://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/</link>
+      <link>http://localhost:1313/2011/05/22/geecon-2011-day-2/</link>
       <pubDate>Sun, 22 May 2011 16:39:31 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/</guid>
+      <guid>http://localhost:1313/2011/05/22/geecon-2011-day-2/</guid>
       <description>And now for part 2 of my visit to Geecon 2011!
 1. Jim Webber &#34;Revisiting SOA for the 21st century&#34; Now this was awesome! Jim Webber, a former ThoughtWorks employee, now Neo4j evangelist (in Neotechnology) described his views on how SOA should look - according to him. This was presented previously, on other occasions as his &#34;Guerilla SOA&#34; talk - generally he advocated for REST based services, loose contracts (stating that WSDLs are too verbose and code generation is evil).</description>
     </item>
     
     <item>
       <title>Me on Hadoop on Parleys</title>
-      <link>https://marcin.cylke.com.pl/2011/03/20/me-on-hadoop-on-parleys/</link>
+      <link>http://localhost:1313/2011/03/20/me-on-hadoop-on-parleys/</link>
       <pubDate>Sun, 20 Mar 2011 19:35:39 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2011/03/20/me-on-hadoop-on-parleys/</guid>
+      <guid>http://localhost:1313/2011/03/20/me-on-hadoop-on-parleys/</guid>
       <description>Finally I&#39;ve managed to import my WarJUG presentation to parleys.com. See for yourself :) If you&#39;ve got problems with opening the parleys&#39; version try the ones uploaded to youtube. Here is part 1: And here is part 2:
 Comments Sigvatr I&#39;m sorry, but I don&#39;t understand Polish :P</description>
     </item>
     
     <item>
       <title>Meetbsd 2010</title>
-      <link>https://marcin.cylke.com.pl/2010/08/18/meetbsd-2010/</link>
+      <link>http://localhost:1313/2010/08/18/meetbsd-2010/</link>
       <pubDate>Wed, 18 Aug 2010 22:16:25 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2010/08/18/meetbsd-2010/</guid>
+      <guid>http://localhost:1313/2010/08/18/meetbsd-2010/</guid>
       <description>Some time ago, I&#39;ve attended MeetBSD conference in Kraków. This BSD event is held yearly in either Warsaw, or Kraków. Due to relatively small group of people that registered there was only one track, which had both good and bad sides - you didn&#39;t have to choose from myriads of lectures, but there was no way to skip boring ones either. Well, I guess this kind of niche conference - about operating system :) - will not attract bigger attention.</description>
     </item>
     
     <item>
       <title>6&#43; hour layover in Stockholm</title>
-      <link>https://marcin.cylke.com.pl/2010/08/12/6-hour-layover-in-stockholm/</link>
+      <link>http://localhost:1313/2010/08/12/6-hour-layover-in-stockholm/</link>
       <pubDate>Thu, 12 Aug 2010 22:22:01 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2010/08/12/6-hour-layover-in-stockholm/</guid>
+      <guid>http://localhost:1313/2010/08/12/6-hour-layover-in-stockholm/</guid>
       <description>Last Monday, while coming home from Sweden, I had ~7h layover between my flights. Since Arlanda Airport does not offer a lot to do, at least not for me and not for 7h, I had decided to go to Stockholm. This post sums up a few nice places, that I&#39;d like to visit on my next trip there.
 I took Arlanda Express, fast train that takes you directly from the airport to Stockholm.</description>
     </item>
     
     <item>
       <title>Javarsovia 2010</title>
-      <link>https://marcin.cylke.com.pl/2010/06/27/javarsovia-2010/</link>
+      <link>http://localhost:1313/2010/06/27/javarsovia-2010/</link>
       <pubDate>Sun, 27 Jun 2010 15:08:43 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2010/06/27/javarsovia-2010/</guid>
+      <guid>http://localhost:1313/2010/06/27/javarsovia-2010/</guid>
       <description>This year&#39;s Javarsovia conference took place on 26th june. It was held at Centrum Konferencyjno-Kongresowe, Bobrowiecka Street, Warsaw.
 First of all - the organization was very nice. Everything seemed smooth, maybe with the exception of conference registration, it was simply overcrowded. The agenda was split into four tracks, each hour 4 different presentations were given in different halls. So you just had to choose which one to attend. My path through the conference is described below, together with my views on each of the presentations I attended.</description>
     </item>

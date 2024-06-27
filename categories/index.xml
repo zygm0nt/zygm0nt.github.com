@@ -2,98 +2,98 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Tech ramblings by Marcin</title>
-    <link>https://marcin.cylke.com.pl/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 16 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Google</title>
-      <link>https://marcin.cylke.com.pl/categories/google/</link>
+      <link>http://localhost:1313/categories/google/</link>
       <pubDate>Sun, 16 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/categories/google/</guid>
+      <guid>http://localhost:1313/categories/google/</guid>
       <description></description>
     </item>
     
     <item>
       <title>It</title>
-      <link>https://marcin.cylke.com.pl/categories/IT/</link>
+      <link>http://localhost:1313/categories/IT/</link>
       <pubDate>Sun, 16 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/categories/IT/</guid>
+      <guid>http://localhost:1313/categories/IT/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Photos</title>
-      <link>https://marcin.cylke.com.pl/categories/photos/</link>
+      <link>http://localhost:1313/categories/photos/</link>
       <pubDate>Sun, 16 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/categories/photos/</guid>
+      <guid>http://localhost:1313/categories/photos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>FunnyX</title>
-      <link>https://marcin.cylke.com.pl/categories/funnyX/</link>
+      <link>http://localhost:1313/categories/funnyX/</link>
       <pubDate>Tue, 09 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/categories/funnyX/</guid>
+      <guid>http://localhost:1313/categories/funnyX/</guid>
       <description></description>
     </item>
     
     <item>
       <title>GenAI</title>
-      <link>https://marcin.cylke.com.pl/categories/genAI/</link>
+      <link>http://localhost:1313/categories/genAI/</link>
       <pubDate>Tue, 09 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/categories/genAI/</guid>
+      <guid>http://localhost:1313/categories/genAI/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Security</title>
-      <link>https://marcin.cylke.com.pl/categories/security/</link>
+      <link>http://localhost:1313/categories/security/</link>
       <pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/categories/security/</guid>
+      <guid>http://localhost:1313/categories/security/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Git</title>
-      <link>https://marcin.cylke.com.pl/categories/git/</link>
+      <link>http://localhost:1313/categories/git/</link>
       <pubDate>Thu, 28 Mar 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/categories/git/</guid>
+      <guid>http://localhost:1313/categories/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ramblings</title>
-      <link>https://marcin.cylke.com.pl/categories/ramblings/</link>
+      <link>http://localhost:1313/categories/ramblings/</link>
       <pubDate>Thu, 29 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/categories/ramblings/</guid>
+      <guid>http://localhost:1313/categories/ramblings/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Shell</title>
-      <link>https://marcin.cylke.com.pl/categories/shell/</link>
+      <link>http://localhost:1313/categories/shell/</link>
       <pubDate>Tue, 10 Oct 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/categories/shell/</guid>
+      <guid>http://localhost:1313/categories/shell/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tools</title>
-      <link>https://marcin.cylke.com.pl/categories/tools/</link>
+      <link>http://localhost:1313/categories/tools/</link>
       <pubDate>Tue, 10 Oct 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/categories/tools/</guid>
+      <guid>http://localhost:1313/categories/tools/</guid>
       <description></description>
     </item>
     

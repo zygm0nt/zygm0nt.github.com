@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Tech ramblings by Marcin</title>
-    <link>https://marcin.cylke.com.pl/post/</link>
+    <link>http://localhost:1313/post/</link>
     <description>Recent content in Posts on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 16 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Why Google Takeout is sooo bad!</title>
-      <link>https://marcin.cylke.com.pl/2024/06/16/why-google-takeout-is-sooo-bad/</link>
+      <link>http://localhost:1313/2024/06/16/why-google-takeout-is-sooo-bad/</link>
       <pubDate>Sun, 16 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2024/06/16/why-google-takeout-is-sooo-bad/</guid>
+      <guid>http://localhost:1313/2024/06/16/why-google-takeout-is-sooo-bad/</guid>
       <description>Author: IdeogramAI Prompt: The image shows a typical Google Takeout interface with a large error message indicating that the service is unavailable. In the background, there are frustrated users trying to download their data with unsuccessful attempts, represented by repeated &amp;ldquo;Failed&amp;rdquo; and &amp;ldquo;Retry&amp;rdquo; notifications.
 My current data setup is centered around Google Cloud as a place where I store my data. That&amp;rsquo;s also related to how I use the whole vendor ecosystem.</description>
     </item>
     
     <item>
       <title>Updating Confluence page from Markdown</title>
-      <link>https://marcin.cylke.com.pl/2024/05/20/updating-confluence-page-from-markdown/</link>
+      <link>http://localhost:1313/2024/05/20/updating-confluence-page-from-markdown/</link>
       <pubDate>Mon, 20 May 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2024/05/20/updating-confluence-page-from-markdown/</guid>
+      <guid>http://localhost:1313/2024/05/20/updating-confluence-page-from-markdown/</guid>
       <description>Prompt: generate an image for blogpost titled &amp;ldquo;Moving markdown files to confluence&amp;rdquo;
 Assume you want to have your documentation close to the code. Ideally in your project&amp;rsquo;s repo. But then there&amp;rsquo;s always this request, that other people might want to look through that documentation, they&amp;rsquo;re not too tech savy, no nothing about Git.
 A few past companies I&amp;rsquo;ve worked for have had their internal wikis built on Atlassian Confluence. It seems there&amp;rsquo;s quite nice way to upload pages stored in repository to arbitrary location in Confluence.</description>
@@ -30,10 +30,10 @@ A few past companies I&amp;rsquo;ve worked for have had their internal wikis bui
     
     <item>
       <title>Propaganda posters by GenAI</title>
-      <link>https://marcin.cylke.com.pl/2024/04/09/propaganda-posters/</link>
+      <link>http://localhost:1313/2024/04/09/propaganda-posters/</link>
       <pubDate>Tue, 09 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2024/04/09/propaganda-posters/</guid>
+      <guid>http://localhost:1313/2024/04/09/propaganda-posters/</guid>
       <description>generate a Chinese propaganda poster advocating for &amp;ldquo;all people should eat pringles&amp;rdquo;
 generate something similar in style but advocating for &amp;ldquo;the only good person is the one eating sour crout&#39;
 generate a Russian propaganda poster from soviet era with a single person with a gun advocating for &amp;ldquo;all work and no play makes Ivan a dull boy&amp;rdquo;
@@ -42,10 +42,10 @@ make this less realistic and more soviet propaganda poster</description>
     
     <item>
       <title>SolarWinds supply chain attack</title>
-      <link>https://marcin.cylke.com.pl/2024/04/07/solarwinds-supply-chain-attack/</link>
+      <link>http://localhost:1313/2024/04/07/solarwinds-supply-chain-attack/</link>
       <pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2024/04/07/solarwinds-supply-chain-attack/</guid>
+      <guid>http://localhost:1313/2024/04/07/solarwinds-supply-chain-attack/</guid>
       <description>Some time ago, I read a good writeup about the SolarWinds incident that happened in 2020. You can get to that article by clicking this link. This article is well-written and portrays multiple persons involved in solving the case. Really enjoyable piece.
 This blog post sums up the incident from the technical perspective and also goes deeper into multiple aspects of it, using data taken from different sources.
 Note: Another, more recent supply-chain attack is the xz backdoor.</description>
@@ -53,10 +53,10 @@ Note: Another, more recent supply-chain attack is the xz backdoor.</description>
     
     <item>
       <title>Git - conditional configs and commit signing</title>
-      <link>https://marcin.cylke.com.pl/2024/03/28/git-conditional/</link>
+      <link>http://localhost:1313/2024/03/28/git-conditional/</link>
       <pubDate>Thu, 28 Mar 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2024/03/28/git-conditional/</guid>
+      <guid>http://localhost:1313/2024/03/28/git-conditional/</guid>
       <description>Recently I came across two very interesting options in git that I wanted to make a note of.
 One is a general feature - conditional configs - that you can probably utilise in a myriad of ways. The second - commit signing - might seem a bit obscure.
 Conditional configs It appears it&amp;rsquo;s really easy to put conditional properties into your .gitconfig file. This way, you can have a separate entities depending on which repositories you commit to.</description>
@@ -64,10 +64,10 @@ Conditional configs It appears it&amp;rsquo;s really easy to put conditional pro
     
     <item>
       <title>Payload after load, really?!</title>
-      <link>https://marcin.cylke.com.pl/2024/02/29/payload-after-load/</link>
+      <link>http://localhost:1313/2024/02/29/payload-after-load/</link>
       <pubDate>Thu, 29 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2024/02/29/payload-after-load/</guid>
+      <guid>http://localhost:1313/2024/02/29/payload-after-load/</guid>
       <description>&amp;ldquo;source: Dall-E, prompt: generate an image for blogpost titled &amp;ldquo;breaking a paywall&amp;rdquo;, about exploiting newssite paywall using browser extension&amp;rdquo;
 Today&amp;rsquo;s internet is progressively becoming more and more hostile. It is actually a bunch of walled gardens, in the form of Facebook, Instagram, Linkedin, all the other social media outlets. Now, also news sites are increasingly becoming a payed instances.
 I totally get it, authoring all that content is not cheap.</description>
@@ -75,40 +75,40 @@ I totally get it, authoring all that content is not cheap.</description>
     
     <item>
       <title>useful CLI tools from other planet</title>
-      <link>https://marcin.cylke.com.pl/2023/10/10/useful-cli-tools-from-other-planet/</link>
+      <link>http://localhost:1313/2023/10/10/useful-cli-tools-from-other-planet/</link>
       <pubDate>Tue, 10 Oct 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2023/10/10/useful-cli-tools-from-other-planet/</guid>
+      <guid>http://localhost:1313/2023/10/10/useful-cli-tools-from-other-planet/</guid>
       <description>I&amp;rsquo;ve already written a short post about me using fzf on this blog. And I still use it, it still is awesome! :)
 But there are more tools like that. Maybe this is just my optics, but with the recent (at least 2 last years) rust&amp;rsquo;s rise to popularity, there are a lot of small tools doing a single task, or focusing on specific kind of problems. And they of course target terminals!</description>
     </item>
     
     <item>
       <title>git-commit script</title>
-      <link>https://marcin.cylke.com.pl/2023/06/27/git-commit-script/</link>
+      <link>http://localhost:1313/2023/06/27/git-commit-script/</link>
       <pubDate>Tue, 27 Jun 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2023/06/27/git-commit-script/</guid>
+      <guid>http://localhost:1313/2023/06/27/git-commit-script/</guid>
       <description>The organization I work in, has this practice of annotating commit messages with ticket numbers. From what I know this tends to be quite a common them all around the IT industry. It serves the purpose of accountability for future checks, current information for others on what the commit is actually about, etc. There may be many more things to add here - as an adventage of such a
 Some time ago I&amp;rsquo;ve started using this small snippet of code as my pre-commit hook.</description>
     </item>
     
     <item>
       <title>an ode to fzf</title>
-      <link>https://marcin.cylke.com.pl/2023/05/29/an-ode-to-fzf/</link>
+      <link>http://localhost:1313/2023/05/29/an-ode-to-fzf/</link>
       <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2023/05/29/an-ode-to-fzf/</guid>
+      <guid>http://localhost:1313/2023/05/29/an-ode-to-fzf/</guid>
       <description>What is fzf? How could I&amp;rsquo;ve lived without it for so long?! It&amp;rsquo;s just a pretty little fuzzy search tool, written in go. You can find it here: https://github.com/junegunn/fzf
 Important features fuzzy search in a list of lines - thanks to that, it&amp;rsquo;s really easy to find something in a considerably big list of items it&amp;rsquo;s blazingly fast! very nice shell integrations many additional features - like preview for files (go here to see examples: https://github.</description>
     </item>
     
     <item>
       <title>running gamecube emulator on Linux</title>
-      <link>https://marcin.cylke.com.pl/2021/02/07/running-gamecube-on-linux/</link>
+      <link>http://localhost:1313/2021/02/07/running-gamecube-on-linux/</link>
       <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2021/02/07/running-gamecube-on-linux/</guid>
+      <guid>http://localhost:1313/2021/02/07/running-gamecube-on-linux/</guid>
       <description>I have a fondness for all the retro things in tech, and try to hone this when I have time with exploring old tech. This time I tried running one of the retro consoles&amp;rsquo; emulators. I chose Nintendo Gamecube - because of many reasons, but one of them being I own a quite recent incarnation of the Nintendo spirit, namely Nintendo Switch. So with the older one I&amp;rsquo;ve wanted to see how the games look like back than and how much the landscape of gaming on Nintendo has changed with that big of an age gap.</description>
     </item>
     

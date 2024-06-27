@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hadoop on Tech ramblings by Marcin</title>
-    <link>https://marcin.cylke.com.pl/categories/hadoop/</link>
+    <link>http://localhost:1313/categories/hadoop/</link>
     <description>Recent content in Hadoop on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Dec 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/hadoop/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Dec 2013 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/hadoop/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Distributed scans with HBase</title>
-      <link>https://marcin.cylke.com.pl/2013/12/10/distributed-scans-with-hbase/</link>
+      <link>http://localhost:1313/2013/12/10/distributed-scans-with-hbase/</link>
       <pubDate>Tue, 10 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2013/12/10/distributed-scans-with-hbase/</guid>
+      <guid>http://localhost:1313/2013/12/10/distributed-scans-with-hbase/</guid>
       <description>&lt;p&gt;HBase is by design a columnar store, that is optimized for random reads.
 You just ask for a row using rowId as an identifier and you get your
 data instantaneously.&lt;/p&gt;
@@ -26,10 +26,10 @@ results sorted by key.&lt;/p&gt;
     
     <item>
       <title>Simple HBase ORM</title>
-      <link>https://marcin.cylke.com.pl/2013/12/08/simple-hbase-orm/</link>
+      <link>http://localhost:1313/2013/12/08/simple-hbase-orm/</link>
       <pubDate>Sun, 08 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2013/12/08/simple-hbase-orm/</guid>
+      <guid>http://localhost:1313/2013/12/08/simple-hbase-orm/</guid>
       <description>&lt;p&gt;When dealing with data stored in HBase, you are quick to come to a
 conclusion, that it is extremaly inconvenient to reach to it
 via HBase native API. It is very verbose and you always need to convert
@@ -43,19 +43,19 @@ for projects like &lt;a href=&#34;https://github.com/impetus-opensource/Kundera&
     
     <item>
       <title>Zookeeper &#43; Curator = Distributed sync</title>
-      <link>https://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/</link>
+      <link>http://localhost:1313/2013/06/24/zookeeper-curator/</link>
       <pubDate>Mon, 24 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/</guid>
+      <guid>http://localhost:1313/2013/06/24/zookeeper-curator/</guid>
       <description>An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system&amp;rsquo;s components. Since I had already a few separate components I didn&amp;rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I&amp;rsquo;ve decided to go that way with my solution. What is Zookeeper?Just a crude distributed synchronization framework.</description>
     </item>
     
     <item>
       <title>Operational problems with Zookeeper</title>
-      <link>https://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/</link>
+      <link>http://localhost:1313/2013/03/21/zookeeper-tips/</link>
       <pubDate>Thu, 21 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/</guid>
+      <guid>http://localhost:1313/2013/03/21/zookeeper-tips/</guid>
       <description>This post is a summary of what has been presented by Kathleen Ting on StrangeLoop conference. You can watch the original here: http://www.infoq.com/presentations/Misconfiguration-ZooKeeper
 I&amp;rsquo;ve decided to put this selection here for quick reference.
 Connection mismanagement too many connections
@@ -64,19 +64,19 @@ WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - To
     
     <item>
       <title>After WHUG meeting</title>
-      <link>https://marcin.cylke.com.pl/2012/11/30/after-whug/</link>
+      <link>http://localhost:1313/2012/11/30/after-whug/</link>
       <pubDate>Fri, 30 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2012/11/30/after-whug/</guid>
+      <guid>http://localhost:1313/2012/11/30/after-whug/</guid>
       <description>Here are the slides from the talk a gave yesterday. If you have any questions, please ask.</description>
     </item>
     
     <item>
       <title>WHUG 8. Beyond Hadoop - checking other options</title>
-      <link>https://marcin.cylke.com.pl/2012/11/26/whug-8-beyond-hadoop/</link>
+      <link>http://localhost:1313/2012/11/26/whug-8-beyond-hadoop/</link>
       <pubDate>Mon, 26 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2012/11/26/whug-8-beyond-hadoop/</guid>
+      <guid>http://localhost:1313/2012/11/26/whug-8-beyond-hadoop/</guid>
       <description>W najbliższy czwartek - czyli 29.11.2012 - poprowadzę prezentację w ramach Warsaw Hadoop User Group. Swoją obecność można odklinąć tu http://www.meetup.com/warsaw-hug/
 A o czym będę mówił? Przeklejka ze strony WHUG:
 Marcin skupi się na współpracy ekosystemu Hadoopa z innymi narzędziami. Pokaże jak prosto i wygodnie przetwarzać grafy i jak stosować podejście Big Data, w czasie rzeczywistym. Poruszy również temat łatwiejszego tworzenia algorytmów Map-Reduce
@@ -85,10 +85,10 @@ Będzie to nieco mniej technicza (ale wciąż praktyczna) wycieczka po obrzeżac
     
     <item>
       <title>Hadoop HA setup</title>
-      <link>https://marcin.cylke.com.pl/2012/10/30/hadoop-ha/</link>
+      <link>http://localhost:1313/2012/10/30/hadoop-ha/</link>
       <pubDate>Tue, 30 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2012/10/30/hadoop-ha/</guid>
+      <guid>http://localhost:1313/2012/10/30/hadoop-ha/</guid>
       <description>&lt;p&gt;With the advent of Hadoop&amp;rsquo;s 2.x version, there finally is a working
 High-Availability solution. Even two of those. Now it really is easy to
 configure and use those solutions. It no longer require external

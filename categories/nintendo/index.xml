@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nintendo on Tech ramblings by Marcin</title>
-    <link>https://marcin.cylke.com.pl/categories/nintendo/</link>
+    <link>http://localhost:1313/categories/nintendo/</link>
     <description>Recent content in Nintendo on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 07 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/nintendo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/nintendo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>running gamecube emulator on Linux</title>
-      <link>https://marcin.cylke.com.pl/2021/02/07/running-gamecube-on-linux/</link>
+      <link>http://localhost:1313/2021/02/07/running-gamecube-on-linux/</link>
       <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2021/02/07/running-gamecube-on-linux/</guid>
+      <guid>http://localhost:1313/2021/02/07/running-gamecube-on-linux/</guid>
       <description>I have a fondness for all the retro things in tech, and try to hone this when I have time with exploring old tech. This time I tried running one of the retro consoles&amp;rsquo; emulators. I chose Nintendo Gamecube - because of many reasons, but one of them being I own a quite recent incarnation of the Nintendo spirit, namely Nintendo Switch. So with the older one I&amp;rsquo;ve wanted to see how the games look like back than and how much the landscape of gaming on Nintendo has changed with that big of an age gap.</description>
     </item>
     

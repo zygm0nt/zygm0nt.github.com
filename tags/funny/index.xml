@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Funny on Tech ramblings by Marcin</title>
-    <link>https://marcin.cylke.com.pl/tags/funny/</link>
+    <link>http://localhost:1313/tags/funny/</link>
     <description>Recent content in Funny on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/tags/funny/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/funny/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Propaganda posters by GenAI</title>
-      <link>https://marcin.cylke.com.pl/2024/04/09/propaganda-posters/</link>
+      <link>http://localhost:1313/2024/04/09/propaganda-posters/</link>
       <pubDate>Tue, 09 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2024/04/09/propaganda-posters/</guid>
+      <guid>http://localhost:1313/2024/04/09/propaganda-posters/</guid>
       <description>generate a Chinese propaganda poster advocating for &amp;ldquo;all people should eat pringles&amp;rdquo;
 generate something similar in style but advocating for &amp;ldquo;the only good person is the one eating sour crout&#39;
 generate a Russian propaganda poster from soviet era with a single person with a gun advocating for &amp;ldquo;all work and no play makes Ivan a dull boy&amp;rdquo;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Screen on Tech ramblings by Marcin</title>
-    <link>https://marcin.cylke.com.pl/categories/screen/</link>
+    <link>http://localhost:1313/categories/screen/</link>
     <description>Recent content in Screen on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Jul 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/screen/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Jul 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/screen/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Screen shortcuts for split experience</title>
-      <link>https://marcin.cylke.com.pl/2019/07/17/screen-split-experience/</link>
+      <link>http://localhost:1313/2019/07/17/screen-split-experience/</link>
       <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2019/07/17/screen-split-experience/</guid>
+      <guid>http://localhost:1313/2019/07/17/screen-split-experience/</guid>
       <description>Most useful shortcuts to operate screen Aside from basic screen shortcuts for moving around, creating and changing windows there are things that create more of a window manager feel for terminal usage. And these are splits.
 You can create a split with Ctrl-a | - which creates a vertical split. There is also Ctrl-A S to create a horizontal split. To cycle between your open splits just use Ctrl-a &amp;lt;Tab&amp;gt;. To close the active split - just press Ctrl-a X</description>
     </item>
