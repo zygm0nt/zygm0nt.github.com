@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+
+  <title>Tracers in the dark - Tech ramblings by Marcin</title>
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="274179a3-6fd7-434b-8b9e-b745ec841ca2"></script>
+
+</head>
+<body>
+  <header>
+<div>
+    <h1><a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></h1>
+  </div>
+  <nav><a href="/about/">about me</a>
+  </nav>
+</header>
+<main>
+    <article>
+  <div class="title">
+    <h1>Tracers in the dark</h1>
+    </div>
+  <div class="meta">2024-08-08 00:00</div>
+  <div class="artical-body">
+  
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#mermaid">Mermaid</a></li>
+    <li><a href="#google-chrome-profiling-tool">Google Chrome profiling tool</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    <div class="content-with-toc">
+      <p><strong>Disclaimer</strong>: This blogpost is not about a specific book, titled <a href="https://www.amazon.com/Tracers-Dark-Global-Crime-Cryptocurrency/dp/0385548095">Tracers in the Dark: The Global Hunt for the Crime Lords of Cryptocurrency</a>. It&rsquo;s just about execution traces.</p>
+<p>I wanted to explore a few techniques for visualising inter-dependencies between fragments of code, modules, etc. Say, you have multiple functions and you want to get some bearing on how much each execution of each of those functions takes. Or you have a complicated system, and you&rsquo;d like to plot remote calls in this system.</p>
+<p>Either way - it&rsquo;s about drawing relations between objects in time.</p>
+<p>If thinking locally - this might mean you can resort to some variation of flame graphs. Popularized by Brendan Gregg with his tool <a href="https://github.com/brendangregg/FlameGraph">FlameGraph</a>:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="https://marcin.cylke.com.pl/post_images/tracers-in-the-dark-0.png?v=72bffede36463fbaf5c4eaf2a808404e" alt="Image" loading="lazy" height="626" width="1200" />
+</picture>
+</p>
+<p>But let&rsquo;s just say, you want to plot something completely different, and want to use tools that are already there to display the depencencies.</p>
+<h2 id="mermaid">Mermaid</h2>
+<p>You might want to go with something a lot simpler. Eg. to add some spice to your docs, generated from code snippets, etc.
+You could leverage <code>Mermaid</code> diagrams to generate <a href="https://mermaid.js.org/syntax/gantt.html">Gantt</a>  diagrams, easily reusable for shorter traces. Of course, there are <a href="https://mermaid.js.org/syntax/sequenceDiagram.html">sequence diagrams</a> in <code>Mermaid</code>, and you could use those. But I don&rsquo;t find them too readable for anything like traces.</p>
+<p>An example trace can look like this:</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="https://marcin.cylke.com.pl/post_images/tracers-in-the-dark-1.png?v=72bffede36463fbaf5c4eaf2a808404e" alt="Image" loading="lazy" height="800" width="2052" />
+</picture>
+</p>
+<p>The code that produced it is here, and you can play with it <a href="https://mermaid.live">here</a>:</p>
+<pre tabindex="0"><code>gantt
+	title System Interaction Gantt Chart
+	dateFormat YYYY-MM-DD HH:mm:ss
+	axisFormat %H:%M:%S
+	
+	section System A
+	Request 1 to System B :a1, 2024-08-08 00:00:00, 10s
+	Request 2 to System C :a2, after b2, 15s
+	Request 3 to System D :a3, after c1, 12s
+	Request 4 to System E :a4, after d3, 18s
+	Request 5 to System B :a5, after e4, 10s
+	
+	section System B
+	Request 6 to System C :b1, after a1, 10s
+	Request 7 to System D :b2, after b1, 20s
+	Request 8 to System E :b3, after a4, 15s
+	Request 9 to System A :b4, after d2, 12s
+	Request 10 to System C :b5, after e1, 10s
+	
+	section System C
+	Request 11 to System D :c1, after b5, 14s
+	Request 12 to System E :c2, after a2, 10s
+	Request 13 to System A :c3, after b4, 20s
+	Request 14 to System B :c4, after c2, 16s
+	Request 15 to System D :c5, after e2, 10s
+	
+	section System D
+	Request 16 to System E :d1, after c3, 18s
+	Request 17 to System A :d2, after c4, 12s
+	Request 18 to System B :d3, after d1, 14s
+	Request 19 to System C :d4, after b3, 10s
+	Request 20 to System E :d5, after a3, 20s
+	
+	section System E
+	Request 21 to System A :e1, after d5, 16s
+	Request 22 to System B :e2, after c1, 12s
+	Request 23 to System C :e3, after b2, 14s
+	Request 24 to System D :e4, after c5, 18s
+	Request 25 to System A :e5, after a5, 10s
+</code></pre><h2 id="google-chrome-profiling-tool">Google Chrome profiling tool</h2>
+<p>One non-obvious tool for that is Google Chrome&rsquo;s Profiling Tool. You can access it by typing <code>about:tracing</code> in your Chrome address bar. Well, it seems the tool is deprecated but at least at the moment of writing (Aug 2024), it&rsquo;s still there and can be used.
+The recommended way is to use its evolution <a href="https://ui.perfetto.dev/">https://ui.perfetto.dev/</a></p>
+<p>Actually it&rsquo;s pretty neat, as with that migration the profiler is now usable from any modern web browser - at least from my point of view. Perhaps there are some Chrome-specific functionalities there, but they&rsquo;re not important right now as I&rsquo;m interested in just plotting external data.</p>
+<p>I&rsquo;ve plotted an example data here:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="https://marcin.cylke.com.pl/post_images/tracers-in-the-dark-2.png?v=72bffede36463fbaf5c4eaf2a808404e" alt="Image" loading="lazy" height="1166" width="3114" />
+</picture>
+
+And the data I&rsquo;ve imported here, should be exactly what I&rsquo;ve plotted in <code>Mermaid</code>. I&rsquo;ve produced this simple script to convert one format to another (actually my LLM Agent helped me with that ;-) ):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> json
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> re
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime, timedelta
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parse_mermaid_gantt</span>(mermaid_code):
+</span></span><span style="display:flex;"><span>    tasks <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    pattern <span style="color:#f92672">=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;(\w+ \d+ to \w+ \w+)\s+:\w+, after ([\w\d]+), (\d+)s&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    base_time <span style="color:#f92672">=</span> datetime(<span style="color:#ae81ff">2024</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>    task_times <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Parse each line to extract task details</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> mermaid_code<span style="color:#f92672">.</span>splitlines():
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">match</span> <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>search(pattern, line)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">match</span>:
+</span></span><span style="display:flex;"><span>            task_name <span style="color:#f92672">=</span> <span style="color:#66d9ef">match</span><span style="color:#f92672">.</span>group(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>            depends_on <span style="color:#f92672">=</span> <span style="color:#66d9ef">match</span><span style="color:#f92672">.</span>group(<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>            duration <span style="color:#f92672">=</span> int(<span style="color:#66d9ef">match</span><span style="color:#f92672">.</span>group(<span style="color:#ae81ff">3</span>)) <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>  <span style="color:#75715e"># convert to microseconds</span>
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Calculate start time</span>
+</span></span><span style="display:flex;"><span>            start_time <span style="color:#f92672">=</span> task_times[depends_on]
+</span></span><span style="display:flex;"><span>            task_start <span style="color:#f92672">=</span> start_time <span style="color:#f92672">+</span> timedelta(milliseconds<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            tasks<span style="color:#f92672">.</span>append({
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;name&#34;</span>: task_name,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;cat&#34;</span>: task_name<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39; to &#39;</span>)[<span style="color:#ae81ff">1</span>],
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;ph&#34;</span>: <span style="color:#e6db74">&#34;X&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;ts&#34;</span>: int(task_start<span style="color:#f92672">.</span>timestamp() <span style="color:#f92672">*</span> <span style="color:#ae81ff">1e6</span>),
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;dur&#34;</span>: duration,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;pid&#34;</span>: len(tasks) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;tid&#34;</span>: <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>            })
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            task_times[task_name] <span style="color:#f92672">=</span> task_start <span style="color:#f92672">+</span> timedelta(microseconds<span style="color:#f92672">=</span>duration)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Handle initial tasks with direct timestamp</span>
+</span></span><span style="display:flex;"><span>            pattern_direct <span style="color:#f92672">=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;(\w+ \d+ to \w+ \w+)\s+:\w+, (\d</span><span style="color:#e6db74">{4}</span><span style="color:#e6db74">-\d</span><span style="color:#e6db74">{2}</span><span style="color:#e6db74">-\d</span><span style="color:#e6db74">{2}</span><span style="color:#e6db74"> \d</span><span style="color:#e6db74">{2}</span><span style="color:#e6db74">:\d</span><span style="color:#e6db74">{2}</span><span style="color:#e6db74">:\d</span><span style="color:#e6db74">{2}</span><span style="color:#e6db74">), (\d+)s&#39;</span>
+</span></span><span style="display:flex;"><span>            match_direct <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>search(pattern_direct, line)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> match_direct:
+</span></span><span style="display:flex;"><span>                task_name <span style="color:#f92672">=</span> match_direct<span style="color:#f92672">.</span>group(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>                timestamp <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>strptime(match_direct<span style="color:#f92672">.</span>group(<span style="color:#ae81ff">2</span>), <span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> %H:%M:%S&#39;</span>)
+</span></span><span style="display:flex;"><span>                duration <span style="color:#f92672">=</span> int(match_direct<span style="color:#f92672">.</span>group(<span style="color:#ae81ff">3</span>)) <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>  <span style="color:#75715e"># convert to microseconds</span>
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                tasks<span style="color:#f92672">.</span>append({
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;name&#34;</span>: task_name,
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;cat&#34;</span>: task_name<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39; to &#39;</span>)[<span style="color:#ae81ff">1</span>],
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;ph&#34;</span>: <span style="color:#e6db74">&#34;X&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;ts&#34;</span>: int(timestamp<span style="color:#f92672">.</span>timestamp() <span style="color:#f92672">*</span> <span style="color:#ae81ff">1e6</span>),
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;dur&#34;</span>: duration,
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;pid&#34;</span>: len(tasks) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;tid&#34;</span>: <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>                })
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                task_times[task_name] <span style="color:#f92672">=</span> timestamp <span style="color:#f92672">+</span> timedelta(microseconds<span style="color:#f92672">=</span>duration)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> tasks
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">convert_to_chrome_profiler_json</span>(mermaid_code):
+</span></span><span style="display:flex;"><span>    tasks <span style="color:#f92672">=</span> parse_mermaid_gantt(mermaid_code)
+</span></span><span style="display:flex;"><span>    profile_data <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;traceEvents&#34;</span>: tasks}
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> json<span style="color:#f92672">.</span>dumps(profile_data, indent<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example Mermaid Gantt code input</span>
+</span></span><span style="display:flex;"><span>mermaid_code <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    gantt
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    dateFormat  YYYY-MM-DD HH:mm:ss
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    axisFormat  %H:%M:%S
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    section System A
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Request 1 to System B  :a1, 2024-08-08 00:00:00, 10s
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Request 2 to System C  :a2, after b2, 15s
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    section System B
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Request 6 to System C  :b1, after a1, 10s
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Request 7 to System D  :b2, after b1, 20s
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    section System C
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Request 11 to System D :c1, after b5, 14s
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Convert the Mermaid Gantt code to Chrome Profiler JSON</span>
+</span></span><span style="display:flex;"><span>chrome_profiler_json <span style="color:#f92672">=</span> convert_to_chrome_profiler_json(mermaid_code)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Save JSON to a file</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;chrome_profiler.json&#34;</span>, <span style="color:#e6db74">&#34;w&#34;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>    f<span style="color:#f92672">.</span>write(chrome_profiler_json)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;JSON data has been saved to chrome_profiler.json&#34;</span>)
+</span></span></code></pre></div><h2 id="conclusion">Conclusion</h2>
+<p>As you can see - the task at hand can be accomplished in at least one way. Probably there are a lot more tools like this, so if you&rsquo;d like to share an interesting thing here - please do!</p>
+</div>
+  
+  </div>
+</article>
+
+  </main><footer>
+
+
+  <script
+    src="https://utteranc.es/client.js"
+    repo="zygm0nt/hugo-blog-incarnation"
+    issue-term="pathname"
+    label="comments"
+    theme="preferred-color-scheme"
+    crossorigin="anonymous"
+    async
+  ></script>
+  <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
+
+</body>
+</html>

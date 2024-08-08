@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tracers in the dark</title>
+      <link>https://marcin.cylke.com.pl/2024/08/08/tracers-in-the-dark/</link>
+      <pubDate>Thu, 08 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/2024/08/08/tracers-in-the-dark/</guid>
+      <description>Disclaimer: This blogpost is not about a specific book, titled Tracers in the Dark: The Global Hunt for the Crime Lords of Cryptocurrency. It&amp;rsquo;s just about execution traces.
+I wanted to explore a few techniques for visualising inter-dependencies between fragments of code, modules, etc. Say, you have multiple functions and you want to get some bearing on how much each execution of each of those functions takes. Or you have a complicated system, and you&amp;rsquo;d like to plot remote calls in this system.</description>
+    </item>
+    
     <item>
       <title>Get to your AWS host with ease</title>
       <link>https://marcin.cylke.com.pl/2024/06/27/get-to-your-aws-host-with-ease/</link>
@@ -101,16 +111,6 @@ But there are more tools like that. Maybe this is just my optics, but with the r
       <guid>https://marcin.cylke.com.pl/2023/06/27/git-commit-script/</guid>
       <description>The organization I work in, has this practice of annotating commit messages with ticket numbers. From what I know this tends to be quite a common them all around the IT industry. It serves the purpose of accountability for future checks, current information for others on what the commit is actually about, etc. There may be many more things to add here - as an adventage of such a
 Some time ago I&amp;rsquo;ve started using this small snippet of code as my pre-commit hook.</description>
-    </item>
-    
-    <item>
-      <title>an ode to fzf</title>
-      <link>https://marcin.cylke.com.pl/2023/05/29/an-ode-to-fzf/</link>
-      <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2023/05/29/an-ode-to-fzf/</guid>
-      <description>What is fzf? How could I&amp;rsquo;ve lived without it for so long?! It&amp;rsquo;s just a pretty little fuzzy search tool, written in go. You can find it here: https://github.com/junegunn/fzf
-Important features fuzzy search in a list of lines - thanks to that, it&amp;rsquo;s really easy to find something in a considerably big list of items it&amp;rsquo;s blazingly fast! very nice shell integrations many additional features - like preview for files (go here to see examples: https://github.</description>
     </item>
     
   </channel>
