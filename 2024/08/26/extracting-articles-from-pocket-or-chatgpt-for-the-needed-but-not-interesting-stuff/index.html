@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+
+  <title>Extracting articles from Pocket - or ChatGPT for the needed but not interesting stuff - Tech ramblings by Marcin</title>
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="274179a3-6fd7-434b-8b9e-b745ec841ca2"></script>
+
+</head>
+<body>
+  <header>
+<div>
+    <h1><a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></h1>
+  </div>
+  <nav><a href="/about/">about me</a>
+  </nav>
+</header>
+<main>
+    <article>
+  <div class="title">
+    <h1>Extracting articles from Pocket - or ChatGPT for the needed but not interesting stuff</h1>
+    </div>
+  <div class="meta">2024-08-26 00:00</div>
+  <div class="artical-body">
+  
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#first-try">First try</a></li>
+        <li><a href="#lets-try-something-else">Let&rsquo;s try Something Else</a></li>
+        <li><a href="#pivot">Pivot!</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#afterthoughts---llms-are-good-for-side-quests">Afterthoughts - LLMs are good for side-quests</a></li>
+  </ul>
+</nav>
+    <div class="content-with-toc">
+      <p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="https://marcin.cylke.com.pl/post_images/extracting-articles-from-pocket-or-chatgpt-for-the-needed-but-not-interesting-stuff-0.png?v=5cc165de9d08df52fec8eb18a97109ed" alt="Prompt: An illustrated medium shot of a man with a backpack starting an adventure into a land of wild newspaper articles. The man is standing in a forest of newspaper stands. The background has an old-fashioned town with buildings made of bricks. The overall image has a warm hue." loading="lazy" height="1312" width="736" />
+</picture>
+</p>
+<p><a href="https://getpocket.com">Pocket</a> is a nice service. It can save articles from the web for you to read later. Nice. It can even help in bypassing annoying paywalls (more on this <a href="/2024/02/29/payload-after-load/">here</a>). With the ease of using it, I can quickly end up with a substantial backlog of articles to go through. Since reading long articles on a screen feels like a chore, I came up with the idea of exporting articles into EPub format and reading them on an e-reader.</p>
+<p>My first approach to solving this was with Zapier. I hadn&rsquo;t used it before but had read that it was possible to create an integration that would connect to Pocket, check for articles marked with a specific tag, and then export the contents of the article into a PDF using some external service. This required multiple sites to cooperate, new accounts, and API keys, etc. It all seemed fragile, and in the end, it didn’t work.</p>
+<p>But maybe there are others ways to do that?</p>
+<h3 id="first-try">First try</h3>
+<p>The first attempt was to use the Pocket API to fetch the articles:</p>
+<blockquote>
+<p>generate a python script that fetches saved articles from Pocket</p>
+</blockquote>
+<p>But how do I get the access token? I need to login and authorize!</p>
+<blockquote>
+<p>generate python code that performs login into pocket via api</p>
+</blockquote>
+<p>That was quick!</p>
+<p>On the plus side</p>
+<ul>
+<li>no need to go through an API that brings little new things to me.</li>
+<li>the code worked almost immediately</li>
+</ul>
+<p>Unfortunately, even with the tokens, the first script did not work.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Traceback (most recent call last):
+</span></span><span style="display:flex;"><span>  File <span style="color:#e6db74">&#34;/Users/xyx/projects/library_tools/pocket-to-epub.py&#34;</span>, line <span style="color:#ae81ff">68</span>, <span style="color:#f92672">in</span> <span style="color:#f92672">&lt;</span>module<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    main()
+</span></span><span style="display:flex;"><span>  File <span style="color:#e6db74">&#34;/Users/xyx/projects/library_tools/pocket-to-epub.py&#34;</span>, line <span style="color:#ae81ff">64</span>, <span style="color:#f92672">in</span> main
+</span></span><span style="display:flex;"><span>    create_epub(article)
+</span></span><span style="display:flex;"><span>  File <span style="color:#e6db74">&#34;/Users/xyx/projects/library_tools/pocket-to-epub.py&#34;</span>, line <span style="color:#ae81ff">38</span>, <span style="color:#f92672">in</span> create_epub
+</span></span><span style="display:flex;"><span>    c1<span style="color:#f92672">.</span>content <span style="color:#f92672">=</span> article[<span style="color:#e6db74">&#39;article&#39;</span>]
+</span></span><span style="display:flex;"><span>                 <span style="color:#f92672">~~~~~~~^^^^^^^^^^^</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">KeyError</span>: <span style="color:#e6db74">&#39;article&#39;</span>
+</span></span></code></pre></div><p>After examining the output from API, there was no <code>article</code> field - obviously. Maybe it existed at some point, but according to online documentation, Pocket no longer offers document retrieval. Fair enough; it’s their core business.</p>
+<h3 id="lets-try-something-else">Let&rsquo;s try Something Else</h3>
+<p>For a brief period of time I just wanted to handle the transformation process on my own, using some additional library like <code>readability</code>, or <code>Goose</code>. The flow would be:</p>
+<ol>
+<li>fetch article metadata from API</li>
+<li>get URL of the article from the metadata</li>
+<li>transform</li>
+</ol>
+<p>But this has a serious flaw. In my Pocket Saves, I have a bunch of articles that are either not available anymore or are behind a paywall, etc. And these are the ones I&rsquo;d still want to read. So this approach was no good.</p>
+<p>This was a separate ChatGPT session - just an exploration.</p>
+<h3 id="pivot">Pivot!</h3>
+<p>So maybe I can just use some Javascript code for that?</p>
+<blockquote>
+<p>write a javascript function that looks for element &lt;div lang=&ldquo;en&rdquo;&gt; and copies everything in it (whole html structure) to clipboard</p>
+</blockquote>
+<p>The element mentioned in the message is exactly what keeps article contents - explored in the browser.</p>
+<p>I tested that in Firefox console. Well, something worked. But my clipboard was empty, apparently because Firefox was blocking clipboard operations from some random code. Well done in terms of security!</p>
+<p>But probably Firefox extensions should be able to alleviate this limitation!</p>
+<blockquote>
+<p>wrap that in a firefox extension</p>
+</blockquote>
+<p>And Bam! I got all the necessary code snippets to create a Firefox extension, along with the instructions on how to load that into the browser.</p>
+<p>With that approach it just worked. I had the copy of the article in my clipboard.</p>
+<p>Well, fine—but going through many articles, copying them into the clipboard, and then saving them to an external file by hand would still be tedious!</p>
+<p>It would be much nicer to have the extension preparing the files for me!</p>
+<blockquote>
+<p>Modify the extraction function so as it takes article title from first &lt;h1&gt; element in first &lt;header&gt; element. Use that title to name a file to which the contents of the copied &lt;div&gt; will be stored. The file should be offered as a download.</p>
+</blockquote>
+<p>And it did just that! Worked beautifully!</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>If it was not for the LLM-based conversation I would not accomplish in such a short amount of time. The whole thing took me ~15 minutes. I&rsquo;d also need to learn a bit to accomplish that:</p>
+<ul>
+<li>I&rsquo;m pretty weak at Javascript</li>
+<li>I know nothing about building Firefox extensions</li>
+<li>I&rsquo;d probably have give up after exploring the first dead-end with Python app accessing API</li>
+</ul>
+<p>I must say, that this coding session with ChatGPT worked out really well!</p>
+<h2 id="afterthoughts---llms-are-good-for-side-quests">Afterthoughts - LLMs are good for side-quests</h2>
+<p>There are often situations where I&rsquo;m using a specific application, usually through a browser or some online service with API access. It probably works okay, but there are some aspects that can be improved.</p>
+<p>Then comes an idea, like:</p>
+<ul>
+<li>&ldquo;Damn, I use Strava - but I&rsquo;m not 100% OK with them having all my data, what if they end up like Endomondo or other similar services and close their doors at one point?&rdquo; -&gt; I want to backup or have my own copy of the data</li>
+<li>&ldquo;I&rsquo;d like to have this backup for all the open tabs I have right now. How to do that? It would be cool to write this single browser extension just for that.&rdquo; -&gt; I&rsquo;d use that again, for backing up, or tracking the number of opened tabs. So, for fun and as a way to keep my hunter-gatherer mind satisfied.</li>
+<li>I have this need and habit of reading code - eg. take big pile of code, from an open source project and read it. In the process, I tend to make notes. I&rsquo;ve always wanted to add some annotations to the code. But haven&rsquo;t found a plugin for that. So I&rsquo;ve resorted to ChatGPT for that. And it delivered! It generated Visual Studio Code plugin exactly for this use-case</li>
+</ul>
+<p>Or any other quite wacky idea, that&rsquo;s not that hard to implement but would require learning a new set of libraries or tools that I&rsquo;m not that fond of learning on my own.</p>
+<p>That&rsquo;s the perfect niche that I may use ChatGPT! These tools are pretty small and end easy to describe, even if I need to refine my prompts a few times.</p>
+<p>In the examples above, the common pattern emerges. LLMs are a good tool to take an idea that is just a nicety and make it happen. They’re even more useful if I’m not too proficient in some environment—e.g., I don’t know how to write VS Code plugins, and I don’t want to dive deep into that. But I miss this one particular functionality.</p>
+<p>Other good write-ups on the matter:</p>
+<ul>
+<li><a href="https://bartwronski.com/2024/01/22/how-i-use-chatgpt-daily-scientist-coder-perspective/">How I Use ChatGPT Daily</a> - A Scientist-Coder Perspective</li>
+<li><a href="https://simonwillison.net/2024/Mar/23/building-c-extensions-for-sqlite-with-chatgpt-code-interpreter/">Building C Extensions for SQLite with ChatGPT Code Interpreter</a></li>
+<li><a href="https://simonwillison.net/2024/Mar/22/claude-and-chatgpt-case-study/">Claude and ChatGPT: Case Study</a></li>
+</ul>
+</div>
+  
+  </div>
+</article>
+
+  </main><footer>
+
+
+  <script
+    src="https://utteranc.es/client.js"
+    repo="zygm0nt/hugo-blog-incarnation"
+    issue-term="pathname"
+    label="comments"
+    theme="preferred-color-scheme"
+    crossorigin="anonymous"
+    async
+  ></script>
+  <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
+
+</body>
+</html>
