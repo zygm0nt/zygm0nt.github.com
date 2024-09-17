@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+
+  <title>Youtube video - generate summary - Tech ramblings by Marcin</title>
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="274179a3-6fd7-434b-8b9e-b745ec841ca2"></script>
+
+</head>
+<body>
+  <header>
+<div>
+    <h1><a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></h1>
+  </div>
+  <nav><a href="/about/">about me</a>
+  </nav>
+</header>
+<main>
+    <article>
+  <div class="title">
+    <h1>Youtube video - generate summary</h1>
+    </div>
+  <div class="meta">2024-09-17 00:00</div>
+  <div class="artical-body">
+  
+    <div class="content">
+      <p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="https://marcin.cylke.com.pl/post_images/maciej-je-generate-summary-0.png?v=7a66750b8be81f8936b2f1373db2978f" alt="Image" loading="lazy" height="1024" width="1024" />
+</picture>
+</p>
+<p>I really like watching some culinary channels on Youtube. Those can be roughly divided into two categories:</p>
+<ul>
+<li>people cooking some specific recipe</li>
+<li>people doing a review of a restaurant or a bunch of them</li>
+</ul>
+<p>It&rsquo;s nice to watch, but after that not too much I can keep from that. If I like a specific recipe, and I&rsquo;d like to cook that think it&rsquo;s really counter productive to try cooking from the video. I&rsquo;d constantly need to pause, rewind, replay specific fragments.</p>
+<p>Same for review videos - suppose I&rsquo;ve watched an interesting video about food recommendations from Rome, with a set of places and a bunch of dishes per restaurant. I won&rsquo;t remember all that.</p>
+<p>This simple idea came out of the proliferation of various advanced models:</p>
+<ul>
+<li>fast transcription models</li>
+<li>good enough language models</li>
+</ul>
+<p>I thought about this simple workflow:</p>
+<ol>
+<li>download a video</li>
+<li>extract audio path</li>
+<li>transcribe it</li>
+<li>prepare a prompt to extract interesting information.</li>
+</ol>
+<p>Download source video from Youtube:</p>
+<pre tabindex="0"><code>yt-dlp &#34;https://www.youtube.com/watch?v=9v677cZ4Ias&#34;
+</code></pre><p>Extract wav file from the video:</p>
+<pre tabindex="0"><code>ffmpeg -i video_file -ar 16000 -ac 1 -c:a pcm_s16le output.wav
+</code></pre><p>Use <a href="https://github.com/ggerganov/whisper.cpp">whisper.cpp</a> to do the transcription:</p>
+<pre tabindex="0"><code>git clone https://github.com/ggerganov/whisper.cpp.git
+make
+</code></pre><p>An interesting feature of <code>whisper.cpp</code> is that it can now color-code confidence of the transcription. Just add <code>--print-colors</code>:</p>
+<pre tabindex="0"><code>./main -f ../output.wav -m models/ggml-small.bin -l pl
+</code></pre><p>or</p>
+<pre tabindex="0"><code>./main -m models/ggml-base.en.bin -f samples/gb0.wav --print-colors
+</code></pre><p>Summarize the transcription using some LLM - here, I&rsquo;ve tried mostly models from OpenAI. A simple prompt for that is:</p>
+<pre tabindex="0"><code>This file is a transcription of a video review of multiple restaurants, group that into restaurant + recommended food in each of those restaurants. There&#39;s a timestamp at the begining of each line, omit it.
+</code></pre><p>And that&rsquo;s it! It just worked.</p>
+<p>Not the most streamlined approach, as it would have been better to stitch all those commands into one coherent script. But that is a matter of future improvements.</p>
+<p>Future ideas:</p>
+<ul>
+<li>create an ebook from the contents of the videos</li>
+<li>this would require selecting key frames from the video to illustrate the articles</li>
+</ul>
+</div>
+  
+  </div>
+</article>
+
+  </main><footer>
+
+
+  <script
+    src="https://utteranc.es/client.js"
+    repo="zygm0nt/hugo-blog-incarnation"
+    issue-term="pathname"
+    label="comments"
+    theme="preferred-color-scheme"
+    crossorigin="anonymous"
+    async
+  ></script>
+  <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
+
+</body>
+</html>

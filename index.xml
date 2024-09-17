@@ -6,7 +6,17 @@
     <description>Recent content on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 26 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Youtube video - generate summary</title>
+      <link>https://marcin.cylke.com.pl/2024/09/17/youtube-video-generate-summary/</link>
+      <pubDate>Tue, 17 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/2024/09/17/youtube-video-generate-summary/</guid>
+      <description>I really like watching some culinary channels on Youtube. Those can be roughly divided into two categories:
+people cooking some specific recipe people doing a review of a restaurant or a bunch of them It&amp;rsquo;s nice to watch, but after that not too much I can keep from that. If I like a specific recipe, and I&amp;rsquo;d like to cook that think it&amp;rsquo;s really counter productive to try cooking from the video.</description>
+    </item>
+    
     <item>
       <title>Extracting articles from Pocket - or ChatGPT for the needed but not interesting stuff</title>
       <link>https://marcin.cylke.com.pl/2024/08/26/extracting-articles-from-pocket-or-chatgpt-for-the-needed-but-not-interesting-stuff/</link>
@@ -100,16 +110,6 @@ Conditional configs It appears it&amp;rsquo;s really easy to put conditional pro
       <description>&amp;ldquo;source: Dall-E, prompt: generate an image for blogpost titled &amp;ldquo;breaking a paywall&amp;rdquo;, about exploiting newssite paywall using browser extension&amp;rdquo;
 Today&amp;rsquo;s internet is progressively becoming more and more hostile. It is actually a bunch of walled gardens, in the form of Facebook, Instagram, Linkedin, all the other social media outlets. Now, also news sites are increasingly becoming a payed instances.
 I totally get it, authoring all that content is not cheap.</description>
-    </item>
-    
-    <item>
-      <title>useful CLI tools from other planet</title>
-      <link>https://marcin.cylke.com.pl/2023/10/10/useful-cli-tools-from-other-planet/</link>
-      <pubDate>Tue, 10 Oct 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2023/10/10/useful-cli-tools-from-other-planet/</guid>
-      <description>I&amp;rsquo;ve already written a short post about me using fzf on this blog. And I still use it, it still is awesome! :)
-But there are more tools like that. Maybe this is just my optics, but with the recent (at least 2 last years) rust&amp;rsquo;s rise to popularity, there are a lot of small tools doing a single task, or focusing on specific kind of problems. And they of course target terminals!</description>
     </item>
     
   </channel>
