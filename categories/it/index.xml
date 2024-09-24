@@ -6,7 +6,18 @@
     <description>Recent content in It on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/IT/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 24 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/IT/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Convenient search in my Obsidian notes</title>
+      <link>https://marcin.cylke.com.pl/2024/09/24/convenient-search-in-my-obsidian-notes/</link>
+      <pubDate>Tue, 24 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/2024/09/24/convenient-search-in-my-obsidian-notes/</guid>
+      <description>I came across this idea of better search in Obsidian notes: https://simplyexplained.com/blog/how-i-use-alfred-to-search-obsidian-notes/
+This should work nicely, but:
+it would require installing an additional tool Alfred, would bind even more to MacOS ecosystem - what if I want to use the same workflow on Linux, would not be too VCS friendly - hard to version those UI wizards So I&amp;rsquo;ve figured I can do better, with just CLI tools. That resulted in the following short script:</description>
+    </item>
+    
     <item>
       <title>Youtube video - generate summary</title>
       <link>https://marcin.cylke.com.pl/2024/09/17/youtube-video-generate-summary/</link>
@@ -98,16 +109,6 @@ Conditional configs It appears it&amp;rsquo;s really easy to put conditional pro
       <description>&amp;ldquo;source: Dall-E, prompt: generate an image for blogpost titled &amp;ldquo;breaking a paywall&amp;rdquo;, about exploiting newssite paywall using browser extension&amp;rdquo;
 Today&amp;rsquo;s internet is progressively becoming more and more hostile. It is actually a bunch of walled gardens, in the form of Facebook, Instagram, Linkedin, all the other social media outlets. Now, also news sites are increasingly becoming a payed instances.
 I totally get it, authoring all that content is not cheap.</description>
-    </item>
-    
-    <item>
-      <title>useful CLI tools from other planet</title>
-      <link>https://marcin.cylke.com.pl/2023/10/10/useful-cli-tools-from-other-planet/</link>
-      <pubDate>Tue, 10 Oct 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2023/10/10/useful-cli-tools-from-other-planet/</guid>
-      <description>I&amp;rsquo;ve already written a short post about me using fzf on this blog. And I still use it, it still is awesome! :)
-But there are more tools like that. Maybe this is just my optics, but with the recent (at least 2 last years) rust&amp;rsquo;s rise to popularity, there are a lot of small tools doing a single task, or focusing on specific kind of problems. And they of course target terminals!</description>
     </item>
     
   </channel>

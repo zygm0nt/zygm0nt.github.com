@@ -6,13 +6,40 @@
     <description>Recent content in Categories on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 24 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fzf</title>
+      <link>https://marcin.cylke.com.pl/categories/fzf/</link>
+      <pubDate>Tue, 24 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/categories/fzf/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>It</title>
       <link>https://marcin.cylke.com.pl/categories/IT/</link>
-      <pubDate>Tue, 17 Sep 2024 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 24 Sep 2024 00:00:00 +0000</pubDate>
       
       <guid>https://marcin.cylke.com.pl/categories/IT/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Obsidian</title>
+      <link>https://marcin.cylke.com.pl/categories/obsidian/</link>
+      <pubDate>Tue, 24 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/categories/obsidian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Til</title>
+      <link>https://marcin.cylke.com.pl/categories/til/</link>
+      <pubDate>Tue, 24 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/categories/til/</guid>
       <description></description>
     </item>
     
@@ -67,33 +94,6 @@
       <pubDate>Tue, 09 Apr 2024 00:00:00 +0000</pubDate>
       
       <guid>https://marcin.cylke.com.pl/categories/genAI/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Security</title>
-      <link>https://marcin.cylke.com.pl/categories/security/</link>
-      <pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/categories/security/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Git</title>
-      <link>https://marcin.cylke.com.pl/categories/git/</link>
-      <pubDate>Thu, 28 Mar 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/categories/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ramblings</title>
-      <link>https://marcin.cylke.com.pl/categories/ramblings/</link>
-      <pubDate>Thu, 29 Feb 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/categories/ramblings/</guid>
       <description></description>
     </item>
     

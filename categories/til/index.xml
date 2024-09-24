@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Til on Tech ramblings by Marcin</title>
+    <link>https://marcin.cylke.com.pl/categories/til/</link>
+    <description>Recent content in Til on Tech ramblings by Marcin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/til/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Convenient search in my Obsidian notes</title>
+      <link>https://marcin.cylke.com.pl/2024/09/24/convenient-search-in-my-obsidian-notes/</link>
+      <pubDate>Tue, 24 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/2024/09/24/convenient-search-in-my-obsidian-notes/</guid>
+      <description>I came across this idea of better search in Obsidian notes: https://simplyexplained.com/blog/how-i-use-alfred-to-search-obsidian-notes/
+This should work nicely, but:
+it would require installing an additional tool Alfred, would bind even more to MacOS ecosystem - what if I want to use the same workflow on Linux, would not be too VCS friendly - hard to version those UI wizards So I&amp;rsquo;ve figured I can do better, with just CLI tools. That resulted in the following short script:</description>
+    </item>
+    
+  </channel>
+</rss>

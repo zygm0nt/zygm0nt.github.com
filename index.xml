@@ -6,7 +6,18 @@
     <description>Recent content on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 24 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Convenient search in my Obsidian notes</title>
+      <link>https://marcin.cylke.com.pl/2024/09/24/convenient-search-in-my-obsidian-notes/</link>
+      <pubDate>Tue, 24 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/2024/09/24/convenient-search-in-my-obsidian-notes/</guid>
+      <description>I came across this idea of better search in Obsidian notes: https://simplyexplained.com/blog/how-i-use-alfred-to-search-obsidian-notes/
+This should work nicely, but:
+it would require installing an additional tool Alfred, would bind even more to MacOS ecosystem - what if I want to use the same workflow on Linux, would not be too VCS friendly - hard to version those UI wizards So I&amp;rsquo;ve figured I can do better, with just CLI tools. That resulted in the following short script:</description>
+    </item>
+    
     <item>
       <title>Youtube video - generate summary</title>
       <link>https://marcin.cylke.com.pl/2024/09/17/youtube-video-generate-summary/</link>
@@ -99,17 +110,6 @@ Note: Another, more recent supply-chain attack is the xz backdoor.</description>
       <description>Recently I came across two very interesting options in git that I wanted to make a note of.
 One is a general feature - conditional configs - that you can probably utilise in a myriad of ways. The second - commit signing - might seem a bit obscure.
 Conditional configs It appears it&amp;rsquo;s really easy to put conditional properties into your .gitconfig file. This way, you can have a separate entities depending on which repositories you commit to.</description>
-    </item>
-    
-    <item>
-      <title>Payload after load, really?!</title>
-      <link>https://marcin.cylke.com.pl/2024/02/29/payload-after-load/</link>
-      <pubDate>Thu, 29 Feb 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2024/02/29/payload-after-load/</guid>
-      <description>&amp;ldquo;source: Dall-E, prompt: generate an image for blogpost titled &amp;ldquo;breaking a paywall&amp;rdquo;, about exploiting newssite paywall using browser extension&amp;rdquo;
-Today&amp;rsquo;s internet is progressively becoming more and more hostile. It is actually a bunch of walled gardens, in the form of Facebook, Instagram, Linkedin, all the other social media outlets. Now, also news sites are increasingly becoming a payed instances.
-I totally get it, authoring all that content is not cheap.</description>
     </item>
     
   </channel>
