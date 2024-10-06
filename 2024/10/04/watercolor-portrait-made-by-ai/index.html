@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+
+  <title>Watercolor portrait - made by AI - Tech ramblings by Marcin</title>
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="274179a3-6fd7-434b-8b9e-b745ec841ca2"></script>
+
+</head>
+<body>
+  <header>
+<div>
+    <h1><a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></h1>
+  </div>
+  <nav><a href="/about/">about me</a>
+  </nav>
+</header>
+<main>
+    <article>
+  <div class="title">
+    <h1>Watercolor portrait - made by AI</h1>
+    </div>
+  <div class="meta">2024-10-04 00:00</div>
+  <div class="artical-body">
+  
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#prerequisites">Prerequisites</a>
+      <ul>
+        <li><a href="#photos">Photos</a></li>
+        <li><a href="#secret-word">&ldquo;Secret word&rdquo;</a></li>
+      </ul>
+    </li>
+    <li><a href="#step-by-step-guide">Step-by-step guide</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#generate-the-actual-watercolor-pictures">Generate the actual watercolor pictures</a></li>
+    <li><a href="#some-other-interesting-lora-s">Some other interesting LoRA-s</a></li>
+    <li><a href="#glitches">Glitches</a></li>
+  </ul>
+</nav>
+    <div class="content-with-toc">
+      <p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+      
+      
+  <picture>
+  <img class="img-fluid" src="https://marcin.cylke.com.pl/post_images/watercolor-portrait-made-by-ai-0.png?v=ad865eff85f7f799daafc37948e994cb" alt="Image" loading="lazy" height="1027" width="1025" />
+</picture>
+</p>
+<p>This article is inspired by a post I&rsquo;ve stumbled upon on LinkedIn, by <a href="https://www.linkedin.com/posts/appenz_flux-is-incredibly-good-to-generate-profile-activity-7231716430889541632-0XL8">Guido Appenzeller</a></p>
+<p>Below you can find a reinterpretation of his post. With added details here, and there. The reason for that, is twofold - a) I really like the workflow, b) the original post is missing some details for a first-time user of those tools.</p>
+<p>Flux is incredibly good to generate profile pictures, for example this Watercolor one. Below a quick tutorial how to do it. Total cost is ~$5. Uses <a href="https://www.linkedin.com/company/huggingface/">Hugging Face</a> and <a href="https://www.linkedin.com/company/replicate/">Replicate</a>.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<h3 id="photos">Photos</h3>
+<p>You&rsquo;ll need a few pictures of you (~10 is ok, but the more the better), to train a base model on them. They should not have other people in it, best to keep the background clean. Create a zip archive with the photos. It will be needed later on.</p>
+<h3 id="secret-word">&ldquo;Secret word&rdquo;</h3>
+<p>&hellip; or a trigger word. Choose a really unique word, you can just generate anything random. The thing here is to not trip over a word that&rsquo;s been in the training set of the model. This is for model&rsquo;s recall of your face.</p>
+<h2 id="step-by-step-guide">Step-by-step guide</h2>
+<h4 id="huggingface">Huggingface:</h4>
+<ol>
+<li>Create a new model. Eg. <code>yourusername/flux-test-1</code></li>
+<li>Go to the Flux dev model (<a href="https://huggingface.co/black-forest-labs/FLUX.1-dev">https://huggingface.co/black-forest-labs/FLUX.1-dev</a>) and accept the terms of service</li>
+<li>Get API token for HuggingFace. Set &ldquo;Repository section&rdquo; permissions for this token.</li>
+</ol>
+<h4 id="replicate">Replicate</h4>
+<p>Use Replicate to train the model. This will be <code>Flux.1 dev LoRA</code>.  The trainer page is <a href="https://replicate.com/ostris/flux-dev-lora-trainer/train">https://replicate.com/ostris/flux-dev-lora-trainer/train</a></p>
+<p>Set the following parameters:</p>
+<ul>
+<li>New mode, name can be whatever (e.g. <code>flux-test-1</code>)</li>
+<li>Files is the zip file of the photos of yourself</li>
+<li>Trigger Word is what you picked above, eg. TOK</li>
+<li>Set autocaption prefix to &ldquo;A photo of &lt;Trigger Word&gt;&rdquo;, so for me &ldquo;A photo of TOK&rdquo;</li>
+<li><code>hf_repo_id </code>should be your HuggingFace model name. So something like <code>yourusername/flux-test-1</code></li>
+<li><code>hf_token</code> is the API token we generated above. Usually starts with <code>hf_</code></li>
+</ul>
+<p>Everything else leave defaults.</p>
+<p>Start the training. Depending on the number of photos used for the fine-tuneing process, it might take some time. For a zip of 10 files it takes about 25-30min.</p>
+<h2 id="generate-the-actual-watercolor-pictures">Generate the actual watercolor pictures</h2>
+<p>Using the fine-tuned version of the model, and combining it with a different LoRA</p>
+<p>To get the watercolor effect, we will combine this with another LoRA:</p>
+<ol>
+<li>Go to <a href="https://replicate.com/lucataco/flux-dev-multi-lora">https://replicate.com/lucataco/flux-dev-multi-lora</a></li>
+<li>For <code>hf_loras</code> delete the two LoRAs that are there by default. Instead add your LoRA on <strong>HuggingFace</strong> (e.g. <code>yourusername/flux-test-1</code>), and the Style LoRA, e.g <code>SebastianBodza/flux_lora_aquarel_watercolor</code></li>
+<li>Prompt is &ldquo;A portrait of &lt;Trigger Word&gt; in the style of AQUACOLTOK&rdquo;</li>
+</ol>
+<p><code>AQUACOLTOK</code> in this case is a trigger word for this specific LoRA.</p>
+<p>This should generate a watercolor picture of you.</p>
+<h2 id="some-other-interesting-lora-s">Some other interesting LoRA-s</h2>
+<ul>
+<li><a href="https://replicate.com/sebastianbodza/flux_lora_retro_linedrawing_style_v1">https://replicate.com/sebastianbodza/flux_lora_retro_linedrawing_style_v1</a></li>
+<li><a href="https://replicate.com/lucataco/flux-time100">https://replicate.com/lucataco/flux-time100</a></li>
+</ul>
+<h2 id="glitches">Glitches</h2>
+<ul>
+<li>my generated pictures randomly show my watercolored face, or some animal - that&rsquo;s very strange. Playing with params, like inference steps, or guidance helps, but it&rsquo;s unintuitive for me.</li>
+<li>model fine-tuned today gives wastly different results then during my initial experiments in August</li>
+</ul>
+</div>
+  
+  </div>
+</article>
+
+  </main><footer>
+
+
+  <script
+    src="https://utteranc.es/client.js"
+    repo="zygm0nt/hugo-blog-incarnation"
+    issue-term="pathname"
+    label="comments"
+    theme="preferred-color-scheme"
+    crossorigin="anonymous"
+    async
+  ></script>
+  <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
+
+</body>
+</html>

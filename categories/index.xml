@@ -6,22 +6,40 @@
     <description>Recent content in Categories on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Fzf</title>
-      <link>https://marcin.cylke.com.pl/categories/fzf/</link>
-      <pubDate>Tue, 24 Sep 2024 00:00:00 +0000</pubDate>
+      <title>Ai</title>
+      <link>https://marcin.cylke.com.pl/categories/ai/</link>
+      <pubDate>Fri, 04 Oct 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/categories/fzf/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Howto</title>
+      <link>https://marcin.cylke.com.pl/categories/howto/</link>
+      <pubDate>Fri, 04 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/categories/howto/</guid>
       <description></description>
     </item>
     
     <item>
       <title>It</title>
       <link>https://marcin.cylke.com.pl/categories/IT/</link>
-      <pubDate>Tue, 24 Sep 2024 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 04 Oct 2024 00:00:00 +0000</pubDate>
       
       <guid>https://marcin.cylke.com.pl/categories/IT/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fzf</title>
+      <link>https://marcin.cylke.com.pl/categories/fzf/</link>
+      <pubDate>Tue, 24 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/categories/fzf/</guid>
       <description></description>
     </item>
     
@@ -76,24 +94,6 @@
       <pubDate>Sun, 16 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://marcin.cylke.com.pl/categories/photos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>FunnyX</title>
-      <link>https://marcin.cylke.com.pl/categories/funnyX/</link>
-      <pubDate>Tue, 09 Apr 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/categories/funnyX/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GenAI</title>
-      <link>https://marcin.cylke.com.pl/categories/genAI/</link>
-      <pubDate>Tue, 09 Apr 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/categories/genAI/</guid>
       <description></description>
     </item>
     

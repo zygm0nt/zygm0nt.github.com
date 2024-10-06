@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Watercolor portrait - made by AI</title>
+      <link>https://marcin.cylke.com.pl/2024/10/04/watercolor-portrait-made-by-ai/</link>
+      <pubDate>Fri, 04 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/2024/10/04/watercolor-portrait-made-by-ai/</guid>
+      <description>This article is inspired by a post I&amp;rsquo;ve stumbled upon on LinkedIn, by Guido Appenzeller
+Below you can find a reinterpretation of his post. With added details here, and there. The reason for that, is twofold - a) I really like the workflow, b) the original post is missing some details for a first-time user of those tools.
+Flux is incredibly good to generate profile pictures, for example this Watercolor one.</description>
+    </item>
+    
     <item>
       <title>Convenient search in my Obsidian notes</title>
       <link>https://marcin.cylke.com.pl/2024/09/24/convenient-search-in-my-obsidian-notes/</link>
@@ -99,17 +110,6 @@ make this less realistic and more soviet propaganda poster</description>
       <description>Some time ago, I read a good writeup about the SolarWinds incident that happened in 2020. You can get to that article by clicking this link. This article is well-written and portrays multiple persons involved in solving the case. Really enjoyable piece.
 This blog post sums up the incident from the technical perspective and also goes deeper into multiple aspects of it, using data taken from different sources.
 Note: Another, more recent supply-chain attack is the xz backdoor.</description>
-    </item>
-    
-    <item>
-      <title>Git - conditional configs and commit signing</title>
-      <link>https://marcin.cylke.com.pl/2024/03/28/git-conditional/</link>
-      <pubDate>Thu, 28 Mar 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2024/03/28/git-conditional/</guid>
-      <description>Recently I came across two very interesting options in git that I wanted to make a note of.
-One is a general feature - conditional configs - that you can probably utilise in a myriad of ways. The second - commit signing - might seem a bit obscure.
-Conditional configs It appears it&amp;rsquo;s really easy to put conditional properties into your .gitconfig file. This way, you can have a separate entities depending on which repositories you commit to.</description>
     </item>
     
   </channel>

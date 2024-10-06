@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Howto on Tech ramblings by Marcin</title>
+    <link>https://marcin.cylke.com.pl/categories/howto/</link>
+    <description>Recent content in Howto on Tech ramblings by Marcin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 04 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/howto/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Watercolor portrait - made by AI</title>
+      <link>https://marcin.cylke.com.pl/2024/10/04/watercolor-portrait-made-by-ai/</link>
+      <pubDate>Fri, 04 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/2024/10/04/watercolor-portrait-made-by-ai/</guid>
+      <description>This article is inspired by a post I&amp;rsquo;ve stumbled upon on LinkedIn, by Guido Appenzeller
+Below you can find a reinterpretation of his post. With added details here, and there. The reason for that, is twofold - a) I really like the workflow, b) the original post is missing some details for a first-time user of those tools.
+Flux is incredibly good to generate profile pictures, for example this Watercolor one.</description>
+    </item>
+    
+  </channel>
+</rss>
