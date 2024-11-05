@@ -1,0 +1,25 @@
+.review-container {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+.book-cover {
+    margin: 0 20px;
+}
+.book-cover img {
+    max-width: 150px;
+    height: auto;
+}
+.review-text {
+    max-width: 600px;
+}
+h2 {
+    margin-bottom: 10px;
+}
+/* Alternate layout for even and odd reviews */
+.review-container:nth-child(odd) {
+    flex-direction: row;
+}
+.review-container:nth-child(even) {
+    flex-direction: row-reverse;
+}

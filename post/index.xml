@@ -6,14 +6,23 @@
     <description>Recent content in Posts on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>books I read - September 2024</title>
+      <link>https://marcin.cylke.com.pl/2024/11/05/books-i-read-september-2024/</link>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/2024/11/05/books-i-read-september-2024/</guid>
+      <description>Books Book Review: Stany podzielone Ameryki by Lukasz Pawłowski Written by one of the podcasters from &amp;ldquo;Podcast amerykański,&amp;rdquo; and my great experience with this book was largely due to this connection. The book is fascinating and feels refreshingly objective. Additionally, it offers an insightful analysis of the current state of American society, particularly from a European perspective, providing a unique outsider&amp;rsquo;s view of the country&amp;rsquo;s complexities. Book Review: Persepolis by Marjane Satrapi A classic.</description>
+    </item>
+    
     <item>
       <title>Watercolor portrait - made by AI</title>
       <link>https://marcin.cylke.com.pl/2024/10/04/watercolor-portrait-made-by-ai/</link>
       <pubDate>Fri, 04 Oct 2024 00:00:00 +0000</pubDate>
       
       <guid>https://marcin.cylke.com.pl/2024/10/04/watercolor-portrait-made-by-ai/</guid>
-      <description>This article is inspired by a post I&amp;rsquo;ve stumbled upon on LinkedIn, by Guido Appenzeller
+      <description>An illustration This article is inspired by a post I&amp;rsquo;ve stumbled upon on LinkedIn, by Guido Appenzeller
 Below you can find a reinterpretation of his post. With added details here, and there. The reason for that, is twofold - a) I really like the workflow, b) the original post is missing some details for a first-time user of those tools.
 Flux is incredibly good to generate profile pictures, for example this Watercolor one.</description>
     </item>
@@ -99,17 +108,6 @@ A few past companies I&amp;rsquo;ve worked for have had their internal wikis bui
 generate something similar in style but advocating for &amp;ldquo;the only good person is the one eating sour crout&#39;
 generate a Russian propaganda poster from soviet era with a single person with a gun advocating for &amp;ldquo;all work and no play makes Ivan a dull boy&amp;rdquo;
 make this less realistic and more soviet propaganda poster</description>
-    </item>
-    
-    <item>
-      <title>SolarWinds supply chain attack</title>
-      <link>https://marcin.cylke.com.pl/2024/04/07/solarwinds-supply-chain-attack/</link>
-      <pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2024/04/07/solarwinds-supply-chain-attack/</guid>
-      <description>Some time ago, I read a good writeup about the SolarWinds incident that happened in 2020. You can get to that article by clicking this link. This article is well-written and portrays multiple persons involved in solving the case. Really enjoyable piece.
-This blog post sums up the incident from the technical perspective and also goes deeper into multiple aspects of it, using data taken from different sources.
-Note: Another, more recent supply-chain attack is the xz backdoor.</description>
     </item>
     
   </channel>
