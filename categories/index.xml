@@ -6,13 +6,22 @@
     <description>Recent content in Categories on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>It</title>
-      <link>https://marcin.cylke.com.pl/categories/IT/</link>
-      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
+      <title>Reading</title>
+      <link>https://marcin.cylke.com.pl/categories/reading/</link>
+      <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/categories/IT/</guid>
+      <guid>https://marcin.cylke.com.pl/categories/reading/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Review</title>
+      <link>https://marcin.cylke.com.pl/categories/review/</link>
+      <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/categories/review/</guid>
       <description></description>
     </item>
     
@@ -31,6 +40,15 @@
       <pubDate>Fri, 04 Oct 2024 00:00:00 +0000</pubDate>
       
       <guid>https://marcin.cylke.com.pl/categories/howto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>It</title>
+      <link>https://marcin.cylke.com.pl/categories/IT/</link>
+      <pubDate>Fri, 04 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/categories/IT/</guid>
       <description></description>
     </item>
     
@@ -76,24 +94,6 @@
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://marcin.cylke.com.pl/categories/network/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Google</title>
-      <link>https://marcin.cylke.com.pl/categories/google/</link>
-      <pubDate>Sun, 16 Jun 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/categories/google/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Photos</title>
-      <link>https://marcin.cylke.com.pl/categories/photos/</link>
-      <pubDate>Sun, 16 Jun 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/categories/photos/</guid>
       <description></description>
     </item>
     

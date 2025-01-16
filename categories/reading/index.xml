@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reading on Tech ramblings by Marcin</title>
+    <link>https://marcin.cylke.com.pl/categories/reading/</link>
+    <description>Recent content in Reading on Tech ramblings by Marcin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 16 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/reading/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>books I read - Oct - Dec 2024</title>
+      <link>https://marcin.cylke.com.pl/2025/01/16/books-i-read-oct-dec-2024/</link>
+      <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/2025/01/16/books-i-read-oct-dec-2024/</guid>
+      <description>Book Review: Czysta Ameryka. Przemilczana historia eugeniki by Elizabeth Catte Many interesting observations and a clearly presented opinion on eugenics and its history in the USA. It&amp;rsquo;s quite difficult to get through due to the many facts specific to USA internal politics. It also explores topics loosely connected to eugenics, which may feel tangential but provide a broader context. There is certainly a lot of personal opinions here, referring to the author&amp;rsquo;s hometown.</description>
+    </item>
+    
+    <item>
+      <title>books I read - September 2024</title>
+      <link>https://marcin.cylke.com.pl/2024/11/05/books-i-read-september-2024/</link>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/2024/11/05/books-i-read-september-2024/</guid>
+      <description>Books Book Review: Stany podzielone Ameryki by Lukasz Pawłowski Written by one of the podcasters from &amp;ldquo;Podcast amerykański,&amp;rdquo; and my great experience with this book was largely due to this connection. The book is fascinating and feels refreshingly objective. Additionally, it offers an insightful analysis of the current state of American society, particularly from a European perspective, providing a unique outsider&amp;rsquo;s view of the country&amp;rsquo;s complexities. Book Review: Persepolis by Marjane Satrapi A classic.</description>
+    </item>
+    
+  </channel>
+</rss>

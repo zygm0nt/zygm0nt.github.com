@@ -2,25 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://marcin.cylke.com.pl/2024/11/05/books-i-read-september-2024/</loc>
-    <lastmod>2024-11-05T00:00:00+00:00</lastmod>
+    <loc>https://marcin.cylke.com.pl/2025/01/16/books-i-read-oct-dec-2024/</loc>
+    <lastmod>2025-01-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://marcin.cylke.com.pl/categories/</loc>
-    <lastmod>2024-11-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://marcin.cylke.com.pl/categories/IT/</loc>
-    <lastmod>2024-11-05T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://marcin.cylke.com.pl/post/</loc>
-    <lastmod>2024-11-05T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://marcin.cylke.com.pl/categories/reading/</loc>
+    <lastmod>2025-01-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://marcin.cylke.com.pl/categories/review/</loc>
+    <lastmod>2025-01-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://marcin.cylke.com.pl/</loc>
+    <lastmod>2025-01-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://marcin.cylke.com.pl/2024/11/05/books-i-read-september-2024/</loc>
     <lastmod>2024-11-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://marcin.cylke.com.pl/categories/ai/</loc>
     <lastmod>2024-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://marcin.cylke.com.pl/categories/howto/</loc>
+    <lastmod>2024-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://marcin.cylke.com.pl/categories/IT/</loc>
     <lastmod>2024-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://marcin.cylke.com.pl/2024/10/04/watercolor-portrait-made-by-ai/</loc>
@@ -444,9 +453,6 @@
     <lastmod>2009-09-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://marcin.cylke.com.pl/categories/kult/</loc>
-    <lastmod>2009-09-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://marcin.cylke.com.pl/categories/review/</loc>
     <lastmod>2009-09-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://marcin.cylke.com.pl/categories/scifi/</loc>

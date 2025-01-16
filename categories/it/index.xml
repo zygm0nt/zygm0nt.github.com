@@ -6,16 +6,7 @@
     <description>Recent content in It on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/IT/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>books I read - September 2024</title>
-      <link>https://marcin.cylke.com.pl/2024/11/05/books-i-read-september-2024/</link>
-      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2024/11/05/books-i-read-september-2024/</guid>
-      <description>Books Book Review: Stany podzielone Ameryki by Lukasz Pawłowski Written by one of the podcasters from &amp;ldquo;Podcast amerykański,&amp;rdquo; and my great experience with this book was largely due to this connection. The book is fascinating and feels refreshingly objective. Additionally, it offers an insightful analysis of the current state of American society, particularly from a European perspective, providing a unique outsider&amp;rsquo;s view of the country&amp;rsquo;s complexities. Book Review: Persepolis by Marjane Satrapi A classic.</description>
-    </item>
-    
+    <lastBuildDate>Fri, 04 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/IT/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Watercolor portrait - made by AI</title>
       <link>https://marcin.cylke.com.pl/2024/10/04/watercolor-portrait-made-by-ai/</link>
@@ -107,6 +98,17 @@ A few past companies I&amp;rsquo;ve worked for have had their internal wikis bui
       <description>Some time ago, I read a good writeup about the SolarWinds incident that happened in 2020. You can get to that article by clicking this link. This article is well-written and portrays multiple persons involved in solving the case. Really enjoyable piece.
 This blog post sums up the incident from the technical perspective and also goes deeper into multiple aspects of it, using data taken from different sources.
 Note: Another, more recent supply-chain attack is the xz backdoor.</description>
+    </item>
+    
+    <item>
+      <title>Git - conditional configs and commit signing</title>
+      <link>https://marcin.cylke.com.pl/2024/03/28/git-conditional/</link>
+      <pubDate>Thu, 28 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/2024/03/28/git-conditional/</guid>
+      <description>Recently I came across two very interesting options in git that I wanted to make a note of.
+One is a general feature - conditional configs - that you can probably utilise in a myriad of ways. The second - commit signing - might seem a bit obscure.
+Conditional configs It appears it&amp;rsquo;s really easy to put conditional properties into your .gitconfig file. This way, you can have a separate entities depending on which repositories you commit to.</description>
     </item>
     
   </channel>

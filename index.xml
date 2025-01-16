@@ -6,7 +6,16 @@
     <description>Recent content on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>books I read - Oct - Dec 2024</title>
+      <link>https://marcin.cylke.com.pl/2025/01/16/books-i-read-oct-dec-2024/</link>
+      <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/2025/01/16/books-i-read-oct-dec-2024/</guid>
+      <description>Book Review: Czysta Ameryka. Przemilczana historia eugeniki by Elizabeth Catte Many interesting observations and a clearly presented opinion on eugenics and its history in the USA. It&amp;rsquo;s quite difficult to get through due to the many facts specific to USA internal politics. It also explores topics loosely connected to eugenics, which may feel tangential but provide a broader context. There is certainly a lot of personal opinions here, referring to the author&amp;rsquo;s hometown.</description>
+    </item>
+    
     <item>
       <title>books I read - September 2024</title>
       <link>https://marcin.cylke.com.pl/2024/11/05/books-i-read-september-2024/</link>
@@ -96,18 +105,6 @@ My current data setup is centered around Google Cloud as a place where I store m
       <description>Prompt: generate an image for blogpost titled &amp;ldquo;Moving markdown files to confluence&amp;rdquo;
 Assume you want to have your documentation close to the code. Ideally in your project&amp;rsquo;s repo. But then there&amp;rsquo;s always this request, that other people might want to look through that documentation, they&amp;rsquo;re not too tech savy, no nothing about Git.
 A few past companies I&amp;rsquo;ve worked for have had their internal wikis built on Atlassian Confluence. It seems there&amp;rsquo;s quite nice way to upload pages stored in repository to arbitrary location in Confluence.</description>
-    </item>
-    
-    <item>
-      <title>Propaganda posters by GenAI</title>
-      <link>https://marcin.cylke.com.pl/2024/04/09/propaganda-posters/</link>
-      <pubDate>Tue, 09 Apr 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2024/04/09/propaganda-posters/</guid>
-      <description>generate a Chinese propaganda poster advocating for &amp;ldquo;all people should eat pringles&amp;rdquo;
-generate something similar in style but advocating for &amp;ldquo;the only good person is the one eating sour crout&#39;
-generate a Russian propaganda poster from soviet era with a single person with a gun advocating for &amp;ldquo;all work and no play makes Ivan a dull boy&amp;rdquo;
-make this less realistic and more soviet propaganda poster</description>
     </item>
     
   </channel>
