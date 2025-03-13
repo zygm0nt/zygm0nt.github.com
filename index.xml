@@ -6,7 +6,17 @@
     <description>Recent content on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting things done in a distracted world</title>
+      <link>https://marcin.cylke.com.pl/2025/03/13/getting-things-done-in-a-distracted-world/</link>
+      <pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/2025/03/13/getting-things-done-in-a-distracted-world/</guid>
+      <description>Many years ago I&amp;rsquo;ve written somewhat similar piece about navigating all the distractions of my life. You can read it here: https://marcin.cylke.com.pl/2016/07/24/it-minimalist/ Years have passed, and I want to revisit the topic. Let this post be a reflection on how my habits changed, but also a summary of techniques that work for me right now.
+Let&amp;rsquo;s try to recap my stats for this day, as compared to year 2016 (noted in brackets)</description>
+    </item>
+    
     <item>
       <title>books I read - Oct - Dec 2024</title>
       <link>https://marcin.cylke.com.pl/2025/01/16/books-i-read-oct-dec-2024/</link>
@@ -94,17 +104,6 @@ Instead of doing a long sequence of clicks through your WebUI in AWS console, yo
       <guid>https://marcin.cylke.com.pl/2024/06/16/why-google-takeout-is-sooo-bad/</guid>
       <description>Author: IdeogramAI Prompt: The image shows a typical Google Takeout interface with a large error message indicating that the service is unavailable. In the background, there are frustrated users trying to download their data with unsuccessful attempts, represented by repeated &amp;ldquo;Failed&amp;rdquo; and &amp;ldquo;Retry&amp;rdquo; notifications.
 My current data setup is centered around Google Cloud as a place where I store my data. That&amp;rsquo;s also related to how I use the whole vendor ecosystem.</description>
-    </item>
-    
-    <item>
-      <title>Updating Confluence page from Markdown</title>
-      <link>https://marcin.cylke.com.pl/2024/05/20/updating-confluence-page-from-markdown/</link>
-      <pubDate>Mon, 20 May 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2024/05/20/updating-confluence-page-from-markdown/</guid>
-      <description>Prompt: generate an image for blogpost titled &amp;ldquo;Moving markdown files to confluence&amp;rdquo;
-Assume you want to have your documentation close to the code. Ideally in your project&amp;rsquo;s repo. But then there&amp;rsquo;s always this request, that other people might want to look through that documentation, they&amp;rsquo;re not too tech savy, no nothing about Git.
-A few past companies I&amp;rsquo;ve worked for have had their internal wikis built on Atlassian Confluence. It seems there&amp;rsquo;s quite nice way to upload pages stored in repository to arbitrary location in Confluence.</description>
     </item>
     
   </channel>

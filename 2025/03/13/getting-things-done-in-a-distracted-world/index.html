@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+
+  <title>Getting things done in a distracted world - Tech ramblings by Marcin</title>
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/book_section.css">
+  <link rel="stylesheet" type="text/css" href="/css/aux.css">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="274179a3-6fd7-434b-8b9e-b745ec841ca2"></script>
+
+</head>
+<body>
+  <header>
+<div>
+    <h1><a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></h1>
+  </div>
+  <nav><a href="/about/">about me</a>
+  </nav>
+</header>
+<main>
+    <article>
+  <div class="title">
+    <h1>Getting things done in a distracted world</h1>
+    </div>
+  <div class="meta">2025-03-13 00:00</div>
+  <div class="artical-body">
+  
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#browsing-the-web">Browsing the web</a></li>
+    <li><a href="#how-to-read-all-those-saved-for-later-articles-pocket">How to read all those &ldquo;saved-for-later&rdquo; articles (Pocket)</a></li>
+    <li><a href="#task-handling">Task handling</a>
+      <ul>
+        <li><a href="#todoist-taskwarrior-etc">Todoist, Taskwarrior, etc</a></li>
+      </ul>
+    </li>
+    <li><a href="#all-those-notifications">All those notifications</a></li>
+    <li><a href="#videos">Videos</a>
+      <ul>
+        <li><a href="#so-let-me-start-with-movies">So, let me start with movies</a></li>
+        <li><a href="#-and-youtube">.. and YouTube</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    <div class="content-with-toc">
+      <p>Many years ago I&rsquo;ve written somewhat similar piece about navigating all the distractions of my life. You can read it here: <a href="https://marcin.cylke.com.pl/2016/07/24/it-minimalist/">https://marcin.cylke.com.pl/2016/07/24/it-minimalist/</a>
+Years have passed, and I want to revisit the topic. Let this post be a reflection on how my habits changed, but also a summary of techniques that work for me right now.</p>
+<p>Let&rsquo;s try to recap my stats for this day, as compared to year 2016 (noted in brackets)</p>
+<ul>
+<li>rss channels 120 (164)</li>
+<li>opened browser tabs ~150 (47)</li>
+<li>movies to watch 45 (29)</li>
+<li>notes in google keep 21 (44)</li>
+<li>books to read 15 (78)</li>
+</ul>
+<p>One could say that things have deteriorated a lot in at least a few domains, whereas in some - improved.
+Although this might seem silly to show that kind of stats, for me it&rsquo;s a data point of a kind. It gives insight into how my habits improve/deteriorate.</p>
+<p>From the tools I&rsquo;ve been using then, there are also slight changes. I still use some variant of bullet journaling method. As for notes - I use Google Keep from time to time, but have migrated since to a self-hosted instance of ??
+Pocket - yeah, still in use. But I&rsquo;ve noticed there&rsquo;s little incentive to come back to those saved articles.</p>
+<h2 id="browsing-the-web">Browsing the web</h2>
+<p>The biggest increase in my stats is probably the number of opened tabs. Yeah, that one can get out of hand pretty quickly.</p>
+<p>A few viable solutions for that are:</p>
+<ul>
+<li>do a routine check of those tabs
+<ul>
+<li>try to close those no longer of interest to me</li>
+<li>send to pocket those that seem worth a read - this mostly applies to non-tech content</li>
+</ul>
+</li>
+<li>&ldquo;schedule&rdquo; some of the tabs - save for future reference (more on this below)</li>
+</ul>
+<p>The most important change here is my approach to saving tabs for future reference.</p>
+<p>It mainly means two things: either create a task in Todoist, that links to it, or put the link in a semi-structured mindmap.</p>
+<p>Semi-structured mindmap is often nothing more then an inter-linked Markdown file. Just for organizing useful links into notes. This can have actually any form, that is readable and descriptive enough.</p>
+<p>If I decide to put something in Todoist - it is probably related to a thing I want to do: a project, a link referencing some future task to do, etc. This way, the link would be close to the actual thing I intend to do, and where I want to apply it.</p>
+<h2 id="how-to-read-all-those-saved-for-later-articles-pocket">How to read all those &ldquo;saved-for-later&rdquo; articles (Pocket)</h2>
+<p>This again is the case of creating some kind of workflow around that saved content. I still keep things in there, but the web has gotten significantly more hostile. It&rsquo;s not that easy to read on the web as it was in 2016. A lot of content is paywalled now, not all of that can be easily dumped to Pocket. Maybe some other tools of that kind can handle those missing sites, but branching to them just to save more seems like a bad choice.
+So I stick with Pocket.</p>
+<p>After saving some content to Pocket, during an occasional moderation session I decide which articles seem like still worth the time to read them. On the opposite side - if I notice some articles are no longer of interest - I just remove them.
+Those selected for future reading I&rsquo;d like to have migrated to some e-book reader, for a convenient reading experience, away from the screen. For that I&rsquo;ve prepared a relatively simple script that takes the contents of the saved article and generates an EPub from that.
+This can later by imported to Calibre, if you are into an easy ebook management, or uploaded directly to the reader of your choice.
+The thing with Calibre is, that it actually shows what things are already on the reader, and which are not. Also it takes care of the conversion process. I own an Amazon Kindle, and for it to put EPub on it, they need to be converted to Kindle proprietary format. Calibre deals with that.</p>
+<p>You can find my script for dealing with exporting to EPub here: TODO make it public</p>
+<h2 id="task-handling">Task handling</h2>
+<p>I tend to have a lot of ideas constantly floating around.
+My current strategy for dealing with them is keeping a task list. And my current tool of choice for that is Todoist. I&rsquo;m using a free tier right now. It&rsquo;s sufficient for now. Also, I try not to explore too many advanced features of Todoist, so that a potential migration would not be too cumbersome.</p>
+<p>As for the tasks - I have a few recurring &ldquo;ritual&rdquo;-like tasks, morning and evening routines. I try to keep there only tasks that are work-related or things I plan to do for my personal development. That&rsquo;s why I put there professional-related articles that I&rsquo;d like to read, videos that seem worth watching, etc.</p>
+<p>Things like normal, day-to-day habits don&rsquo;t end up there.</p>
+<p>A thing that I like and enjoy keeping is a group of tasks with subtasks named &ldquo;Consumption&rdquo;. They are specifically used as a dump of things I found online (articles, videos), or in some other places (book titles, movies), that I&rsquo;d like to read, watch in the near future.</p>
+<p>Later, say, once a week - when I plan things to do for the coming week, I try to pick a few things from those lists.
+This approach helps me manyfold:</p>
+<ul>
+<li>for web content - like articles and videos - I can finally go through them in some finite amount of time</li>
+<li>for books and movies - I can resort to those lists as inspiration for when I have this nudge to pick up another book, or see some movie on one of the streaming services. To some degree it frees me from mindlessly browsing the recommendation feeds of those platforms.</li>
+</ul>
+<h3 id="todoist-taskwarrior-etc">Todoist, Taskwarrior, etc</h3>
+<p>Why Todoist and not something else?</p>
+<p>I&rsquo;ve tried setting up an alternative, in the form of Taskwarrior. But this proved to be very inconvenient. The way I use Todoist is I usually past some web content to it, even images. Doing the same with Taskwarrior is rather hard. Taskwarrior seems like a very nice backend for task management, but lacks a good, modern frontend - with keyboard shortcuts, easy task arrangement, etc.
+I plan to keep an eye on that, and I&rsquo;m even in the process of creating a migration tool. I&rsquo;d like to keep an up-to-date database of my Todoist tasks in Taskwarrior. Maybe at some point I&rsquo;ll be able to switch completely to this new tool.
+Right now I don&rsquo;t want to focus too much on just mastering any new tool. I really appreciate that Todoist does not get in the way, and just allows me to create and manage tasks.</p>
+<h2 id="all-those-notifications">All those notifications</h2>
+<p>I tend to be very conservative about notifications. I try to disable as much of them as possible. This is especially applicable to phone-related distractions.</p>
+<p>One common strategy you can devise is just putting your phone in the furthest corner of your room, switched to silent mode. True, this would work. This seems like a real hindrance for me. I&rsquo;d much rather have the phone in a hands reach, just to not break out of my thinking loop too much if there&rsquo;s some activity on it I need to attend.</p>
+<p>As for the notifications - most of the apps I have installed have notifications disabled. Some of them have notifications allowed either in the morning or in the evening (this is just IOS and its scheduled summary).</p>
+<p>Each specific ecosystem - be it IOS or Android have its own way of switching modes. It&rsquo;s very convenient to switch phone to Do Not Disturb mode, when in need of focus.</p>
+<h2 id="videos">Videos</h2>
+<p>That mainly involves watching stuff on YouTube. It&rsquo;s become my main source of video content. There are of course streaming services for watching movies and series, they&rsquo;re just easier to manage.</p>
+<h3 id="so-let-me-start-with-movies">So, let me start with movies</h3>
+<p>I keep a list of movies and series that I&rsquo;d like to watch, because what I&rsquo;ve observed before was that if time comes when I want to spend the evening watching something it can be daunting to go through the whole catalog of a certain provider and choose something. Even if I settle on something relatively fast, it can be a really shitty movie (looking at you, Netflix).
+That&rsquo;s why, a curated list of movies-to-watch is a convenient cheat-sheet for me.</p>
+<h3 id="-and-youtube">.. and YouTube</h3>
+<p>To tame the constant stream of YouTube videos I do the following:</p>
+<ul>
+<li>try to watch videos just on the weekends</li>
+<li>if a video can be classified as an audio-mostly, audio-only, I put that into a separate playlist. Those I listen to when cleaning the apartment, or running, doing sports.</li>
+<li>if a video catches my attention, I put that on <code>Watch Later</code>, then at some point I go through that list and cleanup those, that are actually not interesting any more</li>
+<li>cooking videos often clog my watch queue - before I kept them very long in my queues as reminder to cook those specific recipes, or perhaps because they had some interesting cooking techniques. Nowadays, if I don&rsquo;t watch the video pretty quickly, I just decided to remove them.</li>
+</ul>
+<p>That leaves me with much smaller backlog of videos to watch.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Why do all that? Mainly to free the mind from all the distractions around me.</p>
+<p>This whole post might seem like a Hoarders 101 manual, but actually it is a lengthy description of rather quick steps for filtering content. I find it really non-intrusive, but rather beneficial.</p>
+<p>I&rsquo;m able to read more of the things that interest me, but also I don&rsquo;t feel flooded with constantly incoming new things.</p>
+</div>
+  
+  </div>
+</article>
+
+  </main><footer>
+
+
+  <script
+    src="https://utteranc.es/client.js"
+    repo="zygm0nt/hugo-blog-incarnation"
+    issue-term="pathname"
+    label="comments"
+    theme="preferred-color-scheme"
+    crossorigin="anonymous"
+    async
+  ></script>
+  <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
+
+</body>
+</html>
