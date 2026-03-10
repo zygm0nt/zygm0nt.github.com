@@ -1,130 +1,528 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="alternate" type="application/rss+xml" href="https://marcin.cylke.com.pl/post/index.xml" title="Posts - Tech ramblings by Marcin">
- 
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Posts | Tech ramblings by Marcin</title>
+<meta name="keywords" content="">
+<meta name="description" content="Posts - Tech ramblings by Marcin">
+<meta name="author" content="Marcin Cylke">
+<link rel="canonical" href="https://marcin.cylke.com.pl/post/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://marcin.cylke.com.pl/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://marcin.cylke.com.pl/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://marcin.cylke.com.pl/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://marcin.cylke.com.pl/apple-touch-icon.png">
+<link rel="mask-icon" href="https://marcin.cylke.com.pl/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://marcin.cylke.com.pl/post/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="https://marcin.cylke.com.pl/post/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/book_section.css">
+<meta property="og:url" content="https://marcin.cylke.com.pl/post/">
+  <meta property="og:site_name" content="Tech ramblings by Marcin">
+  <meta property="og:title" content="Posts">
+  <meta property="og:description" content="Tech ramblings by Marcin - software engineering, distributed systems, and more">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Posts">
+  <meta name="twitter:description" content="Tech ramblings by Marcin - software engineering, distributed systems, and more">
 
 
-  <title>Posts - Tech ramblings by Marcin</title>
-  <link rel="stylesheet" type="text/css" href="/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/book_section.css">
-  <link rel="stylesheet" type="text/css" href="/css/aux.css">
-<script defer src="https://cloud.umami.is/script.js" data-website-id="274179a3-6fd7-434b-8b9e-b745ec841ca2"></script>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://marcin.cylke.com.pl/post/"
+    }
+  ]
+}
+</script>
 </head>
-<body>
-  <header>
-<div>
-    <h1><a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></h1>
-  </div>
-  <nav><a href="/about/">about me</a>
-  </nav>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://marcin.cylke.com.pl/" accesskey="h" title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://marcin.cylke.com.pl/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </header>
-<main>
-    <div>
-  <h1>Posts</h1>
-</div>
-<div>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="https://marcin.cylke.com.pl/">Home</a></div>
+  <h1>
+    Posts
+    <a href="/post/index.xml" title="RSS" aria-label="RSS">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" height="23">
+        <path d="M4 11a9 9 0 0 1 9 9" />
+        <path d="M4 4a16 16 0 0 1 16 16" />
+        <circle cx="5" cy="19" r="1" />
+      </svg>
+    </a>
+  </h1>
+</header>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">X-Men: The Last Stand
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Oto kolejna odsłona sagi o mutantach. Bo to już jednak saga. Film oczywiście oparty w jakimś tam stopniu na komiksie. Wszystko jest pięknie, fabuła się kręci, pojawia się mutant, który potrafi zatrzymywać mutację innych, w ten sposób, że przestają działać ich moce i stają się zwykłymi ludźmi. Wszechmocny rząd robi ekstrakt z tego mutanta i szczepionka dla mutantów gotowa. Jednak nie wszyscy są z tego faktu zadowoleni, na pewno nie mutanci. A już napewno nie Magneto, który to zaczyna walczyć o prawa swoje i swojej grupki podopiecznych.
+...</p>
   </div>
-<ul class="article-list">
-  <li class="article-item">
-    <div class="article-date">2007-11-08 00:00</div>
-    <div class="article-title"><a href="/2007/11/08/x-men-last-stand/">X-Men: The Last Stand</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-11-08 00:00</div>
-    <div class="article-title"><a href="/2007/11/08/you-me-and-dupree/">You, Me and Dupree</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-11-08 00:00</div>
-    <div class="article-title"><a href="/2007/11/08/zivot-je-cudo/">Zivot je cudo</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-11-08 00:00</div>
-    <div class="article-title"><a href="/2007/11/08/zmiany-id/">Zmiany idą</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-11-07 00:00</div>
-    <div class="article-title"><a href="/2007/11/07/pierwszy-wpis-na-moim-joggu-nie/"></a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-11-07 00:00</div>
-    <div class="article-title"><a href="/2007/11/07/anacondas-hunt-for-blood-orchid/">Anacondas: The hunt for the blood orchid</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-11-07 00:00</div>
-    <div class="article-title"><a href="/2007/11/07/battlestar-galactica-season-2/">Battlestar Galactica (season 2)</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-11-07 00:00</div>
-    <div class="article-title"><a href="/2007/11/07/broken-flowers/">Broken Flowers</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-11-07 00:00</div>
-    <div class="article-title"><a href="/2007/11/07/brunet-wieczorow-por/">Brunet wieczorową porą</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-11-07 00:00</div>
-    <div class="article-title"><a href="/2007/11/07/catch-me-if-you-can/">Catch me if you can</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-11-07 00:00</div>
-    <div class="article-title"><a href="/2007/11/07/charlie-and-chocolate-factory/">Charlie and the Chocolate Factory</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-11-07 00:00</div>
-    <div class="article-title"><a href="/2007/11/07/code-46/">Code 46</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-11-07 00:00</div>
-    <div class="article-title"><a href="/2007/11/07/collateral/">Collateral</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-11-07 00:00</div>
-    <div class="article-title"><a href="/2007/11/07/corpse-bride/">Corpse Bride</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-11-07 00:00</div>
-    <div class="article-title"><a href="/2007/11/07/crouching-tiger-hidden-dragon/">Crouching Tiger, Hidden Dragon</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-11-07 00:00</div>
-    <div class="article-title"><a href="/2007/11/07/czyby-reaktywacja/">czyżby reaktywacja?</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-11-07 00:00</div>
-    <div class="article-title"><a href="/2007/11/07/dawn-of-dead/">Dawn of the Dead</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-11-07 00:00</div>
-    <div class="article-title"><a href="/2007/11/07/don-juan-demarco/">Don Juan DeMarco</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-11-07 00:00</div>
-    <div class="article-title"><a href="/2007/11/07/don-come-knocking/">Don&#39;t come knocking</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-11-07 00:00</div>
-    <div class="article-title"><a href="/2007/11/07/eternal-sunshine-of-spotless-mind/">Eternal sunshine of a spotless mind</a></div>
-  </li>
-  </ul>
-</main>
+  <footer class="entry-footer"><span title='2007-11-08 00:00:00 +0000 UTC'>November 8, 2007</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to X-Men: The Last Stand" href="https://marcin.cylke.com.pl/2007/11/08/x-men-last-stand/"></a>
+</article>
 
-  </main><footer>
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">You, Me and Dupree
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> I znów komedyjka! Tym razem pomimo słabego Owena Wilsona dostajemy jeszcze duet Matt Dillon i Kate Hudson, którzy sprawóją się wspaniale. Stanowią esencję tego filmu.
+Film opowiada o parze, świeżo po ślubie, są młodzi, piękni i odnoszą sukcesy. Carl, grany przez Matta Dillona, ma przyjaciela, właśnie Owena Wilsona - tytułowego Dupree, który przypadkiem stracił pracę. W swej dobroduszności postanawia przyjąć go na trochę do swojego domu. I tu zaczynają się kłopoty, i to jest oś całego filmu.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2007-11-08 00:00:00 +0000 UTC'>November 8, 2007</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to You, Me and Dupree" href="https://marcin.cylke.com.pl/2007/11/08/you-me-and-dupree/"></a>
+</article>
 
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Zivot je cudo
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Wspaniały film w reżyserii Kusturicy. Opowieść o wojnie na Bałkanach w dosyć niezwykłym stylu. Z racji tego, że jest to długa opowieść, jakieś 2 godzinki z kawałkiem, można tu wyróżnić kilka części. Zacznę może od pierwszej, która jest wprowadzeniem do całej historii. Daje bardzo ładny obraz społeczności małej wioski w górach, przy granicy Bośni i Serbii (tak mi się wydaje - ani z geografii mocny nie byłem, ani nie pamiętam z filmu dokładni). Sielskie życie, wioska dorabia się właśnie koleji, więc wydaje się że stanie się wspaniałym kurortem. Mamy tu mnóstwo lokalnych rodzin, które próbują forsować swoje wpływy. Wszystko w zabawnym sosie i ze specyficznym podejściem do zabawy ludzi na Bałkanach.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2007-11-08 00:00:00 +0000 UTC'>November 8, 2007</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Zivot je cudo" href="https://marcin.cylke.com.pl/2007/11/08/zivot-je-cudo/"></a>
+</article>
 
-  <script
-    src="https://utteranc.es/client.js"
-    repo="zygm0nt/hugo-blog-incarnation"
-    issue-term="pathname"
-    label="comments"
-    theme="preferred-color-scheme"
-    crossorigin="anonymous"
-    async
-  ></script>
-  <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Zmiany idą
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Jak narazie nowy wygląd, ale to jeden z domyślnych na jogger.pl :) Mam nadzieję, że niebawem znajdę czas na więcej modyfikacji. Stay tuned.
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2007-11-08 00:00:00 +0000 UTC'>November 8, 2007</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Zmiany idą" href="https://marcin.cylke.com.pl/2007/11/08/zmiany-id/"></a>
+</article>
 
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Pierwszy wpis na moim joggu :) Nie znajdziesz tutaj wynurzeń na temat tego, co jadłem na śniadanie, ani tym podobnych.. Ale bedziesz mógł poczytać moje &#34;obiektywne&#34; opinie na temat ostatnio oglądanych filmów. Będzie dużo jadu ;-P
+Oraz oczywiście dużo filmów -- tyle, ile może ogladać student mieszkający w akademiku z zasobną w filmidła siecią akademikca
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2007-11-07 00:00:00 +0000 UTC'>November 7, 2007</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to " href="https://marcin.cylke.com.pl/2007/11/07/pierwszy-wpis-na-moim-joggu-nie/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Anacondas: The hunt for the blood orchid
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Buahhhahaha :-D No nie moge, co za film. Poprostu żenada. Kilka dużych anakond siedzi sobie w środku dżungli i robi sobie orgie... Ech, głupia akcja, tendencyjni bohaterowie.
+No ale czego chcieć od następcy pierwszego filmu o anakondzie. Mamy tu kupe zabawnych gagów. Możliwe że nie zostały pomyślane jako takowe przez reżyserów. &lt;/&gt; Uśmiałem się jak głupi. Super rozrywka przed śniadaniem. Albo w trakcie... I do tego te wielkie, głupie anakondy. Świetnie za to wyszła małpka, która wydawało się, że zostanie zjedzona na początku, a przeżyła do samego końca. I robiła sobie niewybredne śmiechy z reszty konających towarzyszy ;)
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2007-11-07 00:00:00 +0000 UTC'>November 7, 2007</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Anacondas: The hunt for the blood orchid" href="https://marcin.cylke.com.pl/2007/11/07/anacondas-hunt-for-blood-orchid/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Battlestar Galactica (season 2)
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Początek miał ten serial wiele lat temu w USA. Nie wiem, czy dotarł do Polski i zdobył większą popularność. Ja usłyszałem o nim dopiero przy okazji nowej realizacji tego pomysłu. Właśnie kończę oglądać drugi sezon. I o ile przy pierwszym jakoś specjalnie nie było czym się podniecać, o tyle teraz naprawdę jest co obejrzeć.
+Wreszcie fabuła zrobiła się ciekawa i wciągająca. Nadal oczywiście mamy pozostałości ludzkości uciekające przed rasą robotów. I jakkolwiek głupio to brzmi, zrobione jest fajnie i wieje świeżością. Wiele wątków, w tym najważniejszy, kończący pierwszą serię, rozwija się w drugiej (cóż za nowość! ;) ).
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2007-11-07 00:00:00 +0000 UTC'>November 7, 2007</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Battlestar Galactica (season 2)" href="https://marcin.cylke.com.pl/2007/11/07/battlestar-galactica-season-2/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Broken Flowers
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> W tym filmie mamy Billa Murraya, któremu jakaś zeszła miłość podsyła informację, że ma z nią syna. Nie podpisuje się oczywiście na liście, więc, jak to się mawia - szukaj wiatru w polu. Całe szczęście, Bill ma przyjaciela, którego hobby jest pisanie opowiadań detektywistycznych. I on to właśnie namawia Billa, aby ten poszukał tej kobiety i ją odwiedził. Bill wysila szare komórki i tworzy listę byłych ukochanych. Na podstawie tej listy kumpel-detektyw dopasowywuje adresy, i Bill może ruszyć w podróż po kraju.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2007-11-07 00:00:00 +0000 UTC'>November 7, 2007</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Broken Flowers" href="https://marcin.cylke.com.pl/2007/11/07/broken-flowers/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Brunet wieczorową porą
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> No i jednak wreszcie obejrzałem. Co prawda nie jest to najlepszy film Bareji, ale ma wiele cech filmów tego reżysera. Zważywszy na to, że już wczesniej słyszałem troche tekstów z tego filmu, to nie da się powiedzieć nic więcej niż:
+-- Danka jaka jest taka jest, ale tolerancyjna jest! -- Noooo.. tolerancyjna jest Świetny humor i mnóstwo dobrych sytuacji, a do tego niezła obsada. W sumie to tylko dla maniaków ;-P ...</p>
+  </div>
+  <footer class="entry-footer"><span title='2007-11-07 00:00:00 +0000 UTC'>November 7, 2007</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Brunet wieczorową porą" href="https://marcin.cylke.com.pl/2007/11/07/brunet-wieczorow-por/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Catch me if you can
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Długo zwklekałem zanim obejrzałem ten film. Cóż, muszę przyznać, że jak nie lubie Hanksa i Leo, którzy to grają pierwsze skrzypce w tym filmie, tak film całkiem przypadł mi do gustu. Bardzo dobry scenariusz -- oczywiście, na faktach autentycznych. Dziw bierze jacy ludzie chodzą po świecie.
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2007-11-07 00:00:00 +0000 UTC'>November 7, 2007</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Catch me if you can" href="https://marcin.cylke.com.pl/2007/11/07/catch-me-if-you-can/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Charlie and the Chocolate Factory
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Niesamowity, baśniowy, przepiękny. Nowa adaptacja książki Dahl&#39;a zachwyca. Jest świetna. Przepięknie nakręcona baśń opowiadająca o magicznej fabryce czekolady, której nikt od wielu lat nie odwiedzał. Właścicielem tajemniczej fabryki jest Willie Wonka (grany przez Jonhny&#39;ego Depp&#39;a) - całkiem socjopatyczna osobowość.
+Film jest śmieszny, zabawny, kolorowy. Niby jest dla dzieci. W końcu w kinach przeważa wersja z dubbingiem. Tyle że na sali kinowej nie było żadnego (!) dziecka.
+Podczas oglądania filmu należy spożywać czekoladę. W każdej postaci jest do przyjęcia.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2007-11-07 00:00:00 +0000 UTC'>November 7, 2007</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Charlie and the Chocolate Factory" href="https://marcin.cylke.com.pl/2007/11/07/charlie-and-chocolate-factory/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Code 46
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Zaprezenotwane zostaje nam spoleczenstwo przyszlosci, w ktorym jest sporo udziwnien w stosunku do tego co znamy dzis. Glowna cecha tego swiata to powszechne stosowanie klonowania. A wprowadzenie tego elementu do zycia codziennego powoduje niebezpiecznstwo wystapienia zwiazku pomiedzy osobami o podobnych (albo nawet takich samych) zestawach genow. Skoro prowadzi to do powiklan, na strazy tego stoi wlasnie Kodeks 46 - zwykly przepis. I jest to zdecydowanie fajny element fabuly. Pomyslano o tym skutku klonowania, za co chwala tworcom filmu.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2007-11-07 00:00:00 +0000 UTC'>November 7, 2007</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Code 46" href="https://marcin.cylke.com.pl/2007/11/07/code-46/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Collateral
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Jaki dobry film. A już myślałem, że z Tomem Cruisem nic ciekawego nie obejrze. Wykazał się, nie ma co. Gra zimnego płatnego morderce.
+Wszystko rozgrywa się w mrocznej scenerii amerykańskiej metropolii. Klimatem przypomina to 25th Hour, z Nortonem (też wyśmienity film, żeby nie było :-D). Jest dużo akcji. Momentami dużo sztampowych scenek. Ogólnie mogłoby być lepiej, no ale wtedy trzebaby zmienić cały film. I tak wyszło dużo lepiej niż myślałem
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2007-11-07 00:00:00 +0000 UTC'>November 7, 2007</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Collateral" href="https://marcin.cylke.com.pl/2007/11/07/collateral/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Corpse Bride
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Wiktor i Wiktoria maja sie pobrac, z polecenia rodzicow. Malzenstwo to w konc u zbyt powazna sprawa, by zostawiac decyzje o nim mlodym. Chodzi o kase. Co ciek awe, mlodzi po wstepnym zapoznaniu sie przypadaja sobie do gustu, i zakochuja w sobie. Wszystko pieknie ladnie, tylko ze Wiktor przez przypadek oswiadcza sie in nej &#34;pannie mlodej&#34; - od jakiegos czasu juz martwej.
+Co dalej? Naprawde warto obejrzec. Bo jest to niestandardowa animacja. I chociaz zdecydowanie wybila sie dzieki wielkim nazwiskom z nia zwiazanymi, to warta jest uwagi nie tylko z uwagi na te osoby. Animacje wyrezyserowa Tim&#39;a Burton&#39;a i Mike&#39;a Johnson&#39;a. No i czuje sie tutaj reke Burtona. Glosy podlozyli Johny Depp oraz Helen Bonham Carter. Mily akcent. Aczkolwiek moglby tam byc ktokolwiek inn y. Wybiteni podobalo mi sie natomiast podlozenie glosu przez Christophera Lee - pastora.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2007-11-07 00:00:00 +0000 UTC'>November 7, 2007</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Corpse Bride" href="https://marcin.cylke.com.pl/2007/11/07/corpse-bride/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Crouching Tiger, Hidden Dragon
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Ten film zapoczatkowal ekspansje wschodnich &#34;basni&#34; na swiecie. Po tym filmie dopiero popularnosc zdobyly takie produkcje jak &#34;Hero&#34;. I wydaje mi sie, ze bez tego nic by sie nie wydazylo.
+Mamy tu opowiedziana z pozoru prosta historie o zagubionym mieczu, milosci, zlodziejce i wojownikach. W tej swojej prostocie jest wlasnie urok tego filmu. Wiele przepieknych walk mieczami. Te wszelkie kocie ruchy, skoki itp. Cala esencja wschodnich sztuk walki plus dodatkowe bajery, zeby wszystko wygladalo prawie jak sceny z anime.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2007-11-07 00:00:00 +0000 UTC'>November 7, 2007</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Crouching Tiger, Hidden Dragon" href="https://marcin.cylke.com.pl/2007/11/07/crouching-tiger-hidden-dragon/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">czyżby reaktywacja?
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Coś znów mnie wzięło na pisanie tutaj, więc może niebawem pokażą się kolejne wpisy ;)</p>
+  </div>
+  <footer class="entry-footer"><span title='2007-11-07 00:00:00 +0000 UTC'>November 7, 2007</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to czyżby reaktywacja?" href="https://marcin.cylke.com.pl/2007/11/07/czyby-reaktywacja/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Dawn of the Dead
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Obejrzane. I bez gadania, że kiczowate czy jakieś. Całkiem dobre oglądadło. Wiadomo, że schematyczne. Ja jednak lubie takie horrory :) Sam film jest przewidywalny co do akcji, ale zaskoczyło mnie kilka fajnych (śmiesznych) rozwiązań, których parają się bohaterowie. Jest też wiele akcentów śmiesznych. Szczególnie w środku filmu, gdy cała grupa ludzi zamknietych w ogromnym centrum handlowym wymyśla sobie różne zabawy.
+Bardzo zaskoczyło mnie również ciekawie pomyślane zakończenie. I przynajmniej nie było kitu na temat szans przetrwania takiej katastrofy.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2007-11-07 00:00:00 +0000 UTC'>November 7, 2007</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Dawn of the Dead" href="https://marcin.cylke.com.pl/2007/11/07/dawn-of-dead/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Don Juan DeMarco
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Bardzo dobry film. Johny Depp i Marlon Brando, jeden w roli pacjenta szpitala psychiatrycznego, drugi w roli jego lekarza. Zgrabna romantyczna historyjka o czlowieku uważającym się za Don Juan&#39;a. Dobre kino. Zawiera dużo fajnych żartów i wartościowe wnioski ;)
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2007-11-07 00:00:00 +0000 UTC'>November 7, 2007</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Don Juan DeMarco" href="https://marcin.cylke.com.pl/2007/11/07/don-juan-demarco/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Don&#39;t come knocking
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Tak sie sklada, ze w kinie na tym filmie znalazlem sie dosyc niespodziewanie. Bez zadnych specjalnych planow, zeby na niego isc. Wczesniej nawet pomyslalem, ze moglbym sie tym zainteresowac, ale kto by sie spodziewal, ze tak przypadnie mi film do gustu.
+Nie ma tu strzelanin, sensacyjnych pogoni. Jest za to prosta historia tracacego popularnosc aktora. Film jest prosty, mowi o podstawowych uczuciach, i robi to bardzo fajnie. A uczucia owe, to chec odnalezienia dziecka, o istnieniu ktorego aktor ow nie mial pojecia - doroslego dziecka, jego dziecka. I tak wokol tego tematu film sie kreci.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2007-11-07 00:00:00 +0000 UTC'>November 7, 2007</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Don&#39;t come knocking" href="https://marcin.cylke.com.pl/2007/11/07/don-come-knocking/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Eternal sunshine of a spotless mind
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Niesamowicie dobry film wręcz. Świetna historia, świetnie opowiedziana. Z bardzo fajnymi zwrotami akcji... Polecam
+Nie myślałem, że mi się to spodoba. Trailer był dosyć średni, no ale całość jest poprostu wyśmienita. To chyba jedyna rola, w której Kate Hudson pasuje -- oraz wygląda ładnie.
+Do tego jeszcze tylko niech ktoś mi zasugeruje tłumaczenie tytułu -- bo to co zrobili tłumacze nie nadaje się do niczego. Wiadomo -- stała tendencja wśród tłumaczeń filmowych, najpierw obejrzeć film, a potem go nazwać. Po swojemu...
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2007-11-07 00:00:00 +0000 UTC'>November 7, 2007</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Eternal sunshine of a spotless mind" href="https://marcin.cylke.com.pl/2007/11/07/eternal-sunshine-of-spotless-mind/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://marcin.cylke.com.pl/post/page/8/">
+      «&nbsp;Prev&nbsp;
+    </a>
+    <a class="next" href="https://marcin.cylke.com.pl/post/page/10/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
 </body>
+
 </html>

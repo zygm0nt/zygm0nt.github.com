@@ -1,75 +1,238 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Git - conditional configs and commit signing | Tech ramblings by Marcin</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="Marcin Cylke">
+<link rel="canonical" href="https://marcin.cylke.com.pl/2024/03/28/git-conditional/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://marcin.cylke.com.pl/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://marcin.cylke.com.pl/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://marcin.cylke.com.pl/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://marcin.cylke.com.pl/apple-touch-icon.png">
+<link rel="mask-icon" href="https://marcin.cylke.com.pl/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://marcin.cylke.com.pl/2024/03/28/git-conditional/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/book_section.css">
+<meta property="og:url" content="https://marcin.cylke.com.pl/2024/03/28/git-conditional/">
+  <meta property="og:site_name" content="Tech ramblings by Marcin">
+  <meta property="og:title" content="Git - conditional configs and commit signing">
+  <meta property="og:description" content="">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-03-28T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-03-28T00:00:00+00:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Git - conditional configs and commit signing">
+  <meta name="twitter:description" content="">
 
 
-  <title>Git - conditional configs and commit signing - Tech ramblings by Marcin</title>
-  <link rel="stylesheet" type="text/css" href="/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/book_section.css">
-  <link rel="stylesheet" type="text/css" href="/css/aux.css">
-<script defer src="https://cloud.umami.is/script.js" data-website-id="274179a3-6fd7-434b-8b9e-b745ec841ca2"></script>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://marcin.cylke.com.pl/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Git - conditional configs and commit signing",
+      "item": "https://marcin.cylke.com.pl/2024/03/28/git-conditional/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Git - conditional configs and commit signing",
+  "name": "Git - conditional configs and commit signing",
+  "description": "\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "\nRecently I came across two very interesting options in git that I wanted to make a note of.\nOne is a general feature - conditional configs - that you can probably utilise in a myriad of ways. The second - commit signing - might seem a bit obscure.\nConditional configs It appears it’s really easy to put conditional properties into your .gitconfig file. This way, you can have a separate entities depending on which repositories you commit to. It enables work/hobby project separation. With this setup in place I don’t need to ever remember about switching email accounts, or other specific configs.\nAnd it’s really simple! Look:\n[includeIf \"hasconfig:remote.*.url:git@ssh.gitlab.your-company.io:**/**\"] path = work.local So, this piece of config, when put into .gitconfig, will check in what repository are you, if its remote address matches this expression, in which case it will include some specific config file.\nAnd of course you can put a multitude of custom options. Starting with your work e-mail, so as not to pollute work repos with some private email aliases.\nCommit signing That, I’m not so sure it’s necessary. I haven’t been obliged by any company I’ve worked for to do this step, but it’s generally about vouching for your own commits with some cryptograhic signature.\nOn one hand this might seem like an overkill. But on the other, this is really easy to do. And once done, it does not require any further maintenance. Also, with the proliferation of security issues cropping up all over the places, maybe it’s just a good habit to start signing your commits. When signed, it will be possible to verify them at some point.\nI’ll build upon the previous conditional config, and show how this exact config can look like, when written to an external, work related config file:\n[user] email = marcin.cylke@XYZ.com signingkey = /Users/marcin.cylke/.ssh/id_rsa.pub [gpg \"ssh\"] allowedSignersFile = \"/Users/marcin.cylke/.ssh/allowed_signers\" [commit] gpgSign = true [tag] gpgSign = true [gpg] format = ssh Of course, you could set this up with gpg - but my trust in this tool is not exactly stellar. ssh is just easier for me and more accessible. If your key has a password set (which it should!), you’ll be prompted for that. But using some agent to store passwords on your machine will cache that for some specified time, making the process even less cumbersome.\nHow to check if a commit is verified (Web UI) If you’re using GitHub or GitLab verified commits are marked appropriately (both images are taken from documentation):\nGitHub GitLab How to check if a commit is verified (local) You need to have allowed_signers file:\necho \"$(git config --get user.email) namespaces=\\\"git\\\" $(cat ~/.ssh/id_rsa.pub)\" \u003e\u003e ~/.ssh/allowed_signers In the CLI, you can just call:\n$ git verify-commit abc1234 or to be more verbose:\n$ git log --show-signature commit e2406b6cd8ebe146835ceab67ff4a5a116e09154 (HEAD -\u003e main, origin/main, origin/HEAD) Good \"git\" signature for johndoe@example.com with ED25519 key SHA256:Ar44iySGgxic+U6Dph4Z9Rp+KDaix5SFGFawovZLAcc Author: John Doe Date: Tue Nov 29 06:54:15 2022 -0600 SSH signed commit Conclusion These are just two random options that I came across. I bet there’s a lot more. If you think some would be of use in my case, please share!\nAlso, if you see some interesting use-cases for the above two - let me know, maybe this blogpost can have more details, or examples.\nLinks:\nGitlab: https://docs.gitlab.com/ee/user/project/repository/signed_commits/ssh.html GitHub: https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification ",
+  "wordCount" : "553",
+  "inLanguage": "en",
+  "datePublished": "2024-03-28T00:00:00Z",
+  "dateModified": "2024-03-28T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Marcin Cylke"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://marcin.cylke.com.pl/2024/03/28/git-conditional/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tech ramblings by Marcin",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://marcin.cylke.com.pl/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
-<body>
-  <header>
-<div>
-    <h1><a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></h1>
-  </div>
-  <nav><a href="/about/">about me</a>
-  </nav>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://marcin.cylke.com.pl/" accesskey="h" title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://marcin.cylke.com.pl/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </header>
-<main>
-    <article>
-  <div class="title">
-    <h1>Git - conditional configs and commit signing</h1>
-    </div>
-  <div class="meta">2024-03-28 00:00</div>
-  <div class="artical-body">
-  
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#conditional-configs">Conditional configs</a></li>
-    <li><a href="#commit-signing">Commit signing</a>
-      <ul>
-        <li><a href="#how-to-check-if-a-commit-is-verified-web-ui">How to check if a commit is verified (Web UI)</a></li>
-        <li><a href="#how-to-check-if-a-commit-is-verified-local">How to check if a commit is verified (local)</a></li>
-      </ul>
-    </li>
-    <li><a href="#conclusion">Conclusion</a></li>
-  </ul>
-</nav>
-    <div class="content-with-toc">
-      <p>
+<main class="main">
 
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://marcin.cylke.com.pl/">Home</a>&nbsp;»&nbsp;<a href="https://marcin.cylke.com.pl/post/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Git - conditional configs and commit signing
+    </h1>
+    <div class="post-meta"><span title='2024-03-28 00:00:00 +0000 UTC'>March 28, 2024</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span>
 
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
 
+        <div class="inner"><ul>
+                <li>
+                    <a href="#conditional-configs" aria-label="Conditional configs">Conditional configs</a></li>
+                <li>
+                    <a href="#commit-signing" aria-label="Commit signing">Commit signing</a><ul>
+                        
+                <li>
+                    <a href="#how-to-check-if-a-commit-is-verified-web-ui" aria-label="How to check if a commit is verified (Web UI)">How to check if a commit is verified (Web UI)</a></li>
+                <li>
+                    <a href="#how-to-check-if-a-commit-is-verified-local" aria-label="How to check if a commit is verified (local)">How to check if a commit is verified (local)</a></li></ul>
+                </li>
+                <li>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-      
-      
-  <picture>
-  <img class="img-fluid" src="https://marcin.cylke.com.pl/post_images/2024-03-28-git-conditional/git_conditional.webp?v=6d021e72808146bd51b5c0f2e422b805" alt="An illustration depicting the concept of Git - conditional configurations and commit signing. Visualize a desktop with a computer screen displaying a stylized Git interface, highlighting conditional configurations. On the desk, there is a digital signature pad with a stylized pen on top, symbolizing commit signing. The background should subtly include digital elements and code snippets related to Git operations, creating an atmosphere that speaks to software development and version control. The color palette should be modern and tech-oriented, with blues, greens, and grays dominating." loading="lazy" height="1024" width="1792" />
-</picture>
-</p>
+  <div class="post-content"><p><img alt="An illustration depicting the concept of Git - conditional configurations and commit signing. Visualize a desktop with a computer screen displaying a stylized Git interface, highlighting conditional configurations. On the desk, there is a digital signature pad with a stylized pen on top, symbolizing commit signing. The background should subtly include digital elements and code snippets related to Git operations, creating an atmosphere that speaks to software development and version control. The color palette should be modern and tech-oriented, with blues, greens, and grays dominating." loading="lazy" src="/post_images/2024-03-28-git-conditional/git_conditional.webp"></p>
 <p>Recently I came across two very interesting options in <code>git</code> that I wanted to make a note of.</p>
 <p>One is a general feature - conditional configs - that you can probably utilise in a myriad of ways.
 The second - commit signing - might seem a bit obscure.</p>
-<h2 id="conditional-configs">Conditional configs</h2>
+<h2 id="conditional-configs">Conditional configs<a hidden class="anchor" aria-hidden="true" href="#conditional-configs">#</a></h2>
 <p>It appears it&rsquo;s really easy to put conditional properties into your <code>.gitconfig</code> file. This way, you can have a separate entities depending on which repositories you commit to.
 It enables work/hobby project separation. With this setup in place I don&rsquo;t need to ever remember about switching email accounts, or other specific configs.</p>
 <p>And it&rsquo;s really simple! Look:</p>
@@ -77,7 +240,7 @@ It enables work/hobby project separation. With this setup in place I don&rsquo;t
     path = work.local  
 </code></pre><p>So, this piece of config, when put into <code>.gitconfig</code>, will check in what repository are you, if its remote address matches this expression, in which case it will include some specific config file.</p>
 <p>And of course you can put a multitude of custom options. Starting with your work e-mail, so as not to pollute work repos with some private email aliases.</p>
-<h2 id="commit-signing">Commit signing</h2>
+<h2 id="commit-signing">Commit signing<a hidden class="anchor" aria-hidden="true" href="#commit-signing">#</a></h2>
 <p>That, I&rsquo;m not so sure it&rsquo;s necessary. I haven&rsquo;t been obliged by any company I&rsquo;ve worked for to do this step, but it&rsquo;s generally about vouching for your own commits with some cryptograhic signature.</p>
 <p>On one hand this might seem like an overkill. But on the other, this is really easy to do. And once done, it does not require any further maintenance. Also, with the proliferation of security issues cropping up all over the places, maybe it&rsquo;s just a good habit to start signing your commits. When signed, it will be possible to <em>verify</em> them at some point.</p>
 <p>I&rsquo;ll build upon the previous conditional config, and show how this exact config can look like, when written to an external, work related config file:</p>
@@ -97,65 +260,19 @@ It enables work/hobby project separation. With this setup in place I don&rsquo;t
     format = ssh  
 </code></pre><p>Of course, you could set this up with <code>gpg</code> - but my trust in this tool is not exactly stellar. <code>ssh</code> is just easier for me and more accessible.
 If your key has a password set (<strong>which it should!</strong>), you&rsquo;ll be prompted for that. But using some agent to store passwords on your machine will cache that for some specified time, making the process even less cumbersome.</p>
-<h3 id="how-to-check-if-a-commit-is-verified-web-ui">How to check if a commit is verified (Web UI)</h3>
+<h3 id="how-to-check-if-a-commit-is-verified-web-ui">How to check if a commit is verified (Web UI)<a hidden class="anchor" aria-hidden="true" href="#how-to-check-if-a-commit-is-verified-web-ui">#</a></h3>
 <p>If you&rsquo;re using GitHub or GitLab verified commits are marked appropriately (both images are taken from documentation):</p>
 <ul>
 <li>
 <p>GitHub
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-      
-      
-  <picture>
-  <img class="img-fluid" src="https://marcin.cylke.com.pl/post_images/2024-03-28-git-conditional/Pasted_image_20240328230239.png?v=dab5e60b1fb4cfc2ef7bf412525549f2" alt="github illustration" loading="lazy" height="164" width="1440" />
-</picture>
-</p>
+<img alt="github illustration" loading="lazy" src="/post_images/2024-03-28-git-conditional/Pasted_image_20240328230239.png"></p>
 </li>
 <li>
 <p>GitLab
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-      
-      
-  <picture>
-  <img class="img-fluid" src="https://marcin.cylke.com.pl/post_images/2024-03-28-git-conditional/Pasted_image_20240328230351.png?v=dab5e60b1fb4cfc2ef7bf412525549f2" alt="gitlab illustration" loading="lazy" height="635" width="1268" />
-</picture>
-</p>
+<img alt="gitlab illustration" loading="lazy" src="/post_images/2024-03-28-git-conditional/Pasted_image_20240328230351.png"></p>
 </li>
 </ul>
-<h3 id="how-to-check-if-a-commit-is-verified-local">How to check if a commit is verified (local)</h3>
+<h3 id="how-to-check-if-a-commit-is-verified-local">How to check if a commit is verified (local)<a hidden class="anchor" aria-hidden="true" href="#how-to-check-if-a-commit-is-verified-local">#</a></h3>
 <p>You need to have <code>allowed_signers</code> file:</p>
 <pre tabindex="0"><code>echo &#34;$(git config --get user.email) namespaces=\&#34;git\&#34; $(cat ~/.ssh/id_rsa.pub)&#34; &gt;&gt; ~/.ssh/allowed_signers
 </code></pre><p>In the CLI, you can just call:</p>
@@ -169,7 +286,7 @@ Author: John Doe &lt;johndoe@example.com&gt;
 Date:   Tue Nov 29 06:54:15 2022 -0600
 
     SSH signed commit
-</code></pre><h2 id="conclusion">Conclusion</h2>
+</code></pre><h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
 <p>These are just two random options that I came across. I bet there&rsquo;s a lot more. If you think some would be of use in my case, please share!</p>
 <p>Also, if you see some interesting use-cases for the above two - let me know, maybe this blogpost can have more details, or examples.</p>
 <p>Links:</p>
@@ -177,24 +294,159 @@ Date:   Tue Nov 29 06:54:15 2022 -0600
 <li>Gitlab: <a href="https://docs.gitlab.com/ee/user/project/repository/signed_commits/ssh.html">https://docs.gitlab.com/ee/user/project/repository/signed_commits/ssh.html</a></li>
 <li>GitHub: <a href="https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification">https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification</a></li>
 </ul>
-</div>
-  
+
+
   </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://marcin.cylke.com.pl/2024/04/07/solarwinds-supply-chain-attack/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>SolarWinds supply chain attack</span>
+  </a>
+  <a class="next" href="https://marcin.cylke.com.pl/2024/02/29/payload-after-load/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Payload after load, really?!</span>
+  </a>
+</nav>
+
+  </footer><script src="https://utteranc.es/client.js"
+        repo="zygm0nt/hugo-blog-incarnation"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
 </article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></span> · 
 
-  </main><footer>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
 
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
 
-  <script
-    src="https://utteranc.es/client.js"
-    repo="zygm0nt/hugo-blog-incarnation"
-    issue-term="pathname"
-    label="comments"
-    theme="preferred-color-scheme"
-    crossorigin="anonymous"
-    async
-  ></script>
-  <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
 
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
 </body>
+
 </html>

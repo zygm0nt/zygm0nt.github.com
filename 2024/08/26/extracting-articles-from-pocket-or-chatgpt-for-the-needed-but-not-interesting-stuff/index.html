@@ -1,84 +1,244 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Extracting articles from Pocket - or ChatGPT for the needed but not interesting stuff | Tech ramblings by Marcin</title>
+<meta name="keywords" content="">
+<meta name="description" content="
+Pocket is a nice service. It can save articles from the web for you to read later. Nice. It can even help in bypassing annoying paywalls (more on this here). With the ease of using it, I can quickly end up with a substantial backlog of articles to go through. Since reading long articles on a screen feels like a chore, I came up with the idea of exporting articles into EPub format and reading them on an e-reader.">
+<meta name="author" content="Marcin Cylke">
+<link rel="canonical" href="https://marcin.cylke.com.pl/2024/08/26/extracting-articles-from-pocket-or-chatgpt-for-the-needed-but-not-interesting-stuff/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://marcin.cylke.com.pl/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://marcin.cylke.com.pl/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://marcin.cylke.com.pl/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://marcin.cylke.com.pl/apple-touch-icon.png">
+<link rel="mask-icon" href="https://marcin.cylke.com.pl/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://marcin.cylke.com.pl/2024/08/26/extracting-articles-from-pocket-or-chatgpt-for-the-needed-but-not-interesting-stuff/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/book_section.css">
+<meta property="og:url" content="https://marcin.cylke.com.pl/2024/08/26/extracting-articles-from-pocket-or-chatgpt-for-the-needed-but-not-interesting-stuff/">
+  <meta property="og:site_name" content="Tech ramblings by Marcin">
+  <meta property="og:title" content="Extracting articles from Pocket - or ChatGPT for the needed but not interesting stuff">
+  <meta property="og:description" content="Pocket is a nice service. It can save articles from the web for you to read later. Nice. It can even help in bypassing annoying paywalls (more on this here). With the ease of using it, I can quickly end up with a substantial backlog of articles to go through. Since reading long articles on a screen feels like a chore, I came up with the idea of exporting articles into EPub format and reading them on an e-reader.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-08-26T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-08-26T00:00:00+00:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Extracting articles from Pocket - or ChatGPT for the needed but not interesting stuff">
+  <meta name="twitter:description" content="Pocket is a nice service. It can save articles from the web for you to read later. Nice. It can even help in bypassing annoying paywalls (more on this here). With the ease of using it, I can quickly end up with a substantial backlog of articles to go through. Since reading long articles on a screen feels like a chore, I came up with the idea of exporting articles into EPub format and reading them on an e-reader.">
 
 
-  <title>Extracting articles from Pocket - or ChatGPT for the needed but not interesting stuff - Tech ramblings by Marcin</title>
-  <link rel="stylesheet" type="text/css" href="/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/book_section.css">
-  <link rel="stylesheet" type="text/css" href="/css/aux.css">
-<script defer src="https://cloud.umami.is/script.js" data-website-id="274179a3-6fd7-434b-8b9e-b745ec841ca2"></script>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://marcin.cylke.com.pl/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Extracting articles from Pocket - or ChatGPT for the needed but not interesting stuff",
+      "item": "https://marcin.cylke.com.pl/2024/08/26/extracting-articles-from-pocket-or-chatgpt-for-the-needed-but-not-interesting-stuff/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Extracting articles from Pocket - or ChatGPT for the needed but not interesting stuff",
+  "name": "Extracting articles from Pocket - or ChatGPT for the needed but not interesting stuff",
+  "description": "\nPocket is a nice service. It can save articles from the web for you to read later. Nice. It can even help in bypassing annoying paywalls (more on this here). With the ease of using it, I can quickly end up with a substantial backlog of articles to go through. Since reading long articles on a screen feels like a chore, I came up with the idea of exporting articles into EPub format and reading them on an e-reader.\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "\nPocket is a nice service. It can save articles from the web for you to read later. Nice. It can even help in bypassing annoying paywalls (more on this here). With the ease of using it, I can quickly end up with a substantial backlog of articles to go through. Since reading long articles on a screen feels like a chore, I came up with the idea of exporting articles into EPub format and reading them on an e-reader.\nMy first approach to solving this was with Zapier. I hadn’t used it before but had read that it was possible to create an integration that would connect to Pocket, check for articles marked with a specific tag, and then export the contents of the article into a PDF using some external service. This required multiple sites to cooperate, new accounts, and API keys, etc. It all seemed fragile, and in the end, it didn’t work.\nBut maybe there are others ways to do that?\nFirst try The first attempt was to use the Pocket API to fetch the articles:\ngenerate a python script that fetches saved articles from Pocket\nBut how do I get the access token? I need to login and authorize!\ngenerate python code that performs login into pocket via api\nThat was quick!\nOn the plus side\nno need to go through an API that brings little new things to me. the code worked almost immediately Unfortunately, even with the tokens, the first script did not work.\nTraceback (most recent call last): File \"/Users/xyx/projects/library_tools/pocket-to-epub.py\", line 68, in \u003cmodule\u003e main() File \"/Users/xyx/projects/library_tools/pocket-to-epub.py\", line 64, in main create_epub(article) File \"/Users/xyx/projects/library_tools/pocket-to-epub.py\", line 38, in create_epub c1.content = article['article'] ~~~~~~~^^^^^^^^^^^ KeyError: 'article' After examining the output from API, there was no article field - obviously. Maybe it existed at some point, but according to online documentation, Pocket no longer offers document retrieval. Fair enough; it’s their core business.\nLet’s try Something Else For a brief period of time I just wanted to handle the transformation process on my own, using some additional library like readability, or Goose. The flow would be:\nfetch article metadata from API get URL of the article from the metadata transform But this has a serious flaw. In my Pocket Saves, I have a bunch of articles that are either not available anymore or are behind a paywall, etc. And these are the ones I’d still want to read. So this approach was no good.\nThis was a separate ChatGPT session - just an exploration.\nPivot! So maybe I can just use some Javascript code for that?\nwrite a javascript function that looks for element and copies everything in it (whole html structure) to clipboard\nThe element mentioned in the message is exactly what keeps article contents - explored in the browser.\nI tested that in Firefox console. Well, something worked. But my clipboard was empty, apparently because Firefox was blocking clipboard operations from some random code. Well done in terms of security!\nBut probably Firefox extensions should be able to alleviate this limitation!\nwrap that in a firefox extension\nAnd Bam! I got all the necessary code snippets to create a Firefox extension, along with the instructions on how to load that into the browser.\nWith that approach it just worked. I had the copy of the article in my clipboard.\nWell, fine—but going through many articles, copying them into the clipboard, and then saving them to an external file by hand would still be tedious!\nIt would be much nicer to have the extension preparing the files for me!\nModify the extraction function so as it takes article title from first element in first element. Use that title to name a file to which the contents of the copied will be stored. The file should be offered as a download.\nAnd it did just that! Worked beautifully!\nConclusion If it was not for the LLM-based conversation I would not accomplish in such a short amount of time. The whole thing took me ~15 minutes. I’d also need to learn a bit to accomplish that:\nI’m pretty weak at Javascript I know nothing about building Firefox extensions I’d probably have give up after exploring the first dead-end with Python app accessing API I must say, that this coding session with ChatGPT worked out really well!\nAfterthoughts - LLMs are good for side-quests There are often situations where I’m using a specific application, usually through a browser or some online service with API access. It probably works okay, but there are some aspects that can be improved.\nThen comes an idea, like:\n“Damn, I use Strava - but I’m not 100% OK with them having all my data, what if they end up like Endomondo or other similar services and close their doors at one point?” -\u003e I want to backup or have my own copy of the data “I’d like to have this backup for all the open tabs I have right now. How to do that? It would be cool to write this single browser extension just for that.” -\u003e I’d use that again, for backing up, or tracking the number of opened tabs. So, for fun and as a way to keep my hunter-gatherer mind satisfied. I have this need and habit of reading code - eg. take big pile of code, from an open source project and read it. In the process, I tend to make notes. I’ve always wanted to add some annotations to the code. But haven’t found a plugin for that. So I’ve resorted to ChatGPT for that. And it delivered! It generated Visual Studio Code plugin exactly for this use-case Or any other quite wacky idea, that’s not that hard to implement but would require learning a new set of libraries or tools that I’m not that fond of learning on my own.\nThat’s the perfect niche that I may use ChatGPT! These tools are pretty small and end easy to describe, even if I need to refine my prompts a few times.\nIn the examples above, the common pattern emerges. LLMs are a good tool to take an idea that is just a nicety and make it happen. They’re even more useful if I’m not too proficient in some environment—e.g., I don’t know how to write VS Code plugins, and I don’t want to dive deep into that. But I miss this one particular functionality.\nOther good write-ups on the matter:\nHow I Use ChatGPT Daily - A Scientist-Coder Perspective Building C Extensions for SQLite with ChatGPT Code Interpreter Claude and ChatGPT: Case Study ",
+  "wordCount" : "1101",
+  "inLanguage": "en",
+  "datePublished": "2024-08-26T00:00:00Z",
+  "dateModified": "2024-08-26T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Marcin Cylke"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://marcin.cylke.com.pl/2024/08/26/extracting-articles-from-pocket-or-chatgpt-for-the-needed-but-not-interesting-stuff/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tech ramblings by Marcin",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://marcin.cylke.com.pl/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
-<body>
-  <header>
-<div>
-    <h1><a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></h1>
-  </div>
-  <nav><a href="/about/">about me</a>
-  </nav>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://marcin.cylke.com.pl/" accesskey="h" title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://marcin.cylke.com.pl/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </header>
-<main>
-    <article>
-  <div class="title">
-    <h1>Extracting articles from Pocket - or ChatGPT for the needed but not interesting stuff</h1>
-    </div>
-  <div class="meta">2024-08-26 00:00</div>
-  <div class="artical-body">
-  
-    <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#first-try">First try</a></li>
-        <li><a href="#lets-try-something-else">Let&rsquo;s try Something Else</a></li>
-        <li><a href="#pivot">Pivot!</a></li>
-      </ul>
-    </li>
-    <li><a href="#conclusion">Conclusion</a></li>
-    <li><a href="#afterthoughts---llms-are-good-for-side-quests">Afterthoughts - LLMs are good for side-quests</a></li>
-  </ul>
-</nav>
-    <div class="content-with-toc">
-      <p>
+<main class="main">
 
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://marcin.cylke.com.pl/">Home</a>&nbsp;»&nbsp;<a href="https://marcin.cylke.com.pl/post/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Extracting articles from Pocket - or ChatGPT for the needed but not interesting stuff
+    </h1>
+    <div class="post-meta"><span title='2024-08-26 00:00:00 +0000 UTC'>August 26, 2024</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span>
 
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
 
+        <div class="inner"><ul><ul>
+                <li>
+                    <a href="#first-try" aria-label="First try">First try</a></li>
+                <li>
+                    <a href="#lets-try-something-else" aria-label="Let&rsquo;s try Something Else">Let&rsquo;s try Something Else</a></li>
+                <li>
+                    <a href="#pivot" aria-label="Pivot!">Pivot!</a></li></ul>
+                    
+                <li>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a></li>
+                <li>
+                    <a href="#afterthoughts---llms-are-good-for-side-quests" aria-label="Afterthoughts - LLMs are good for side-quests">Afterthoughts - LLMs are good for side-quests</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-      
-      
-  <picture>
-  <img class="img-fluid" src="https://marcin.cylke.com.pl/post_images/extracting-articles-from-pocket-or-chatgpt-for-the-needed-but-not-interesting-stuff-0.png?v=5cc165de9d08df52fec8eb18a97109ed" alt="Prompt: An illustrated medium shot of a man with a backpack starting an adventure into a land of wild newspaper articles. The man is standing in a forest of newspaper stands. The background has an old-fashioned town with buildings made of bricks. The overall image has a warm hue." loading="lazy" height="1312" width="736" />
-</picture>
-</p>
+  <div class="post-content"><p><img alt="Prompt: An illustrated medium shot of a man with a backpack starting an adventure into a land of wild newspaper articles. The man is standing in a forest of newspaper stands. The background has an old-fashioned town with buildings made of bricks. The overall image has a warm hue." loading="lazy" src="/post_images/extracting-articles-from-pocket-or-chatgpt-for-the-needed-but-not-interesting-stuff-0.png"></p>
 <p><a href="https://getpocket.com">Pocket</a> is a nice service. It can save articles from the web for you to read later. Nice. It can even help in bypassing annoying paywalls (more on this <a href="/2024/02/29/payload-after-load/">here</a>). With the ease of using it, I can quickly end up with a substantial backlog of articles to go through. Since reading long articles on a screen feels like a chore, I came up with the idea of exporting articles into EPub format and reading them on an e-reader.</p>
 <p>My first approach to solving this was with Zapier. I hadn&rsquo;t used it before but had read that it was possible to create an integration that would connect to Pocket, check for articles marked with a specific tag, and then export the contents of the article into a PDF using some external service. This required multiple sites to cooperate, new accounts, and API keys, etc. It all seemed fragile, and in the end, it didn’t work.</p>
 <p>But maybe there are others ways to do that?</p>
-<h3 id="first-try">First try</h3>
+<h3 id="first-try">First try<a hidden class="anchor" aria-hidden="true" href="#first-try">#</a></h3>
 <p>The first attempt was to use the Pocket API to fetch the articles:</p>
 <blockquote>
-<p>generate a python script that fetches saved articles from Pocket</p>
-</blockquote>
+<p>generate a python script that fetches saved articles from Pocket</p></blockquote>
 <p>But how do I get the access token? I need to login and authorize!</p>
 <blockquote>
-<p>generate python code that performs login into pocket via api</p>
-</blockquote>
+<p>generate python code that performs login into pocket via api</p></blockquote>
 <p>That was quick!</p>
 <p>On the plus side</p>
 <ul>
@@ -96,7 +256,7 @@
 </span></span><span style="display:flex;"><span>                 <span style="color:#f92672">~~~~~~~^^^^^^^^^^^</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">KeyError</span>: <span style="color:#e6db74">&#39;article&#39;</span>
 </span></span></code></pre></div><p>After examining the output from API, there was no <code>article</code> field - obviously. Maybe it existed at some point, but according to online documentation, Pocket no longer offers document retrieval. Fair enough; it’s their core business.</p>
-<h3 id="lets-try-something-else">Let&rsquo;s try Something Else</h3>
+<h3 id="lets-try-something-else">Let&rsquo;s try Something Else<a hidden class="anchor" aria-hidden="true" href="#lets-try-something-else">#</a></h3>
 <p>For a brief period of time I just wanted to handle the transformation process on my own, using some additional library like <code>readability</code>, or <code>Goose</code>. The flow would be:</p>
 <ol>
 <li>fetch article metadata from API</li>
@@ -105,26 +265,23 @@
 </ol>
 <p>But this has a serious flaw. In my Pocket Saves, I have a bunch of articles that are either not available anymore or are behind a paywall, etc. And these are the ones I&rsquo;d still want to read. So this approach was no good.</p>
 <p>This was a separate ChatGPT session - just an exploration.</p>
-<h3 id="pivot">Pivot!</h3>
+<h3 id="pivot">Pivot!<a hidden class="anchor" aria-hidden="true" href="#pivot">#</a></h3>
 <p>So maybe I can just use some Javascript code for that?</p>
 <blockquote>
-<p>write a javascript function that looks for element &lt;div lang=&ldquo;en&rdquo;&gt; and copies everything in it (whole html structure) to clipboard</p>
-</blockquote>
+<p>write a javascript function that looks for element &lt;div lang=&ldquo;en&rdquo;&gt; and copies everything in it (whole html structure) to clipboard</p></blockquote>
 <p>The element mentioned in the message is exactly what keeps article contents - explored in the browser.</p>
 <p>I tested that in Firefox console. Well, something worked. But my clipboard was empty, apparently because Firefox was blocking clipboard operations from some random code. Well done in terms of security!</p>
 <p>But probably Firefox extensions should be able to alleviate this limitation!</p>
 <blockquote>
-<p>wrap that in a firefox extension</p>
-</blockquote>
+<p>wrap that in a firefox extension</p></blockquote>
 <p>And Bam! I got all the necessary code snippets to create a Firefox extension, along with the instructions on how to load that into the browser.</p>
 <p>With that approach it just worked. I had the copy of the article in my clipboard.</p>
 <p>Well, fine—but going through many articles, copying them into the clipboard, and then saving them to an external file by hand would still be tedious!</p>
 <p>It would be much nicer to have the extension preparing the files for me!</p>
 <blockquote>
-<p>Modify the extraction function so as it takes article title from first &lt;h1&gt; element in first &lt;header&gt; element. Use that title to name a file to which the contents of the copied &lt;div&gt; will be stored. The file should be offered as a download.</p>
-</blockquote>
+<p>Modify the extraction function so as it takes article title from first &lt;h1&gt; element in first &lt;header&gt; element. Use that title to name a file to which the contents of the copied &lt;div&gt; will be stored. The file should be offered as a download.</p></blockquote>
 <p>And it did just that! Worked beautifully!</p>
-<h2 id="conclusion">Conclusion</h2>
+<h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
 <p>If it was not for the LLM-based conversation I would not accomplish in such a short amount of time. The whole thing took me ~15 minutes. I&rsquo;d also need to learn a bit to accomplish that:</p>
 <ul>
 <li>I&rsquo;m pretty weak at Javascript</li>
@@ -132,7 +289,7 @@
 <li>I&rsquo;d probably have give up after exploring the first dead-end with Python app accessing API</li>
 </ul>
 <p>I must say, that this coding session with ChatGPT worked out really well!</p>
-<h2 id="afterthoughts---llms-are-good-for-side-quests">Afterthoughts - LLMs are good for side-quests</h2>
+<h2 id="afterthoughts---llms-are-good-for-side-quests">Afterthoughts - LLMs are good for side-quests<a hidden class="anchor" aria-hidden="true" href="#afterthoughts---llms-are-good-for-side-quests">#</a></h2>
 <p>There are often situations where I&rsquo;m using a specific application, usually through a browser or some online service with API access. It probably works okay, but there are some aspects that can be improved.</p>
 <p>Then comes an idea, like:</p>
 <ul>
@@ -149,24 +306,159 @@
 <li><a href="https://simonwillison.net/2024/Mar/23/building-c-extensions-for-sqlite-with-chatgpt-code-interpreter/">Building C Extensions for SQLite with ChatGPT Code Interpreter</a></li>
 <li><a href="https://simonwillison.net/2024/Mar/22/claude-and-chatgpt-case-study/">Claude and ChatGPT: Case Study</a></li>
 </ul>
-</div>
-  
+
+
   </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://marcin.cylke.com.pl/2024/09/17/youtube-video-generate-summary/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Youtube video - generate summary</span>
+  </a>
+  <a class="next" href="https://marcin.cylke.com.pl/2024/08/08/tracers-in-the-dark/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Tracers in the dark</span>
+  </a>
+</nav>
+
+  </footer><script src="https://utteranc.es/client.js"
+        repo="zygm0nt/hugo-blog-incarnation"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
 </article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></span> · 
 
-  </main><footer>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
 
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
 
-  <script
-    src="https://utteranc.es/client.js"
-    repo="zygm0nt/hugo-blog-incarnation"
-    issue-term="pathname"
-    label="comments"
-    theme="preferred-color-scheme"
-    crossorigin="anonymous"
-    async
-  ></script>
-  <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
 
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
 </body>
+
 </html>

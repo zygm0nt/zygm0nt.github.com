@@ -1,59 +1,369 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>running gamecube emulator on Linux | Tech ramblings by Marcin</title>
+<meta name="keywords" content="">
+<meta name="description" content="I have a fondness for all the retro things in tech, and try to hone this when I have time with exploring old tech. This time I tried running one of the retro consoles&rsquo; emulators. I chose Nintendo Gamecube - because of many reasons, but one of them being I own a quite recent incarnation of the Nintendo spirit, namely Nintendo Switch. So with the older one I&rsquo;ve wanted to see how the games look like back than and how much the landscape of gaming on Nintendo has changed with that big of an age gap.">
+<meta name="author" content="Marcin Cylke">
+<link rel="canonical" href="https://marcin.cylke.com.pl/2021/02/07/running-gamecube-on-linux/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://marcin.cylke.com.pl/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://marcin.cylke.com.pl/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://marcin.cylke.com.pl/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://marcin.cylke.com.pl/apple-touch-icon.png">
+<link rel="mask-icon" href="https://marcin.cylke.com.pl/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://marcin.cylke.com.pl/2021/02/07/running-gamecube-on-linux/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/book_section.css">
+<meta property="og:url" content="https://marcin.cylke.com.pl/2021/02/07/running-gamecube-on-linux/">
+  <meta property="og:site_name" content="Tech ramblings by Marcin">
+  <meta property="og:title" content="running gamecube emulator on Linux">
+  <meta property="og:description" content="I have a fondness for all the retro things in tech, and try to hone this when I have time with exploring old tech. This time I tried running one of the retro consoles’ emulators. I chose Nintendo Gamecube - because of many reasons, but one of them being I own a quite recent incarnation of the Nintendo spirit, namely Nintendo Switch. So with the older one I’ve wanted to see how the games look like back than and how much the landscape of gaming on Nintendo has changed with that big of an age gap.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2021-02-07T00:00:00+00:00">
+    <meta property="article:modified_time" content="2021-02-07T00:00:00+00:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="running gamecube emulator on Linux">
+  <meta name="twitter:description" content="I have a fondness for all the retro things in tech, and try to hone this when I have time with exploring old tech. This time I tried running one of the retro consoles’ emulators. I chose Nintendo Gamecube - because of many reasons, but one of them being I own a quite recent incarnation of the Nintendo spirit, namely Nintendo Switch. So with the older one I’ve wanted to see how the games look like back than and how much the landscape of gaming on Nintendo has changed with that big of an age gap.">
 
 
-  <title>running gamecube emulator on Linux - Tech ramblings by Marcin</title>
-  <link rel="stylesheet" type="text/css" href="/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/book_section.css">
-  <link rel="stylesheet" type="text/css" href="/css/aux.css">
-<script defer src="https://cloud.umami.is/script.js" data-website-id="274179a3-6fd7-434b-8b9e-b745ec841ca2"></script>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://marcin.cylke.com.pl/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "running gamecube emulator on Linux",
+      "item": "https://marcin.cylke.com.pl/2021/02/07/running-gamecube-on-linux/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "running gamecube emulator on Linux",
+  "name": "running gamecube emulator on Linux",
+  "description": "I have a fondness for all the retro things in tech, and try to hone this when I have time with exploring old tech. This time I tried running one of the retro consoles\u0026rsquo; emulators. I chose Nintendo Gamecube - because of many reasons, but one of them being I own a quite recent incarnation of the Nintendo spirit, namely Nintendo Switch. So with the older one I\u0026rsquo;ve wanted to see how the games look like back than and how much the landscape of gaming on Nintendo has changed with that big of an age gap.\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "I have a fondness for all the retro things in tech, and try to hone this when I have time with exploring old tech. This time I tried running one of the retro consoles’ emulators. I chose Nintendo Gamecube - because of many reasons, but one of them being I own a quite recent incarnation of the Nintendo spirit, namely Nintendo Switch. So with the older one I’ve wanted to see how the games look like back than and how much the landscape of gaming on Nintendo has changed with that big of an age gap.\nThe only Gamecube emulator I know of is called Dolphin.\nSince my current retro gaming machine is linux-based and there is no prebuilt version for my os version I’ve just compiled it from sources. Pretty astonished that for such a big project, with lots of changes there are only 5 major tags in the repo. And so since I didn’t want to have a lagging version by building from 5.0 stable tag I’ve decided to go full-on on build from the top of master branch.\nFollowing the build instructions, the whole process went rather smoothly. Starting games is easy and as long as they’re well supported by the emulator there really aren’t any issues with them.\nMy main problem however is with the controls. The original controller for Gamecube is quite an elaborate one. Emulating that behavior with the keyboard seems too cumbersome, too inconvenient. That’s why I’ve tried using Xbox 360 controller I had lying around. Which proved to be somewhat of a success but not a complete one. There is an implemented way to do it in Dolphin, there’s even a very nice tool to assign keys. But unfortunately stick calibration does not work, at least for me, at least not now.\nAfter asking on the DolphinEmu forums about this “glitch” it actually came out as my error. I should have chosen the “keys” for the sticks first. This not being that obvious in the first place now seems like something obvious considering other steps of the calibration process :D\n",
+  "wordCount" : "348",
+  "inLanguage": "en",
+  "datePublished": "2021-02-07T00:00:00Z",
+  "dateModified": "2021-02-07T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Marcin Cylke"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://marcin.cylke.com.pl/2021/02/07/running-gamecube-on-linux/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tech ramblings by Marcin",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://marcin.cylke.com.pl/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
-<body>
-  <header>
-<div>
-    <h1><a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></h1>
-  </div>
-  <nav><a href="/about/">about me</a>
-  </nav>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://marcin.cylke.com.pl/" accesskey="h" title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://marcin.cylke.com.pl/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </header>
-<main>
-    <article>
-  <div class="title">
-    <h1>running gamecube emulator on Linux</h1>
-    </div>
-  <div class="meta">2021-02-07 00:00</div>
-  <div class="artical-body">
-  
-    <div class="content">
-      <p>I have a fondness for all the retro things in tech, and try to hone this when I have time with exploring old tech. This time I tried running one of the retro consoles&rsquo; emulators. I chose Nintendo Gamecube - because of many reasons, but one of them being I own a quite recent incarnation of the Nintendo spirit, namely Nintendo Switch. So with the older one I&rsquo;ve wanted to see how the games look like back than and how much the landscape of gaming on Nintendo has changed with that big of an age gap.</p>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://marcin.cylke.com.pl/">Home</a>&nbsp;»&nbsp;<a href="https://marcin.cylke.com.pl/post/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      running gamecube emulator on Linux
+    </h1>
+    <div class="post-meta"><span title='2021-02-07 00:00:00 +0000 UTC'>February 7, 2021</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span>
+
+</div>
+  </header> 
+
+  <div class="post-content"><p>I have a fondness for all the retro things in tech, and try to hone this when I have time with exploring old tech. This time I tried running one of the retro consoles&rsquo; emulators. I chose Nintendo Gamecube - because of many reasons, but one of them being I own a quite recent incarnation of the Nintendo spirit, namely Nintendo Switch. So with the older one I&rsquo;ve wanted to see how the games look like back than and how much the landscape of gaming on Nintendo has changed with that big of an age gap.</p>
 <p>The only Gamecube emulator I know of is called <a href="https://dolphin-emu.org/">Dolphin</a>.</p>
 <p>Since my current retro gaming machine is linux-based and there is no prebuilt version for my os version I&rsquo;ve just compiled it from sources. Pretty astonished that for such a big project, with lots of changes there are only 5 major tags in the repo. And so since I didn&rsquo;t want to have a lagging version by building from 5.0 stable tag I&rsquo;ve decided to go full-on on build from the top of master branch.</p>
 <p>Following the build instructions, the whole process went rather smoothly. Starting games is easy and as long as they&rsquo;re well supported by the emulator there really aren&rsquo;t any issues with them.</p>
 <p>My main problem however is with the controls. The original controller for Gamecube is quite an elaborate one. Emulating that behavior with the keyboard seems too cumbersome, too inconvenient. That&rsquo;s why I&rsquo;ve tried using Xbox 360 controller I had lying around. Which proved to be somewhat of a success but not a complete one. There is an implemented way to do it in Dolphin, there&rsquo;s even a very nice tool to assign keys. But unfortunately stick calibration does not work, at least for me, at least not now.</p>
 <p>After asking on the DolphinEmu forums about this &ldquo;glitch&rdquo; it actually came out as my error. I should have chosen the &ldquo;keys&rdquo; for the sticks first. This not being that obvious in the first place now seems like something obvious considering other steps of the calibration process :D</p>
-</div>
-  
+
+
   </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://marcin.cylke.com.pl/2023/05/29/an-ode-to-fzf/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>an ode to fzf</span>
+  </a>
+  <a class="next" href="https://marcin.cylke.com.pl/2021/02/06/awesomewm-multiple-monitors/">
+    <span class="title">Next »</span>
+    <br>
+    <span>awesome WM and how to handle multiple monitors</span>
+  </a>
+</nav>
+
+  </footer><script src="https://utteranc.es/client.js"
+        repo="zygm0nt/hugo-blog-incarnation"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
 </article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></span> · 
 
-  </main><footer>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
 
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
 
-  <script
-    src="https://utteranc.es/client.js"
-    repo="zygm0nt/hugo-blog-incarnation"
-    issue-term="pathname"
-    label="comments"
-    theme="preferred-color-scheme"
-    crossorigin="anonymous"
-    async
-  ></script>
-  <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
 
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
 </body>
+
 </html>

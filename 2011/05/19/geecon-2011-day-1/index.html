@@ -1,37 +1,263 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Geecon 2011 - day 1 | Tech ramblings by Marcin</title>
+<meta name="keywords" content="">
+<meta name="description" content="
+Last week&#39;s Java conference - Geecon was very
+interesting. It was well prepared, and gave an insight into the current
+Java related trends - concurrency, DSLs, polyglot programming. But not
+only that - there were also some pretty different talks from excellent
+speakers.
 
 
-  <title>Geecon 2011 - day 1 - Tech ramblings by Marcin</title>
-  <link rel="stylesheet" type="text/css" href="/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/book_section.css">
-  <link rel="stylesheet" type="text/css" href="/css/aux.css">
-<script defer src="https://cloud.umami.is/script.js" data-website-id="274179a3-6fd7-434b-8b9e-b745ec841ca2"></script>
+The whole event took 4 days:
 
-</head>
-<body>
-  <header>
-<div>
-    <h1><a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></h1>
-  </div>
-  <nav><a href="/about/">about me</a>
-  </nav>
-</header>
-<main>
-    <article>
-  <div class="title">
-    <h1>Geecon 2011 - day 1</h1>
-    </div>
-  <div class="meta">2011-05-19 20:05</div>
-  <div class="artical-body">
-  
+
+
+University day (wednesday)
+2 regular conference days (Thursday &#43; Friday) 
+hacker garden (Sunday)
+
+
+
+I decided to attend only on Thursday and Friday - no time for more. Here
+is what interesting happened during those days.
+">
+<meta name="author" content="Marcin Cylke">
+<link rel="canonical" href="https://marcin.cylke.com.pl/2011/05/19/geecon-2011-day-1/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://marcin.cylke.com.pl/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://marcin.cylke.com.pl/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://marcin.cylke.com.pl/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://marcin.cylke.com.pl/apple-touch-icon.png">
+<link rel="mask-icon" href="https://marcin.cylke.com.pl/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://marcin.cylke.com.pl/2011/05/19/geecon-2011-day-1/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/book_section.css">
+<meta property="og:url" content="https://marcin.cylke.com.pl/2011/05/19/geecon-2011-day-1/">
+  <meta property="og:site_name" content="Tech ramblings by Marcin">
+  <meta property="og:title" content="Geecon 2011 - day 1">
+  <meta property="og:description" content="Last week&#39;s Java conference - Geecon was very interesting. It was well prepared, and gave an insight into the current Java related trends - concurrency, DSLs, polyglot programming. But not only that - there were also some pretty different talks from excellent speakers.
+The whole event took 4 days: University day (wednesday) 2 regular conference days (Thursday &#43; Friday) hacker garden (Sunday) I decided to attend only on Thursday and Friday - no time for more. Here is what interesting happened during those days.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2011-05-19T20:05:05+00:00">
+    <meta property="article:modified_time" content="2011-05-19T20:05:05+00:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Geecon 2011 - day 1">
+  <meta name="twitter:description" content="Last week&#39;s Java conference - Geecon was very interesting. It was well prepared, and gave an insight into the current Java related trends - concurrency, DSLs, polyglot programming. But not only that - there were also some pretty different talks from excellent speakers.
+The whole event took 4 days: University day (wednesday) 2 regular conference days (Thursday &#43; Friday) hacker garden (Sunday) I decided to attend only on Thursday and Friday - no time for more. Here is what interesting happened during those days.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://marcin.cylke.com.pl/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Geecon 2011 - day 1",
+      "item": "https://marcin.cylke.com.pl/2011/05/19/geecon-2011-day-1/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Geecon 2011 - day 1",
+  "name": "Geecon 2011 - day 1",
+  "description": " Last week's Java conference - Geecon was very interesting. It was well prepared, and gave an insight into the current Java related trends - concurrency, DSLs, polyglot programming. But not only that - there were also some pretty different talks from excellent speakers.\nThe whole event took 4 days: University day (wednesday) 2 regular conference days (Thursday + Friday) hacker garden (Sunday) I decided to attend only on Thursday and Friday - no time for more. Here is what interesting happened during those days. ",
+  "keywords": [
     
-    <div class="content-with-toc">
-      
+  ],
+  "articleBody": " Last week's Java conference - Geecon was very interesting. It was well prepared, and gave an insight into the current Java related trends - concurrency, DSLs, polyglot programming. But not only that - there were also some pretty different talks from excellent speakers.\nThe whole event took 4 days: University day (wednesday) 2 regular conference days (Thursday + Friday) hacker garden (Sunday) I decided to attend only on Thursday and Friday - no time for more. Here is what interesting happened during those days. Day 1 The morning got me unprepared. After hard enough, after work travel to Krakow on Wednesday, I wasn't in the best shape. However after arriving at the venue, being greeted with breakfast and refreshments I looked at the rest of the day with real hope.\nSince the schedule was tight - three parallel tracks of lecture, I had to choose, so bare in mind, that is my account of what I've seen and heard. Others may, of course, differ.\n1. Danny Coward \"Java SE: The Road Ahead\" Danny, being on Oracle (considering being also former Sun's employee a plus) payroll, gave an insightful talk on new things to came in Java 7. He drew rather serious plans for Java 8. According to Danny, the main trends in today's Java ecosystem are:\nparallel programming language dynamics and he probably is right :) The great things to come with new versions of Java are:\nclosures in Java (finally!) extending interfaces map, filter - functions for collections lambda expressions - thou in Java 8 The talk itself was a nice keynote, but I doubt the road map for Java will be met in its full extent - the goals aren't that small.\n2. Juergen Hoeller \"Enterprise Java in 2011\" Spring Source as one of the sponsors sent Juergen to evangelize about the world of enterprise and Java's place in it :) He emphasized different kinds of deployment: WAR, cloud deployment - and the latter's rise of importance.\nHe pointed out how outdated current application servers are - the usually lag ~3 years behind the main trends and developers' needs - good point! He proposed looking under the hood of now-popular cloud environments: Google App Engine or Amazon Elastic Cloud to look for schemas in them, etc - I intend to listen to his advice.\nAll in all this guy gave a great talk covering wide spectrum of technologies and not focusing on technical stuff too much.\n3. Heinz Kabutz \"Reflection madness\" Despite living on a Greek island, this guy showed also how to whack ones mind with Java Reflection API. Pure magic! Some highlights of his talk were:\nhow to get 42 + 1 = 44 get the size of an object get method caller's id add enum values dynamically With all this examples he pointed that using SecurityManager will prevent such nasty coding practices.\nSince he is an editor of Javaspecialists.eu newsletter, all the answers to problems presented in his talk (and many many more) can be found there. Well done, not to useful for me, nevertheless - interesting.\n4. Michael Figuiere, Cyrille Le Clere \"NoSQL \u0026 Datagrid from developer perspective\" I don't know what to think of this talk. It consisted an introduction to NoSQL databases but also a bit of problem's description that can be encountered when dealing with them. Notable thoughts were on:\ncreating a sharding ready data structure denormalization as a useful process for NoSQL DBs NoSQL usually means no transactions 5. Hamlet D'Arcy \"New Ideas for old code\" Since a lot of developers (all?) have to deal with legacy code - one way or another, this talk was a must!\n. The speaker shared some ideas on how to work with such code and remain sane. The talk was vivid, interesting and entertaining, well, and the notable thought? Here they are:\n51% rule - if you're not committing 51% of your time/your tasks into fixing your situation than the whole battle is already lost, read some good stuff!: Martin Fowler's \"Refactoring\" George C. Martin \"Clean Code\" Chad Fowler \"Big Rewrites\" - and why they failed, what's wrong with them use static analysis - Find Bugz, pmc query-command - a method should be a query or a command: query - returns sth command - change the state of an object he also proposed scratch refactoring set a timer tag your code refactor without tests step back and analyze is it better? if not, revert This was nice! - it assumed arriving at a project with no ( or little) tests.\n6. Aslan Knutsen \"Arquillian\" The last talk of that day was about some new library from JBoss that would allow to test your components with unit tests - test them in a destination container. The whole point of this library is to run the specific fragment of code as if it was build and deployed to some application server (let's say JBoss AS ;-) ). To be honest, I can't find much application for that - thou I'm not doing any serious work in JEE world.\nParty And the day ended. But there was sth else to do after the official part - party time! It took place at Klub Pauza on Floriańska street. It was a rather nice social event.\n... to be continued - stay tuned for part 2\nComments JedenPies \"how to get 42 + 1 = 44\"?\nTutaj ;)\nhttp://blog.patryk-dobrowolski.eu/2011/05/16/refleksja-moze-byc-niebezpieczna-zobacz-jak-zniszczyc-sobie/\n",
+  "wordCount" : "901",
+  "inLanguage": "en",
+  "datePublished": "2011-05-19T20:05:05Z",
+  "dateModified": "2011-05-19T20:05:05Z",
+  "author":{
+    "@type": "Person",
+    "name": "Marcin Cylke"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://marcin.cylke.com.pl/2011/05/19/geecon-2011-day-1/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tech ramblings by Marcin",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://marcin.cylke.com.pl/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://marcin.cylke.com.pl/" accesskey="h" title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://marcin.cylke.com.pl/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://marcin.cylke.com.pl/">Home</a>&nbsp;»&nbsp;<a href="https://marcin.cylke.com.pl/post/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Geecon 2011 - day 1
+    </h1>
+    <div class="post-meta"><span title='2011-05-19 20:05:05 +0000 UTC'>May 19, 2011</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#" aria-label="Day 1">Day 1</a><ul>
+                        
+                <li>
+                    <a href="#" aria-label="1. Danny Coward &#34;Java SE: The Road Ahead&#34;">1. Danny Coward "Java SE: The Road Ahead"</a></li>
+                <li>
+                    <a href="#" aria-label="2. Juergen Hoeller &#34;Enterprise Java in 2011&#34;">2. Juergen Hoeller "Enterprise Java in 2011"</a></li>
+                <li>
+                    <a href="#" aria-label="3. Heinz Kabutz &#34;Reflection madness&#34;">3. Heinz Kabutz "Reflection madness"</a></li>
+                <li>
+                    <a href="#" aria-label="5. Hamlet D&#39;Arcy &#34;New Ideas for old code&#34;">5. Hamlet D'Arcy "New Ideas for old code"</a></li>
+                <li>
+                    <a href="#" aria-label="6. Aslan Knutsen &#34;Arquillian&#34;">6. Aslan Knutsen "Arquillian"</a></li>
+                <li>
+                    <a href="#" aria-label="Party">Party</a></li>
+                <li>
+                    <a href="#" aria-label="Comments">Comments</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content">
 <div class='post'>
 <p>Last week's Java conference - <a href="http://2011.geecon.org">Geecon</a> was very
 interesting. It was well prepared, and gave an insight into the current
@@ -216,24 +442,159 @@ Tutaj ;)<br />
 http://blog.patryk-dobrowolski.eu/2011/05/16/refleksja-moze-byc-niebezpieczna-zobacz-jak-zniszczyc-sobie/</p></div>
 </div>
 </div>
-</div>
-  
+
+
   </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Geecon 2011 - day 2</span>
+  </a>
+  <a class="next" href="https://marcin.cylke.com.pl/2011/05/02/jce-keystore-and-untrusted-sites/">
+    <span class="title">Next »</span>
+    <br>
+    <span>JCE keystore and untrusted sites</span>
+  </a>
+</nav>
+
+  </footer><script src="https://utteranc.es/client.js"
+        repo="zygm0nt/hugo-blog-incarnation"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
 </article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></span> · 
 
-  </main><footer>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
 
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
 
-  <script
-    src="https://utteranc.es/client.js"
-    repo="zygm0nt/hugo-blog-incarnation"
-    issue-term="pathname"
-    label="comments"
-    theme="preferred-color-scheme"
-    crossorigin="anonymous"
-    async
-  ></script>
-  <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
 
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
 </body>
+
 </html>

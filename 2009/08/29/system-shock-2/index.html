@@ -1,37 +1,231 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>System Shock 2 | Tech ramblings by Marcin</title>
+<meta name="keywords" content="">
+<meta name="description" content="
+Pamiętacie taką grę? Ja pamiętam jedynie tytuł i obszerny opis części pierwszej zamieszczony w którymś numerze Secret Service. Wtedy ta gra była poza moim zasięgiem - za sprawą wymagań sprzętowych.
+Dopiero jakiś rok temu udało mi się zdobyć System Shock - część pierwszą. Zagrywałem się w nią bardzo długo, uruchomiłem całość pod DosBox&#39;em i działało pięknie.
+Po jej ukończeniu przyszła chrapka na część drugą. Zdobyłem jakąś wersję tej gry i co? I nie da się w nią grać! Ani pod Wine (linux), ani na Windows Vista. Próbowałem wszystkich patchy jakie znalazłem, opisów, sposobików (z wineHQ).">
+<meta name="author" content="Marcin Cylke">
+<link rel="canonical" href="https://marcin.cylke.com.pl/2009/08/29/system-shock-2/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://marcin.cylke.com.pl/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://marcin.cylke.com.pl/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://marcin.cylke.com.pl/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://marcin.cylke.com.pl/apple-touch-icon.png">
+<link rel="mask-icon" href="https://marcin.cylke.com.pl/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://marcin.cylke.com.pl/2009/08/29/system-shock-2/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/book_section.css">
+<meta property="og:url" content="https://marcin.cylke.com.pl/2009/08/29/system-shock-2/">
+  <meta property="og:site_name" content="Tech ramblings by Marcin">
+  <meta property="og:title" content="System Shock 2">
+  <meta property="og:description" content="Pamiętacie taką grę? Ja pamiętam jedynie tytuł i obszerny opis części pierwszej zamieszczony w którymś numerze Secret Service. Wtedy ta gra była poza moim zasięgiem - za sprawą wymagań sprzętowych.
+Dopiero jakiś rok temu udało mi się zdobyć System Shock - część pierwszą. Zagrywałem się w nią bardzo długo, uruchomiłem całość pod DosBox&#39;em i działało pięknie.
+Po jej ukończeniu przyszła chrapka na część drugą. Zdobyłem jakąś wersję tej gry i co? I nie da się w nią grać! Ani pod Wine (linux), ani na Windows Vista. Próbowałem wszystkich patchy jakie znalazłem, opisów, sposobików (z wineHQ).">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2009-08-29T14:23:24+00:00">
+    <meta property="article:modified_time" content="2009-08-29T14:23:24+00:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="System Shock 2">
+  <meta name="twitter:description" content="Pamiętacie taką grę? Ja pamiętam jedynie tytuł i obszerny opis części pierwszej zamieszczony w którymś numerze Secret Service. Wtedy ta gra była poza moim zasięgiem - za sprawą wymagań sprzętowych.
+Dopiero jakiś rok temu udało mi się zdobyć System Shock - część pierwszą. Zagrywałem się w nią bardzo długo, uruchomiłem całość pod DosBox&#39;em i działało pięknie.
+Po jej ukończeniu przyszła chrapka na część drugą. Zdobyłem jakąś wersję tej gry i co? I nie da się w nią grać! Ani pod Wine (linux), ani na Windows Vista. Próbowałem wszystkich patchy jakie znalazłem, opisów, sposobików (z wineHQ).">
 
 
-  <title>System Shock 2 - Tech ramblings by Marcin</title>
-  <link rel="stylesheet" type="text/css" href="/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/book_section.css">
-  <link rel="stylesheet" type="text/css" href="/css/aux.css">
-<script defer src="https://cloud.umami.is/script.js" data-website-id="274179a3-6fd7-434b-8b9e-b745ec841ca2"></script>
-
-</head>
-<body>
-  <header>
-<div>
-    <h1><a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></h1>
-  </div>
-  <nav><a href="/about/">about me</a>
-  </nav>
-</header>
-<main>
-    <article>
-  <div class="title">
-    <h1>System Shock 2</h1>
-    </div>
-  <div class="meta">2009-08-29 14:23</div>
-  <div class="artical-body">
-  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://marcin.cylke.com.pl/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "System Shock 2",
+      "item": "https://marcin.cylke.com.pl/2009/08/29/system-shock-2/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "System Shock 2",
+  "name": "System Shock 2",
+  "description": " Pamiętacie taką grę? Ja pamiętam jedynie tytuł i obszerny opis części pierwszej zamieszczony w którymś numerze Secret Service. Wtedy ta gra była poza moim zasięgiem - za sprawą wymagań sprzętowych.\nDopiero jakiś rok temu udało mi się zdobyć System Shock - część pierwszą. Zagrywałem się w nią bardzo długo, uruchomiłem całość pod DosBox'em i działało pięknie.\nPo jej ukończeniu przyszła chrapka na część drugą. Zdobyłem jakąś wersję tej gry i co? I nie da się w nią grać! Ani pod Wine (linux), ani na Windows Vista. Próbowałem wszystkich patchy jakie znalazłem, opisów, sposobików (z wineHQ).\n",
+  "keywords": [
     
-    <div class="content-with-toc">
-      
+  ],
+  "articleBody": " Pamiętacie taką grę? Ja pamiętam jedynie tytuł i obszerny opis części pierwszej zamieszczony w którymś numerze Secret Service. Wtedy ta gra była poza moim zasięgiem - za sprawą wymagań sprzętowych.\nDopiero jakiś rok temu udało mi się zdobyć System Shock - część pierwszą. Zagrywałem się w nią bardzo długo, uruchomiłem całość pod DosBox'em i działało pięknie.\nPo jej ukończeniu przyszła chrapka na część drugą. Zdobyłem jakąś wersję tej gry i co? I nie da się w nią grać! Ani pod Wine (linux), ani na Windows Vista. Próbowałem wszystkich patchy jakie znalazłem, opisów, sposobików (z wineHQ).\nNIC! Pustka, da się pograć odrobinę, rozpocząć grę, przejść tutoriale, a później, przy budowaniu kariery - pierwszy etap kształtowania postaci, całość zawisa. Pozostaje już tylko zabicie aplikacji.\nDla tych, którzy nie znają gry, lub chcą sobie poczytać/odświeżyć, oto garść linków:\ngamespot retrospective - ciekawe podsumowanie prac nad SS2 Kim jest Shodan i czego chce? The making of Tym fatalnym akcentem wracam do części pierwszej gry...\nComments vder tutaj piszą, że ss2 można spokojnie odpalic pod xp i nowszymi: http://www.systemshock.org/index.php\nZal @Ravicious: A co tu porównywać? W to drugie grać się nie da. Gierka bez polotu. Wiem, bo ostatnio przeszedłem :/\nBartosz \"BTM\" Szczeciński Deus Ex 1 i Deus Ex-co?\nDziękuje, będę tu do końca tygodnia!\nRavicious To ja poproszę jeszcze o porównanie Deus Ex I vs Deus Ex: Invisible War :)\nGraveer Jesteście bezlitośni... Za rogiem kampania wrześniowa, a ja instaluję Deus Ex-a :|\nZal A ja do tej pory nie mogę uwierzyć, że tak Deus Exa 2 spieprzyli. Nawet teraz, gdy 2 przeszedłem z miesiąc temu to nie pamiętam jej zakończenia. A 1? Wszystkie zakończenia chciałem poznać :D\rSwoją drogą - pamiętam, jak kumpel robił mapkę będącą odzwierciedleniem naszego wydziału w skali 1 do 1 :D Nawet z NPC-ami w kształcie wykładowców.\nDodek chemikalia :D jeżdżenie windą po wszystkich piętrach w poszukiwaniu molibdenu ;)\nD4rky Deus Ex vs System Shock 2:\rSS2:\r- lepszy rozwój postaci\r- więcej możliwości wykreowania takowej\r- bardziej mroczny klimat (oooh killl meeeee)\r- chemikalia!\rDX:\r- bardziej rozbudowane i mniej monotonne mapy\r- zdecydowanie mniej monotonna rozgrywka\r- dużo bardziej skomplikowana i ciekawsza fabuła (chociaż też dość linowa, ale nie na zasadzie biegania przed siebie i walenia w co popadnie)\r- ciekawsze postacie ;)\rMnie ta druga gra wciągnęła bardziej, bo w System Shocku 2 po kilku godzinach grania zaczęło mnie cholernie nudzić to latanie od jednego punktu do drugiego ;)\nMarcin @Dodek, albo się gra nie uruchamia, albo wiesza się przy ładowaniu pierwszego etapu - tworzenia postaci.\nBTM http://www.lolsauce.com/RandomBS/Deus%20Ex.jpeg\nZal @łasica: Deus Ex przeszedłem to może i Thiefa pomęczę. Szczególnie, że kiedyś udało mi się zdobyć antologię w Kolekcji Klasyki.\rSzkoda tylko, że taki np. Thief 1 to nawet pod prawdziwym WinXP ma problemy z działaniem.\nMichał Górny Ja grałem u brata na WinXP, bodajże z Radeonem HD2400, i nie miałem większych problemów. Bodajże Mod Managerem dołożony miałem Rebirth, niewykluczony też, że jakiś patch nakładałem. Gra działała bez zarzutu.\nHalosza Warto zagrać w Bioshocka. Ma też mocny klimat. No i będzie działać na Viście.\njam łasica Na tym samym engine polecam Thief i Thief 2 :)\nZal Deus Ex - jedna z najlepszych gierek, jakie znam. Przy czym mowa o części pierwszej ;]\nDodek Grałem na rocznym laptopie z Windows Vista i nie miałem żadnych problemów - jakie problemy Ty napotykasz?\nMarcin @Dodek, grałeś na jakimś współczesnym systemie? Może jakieś wskazówki na temat uruchomienia gry?\nDodek Ja przeszedłem SS2 - fajna atmosfera, ciekawy system rozwoju postaci, mroczno i straszno, a pod sam koniec robi się naprawdę trudno.\rSzkoda, że dziś nie robią już tak rozudowanych gier.\nPustelnik Ja z kolei w SS2 zagrałem raz i krótko, nie chcę więc ich porównywać. Mogę za to z czystym sumieniem powiedzieć, że Deus niesamowicie mnie wciągnął w swój świat.\nMarcin @Pustelnik - grałem kiedyś przez chwilę. Jak byś porównał do System Shocka? chodzi mi o fabułę i samą rozgrywkę.\nPustelnik Aż mnie naszła ochota na Deus Ex... ;)\nZal System Shock 2 nawet pod Windowsem miał tendencję do ciągłego zwieszania się. Szkoda. Dobra gierka, ale wykonanie techniczne już znacznie gorsze.\n",
+  "wordCount" : "681",
+  "inLanguage": "en",
+  "datePublished": "2009-08-29T14:23:24Z",
+  "dateModified": "2009-08-29T14:23:24Z",
+  "author":{
+    "@type": "Person",
+    "name": "Marcin Cylke"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://marcin.cylke.com.pl/2009/08/29/system-shock-2/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tech ramblings by Marcin",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://marcin.cylke.com.pl/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://marcin.cylke.com.pl/" accesskey="h" title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://marcin.cylke.com.pl/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://marcin.cylke.com.pl/">Home</a>&nbsp;»&nbsp;<a href="https://marcin.cylke.com.pl/post/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      System Shock 2
+    </h1>
+    <div class="post-meta"><span title='2009-08-29 14:23:24 +0000 UTC'>August 29, 2009</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#" aria-label="Comments">Comments</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content">
 <div class='post'>
 <p>Pamiętacie taką grę? Ja pamiętam jedynie tytuł i obszerny opis części pierwszej zamieszczony w którymś numerze Secret Service. Wtedy ta gra była poza moim zasięgiem - za sprawą wymagań sprzętowych.</p>
 <EXCERPT><p>Dopiero jakiś rok temu udało mi się zdobyć System Shock - część pierwszą. Zagrywałem się w nią bardzo długo, uruchomiłem całość pod DosBox'em i działało pięknie.</p>
@@ -158,24 +352,159 @@
 <p>System Shock 2 nawet pod Windowsem miał tendencję do ciągłego zwieszania się. Szkoda. Dobra gierka, ale wykonanie techniczne już znacznie gorsze.</p></div>
 </div>
 </div>
-</div>
-  
+
+
   </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://marcin.cylke.com.pl/2009/09/16/public-enemies/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Public Enemies</span>
+  </a>
+  <a class="next" href="https://marcin.cylke.com.pl/2009/08/29/wlasny-player-audio/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Własny player audio?</span>
+  </a>
+</nav>
+
+  </footer><script src="https://utteranc.es/client.js"
+        repo="zygm0nt/hugo-blog-incarnation"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
 </article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></span> · 
 
-  </main><footer>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
 
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
 
-  <script
-    src="https://utteranc.es/client.js"
-    repo="zygm0nt/hugo-blog-incarnation"
-    issue-term="pathname"
-    label="comments"
-    theme="preferred-color-scheme"
-    crossorigin="anonymous"
-    async
-  ></script>
-  <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
 
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
 </body>
+
 </html>

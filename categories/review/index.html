@@ -1,156 +1,576 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="alternate" type="application/rss+xml" href="https://marcin.cylke.com.pl/categories/review/index.xml" title="Review - Tech ramblings by Marcin">
- 
+<html lang="en" dir="auto" data-theme="auto">
 
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Review | Tech ramblings by Marcin</title>
+<meta name="keywords" content="">
+<meta name="description" content="Tech ramblings by Marcin - software engineering, distributed systems, and more">
+<meta name="author" content="Marcin Cylke">
+<link rel="canonical" href="https://marcin.cylke.com.pl/categories/review/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://marcin.cylke.com.pl/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://marcin.cylke.com.pl/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://marcin.cylke.com.pl/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://marcin.cylke.com.pl/apple-touch-icon.png">
+<link rel="mask-icon" href="https://marcin.cylke.com.pl/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://marcin.cylke.com.pl/categories/review/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="https://marcin.cylke.com.pl/categories/review/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-  <title>Review - Tech ramblings by Marcin</title>
-  <link rel="stylesheet" type="text/css" href="/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/book_section.css">
-  <link rel="stylesheet" type="text/css" href="/css/aux.css">
-<script defer src="https://cloud.umami.is/script.js" data-website-id="274179a3-6fd7-434b-8b9e-b745ec841ca2"></script>
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/book_section.css">
+<meta property="og:url" content="https://marcin.cylke.com.pl/categories/review/">
+  <meta property="og:site_name" content="Tech ramblings by Marcin">
+  <meta property="og:title" content="Review">
+  <meta property="og:description" content="Tech ramblings by Marcin - software engineering, distributed systems, and more">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Review">
+  <meta name="twitter:description" content="Tech ramblings by Marcin - software engineering, distributed systems, and more">
 
 </head>
-<body>
-  <header>
-<div>
-    <h1><a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></h1>
-  </div>
-  <nav><a href="/about/">about me</a>
-  </nav>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://marcin.cylke.com.pl/" accesskey="h" title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://marcin.cylke.com.pl/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </header>
-<main>
-    <div>
-  <h1>Review</h1>
-</div>
-<ul class="article-list">
-  <li class="article-item">
-    <div class="article-date">2025-01-16 00:00</div>
-    <div class="article-title"><a href="/2025/01/16/books-i-read-oct-dec-2024/">books I read - Oct - Dec 2024</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2024-11-05 00:00</div>
-    <div class="article-title"><a href="/2024/11/05/books-i-read-september-2024/">books I read - September 2024</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2009-09-20 00:00</div>
-    <div class="article-title"><a href="/2009/09/20/battlestar-galactica/">Battlestar Galactica</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2009-09-16 00:00</div>
-    <div class="article-title"><a href="/2009/09/16/public-enemies/">Public Enemies</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2009-02-14 00:00</div>
-    <div class="article-title"><a href="/2009/02/14/southland-tales/">Southland Tales</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2009-02-07 00:00</div>
-    <div class="article-title"><a href="/2009/02/07/rocknrolla/">RocknRolla</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2009-02-07 00:00</div>
-    <div class="article-title"><a href="/2009/02/07/curious-case-of-benjamin-button/">The Curious Case of Benjamin Button</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2009-02-07 00:00</div>
-    <div class="article-title"><a href="/2009/02/07/darjeeling-limited/">The Darjeeling Limited</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2008-10-29 00:00</div>
-    <div class="article-title"><a href="/2008/10/29/incredible-hulk/">The Incredible Hulk</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2008-10-24 00:00</div>
-    <div class="article-title"><a href="/2008/10/24/kung-fu-panda/">Kung Fu Panda</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2008-01-07 00:00</div>
-    <div class="article-title"><a href="/2008/01/07/filmy-ktre-przybd/">Filmy, które przybędą</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2008-01-07 00:00</div>
-    <div class="article-title"><a href="/2008/01/07/invasion-aka-invasion-of-body-snatchers/">The Invasion a.k.a Invasion of the Body Snatchers</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-12-11 00:00</div>
-    <div class="article-title"><a href="/2007/12/11/podsumowanie-przegldu/">Podsumowanie przeglądu</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-12-05 00:00</div>
-    <div class="article-title"><a href="/2007/12/05/dollars-trilogy/">Dollars Trilogy</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-11-19 00:00</div>
-    <div class="article-title"><a href="/2007/11/19/before-night-falls/">Before Night Falls</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-11-19 00:00</div>
-    <div class="article-title"><a href="/2007/11/19/casino-royale/">Casino Royale</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-11-19 00:00</div>
-    <div class="article-title"><a href="/2007/11/19/one-flew-over-cocos-nest/">One flew over coco&#39;s nest</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-11-19 00:00</div>
-    <div class="article-title"><a href="/2007/11/19/wtc/">WTC</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-11-09 00:00</div>
-    <div class="article-title"><a href="/2007/11/09/borat-cultural-learnings-of-america-for/">Borat: Cultural Learnings of America for Make Benefit Glorious Nation of Kazakhstan</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2007-11-09 00:00</div>
-    <div class="article-title"><a href="/2007/11/09/przejcie-z-joggera-na-bloggera/">Przejście z joggera na bloggera</a></div>
-  </li>
-  </ul>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="https://marcin.cylke.com.pl/">Home</a>&nbsp;»&nbsp;<a href="https://marcin.cylke.com.pl/categories/">Categories</a></div>
+  <h1>
+    Review
+    <a href="/categories/review/index.xml" title="RSS" aria-label="RSS">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" height="23">
+        <path d="M4 11a9 9 0 0 1 9 9" />
+        <path d="M4 4a16 16 0 0 1 16 16" />
+        <circle cx="5" cy="19" r="1" />
+      </svg>
+    </a>
+  </h1>
+</header>
 
-    <ul class="pagination pagination-default">
-      <li class="page-item disabled">
-        <a aria-disabled="true" aria-label="First" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;&laquo;</span></a>
-      </li>
-      <li class="page-item disabled">
-        <a aria-disabled="true" aria-label="Previous" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;</span></a>
-      </li>
-      <li class="page-item active">
-        <a aria-current="page" aria-label="Page 1" class="page-link" role="button">1</a>
-      </li>
-      <li class="page-item">
-        <a href="/categories/review/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
-      </li>
-      <li class="page-item">
-        <a href="/categories/review/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
-      </li>
-      <li class="page-item">
-        <a href="/categories/review/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
-      </li>
-      <li class="page-item">
-        <a href="/categories/review/page/5/" aria-label="Page 5" class="page-link" role="button">5</a>
-      </li>
-      <li class="page-item">
-        <a href="/categories/review/page/2/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/categories/review/page/7/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
-      </li>
-    </ul>
-  </main><footer>
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">books I read - Oct - Dec 2024
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Books Book Review: Czysta Ameryka. Przemilczana historia eugeniki by Elizabeth Catte Many interesting observations and a clearly presented opinion on eugenics and its history in the USA. It’s quite difficult to get through due to the many facts specific to USA internal politics. It also explores topics loosely connected to eugenics, which may feel tangential but provide a broader context. There is certainly a lot of personal opinions here, referring to the author’s hometown. It makes the book less valuable as an objective study of the subject, and more just a personal exploration based on local facts.&#34; Book Review: Zakamarki Białego Domu by Marek Wałkuski written as a concise trivia book about US White House. The author, polish correspondent working in the Presidential Press Pool shares a lot of his personal experiences, but also adds a lot of smaller research to that. The mix of personal anecdotes and research makes the book both engaging and informative. However, Some sections feel less compelling and might serve more as filler. While accurate, the repeated mention of being the only Polish reporter near the US President can feel overemphasized. Book Review: The coming wave by Mustafa Suleyman how AI is changing the world, and what will be its future influence. Written by an influential person, a co-founder of DeepMind. The book presents thought-provoking insights, particularly on societies’ approach to that new paradigm (AI). Given the rapid evolution of AI, some ideas in the book have already become outdated. Some ideas in the book are already out of sync with what’s happening in the industry. This book has been a good, relaxing exercise for the mind. While it’s an engaging read, some ideas may feel more speculative than definitive. Book Review: Umbrella Academy by Gerard Way, Gabriel Bá before the Netflix series there’s been a comic version of the story about the patchwork family of super-children, born on the same day all around the world. I really liked the Netflix adaptation, after enjoying the Netflix adaptation, I was inspired to explore the original comic. And that’s been a good decision, I must say. In fact, The comic offers richer character development and a more intricate storyline compared to the Netflix adaptation. The unique art style and imaginative storytelling made it a thoroughly enjoyable read. Book Review: Futuro Darko by Krzysztof Nowak A post-apocalyptic comic with a distinctly Polish twist. The album contains a bunch of separate stories connected by the main characters. I enjoyed the style of the comics. Also, the comic-inspired soundtrack adds an immersive dimension to the reading experience.! Neat idea! Articles Tracking Putin’s Most Feared Secret Agency—From Inside a Russian Prison and Beyond - a investigative piece from Evan Gershkovich, WSJ reporter held in Russian Prison, recently released Interesting video Czy wszyscy 110-latkowie to oszuści? IgNobel z demografii 2024 | Czytamy naturę - a super interesting presentation about people supposedly living more than 100 years. Spotify’s Approach to Distributed LLM Training with Ray on GKE | Ray Summit 2024 </p>
+  </div>
+  <footer class="entry-footer"><span title='2025-01-16 00:00:00 +0000 UTC'>January 16, 2025</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to books I read - Oct - Dec 2024" href="https://marcin.cylke.com.pl/2025/01/16/books-i-read-oct-dec-2024/"></a>
+</article>
 
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">books I read - September 2024
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Books Book Review: Stany podzielone Ameryki by Lukasz Pawłowski Written by one of the podcasters from “Podcast amerykański,” and my great experience with this book was largely due to this connection. The book is fascinating and feels refreshingly objective. Additionally, it offers an insightful analysis of the current state of American society, particularly from a European perspective, providing a unique outsider’s view of the country’s complexities. Book Review: Persepolis by Marjane Satrapi A classic. This graphic novel chronicles the experience of growing up and living in Iran before, during, and after the Islamic Revolution. The most vivid and shocking part of the story takes place in Iran. The second part, about living in Austria as an immigrant, is less engaging. I found it most enjoyable when the action returned to Iran, highlighting the stark contrast between the two countries, and more importantly, the people. Highly recommended! Book Review: Blankets by Craig Thompson An autobiographical graphic novel that tells the story of growing up in a deeply religious family and how it shaped the author’s first love and transition to adulthood. Not my favorite. Book Review: Ghostmoney by Smolderen &amp; Bertail I really enjoyed this graphic novel. It’s set in the near future and follows a wild chase for lost Al-Qaeda money. The story is told from multiple perspectives, involving politics and a somewhat exaggerated portrayal of shady U.S. dealings around the world. The art style is atmospheric, with some parts being quite dark and gritty, while others depict futuristic, beautifully rendered Middle Eastern cities. As for the plot—it’s not too deep, but it’s still enjoyable. Book Review: Sandworm by Andy Greenberg A brilliant book that dives into the dangers of cyberwarfare. It covers nation-sponsored cyberattacks on infrastructure and emphasizes the urgent need for securing networks. The book paints a grim picture of potential future cyberattacks, especially with state-sponsored groups using zero-day vulnerabilities against individuals and institutions. It reads like a thriller, except the stakes are real. I’d compare it to Kim Zetter’s Countdown to Zero Day about Stuxnet. Personally, I would have enjoyed more technical details, but it was a great read nonetheless. From Pocket Recent:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-11-05 00:00:00 +0000 UTC'>November 5, 2024</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to books I read - September 2024" href="https://marcin.cylke.com.pl/2024/11/05/books-i-read-september-2024/"></a>
+</article>
 
-  <script
-    src="https://utteranc.es/client.js"
-    repo="zygm0nt/hugo-blog-incarnation"
-    issue-term="pathname"
-    label="comments"
-    theme="preferred-color-scheme"
-    crossorigin="anonymous"
-    async
-  ></script>
-  <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Battlestar Galactica
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Wszystko zaczęło się w 2005, kiedy to wypuszczony został pierwszy odcinek odświeżonego serialu Battlestar Galactica. Początkowo zapowiadał się po prostu remake serialu z lat 70. Jednak z czasem, gdy rozwijała się fabuła a kolejne odcinki puchły od mnogości bohaterów i ich różnorodności, serial stał się czymś nowym. Całkiem odrębnym.
+Przez te lata pozwolił przeżyć z bohaterami zagładę planety Caprice, ucieczkę grupy 50 000 niedobitków, partyzancką walkę z przeważającymi siłami Cylonów. Gdy znaleziono nowy dom, oglądaliśmy ich zmagania z niegościnną planetą, a później z jażmę Cylonów, którzy jednak znaleźli ich i tam. Z czasem doszło do unii między ludźmi a Cylonami, aż w końcu....
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2009-09-20 00:00:00 +0000 UTC'>September 20, 2009</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Battlestar Galactica" href="https://marcin.cylke.com.pl/2009/09/20/battlestar-galactica/"></a>
+</article>
 
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Public Enemies
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Na ten film czekałem dosyć długo. Może nie jakoś szczególnie, ale jednak zrobiło na mnie wrażenie, że kręci go Michael Mann. Że w rolach głównych sama śmietanka. Że o gangsterach. Zapowiadało się super.
+Film opowiada historię Johna Dillingera, który napadał na banki, rabował z klasą, uciekał z więzień. A wszystko to robił w złotych latach gangsterki w USA, czyli latach 20. Mamy tu wszystko co gangsterskie kino zawierać powinno. Jest dużo przemocy, romans, zajadły policjant ścigający Johna. Całość jest historią wejścia na szczyt i szbkiego końca Dillingera. Jego brawurowe skoki na banki zwróciły na siebie tak dużą uwagę, że stał się synonimem wroga publicznego numer jeden. Spowodowało to wydzielenie w FBI specjalnej jednostki, zmianę sposobu prowadzenia dochodzeń. I to wszystko właśnie jest pokazane w filmie. Bardzo zgrabnie i z sensem.
+Na uwagę zasługuje sposób kręcenia filmu. Bardzo naturalny obraz, kamera pracuje intensywnie śledząc bohaterów w momentach dynamicznych, ale potrafi &#34;przystanąć&#34; i objąć w ładny kadr dziewczynę Johna, graną przez Marion Cotillard.
+Na filmie nie zawiodłem się. Trzymał w napięciu i nie nudził. Cóż chcieć innego!
+ 
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2009-09-16 00:00:00 +0000 UTC'>September 16, 2009</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Public Enemies" href="https://marcin.cylke.com.pl/2009/09/16/public-enemies/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Southland Tales
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Kiedy zabrałem się po raz pierwszy do oglądania tego filmu, bardzo szybko się zniechęciłem. Ciężko było w niego brnąć, fabuła nie trzymała się kupy, film był dziwny i podzielony na jakieś nieskładne części.
+Dopiero po jakimś czasie przeczytałem, całkiem przypadkiem zresztą, że to jak najbardziej zamierzony efekt. Dziwne? Nie, nawet nie zupełnie. Sęk w tym, że kompletną opowieść podzielono na 6 części. Pierwsze 3 zostały opowiedziane w formie komiksu, natomiast pozostałe składają się na opisywane właśnie film. Nic więc dziwnego, że zaczynając od środka nie wiedziałem o co biega.
+Ta dziwna konstrukcja, po przeczytaniu komiksu zaczęła mieć więc wreszcie ręce i nogi. Wszystko zaczęło wskakiwać na swoje miejsca. Teraz tylko należało sobie poukładać i tak bardzo skomplikowaną fabułę.
+Film opowiada o świecie przyszłości. Świecie nękanym problemami energetycznymi, którym próbuje zaradzić korporacja Treer. Mapa geopolityczna wygląda całkiem inaczej niż to co znamy z dzisiejszych lekcji geografii. Jedynie południowe obszary byłego USA, odpowiadające mniej więcej stanowi California są miejscem mlekiem i miodem płynącym.
+Boxer Santeros (sportowie i postać baaardzo publiczna) zostaje uprowadzony i odnajduje się po kilku dniach na środku pustyni. Co działo się wtedy? Tego nie wie nawet on, a dodatkowo nie wie nawet jak się nazywa. Wszyscy szukają Boxera, a Boxer chce dowiedzieć się kim jest...
+Możnaby tak długo, bo historia jest bardzo zawiła, ociera się o paradoksy podróży w czasie. W filmie przeplatają się niejako 3 historie, rzeczywistość filmu, przeszłość oraz akcja scenariusza napisanego przez Boxera - to głównie w komiksie. Dopiero wszystkie 3 pozwalają zrozumieć jako tako całość. Jest to film Richarda Kelly&#39;ego, który wyreżyserował również sławnego Donnie Darko, tak więc należy mieć na uwadze, że nie będzie lekko. Udało mu się za to namówić do tego przedsięwzięcia wiele sławnych twarzy jak chociażby Dwayne&#39;a Johnsona (Boxer), Sarah Michelle Gellar, Justina Timberlake&#39;a, Christopher Lambert.
+Choć jest to film ciężki, to jednak stanowi wyśmienity posiłek dla umysłu. Oglądajcie &#34;na czczo&#34; ;-)
+IMDB Comments Blog filmowy Witam, coś tutaj ostatnio mało nowości. Zostawiam swój ślad i zapraszam na mojego bloga.
+Kacper
+blogofilmach.pl FF Forum Filmowe Piszę tutaj, ponieważ nie znalazłam zakładki &#34;kontakt&#34; ani adresu mailowego. Administruję FF Forum Filmowe (www.forum-filmowe.pl), jesteśmy zainteresowani wymianą linków między naszym forum a tym blogiem. Będę czekać na kontakt:
+admin@forum-filmowe.pl
+Pozdrawiam,
+Ewa
+www.forum-filmowe.pl Agniecha nie podobał mi się ten film. Jak dla mnie totalna masakra. Miał kilka ciekawych motywów, ale ogólnie to nie było nic szczególnego.dodaję do linków, ażeby częściej wpadać. jeżeli będziesz miał ochotę wpadnij do mnie na filmy-wedlug-agniechy.blog.onet.pl.buziaki ;**Agniecha </p>
+  </div>
+  <footer class="entry-footer"><span title='2009-02-14 00:00:00 +0000 UTC'>February 14, 2009</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Southland Tales" href="https://marcin.cylke.com.pl/2009/02/14/southland-tales/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">RocknRolla
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> I otrzymujemy nową produkcję Guya Ritchiego. Reżyser ów zasłynął filmami &#34;Snatch&#34; oraz &#34;Lock, stock and two smoking barrels&#34;. Zdecydowanie były to dobre filmy i z ciekawą (nowatorską nawet) konstrukcją fabularną. Mile się oglądało itp, no ale nie można ciągle jechać na tym dobrym wrażeniu.
+Fabuła filmu opiera się na pomyśle &#34;każdy każdego chce przekręcić&#34;. Zabawa powoli się rozkręca gdy pomysłowy gangster oszukuje, układając się po drodze z urzędnikami miasta, dwóch typów spod ciemnej gwiazdy, którzy chcą kupić kawałek ziemi w centrum Londynu. W sumie to cała fabuła opiera się jedynie na tym, bo dalsze zdarzenia są bezpośrednio wywołane tym pierwszym. Po sznurku do kłębka :)
+Sęk w tym, że formuła takiego filmu już się odrobinę nadwyrężyła. Człowiek chce świeżości. Nie żeby takie filmy się źle oglądało, no ale cwaniackość takiego scenariusza męczy. I choć posiada on wiele fajnych, śmiesznych momentów to jest też kilka zapychaczy - mielizny po prostu.
+Na poprawę humoru mamy Gerarda Buttlera (Leonidas z &#34;300&#34;) oraz piękną Thandie Newton. Szalenie bawi również akcent angielski, który jest w tym filmie wszechobecny.
+Tak więc nie odradzam, ale i szczególnie nie polecam.
+IMDB</p>
+  </div>
+  <footer class="entry-footer"><span title='2009-02-07 00:00:00 +0000 UTC'>February 7, 2009</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to RocknRolla" href="https://marcin.cylke.com.pl/2009/02/07/rocknrolla/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">The Curious Case of Benjamin Button
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Doskonała obsada, zasłużony reżyser, nieprzeciętna fabuła i podsycanie niepewności przed premierą. Zmieszajmy to razem i wyjdzie mniej więcej film jak co drugi dziś dostępny w kinach. Jednakże tym razem dodano jeszcze &#34;tego czegoś&#34;, co elektryzuje i powoduje, że film przykuwa na długo. Nie pozwala się oderwać.
+David Fincher serwuje nam opowieść o człowieku, który urodził się stary ciałem i młodniał z wiekiem. Na początku był tak brzydki i schorowany (artretyzm itp.), że ledwie dychał, lecz z czasem było coraz lepiej. Mamy tu wielkie miłości ciągnące się przez pokolenia, trochę moralitetów i sporo humoru. Ale przede wszystkim świetna zabawa przy śledzeniu perypetii życia tak niestandardowego człowieka.
+Film urzeka. Jest wart każdej minuty mu poświęconej. Począwszy przez grę aktorów, przez scenografie, a na muzyce skończywszy. Pomijając już Brada Pitta, o którym i tak jest głośno gdzie się nie obejrzeć, mamy tu doskonałą (i jakże piękną!) Cate Blanchett!
+Natychmiast do kina!
+IMDB Comments Zygmunt Nic nie szkodzi, miło mi :) Anonymous Przepraszam Cię, że mój komentarz nie będzie związany z treścią notki, ale chciałam powiedzieć, że jeśli nie masz nic przeciwko, to dodałam adres Twojego bloga do ulubionych;-) (ekspresyjki.blox.pl) </p>
+  </div>
+  <footer class="entry-footer"><span title='2009-02-07 00:00:00 +0000 UTC'>February 7, 2009</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to The Curious Case of Benjamin Button" href="https://marcin.cylke.com.pl/2009/02/07/curious-case-of-benjamin-button/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">The Darjeeling Limited
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Trzech braci spotyka się po roku przerwy i wyibera w podróż przez Indie. Ma to być ich duchowe odnowienie i inne bzdury. Jak się okazuje jest to jedynie pretekst do odnalezienia matki, za którą wszyscy tęsknią.
+Nie, nie jest to ckliwy melodramat. Adrian Brody, Owen Wilson i &#34;ten trzeci&#34; w swej podróży napotykają różne dziwne sytuacje, ale częściej zmagają się z niezgodnościami swych charakterów, skrywanymi urazami i niedopowiedzeniami. A wszystko to, aby oczyścić się duchowo. Dzięki temu mamy opowiastkę o sposobie narracji przywodzącym na myśl narkotyczny trans - w sumie bracia i tak przez cały film szprycują się medykamentami różnego rodzaju. Może to dlatego? Z jednej strony dodaje to uroku filmowi, nie nudzi, ale i nie porywa. Ot tu się człowiek zaśmieje, tam ziewnie. Z grubsza wychodzi z tego miły film z ładnym zakończeniem odwołującym się trochę do relacji między braćmi i czerpania radości z życia.
+I nawet Billa Murraya wrzucono na epizodzić. Da się obejrzeć!
+IMDB</p>
+  </div>
+  <footer class="entry-footer"><span title='2009-02-07 00:00:00 +0000 UTC'>February 7, 2009</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to The Darjeeling Limited" href="https://marcin.cylke.com.pl/2009/02/07/darjeeling-limited/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">The Incredible Hulk
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> No i wreszcie dostajemy przyzwoity film o Zielonym Potworze! Nie żadne tam moralne dylematy, jak w poprzedniej części. Czy Hulk wygląda na kogoś kto ma przemyślenia? Owszem Bruce Banner to czuły jajogłowy, ale co z tego? Skoro osobowość Bruce&#39;a działa na Hulka, to czemu Zielony Pierwiastek nie miałby wpływać w pewien sposób na Bannera? - chociażby pozbawiając go moralności.
+Jednakże... mimo braku przemyśleń i innego niepotrzebnego gówna, bardzo mądrze pomyślany jest motyw z ograniczaniem się Bannera, z uspakajaniem samego siebie - ćwiczenia opanowania itp. Tego wcześniej nie było, a przecież filozofia wschodu oferuje panowanie nad własnym sobą od wielu setek lat.
+W każdym razie, mamy tu świetną obsadę. Mamy Eda Nortona w roli Bruce&#39;a, Tim Roth gra jego przeciwnika - The Abomination, a Liv Tayler to lachon Bruce&#39;a - wygląda świetnie! No i oczywiście sam Hulk, odtworzony przez kilka całkiem mocnych komputerów :)
+SPOILER ...... mamy tu również Roberta Downey Jr. w roli Starka, czyli szykuje nam się jakiś krosołwer, z czego jeszcze bardziej jestem zadowolony!! KONIEC SPOILERA
+Film polecam, bo jest miłym kawałkiem czystej, bezkompromisowej, komiksowej akcji. Dostajemy piękne scenerie, w których się nasi bohaterowie filmowi ganiają, jest dużo efektów wyglądających ekstra. W połączeniu z całkiem zwykłą jak na Hulka fabułą dostajemy coś co nie jest warte co prawda Oscara, ale zasługuje na odpowiednie miejsce na półce każdego fana komiksów Marvela.
+Werdykt: Waagh!! Polecam!
+IMDB
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2008-10-29 00:00:00 +0000 UTC'>October 29, 2008</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to The Incredible Hulk" href="https://marcin.cylke.com.pl/2008/10/29/incredible-hulk/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Kung Fu Panda
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Można by pomyśleć, że to kolejna animowana bajeczka. Tym bardziej, że szał zabawek dodawanych do zestawów Happy Meal w McDonalds dotyczył również bohaterów tej produkcji. I tak naprawdę to jest to &#34;kolejna taka bajeczka&#34;, kolejna którą ogląda się miło, ale nic z tego nie zostaje. Ile można? Ciągle i bez przerwy dostajemy taką lub inną animowaną szmirę. Tym razem przynajmniej aktorzy, którzy podłożyli głos są warci uwagi.
+Weźmy takiego Jacka Blacka - wciela się w pandę Po, głównego bohatera filmu. Mamy też Angie Jolie, Setha Rogena, który ostatnio wyrósł na komediową &#34;ikonkę&#34;, Dustiego Hoffmana, a na dokładkę jest też Lucy Liu. Do tego dochodzi bardzo fajna animacja zwierzaków, ich komputerowe
+modele naprawdę znają kunf fu :). Wygląda to przezabawenie, a fakt, że każde ze zwierząt korzysta ze swych specyficznych cech jako specjalność kunf fu jest po prostu świetnie zaplanowany.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2008-10-24 00:00:00 +0000 UTC'>October 24, 2008</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Kung Fu Panda" href="https://marcin.cylke.com.pl/2008/10/24/kung-fu-panda/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Filmy, które przybędą
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Afer.Life - &#34;A young woman caught between life and death fights against the funeral director who has a hand in her fate. - hmmm.. Kate Bosworth? Może i się da obejrzeć.
+Babylon A.D. - &#34;Veteran-turned-mercenary Thoorop (Diesel) takes the high-risk job of escorting a woman from Russia to China. Little does he know that she is host to an organism that a cult wants to harvest in order to produce a genetically modified Messiah.&#34; - Jupi!! Vin Diesel w produkcji SF! Czyżby powrót do korzeni?
+Bathory - &#34;Bathory is based on the legends surrounding the life and deeds of Countess Elizabeth Bathory known as the greatest murderess in the history of mankind. Contrary to popular belief, Elizabeth Bathory was a modern Renaissance woman who ultimately fell victim to mens aspirations for power and wealth.&#34; - zapytajmy szczerze, czy przepuściłbym film o Elżbiecie Batory??
+Cloverfield - &#34;Revolves around a monster attack in New York as told from the point of view of a small group of people.&#34; - jakiś incydent, tajemnica, zapowiada się fajnie
+The Countess - &#34;A drama set in the 16th century that&#39;s full of murder, cruelty and intrigue.&#34; - phi, dziwne, no ale Tim Roth ma tam grać!
+Doomsday - &#34;A futuristic action thriller where a team of people work to prevent a disaster threatening the future of the human race.&#34; - pewnie wyrzynanka bez fabuły, ale za to z Rhoną Mitrą i Malcolmem McDowellem :)
+Fanboys - &#34;&#34;Star Wars&#34; fans travel to Skywalker Ranch to steal an early copy of &#34;Episode I: The Phantom Menace&#34; for their dying friend.&#34; - hmm... coś dodać mam? :)
+Funny Games - &#34;Two psychotic young men take a family hostage in their cabin. &#34; - po obejrzeniu orygianłu chętnie obejrzę i to. No i Tim Roth znów.
+Hellboy II: The Golden Army - &#34;The mythical world starts a rebellion against humanity in order to rule the Earth, so Hellboy and his team must save the world from the rebellious creatures.&#34; - kolejna iteracja, no i występ Rona Perlmana.
+The Informers - &#34;A drama based on Bret Easton Ellis&#39; novel set in 1983 Los Angeles, where movie executives, rock stars, a vampire, and other morally challenged character mix and commingle.&#34; - intrygujące.
+Jumper - &#34;A genetic anomaly allows a young man to teleport himself anywhere. He discovers this gift has existed for centuries and finds himself in a war that has been raging for thousands of years between &#34;Jumpers&#34; and those who have sworn to kill them.&#34; - Młody Darth Vader (Hayden Christensen) oraz Samuel L. Jacson w filmie SF
+The Medusa Hour - &#34;A strange sect located in the city of Los Angeles worships one old and macabre belief; but a series of dark powers will be triggered, beyond the belief itself.&#34; - horror musi być!
+Mutant Chronicles - &#34;23rd century soldier Major Mitch Hunter (Jane) leads a fight against an army of underworld NecroMutants.&#34; - początkowo myślałem, że to o X-men, ale już nie jestem pewien.
+The Oxford Murders - &#34;At Oxford University, a professor (Hurt) and a grad student (Wood) work together to try and stop a potential series of murders seemingly linked by mathematical symbols.&#34;
+Star Trek - &#34;A chronicle of the early days of James T. Kirk and his fellow USS Enterprise crew members.&#34; - jeden z bardziej oczekiwanych przeze mnie filmów :)
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2008-01-07 00:00:00 +0000 UTC'>January 7, 2008</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Filmy, które przybędą" href="https://marcin.cylke.com.pl/2008/01/07/filmy-ktre-przybd/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">The Invasion a.k.a Invasion of the Body Snatchers
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Kto by pomyślał! Zanim zabrałem się za ten film, bez czytania recenzji, bez wgłębniania się w fabułę, myślałem, że to jakaś sensacja, w najlepszym razie lekkie SF. A tu się okazuje, że to filmik na podstawie książki &#34;Inwazja porywaczy ciał&#34;! Jeśli ktoś czytał, to wie jakiego typu to książka. Klasyczna :) to na pewno, a czy dobra, to już inna kwestia. Mi się akurat podobała, wciągnęła, była miłym czytadłem.
+Jeśli chodzi o fabułę, to ma miejsce katastrofa promu kosmicznego. Na szczątkach znajdują się jakieś kosmiczne grzyby, które nie wiadomo skąd się wzięły. Dosyć szybko okazuje się, że grzybki skutkują jakimś przebrzydłym chorubstwem, które atakuje w czasie snu i zamienia człowieka w wyzutego z uczuć półzombiaka - co prawda z własną świadomością, ale innego niż przed przemianą... Tutaj drobna uwaga, wydaje mi się, że w książce było trochę ostrzej z tą zamianą miejsc. W filmie ludzie w trakcie snu oplatają się sami (!) jakimś kokonem, a w książce w kokonie rosły nowe ciała, a później właściwi ludzie byli zabijani i wywożeni na ciężarówkach za miasto (ktoś pamięta? poprawi?)
+Film dotrzymuje kroku książce, nie przenosząc zarazem topornej fabuły książki, która wydana była po raz pierwszy kawał czasu temu. Miłe wrażenie robi Nicole Kidman. Daniel Craig, który gra tu faceta/przyjaciela Nicole, też się trzyma. Mi się podobało. Choć zastrzeżenie mam do końcówki: akcja prze na całego, nagle Nicole i jej dzieciak zostają uratowani przez wojski, pstyk-mik i już wszystko wraca do normy... Mało to logiczne. IMDB
+The Invasion (2008)
+A tutaj starsza wersja filmu :)
+The Invasion of Body Snatchers
+I jeszcze taki piękny plakat filmu o podobnym wydźwięku :D :
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2008-01-07 00:00:00 +0000 UTC'>January 7, 2008</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to The Invasion a.k.a Invasion of the Body Snatchers" href="https://marcin.cylke.com.pl/2008/01/07/invasion-aka-invasion-of-body-snatchers/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Podsumowanie przeglądu
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Jakiś czas temu (a dokładniej tu) wspominałem o grupie filmów, które chętnie bym obejrzał. Minęło trochę czasu, a i zaległości narosły, więc opędzę ten temat dwoma wpisami, jednocześnie opisując po krótce te filmy.
+Children of Men
+Napisałem: Ludzkość jest bezpłodna. Ludzkość właśnie zamierza wymrzeć. Ale pojawia się nadzieja w postaci jednej jedynej kobiety w ciąży. Chce zobaczyć, czy jedno dziecko może nas ocalić.
+A w rzeczywistości ... film bardzo mi się podobał. Ciekawe pomysły, niezła fabuła, fajna obsada. Nie ma co narzekać. Dużo do tego różnych smaczków w niektórych scenografiach ukrytych - jak ktoś chce to niech sobie poszuka :) Fajnie, że nie było słodzenia zbędnego, że będzie dobrze, czy że cośtam. Widać, że było ciężko i nie ma być lżej. Do tego brak happy-endu też ma duuży sens. Bardzo ciekawie sobie pogrywał Michael Kane - brylant nie aktor :D i tylko szkoda, że Julian Moore tak wcześnie ginie. No ale nie można mieć wszystkiego.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2007-12-11 00:00:00 +0000 UTC'>December 11, 2007</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Podsumowanie przeglądu" href="https://marcin.cylke.com.pl/2007/12/11/podsumowanie-przegldu/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Dollars Trilogy
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Spagetti westerny na wypasie! Wspaniała muzyka Enio Morricone &#43; Sergio Leone jako reżyser, no i jaka obsada! Aż szacunek dla Eastwooda mi skoczył!
+A Fistful of Dollars IMDB
+For a Few Dollars More IMDB
+The Good, The Bad, The Ugly IMDB Comments Zygmunt Jak chcesz, to mam :) W dobrej jakości, w kolorze :)A Brzydki to super jest!! Chociażby scena jak się kopie w wannie na froncie. Totalny luzak i chaos przez niego przemawia. Kazmirz Wszystkie są boskie, aczkolwiek znane mi tylko z telewizji. Kiedy myślę &#39;Western&#39;, to przed oczami mam właśnie te filmy. Smaczki są rozwalające - imiona bohaterów chociażby...PS. Zawsze szkoda było mi brzydkiego, co on winny, że brzydki ;) </p>
+  </div>
+  <footer class="entry-footer"><span title='2007-12-05 00:00:00 +0000 UTC'>December 5, 2007</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Dollars Trilogy" href="https://marcin.cylke.com.pl/2007/12/05/dollars-trilogy/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Before Night Falls
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Ten mało znaany film to opowieść o kubańskim pisarzu i jego zmaganiach ze sobą i z ustrojem panującym w jego ojczyźnie.
+Ze sobą - bo był gejem, i lekko nie miał
+Z ustrojem - bo chciał być rewolucjonistą, ale będąc gejem nie można wtedy było być rewolucjonistą... So much drama :D Cieszy to, że wątek homoseksualny nie jest nadmiernie eksponowany. Natomiast dobrze przedstawiona jest sytuacja na Kubie i pokazuje jak Ci ludzie mieli przerąbane (i dalej mają, bo Fidel pewnie nadal żyje). Ciekaw jestem natomiast czy jest to obraz zliżony do prawdziwego.
+A z ciekawostek, to znalazło się tu nawet miejsce dla Johnego Deepa, wart zresztą obejrzenia :D Szacun!
+IMDB
+I jeszcze spoilery z Johnym Deepem w niekonwencjonalnych rolach:
+Comments Zygmunt W takim razie polecam, bo mało znany w Polsce, a dobry. Bud Książkę przeczytałem, niezła była. No i nie wiedziałem że powstał film na jej podstawie, cóż. </p>
+  </div>
+  <footer class="entry-footer"><span title='2007-11-19 00:00:00 +0000 UTC'>November 19, 2007</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Before Night Falls" href="https://marcin.cylke.com.pl/2007/11/19/before-night-falls/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Casino Royale
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Kolejna już część przygód dziarskiego agenta Bonda. Oparta na pierwszej książce o agencie Jej Królewskiej Mości, autorstwa Iana Fleminga - jeśli chodzi o mnie, to książka zdecydowanie ustępuje pola filmowi. Jest przede wszystkim mniej dynamiczna i bardziej nastawiona na grę w karty niż na agenta :)
+Jest nowy aktor, Daniel Craig, jest nowa kobieta (jak zwykle :D) - Eva Green, jest mniej gadgetów, za to więcej akcji i mięsistych, prawdziwych bohaterów.
+Z grubsza przedstawiając fabułę, mamy tu pierwsze podrygi Bonda jako agenta z dwoma zerami na koncie, czyli z licencją na zabijanie. Kapitalna sekwencja, gdy Bond realizuje warunek niezbędny do otrzymania papiera na zabijanie rozpoczyna film. A później jest już tylko lepiej.
+James ma zająć się tym razem pewnym człowiekiem w Czarnogórze (piękne miejsce!). Konkretnie, to ma wygrać z pokera (nuda!!!) z bukmacherem terrorystów (niesamowity M... -zapomniałem nazwiska badGuya - przy okazji małego update&#39;u, chodzi tu o Madsa Mikkelsena).
+W porównaniu do innych filmów z serii, ta część jest zdecydowanie bardziej realistyczna. Akcja taka jak pokazano mogła mieć miejsce, co w przeciwieństwie do dotychczasowych trendów w kreowaniu postaci agenta jest niezwykłym podejściem.
+A do tego wszystkiego, Daniel Craig, który wypadł wyśmienicie. Co prawda przed ukazaniem się filmu było wiele negatywnych opinii na jego temat - że się nie nadaje, że blondyn, że za niski, że zbyt schamiały, itp. Po premierze natomiast pokazały się nawet przeprosiny dla Craiga Davida za te wszystkie wrzuty.Dobrze, że je wytrzymał, bo to pierwszorzędny bond, którego nie zagrałby żaden z poprzedników.
+Bardzo dobry film, ciekawe jak dalej potoczą się losy tej serii...
+IMDB
+Comments Zygmunt Ale wtopa, co? :POczywiście powinno być Daniel CraigAcha, a zły w tym filmie to był grany przez Mads Mikkelsen. Kazmirz hehe Craig David? David Craig? ;) nuda w pokerze? Jak dla kogo, pierwotna moc jest na sam koniec - kiedy krupier dostaje napiwek ;P </p>
+  </div>
+  <footer class="entry-footer"><span title='2007-11-19 00:00:00 +0000 UTC'>November 19, 2007</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Casino Royale" href="https://marcin.cylke.com.pl/2007/11/19/casino-royale/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">One flew over coco&#39;s nest
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Coż, trochę ciężko pisać o tak klasycznym filmie. Szczególnie, gdy ogląda się go tak póżno. Toż to klasyk jakich mało.
+Tak więc mamy tu Jacka Nicholsona - jeszcze jako młodzieniaszka, który aby wyrwać się z więzienia próbuje zasymulować chorobę psychiczną. Trafia do szpitala psychatrycznego z nadzieją, że uda mu się uciec w sposób łatwiejszy niż z więzienia.
+Tymczasem zaczyna się zaprzyjaźniać z mieszkańcami instytucji i odkrywa, że nie są to tak do końca ninormalni ludzie - niektórzy niedużo bardziej niż personel tam pracujący.
+Generalnie jak dla mnie, jest to opowieść o człowieku, który próbuje odmienić życie w szpitalu. Oczywiście nieświadomie, bo ta natką szlachetną myśl go nie stać.
+Film wart obejrzenia, ale nie każdemu się spodoba.
+IMDB</p>
+  </div>
+  <footer class="entry-footer"><span title='2007-11-19 00:00:00 +0000 UTC'>November 19, 2007</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to One flew over coco&#39;s nest" href="https://marcin.cylke.com.pl/2007/11/19/one-flew-over-cocos-nest/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">WTC
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Jej, ja myślałem, że film &#34;United 93&#34; był nudną opowiastką o 11.09.2001. Ta produkcja bije go na głowę, na łeb - całością go bije.
+Otóż mamy tu nudny pean o bohaterskich strażakach, którzy brali udział w ratowaniu ludzi z walących się wież. Sami nawet znaleźli się pod ich gruzami, aby ostatecznie zostać uratowanymi.
+Nuda. Nue ujmuję samym bohaterskim strażakom, no ale ten film to istna propagandowa ściema. A dodajmy jeszcze do tego obrazu rozpaczy drewnianego Nicholasa Cage&#39;a, który się sprawdza w innych rolach, ale jako strażak z wąsami jest tylko i wyłącznie śmieszny.
+Tyle...
+IMDB
+&#34;So much drama....&#34;</p>
+  </div>
+  <footer class="entry-footer"><span title='2007-11-19 00:00:00 +0000 UTC'>November 19, 2007</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to WTC" href="https://marcin.cylke.com.pl/2007/11/19/wtc/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Borat: Cultural Learnings of America for Make Benefit Glorious Nation of Kazakhstan
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> &#34;Jak-sie-masz!&#34;, tak wita widza Borat, czyli kazahski reporter, bohater filmu pseudo-dokumentalnego o USA. Film ma już kilka miesięcy, trochę się uspokoiły nastroje po jego premierze, szkoda że dopiero teraz znalazłem czas, żeby o nim napisać.
+W filmie chodzi jedynie o pokazanie podróży Borata z rodzinnego Kazahstanu do USA, i przejażdżka po kraju z misją znalezienia remedium na sytuację w ojczyźnie. W między czasie zakochuje się w Pameli Anderson i postanawia wziąć ją sobie za żonę.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2007-11-09 00:00:00 +0000 UTC'>November 9, 2007</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Borat: Cultural Learnings of America for Make Benefit Glorious Nation of Kazakhstan" href="https://marcin.cylke.com.pl/2007/11/09/borat-cultural-learnings-of-america-for/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Przejście z joggera na bloggera
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Teraz wreszcie mogę uznać przejście z jednej platformy na drugą za zakończone. Było to lekko uciążliwe, z uwagi na ograniczenia API Bloggera i wymagało 3 dni!!!Szczęśliwie dało radę i oprócz komentarzy mam już wszystkie wpisy w tym miejscu.Może coś się ruszy z nowymi wpisami nawet?</p>
+  </div>
+  <footer class="entry-footer"><span title='2007-11-09 00:00:00 +0000 UTC'>November 9, 2007</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Przejście z joggera na bloggera" href="https://marcin.cylke.com.pl/2007/11/09/przejcie-z-joggera-na-bloggera/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="next" href="https://marcin.cylke.com.pl/categories/review/page/2/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
 </body>
+
 </html>

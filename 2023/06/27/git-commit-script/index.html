@@ -1,42 +1,230 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>git-commit script | Tech ramblings by Marcin</title>
+<meta name="keywords" content="">
+<meta name="description" content="The organization I work in, has this practice of annotating commit messages with ticket numbers. From what I know this tends to be quite a common them all around the IT industry. It serves the purpose of accountability for future checks, current information for others on what the commit is actually about, etc.
+There may be many more things to add here - as an adventage of such a
+Some time ago I&rsquo;ve started using this small snippet of code as my pre-commit hook. It&rsquo;s main purpose is to free me from remembering or checking which JIRA ticket should I prepend to my Git message.">
+<meta name="author" content="Marcin Cylke">
+<link rel="canonical" href="https://marcin.cylke.com.pl/2023/06/27/git-commit-script/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://marcin.cylke.com.pl/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://marcin.cylke.com.pl/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://marcin.cylke.com.pl/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://marcin.cylke.com.pl/apple-touch-icon.png">
+<link rel="mask-icon" href="https://marcin.cylke.com.pl/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://marcin.cylke.com.pl/2023/06/27/git-commit-script/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/book_section.css">
+<meta property="og:url" content="https://marcin.cylke.com.pl/2023/06/27/git-commit-script/">
+  <meta property="og:site_name" content="Tech ramblings by Marcin">
+  <meta property="og:title" content="git-commit script">
+  <meta property="og:description" content="The organization I work in, has this practice of annotating commit messages with ticket numbers. From what I know this tends to be quite a common them all around the IT industry. It serves the purpose of accountability for future checks, current information for others on what the commit is actually about, etc. There may be many more things to add here - as an adventage of such a
+Some time ago I’ve started using this small snippet of code as my pre-commit hook. It’s main purpose is to free me from remembering or checking which JIRA ticket should I prepend to my Git message.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2023-06-27T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-06-27T00:00:00+00:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="git-commit script">
+  <meta name="twitter:description" content="The organization I work in, has this practice of annotating commit messages with ticket numbers. From what I know this tends to be quite a common them all around the IT industry. It serves the purpose of accountability for future checks, current information for others on what the commit is actually about, etc. There may be many more things to add here - as an adventage of such a
+Some time ago I’ve started using this small snippet of code as my pre-commit hook. It’s main purpose is to free me from remembering or checking which JIRA ticket should I prepend to my Git message.">
 
 
-  <title>git-commit script - Tech ramblings by Marcin</title>
-  <link rel="stylesheet" type="text/css" href="/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/book_section.css">
-  <link rel="stylesheet" type="text/css" href="/css/aux.css">
-<script defer src="https://cloud.umami.is/script.js" data-website-id="274179a3-6fd7-434b-8b9e-b745ec841ca2"></script>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://marcin.cylke.com.pl/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "git-commit script",
+      "item": "https://marcin.cylke.com.pl/2023/06/27/git-commit-script/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "git-commit script",
+  "name": "git-commit script",
+  "description": "The organization I work in, has this practice of annotating commit messages with ticket numbers. From what I know this tends to be quite a common them all around the IT industry. It serves the purpose of accountability for future checks, current information for others on what the commit is actually about, etc. There may be many more things to add here - as an adventage of such a\nSome time ago I\u0026rsquo;ve started using this small snippet of code as my pre-commit hook. It\u0026rsquo;s main purpose is to free me from remembering or checking which JIRA ticket should I prepend to my Git message.\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "The organization I work in, has this practice of annotating commit messages with ticket numbers. From what I know this tends to be quite a common them all around the IT industry. It serves the purpose of accountability for future checks, current information for others on what the commit is actually about, etc. There may be many more things to add here - as an adventage of such a\nSome time ago I’ve started using this small snippet of code as my pre-commit hook. It’s main purpose is to free me from remembering or checking which JIRA ticket should I prepend to my Git message.\n#!/bin/bash # To enable this hook, rename this file to \"prepare-commit-msg\". GO_JIRA=~/go/bin/jira FZF=fzf export JIRA_PROJECT=XYZ COMMIT_MSG_FILE=$1 COMMIT_SOURCE=$2 SHA1=$3 if [ ! -e $GO_JIRA ]; then exit fi if [ ! command -v $FZF ]; then exit fi trim() { local var=\"$*\" # remove leading whitespace characters var=\"${var#\"${var%%[![:space:]]*}\"}\" # remove trailing whitespace characters var=\"${var%\"${var##*[![:space:]]}\"}\" printf '%s' \"$var\" } COMMIT_TYPE=`cat \u003c",
+  "wordCount" : "644",
+  "inLanguage": "en",
+  "datePublished": "2023-06-27T00:00:00Z",
+  "dateModified": "2023-06-27T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Marcin Cylke"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://marcin.cylke.com.pl/2023/06/27/git-commit-script/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tech ramblings by Marcin",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://marcin.cylke.com.pl/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
-<body>
-  <header>
-<div>
-    <h1><a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></h1>
-  </div>
-  <nav><a href="/about/">about me</a>
-  </nav>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://marcin.cylke.com.pl/" accesskey="h" title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://marcin.cylke.com.pl/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </header>
-<main>
-    <article>
-  <div class="title">
-    <h1>git-commit script</h1>
-    </div>
-  <div class="meta">2023-06-27 00:00</div>
-  <div class="artical-body">
-  
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#tools-i-use-here">Tools I use here:</a></li>
-    <li><a href="#how-to-use">How to use</a></li>
-  </ul>
-</nav>
-    <div class="content-with-toc">
-      <p>The organization I work in, has this practice of annotating commit messages with ticket numbers. From what I know this tends to be quite a common them all around the IT industry. It serves the purpose of accountability for future checks, current information for others on what the commit is actually about, etc.
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://marcin.cylke.com.pl/">Home</a>&nbsp;»&nbsp;<a href="https://marcin.cylke.com.pl/post/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      git-commit script
+    </h1>
+    <div class="post-meta"><span title='2023-06-27 00:00:00 +0000 UTC'>June 27, 2023</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#tools-i-use-here" aria-label="Tools I use here:">Tools I use here:</a></li>
+                <li>
+                    <a href="#how-to-use" aria-label="How to use">How to use</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>The organization I work in, has this practice of annotating commit messages with ticket numbers. From what I know this tends to be quite a common them all around the IT industry. It serves the purpose of accountability for future checks, current information for others on what the commit is actually about, etc.
 There may be many more things to add here - as an adventage of such a</p>
 <p>Some time ago I&rsquo;ve started using this small snippet of code as my <code>pre-commit</code> hook. It&rsquo;s main purpose is to free me from remembering or checking which JIRA ticket should I prepend to my Git message.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
@@ -96,12 +284,12 @@ There may be many more things to add here - as an adventage of such a</p>
 </span></span></code></pre></div><p>Aside from it&rsquo;s main function, there&rsquo;s also an auxilary thing that I add here. There is this notion of &ldquo;good commit message&rdquo;. So that it&rsquo;s not something cryptic, dummy or non-informative. This, too, is quite a big obstacle in tech companies. The places I&rsquo;ve worked at rarely had any longer commit messages than two lines, and perhaps it&rsquo;s for a reason. Since commits are already connected with tickets in some external system - why bother to duplicate the content here?
 Right, but what about implementation details, important considerations, thought process. Still, not that common to see in the wild. At least for me.
 With the whole block of different types of commits I try to make the commits as atomic as possible, do just one thing. Or at least as few things as possible. If the commit is about docummentation, then let it change just that. If that&rsquo;s a fix for a previously commited buggy commit - so be it, mark it with &ldquo;Fix&rdquo;.</p>
-<h2 id="tools-i-use-here">Tools I use here:</h2>
+<h2 id="tools-i-use-here">Tools I use here:<a hidden class="anchor" aria-hidden="true" href="#tools-i-use-here">#</a></h2>
 <ul>
 <li><a href="https://github.com/go-jira/jira">go-jira</a> - because my organization&rsquo;s ticketing system is Jira, but it can be anything else,</li>
 <li><a href="https://github.com/junegunn/fzf">fzf</a> - a brilliant CLI tool to quickly sift through data</li>
 </ul>
-<h2 id="how-to-use">How to use</h2>
+<h2 id="how-to-use">How to use<a hidden class="anchor" aria-hidden="true" href="#how-to-use">#</a></h2>
 <ol>
 <li>install tools, <code>go-jira</code> and <code>fzf</code></li>
 <li>setup <code>$JIRA_PROJECT</code> in the script</li>
@@ -111,24 +299,159 @@ With the whole block of different types of commits I try to make the commits as 
 <p>I use it in all my work-related projects and it may become somewhat hard to track changes in the script if I&rsquo;d copy it all over the place, to all the different <code>hooks</code> directories. That&rsquo;s why I keep the main file in my home dir, under <code>~/prepare-commit-msg</code> and then in places I want to use it I add just the symbolic link to it:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ cd .git/hooks
 </span></span><span style="display:flex;"><span>$ ln -s ~/prepare-commit-msg prepare-commit-msg
-</span></span></code></pre></div></div>
-  
+</span></span></code></pre></div>
+
   </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://marcin.cylke.com.pl/2023/10/10/useful-cli-tools-from-other-planet/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>useful CLI tools from other planet</span>
+  </a>
+  <a class="next" href="https://marcin.cylke.com.pl/2023/05/29/an-ode-to-fzf/">
+    <span class="title">Next »</span>
+    <br>
+    <span>an ode to fzf</span>
+  </a>
+</nav>
+
+  </footer><script src="https://utteranc.es/client.js"
+        repo="zygm0nt/hugo-blog-incarnation"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
 </article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></span> · 
 
-  </main><footer>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
 
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
 
-  <script
-    src="https://utteranc.es/client.js"
-    repo="zygm0nt/hugo-blog-incarnation"
-    issue-term="pathname"
-    label="comments"
-    theme="preferred-color-scheme"
-    crossorigin="anonymous"
-    async
-  ></script>
-  <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
 
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
 </body>
+
 </html>

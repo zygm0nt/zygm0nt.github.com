@@ -1,63 +1,289 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="alternate" type="application/rss+xml" href="https://marcin.cylke.com.pl/categories/giercownia/index.xml" title="Giercownia - Tech ramblings by Marcin">
- 
+<html lang="en" dir="auto" data-theme="auto">
 
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Giercownia | Tech ramblings by Marcin</title>
+<meta name="keywords" content="">
+<meta name="description" content="Tech ramblings by Marcin - software engineering, distributed systems, and more">
+<meta name="author" content="Marcin Cylke">
+<link rel="canonical" href="https://marcin.cylke.com.pl/categories/giercownia/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://marcin.cylke.com.pl/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://marcin.cylke.com.pl/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://marcin.cylke.com.pl/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://marcin.cylke.com.pl/apple-touch-icon.png">
+<link rel="mask-icon" href="https://marcin.cylke.com.pl/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://marcin.cylke.com.pl/categories/giercownia/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="https://marcin.cylke.com.pl/categories/giercownia/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-  <title>Giercownia - Tech ramblings by Marcin</title>
-  <link rel="stylesheet" type="text/css" href="/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/book_section.css">
-  <link rel="stylesheet" type="text/css" href="/css/aux.css">
-<script defer src="https://cloud.umami.is/script.js" data-website-id="274179a3-6fd7-434b-8b9e-b745ec841ca2"></script>
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/book_section.css">
+<meta property="og:url" content="https://marcin.cylke.com.pl/categories/giercownia/">
+  <meta property="og:site_name" content="Tech ramblings by Marcin">
+  <meta property="og:title" content="Giercownia">
+  <meta property="og:description" content="Tech ramblings by Marcin - software engineering, distributed systems, and more">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Giercownia">
+  <meta name="twitter:description" content="Tech ramblings by Marcin - software engineering, distributed systems, and more">
 
 </head>
-<body>
-  <header>
-<div>
-    <h1><a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></h1>
-  </div>
-  <nav><a href="/about/">about me</a>
-  </nav>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://marcin.cylke.com.pl/" accesskey="h" title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://marcin.cylke.com.pl/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </header>
-<main>
-    <div>
-  <h1>Giercownia</h1>
-</div>
-<ul class="article-list">
-  <li class="article-item">
-    <div class="article-date">2011-02-17 00:05</div>
-    <div class="article-title"><a href="/2011/02/17/deus-ex-what-a-game/">Deus Ex - what a game!</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2010-04-21 17:59</div>
-    <div class="article-title"><a href="/2010/04/21/mass-effect/">Mass Effect </a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2009-09-24 23:06</div>
-    <div class="article-title"><a href="/2009/09/24/love-some-kind-of-preview/">&lt;p&gt;Love - some kind of preview...&lt;/p&gt; </a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2009-08-29 14:23</div>
-    <div class="article-title"><a href="/2009/08/29/system-shock-2/">System Shock 2</a></div>
-  </li>
-  </ul>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="https://marcin.cylke.com.pl/">Home</a>&nbsp;»&nbsp;<a href="https://marcin.cylke.com.pl/categories/">Categories</a></div>
+  <h1>
+    Giercownia
+    <a href="/categories/giercownia/index.xml" title="RSS" aria-label="RSS">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" height="23">
+        <path d="M4 11a9 9 0 0 1 9 9" />
+        <path d="M4 4a16 16 0 0 1 16 16" />
+        <circle cx="5" cy="19" r="1" />
+      </svg>
+    </a>
+  </h1>
+</header>
 
-  </main><footer>
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Deus Ex - what a game!
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Some time ago I&#39;d become obsessed with one game. It kept me up late, fed my imagination, sucked all my free time - so basically did what good game should. It was not a new production, quite the contrary -it&#39;s release date was year 2000. And the game itself was Deus Ex.
+The year is 2050 and you wake up as a rookie named JC Denton - you are an UNATCO (United Nations Anti Terrorism CoOperation) special agent. In the beginning your orders are clear and you&#39;re there to fight the terrorists. The first mission takes place in the depths of The Statue of Liberty, and it gets better further into the game. The plot wanders, there seem to be many foreign forces entangled, and it may become clear to you, that actually you&#39;re being used as a tool - a blunt one. Gradually the plot unfolds and you become aware of the whole conspiracy theory thing. You interact with Majestic 12 and Illuminati secret organizations and become part of a global terrorist warfare.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-02-17 00:05:50 +0000 UTC'>February 17, 2011</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Deus Ex - what a game!" href="https://marcin.cylke.com.pl/2011/02/17/deus-ex-what-a-game/"></a>
+</article>
 
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Mass Effect 
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Już dawno nie wciągnęła mnie tak żadna gra. To było olśnienie, ale dopiero za drugim razem wzięło mnie na dobre. Pierwsze podejście raczej mnie zniechęciło, bo choć fabuła zapowiadała się całkiem fajnie, to grając na XBoxie - przy użyciu pada - nie byłem w stanie poradzić sobie z celowaniem. Pewnie dziś byłoby lepiej, bo i technikę w tej dziedzinie podszkoliłem na licznych bijatykach i ef-pe-esach, ale i tak dorwałem werjsę na PC Mass Effect :D.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2010-04-21 17:59:39 +0000 UTC'>April 21, 2010</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Mass Effect " href="https://marcin.cylke.com.pl/2010/04/21/mass-effect/"></a>
+</article>
 
-  <script
-    src="https://utteranc.es/client.js"
-    repo="zygm0nt/hugo-blog-incarnation"
-    issue-term="pathname"
-    label="comments"
-    theme="preferred-color-scheme"
-    crossorigin="anonymous"
-    async
-  ></script>
-  <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">&lt;p&gt;Love - some kind of preview...&lt;/p&gt; 
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Czytając mój ulubiony serwis o grach, czyli Rock-Paper-Shutgun dowiedziałem się, że osobnik znany jako Eskil Steenberg wypuścił nieinteraktywne preview swojego &#34;multiplayer experience&#34; - LOVE.
+O co tyle szumu? Wystarczy spojrzeć na to jak gra wygląda. Nie chodzi w tym o jakąś wypasioną grafikę, a o frajdę z gry. Eskil pisze swoją grę w pojedynkę. Idzie mu to naprawdę sprawnie. A zestaw narzędzi jakich używa wprawia mnie za każdym razem w podziw. Chodzi mi z grubsza o narzędzia pokroju Verse (http://www.quelsolaar.com/verse/), które to jest rozproszonym edytorem modeli 3D. Pozwala na współpracę wielu osób i do tego integruje się chociażby z Blenderem. A to tylko wierzchołek tej góry :) Całość wygląda niesamowicie innowacyjnie i imponująco.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2009-09-24 23:06:05 +0000 UTC'>September 24, 2009</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Love - some kind of preview...
+" href="https://marcin.cylke.com.pl/2009/09/24/love-some-kind-of-preview/"></a>
+</article>
 
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">System Shock 2
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Pamiętacie taką grę? Ja pamiętam jedynie tytuł i obszerny opis części pierwszej zamieszczony w którymś numerze Secret Service. Wtedy ta gra była poza moim zasięgiem - za sprawą wymagań sprzętowych.
+Dopiero jakiś rok temu udało mi się zdobyć System Shock - część pierwszą. Zagrywałem się w nią bardzo długo, uruchomiłem całość pod DosBox&#39;em i działało pięknie.
+Po jej ukończeniu przyszła chrapka na część drugą. Zdobyłem jakąś wersję tej gry i co? I nie da się w nią grać! Ani pod Wine (linux), ani na Windows Vista. Próbowałem wszystkich patchy jakie znalazłem, opisów, sposobików (z wineHQ).
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2009-08-29 14:23:24 +0000 UTC'>August 29, 2009</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to System Shock 2" href="https://marcin.cylke.com.pl/2009/08/29/system-shock-2/"></a>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
 </body>
+
 </html>

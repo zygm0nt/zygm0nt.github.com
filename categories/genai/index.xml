@@ -1,2 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GenAI on Tech ramblings by Marcin</title><link>https://marcin.cylke.com.pl/categories/genAI/</link><description>Recent content in GenAI on Tech ramblings by Marcin</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 09 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/genAI/index.xml" rel="self" type="application/rss+xml"/><item><title>Propaganda posters by GenAI</title><link>https://marcin.cylke.com.pl/2024/04/09/propaganda-posters/</link><pubDate>Tue, 09 Apr 2024 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2024/04/09/propaganda-posters/</guid><description>&lt;p&gt;generate a Chinese propaganda poster advocating for &amp;ldquo;all people should eat pringles&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://marcin.cylke.com.pl/post_images/2024-04-09-propaganda-posters/chinese_propaganda_1.webp" alt="Imagine a vibrant and dynamic Chinese propaganda poster, reminiscent of the mid-20th century style, that promotes a very unique and modern message: &amp;ldquo;All people should eat Pringles.&amp;rdquo; The poster features a diverse group of smiling people from various backgrounds, each holding a can of Pringles triumphantly in the air. In the background, a glorious sunburst radiates behind a giant Pringles can, symbolizing prosperity and unity. Bold, stylized text at the bottom of the poster, written in both Chinese and English, declares, &amp;ldquo;All people should eat Pringles&amp;rdquo; in an inviting and persuasive manner. The colors are bright and engaging, with reds and yellows dominating the palette to evoke a sense of enthusiasm and joy."&gt;&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GenAI on Tech ramblings by Marcin</title>
+    <link>https://marcin.cylke.com.pl/categories/genAI/</link>
+    <description>Recent content in GenAI on Tech ramblings by Marcin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/genAI/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Propaganda posters by GenAI</title>
+      <link>https://marcin.cylke.com.pl/2024/04/09/propaganda-posters/</link>
+      <pubDate>Tue, 09 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/2024/04/09/propaganda-posters/</guid>
+      <description>&lt;p&gt;generate a Chinese propaganda poster advocating for &amp;ldquo;all people should eat pringles&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Imagine a vibrant and dynamic Chinese propaganda poster, reminiscent of the mid-20th century style, that promotes a very unique and modern message: &amp;ldquo;All people should eat Pringles.&amp;rdquo; The poster features a diverse group of smiling people from various backgrounds, each holding a can of Pringles triumphantly in the air. In the background, a glorious sunburst radiates behind a giant Pringles can, symbolizing prosperity and unity. Bold, stylized text at the bottom of the poster, written in both Chinese and English, declares, &amp;ldquo;All people should eat Pringles&amp;rdquo; in an inviting and persuasive manner. The colors are bright and engaging, with reds and yellows dominating the palette to evoke a sense of enthusiasm and joy.&#34; loading=&#34;lazy&#34; src=&#34;https://marcin.cylke.com.pl/post_images/2024-04-09-propaganda-posters/chinese_propaganda_1.webp&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

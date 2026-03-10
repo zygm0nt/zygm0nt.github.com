@@ -1,48 +1,251 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Super Confitura Man | Tech ramblings by Marcin</title>
+<meta name="keywords" content="">
+<meta name="description" content="How Super Confitura Man came to be :)
+Recently at TouK we had a one-day hackathon. There was no main theme for
+it, you just could post a project idea, gather people around it and hack
+on that idea for a whole day - drinks and pizza included.
+My main idea was to create something that could be fun to build and be
+useful somehow to others. I’d figured out that since Confitura was just
+around a corner I could make a game, that would be playable at TouK’s
+booth at the conference venue. This idea seemed good enough to attract
+Rafał Nowak @RNowak3 and Marcin Jasion
+@marcinjasion - two TouK employees, that with me
+formed a team for the hackathon.
+">
+<meta name="author" content="Marcin Cylke">
+<link rel="canonical" href="https://marcin.cylke.com.pl/2014/07/14/super-confitura-man/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://marcin.cylke.com.pl/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://marcin.cylke.com.pl/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://marcin.cylke.com.pl/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://marcin.cylke.com.pl/apple-touch-icon.png">
+<link rel="mask-icon" href="https://marcin.cylke.com.pl/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://marcin.cylke.com.pl/2014/07/14/super-confitura-man/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/book_section.css">
+<meta property="og:url" content="https://marcin.cylke.com.pl/2014/07/14/super-confitura-man/">
+  <meta property="og:site_name" content="Tech ramblings by Marcin">
+  <meta property="og:title" content="Super Confitura Man">
+  <meta property="og:description" content="How Super Confitura Man came to be :) Recently at TouK we had a one-day hackathon. There was no main theme for it, you just could post a project idea, gather people around it and hack on that idea for a whole day - drinks and pizza included.
+My main idea was to create something that could be fun to build and be useful somehow to others. I’d figured out that since Confitura was just around a corner I could make a game, that would be playable at TouK’s booth at the conference venue. This idea seemed good enough to attract Rafał Nowak @RNowak3 and Marcin Jasion @marcinjasion - two TouK employees, that with me formed a team for the hackathon.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2014-07-14T00:00:00+00:00">
+    <meta property="article:modified_time" content="2014-07-14T00:00:00+00:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Super Confitura Man">
+  <meta name="twitter:description" content="How Super Confitura Man came to be :) Recently at TouK we had a one-day hackathon. There was no main theme for it, you just could post a project idea, gather people around it and hack on that idea for a whole day - drinks and pizza included.
+My main idea was to create something that could be fun to build and be useful somehow to others. I’d figured out that since Confitura was just around a corner I could make a game, that would be playable at TouK’s booth at the conference venue. This idea seemed good enough to attract Rafał Nowak @RNowak3 and Marcin Jasion @marcinjasion - two TouK employees, that with me formed a team for the hackathon.">
 
 
-  <title>Super Confitura Man - Tech ramblings by Marcin</title>
-  <link rel="stylesheet" type="text/css" href="/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/book_section.css">
-  <link rel="stylesheet" type="text/css" href="/css/aux.css">
-<script defer src="https://cloud.umami.is/script.js" data-website-id="274179a3-6fd7-434b-8b9e-b745ec841ca2"></script>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://marcin.cylke.com.pl/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Super Confitura Man",
+      "item": "https://marcin.cylke.com.pl/2014/07/14/super-confitura-man/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Super Confitura Man",
+  "name": "Super Confitura Man",
+  "description": "How Super Confitura Man came to be :) Recently at TouK we had a one-day hackathon. There was no main theme for it, you just could post a project idea, gather people around it and hack on that idea for a whole day - drinks and pizza included.\nMy main idea was to create something that could be fun to build and be useful somehow to others. I’d figured out that since Confitura was just around a corner I could make a game, that would be playable at TouK’s booth at the conference venue. This idea seemed good enough to attract Rafał Nowak @RNowak3 and Marcin Jasion @marcinjasion - two TouK employees, that with me formed a team for the hackathon.\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "How Super Confitura Man came to be :) Recently at TouK we had a one-day hackathon. There was no main theme for it, you just could post a project idea, gather people around it and hack on that idea for a whole day - drinks and pizza included.\nMy main idea was to create something that could be fun to build and be useful somehow to others. I’d figured out that since Confitura was just around a corner I could make a game, that would be playable at TouK’s booth at the conference venue. This idea seemed good enough to attract Rafał Nowak @RNowak3 and Marcin Jasion @marcinjasion - two TouK employees, that with me formed a team for the hackathon.\nThe initial plan was to develop a simple mario-style game, with preceduraly generated levels, random collectible items and enemies. One of the ideas was to introduce Confitura Man as the main character, but due to time constraints, this fall through. We’ve decided to just choose a random available sprite for a character - hence the onion man :)\nHow the game is played? Since we wanted to have a scoreboard and have unique users, we’ve printed out QR codes. A person that would like to play the game could pick up a QR code, show it against a camera attached to the play booth. The start page scanned the QR code and launched the game with username read from paper code.\nThe rest of the game was playable with gamepad or keyboard.\nTechnicalities Writing a game takes a lot of time and effort. We wanted to deliver, so we’ve decided to spend some time in the days before the hackathon just to bootstrap the technology stack of our enterprise.\nWe’ve decided that the game would be written in some Javascript based engine, with Google Chrome as a web platform. There are a lot of HTML5 game engines - list of html5 game engines and you could easily create a game with each and every of them. We’ve decided to use Phaser IO which handles a lot of difficult, game-related stuff on its own. So, we didn’t have to worry about physics, loading and storing assets, animations, object collisions, controls input/output. Go see for yourself, it is really nice and easy to use.\nScoreboard would be a rip-off from JIRA Survivor with stats being served from some web server app. To make things harder, the backend server was written in Clojure. With no experience in that language in the team, it was a bit risky, but the tasks of the server were trivial, so if all that clojure effort failed, it could be rewritten in something we know.\nStatistics During the whole Confitura day there were 69 unique players (69 QR codes were used), and 1237 games were played. The final score looked like this:\nBarister Lingerie 158 - 1450 points Boilerdang Custardbath 386 - 1060 points Benadryl Clarytin 306 - 870 points And the obligatory scoreboard screenshot:\nObstacles The game, being created in just one day, had to have problems :) It wasn’t play tested enough, there were some rough edges. During the day we had to make a few fixes:\nthe server did not respect the highest score by specific user, it was just overwritting a user’s score with it’s latest one, there was one feature not supported on keyboard, that was available on gamepad - turbo button server was opening a database connection each time it got a request, so after around 5 minutes it would exhaust open file limit for MongoDB (backend database), this was easily fixed - thou the fix is a bit hackish :) These were easily identified and fixed. Unfortunately there were issues that we were unable to fix while the event was on:\ngoogle chrome kept asking for the permission to use webcam - this was very annoying, and all the info found on the web did not work - StackOverflow thread it was hard to start the game with QR code - either the codes were too small, or the lighting around that area was inappropriate - I think this issue could be fixed by printing larger codes, ##Technology evaluation\nAll in all we were pretty happy with the chosen stack. Phaser was easy to use and left us with just the fun parts of the game creation process. Finding the right graphics with appropriate licensing was rather hard. We didn’t have enough time to polish all the visual aspects of the game before Confitura.\nWriting a server in clojure was the most challenging part, with all the new syntax and new libraries. There were tasks, trivial in java/scala, but hard in Clojure - at least for a whimpy beginners :) Nevertheless Clojure seems like a really handy tool and I’d like to dive deeper into its ecosystem.\nSource code All of the sources for the game can be found here TouK/confitura-man.\nThe repository is split into two parts:\ngame - HTML5 game server - clojure based backend server To run the server you need to have a local MongoDB installation. Than in server’s directory run:\n$ lein ring server-headless This will start a server on http://localhost:3000\nTo run the game you need to install dependencies with bower and than run\n$ grunt from game’s directory.\nTo launch the QR reading part of the game, you enter http://localhost:9000/start.html. After scanning the code you’ll be redirected to http://localhost:9000/index.html - and the game starts.\nConclusion Summing up, it was a great experience creating the game. It was fun to watch people playing the game. And even with all those glitches and stupid graphics, there were people vigorously playing it, which was awesome.\nThanks to Rafał and Michał for great coding experience, and thanks to all the players of our stupid little game. If you’d like to ask me about anything - feel free to contact me by mail or twitter @zygm0nt",
+  "wordCount" : "988",
+  "inLanguage": "en",
+  "datePublished": "2014-07-14T00:00:00Z",
+  "dateModified": "2014-07-14T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Marcin Cylke"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://marcin.cylke.com.pl/2014/07/14/super-confitura-man/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tech ramblings by Marcin",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://marcin.cylke.com.pl/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
-<body>
-  <header>
-<div>
-    <h1><a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></h1>
-  </div>
-  <nav><a href="/about/">about me</a>
-  </nav>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://marcin.cylke.com.pl/" accesskey="h" title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://marcin.cylke.com.pl/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </header>
-<main>
-    <article>
-  <div class="title">
-    <h1>Super Confitura Man</h1>
-    </div>
-  <div class="meta">2014-07-14 00:00</div>
-  <div class="artical-body">
-  
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#how-super-confitura-man-came-to-be-">How Super Confitura Man came to be :)</a></li>
-    <li><a href="#how-the-game-is-played">How the game is played?</a></li>
-    <li><a href="#technicalities">Technicalities</a></li>
-    <li><a href="#statistics">Statistics</a></li>
-    <li><a href="#obstacles">Obstacles</a></li>
-    <li><a href="#source-code">Source code</a></li>
-    <li><a href="#conclusion">Conclusion</a></li>
-    <li><a href="#thanks-to-rafał-and-michał-for-great-coding-experience-and-thanks-to-all-the-players-of-our-stupid-little-game-if-youd-like-to-ask-me-about-anything---feel-free-to-contact-me-by-mail-or-twitter-zygm0nthttpstwittercomzygm0nt">Thanks to Rafał and Michał for great coding experience, and thanks to all the players of our stupid little game. If you’d like to ask me about anything - feel free to contact me by mail or twitter <a href="https://twitter.com/zygm0nt">@zygm0nt</a></a></li>
-  </ul>
-</nav>
-    <div class="content-with-toc">
-      <h2 id="how-super-confitura-man-came-to-be-">How Super Confitura Man came to be :)</h2>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://marcin.cylke.com.pl/">Home</a>&nbsp;»&nbsp;<a href="https://marcin.cylke.com.pl/post/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Super Confitura Man
+    </h1>
+    <div class="post-meta"><span title='2014-07-14 00:00:00 +0000 UTC'>July 14, 2014</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#how-super-confitura-man-came-to-be-" aria-label="How Super Confitura Man came to be :)">How Super Confitura Man came to be :)</a></li>
+                <li>
+                    <a href="#how-the-game-is-played" aria-label="How the game is played?">How the game is played?</a></li>
+                <li>
+                    <a href="#technicalities" aria-label="Technicalities">Technicalities</a></li>
+                <li>
+                    <a href="#statistics" aria-label="Statistics">Statistics</a></li>
+                <li>
+                    <a href="#obstacles" aria-label="Obstacles">Obstacles</a></li>
+                <li>
+                    <a href="#source-code" aria-label="Source code">Source code</a></li>
+                <li>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a></li>
+                <li>
+                    <a href="#thanks-to-rafa%c5%82-and-micha%c5%82-for-great-coding-experience-and-thanks-to-all-the-players-of-our-stupid-little-game-if-youd-like-to-ask-me-about-anything---feel-free-to-contact-me-by-mail-or-twitter-zygm0nt" aria-label="Thanks to Rafał and Michał for great coding experience, and thanks to all the players of our stupid little game. If you’d like to ask me about anything - feel free to contact me by mail or twitter @zygm0nt">Thanks to Rafał and Michał for great coding experience, and thanks to all the players of our stupid little game. If you’d like to ask me about anything - feel free to contact me by mail or twitter @zygm0nt</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="how-super-confitura-man-came-to-be-">How Super Confitura Man came to be :)<a hidden class="anchor" aria-hidden="true" href="#how-super-confitura-man-came-to-be-">#</a></h2>
 <p>Recently at TouK we had a one-day hackathon. There was no main theme for
 it, you just could post a project idea, gather people around it and hack
 on that idea for a whole day - drinks and pizza included.</p>
@@ -53,91 +256,22 @@ booth at the conference venue. This idea seemed good enough to attract
 Rafał Nowak <a href="https://twitter.com/RNowak3">@RNowak3</a> and Marcin Jasion
 <a href="https://twitter.com/marcinjasion">@marcinjasion</a> - two TouK employees, that with me
 formed a team for the hackathon.</p>
-<p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-      
-      
-  <picture>
-  <img class="img-fluid" src="https://marcin.cylke.com.pl/assets/confitura-2014-01.jpg?v=06b2b14756d696ffa222e69e68d540d5" alt="Confitura 01" loading="lazy" height="576" width="1024" />
-</picture>
-</p>
+<p><img alt="Confitura 01" loading="lazy" src="/assets/confitura-2014-01.jpg"></p>
 <p>The initial plan was to develop a simple mario-style game, with
 preceduraly generated levels, random collectible items and enemies. One
 of the ideas was to introduce Confitura Man as the main character, but
 due to time constraints, this fall through. We’ve decided to just choose
 a random available sprite for a character - hence the onion man :)</p>
-<p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-      
-      
-  <picture>
-  <img class="img-fluid" src="https://marcin.cylke.com.pl/assets/confitura-2014-02.jpg?v=06b2b14756d696ffa222e69e68d540d5" alt="Confitura 02" loading="lazy" height="576" width="1024" />
-</picture>
-</p>
-<h2 id="how-the-game-is-played">How the game is played?</h2>
+<p><img alt="Confitura 02" loading="lazy" src="/assets/confitura-2014-02.jpg"></p>
+<h2 id="how-the-game-is-played">How the game is played?<a hidden class="anchor" aria-hidden="true" href="#how-the-game-is-played">#</a></h2>
 <p>Since we wanted to have a scoreboard and have unique users, we’ve
 printed out QR codes. A person that would like to play the game could
 pick up a QR code, show it against a camera attached to the play booth.
 The start page scanned the QR code and launched the game with username
 read from paper code.</p>
 <p>The rest of the game was playable with gamepad or keyboard.</p>
-<p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-      
-      
-  <picture>
-  <img class="img-fluid" src="https://marcin.cylke.com.pl/assets/confitura-2014-04.png?v=06b2b14756d696ffa222e69e68d540d5" alt="Confitura game screen" loading="lazy" height="682" width="1281" />
-</picture>
-</p>
-<h2 id="technicalities">Technicalities</h2>
+<p><img alt="Confitura game screen" loading="lazy" src="/assets/confitura-2014-04.png"></p>
+<h2 id="technicalities">Technicalities<a hidden class="anchor" aria-hidden="true" href="#technicalities">#</a></h2>
 <p>Writing a game takes a lot of time and effort. We wanted to deliver, so
 we’ve decided to spend some time in the days before the hackathon just
 to bootstrap the technology stack of our enterprise.</p>
@@ -155,7 +289,7 @@ the backend server was written in Clojure. With no experience in that
 language in the team, it was a bit risky, but the tasks of the server
 were trivial, so if all that clojure effort failed, it could be
 rewritten in something we know.</p>
-<h2 id="statistics">Statistics</h2>
+<h2 id="statistics">Statistics<a hidden class="anchor" aria-hidden="true" href="#statistics">#</a></h2>
 <p>During the whole Confitura day there were 69 unique players (69 QR codes
 were used), and 1237 games were played. The final score looked like
 this:</p>
@@ -165,31 +299,8 @@ this:</p>
 <li>Benadryl Clarytin 306 - 870 points</li>
 </ol>
 <p>And the obligatory scoreboard screenshot:</p>
-<p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-      
-      
-  <picture>
-  <img class="img-fluid" src="https://marcin.cylke.com.pl/assets/confitura-2014-03.png?v=06b2b14756d696ffa222e69e68d540d5" alt="Confitura 03" loading="lazy" height="556" width="1022" />
-</picture>
-</p>
-<h2 id="obstacles">Obstacles</h2>
+<p><img alt="Confitura 03" loading="lazy" src="/assets/confitura-2014-03.png"></p>
+<h2 id="obstacles">Obstacles<a hidden class="anchor" aria-hidden="true" href="#obstacles">#</a></h2>
 <p>The game, being created in just one day, had to have problems :) It
 wasn’t play tested enough, there were some rough edges. During the day
 we had to make a few fixes:</p>
@@ -217,7 +328,7 @@ new syntax and new libraries. There were tasks, trivial in java/scala,
 but hard in Clojure - at least for a whimpy beginners :) Nevertheless
 Clojure seems like a really handy tool and I’d like to dive deeper into
 its ecosystem.</p>
-<h2 id="source-code">Source code</h2>
+<h2 id="source-code">Source code<a hidden class="anchor" aria-hidden="true" href="#source-code">#</a></h2>
 <p>All of the sources for the game can be found here
 <a href="https://github.com/TouK/confitura-man">TouK/confitura-man</a>.</p>
 <p>The repository is split into two parts:</p>
@@ -236,29 +347,164 @@ run</p>
 <p>To launch the QR reading part of the game, you enter
 <code>http://localhost:9000/start.html</code>. After scanning the code you’ll be
 redirected to <code>http://localhost:9000/index.html</code> - and the game starts.</p>
-<h2 id="conclusion">Conclusion</h2>
+<h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
 <p>Summing up, it was a great experience creating the game. It was fun to
 watch people playing the game. And even with all those glitches and
 stupid graphics, there were people vigorously playing it, which was
 awesome.</p>
-<h2 id="thanks-to-rafał-and-michał-for-great-coding-experience-and-thanks-to-all-the-players-of-our-stupid-little-game-if-youd-like-to-ask-me-about-anything---feel-free-to-contact-me-by-mail-or-twitter-zygm0nthttpstwittercomzygm0nt">Thanks to Rafał and Michał for great coding experience, and thanks to all the players of our stupid little game. If you’d like to ask me about anything - feel free to contact me by mail or twitter <a href="https://twitter.com/zygm0nt">@zygm0nt</a></h2></div>
-  
+<h2 id="thanks-to-rafał-and-michał-for-great-coding-experience-and-thanks-to-all-the-players-of-our-stupid-little-game-if-youd-like-to-ask-me-about-anything---feel-free-to-contact-me-by-mail-or-twitter-zygm0nt">Thanks to Rafał and Michał for great coding experience, and thanks to all the players of our stupid little game. If you’d like to ask me about anything - feel free to contact me by mail or twitter <a href="https://twitter.com/zygm0nt">@zygm0nt</a><a hidden class="anchor" aria-hidden="true" href="#thanks-to-rafał-and-michał-for-great-coding-experience-and-thanks-to-all-the-players-of-our-stupid-little-game-if-youd-like-to-ask-me-about-anything---feel-free-to-contact-me-by-mail-or-twitter-zygm0nt">#</a></h2>
+
   </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://marcin.cylke.com.pl/2016/01/22/ccc-interesting-videos/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>32c3 most interesting videos</span>
+  </a>
+  <a class="next" href="https://marcin.cylke.com.pl/2013/12/10/distributed-scans-with-hbase/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Distributed scans with HBase</span>
+  </a>
+</nav>
+
+  </footer><script src="https://utteranc.es/client.js"
+        repo="zygm0nt/hugo-blog-incarnation"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
 </article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></span> · 
 
-  </main><footer>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
 
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
 
-  <script
-    src="https://utteranc.es/client.js"
-    repo="zygm0nt/hugo-blog-incarnation"
-    issue-term="pathname"
-    label="comments"
-    theme="preferred-color-scheme"
-    crossorigin="anonymous"
-    async
-  ></script>
-  <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
 
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
 </body>
+
 </html>

@@ -1,99 +1,241 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Tracers in the dark | Tech ramblings by Marcin</title>
+<meta name="keywords" content="">
+<meta name="description" content="Disclaimer: This blogpost is not about a specific book, titled Tracers in the Dark: The Global Hunt for the Crime Lords of Cryptocurrency. It&rsquo;s just about execution traces.
+I wanted to explore a few techniques for visualising inter-dependencies between fragments of code, modules, etc. Say, you have multiple functions and you want to get some bearing on how much each execution of each of those functions takes. Or you have a complicated system, and you&rsquo;d like to plot remote calls in this system.">
+<meta name="author" content="Marcin Cylke">
+<link rel="canonical" href="https://marcin.cylke.com.pl/2024/08/08/tracers-in-the-dark/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://marcin.cylke.com.pl/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://marcin.cylke.com.pl/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://marcin.cylke.com.pl/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://marcin.cylke.com.pl/apple-touch-icon.png">
+<link rel="mask-icon" href="https://marcin.cylke.com.pl/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://marcin.cylke.com.pl/2024/08/08/tracers-in-the-dark/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/book_section.css">
+<meta property="og:url" content="https://marcin.cylke.com.pl/2024/08/08/tracers-in-the-dark/">
+  <meta property="og:site_name" content="Tech ramblings by Marcin">
+  <meta property="og:title" content="Tracers in the dark">
+  <meta property="og:description" content="Disclaimer: This blogpost is not about a specific book, titled Tracers in the Dark: The Global Hunt for the Crime Lords of Cryptocurrency. It’s just about execution traces.
+I wanted to explore a few techniques for visualising inter-dependencies between fragments of code, modules, etc. Say, you have multiple functions and you want to get some bearing on how much each execution of each of those functions takes. Or you have a complicated system, and you’d like to plot remote calls in this system.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-08-08T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-08-08T00:00:00+00:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Tracers in the dark">
+  <meta name="twitter:description" content="Disclaimer: This blogpost is not about a specific book, titled Tracers in the Dark: The Global Hunt for the Crime Lords of Cryptocurrency. It’s just about execution traces.
+I wanted to explore a few techniques for visualising inter-dependencies between fragments of code, modules, etc. Say, you have multiple functions and you want to get some bearing on how much each execution of each of those functions takes. Or you have a complicated system, and you’d like to plot remote calls in this system.">
 
 
-  <title>Tracers in the dark - Tech ramblings by Marcin</title>
-  <link rel="stylesheet" type="text/css" href="/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/book_section.css">
-  <link rel="stylesheet" type="text/css" href="/css/aux.css">
-<script defer src="https://cloud.umami.is/script.js" data-website-id="274179a3-6fd7-434b-8b9e-b745ec841ca2"></script>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://marcin.cylke.com.pl/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Tracers in the dark",
+      "item": "https://marcin.cylke.com.pl/2024/08/08/tracers-in-the-dark/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Tracers in the dark",
+  "name": "Tracers in the dark",
+  "description": "Disclaimer: This blogpost is not about a specific book, titled Tracers in the Dark: The Global Hunt for the Crime Lords of Cryptocurrency. It\u0026rsquo;s just about execution traces.\nI wanted to explore a few techniques for visualising inter-dependencies between fragments of code, modules, etc. Say, you have multiple functions and you want to get some bearing on how much each execution of each of those functions takes. Or you have a complicated system, and you\u0026rsquo;d like to plot remote calls in this system.\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "Disclaimer: This blogpost is not about a specific book, titled Tracers in the Dark: The Global Hunt for the Crime Lords of Cryptocurrency. It’s just about execution traces.\nI wanted to explore a few techniques for visualising inter-dependencies between fragments of code, modules, etc. Say, you have multiple functions and you want to get some bearing on how much each execution of each of those functions takes. Or you have a complicated system, and you’d like to plot remote calls in this system.\nEither way - it’s about drawing relations between objects in time.\nIf thinking locally - this might mean you can resort to some variation of flame graphs. Popularized by Brendan Gregg with his tool FlameGraph: But let’s just say, you want to plot something completely different, and want to use tools that are already there to display the depencencies.\nMermaid You might want to go with something a lot simpler. Eg. to add some spice to your docs, generated from code snippets, etc. You could leverage Mermaid diagrams to generate Gantt diagrams, easily reusable for shorter traces. Of course, there are sequence diagrams in Mermaid, and you could use those. But I don’t find them too readable for anything like traces.\nAn example trace can look like this:\nThe code that produced it is here, and you can play with it here:\ngantt title System Interaction Gantt Chart dateFormat YYYY-MM-DD HH:mm:ss axisFormat %H:%M:%S section System A Request 1 to System B :a1, 2024-08-08 00:00:00, 10s Request 2 to System C :a2, after b2, 15s Request 3 to System D :a3, after c1, 12s Request 4 to System E :a4, after d3, 18s Request 5 to System B :a5, after e4, 10s section System B Request 6 to System C :b1, after a1, 10s Request 7 to System D :b2, after b1, 20s Request 8 to System E :b3, after a4, 15s Request 9 to System A :b4, after d2, 12s Request 10 to System C :b5, after e1, 10s section System C Request 11 to System D :c1, after b5, 14s Request 12 to System E :c2, after a2, 10s Request 13 to System A :c3, after b4, 20s Request 14 to System B :c4, after c2, 16s Request 15 to System D :c5, after e2, 10s section System D Request 16 to System E :d1, after c3, 18s Request 17 to System A :d2, after c4, 12s Request 18 to System B :d3, after d1, 14s Request 19 to System C :d4, after b3, 10s Request 20 to System E :d5, after a3, 20s section System E Request 21 to System A :e1, after d5, 16s Request 22 to System B :e2, after c1, 12s Request 23 to System C :e3, after b2, 14s Request 24 to System D :e4, after c5, 18s Request 25 to System A :e5, after a5, 10s Google Chrome profiling tool One non-obvious tool for that is Google Chrome’s Profiling Tool. You can access it by typing about:tracing in your Chrome address bar. Well, it seems the tool is deprecated but at least at the moment of writing (Aug 2024), it’s still there and can be used. The recommended way is to use its evolution https://ui.perfetto.dev/\nActually it’s pretty neat, as with that migration the profiler is now usable from any modern web browser - at least from my point of view. Perhaps there are some Chrome-specific functionalities there, but they’re not important right now as I’m interested in just plotting external data.\nI’ve plotted an example data here: And the data I’ve imported here, should be exactly what I’ve plotted in Mermaid. I’ve produced this simple script to convert one format to another (actually my LLM Agent helped me with that ;-) ):\nimport json import re from datetime import datetime, timedelta def parse_mermaid_gantt(mermaid_code): tasks = [] pattern = r'(\\w+ \\d+ to \\w+ \\w+)\\s+:\\w+, after ([\\w\\d]+), (\\d+)s' base_time = datetime(2024, 8, 8, 0, 0, 0) task_times = {} # Parse each line to extract task details for line in mermaid_code.splitlines(): match = re.search(pattern, line) if match: task_name = match.group(1) depends_on = match.group(2) duration = int(match.group(3)) * 1000 # convert to microseconds # Calculate start time start_time = task_times[depends_on] task_start = start_time + timedelta(milliseconds=1) tasks.append({ \"name\": task_name, \"cat\": task_name.split(' to ')[1], \"ph\": \"X\", \"ts\": int(task_start.timestamp() * 1e6), \"dur\": duration, \"pid\": len(tasks) + 1, \"tid\": 1, }) task_times[task_name] = task_start + timedelta(microseconds=duration) else: # Handle initial tasks with direct timestamp pattern_direct = r'(\\w+ \\d+ to \\w+ \\w+)\\s+:\\w+, (\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}), (\\d+)s' match_direct = re.search(pattern_direct, line) if match_direct: task_name = match_direct.group(1) timestamp = datetime.strptime(match_direct.group(2), '%Y-%m-%d %H:%M:%S') duration = int(match_direct.group(3)) * 1000 # convert to microseconds tasks.append({ \"name\": task_name, \"cat\": task_name.split(' to ')[1], \"ph\": \"X\", \"ts\": int(timestamp.timestamp() * 1e6), \"dur\": duration, \"pid\": len(tasks) + 1, \"tid\": 1, }) task_times[task_name] = timestamp + timedelta(microseconds=duration) return tasks def convert_to_chrome_profiler_json(mermaid_code): tasks = parse_mermaid_gantt(mermaid_code) profile_data = {\"traceEvents\": tasks} return json.dumps(profile_data, indent=4) # Example Mermaid Gantt code input mermaid_code = \"\"\" gantt dateFormat YYYY-MM-DD HH:mm:ss axisFormat %H:%M:%S section System A Request 1 to System B :a1, 2024-08-08 00:00:00, 10s Request 2 to System C :a2, after b2, 15s section System B Request 6 to System C :b1, after a1, 10s Request 7 to System D :b2, after b1, 20s section System C Request 11 to System D :c1, after b5, 14s \"\"\" # Convert the Mermaid Gantt code to Chrome Profiler JSON chrome_profiler_json = convert_to_chrome_profiler_json(mermaid_code) # Save JSON to a file with open(\"chrome_profiler.json\", \"w\") as f: f.write(chrome_profiler_json) print(\"JSON data has been saved to chrome_profiler.json\") Conclusion As you can see - the task at hand can be accomplished in at least one way. Probably there are a lot more tools like this, so if you’d like to share an interesting thing here - please do!\n",
+  "wordCount" : "954",
+  "inLanguage": "en",
+  "datePublished": "2024-08-08T00:00:00Z",
+  "dateModified": "2024-08-08T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Marcin Cylke"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://marcin.cylke.com.pl/2024/08/08/tracers-in-the-dark/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tech ramblings by Marcin",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://marcin.cylke.com.pl/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
-<body>
-  <header>
-<div>
-    <h1><a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></h1>
-  </div>
-  <nav><a href="/about/">about me</a>
-  </nav>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://marcin.cylke.com.pl/" accesskey="h" title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://marcin.cylke.com.pl/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </header>
-<main>
-    <article>
-  <div class="title">
-    <h1>Tracers in the dark</h1>
-    </div>
-  <div class="meta">2024-08-08 00:00</div>
-  <div class="artical-body">
-  
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#mermaid">Mermaid</a></li>
-    <li><a href="#google-chrome-profiling-tool">Google Chrome profiling tool</a></li>
-    <li><a href="#conclusion">Conclusion</a></li>
-  </ul>
-</nav>
-    <div class="content-with-toc">
-      <p><strong>Disclaimer</strong>: This blogpost is not about a specific book, titled <a href="https://www.amazon.com/Tracers-Dark-Global-Crime-Cryptocurrency/dp/0385548095">Tracers in the Dark: The Global Hunt for the Crime Lords of Cryptocurrency</a>. It&rsquo;s just about execution traces.</p>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://marcin.cylke.com.pl/">Home</a>&nbsp;»&nbsp;<a href="https://marcin.cylke.com.pl/post/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Tracers in the dark
+    </h1>
+    <div class="post-meta"><span title='2024-08-08 00:00:00 +0000 UTC'>August 8, 2024</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#mermaid" aria-label="Mermaid">Mermaid</a></li>
+                <li>
+                    <a href="#google-chrome-profiling-tool" aria-label="Google Chrome profiling tool">Google Chrome profiling tool</a></li>
+                <li>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p><strong>Disclaimer</strong>: This blogpost is not about a specific book, titled <a href="https://www.amazon.com/Tracers-Dark-Global-Crime-Cryptocurrency/dp/0385548095">Tracers in the Dark: The Global Hunt for the Crime Lords of Cryptocurrency</a>. It&rsquo;s just about execution traces.</p>
 <p>I wanted to explore a few techniques for visualising inter-dependencies between fragments of code, modules, etc. Say, you have multiple functions and you want to get some bearing on how much each execution of each of those functions takes. Or you have a complicated system, and you&rsquo;d like to plot remote calls in this system.</p>
 <p>Either way - it&rsquo;s about drawing relations between objects in time.</p>
 <p>If thinking locally - this might mean you can resort to some variation of flame graphs. Popularized by Brendan Gregg with his tool <a href="https://github.com/brendangregg/FlameGraph">FlameGraph</a>:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-      
-      
-  <picture>
-  <img class="img-fluid" src="https://marcin.cylke.com.pl/post_images/tracers-in-the-dark-0.png?v=72bffede36463fbaf5c4eaf2a808404e" alt="Image" loading="lazy" height="626" width="1200" />
-</picture>
-</p>
+<img alt="Image" loading="lazy" src="/post_images/tracers-in-the-dark-0.png"></p>
 <p>But let&rsquo;s just say, you want to plot something completely different, and want to use tools that are already there to display the depencencies.</p>
-<h2 id="mermaid">Mermaid</h2>
+<h2 id="mermaid">Mermaid<a hidden class="anchor" aria-hidden="true" href="#mermaid">#</a></h2>
 <p>You might want to go with something a lot simpler. Eg. to add some spice to your docs, generated from code snippets, etc.
 You could leverage <code>Mermaid</code> diagrams to generate <a href="https://mermaid.js.org/syntax/gantt.html">Gantt</a>  diagrams, easily reusable for shorter traces. Of course, there are <a href="https://mermaid.js.org/syntax/sequenceDiagram.html">sequence diagrams</a> in <code>Mermaid</code>, and you could use those. But I don&rsquo;t find them too readable for anything like traces.</p>
 <p>An example trace can look like this:</p>
-<p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-      
-      
-  <picture>
-  <img class="img-fluid" src="https://marcin.cylke.com.pl/post_images/tracers-in-the-dark-1.png?v=72bffede36463fbaf5c4eaf2a808404e" alt="Image" loading="lazy" height="800" width="2052" />
-</picture>
-</p>
+<p><img alt="Image" loading="lazy" src="/post_images/tracers-in-the-dark-1.png"></p>
 <p>The code that produced it is here, and you can play with it <a href="https://mermaid.live">here</a>:</p>
 <pre tabindex="0"><code>gantt
 	title System Interaction Gantt Chart
@@ -134,35 +276,12 @@ You could leverage <code>Mermaid</code> diagrams to generate <a href="https://me
 	Request 23 to System C :e3, after b2, 14s
 	Request 24 to System D :e4, after c5, 18s
 	Request 25 to System A :e5, after a5, 10s
-</code></pre><h2 id="google-chrome-profiling-tool">Google Chrome profiling tool</h2>
+</code></pre><h2 id="google-chrome-profiling-tool">Google Chrome profiling tool<a hidden class="anchor" aria-hidden="true" href="#google-chrome-profiling-tool">#</a></h2>
 <p>One non-obvious tool for that is Google Chrome&rsquo;s Profiling Tool. You can access it by typing <code>about:tracing</code> in your Chrome address bar. Well, it seems the tool is deprecated but at least at the moment of writing (Aug 2024), it&rsquo;s still there and can be used.
 The recommended way is to use its evolution <a href="https://ui.perfetto.dev/">https://ui.perfetto.dev/</a></p>
 <p>Actually it&rsquo;s pretty neat, as with that migration the profiler is now usable from any modern web browser - at least from my point of view. Perhaps there are some Chrome-specific functionalities there, but they&rsquo;re not important right now as I&rsquo;m interested in just plotting external data.</p>
 <p>I&rsquo;ve plotted an example data here:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-      
-      
-  <picture>
-  <img class="img-fluid" src="https://marcin.cylke.com.pl/post_images/tracers-in-the-dark-2.png?v=72bffede36463fbaf5c4eaf2a808404e" alt="Image" loading="lazy" height="1166" width="3114" />
-</picture>
-
+<img alt="Image" loading="lazy" src="/post_images/tracers-in-the-dark-2.png">
 And the data I&rsquo;ve imported here, should be exactly what I&rsquo;ve plotted in <code>Mermaid</code>. I&rsquo;ve produced this simple script to convert one format to another (actually my LLM Agent helped me with that ;-) ):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> json
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> re
@@ -252,26 +371,161 @@ And the data I&rsquo;ve imported here, should be exactly what I&rsquo;ve plotted
 </span></span><span style="display:flex;"><span>    f<span style="color:#f92672">.</span>write(chrome_profiler_json)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;JSON data has been saved to chrome_profiler.json&#34;</span>)
-</span></span></code></pre></div><h2 id="conclusion">Conclusion</h2>
+</span></span></code></pre></div><h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
 <p>As you can see - the task at hand can be accomplished in at least one way. Probably there are a lot more tools like this, so if you&rsquo;d like to share an interesting thing here - please do!</p>
-</div>
-  
+
+
   </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://marcin.cylke.com.pl/2024/08/26/extracting-articles-from-pocket-or-chatgpt-for-the-needed-but-not-interesting-stuff/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Extracting articles from Pocket - or ChatGPT for the needed but not interesting stuff</span>
+  </a>
+  <a class="next" href="https://marcin.cylke.com.pl/2024/06/27/get-to-your-aws-host-with-ease/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Get to your AWS host with ease</span>
+  </a>
+</nav>
+
+  </footer><script src="https://utteranc.es/client.js"
+        repo="zygm0nt/hugo-blog-incarnation"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
 </article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></span> · 
 
-  </main><footer>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
 
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
 
-  <script
-    src="https://utteranc.es/client.js"
-    repo="zygm0nt/hugo-blog-incarnation"
-    issue-term="pathname"
-    label="comments"
-    theme="preferred-color-scheme"
-    crossorigin="anonymous"
-    async
-  ></script>
-  <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
 
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
 </body>
+
 </html>

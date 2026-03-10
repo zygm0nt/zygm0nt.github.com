@@ -1,184 +1,297 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="generator" content="Hugo 0.80.0-DEV" />
-		<title>Techblog - Tech ramblings by Marcin</title>
+<html lang="en" dir="auto" data-theme="auto">
 
-		<meta name="description" content="">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Techblog | Tech ramblings by Marcin</title>
+<meta name="keywords" content="">
+<meta name="description" content="Tech ramblings by Marcin - software engineering, distributed systems, and more">
+<meta name="author" content="Marcin Cylke">
+<link rel="canonical" href="https://marcin.cylke.com.pl/categories/Techblog/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://marcin.cylke.com.pl/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://marcin.cylke.com.pl/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://marcin.cylke.com.pl/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://marcin.cylke.com.pl/apple-touch-icon.png">
+<link rel="mask-icon" href="https://marcin.cylke.com.pl/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://marcin.cylke.com.pl/categories/Techblog/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="https://marcin.cylke.com.pl/categories/Techblog/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
 
-		
-	
-		
+            .list {
+                background: var(--theme);
+            }
 
+            .toc {
+                background: var(--entry);
+            }
+        }
 
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
 
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
 
-<link rel="stylesheet" href="/css/ui.css">
+</script><link rel="stylesheet" href="/css/book_section.css">
+<meta property="og:url" content="https://marcin.cylke.com.pl/categories/Techblog/">
+  <meta property="og:site_name" content="Tech ramblings by Marcin">
+  <meta property="og:title" content="Techblog">
+  <meta property="og:description" content="Tech ramblings by Marcin - software engineering, distributed systems, and more">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
 
-	
-		
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Techblog">
+  <meta name="twitter:description" content="Tech ramblings by Marcin - software engineering, distributed systems, and more">
 
-		<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono|Lato|Raleway">
-
-		
-        
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-172194-10', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-
-	</head>
-
-<body>
-<header class="container no-print">
-	<div class="u-header">
-		<nav class="bar">
-	<ul><li>
-			<a href="/">
-				<img class="icon-text" src="/img/prev.svg"/>
-			</a>
-		</li><li><a href="/about/">About Me</a></li></ul>
-</nav>
-
-	</div>
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://marcin.cylke.com.pl/" accesskey="h" title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://marcin.cylke.com.pl/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </header>
-<main class="container">
-
-<article>
-	<header>
-		<hgroup id="brand">
-	
-</hgroup>
-<hr class="sep" />
-
-		
-	</header>
-	<ul class="no-bullet">
-	    
-	    <li>
-	
-	<span><time datetime="2011-03-20 19:35:39 &#43;0000 UTC">Mar 20, 2011</time></span>
-	<a href="/2011/03/20/me-on-hadoop-on-parleys/">Me on Hadoop on Parleys</a>
-</li>
-
-	    
-	    <li>
-	
-	<span><time datetime="2011-02-23 13:22:04 &#43;0000 UTC">Feb 23, 2011</time></span>
-	<a href="/2011/02/23/after-warjug/">After WarJUG</a>
-</li>
-
-	    
-	    <li>
-	
-	<span><time datetime="2011-02-17 23:09:46 &#43;0000 UTC">Feb 17, 2011</time></span>
-	<a href="/2011/02/17/hadoop-on-warsaw-jug/">Hadoop at Warsaw JUG</a>
-</li>
-
-	    
-	    <li>
-	
-	<span><time datetime="2011-01-17 08:56:29 &#43;0000 UTC">Jan 17, 2011</time></span>
-	<a href="/2011/01/17/jms-redelivery-with-activemq-and-servicemix/">JMS redelivery with ActiveMQ and Servicemix</a>
-</li>
-
-	    
-	    <li>
-	
-	<span><time datetime="2010-12-08 09:22:34 &#43;0000 UTC">Dec 08, 2010</time></span>
-	<a href="/2010/12/08/easier-and-nicer-jms/">Easier and nicer JMS</a>
-</li>
-
-	    
-	    <li>
-	
-	<span><time datetime="2010-10-21 08:40:37 &#43;0000 UTC">Oct 21, 2010</time></span>
-	<a href="/2010/10/21/schematron-to-the-rescue/">Schematron to the rescue!</a>
-</li>
-
-	    
-	    <li>
-	
-	<span><time datetime="2010-08-26 20:23:52 &#43;0000 UTC">Aug 26, 2010</time></span>
-	<a href="/2010/08/26/complex-flows-with-apache-camel/">Complex flows with Apache Camel</a>
-</li>
-
-	    
-	    <li>
-	
-	<span><time datetime="2010-08-18 22:16:25 &#43;0000 UTC">Aug 18, 2010</time></span>
-	<a href="/2010/08/18/meetbsd-2010/">Meetbsd 2010</a>
-</li>
-
-	    
-	    <li>
-	
-	<span><time datetime="2010-06-28 20:40:34 &#43;0000 UTC">Jun 28, 2010</time></span>
-	<a href="/2010/06/28/generic-enum-converter-for-ibatis/">Generic Enum converter for iBatis</a>
-</li>
-
-	    
-	    <li>
-	
-	<span><time datetime="2010-06-27 15:08:43 &#43;0000 UTC">Jun 27, 2010</time></span>
-	<a href="/2010/06/27/javarsovia-2010/">Javarsovia 2010</a>
-</li>
-
-	    
-	</ul>
-	
-<nav class="pagination">
-    
-    <a href="/categories/Techblog/">
-    <img class="icon-text" src="/img/prev.svg"/>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="https://marcin.cylke.com.pl/">Home</a>&nbsp;»&nbsp;<a href="https://marcin.cylke.com.pl/categories/">Categories</a></div>
+  <h1>
+    Techblog
+    <a href="/categories/Techblog/index.xml" title="RSS" aria-label="RSS">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" height="23">
+        <path d="M4 11a9 9 0 0 1 9 9" />
+        <path d="M4 4a16 16 0 0 1 16 16" />
+        <circle cx="5" cy="19" r="1" />
+      </svg>
     </a>
-    
-    <span>2</span>
-    
-    <a href="/categories/Techblog/page/3/">
-    <img class="icon-text" src="/img/next.svg"/>
-    </a>
-    
-</nav>
+  </h1>
+</header>
 
-
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Eclipse ecosystem
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Do you use Eclipse? Or perhaps you use other IDE but would like to try &#34;the big E&#34;? Well, that&#39;s OK, and completely understandable, because Eclipse is actually a great, versatile tool. But Eclipse is not just an IDE, in fact it is a comp let, extensible platform. What&#39;s even more important, there are tones of valuable Eclipse-related projects gathered around the platform.
+Yes, there are lots. Some are good, some are bad, but the usual, stock ones, signed by Eclipse, are worth taking a closer look. They&#39;re not a mere innovation to the way we write code with an IDE. Those tools provide new ways to _create_ our code. ...</p>
+  </div>
+  <footer class="entry-footer"><span title='2010-05-07 09:55:59 +0000 UTC'>May 7, 2010</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Eclipse ecosystem" href="https://marcin.cylke.com.pl/2010/05/07/eclipse-ecosystem/"></a>
 </article>
-			<hr class="sep" />
-		</main>
-		<footer class="container no-print">
-			<div class="u-footer">
-				
 
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Dmesg z Openbsd/sgi
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Wracając do starego tematu OpenBSD na moim SGI O2, postanowiłem lekko odświeżyć tą maszynę. Dostałą uaktualnienie małe. Przysiedziałem również nad dostosowaniem systemu do swoich potrzeb, instalacji potrzebnego softu itp.
+Na początek dmesg z działąjącego systemu:
+[ using 433608 bytes of bsd ELF symbol table ] Copyright (c) 1982, 1986, 1989, 1991, 1993 The Regents of the University of California. All rights reserved. Copyright (c) 1995-2009 OpenBSD. All rights reserved. http://www.OpenBSD.org OpenBSD 4.6-current (GENERIC-IP32) #49: Fri Jul 31 05:07:50 MDT 2009 deraadt@sgi.openbsd.org:/usr/src/sys/arch/sgi/compile/GENERIC-IP32 real mem = 67108864 (64MB) rsvd mem = 7020544 (6MB) avail mem = 40771584 (38MB) mainbus0 at root cpu0 at mainbus0: MIPS R5000 CPU rev 2.1 180 MHz with R5000 based FPC rev 1.0 cpu0: cache L1-I 32KB D 32KB 2 way, L2 512KB direct clock0 at mainbus0: ticker on int5 using count register macebus0 at mainbus0: crime rev 10.1 macepcibr0 at macebus0: mace rev 1, host system O2 pci0 at macepcibr0 bus 0 ahc0 at pci0 dev 1 function 0 &#34;Adaptec AIC-7880&#34; rev 0x00: irq 9 ahc0: Host Adapter Bios disabled. Using default SCSI device parameters scsibus0 at ahc0: 16 targets, initiator 7 sd0 at scsibus0 targ 1 lun 0: SCSI2 0/direct fixed sd0: 4340MB, 512 bytes/sec, 8888543 sec total cd0 at scsibus0 targ 4 lun 0: SCSI2 5/cdrom removable ahc1 at pci0 dev 2 function 0 &#34;Adaptec AIC-7880&#34; rev 0x00: irq 10 ahc1: Host Adapter Bios disabled. Using default SCSI device parameters scsibus1 at ahc1: 16 targets, initiator 7 dsrtc0 at macebus0: DS1687 com0 at macebus0 base 0x00390000 irq 5: ns16550a, 16 byte fifo com1 at macebus0 base 0x00398000 irq 5: ns16550a, 16 byte fifo mec0 at macebus0 base 0x00280000 irq 4: MAC-110 rev 1, address 08:00:69:0c:98:fb nsphy0 at mec0 phy 11: DP83840 10/100 PHY, rev. 0 mavb0 at macebus0 base 0x00300000 irq 7: AD1843 rev 1 audio0 at mavb0 mkbc0 at macebus0 base 0x00320000 irq 6 pckbd0 at mkbc0 (kbd slot) wskbd0 at pckbd0: console keyboard power0 at macebus0 irq 6 gbe0 at mainbus0: rev 1, 8MB, 1280x1024 at 8 bits wsdisplay0 at gbe0 mux 1: console (std, vt100 emulation), using wskbd0 wsdisplay0: screen 1 added (std, vt100 emulation) softraid0 at root ahc0: target 1 using 16bit transfers ahc0: target 1 synchronous at 20.0MHz, offset = 0x8 boot device: sd0 root on sd0a swap on sd0b dump on sd0b Niby działa dobrze, z kilkoma wyjątkami:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2010-04-25 12:20:34 +0000 UTC'>April 25, 2010</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Dmesg z Openbsd/sgi" href="https://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/"></a>
+</article>
 
-<a href="http://marcin.cylke.com.pl/index.xml" target="_blank"><img class="icon-social" src="/img/feed.svg" alt="Feed"></a>
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Unicode w Pythonie
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Szlag by to trafił! Czemu tak ciężko jest obsługiwać unicode w pythonie? No niby wszystko jest ładnie konwertowane wewnętrznie na odpowiednie reprezentacje, ale jeśli przychodzi co do czego, i chcemy wypisać sobie taki ciąg znaków na ekran, to już jest ciężej.
+Weźmy prosty przykład. Wczytywałem plik z polskimi znaczkami, o taki:
+Roger Macdonald;Człowiek w żelaznej masce;25 a potem w kodzie pythonowym robiłem sobie tak:
+for line in open(sys.argv[1],&#39;r&#39;).readlines(): print line.decode(&#39;utf-8&#39;) (.... tu wysłanie do jakiegoś tam Web Service&#39;u) ...</p>
+  </div>
+  <footer class="entry-footer"><span title='2010-04-21 22:54:24 +0000 UTC'>April 21, 2010</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Unicode w Pythonie" href="https://marcin.cylke.com.pl/2010/04/21/unicode-w-pythonie/"></a>
+</article>
 
-				<p>
-					
-					Theme used: <a href="https://github.com/yursan9/manis-hugo-theme">Manis</a><br>
-					
-					
-					
-				</p>
-				
-				<a href="#brand">
-					<img class="icon-text" src="/img/toup.svg" alt="To Up"/>
-					<span>Back to Up</span>
-				</a>
-				
-			</div>
-		</footer>
-		
-	</body>
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Ludzie! Porzućcie F-Spot!
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Dziś usiadłem do porządkowania zdjęć z wyjazdu wakacyjnego. Postanowiłem użyć do tego właśnie programu F-Spot. Wydawał się on odpowiedni. Zaimportował fotki, posortował według informacji EXIF. Schody zaczęły się w momencie edycji całej kolekcji.
+Ze zdjęciami było trochę problemów, którymi chciałem się zająć:
+część trzeba było obrócić połowa była zrobiona na Nikonie, który nie miał ustawionej daty, tak więc ficzer sortowania po dacie z nagłówka EXIF wziął w łeb Tak więc chciałem poobracać fotki i uporządkować wedle czasu. Pierwsza czynność poszła w miarę łatwo. Druga była już lekko upierdliwa - np. Można zaznaczyć wszystkie fotki i otworzyć je w okienku do zmiany czasu, ale wtedy zapisywane są zmiany dopiero po wciśnięciu OK. Niby byłoby to fajne, ale, gdy ustawimy czas dla jednej fotki, to mamy taki oto wybór:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2009-09-20 17:57:33 +0000 UTC'>September 20, 2009</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Ludzie! Porzućcie F-Spot!" href="https://marcin.cylke.com.pl/2009/09/20/ludzie-porzuccie-f-spot/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://marcin.cylke.com.pl/categories/Techblog/">
+      «&nbsp;Prev&nbsp;
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
 </html>
-

@@ -1,99 +1,342 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="alternate" type="application/rss+xml" href="https://marcin.cylke.com.pl/categories/touk/index.xml" title="Touk - Tech ramblings by Marcin">
- 
+<html lang="en" dir="auto" data-theme="auto">
 
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Touk | Tech ramblings by Marcin</title>
+<meta name="keywords" content="">
+<meta name="description" content="Tech ramblings by Marcin - software engineering, distributed systems, and more">
+<meta name="author" content="Marcin Cylke">
+<link rel="canonical" href="https://marcin.cylke.com.pl/categories/touk/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://marcin.cylke.com.pl/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://marcin.cylke.com.pl/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://marcin.cylke.com.pl/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://marcin.cylke.com.pl/apple-touch-icon.png">
+<link rel="mask-icon" href="https://marcin.cylke.com.pl/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://marcin.cylke.com.pl/categories/touk/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="https://marcin.cylke.com.pl/categories/touk/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-  <title>Touk - Tech ramblings by Marcin</title>
-  <link rel="stylesheet" type="text/css" href="/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/book_section.css">
-  <link rel="stylesheet" type="text/css" href="/css/aux.css">
-<script defer src="https://cloud.umami.is/script.js" data-website-id="274179a3-6fd7-434b-8b9e-b745ec841ca2"></script>
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/book_section.css">
+<meta property="og:url" content="https://marcin.cylke.com.pl/categories/touk/">
+  <meta property="og:site_name" content="Tech ramblings by Marcin">
+  <meta property="og:title" content="Touk">
+  <meta property="og:description" content="Tech ramblings by Marcin - software engineering, distributed systems, and more">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Touk">
+  <meta name="twitter:description" content="Tech ramblings by Marcin - software engineering, distributed systems, and more">
 
 </head>
-<body>
-  <header>
-<div>
-    <h1><a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></h1>
-  </div>
-  <nav><a href="/about/">about me</a>
-  </nav>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://marcin.cylke.com.pl/" accesskey="h" title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://marcin.cylke.com.pl/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </header>
-<main>
-    <div>
-  <h1>Touk</h1>
-</div>
-<ul class="article-list">
-  <li class="article-item">
-    <div class="article-date">2011-01-17 08:56</div>
-    <div class="article-title"><a href="/2011/01/17/jms-redelivery-with-activemq-and-servicemix/">JMS redelivery with ActiveMQ and Servicemix</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2010-12-08 09:22</div>
-    <div class="article-title"><a href="/2010/12/08/easier-and-nicer-jms/">Easier and nicer JMS</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2010-10-21 08:40</div>
-    <div class="article-title"><a href="/2010/10/21/schematron-to-the-rescue/">Schematron to the rescue!</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2010-08-26 20:23</div>
-    <div class="article-title"><a href="/2010/08/26/complex-flows-with-apache-camel/">Complex flows with Apache Camel</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2010-08-18 22:16</div>
-    <div class="article-title"><a href="/2010/08/18/meetbsd-2010/">Meetbsd 2010</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2010-06-28 20:40</div>
-    <div class="article-title"><a href="/2010/06/28/generic-enum-converter-for-ibatis/">Generic Enum converter for iBatis</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2010-06-27 15:08</div>
-    <div class="article-title"><a href="/2010/06/27/javarsovia-2010/">Javarsovia 2010</a></div>
-  </li>
-  <li class="article-item">
-    <div class="article-date">2010-05-07 09:55</div>
-    <div class="article-title"><a href="/2010/05/07/eclipse-ecosystem/">Eclipse ecosystem</a></div>
-  </li>
-  </ul>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="https://marcin.cylke.com.pl/">Home</a>&nbsp;»&nbsp;<a href="https://marcin.cylke.com.pl/categories/">Categories</a></div>
+  <h1>
+    Touk
+    <a href="/categories/touk/index.xml" title="RSS" aria-label="RSS">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" height="23">
+        <path d="M4 11a9 9 0 0 1 9 9" />
+        <path d="M4 4a16 16 0 0 1 16 16" />
+        <circle cx="5" cy="19" r="1" />
+      </svg>
+    </a>
+  </h1>
+</header>
 
-    <ul class="pagination pagination-default">
-      <li class="page-item">
-        <a href="/categories/touk/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/categories/touk/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/categories/touk/" aria-label="Page 1" class="page-link" role="button">1</a>
-      </li>
-      <li class="page-item active">
-        <a aria-current="page" aria-label="Page 2" class="page-link" role="button">2</a>
-      </li>
-      <li class="page-item disabled">
-        <a aria-disabled="true" aria-label="Next" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;</span></a>
-      </li>
-      <li class="page-item disabled">
-        <a aria-disabled="true" aria-label="Last" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;&raquo;</span></a>
-      </li>
-    </ul>
-  </main><footer>
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">JMS redelivery with ActiveMQ and Servicemix
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> The other day I felt a compelling need to implement a JMS redelivery scenario. The exact scenario I&#39;d been trying to handle was: my message is in an ActiveMQ queue or topic its processing fails, because of some exception - ie. database access exception due to server nonavailability since we get an exception, the message is not handled properly, we may want to retry processing attempt some time later of course, for the redelivery to happen we need the message to stay in the ActiveMQ queue - fetching messages from the queue will be stopped until the redelivery succeeds or expires See how this can be done after the jump :) For this to happen, I&#39;ve tried implementing Apache Camel route, but as it turns out, Camel fails to deliver facilities for exact JMS redelivery. It is possible to set JMS connection in transacted mode, but the redeliveries happen one after another and fixed times. ...</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-01-17 08:56:29 +0000 UTC'>January 17, 2011</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to JMS redelivery with ActiveMQ and Servicemix" href="https://marcin.cylke.com.pl/2011/01/17/jms-redelivery-with-activemq-and-servicemix/"></a>
+</article>
 
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Easier and nicer JMS
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> JMS seems like a hostile ground. It has all it&#39;s quirks and strange behaviours. A couple of defining standards plus esoteric brokers, queues and topics. At work, we mainly use open source Jms solutions, namely Apache ActiveMQ. This one is usually bundled with Apache Servicemix, as a message broker for this particular ESB. As there are some minor caveats in this scennerio, I&#39;d like to describe here some guidelines for getting to running JMS queues. ...</p>
+  </div>
+  <footer class="entry-footer"><span title='2010-12-08 09:22:34 +0000 UTC'>December 8, 2010</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Easier and nicer JMS" href="https://marcin.cylke.com.pl/2010/12/08/easier-and-nicer-jms/"></a>
+</article>
 
-  <script
-    src="https://utteranc.es/client.js"
-    repo="zygm0nt/hugo-blog-incarnation"
-    issue-term="pathname"
-    label="comments"
-    theme="preferred-color-scheme"
-    crossorigin="anonymous"
-    async
-  ></script>
-  <p>&copy; 2019 Linlin Yan. <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC-BY-4.0</a></p></footer>
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Schematron to the rescue!
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be solved with it - the standardization processes is there for some reason. But that happens only in ideal world, which we&#39;re not living in. In ideal world, when dealing with XML instances you&#39;d be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal definition language to declare your data structure. With that you get rigid rules as to how XML documents should look like. There doesn&#39;t seem to be much space to deviate from specs. Well, in fact there is.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2010-10-21 08:40:37 +0000 UTC'>October 21, 2010</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Schematron to the rescue!" href="https://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/"></a>
+</article>
 
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Complex flows with Apache Camel
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> At work, we&#39;re mainly integrating services and systems, and since we&#39;re on a constant lookout for new, better technologies, ways to do things easier, make them more sustainable, we&#39;re trying to Usually we use Apache Camel for this task, which is a Swiss-knife for integration engineer. What&#39;s more, this tools corresponds well with our approach to integration solutions: try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits, don&#39;t convert XML into Java classes back and forth and be worried with problems like XML conversion, try to get a simple flow of the process. However, at first sight Apache Camel seems to have some drawbacks mainly in the area of practical solutions ;-). It&#39;s very handy tool if you need to use it as a pipeline with some marginal processing of the data that passes through it. It gets a lot harder to wrap your head around if you consider some branching and intermediate calls to external services. This may be tricky to write properly in Camel&#39;s DSL. ...</p>
+  </div>
+  <footer class="entry-footer"><span title='2010-08-26 20:23:52 +0000 UTC'>August 26, 2010</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Complex flows with Apache Camel" href="https://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Meetbsd 2010
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Some time ago, I&#39;ve attended MeetBSD conference in Kraków. This BSD event is held yearly in either Warsaw, or Kraków. Due to relatively small group of people that registered there was only one track, which had both good and bad sides - you didn&#39;t have to choose from myriads of lectures, but there was no way to skip boring ones either. Well, I guess this kind of niche conference - about operating system :) - will not attract bigger attention.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2010-08-18 22:16:25 +0000 UTC'>August 18, 2010</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Meetbsd 2010" href="https://marcin.cylke.com.pl/2010/08/18/meetbsd-2010/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Generic Enum converter for iBatis
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> My goal was to create a simple, extensible Enum converter that would work with iBatis. This seems like a trivial problem, but took me a while to find a proper solution.
+There were some additional preconditions: all given Enums are jaxb generated objects - but any standard Java Enum should work conversion was 1-to-1, no special conditions and processing The example Enum for this problem looks like this one (copy&amp;paste from jaxb generated source):
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2010-06-28 20:40:34 +0000 UTC'>June 28, 2010</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Generic Enum converter for iBatis" href="https://marcin.cylke.com.pl/2010/06/28/generic-enum-converter-for-ibatis/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Javarsovia 2010
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> This year&#39;s Javarsovia conference took place on 26th june. It was held at Centrum Konferencyjno-Kongresowe, Bobrowiecka Street, Warsaw.
+First of all - the organization was very nice. Everything seemed smooth, maybe with the exception of conference registration, it was simply overcrowded. The agenda was split into four tracks, each hour 4 different presentations were given in different halls. So you just had to choose which one to attend. My path through the conference is described below, together with my views on each of the presentations I attended.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2010-06-27 15:08:43 +0000 UTC'>June 27, 2010</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Javarsovia 2010" href="https://marcin.cylke.com.pl/2010/06/27/javarsovia-2010/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Eclipse ecosystem
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Do you use Eclipse? Or perhaps you use other IDE but would like to try &#34;the big E&#34;? Well, that&#39;s OK, and completely understandable, because Eclipse is actually a great, versatile tool. But Eclipse is not just an IDE, in fact it is a comp let, extensible platform. What&#39;s even more important, there are tones of valuable Eclipse-related projects gathered around the platform.
+Yes, there are lots. Some are good, some are bad, but the usual, stock ones, signed by Eclipse, are worth taking a closer look. They&#39;re not a mere innovation to the way we write code with an IDE. Those tools provide new ways to _create_ our code. ...</p>
+  </div>
+  <footer class="entry-footer"><span title='2010-05-07 09:55:59 +0000 UTC'>May 7, 2010</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Eclipse ecosystem" href="https://marcin.cylke.com.pl/2010/05/07/eclipse-ecosystem/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://marcin.cylke.com.pl/categories/touk/">
+      «&nbsp;Prev&nbsp;
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
 </body>
+
 </html>
