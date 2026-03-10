@@ -37,16 +37,3 @@ nav#TableOfContents {
     top: 0;
 }
 
-
- class Solution:
-    def stringMatching(self, words: List[str]) -> List[str]:
-        x = []
-        s = set(words)
-        for word in words:
-            s.remove(word)
-            y = list(map(lambda t: word in t, s))
-            print(y)
-            if any(y):
-                x.append(word)
-        return list(set(x))
-        
