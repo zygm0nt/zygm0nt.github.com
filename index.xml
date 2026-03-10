@@ -1,305 +1,161 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tech ramblings by Marcin</title>
-    <link>https://marcin.cylke.com.pl/</link>
-    <description>Recent content on Tech ramblings by Marcin</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 05 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Fiction</title>
-      <link>https://marcin.cylke.com.pl/fiction/</link>
-      <pubDate>Mon, 05 May 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/fiction/</guid>
-      <description>&lt;p&gt;Test - lem punk.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Getting things done in a distracted world</title>
-      <link>https://marcin.cylke.com.pl/2025/03/13/getting-things-done-in-a-distracted-world/</link>
-      <pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2025/03/13/getting-things-done-in-a-distracted-world/</guid>
-      <description>&lt;p&gt;Many years ago I&amp;rsquo;ve written somewhat similar piece about navigating all the distractions of my life. You can read it here: &lt;a href=&#34;https://marcin.cylke.com.pl/2016/07/24/it-minimalist/&#34;&gt;https://marcin.cylke.com.pl/2016/07/24/it-minimalist/&lt;/a&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tech ramblings by Marcin</title><link>https://marcin.cylke.com.pl/</link><description>Recent content on Tech ramblings by Marcin</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 05 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/index.xml" rel="self" type="application/rss+xml"/><item><title>Fiction</title><link>https://marcin.cylke.com.pl/fiction/</link><pubDate>Mon, 05 May 2025 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/fiction/</guid><description>&lt;p&gt;Test - lem punk.&lt;/p&gt;</description></item><item><title>Getting things done in a distracted world</title><link>https://marcin.cylke.com.pl/2025/03/13/getting-things-done-in-a-distracted-world/</link><pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2025/03/13/getting-things-done-in-a-distracted-world/</guid><description>&lt;p&gt;Many years ago I&amp;rsquo;ve written somewhat similar piece about navigating all the distractions of my life. You can read it here: &lt;a href="https://marcin.cylke.com.pl/2016/07/24/it-minimalist/"&gt;https://marcin.cylke.com.pl/2016/07/24/it-minimalist/&lt;/a&gt;
 Years have passed, and I want to revisit the topic. Let this post be a reflection on how my habits changed, but also a summary of techniques that work for me right now.&lt;/p&gt;
-&lt;p&gt;Let&amp;rsquo;s try to recap my stats for this day, as compared to year 2016 (noted in brackets)&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>books I read - Oct - Dec 2024</title>
-      <link>https://marcin.cylke.com.pl/2025/01/16/books-i-read-oct-dec-2024/</link>
-      <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2025/01/16/books-i-read-oct-dec-2024/</guid>
-      <description>&lt;h2 id=&#34;books&#34;&gt;Books&lt;/h2&gt;
-&lt;div class=&#34;review-container&#34;&gt;
-    &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-oct-dec-2024-0.png&#34; alt=&#34;Czysta Ameryka. Przemilczana historia eugeniki Book Cover&#34; /&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;review-text&#34;&gt;
-        &lt;h2&gt;Book Review: &lt;em&gt;Czysta Ameryka. Przemilczana historia eugeniki&lt;/em&gt; by Elizabeth Catte&lt;/h2&gt;
-
-        &lt;ul&gt;
+&lt;p&gt;Let&amp;rsquo;s try to recap my stats for this day, as compared to year 2016 (noted in brackets)&lt;/p&gt;</description></item><item><title>books I read - Oct - Dec 2024</title><link>https://marcin.cylke.com.pl/2025/01/16/books-i-read-oct-dec-2024/</link><pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2025/01/16/books-i-read-oct-dec-2024/</guid><description>&lt;h2 id="books"&gt;Books&lt;/h2&gt;
+&lt;div class="review-container"&gt;
+&lt;div class="book-cover"&gt;
+&lt;img src="https://marcin.cylke.com.pl/post_images/books-i-read-oct-dec-2024-0.png" alt="Czysta Ameryka. Przemilczana historia eugeniki Book Cover" /&gt;
+&lt;/div&gt;
+&lt;div class="review-text"&gt;
+&lt;h2&gt;Book Review: &lt;em&gt;Czysta Ameryka. Przemilczana historia eugeniki&lt;/em&gt; by Elizabeth Catte&lt;/h2&gt;
+&lt;ul&gt;
 &lt;li&gt;Many interesting observations and a clearly presented opinion on eugenics and its history in the USA. It&amp;rsquo;s quite difficult to get through due to the many facts specific to USA internal politics. It also explores topics loosely connected to eugenics, which may feel tangential but provide a broader context. There is certainly a lot of personal opinions here, referring to the author&amp;rsquo;s hometown. It makes the book less valuable as an objective study of the subject, and more just a personal exploration based on local facts.&amp;quot;&lt;/li&gt;
 &lt;/ul&gt;
-
-    &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div class=&#34;review-container&#34;&gt;
-    &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-oct-dec-2024-1.png&#34; alt=&#34;Zakamarki Białego Domu Book Cover&#34; /&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;review-text&#34;&gt;
-        &lt;h2&gt;Book Review: &lt;em&gt;Zakamarki Białego Domu&lt;/em&gt; by Marek Wałkuski&lt;/h2&gt;
-
-        &lt;ul&gt;
+&lt;/div&gt;
+&lt;div class="review-container"&gt;
+&lt;div class="book-cover"&gt;
+&lt;img src="https://marcin.cylke.com.pl/post_images/books-i-read-oct-dec-2024-1.png" alt="Zakamarki Białego Domu Book Cover" /&gt;
+&lt;/div&gt;
+&lt;div class="review-text"&gt;
+&lt;h2&gt;Book Review: &lt;em&gt;Zakamarki Białego Domu&lt;/em&gt; by Marek Wałkuski&lt;/h2&gt;
+&lt;ul&gt;
 &lt;li&gt;written as a concise trivia book about US White House. The author, polish correspondent working in the Presidential Press Pool shares a lot of his personal experiences, but also adds a lot of smaller research to that. The mix of personal anecdotes and research makes the book both engaging and informative. However, Some sections feel less compelling and might serve more as filler. While accurate, the repeated mention of being the only Polish reporter near the US President can feel overemphasized.&lt;/li&gt;
 &lt;/ul&gt;
-
-    &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div class=&#34;review-container&#34;&gt;
-    &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-oct-dec-2024-2.png&#34; alt=&#34;The coming wave Book Cover&#34; /&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;review-text&#34;&gt;
-        &lt;h2&gt;Book Review: &lt;em&gt;The coming wave&lt;/em&gt; by Mustafa Suleyman&lt;/h2&gt;
-
-        &lt;ul&gt;
+&lt;/div&gt;
+&lt;div class="review-container"&gt;
+&lt;div class="book-cover"&gt;
+&lt;img src="https://marcin.cylke.com.pl/post_images/books-i-read-oct-dec-2024-2.png" alt="The coming wave Book Cover" /&gt;
+&lt;/div&gt;
+&lt;div class="review-text"&gt;
+&lt;h2&gt;Book Review: &lt;em&gt;The coming wave&lt;/em&gt; by Mustafa Suleyman&lt;/h2&gt;
+&lt;ul&gt;
 &lt;li&gt;how AI is changing the world, and what will be its future influence. Written by an influential person, a co-founder of DeepMind. The book presents thought-provoking insights, particularly on societies&amp;rsquo; approach to that new paradigm (AI). Given the rapid evolution of AI, some ideas in the book have already become outdated. Some ideas in the book are already out of sync with what&amp;rsquo;s happening in the industry. This book has been a good, relaxing exercise for the mind. While it&amp;rsquo;s an engaging read, some ideas may feel more speculative than definitive.&lt;/li&gt;
 &lt;/ul&gt;
-
-    &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div class=&#34;review-container&#34;&gt;
-    &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-oct-dec-2024-3.png&#34; alt=&#34;Umbrella Academy Book Cover&#34; /&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;review-text&#34;&gt;
-        &lt;h2&gt;Book Review: &lt;em&gt;Umbrella Academy&lt;/em&gt; by Gerard Way, 	Gabriel Bá&lt;/h2&gt;
-
-        &lt;ul&gt;
+&lt;/div&gt;
+&lt;div class="review-container"&gt;
+&lt;div class="book-cover"&gt;
+&lt;img src="https://marcin.cylke.com.pl/post_images/books-i-read-oct-dec-2024-3.png" alt="Umbrella Academy Book Cover" /&gt;
+&lt;/div&gt;
+&lt;div class="review-text"&gt;
+&lt;h2&gt;Book Review: &lt;em&gt;Umbrella Academy&lt;/em&gt; by Gerard Way, Gabriel Bá&lt;/h2&gt;
+&lt;ul&gt;
 &lt;li&gt;before the Netflix series there&amp;rsquo;s been a comic version of the story about the patchwork family of super-children, born on the same day all around the world. I really liked the Netflix adaptation, after enjoying the Netflix adaptation, I was inspired to explore the original comic. And that&amp;rsquo;s been a good decision, I must say. In fact, The comic offers richer character development and a more intricate storyline compared to the Netflix adaptation. The unique art style and imaginative storytelling made it a thoroughly enjoyable read.&lt;/li&gt;
 &lt;/ul&gt;
-
-    &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div class=&#34;review-container&#34;&gt;
-    &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-oct-dec-2024-4.png&#34; alt=&#34;Futuro Darko Book Cover&#34; /&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;review-text&#34;&gt;
-        &lt;h2&gt;Book Review: &lt;em&gt;Futuro Darko&lt;/em&gt; by Krzysztof Nowak&lt;/h2&gt;
-
-        &lt;ul&gt;
+&lt;/div&gt;
+&lt;div class="review-container"&gt;
+&lt;div class="book-cover"&gt;
+&lt;img src="https://marcin.cylke.com.pl/post_images/books-i-read-oct-dec-2024-4.png" alt="Futuro Darko Book Cover" /&gt;
+&lt;/div&gt;
+&lt;div class="review-text"&gt;
+&lt;h2&gt;Book Review: &lt;em&gt;Futuro Darko&lt;/em&gt; by Krzysztof Nowak&lt;/h2&gt;
+&lt;ul&gt;
 &lt;li&gt;A post-apocalyptic comic with a distinctly Polish twist. The album contains a bunch of separate stories connected by the main characters. I enjoyed the style of the comics. Also, the comic-inspired soundtrack adds an immersive dimension to the reading experience.! Neat idea!&lt;/li&gt;
 &lt;/ul&gt;
-
-    &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;h2 id=&#34;articles&#34;&gt;Articles&lt;/h2&gt;
+&lt;/div&gt;
+&lt;h2 id="articles"&gt;Articles&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.wsj.com/world/russia/evan-gershkovich-russia-putin-arrests-spies-9a75e1c3&#34;&gt;Tracking Putin’s Most Feared Secret Agency—From Inside a Russian Prison and Beyond&lt;/a&gt; - a investigative piece from Evan Gershkovich, WSJ reporter held in Russian Prison, recently released&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.wsj.com/world/russia/evan-gershkovich-russia-putin-arrests-spies-9a75e1c3"&gt;Tracking Putin’s Most Feared Secret Agency—From Inside a Russian Prison and Beyond&lt;/a&gt; - a investigative piece from Evan Gershkovich, WSJ reporter held in Russian Prison, recently released&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;interesting-video&#34;&gt;Interesting video&lt;/h2&gt;
+&lt;h2 id="interesting-video"&gt;Interesting video&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://youtu.be/vz8zU1-SVcc?feature=shared&#34;&gt;Czy wszyscy 110-latkowie to oszuści? IgNobel z demografii 2024 | Czytamy naturę&lt;/a&gt; - a super interesting presentation about people supposedly living more than 100 years.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=2l1lVBdmNIQ&#34;&gt;Spotify&amp;rsquo;s Approach to Distributed LLM Training with Ray on GKE | Ray Summit 2024&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>books I read - September 2024</title>
-      <link>https://marcin.cylke.com.pl/2024/11/05/books-i-read-september-2024/</link>
-      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2024/11/05/books-i-read-september-2024/</guid>
-      <description>&lt;h2 id=&#34;books&#34;&gt;Books&lt;/h2&gt;
-&lt;div class=&#34;review-container&#34;&gt;
-    &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-september-2024-0.png&#34; alt=&#34;Stany podzielone Ameryki Book Cover&#34; /&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;review-text&#34;&gt;
-        &lt;h2&gt;Book Review: &lt;em&gt;Stany podzielone Ameryki&lt;/em&gt; by Lukasz Pawłowski&lt;/h2&gt;
-
-        &lt;ul&gt;
+&lt;li&gt;&lt;a href="https://youtu.be/vz8zU1-SVcc?feature=shared"&gt;Czy wszyscy 110-latkowie to oszuści? IgNobel z demografii 2024 | Czytamy naturę&lt;/a&gt; - a super interesting presentation about people supposedly living more than 100 years.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=2l1lVBdmNIQ"&gt;Spotify&amp;rsquo;s Approach to Distributed LLM Training with Ray on GKE | Ray Summit 2024&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>books I read - September 2024</title><link>https://marcin.cylke.com.pl/2024/11/05/books-i-read-september-2024/</link><pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2024/11/05/books-i-read-september-2024/</guid><description>&lt;h2 id="books"&gt;Books&lt;/h2&gt;
+&lt;div class="review-container"&gt;
+&lt;div class="book-cover"&gt;
+&lt;img src="https://marcin.cylke.com.pl/post_images/books-i-read-september-2024-0.png" alt="Stany podzielone Ameryki Book Cover" /&gt;
+&lt;/div&gt;
+&lt;div class="review-text"&gt;
+&lt;h2&gt;Book Review: &lt;em&gt;Stany podzielone Ameryki&lt;/em&gt; by Lukasz Pawłowski&lt;/h2&gt;
+&lt;ul&gt;
 &lt;li&gt;Written by one of the podcasters from &amp;ldquo;Podcast amerykański,&amp;rdquo; and my great experience with this book was largely due to this connection. The book is fascinating and feels refreshingly objective.&lt;/li&gt;
 &lt;li&gt;Additionally, it offers an insightful analysis of the current state of American society, particularly from a European perspective, providing a unique outsider&amp;rsquo;s view of the country&amp;rsquo;s complexities.&lt;/li&gt;
 &lt;/ul&gt;
-
-    &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div class=&#34;review-container&#34;&gt;
-    &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-september-2024-1.png&#34; alt=&#34;Persepolis Book Cover&#34; /&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;review-text&#34;&gt;
-        &lt;h2&gt;Book Review: &lt;em&gt;Persepolis&lt;/em&gt; by Marjane Satrapi&lt;/h2&gt;
-
-        &lt;ul&gt;
+&lt;/div&gt;
+&lt;div class="review-container"&gt;
+&lt;div class="book-cover"&gt;
+&lt;img src="https://marcin.cylke.com.pl/post_images/books-i-read-september-2024-1.png" alt="Persepolis Book Cover" /&gt;
+&lt;/div&gt;
+&lt;div class="review-text"&gt;
+&lt;h2&gt;Book Review: &lt;em&gt;Persepolis&lt;/em&gt; by Marjane Satrapi&lt;/h2&gt;
+&lt;ul&gt;
 &lt;li&gt;A classic. This graphic novel chronicles the experience of growing up and living in Iran before, during, and after the Islamic Revolution. The most vivid and shocking part of the story takes place in Iran.&lt;/li&gt;
 &lt;li&gt;The second part, about living in Austria as an immigrant, is less engaging. I found it most enjoyable when the action returned to Iran, highlighting the stark contrast between the two countries, and more importantly, the people.&lt;/li&gt;
 &lt;li&gt;Highly recommended!&lt;/li&gt;
 &lt;/ul&gt;
-
-    &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div class=&#34;review-container&#34;&gt;
-    &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-september-2024-2.png&#34; alt=&#34;Blankets Book Cover&#34; /&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;review-text&#34;&gt;
-        &lt;h2&gt;Book Review: &lt;em&gt;Blankets&lt;/em&gt; by Craig Thompson&lt;/h2&gt;
-
-        &lt;ul&gt;
+&lt;/div&gt;
+&lt;div class="review-container"&gt;
+&lt;div class="book-cover"&gt;
+&lt;img src="https://marcin.cylke.com.pl/post_images/books-i-read-september-2024-2.png" alt="Blankets Book Cover" /&gt;
+&lt;/div&gt;
+&lt;div class="review-text"&gt;
+&lt;h2&gt;Book Review: &lt;em&gt;Blankets&lt;/em&gt; by Craig Thompson&lt;/h2&gt;
+&lt;ul&gt;
 &lt;li&gt;An autobiographical graphic novel that tells the story of growing up in a deeply religious family and how it shaped the author&amp;rsquo;s first love and transition to adulthood.&lt;/li&gt;
 &lt;li&gt;Not my favorite.&lt;/li&gt;
 &lt;/ul&gt;
-
-    &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div class=&#34;review-container&#34;&gt;
-    &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-september-2024-3.png&#34; alt=&#34;Ghostmoney Book Cover&#34; /&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;review-text&#34;&gt;
-        &lt;h2&gt;Book Review: &lt;em&gt;Ghostmoney&lt;/em&gt; by Smolderen &amp;amp; Bertail&lt;/h2&gt;
-
-        &lt;ul&gt;
+&lt;/div&gt;
+&lt;div class="review-container"&gt;
+&lt;div class="book-cover"&gt;
+&lt;img src="https://marcin.cylke.com.pl/post_images/books-i-read-september-2024-3.png" alt="Ghostmoney Book Cover" /&gt;
+&lt;/div&gt;
+&lt;div class="review-text"&gt;
+&lt;h2&gt;Book Review: &lt;em&gt;Ghostmoney&lt;/em&gt; by Smolderen &amp;amp; Bertail&lt;/h2&gt;
+&lt;ul&gt;
 &lt;li&gt;I really enjoyed this graphic novel. It&amp;rsquo;s set in the near future and follows a wild chase for lost Al-Qaeda money. The story is told from multiple perspectives, involving politics and a somewhat exaggerated portrayal of shady U.S. dealings around the world.&lt;/li&gt;
 &lt;li&gt;The art style is atmospheric, with some parts being quite dark and gritty, while others depict futuristic, beautifully rendered Middle Eastern cities.&lt;/li&gt;
 &lt;li&gt;As for the plot—it&amp;rsquo;s not too deep, but it’s still enjoyable.&lt;/li&gt;
 &lt;/ul&gt;
-
-    &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div class=&#34;review-container&#34;&gt;
-    &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-september-2024-4.png&#34; alt=&#34;Sandworm Book Cover&#34; /&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;review-text&#34;&gt;
-        &lt;h2&gt;Book Review: &lt;em&gt;Sandworm&lt;/em&gt; by Andy Greenberg&lt;/h2&gt;
-
-        &lt;ul&gt;
+&lt;/div&gt;
+&lt;div class="review-container"&gt;
+&lt;div class="book-cover"&gt;
+&lt;img src="https://marcin.cylke.com.pl/post_images/books-i-read-september-2024-4.png" alt="Sandworm Book Cover" /&gt;
+&lt;/div&gt;
+&lt;div class="review-text"&gt;
+&lt;h2&gt;Book Review: &lt;em&gt;Sandworm&lt;/em&gt; by Andy Greenberg&lt;/h2&gt;
+&lt;ul&gt;
 &lt;li&gt;A brilliant book that dives into the dangers of cyberwarfare. It covers nation-sponsored cyberattacks on infrastructure and emphasizes the urgent need for securing networks. The book paints a grim picture of potential future cyberattacks, especially with state-sponsored groups using zero-day vulnerabilities against individuals and institutions.&lt;/li&gt;
 &lt;li&gt;It reads like a thriller, except the stakes are real.&lt;/li&gt;
 &lt;li&gt;I&amp;rsquo;d compare it to Kim Zetter&amp;rsquo;s &lt;em&gt;Countdown to Zero Day&lt;/em&gt; about Stuxnet. Personally, I would have enjoyed more technical details, but it was a great read nonetheless.&lt;/li&gt;
 &lt;/ul&gt;
-
-    &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;h2 id=&#34;from-pocket&#34;&gt;From Pocket&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Recent:&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Watercolor portrait - made by AI</title>
-      <link>https://marcin.cylke.com.pl/2024/10/04/watercolor-portrait-made-by-ai/</link>
-      <pubDate>Fri, 04 Oct 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2024/10/04/watercolor-portrait-made-by-ai/</guid>
-      <description>&lt;figure class=&#34;blog-post-image&#34;&gt;
-  
-    &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/watercolor-portrait-made-by-ai-0.png&#34;  /&gt;
-    
-    
-      &lt;figcaption&gt;
-        &lt;h4&gt;&amp;nbspAn example illustration&lt;/h4&gt;
-        
-      &lt;/figcaption&gt;
-  
+&lt;/div&gt;
+&lt;h2 id="from-pocket"&gt;From Pocket&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Recent:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Watercolor portrait - made by AI</title><link>https://marcin.cylke.com.pl/2024/10/04/watercolor-portrait-made-by-ai/</link><pubDate>Fri, 04 Oct 2024 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2024/10/04/watercolor-portrait-made-by-ai/</guid><description>&lt;figure class="blog-post-image"&gt;
+&lt;img src="https://marcin.cylke.com.pl/post_images/watercolor-portrait-made-by-ai-0.png" /&gt;
+&lt;figcaption&gt;
+&lt;h4&gt;&amp;nbspAn example illustration&lt;/h4&gt;
+&lt;/figcaption&gt;
 &lt;/figure&gt;
-
-
-&lt;p&gt;This article is inspired by a post I&amp;rsquo;ve stumbled upon on LinkedIn, by &lt;a href=&#34;https://www.linkedin.com/posts/appenz_flux-is-incredibly-good-to-generate-profile-activity-7231716430889541632-0XL8&#34;&gt;Guido Appenzeller&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This article is inspired by a post I&amp;rsquo;ve stumbled upon on LinkedIn, by &lt;a href="https://www.linkedin.com/posts/appenz_flux-is-incredibly-good-to-generate-profile-activity-7231716430889541632-0XL8"&gt;Guido Appenzeller&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Below you can find a reinterpretation of his post. With added details here, and there. The reason for that, is twofold - a) I really like the workflow, b) the original post is missing some details for a first-time user of those tools.&lt;/p&gt;
-&lt;p&gt;Flux is incredibly good to generate profile pictures, for example this Watercolor one. Below a quick tutorial how to do it. Total cost is ~$5. Uses &lt;a href=&#34;https://www.linkedin.com/company/huggingface/&#34;&gt;Hugging Face&lt;/a&gt; and &lt;a href=&#34;https://www.linkedin.com/company/replicate/&#34;&gt;Replicate&lt;/a&gt;.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Convenient search in my Obsidian notes</title>
-      <link>https://marcin.cylke.com.pl/2024/09/24/convenient-search-in-my-obsidian-notes/</link>
-      <pubDate>Tue, 24 Sep 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2024/09/24/convenient-search-in-my-obsidian-notes/</guid>
-      <description>&lt;p&gt;I came across this idea of better search in Obsidian notes: &lt;a href=&#34;https://simplyexplained.com/blog/how-i-use-alfred-to-search-obsidian-notes/&#34;&gt;https://simplyexplained.com/blog/how-i-use-alfred-to-search-obsidian-notes/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Flux is incredibly good to generate profile pictures, for example this Watercolor one. Below a quick tutorial how to do it. Total cost is ~$5. Uses &lt;a href="https://www.linkedin.com/company/huggingface/"&gt;Hugging Face&lt;/a&gt; and &lt;a href="https://www.linkedin.com/company/replicate/"&gt;Replicate&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Convenient search in my Obsidian notes</title><link>https://marcin.cylke.com.pl/2024/09/24/convenient-search-in-my-obsidian-notes/</link><pubDate>Tue, 24 Sep 2024 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2024/09/24/convenient-search-in-my-obsidian-notes/</guid><description>&lt;p&gt;I came across this idea of better search in Obsidian notes: &lt;a href="https://simplyexplained.com/blog/how-i-use-alfred-to-search-obsidian-notes/"&gt;https://simplyexplained.com/blog/how-i-use-alfred-to-search-obsidian-notes/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;This should work nicely, but:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;it would require installing an additional tool Alfred,&lt;/li&gt;
 &lt;li&gt;would bind even more to MacOS ecosystem - what if I want to use the same workflow on Linux,&lt;/li&gt;
 &lt;li&gt;would not be too VCS friendly - hard to version those UI wizards&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;So I&amp;rsquo;ve figured I can do better, with just CLI tools. That resulted in the following short script:&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Youtube video - generate summary</title>
-      <link>https://marcin.cylke.com.pl/2024/09/17/youtube-video-generate-summary/</link>
-      <pubDate>Tue, 17 Sep 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2024/09/17/youtube-video-generate-summary/</guid>
-      <description>&lt;figure class=&#34;blog-post-image&#34;&gt;
-  
-    &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/maciej-je-generate-summary-0.png&#34;  /&gt;
-    
-    
-      &lt;figcaption&gt;
-        &lt;h4&gt;&amp;nbspAn influencer cooking a meal&lt;/h4&gt;
-        
-      &lt;/figcaption&gt;
-  
+&lt;p&gt;So I&amp;rsquo;ve figured I can do better, with just CLI tools. That resulted in the following short script:&lt;/p&gt;</description></item><item><title>Youtube video - generate summary</title><link>https://marcin.cylke.com.pl/2024/09/17/youtube-video-generate-summary/</link><pubDate>Tue, 17 Sep 2024 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2024/09/17/youtube-video-generate-summary/</guid><description>&lt;figure class="blog-post-image"&gt;
+&lt;img src="https://marcin.cylke.com.pl/post_images/maciej-je-generate-summary-0.png" /&gt;
+&lt;figcaption&gt;
+&lt;h4&gt;&amp;nbspAn influencer cooking a meal&lt;/h4&gt;
+&lt;/figcaption&gt;
 &lt;/figure&gt;
-
-
 &lt;p&gt;I really like watching some culinary channels on Youtube. Those can be roughly divided into two categories:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;people cooking some specific recipe&lt;/li&gt;
 &lt;li&gt;people doing a review of a restaurant or a bunch of them&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;It&amp;rsquo;s nice to watch, but after that not too much I can keep from that. If I like a specific recipe, and I&amp;rsquo;d like to cook that think it&amp;rsquo;s really counter productive to try cooking from the video. I&amp;rsquo;d constantly need to pause, rewind, replay specific fragments.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Extracting articles from Pocket - or ChatGPT for the needed but not interesting stuff</title>
-      <link>https://marcin.cylke.com.pl/2024/08/26/extracting-articles-from-pocket-or-chatgpt-for-the-needed-but-not-interesting-stuff/</link>
-      <pubDate>Mon, 26 Aug 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2024/08/26/extracting-articles-from-pocket-or-chatgpt-for-the-needed-but-not-interesting-stuff/</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;Prompt: An illustrated medium shot of a man with a backpack starting an adventure into a land of wild newspaper articles. The man is standing in a forest of newspaper stands. The background has an old-fashioned town with buildings made of bricks. The overall image has a warm hue.&#34; loading=&#34;lazy&#34; src=&#34;https://marcin.cylke.com.pl/post_images/extracting-articles-from-pocket-or-chatgpt-for-the-needed-but-not-interesting-stuff-0.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://getpocket.com&#34;&gt;Pocket&lt;/a&gt; is a nice service. It can save articles from the web for you to read later. Nice. It can even help in bypassing annoying paywalls (more on this &lt;a href=&#34;https://marcin.cylke.com.pl/2024/02/29/payload-after-load/&#34;&gt;here&lt;/a&gt;). With the ease of using it, I can quickly end up with a substantial backlog of articles to go through. Since reading long articles on a screen feels like a chore, I came up with the idea of exporting articles into EPub format and reading them on an e-reader.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Tracers in the dark</title>
-      <link>https://marcin.cylke.com.pl/2024/08/08/tracers-in-the-dark/</link>
-      <pubDate>Thu, 08 Aug 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2024/08/08/tracers-in-the-dark/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Disclaimer&lt;/strong&gt;: This blogpost is not about a specific book, titled &lt;a href=&#34;https://www.amazon.com/Tracers-Dark-Global-Crime-Cryptocurrency/dp/0385548095&#34;&gt;Tracers in the Dark: The Global Hunt for the Crime Lords of Cryptocurrency&lt;/a&gt;. It&amp;rsquo;s just about execution traces.&lt;/p&gt;
-&lt;p&gt;I wanted to explore a few techniques for visualising inter-dependencies between fragments of code, modules, etc. Say, you have multiple functions and you want to get some bearing on how much each execution of each of those functions takes. Or you have a complicated system, and you&amp;rsquo;d like to plot remote calls in this system.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Get to your AWS host with ease</title>
-      <link>https://marcin.cylke.com.pl/2024/06/27/get-to-your-aws-host-with-ease/</link>
-      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2024/06/27/get-to-your-aws-host-with-ease/</guid>
-      <description>&lt;p&gt;If you deploy to cloud, ideally you should be able to analyze and debug your system using observability tools. There should be no need to log in to your hosts directly. But life is life, and there might be issues with this or that, and to debug them, direct access to a host is just much easier.&lt;/p&gt;
-&lt;p&gt;Instead of doing a long sequence of clicks through your WebUI in AWS console, you can also access your host with a script.&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;It&amp;rsquo;s nice to watch, but after that not too much I can keep from that. If I like a specific recipe, and I&amp;rsquo;d like to cook that think it&amp;rsquo;s really counter productive to try cooking from the video. I&amp;rsquo;d constantly need to pause, rewind, replay specific fragments.&lt;/p&gt;</description></item><item><title>Extracting articles from Pocket - or ChatGPT for the needed but not interesting stuff</title><link>https://marcin.cylke.com.pl/2024/08/26/extracting-articles-from-pocket-or-chatgpt-for-the-needed-but-not-interesting-stuff/</link><pubDate>Mon, 26 Aug 2024 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2024/08/26/extracting-articles-from-pocket-or-chatgpt-for-the-needed-but-not-interesting-stuff/</guid><description>&lt;p&gt;&lt;img src="https://marcin.cylke.com.pl/post_images/extracting-articles-from-pocket-or-chatgpt-for-the-needed-but-not-interesting-stuff-0.png" alt="Prompt: An illustrated medium shot of a man with a backpack starting an adventure into a land of wild newspaper articles. The man is standing in a forest of newspaper stands. The background has an old-fashioned town with buildings made of bricks. The overall image has a warm hue."&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://getpocket.com"&gt;Pocket&lt;/a&gt; is a nice service. It can save articles from the web for you to read later. Nice. It can even help in bypassing annoying paywalls (more on this &lt;a href="https://marcin.cylke.com.pl/2024/02/29/payload-after-load/"&gt;here&lt;/a&gt;). With the ease of using it, I can quickly end up with a substantial backlog of articles to go through. Since reading long articles on a screen feels like a chore, I came up with the idea of exporting articles into EPub format and reading them on an e-reader.&lt;/p&gt;</description></item><item><title>Tracers in the dark</title><link>https://marcin.cylke.com.pl/2024/08/08/tracers-in-the-dark/</link><pubDate>Thu, 08 Aug 2024 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2024/08/08/tracers-in-the-dark/</guid><description>&lt;p&gt;&lt;strong&gt;Disclaimer&lt;/strong&gt;: This blogpost is not about a specific book, titled &lt;a href="https://www.amazon.com/Tracers-Dark-Global-Crime-Cryptocurrency/dp/0385548095"&gt;Tracers in the Dark: The Global Hunt for the Crime Lords of Cryptocurrency&lt;/a&gt;. It&amp;rsquo;s just about execution traces.&lt;/p&gt;
+&lt;p&gt;I wanted to explore a few techniques for visualising inter-dependencies between fragments of code, modules, etc. Say, you have multiple functions and you want to get some bearing on how much each execution of each of those functions takes. Or you have a complicated system, and you&amp;rsquo;d like to plot remote calls in this system.&lt;/p&gt;</description></item><item><title>Get to your AWS host with ease</title><link>https://marcin.cylke.com.pl/2024/06/27/get-to-your-aws-host-with-ease/</link><pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2024/06/27/get-to-your-aws-host-with-ease/</guid><description>&lt;p&gt;If you deploy to cloud, ideally you should be able to analyze and debug your system using observability tools. There should be no need to log in to your hosts directly. But life is life, and there might be issues with this or that, and to debug them, direct access to a host is just much easier.&lt;/p&gt;
+&lt;p&gt;Instead of doing a long sequence of clicks through your WebUI in AWS console, you can also access your host with a script.&lt;/p&gt;</description></item></channel></rss>

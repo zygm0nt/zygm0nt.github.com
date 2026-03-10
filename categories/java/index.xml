@@ -1,40 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Java on Tech ramblings by Marcin</title>
-    <link>https://marcin.cylke.com.pl/categories/java/</link>
-    <description>Recent content in Java on Tech ramblings by Marcin</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 24 Jun 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/java/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Zookeeper &#43; Curator = Distributed sync</title>
-      <link>https://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/</link>
-      <pubDate>Mon, 24 Jun 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/</guid>
-      <description>&lt;p class=&#34;c8&#34;&gt;&lt;img height=&#34;300&#34; src=&#34;https://marcin.cylke.com.pl/assets/2013-06-24-zookeeper-curator.jpg&#34;&gt;&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c8&#34;&gt;
-    &lt;span&gt;An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system&amp;rsquo;s components. Since I had already a few separate components I didn&amp;rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I&amp;rsquo;ve decided to go that way with my solution.&lt;/span&gt;
-&lt;/p&gt;&lt;h2 class=&#34;c8&#34;&gt;&lt;a name=&#34;h.v629433u6utf&#34;&gt;&lt;/a&gt;&lt;span&gt;What is Zookeeper?&lt;/span&gt;&lt;/h2&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;Just a crude distributed synchronization framework. However, it implements Paxos-style algorithms (&lt;/span&gt;&lt;span
-        class=&#34;c5&#34;&gt;&lt;a class=&#34;c0&#34; href=&#34;http://en.wikipedia.org/wiki/Paxos_(computer_science)&#34;&gt;http://en.wikipedia.org/wiki/Paxos_(computer_science)&lt;/a&gt;&lt;/span&gt;&lt;span&gt;) to ensure no split-brain scenarios would occur. This is quite an important feature, since I don&amp;rsquo;t have to care about that kind of problems while using this app. You just need to create an ensemble of a couple of its instances - to ensure high availability. It is basically a virtual filesystem, with files, directories and stuff. One could ask why another filesystem? Well this one is a rather special one, especially for distributed systems. The reason why creating all the locking algorithms on top of Zookeeper is easy is its Ephemeral Nodes - which are just files that exist as long as connection for them exists. After it disconnects - such file disappears. &lt;/span&gt;
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Operational problems with Zookeeper</title>
-      <link>https://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/</link>
-      <pubDate>Thu, 21 Mar 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/</guid>
-      <description>&lt;p&gt;This post is a summary of what has been presented by Kathleen Ting on
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Java on Tech ramblings by Marcin</title><link>https://marcin.cylke.com.pl/categories/java/</link><description>Recent content in Java on Tech ramblings by Marcin</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 24 Jun 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/java/index.xml" rel="self" type="application/rss+xml"/><item><title>Zookeeper + Curator = Distributed sync</title><link>https://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/</link><pubDate>Mon, 24 Jun 2013 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/</guid><description>&lt;p class="c8"&gt;&lt;img height="300" src="https://marcin.cylke.com.pl/assets/2013-06-24-zookeeper-curator.jpg"&gt;&lt;/p&gt;&lt;p class="c1"&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class="c8"&gt;
+&lt;span&gt;An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system&amp;rsquo;s components. Since I had already a few separate components I didn&amp;rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I&amp;rsquo;ve decided to go that way with my solution.&lt;/span&gt;
+&lt;/p&gt;&lt;h2 class="c8"&gt;&lt;a name="h.v629433u6utf"&gt;&lt;/a&gt;&lt;span&gt;What is Zookeeper?&lt;/span&gt;&lt;/h2&gt;&lt;p class="c8"&gt;&lt;span&gt;Just a crude distributed synchronization framework. However, it implements Paxos-style algorithms (&lt;/span&gt;&lt;span
+class="c5"&gt;&lt;a class="c0" href="http://en.wikipedia.org/wiki/Paxos_(computer_science)"&gt;http://en.wikipedia.org/wiki/Paxos_(computer_science)&lt;/a&gt;&lt;/span&gt;&lt;span&gt;) to ensure no split-brain scenarios would occur. This is quite an important feature, since I don&amp;rsquo;t have to care about that kind of problems while using this app. You just need to create an ensemble of a couple of its instances - to ensure high availability. It is basically a virtual filesystem, with files, directories and stuff. One could ask why another filesystem? Well this one is a rather special one, especially for distributed systems. The reason why creating all the locking algorithms on top of Zookeeper is easy is its Ephemeral Nodes - which are just files that exist as long as connection for them exists. After it disconnects - such file disappears. &lt;/span&gt;
+&lt;/p&gt;</description></item><item><title>Operational problems with Zookeeper</title><link>https://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/</link><pubDate>Thu, 21 Mar 2013 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/</guid><description>&lt;p&gt;This post is a summary of what has been presented by Kathleen Ting on
 StrangeLoop conference. You can watch the original here:
-&lt;a href=&#34;http://www.infoq.com/presentations/Misconfiguration-ZooKeeper&#34;&gt;http://www.infoq.com/presentations/Misconfiguration-ZooKeeper&lt;/a&gt;&lt;/p&gt;
+&lt;a href="http://www.infoq.com/presentations/Misconfiguration-ZooKeeper"&gt;http://www.infoq.com/presentations/Misconfiguration-ZooKeeper&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;ve decided to put this selection here for quick reference.&lt;/p&gt;
-&lt;h2 id=&#34;connection-mismanagement&#34;&gt;Connection mismanagement&lt;/h2&gt;
+&lt;h2 id="connection-mismanagement"&gt;Connection mismanagement&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;too many connections&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;  WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - Too many connections from /xx.x.xx.xxx - max is 60
+&lt;pre&gt;&lt;code&gt; WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - Too many connections from /xx.x.xx.xxx - max is 60
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -53,24 +29,11 @@ StrangeLoop conference. You can watch the original here:
 &lt;/ul&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;connection closes prematurely&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Hadoop HA setup</title>
-      <link>https://marcin.cylke.com.pl/2012/10/30/hadoop-ha/</link>
-      <pubDate>Tue, 30 Oct 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2012/10/30/hadoop-ha/</guid>
-      <description>&lt;p&gt;With the advent of Hadoop&amp;rsquo;s 2.x version, there finally is a working
+&lt;p&gt;connection closes prematurely&lt;/p&gt;</description></item><item><title>Hadoop HA setup</title><link>https://marcin.cylke.com.pl/2012/10/30/hadoop-ha/</link><pubDate>Tue, 30 Oct 2012 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2012/10/30/hadoop-ha/</guid><description>&lt;p&gt;With the advent of Hadoop&amp;rsquo;s 2.x version, there finally is a working
 High-Availability solution. Even two of those. Now it really is easy to
 configure and use those solutions. It no longer require external
 components, like
-&lt;a href=&#34;http://blog.cloudera.com/blog/2009/07/hadoop-ha-configuration/&#34;&gt;DRBD&lt;/a&gt;.
+&lt;a href="http://blog.cloudera.com/blog/2009/07/hadoop-ha-configuration/"&gt;DRBD&lt;/a&gt;.
 It all is just neatly packed into Cloudera Hadoop distribution - the
 precursor of this solution.&lt;/p&gt;
-&lt;p&gt;Read on to find out how to use it.&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;Read on to find out how to use it.&lt;/p&gt;</description></item></channel></rss>
