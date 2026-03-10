@@ -1,21 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Miniblog on Tech ramblings by Marcin</title>
-    <link>https://marcin.cylke.com.pl/categories/Miniblog/</link>
-    <description>Recent content in Miniblog on Tech ramblings by Marcin</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 21 Apr 2010 18:01:59 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/Miniblog/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Reaktywacja o-filmoramy?</title>
-      <link>https://marcin.cylke.com.pl/2010/04/21/reaktywacja-o-filmoramy/</link>
-      <pubDate>Wed, 21 Apr 2010 18:01:59 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2010/04/21/reaktywacja-o-filmoramy/</guid>
-      <description> Mam nadzieję, że wreszcie jednak ruszę z blogiem filmowym, po raz kolejny należy mu się reaktywacja.
-http://o-filmorama.blogspot.com </description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Miniblog on Tech ramblings by Marcin</title><link>https://marcin.cylke.com.pl/categories/Miniblog/</link><description>Recent content in Miniblog on Tech ramblings by Marcin</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 21 Apr 2010 18:01:59 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/Miniblog/index.xml" rel="self" type="application/rss+xml"/><item><title>Reaktywacja o-filmoramy?</title><link>https://marcin.cylke.com.pl/2010/04/21/reaktywacja-o-filmoramy/</link><pubDate>Wed, 21 Apr 2010 18:01:59 +0000</pubDate><guid>https://marcin.cylke.com.pl/2010/04/21/reaktywacja-o-filmoramy/</guid><description>&lt;div class='post'&gt;
+&lt;p&gt;Mam nadzieję, że wreszcie jednak ruszę z blogiem filmowym, po raz kolejny należy mu się reaktywacja.&lt;/p&gt;
+&lt;A href="http://o-filmorama.blogspot.com"&gt;http://o-filmorama.blogspot.com&lt;/a&gt;
+&lt;/div&gt;</description></item></channel></rss>
