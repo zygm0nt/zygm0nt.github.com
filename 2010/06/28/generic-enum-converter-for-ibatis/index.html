@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
-
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Generic Enum converter for iBatis | Tech ramblings by Marcin</title>
-<meta name="keywords" content="">
-<meta name="description" content="
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Generic Enum converter for iBatis | Tech ramblings by Marcin</title><meta name=keywords content><meta name=description content="
 My goal was to create a simple, extensible Enum converter that would work with iBatis. This seems like a trivial problem, but took me a while to find a proper solution.
 
 There were some additional preconditions:
@@ -18,221 +9,11 @@ all given Enums are jaxb generated objects - but any standard Java Enum should w
 conversion was 1-to-1, no special conditions and processing
 
 
-The example Enum for this problem looks like this one (copy&amp;paste from jaxb generated source):">
-<meta name="author" content="Marcin Cylke">
-<link rel="canonical" href="https://marcin.cylke.com.pl/2010/06/28/generic-enum-converter-for-ibatis/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://marcin.cylke.com.pl/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://marcin.cylke.com.pl/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://marcin.cylke.com.pl/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://marcin.cylke.com.pl/apple-touch-icon.png">
-<link rel="mask-icon" href="https://marcin.cylke.com.pl/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://marcin.cylke.com.pl/2010/06/28/generic-enum-converter-for-ibatis/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-        @media (prefers-color-scheme: light) {
-            .list::-webkit-scrollbar-thumb {
-                border-color: var(--code-bg);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><link rel="stylesheet" href="/css/book_section.css">
-<meta property="og:url" content="https://marcin.cylke.com.pl/2010/06/28/generic-enum-converter-for-ibatis/">
-  <meta property="og:site_name" content="Tech ramblings by Marcin">
-  <meta property="og:title" content="Generic Enum converter for iBatis">
-  <meta property="og:description" content="My goal was to create a simple, extensible Enum converter that would work with iBatis. This seems like a trivial problem, but took me a while to find a proper solution.
-There were some additional preconditions: all given Enums are jaxb generated objects - but any standard Java Enum should work conversion was 1-to-1, no special conditions and processing The example Enum for this problem looks like this one (copy&amp;paste from jaxb generated source):">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2010-06-28T20:40:34+00:00">
-    <meta property="article:modified_time" content="2010-06-28T20:40:34+00:00">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Generic Enum converter for iBatis">
-  <meta name="twitter:description" content="My goal was to create a simple, extensible Enum converter that would work with iBatis. This seems like a trivial problem, but took me a while to find a proper solution.
-There were some additional preconditions: all given Enums are jaxb generated objects - but any standard Java Enum should work conversion was 1-to-1, no special conditions and processing The example Enum for this problem looks like this one (copy&amp;paste from jaxb generated source):">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://marcin.cylke.com.pl/post/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Generic Enum converter for iBatis",
-      "item": "https://marcin.cylke.com.pl/2010/06/28/generic-enum-converter-for-ibatis/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Generic Enum converter for iBatis",
-  "name": "Generic Enum converter for iBatis",
-  "description": " My goal was to create a simple, extensible Enum converter that would work with iBatis. This seems like a trivial problem, but took me a while to find a proper solution.\nThere were some additional preconditions: all given Enums are jaxb generated objects - but any standard Java Enum should work conversion was 1-to-1, no special conditions and processing The example Enum for this problem looks like this one (copy\u0026amp;paste from jaxb generated source):\n",
-  "keywords": [
-    
-  ],
-  "articleBody": " My goal was to create a simple, extensible Enum converter that would work with iBatis. This seems like a trivial problem, but took me a while to find a proper solution.\nThere were some additional preconditions: all given Enums are jaxb generated objects - but any standard Java Enum should work conversion was 1-to-1, no special conditions and processing The example Enum for this problem looks like this one (copy\u0026paste from jaxb generated source):\n@XmlType(name =\"ServiceType\") @XmlEnum public enum ServiceType { @XmlEnumValue(\"stationary\") STATIONARY(\"stationary\"), @XmlEnumValue(\"mobile\") MOBILE(\"mobile\"); private final String value; ServiceType(String v) { value = v; } public String value() { return value; } public static ServiceType fromValue(String v) { for (ServiceType c: ServiceType.values()) { if (c.value.equals(v)) { return c; } } throw new IllegalArgumentException(v); } } \"No big deal\", you say. I beg to differ. What I wanted to achieve was a simple construction which would look like this when used for another Enum (CommonEnumTypeHandler is the name of my generic converter): public class ServiceTypeHandler extends CommonEnumTypeHandler { } Unfortunately due to the fact, that Java does not have reified generics, which is described in multiple places, I had to stick with passing through a Class type of my enum. So it looks like this:\npublic class ServiceTypeHandler extends CommonEnumTypeHandler { public ServiceTypeHandler() { super(ServiceType.class); } } My final class has to look like this one below:\nimport java.sql.SQLException; import com.ibatis.sqlmap.client.extensions.ParameterSetter; import com.ibatis.sqlmap.client.extensions.ResultGetter; import com.ibatis.sqlmap.client.extensions.TypeHandlerCallback; public abstract class CommonEnumTypeHandler implements TypeHandlerCallback { Class enumClass; public CommonEnumTypeHandler(Class clazz) { this.enumClass = clazz; } public void setParameter(ParameterSetter ps, Object o) throws SQLException { if (o.getClass().isAssignableFrom(enumClass)) { ps.setString(((T) o).name().toUpperCase()); } else throw new SQLException(\"Excpected \" + enumClass + \" object than: \" + o); } public Object getResult(ResultGetter rs) throws SQLException { Object o = valueOf(rs.getString()); if (o == null) throw new SQLException(\"Unknown parameter type: \" + rs.getString()); return o; } public Object valueOf(String s) { return Enum.valueOf(enumClass, s.toUpperCase()); } } ",
-  "wordCount" : "318",
-  "inLanguage": "en",
-  "datePublished": "2010-06-28T20:40:34Z",
-  "dateModified": "2010-06-28T20:40:34Z",
-  "author":{
-    "@type": "Person",
-    "name": "Marcin Cylke"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://marcin.cylke.com.pl/2010/06/28/generic-enum-converter-for-ibatis/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Tech ramblings by Marcin",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://marcin.cylke.com.pl/favicon.ico"
-    }
-  }
-}
-</script>
-</head>
-<body id="top">
-    <header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="https://marcin.cylke.com.pl/" accesskey="h" title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu">
-            <li>
-                <a href="https://marcin.cylke.com.pl/about/" title="About">
-                    <span>About</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://marcin.cylke.com.pl/tags/" title="Tags">
-                    <span>Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://marcin.cylke.com.pl/categories/" title="Categories">
-                    <span>Categories</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://marcin.cylke.com.pl/archives/" title="Archives">
-                    <span>Archives</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main">
-
-<article class="post-single">
-  <header class="post-header">
-    <div class="breadcrumbs"><a href="https://marcin.cylke.com.pl/">Home</a>&nbsp;»&nbsp;<a href="https://marcin.cylke.com.pl/post/">Posts</a></div>
-    <h1 class="post-title entry-hint-parent">
-      Generic Enum converter for iBatis
-    </h1>
-    <div class="post-meta"><span title='2010-06-28 20:40:34 +0000 UTC'>June 28, 2010</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span>
-
-</div>
-  </header> 
-
-  <div class="post-content">
-<div class='post'>
-<p>My goal was to create a simple, extensible Enum converter that would work with <a href="http://www.mybatis.org/">iBatis</a>. This seems like a trivial problem, but took me a while to find a proper solution.</p>
-<EXCERPT><p>
-There were some additional preconditions:
-</p>
-
-<ul>
-<li>all given Enums are jaxb generated objects - but any standard Java Enum should work</li>
-<li>conversion was 1-to-1, no special conditions and processing
-</ul>
-
-<p>The example Enum for this problem looks like this one (copy&amp;paste from jaxb generated source):</p>
-
-<pre>
+The example Enum for this problem looks like this one (copy&amp;paste from jaxb generated source):"><meta name=author content="Marcin Cylke"><link rel=canonical href=https://marcin.cylke.com.pl/2010/06/28/generic-enum-converter-for-ibatis/><link crossorigin=anonymous href=/assets/css/stylesheet.2ef88c6e9b91917ba47ee47c08eceac58e4063f58023c5794d790144e14eeb83.css integrity="sha256-LviMbpuRkXukfuR8COzqxY5AY/WAI8V5TXkBROFO64M=" rel="preload stylesheet" as=style><link rel=icon href=https://marcin.cylke.com.pl/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://marcin.cylke.com.pl/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://marcin.cylke.com.pl/favicon-32x32.png><link rel=apple-touch-icon href=https://marcin.cylke.com.pl/apple-touch-icon.png><link rel=mask-icon href=https://marcin.cylke.com.pl/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://marcin.cylke.com.pl/2010/06/28/generic-enum-converter-for-ibatis/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><link rel=stylesheet href=/css/book_section.css><link rel=stylesheet href=/css/on_this_day.css><link rel=stylesheet href=/css/til.css><script defer src=/js/code-highlight.js></script><meta property="og:url" content="https://marcin.cylke.com.pl/2010/06/28/generic-enum-converter-for-ibatis/"><meta property="og:site_name" content="Tech ramblings by Marcin"><meta property="og:title" content="Generic Enum converter for iBatis"><meta property="og:description" content="My goal was to create a simple, extensible Enum converter that would work with iBatis. This seems like a trivial problem, but took me a while to find a proper solution.
+There were some additional preconditions: all given Enums are jaxb generated objects - but any standard Java Enum should work conversion was 1-to-1, no special conditions and processing The example Enum for this problem looks like this one (copy&amp;paste from jaxb generated source):"><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2010-06-28T20:40:34+00:00"><meta property="article:modified_time" content="2010-06-28T20:40:34+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Generic Enum converter for iBatis"><meta name=twitter:description content="My goal was to create a simple, extensible Enum converter that would work with iBatis. This seems like a trivial problem, but took me a while to find a proper solution.
+There were some additional preconditions: all given Enums are jaxb generated objects - but any standard Java Enum should work conversion was 1-to-1, no special conditions and processing The example Enum for this problem looks like this one (copy&amp;paste from jaxb generated source):"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://marcin.cylke.com.pl/post/"},{"@type":"ListItem","position":2,"name":"Generic Enum converter for iBatis","item":"https://marcin.cylke.com.pl/2010/06/28/generic-enum-converter-for-ibatis/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Generic Enum converter for iBatis","name":"Generic Enum converter for iBatis","description":" My goal was to create a simple, extensible Enum converter that would work with iBatis. This seems like a trivial problem, but took me a while to find a proper solution.\nThere were some additional preconditions: all given Enums are jaxb generated objects - but any standard Java Enum should work conversion was 1-to-1, no special conditions and processing The example Enum for this problem looks like this one (copy\u0026amp;paste from jaxb generated source):\n","keywords":[],"articleBody":" My goal was to create a simple, extensible Enum converter that would work with iBatis. This seems like a trivial problem, but took me a while to find a proper solution.\nThere were some additional preconditions: all given Enums are jaxb generated objects - but any standard Java Enum should work conversion was 1-to-1, no special conditions and processing The example Enum for this problem looks like this one (copy\u0026paste from jaxb generated source):\n@XmlType(name =\"ServiceType\") @XmlEnum public enum ServiceType { @XmlEnumValue(\"stationary\") STATIONARY(\"stationary\"), @XmlEnumValue(\"mobile\") MOBILE(\"mobile\"); private final String value; ServiceType(String v) { value = v; } public String value() { return value; } public static ServiceType fromValue(String v) { for (ServiceType c: ServiceType.values()) { if (c.value.equals(v)) { return c; } } throw new IllegalArgumentException(v); } } \"No big deal\", you say. I beg to differ. What I wanted to achieve was a simple construction which would look like this when used for another Enum (CommonEnumTypeHandler is the name of my generic converter): public class ServiceTypeHandler extends CommonEnumTypeHandler { } Unfortunately due to the fact, that Java does not have reified generics, which is described in multiple places, I had to stick with passing through a Class type of my enum. So it looks like this:\npublic class ServiceTypeHandler extends CommonEnumTypeHandler { public ServiceTypeHandler() { super(ServiceType.class); } } My final class has to look like this one below:\nimport java.sql.SQLException; import com.ibatis.sqlmap.client.extensions.ParameterSetter; import com.ibatis.sqlmap.client.extensions.ResultGetter; import com.ibatis.sqlmap.client.extensions.TypeHandlerCallback; public abstract class CommonEnumTypeHandler implements TypeHandlerCallback { Class enumClass; public CommonEnumTypeHandler(Class clazz) { this.enumClass = clazz; } public void setParameter(ParameterSetter ps, Object o) throws SQLException { if (o.getClass().isAssignableFrom(enumClass)) { ps.setString(((T) o).name().toUpperCase()); } else throw new SQLException(\"Excpected \" + enumClass + \" object than: \" + o); } public Object getResult(ResultGetter rs) throws SQLException { Object o = valueOf(rs.getString()); if (o == null) throw new SQLException(\"Unknown parameter type: \" + rs.getString()); return o; } public Object valueOf(String s) { return Enum.valueOf(enumClass, s.toUpperCase()); } } ","wordCount":"318","inLanguage":"en","datePublished":"2010-06-28T20:40:34Z","dateModified":"2010-06-28T20:40:34Z","author":{"@type":"Person","name":"Marcin Cylke"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://marcin.cylke.com.pl/2010/06/28/generic-enum-converter-for-ibatis/"},"publisher":{"@type":"Organization","name":"Tech ramblings by Marcin","logo":{"@type":"ImageObject","url":"https://marcin.cylke.com.pl/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://marcin.cylke.com.pl/ accesskey=h title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://marcin.cylke.com.pl/about/ title=About><span>About</span></a></li><li><a href=https://marcin.cylke.com.pl/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://marcin.cylke.com.pl/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://marcin.cylke.com.pl/archives/ title=Archives><span>Archives</span></a></li><li><a href=https://marcin.cylke.com.pl/travels/ title=Travels><span>Travels</span></a></li><li><a href=https://marcin.cylke.com.pl/til/ title=TIL><span>TIL</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://marcin.cylke.com.pl/>Home</a>&nbsp;»&nbsp;<a href=https://marcin.cylke.com.pl/post/>Posts</a></div><h1 class="post-title entry-hint-parent">Generic Enum converter for iBatis</h1><div class=post-meta><span title='2010-06-28 20:40:34 +0000 UTC'>June 28, 2010</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></div></header><div class=post-content><div class=post><p>My goal was to create a simple, extensible Enum converter that would work with <a href=http://www.mybatis.org/>iBatis</a>. This seems like a trivial problem, but took me a while to find a proper solution.</p><excerpt><p>There were some additional preconditions:</p><ul><li>all given Enums are jaxb generated objects - but any standard Java Enum should work</li><li>conversion was 1-to-1, no special conditions and processing</ul><p>The example Enum for this problem looks like this one (copy&amp;paste from jaxb generated source):</p><pre>
 @XmlType(name ="ServiceType") 
 @XmlEnum
 public enum ServiceType {
@@ -261,41 +42,27 @@ public enum ServiceType {
     }
 
 }
-</pre>
-
-<p>
-"No big deal", you say. I beg to differ. What I wanted to achieve was a simple construction which would look like this when used for another Enum (CommonEnumTypeHandler is the name of my generic converter):
-</p>
-
-<pre>
-public class ServiceTypeHandler extends CommonEnumTypeHandler<ServiceType> { }
-</pre>
-
-<p>Unfortunately due to the fact, that Java does not have reified generics, which is described in <a href="http://stackoverflow.com/questions/1927789/why-should-i-care-that-java-doesnt-have-reified-generics">multiple</a> <a href="http://gafter.blogspot.com/2006/12/super-type-tokens.html">places</a>, I had to stick with passing through a Class type of my enum. So it looks like this:</p>
-
-<pre>
-public class ServiceTypeHandler extends CommonEnumTypeHandler<ServiceType> {
+</pre><p>"No big deal", you say. I beg to differ. What I wanted to achieve was a simple construction which would look like this when used for another Enum (CommonEnumTypeHandler is the name of my generic converter):</p><pre>
+public class ServiceTypeHandler extends CommonEnumTypeHandler<servicetype> { }
+</pre><p>Unfortunately due to the fact, that Java does not have reified generics, which is described in <a href=http://stackoverflow.com/questions/1927789/why-should-i-care-that-java-doesnt-have-reified-generics>multiple</a> <a href=http://gafter.blogspot.com/2006/12/super-type-tokens.html>places</a>, I had to stick with passing through a Class type of my enum. So it looks like this:</p><pre>
+public class ServiceTypeHandler extends CommonEnumTypeHandler<servicetype> {
 
     public ServiceTypeHandler() {
         super(ServiceType.class);
     }
 }
-</pre>
-
-<p>My final class has to look like this one below:</p>
-
-<pre>
+</pre><p>My final class has to look like this one below:</p><pre>
 import java.sql.SQLException;
 
 import com.ibatis.sqlmap.client.extensions.ParameterSetter;
 import com.ibatis.sqlmap.client.extensions.ResultGetter;
 import com.ibatis.sqlmap.client.extensions.TypeHandlerCallback;
 
-public abstract class CommonEnumTypeHandler<T extends Enum> implements TypeHandlerCallback {
+public abstract class CommonEnumTypeHandler<t extends enum> implements TypeHandlerCallback {
 
-    Class<T> enumClass;
+    Class<t> enumClass;
 
-    public CommonEnumTypeHandler(Class<T> clazz) {
+    public CommonEnumTypeHandler(Class<t> clazz) {
         this.enumClass = clazz;
     }
 
@@ -317,161 +84,9 @@ public abstract class CommonEnumTypeHandler<T extends Enum> implements TypeHandl
         return Enum.valueOf(enumClass, s.toUpperCase());
     }
 }
-</pre>
-</div>
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-    </ul>
-<nav class="paginav">
-  <a class="prev" href="https://marcin.cylke.com.pl/2010/08/12/6-hour-layover-in-stockholm/">
-    <span class="title">« Prev</span>
-    <br>
-    <span>6&#43; hour layover in Stockholm</span>
-  </a>
-  <a class="next" href="https://marcin.cylke.com.pl/2010/06/28/readability-powala/">
-    <span class="title">Next »</span>
-    <br>
-    <span>Readability powala!</span>
-  </a>
-</nav>
-
-  </footer><script src="https://utteranc.es/client.js"
-        repo="zygm0nt/hugo-blog-incarnation"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
-
-</article>
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></span> · 
-
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
-</script>
-</body>
-
-</html>
+</pre></div></div><footer class=post-footer><ul class=post-tags></ul><nav class=paginav><a class=prev href=https://marcin.cylke.com.pl/2010/08/12/6-hour-layover-in-stockholm/><span class=title>« Prev</span><br><span>6+ hour layover in Stockholm</span>
+</a><a class=next href=https://marcin.cylke.com.pl/2010/06/28/readability-powala/><span class=title>Next »</span><br><span>Readability powala!</span></a></nav></footer><script src=https://utteranc.es/client.js repo=zygm0nt/hugo-blog-incarnation issue-term=pathname theme=github-light crossorigin=anonymous async></script></article></main><footer class=footer><span>&copy; 2026 <a href=https://marcin.cylke.com.pl/>Tech ramblings by Marcin</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

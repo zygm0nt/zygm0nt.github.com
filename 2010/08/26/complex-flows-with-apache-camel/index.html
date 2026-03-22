@@ -1,290 +1,36 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Complex flows with Apache Camel | Tech ramblings by Marcin</title><meta name=keywords content><meta name=description content="
 
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Complex flows with Apache Camel | Tech ramblings by Marcin</title>
-<meta name="keywords" content="">
-<meta name="description" content="
-
-At work, we&#39;re mainly integrating services and systems, and since we&#39;re on a constant lookout for new, better
-technologies, ways to do things easier, make them more sustainable, we&#39;re trying to 
+At work, we're mainly integrating services and systems, and since we're on a constant lookout for new, better
+technologies, ways to do things easier, make them more sustainable, we're trying to 
 
 
 Usually we use Apache Camel for this task, which is a Swiss-knife for 
-integration engineer. What&#39;s more, this tools corresponds well with our approach to integration solutions:
+integration engineer. What's more, this tools corresponds well with our approach to integration solutions:
 
 
  try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits,
- don&#39;t convert XML into Java classes back and forth and be worried with problems like XML conversion,
+ don't convert XML into Java classes back and forth and be worried with problems like XML conversion,
  try to get a simple flow of the process.
 
 
 
 However, at first sight Apache Camel seems to have some drawbacks mainly
 in the area of  practical solutions ;-).
-It&#39;s very handy tool if you need to use it as a pipeline with some marginal processing of 
-the data that passes through it. It gets a lot harder to wrap your head around if you consider some 
-branching and intermediate calls to external services. This may be tricky to write properly in Camel&#39;s DSL.
-">
-<meta name="author" content="Marcin Cylke">
-<link rel="canonical" href="https://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://marcin.cylke.com.pl/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://marcin.cylke.com.pl/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://marcin.cylke.com.pl/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://marcin.cylke.com.pl/apple-touch-icon.png">
-<link rel="mask-icon" href="https://marcin.cylke.com.pl/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-        @media (prefers-color-scheme: light) {
-            .list::-webkit-scrollbar-thumb {
-                border-color: var(--code-bg);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><link rel="stylesheet" href="/css/book_section.css">
-<meta property="og:url" content="https://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/">
-  <meta property="og:site_name" content="Tech ramblings by Marcin">
-  <meta property="og:title" content="Complex flows with Apache Camel">
-  <meta property="og:description" content="At work, we&#39;re mainly integrating services and systems, and since we&#39;re on a constant lookout for new, better technologies, ways to do things easier, make them more sustainable, we&#39;re trying to Usually we use Apache Camel for this task, which is a Swiss-knife for integration engineer. What&#39;s more, this tools corresponds well with our approach to integration solutions: try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits, don&#39;t convert XML into Java classes back and forth and be worried with problems like XML conversion, try to get a simple flow of the process. However, at first sight Apache Camel seems to have some drawbacks mainly in the area of practical solutions ;-). It&#39;s very handy tool if you need to use it as a pipeline with some marginal processing of the data that passes through it. It gets a lot harder to wrap your head around if you consider some branching and intermediate calls to external services. This may be tricky to write properly in Camel&#39;s DSL.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2010-08-26T20:23:52+00:00">
-    <meta property="article:modified_time" content="2010-08-26T20:23:52+00:00">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Complex flows with Apache Camel">
-  <meta name="twitter:description" content="At work, we&#39;re mainly integrating services and systems, and since we&#39;re on a constant lookout for new, better technologies, ways to do things easier, make them more sustainable, we&#39;re trying to Usually we use Apache Camel for this task, which is a Swiss-knife for integration engineer. What&#39;s more, this tools corresponds well with our approach to integration solutions: try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits, don&#39;t convert XML into Java classes back and forth and be worried with problems like XML conversion, try to get a simple flow of the process. However, at first sight Apache Camel seems to have some drawbacks mainly in the area of practical solutions ;-). It&#39;s very handy tool if you need to use it as a pipeline with some marginal processing of the data that passes through it. It gets a lot harder to wrap your head around if you consider some branching and intermediate calls to external services. This may be tricky to write properly in Camel&#39;s DSL.">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://marcin.cylke.com.pl/post/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Complex flows with Apache Camel",
-      "item": "https://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Complex flows with Apache Camel",
-  "name": "Complex flows with Apache Camel",
-  "description": " At work, we're mainly integrating services and systems, and since we're on a constant lookout for new, better technologies, ways to do things easier, make them more sustainable, we're trying to Usually we use Apache Camel for this task, which is a Swiss-knife for integration engineer. What's more, this tools corresponds well with our approach to integration solutions: try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits, don't convert XML into Java classes back and forth and be worried with problems like XML conversion, try to get a simple flow of the process. However, at first sight Apache Camel seems to have some drawbacks mainly in the area of practical solutions ;-). It's very handy tool if you need to use it as a pipeline with some marginal processing of the data that passes through it. It gets a lot harder to wrap your head around if you consider some branching and intermediate calls to external services. This may be tricky to write properly in Camel's DSL. ",
-  "keywords": [
-    
-  ],
-  "articleBody": " At work, we're mainly integrating services and systems, and since we're on a constant lookout for new, better technologies, ways to do things easier, make them more sustainable, we're trying to Usually we use Apache Camel for this task, which is a Swiss-knife for integration engineer. What's more, this tools corresponds well with our approach to integration solutions: try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits, don't convert XML into Java classes back and forth and be worried with problems like XML conversion, try to get a simple flow of the process. However, at first sight Apache Camel seems to have some drawbacks mainly in the area of practical solutions ;-). It's very handy tool if you need to use it as a pipeline with some marginal processing of the data that passes through it. It gets a lot harder to wrap your head around if you consider some branching and intermediate calls to external services. This may be tricky to write properly in Camel's DSL. Here is a simple pipeline example: And here the exact scenario we're discussing: What I'd like to show is the solution to this problem. Well, if you're using a recent version of Camel this may be easier, a little different, but should still more-or-less work this way. This code is written for Apache Camel 1.4 - a rather antic version, but that's what we're forced to use. Oh, well. Ok, enough whining! So, I create a test class to illustrate the case. The route defined in TestRouter class is responsible for: receiving input setting exchange property to a given xpath, which effectively is the name of the first XML element in the input stream than, the input data is sent to three different external services, each of them replies with some fictional data - notice routes a, b and c. The SimpleContentSetter processor is just for responding with a given text. the response from all three services is somehow processed by RequestEnricher bean, which is described below eventually the exchange is logged in specified category Here is some code for this: public class SimpleTest { public void setUp() throws Exception { TestRouter tr = new TestRouter(); ctx.addRoutes(tr); } @Test public void shouldCheck() throws Exception { ctx.createProducerTemplate().send(\"direct:in\", getInOut(\"\")); } class TestRouter extends RouteBuilder { public void configure() throws Exception { ((ProcessorType)from(\"direct:in\") .setProperty(\"operation\").xpath(\"local-name(/*)\", String.class) .multicast(new MergeAggregationStrategy()) .to(\"direct:a\", \"direct:b\", \"direct:c\") .end() .setBody().simple(\"${in.body}\")) .bean(RequestEnricher.class, \"enrich\") .to(\"log:pl.touk.debug\"); from(\"direct:a\").process(new SimpleContentSetter(\"\")); from(\"direct:b\").process(new SimpleContentSetter(\"\")); from(\"direct:c\").process(new SimpleContentSetter(\"\")); } } } What's unusual in this code is the fact, that what normally Camel does when you write a piece of DSL like: .to(\"direct:a\", \"direct:b\", \"direct:c\") is pass input to service a, than a's output gets passed to b, becomes it's input, than b's output becomes c's input. The problem being, you loose the output from a and b, not mentioning that you might want to send the same input to all three services. That's where a little tool called multicast() comes in handy. It offers you the ability to aggregate the outputs of those services. You may even create an AggregationStrategy that will do it the way you like. Below class, MergeAggregationStrategy does exactly that kind of work - it joins outputs from all three services. A lot of info about proper use of AggregationStrategy-ies can be found in this post by Torsten Mielke. public class MergeAggregationStrategy implements AggregationStrategy { public Exchange aggregate(Exchange oldExchange, Exchange newExchange) { if (oldExchange.isFailed()) { return oldExchange; } transformMessage(oldExchange.getIn(), newExchange.getIn()); transformMessage(oldExchange.getOut(), newExchange.getOut()); return newExchange; } private void transformMessage(Message oldM, Message newM) { String oldBody = oldM.getBody(String.class); String newBody = newM.getBody(String.class); newM.setBody(oldBody + newBody); } } However nice this may look (or not), what you're left with is a mix of multiple XMLs. Normally this won't do you much good. Better thing to do is to parse this output in some way. What we're using for this is a Groovy :). Which is great for the task of parsing XML. A lot less verbose than ordinary Java. Let's assume a scenario, that the aggregated output, currently looking like this: is to be processed with the following steps in mind: use as the result element use attributes param1, param2, param3 from element and add it to result element public class RequestEnricher { public String enrich(@Property(name = \"operation\") String operation, Exchange ex) { use(DOMCategory) { def dhl = new groovy.xml.Namespace(\"http://example.com/common/dhl/schema\", 'dhl') def pc = new groovy.xml.Namespace(\"http://example.com/pc/types\", 'pc') def doc = new XmlParser().parseText(ex.in.body) def pcRequest = doc.\"aaaa\"[0] [\"param1\", \"param2\", \"param3\"].each() { def node = doc.'**'[(\"\" + it)][0] if (node) pcRequest['@' + it] = node.text() } gNodeListToString([pcRequest]) } } String gNodeListToString(list) { StringBuilder sb = new StringBuilder(); list.each { listItem -\u003e StringWriter sw = new StringWriter(); new XmlNodePrinter(new PrintWriter(sw)).print(listItem) sb.append(sw.toString()); } return sb.toString(); } } What we're doing here, especially the last line of enrich method is the conversion to String. There are some problems for Camel if we spit out Groovy objects. The rest is just some Groovy specific ways of manipulating XML. But looking into enrich method's parameters, there is @Property annotation used, which binds the property assigned earlier in a router code to one of the arguments. That is really cool feature and there are more such annotations: @XPath @Header @Headers and @Properties - gives whole maps of properties or headers This pretty much concludes the subject :) Have fun, and if in doubt, leave a comment with your question!\n",
-  "wordCount" : "904",
-  "inLanguage": "en",
-  "datePublished": "2010-08-26T20:23:52Z",
-  "dateModified": "2010-08-26T20:23:52Z",
-  "author":{
-    "@type": "Person",
-    "name": "Marcin Cylke"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Tech ramblings by Marcin",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://marcin.cylke.com.pl/favicon.ico"
-    }
-  }
-}
-</script>
-</head>
-<body id="top">
-    <header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="https://marcin.cylke.com.pl/" accesskey="h" title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu">
-            <li>
-                <a href="https://marcin.cylke.com.pl/about/" title="About">
-                    <span>About</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://marcin.cylke.com.pl/tags/" title="Tags">
-                    <span>Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://marcin.cylke.com.pl/categories/" title="Categories">
-                    <span>Categories</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://marcin.cylke.com.pl/archives/" title="Archives">
-                    <span>Archives</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main">
-
-<article class="post-single">
-  <header class="post-header">
-    <div class="breadcrumbs"><a href="https://marcin.cylke.com.pl/">Home</a>&nbsp;»&nbsp;<a href="https://marcin.cylke.com.pl/post/">Posts</a></div>
-    <h1 class="post-title entry-hint-parent">
-      Complex flows with Apache Camel
-    </h1>
-    <div class="post-meta"><span title='2010-08-26 20:23:52 +0000 UTC'>August 26, 2010</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span>
-
-</div>
-  </header> 
-
-  <div class="post-content">
-<div class='post'>
-<p>
-At work, we're mainly integrating services and systems, and since we're on a constant lookout for new, better
-technologies, ways to do things easier, make them more sustainable, we're trying to 
-</p>
-<p>
-Usually we use <a href="http://camel.apache.org">Apache Camel</a> for this task, which is a Swiss-knife for 
-integration engineer. What's more, this tools corresponds well with our approach to integration solutions:
-</p>
-<ul>
-<li> try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits,
-<li> don't convert XML into Java classes back and forth and be worried with problems like XML conversion,
-<li> try to get a simple flow of the process.
-</ul>
-
-<p>
-However, at first sight Apache Camel seems to have some drawbacks mainly
-in the area of  practical solutions ;-).
 It's very handy tool if you need to use it as a pipeline with some marginal processing of 
 the data that passes through it. It gets a lot harder to wrap your head around if you consider some 
 branching and intermediate calls to external services. This may be tricky to write properly in Camel's DSL.
-</p>
-<p>
-Here is a simple pipeline example:
-</p>
-<img src="http://blog.innovative-labs.com/blog/simple_flow.png" width="600"/>
-<p>
-And here the exact scenario we're discussing:
-</p>
-<img src="http://blog.innovative-labs.com/blog/branched_flow.png" width="600"/>
-
-<p>
-What I'd like to show is the solution to this problem. Well, if you're using a recent version of Camel 
+"><meta name=author content="Marcin Cylke"><link rel=canonical href=https://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/><link crossorigin=anonymous href=/assets/css/stylesheet.2ef88c6e9b91917ba47ee47c08eceac58e4063f58023c5794d790144e14eeb83.css integrity="sha256-LviMbpuRkXukfuR8COzqxY5AY/WAI8V5TXkBROFO64M=" rel="preload stylesheet" as=style><link rel=icon href=https://marcin.cylke.com.pl/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://marcin.cylke.com.pl/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://marcin.cylke.com.pl/favicon-32x32.png><link rel=apple-touch-icon href=https://marcin.cylke.com.pl/apple-touch-icon.png><link rel=mask-icon href=https://marcin.cylke.com.pl/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><link rel=stylesheet href=/css/book_section.css><link rel=stylesheet href=/css/on_this_day.css><link rel=stylesheet href=/css/til.css><script defer src=/js/code-highlight.js></script><meta property="og:url" content="https://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/"><meta property="og:site_name" content="Tech ramblings by Marcin"><meta property="og:title" content="Complex flows with Apache Camel"><meta property="og:description" content="At work, we're mainly integrating services and systems, and since we're on a constant lookout for new, better technologies, ways to do things easier, make them more sustainable, we're trying to Usually we use Apache Camel for this task, which is a Swiss-knife for integration engineer. What's more, this tools corresponds well with our approach to integration solutions: try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits, don't convert XML into Java classes back and forth and be worried with problems like XML conversion, try to get a simple flow of the process. However, at first sight Apache Camel seems to have some drawbacks mainly in the area of practical solutions ;-). It's very handy tool if you need to use it as a pipeline with some marginal processing of the data that passes through it. It gets a lot harder to wrap your head around if you consider some branching and intermediate calls to external services. This may be tricky to write properly in Camel's DSL."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2010-08-26T20:23:52+00:00"><meta property="article:modified_time" content="2010-08-26T20:23:52+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Complex flows with Apache Camel"><meta name=twitter:description content="At work, we're mainly integrating services and systems, and since we're on a constant lookout for new, better technologies, ways to do things easier, make them more sustainable, we're trying to Usually we use Apache Camel for this task, which is a Swiss-knife for integration engineer. What's more, this tools corresponds well with our approach to integration solutions: try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits, don't convert XML into Java classes back and forth and be worried with problems like XML conversion, try to get a simple flow of the process. However, at first sight Apache Camel seems to have some drawbacks mainly in the area of practical solutions ;-). It's very handy tool if you need to use it as a pipeline with some marginal processing of the data that passes through it. It gets a lot harder to wrap your head around if you consider some branching and intermediate calls to external services. This may be tricky to write properly in Camel's DSL."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://marcin.cylke.com.pl/post/"},{"@type":"ListItem","position":2,"name":"Complex flows with Apache Camel","item":"https://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Complex flows with Apache Camel","name":"Complex flows with Apache Camel","description":" At work, we're mainly integrating services and systems, and since we're on a constant lookout for new, better technologies, ways to do things easier, make them more sustainable, we're trying to Usually we use Apache Camel for this task, which is a Swiss-knife for integration engineer. What's more, this tools corresponds well with our approach to integration solutions: try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits, don't convert XML into Java classes back and forth and be worried with problems like XML conversion, try to get a simple flow of the process. However, at first sight Apache Camel seems to have some drawbacks mainly in the area of practical solutions ;-). It's very handy tool if you need to use it as a pipeline with some marginal processing of the data that passes through it. It gets a lot harder to wrap your head around if you consider some branching and intermediate calls to external services. This may be tricky to write properly in Camel's DSL. ","keywords":[],"articleBody":" At work, we're mainly integrating services and systems, and since we're on a constant lookout for new, better technologies, ways to do things easier, make them more sustainable, we're trying to Usually we use Apache Camel for this task, which is a Swiss-knife for integration engineer. What's more, this tools corresponds well with our approach to integration solutions: try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits, don't convert XML into Java classes back and forth and be worried with problems like XML conversion, try to get a simple flow of the process. However, at first sight Apache Camel seems to have some drawbacks mainly in the area of practical solutions ;-). It's very handy tool if you need to use it as a pipeline with some marginal processing of the data that passes through it. It gets a lot harder to wrap your head around if you consider some branching and intermediate calls to external services. This may be tricky to write properly in Camel's DSL. Here is a simple pipeline example: And here the exact scenario we're discussing: What I'd like to show is the solution to this problem. Well, if you're using a recent version of Camel this may be easier, a little different, but should still more-or-less work this way. This code is written for Apache Camel 1.4 - a rather antic version, but that's what we're forced to use. Oh, well. Ok, enough whining! So, I create a test class to illustrate the case. The route defined in TestRouter class is responsible for: receiving input setting exchange property to a given xpath, which effectively is the name of the first XML element in the input stream than, the input data is sent to three different external services, each of them replies with some fictional data - notice routes a, b and c. The SimpleContentSetter processor is just for responding with a given text. the response from all three services is somehow processed by RequestEnricher bean, which is described below eventually the exchange is logged in specified category Here is some code for this: public class SimpleTest { public void setUp() throws Exception { TestRouter tr = new TestRouter(); ctx.addRoutes(tr); } @Test public void shouldCheck() throws Exception { ctx.createProducerTemplate().send(\"direct:in\", getInOut(\"\")); } class TestRouter extends RouteBuilder { public void configure() throws Exception { ((ProcessorType)from(\"direct:in\") .setProperty(\"operation\").xpath(\"local-name(/*)\", String.class) .multicast(new MergeAggregationStrategy()) .to(\"direct:a\", \"direct:b\", \"direct:c\") .end() .setBody().simple(\"${in.body}\")) .bean(RequestEnricher.class, \"enrich\") .to(\"log:pl.touk.debug\"); from(\"direct:a\").process(new SimpleContentSetter(\"\")); from(\"direct:b\").process(new SimpleContentSetter(\"\")); from(\"direct:c\").process(new SimpleContentSetter(\"\")); } } } What's unusual in this code is the fact, that what normally Camel does when you write a piece of DSL like: .to(\"direct:a\", \"direct:b\", \"direct:c\") is pass input to service a, than a's output gets passed to b, becomes it's input, than b's output becomes c's input. The problem being, you loose the output from a and b, not mentioning that you might want to send the same input to all three services. That's where a little tool called multicast() comes in handy. It offers you the ability to aggregate the outputs of those services. You may even create an AggregationStrategy that will do it the way you like. Below class, MergeAggregationStrategy does exactly that kind of work - it joins outputs from all three services. A lot of info about proper use of AggregationStrategy-ies can be found in this post by Torsten Mielke. public class MergeAggregationStrategy implements AggregationStrategy { public Exchange aggregate(Exchange oldExchange, Exchange newExchange) { if (oldExchange.isFailed()) { return oldExchange; } transformMessage(oldExchange.getIn(), newExchange.getIn()); transformMessage(oldExchange.getOut(), newExchange.getOut()); return newExchange; } private void transformMessage(Message oldM, Message newM) { String oldBody = oldM.getBody(String.class); String newBody = newM.getBody(String.class); newM.setBody(oldBody + newBody); } } However nice this may look (or not), what you're left with is a mix of multiple XMLs. Normally this won't do you much good. Better thing to do is to parse this output in some way. What we're using for this is a Groovy :). Which is great for the task of parsing XML. A lot less verbose than ordinary Java. Let's assume a scenario, that the aggregated output, currently looking like this: is to be processed with the following steps in mind: use as the result element use attributes param1, param2, param3 from element and add it to result element public class RequestEnricher { public String enrich(@Property(name = \"operation\") String operation, Exchange ex) { use(DOMCategory) { def dhl = new groovy.xml.Namespace(\"http://example.com/common/dhl/schema\", 'dhl') def pc = new groovy.xml.Namespace(\"http://example.com/pc/types\", 'pc') def doc = new XmlParser().parseText(ex.in.body) def pcRequest = doc.\"aaaa\"[0] [\"param1\", \"param2\", \"param3\"].each() { def node = doc.'**'[(\"\" + it)][0] if (node) pcRequest['@' + it] = node.text() } gNodeListToString([pcRequest]) } } String gNodeListToString(list) { StringBuilder sb = new StringBuilder(); list.each { listItem -\u003e StringWriter sw = new StringWriter(); new XmlNodePrinter(new PrintWriter(sw)).print(listItem) sb.append(sw.toString()); } return sb.toString(); } } What we're doing here, especially the last line of enrich method is the conversion to String. There are some problems for Camel if we spit out Groovy objects. The rest is just some Groovy specific ways of manipulating XML. But looking into enrich method's parameters, there is @Property annotation used, which binds the property assigned earlier in a router code to one of the arguments. That is really cool feature and there are more such annotations: @XPath @Header @Headers and @Properties - gives whole maps of properties or headers This pretty much concludes the subject :) Have fun, and if in doubt, leave a comment with your question!\n","wordCount":"904","inLanguage":"en","datePublished":"2010-08-26T20:23:52Z","dateModified":"2010-08-26T20:23:52Z","author":{"@type":"Person","name":"Marcin Cylke"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/"},"publisher":{"@type":"Organization","name":"Tech ramblings by Marcin","logo":{"@type":"ImageObject","url":"https://marcin.cylke.com.pl/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://marcin.cylke.com.pl/ accesskey=h title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://marcin.cylke.com.pl/about/ title=About><span>About</span></a></li><li><a href=https://marcin.cylke.com.pl/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://marcin.cylke.com.pl/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://marcin.cylke.com.pl/archives/ title=Archives><span>Archives</span></a></li><li><a href=https://marcin.cylke.com.pl/travels/ title=Travels><span>Travels</span></a></li><li><a href=https://marcin.cylke.com.pl/til/ title=TIL><span>TIL</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://marcin.cylke.com.pl/>Home</a>&nbsp;»&nbsp;<a href=https://marcin.cylke.com.pl/post/>Posts</a></div><h1 class="post-title entry-hint-parent">Complex flows with Apache Camel</h1><div class=post-meta><span title='2010-08-26 20:23:52 +0000 UTC'>August 26, 2010</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></div></header><div class=post-content><div class=post><p>At work, we're mainly integrating services and systems, and since we're on a constant lookout for new, better
+technologies, ways to do things easier, make them more sustainable, we're trying to</p><p>Usually we use <a href=http://camel.apache.org>Apache Camel</a> for this task, which is a Swiss-knife for
+integration engineer. What's more, this tools corresponds well with our approach to integration solutions:</p><ul><li>try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits,<li>don't convert XML into Java classes back and forth and be worried with problems like XML conversion,<li>try to get a simple flow of the process.</ul><p>However, at first sight Apache Camel seems to have some drawbacks mainly
+in the area of practical solutions ;-).
+It's very handy tool if you need to use it as a pipeline with some marginal processing of
+the data that passes through it. It gets a lot harder to wrap your head around if you consider some
+branching and intermediate calls to external services. This may be tricky to write properly in Camel's DSL.</p><p>Here is a simple pipeline example:</p><img src=http://blog.innovative-labs.com/blog/simple_flow.png width=600><p>And here the exact scenario we're discussing:</p><img src=http://blog.innovative-labs.com/blog/branched_flow.png width=600><p>What I'd like to show is the solution to this problem. Well, if you're using a recent version of Camel
 this may be easier, a little different, but should still more-or-less
-work this way. This code is written for 
-Apache Camel 1.4 - a rather antic version, but that's what we're forced to use. Oh, well.
-</p>
-
-<p>
-Ok, enough whining!
-</p>
-<p>
-So, I create a test class to illustrate the case. The route defined in <b>TestRouter</b> class is responsible for:
-</p>
-
-<ol>
-<li> receiving input
-<li> setting exchange property to a given xpath, which effectively is the name of the first XML element in the input stream
-<li> than, the input data is sent to three different external services, each of them replies with some fictional data - notice routes <b>a</b>, <b>b</b> and <b>c</b>.  The <b>SimpleContentSetter</b> processor is just for responding with a given text.
-<li> the response from all three services is somehow processed by <b>RequestEnricher</b> bean, which is described below
-<li> eventually the exchange is logged in specified category
-</ol>
-
-<p>
-Here is some code for this:
-</p>
-
-<pre class="brush: java">
+work this way. This code is written for
+Apache Camel 1.4 - a rather antic version, but that's what we're forced to use. Oh, well.</p><p>Ok, enough whining!</p><p>So, I create a test class to illustrate the case. The route defined in <b>TestRouter</b> class is responsible for:</p><ol><li>receiving input<li>setting exchange property to a given xpath, which effectively is the name of the first XML element in the input stream<li>than, the input data is sent to three different external services, each of them replies with some fictional data - notice routes <b>a</b>, <b>b</b> and <b>c</b>. The <b>SimpleContentSetter</b> processor is just for responding with a given text.<li>the response from all three services is somehow processed by <b>RequestEnricher</b> bean, which is described below<li>eventually the exchange is logged in specified category</ol><p>Here is some code for this:</p><pre class="brush: java">
 public class SimpleTest {
     public void setUp() throws Exception {
         TestRouter tr = new TestRouter();
@@ -316,31 +62,15 @@ public class SimpleTest {
         }
     }
 }
-</pre>
-
-<p>
-What's unusual in this code is the fact, that what normally Camel does when you write a piece of DSL like:
-</p>
-
-<pre class="brush: java">
+</pre><p>What's unusual in this code is the fact, that what normally Camel does when you write a piece of DSL like:</p><pre class="brush: java">
 	.to("direct:a", "direct:b", "direct:c")
-</pre>
-
-<p>
-is pass input to service <b>a</b>, than <b>a</b>'s output gets passed to <b>b</b>, becomes it's input, than
-<b>b</b>'s output becomes <b>c</b>'s input. The problem being, you loose the output from <b>a</b> and <b>b</b>, 
-not mentioning that you might want to send the same input to all three services.
-</p>
-
-<p>
-That's where a little tool called <i>multicast()</i> comes in handy. It offers you the ability to aggregate 
-the outputs of those services. You may even create an <b>AggregationStrategy</b> that will do it the way you like. 
-Below class, <b>MergeAggregationStrategy</b> does exactly that kind of work - it joins outputs from all three 
-services. A lot of info about proper use of <b>AggregationStrategy</b>-ies can be found in 
-<a href="http://tmielke.blogspot.com/2009/01/using-camel-aggregator-correctly.html">this post by Torsten Mielke.</a> 
-</p>
-
-<pre class="brush: java">
+</pre><p>is pass input to service <b>a</b>, than <b>a</b>'s output gets passed to <b>b</b>, becomes it's input, than
+<b>b</b>'s output becomes <b>c</b>'s input. The problem being, you loose the output from <b>a</b> and <b>b</b>,
+not mentioning that you might want to send the same input to all three services.</p><p>That's where a little tool called <i>multicast()</i> comes in handy. It offers you the ability to aggregate
+the outputs of those services. You may even create an <b>AggregationStrategy</b> that will do it the way you like.
+Below class, <b>MergeAggregationStrategy</b> does exactly that kind of work - it joins outputs from all three
+services. A lot of info about proper use of <b>AggregationStrategy</b>-ies can be found in
+<a href=http://tmielke.blogspot.com/2009/01/using-camel-aggregator-correctly.html>this post by Torsten Mielke.</a></p><pre class="brush: java">
 public class MergeAggregationStrategy implements AggregationStrategy {
 
 	public Exchange aggregate(Exchange oldExchange, Exchange newExchange) {
@@ -359,34 +89,13 @@ public class MergeAggregationStrategy implements AggregationStrategy {
 	}
 	
 }
-</pre>
-
-<p>
-However nice this may look (or not), what you're left with is a mix of multiple XMLs. Normally this 
-won't do you much good. Better thing to do is to parse this output in some way. What we're using for this 
-is a Groovy :). Which is great for the task of parsing XML. A lot less verbose than ordinary Java.
-</p>
-
-<p>
-Let's assume a scenario, that the aggregated output, currently looking like this:
-</p>
-
-<pre class="brush: xml">
+</pre><p>However nice this may look (or not), what you're left with is a mix of multiple XMLs. Normally this
+won't do you much good. Better thing to do is to parse this output in some way. What we're using for this
+is a Groovy :). Which is great for the task of parsing XML. A lot less verbose than ordinary Java.</p><p>Let's assume a scenario, that the aggregated output, currently looking like this:</p><pre class="brush: xml">
 	<aaaa></aaaa>
 	<bbbb></bbbb>
 	<cccc></cccc>
-</pre>
-
-<p>
-is to be processed with the following steps in mind:
-</p>
-
-<ul>
-<li> use <i>&lt;aaaa/&gt;</i> as the result element
-<li> use attributes <i>param1</i>, <i>param2</i>, <i>param3</i> from element <i>&lt;bbbb/&gt;</i> and add it to result element <i>&lt;aaaa/&gt;</i>
-</ul>
-
-<pre class="brush: groovy">
+</pre><p>is to be processed with the following steps in mind:</p><ul><li>use <i>&lt;aaaa/></i> as the result element<li>use attributes <i>param1</i>, <i>param2</i>, <i>param3</i> from element <i>&lt;bbbb/></i> and add it to result element <i>&lt;aaaa/></i></ul><pre class="brush: groovy">
 public class RequestEnricher {
 	
 	public String enrich(@Property(name = "operation") String operation, Exchange ex) {
@@ -420,176 +129,14 @@ public class RequestEnricher {
 	}
 	
 }
-</pre>
-
-<p>
-What we're doing here, especially the last line of <b>enrich</b> method is the conversion to String. There are
+</pre><p>What we're doing here, especially the last line of <b>enrich</b> method is the conversion to String. There are
 some problems for Camel if we spit out Groovy objects. The rest is just some Groovy specific ways of manipulating XML.
 But looking into <b>enrich</b> method's parameters, there is <i>@Property</i> annotation used, which binds the property
-assigned earlier in a router code to one of the arguments. That is really cool feature and there are more such annotations:
-</p> 
-
-<ul>
-<li> <i>@XPath</i>
-<li> <i>@Header</i>
-<li> <i>@Headers</i> and <i>@Properties</i> - gives whole maps of properties or headers
-</ul>
-
-<p>This pretty much concludes the subject :) Have fun, and if in doubt,
-leave a comment with your question!</p></div>
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-    </ul>
-<nav class="paginav">
-  <a class="prev" href="https://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/">
-    <span class="title">« Prev</span>
-    <br>
-    <span>Schematron to the rescue!</span>
-  </a>
-  <a class="next" href="https://marcin.cylke.com.pl/2010/08/18/meetbsd-2010/">
-    <span class="title">Next »</span>
-    <br>
-    <span>Meetbsd 2010</span>
-  </a>
-</nav>
-
-  </footer><script src="https://utteranc.es/client.js"
-        repo="zygm0nt/hugo-blog-incarnation"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
-
-</article>
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></span> · 
-
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
-</script>
-</body>
-
-</html>
+assigned earlier in a router code to one of the arguments. That is really cool feature and there are more such annotations:</p><ul><li><i>@XPath</i><li><i>@Header</i><li><i>@Headers</i> and <i>@Properties</i> - gives whole maps of properties or headers</ul><p>This pretty much concludes the subject :) Have fun, and if in doubt,
+leave a comment with your question!</p></div></div><footer class=post-footer><ul class=post-tags></ul><nav class=paginav><a class=prev href=https://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/><span class=title>« Prev</span><br><span>Schematron to the rescue!</span>
+</a><a class=next href=https://marcin.cylke.com.pl/2010/08/18/meetbsd-2010/><span class=title>Next »</span><br><span>Meetbsd 2010</span></a></nav></footer><div class=on-this-day><h3>On this day in other years</h3><ul><li><span class=on-this-day-year>2024</span>
+<a href=https://marcin.cylke.com.pl/2024/08/26/extracting-articles-from-pocket-or-chatgpt-for-the-needed-but-not-interesting-stuff/>Extracting articles from Pocket - or ChatGPT for the needed but not interesting stuff</a></li></ul></div><script src=https://utteranc.es/client.js repo=zygm0nt/hugo-blog-incarnation issue-term=pathname theme=github-light crossorigin=anonymous async></script></article></main><footer class=footer><span>&copy; 2026 <a href=https://marcin.cylke.com.pl/>Tech ramblings by Marcin</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

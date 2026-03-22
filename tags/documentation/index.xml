@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Documentation on Tech ramblings by Marcin</title>
+    <link>http://localhost:1313/tags/documentation/</link>
+    <description>Recent content in Documentation on Tech ramblings by Marcin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 13 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/documentation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Custom Shortcodes Reference</title>
+      <link>http://localhost:1313/post/shortcodes-reference/</link>
+      <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/shortcodes-reference/</guid>
+      <description>&lt;p&gt;This post documents all custom Hugo shortcodes available in this blog.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;book_review&#34;&gt;&lt;code&gt;book_review&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Renders a two-column book review card with a cover image on the left and review text on the right.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Parameter&lt;/th&gt;
+          &lt;th&gt;Required&lt;/th&gt;
+          &lt;th&gt;Description&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;title&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;yes&lt;/td&gt;
+          &lt;td&gt;Book title&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;author&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;yes&lt;/td&gt;
+          &lt;td&gt;Author name&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;book_cover&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;yes&lt;/td&gt;
+          &lt;td&gt;Path to cover image (relative to &lt;code&gt;static/&lt;/code&gt;)&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Inner content&lt;/strong&gt; is rendered as Markdown (the review body).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{{&amp;lt; book_review title=&amp;#34;Dune&amp;#34; author=&amp;#34;Frank Herbert&amp;#34; book_cover=&amp;#34;/post_images/dune-cover.jpg&amp;#34; &amp;gt;}}
+A towering sci-fi epic about politics, religion, and ecology on a desert planet.
+Still unmatched in scope and world-building after 60 years.
+{{&amp;lt; /book_review &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h2 id=&#34;img&#34;&gt;&lt;code&gt;img&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;A wrapper around an HTML &lt;code&gt;&amp;lt;figure&amp;gt;&lt;/code&gt; element with optional caption, attribution link, and CSS class.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

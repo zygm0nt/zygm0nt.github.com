@@ -1,559 +1,105 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
-
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Schematron to the rescue! | Tech ramblings by Marcin</title>
-<meta name="keywords" content="">
-<meta name="description" content="
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Schematron to the rescue! | Tech ramblings by Marcin</title><meta name=keywords content><meta name=description content="
 
 
 In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be solved with it - the standardization processes is there for some reason. But that happens only in ideal
-world, which we&#39;re not living in.  
+world, which we're not living in.  
 
 
-In ideal world, when dealing with XML instances you&#39;d be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal  definition language to declare your data structure. With that you get rigid rules as to how XML documents should look like. There doesn&#39;t seem to be much space to deviate from specs. Well, in fact there is.">
-<meta name="author" content="Marcin Cylke">
-<link rel="canonical" href="https://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://marcin.cylke.com.pl/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://marcin.cylke.com.pl/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://marcin.cylke.com.pl/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://marcin.cylke.com.pl/apple-touch-icon.png">
-<link rel="mask-icon" href="https://marcin.cylke.com.pl/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
+In ideal world, when dealing with XML instances you'd be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal  definition language to declare your data structure. With that you get rigid rules as to how XML documents should look like. There doesn't seem to be much space to deviate from specs. Well, in fact there is."><meta name=author content="Marcin Cylke"><link rel=canonical href=https://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/><link crossorigin=anonymous href=/assets/css/stylesheet.2ef88c6e9b91917ba47ee47c08eceac58e4063f58023c5794d790144e14eeb83.css integrity="sha256-LviMbpuRkXukfuR8COzqxY5AY/WAI8V5TXkBROFO64M=" rel="preload stylesheet" as=style><link rel=icon href=https://marcin.cylke.com.pl/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://marcin.cylke.com.pl/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://marcin.cylke.com.pl/favicon-32x32.png><link rel=apple-touch-icon href=https://marcin.cylke.com.pl/apple-touch-icon.png><link rel=mask-icon href=https://marcin.cylke.com.pl/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><link rel=stylesheet href=/css/book_section.css><link rel=stylesheet href=/css/on_this_day.css><link rel=stylesheet href=/css/til.css><script defer src=/js/code-highlight.js></script><meta property="og:url" content="https://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/"><meta property="og:site_name" content="Tech ramblings by Marcin"><meta property="og:title" content="Schematron to the rescue!"><meta property="og:description" content="In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be solved with it - the standardization processes is there for some reason. But that happens only in ideal world, which we're not living in. In ideal world, when dealing with XML instances you'd be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal definition language to declare your data structure. With that you get rigid rules as to how XML documents should look like. There doesn't seem to be much space to deviate from specs. Well, in fact there is."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2010-10-21T08:40:37+00:00"><meta property="article:modified_time" content="2010-10-21T08:40:37+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Schematron to the rescue!"><meta name=twitter:description content="In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be solved with it - the standardization processes is there for some reason. But that happens only in ideal world, which we're not living in. In ideal world, when dealing with XML instances you'd be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal definition language to declare your data structure. With that you get rigid rules as to how XML documents should look like. There doesn't seem to be much space to deviate from specs. Well, in fact there is."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://marcin.cylke.com.pl/post/"},{"@type":"ListItem","position":2,"name":"Schematron to the rescue!","item":"https://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Schematron to the rescue!","name":"Schematron to the rescue!","description":" In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be solved with it - the standardization processes is there for some reason. But that happens only in ideal world, which we're not living in. In ideal world, when dealing with XML instances you'd be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal definition language to declare your data structure. With that you get rigid rules as to how XML documents should look like. There doesn't seem to be much space to deviate from specs. Well, in fact there is.\n","keywords":[],"articleBody":" In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be solved with it - the standardization processes is there for some reason. But that happens only in ideal world, which we're not living in. In ideal world, when dealing with XML instances you'd be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal definition language to declare your data structure. With that you get rigid rules as to how XML documents should look like. There doesn't seem to be much space to deviate from specs. Well, in fact there is.\nThe main problem of XML, aside its verbosity, is the inability to create concise rules for the input or output document as a whole. Perhaps it's a nice feature, because XML Schema should only be used to describe a data structure, not to infer business rules on it. Perhaps not. Nevertheless it's not what I needed in one of the projects I've worked on.\nMy need was to actually check the business validity of such documents. This was used in a Web Service environment, a pretty stupid WS, which sole role was to fetch data from database and pack it into appropriate XML structures. Errors might occur in database's views or in WS - as usual. They might be data multiplication or appearance of some elements while they shouldn't. Resulting documents were correctly validated with the xml schema, but the result was simply wrong from the business point of view.\nWhat I needed an XML formalization language, an ability to write rules that would assert some rules, report on not meeting stated rules. I was in need of a tool to write business rules to tame such XML entities.\nThe simplest way I found to solve this was to use Schematron! - \"a language for making assertions about patterns found in XML documents\". This neat tool is a set of XSL templates, that you use in conjunction with a rule set on documents to check. As a result of the check you get another XML document with test assertions - whether failed or succeeded.\nWith Schematron you write a set of rules you expect the document to assert, than you use Schematron XSL template to produce XSL rules specific for your case. Now you only need to use newly generated XSL rules template on your XML document to check rules compliance. Easy, if not, check the diagram below.\nHow does it look? The rules' file may look like this: \u003c?xml version=\"1.0\" encoding=\"iso-8859-1\"?\u003e TouK Schematron test harness checking GetMigrationOffers Report date. Unique offers allowed. Each offer has to have an @abc attribute Each offer has to have a tariff Each offer has to have a promotion checking GetAllPhones TACs should be unique. TAC: , handsetId: offerId: Here we see two rules, one named getMigrationOffers and the other getAllPhones. The rules - mainly their asserts seem pretty self explanatory, but for the sake of completeness I'll describe the rules for getAllPhones.\nThere is one rule, which checks the uniqueness of tac elements. This rule tries to ensure that each handset should have a list of unique tac elements as its children. However there may appear tac elements of the same value in different handset elements.\nGiven an input XML in the form of:\n12028006 20070705 35535302 01216100 01216100 12028006 20070705 35535302 01216100 12028006 20070705 35535302 01216100 And passing those two files through the processing pipeline you get a report: \u003c?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?\u003e TACs should be unique. TAC: 01216100, handsetId: 95 offerId: 103021 TACs should be unique. TAC: 01216100, handsetId: 95 offerId: 103021 [...] After running the validation, the report presents us with the result. It shows that there are actually non-unique tacs. Unfortunately the rule itself is not so optimal, as it is executed for each tac node. The better case would be to create a rule operating only on groups of tacs - having a rule for each handset's tacs would be much better. Performance consideration As you may have seen, Schematron gives quite a potential, if it comes to rules building - maybe not the easiest to comprehend, since written with XPath, but good enough.\nHowever, with all the XML processing involved in the process, it may take some considerable amount of time to execute such validations. For example, processing rules for file getMigrationOffers.xml takes about 2.296s - the file has 82 offer elements, which the rules operate on. But validating the other file, getAllPhones.xml takes 5.324s, with 3113 tac elements, and the rule iterating all of them.\nThis overhead is too much in most of the situations. That's why this solution is rather not for use in normal execution pipeline - it would be unwise to put Schematron to check each request, thus entangle it into my Web Services normal flow.\nWhat may be more desirable is to deploy a continuous integration server, with a project querying such Web Service and checking the rules in this manner.\nConclusion So, what's so great about having one XML generate another XML? Perhaps nothing, I think it would took just about a day to write some shell, python, that would perform equally (or even better). However, we loose technology homogeneity, and employ some other environments, not specific to our primary target platform, and that seems bad. Of course using some powerful text processing tool to impose the same rules might be much more efficient, thou less coherent.\nWhat is your approach to such situations? Have you used Schematron or any other similar tool?\nCode for this example is available on GitHub - http://github.com/zygm0nt/schematron-example.\n","wordCount":"948","inLanguage":"en","datePublished":"2010-10-21T08:40:37Z","dateModified":"2010-10-21T08:40:37Z","author":{"@type":"Person","name":"Marcin Cylke"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/"},"publisher":{"@type":"Organization","name":"Tech ramblings by Marcin","logo":{"@type":"ImageObject","url":"https://marcin.cylke.com.pl/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://marcin.cylke.com.pl/ accesskey=h title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://marcin.cylke.com.pl/about/ title=About><span>About</span></a></li><li><a href=https://marcin.cylke.com.pl/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://marcin.cylke.com.pl/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://marcin.cylke.com.pl/archives/ title=Archives><span>Archives</span></a></li><li><a href=https://marcin.cylke.com.pl/travels/ title=Travels><span>Travels</span></a></li><li><a href=https://marcin.cylke.com.pl/til/ title=TIL><span>TIL</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://marcin.cylke.com.pl/>Home</a>&nbsp;»&nbsp;<a href=https://marcin.cylke.com.pl/post/>Posts</a></div><h1 class="post-title entry-hint-parent">Schematron to the rescue!</h1><div class=post-meta><span title='2010-10-21 08:40:37 +0000 UTC'>October 21, 2010</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=# aria-label="How does it look?">How does it look?</a></li><li><a href=# aria-label="Performance consideration">Performance consideration</a></li><li><a href=# aria-label=Conclusion>Conclusion</a></li></ul></div></details></div><div class=post-content><div class=post><table border=0><tr><td><p>In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be solved with it - the standardization processes is there for some reason. But that happens only in ideal
+world, which we're not living in.</p></td><td><img src=http://blog.innovative-labs.com/blog/simpson_schematron.png width=100></td></tr></table><p>In ideal world, when dealing with XML instances you'd be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal definition language to declare your data structure. With that you get rigid rules as to how XML documents should look like. There doesn't seem to be much space to deviate from specs. Well, in fact there is.</p><excerpt><p>The main problem of XML, aside its verbosity, is the inability to create concise rules for the input or output document as a whole. Perhaps it's a nice feature, because XML Schema should only be used to describe a data structure, not to infer business rules on it. Perhaps not. Nevertheless it's not what I needed in one of the projects I've worked on.</p><p>My need was to actually check the business validity of such documents. This was used in a Web Service environment, a pretty stupid WS, which sole role was to fetch data from database and pack it into appropriate XML structures. Errors might occur in database's views or in WS - as usual. They might be data multiplication or appearance of some elements while they shouldn't. Resulting documents were correctly validated with the xml schema, but the result was simply wrong from the business point of view.</p><p>What I needed an XML formalization language, an ability to write rules that would assert some rules, report on not meeting stated rules. I was in need of a tool to write business rules to tame such XML entities.</p><p>The simplest way I found to solve this was to use <a href=http://www.schematron.com/>Schematron!</a> - "a language for making assertions about patterns found in XML documents". This neat tool is a set of XSL templates, that you use in conjunction with a rule set on documents to check. As a result of the check you get another XML document with test assertions - whether failed or succeeded.</p><p>With Schematron you write a set of rules you expect the document to assert, than you use Schematron XSL template to produce XSL rules specific for your case. Now you only need to use newly generated XSL rules template on your XML document to check rules compliance. Easy, if not, check the diagram below.</p><img src=http://blog.innovative-labs.com/blog/schematron_flow.png width=600><h2>How does it look?</h2>The rules' file may look like this:<pre class="brush: xml">
 
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-        @media (prefers-color-scheme: light) {
-            .list::-webkit-scrollbar-thumb {
-                border-color: var(--code-bg);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><link rel="stylesheet" href="/css/book_section.css">
-<meta property="og:url" content="https://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/">
-  <meta property="og:site_name" content="Tech ramblings by Marcin">
-  <meta property="og:title" content="Schematron to the rescue!">
-  <meta property="og:description" content="In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be solved with it - the standardization processes is there for some reason. But that happens only in ideal world, which we&#39;re not living in. In ideal world, when dealing with XML instances you&#39;d be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal definition language to declare your data structure. With that you get rigid rules as to how XML documents should look like. There doesn&#39;t seem to be much space to deviate from specs. Well, in fact there is.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2010-10-21T08:40:37+00:00">
-    <meta property="article:modified_time" content="2010-10-21T08:40:37+00:00">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Schematron to the rescue!">
-  <meta name="twitter:description" content="In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be solved with it - the standardization processes is there for some reason. But that happens only in ideal world, which we&#39;re not living in. In ideal world, when dealing with XML instances you&#39;d be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal definition language to declare your data structure. With that you get rigid rules as to how XML documents should look like. There doesn&#39;t seem to be much space to deviate from specs. Well, in fact there is.">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://marcin.cylke.com.pl/post/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Schematron to the rescue!",
-      "item": "https://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Schematron to the rescue!",
-  "name": "Schematron to the rescue!",
-  "description": " In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be solved with it - the standardization processes is there for some reason. But that happens only in ideal world, which we're not living in. In ideal world, when dealing with XML instances you'd be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal definition language to declare your data structure. With that you get rigid rules as to how XML documents should look like. There doesn't seem to be much space to deviate from specs. Well, in fact there is.\n",
-  "keywords": [
-    
-  ],
-  "articleBody": " In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be solved with it - the standardization processes is there for some reason. But that happens only in ideal world, which we're not living in. In ideal world, when dealing with XML instances you'd be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal definition language to declare your data structure. With that you get rigid rules as to how XML documents should look like. There doesn't seem to be much space to deviate from specs. Well, in fact there is.\nThe main problem of XML, aside its verbosity, is the inability to create concise rules for the input or output document as a whole. Perhaps it's a nice feature, because XML Schema should only be used to describe a data structure, not to infer business rules on it. Perhaps not. Nevertheless it's not what I needed in one of the projects I've worked on.\nMy need was to actually check the business validity of such documents. This was used in a Web Service environment, a pretty stupid WS, which sole role was to fetch data from database and pack it into appropriate XML structures. Errors might occur in database's views or in WS - as usual. They might be data multiplication or appearance of some elements while they shouldn't. Resulting documents were correctly validated with the xml schema, but the result was simply wrong from the business point of view.\nWhat I needed an XML formalization language, an ability to write rules that would assert some rules, report on not meeting stated rules. I was in need of a tool to write business rules to tame such XML entities.\nThe simplest way I found to solve this was to use Schematron! - \"a language for making assertions about patterns found in XML documents\". This neat tool is a set of XSL templates, that you use in conjunction with a rule set on documents to check. As a result of the check you get another XML document with test assertions - whether failed or succeeded.\nWith Schematron you write a set of rules you expect the document to assert, than you use Schematron XSL template to produce XSL rules specific for your case. Now you only need to use newly generated XSL rules template on your XML document to check rules compliance. Easy, if not, check the diagram below.\nHow does it look? The rules' file may look like this: \u003c?xml version=\"1.0\" encoding=\"iso-8859-1\"?\u003e TouK Schematron test harness checking GetMigrationOffers Report date. Unique offers allowed. Each offer has to have an @abc attribute Each offer has to have a tariff Each offer has to have a promotion checking GetAllPhones TACs should be unique. TAC: , handsetId: offerId: Here we see two rules, one named getMigrationOffers and the other getAllPhones. The rules - mainly their asserts seem pretty self explanatory, but for the sake of completeness I'll describe the rules for getAllPhones.\nThere is one rule, which checks the uniqueness of tac elements. This rule tries to ensure that each handset should have a list of unique tac elements as its children. However there may appear tac elements of the same value in different handset elements.\nGiven an input XML in the form of:\n12028006 20070705 35535302 01216100 01216100 12028006 20070705 35535302 01216100 12028006 20070705 35535302 01216100 And passing those two files through the processing pipeline you get a report: \u003c?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?\u003e TACs should be unique. TAC: 01216100, handsetId: 95 offerId: 103021 TACs should be unique. TAC: 01216100, handsetId: 95 offerId: 103021 [...] After running the validation, the report presents us with the result. It shows that there are actually non-unique tacs. Unfortunately the rule itself is not so optimal, as it is executed for each tac node. The better case would be to create a rule operating only on groups of tacs - having a rule for each handset's tacs would be much better. Performance consideration As you may have seen, Schematron gives quite a potential, if it comes to rules building - maybe not the easiest to comprehend, since written with XPath, but good enough.\nHowever, with all the XML processing involved in the process, it may take some considerable amount of time to execute such validations. For example, processing rules for file getMigrationOffers.xml takes about 2.296s - the file has 82 offer elements, which the rules operate on. But validating the other file, getAllPhones.xml takes 5.324s, with 3113 tac elements, and the rule iterating all of them.\nThis overhead is too much in most of the situations. That's why this solution is rather not for use in normal execution pipeline - it would be unwise to put Schematron to check each request, thus entangle it into my Web Services normal flow.\nWhat may be more desirable is to deploy a continuous integration server, with a project querying such Web Service and checking the rules in this manner.\nConclusion So, what's so great about having one XML generate another XML? Perhaps nothing, I think it would took just about a day to write some shell, python, that would perform equally (or even better). However, we loose technology homogeneity, and employ some other environments, not specific to our primary target platform, and that seems bad. Of course using some powerful text processing tool to impose the same rules might be much more efficient, thou less coherent.\nWhat is your approach to such situations? Have you used Schematron or any other similar tool?\nCode for this example is available on GitHub - http://github.com/zygm0nt/schematron-example.\n",
-  "wordCount" : "948",
-  "inLanguage": "en",
-  "datePublished": "2010-10-21T08:40:37Z",
-  "dateModified": "2010-10-21T08:40:37Z",
-  "author":{
-    "@type": "Person",
-    "name": "Marcin Cylke"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://marcin.cylke.com.pl/2010/10/21/schematron-to-the-rescue/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Tech ramblings by Marcin",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://marcin.cylke.com.pl/favicon.ico"
-    }
-  }
-}
-</script>
-</head>
-<body id="top">
-    <header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="https://marcin.cylke.com.pl/" accesskey="h" title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu">
-            <li>
-                <a href="https://marcin.cylke.com.pl/about/" title="About">
-                    <span>About</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://marcin.cylke.com.pl/tags/" title="Tags">
-                    <span>Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://marcin.cylke.com.pl/categories/" title="Categories">
-                    <span>Categories</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://marcin.cylke.com.pl/archives/" title="Archives">
-                    <span>Archives</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main">
-
-<article class="post-single">
-  <header class="post-header">
-    <div class="breadcrumbs"><a href="https://marcin.cylke.com.pl/">Home</a>&nbsp;»&nbsp;<a href="https://marcin.cylke.com.pl/post/">Posts</a></div>
-    <h1 class="post-title entry-hint-parent">
-      Schematron to the rescue!
-    </h1>
-    <div class="post-meta"><span title='2010-10-21 08:40:37 +0000 UTC'>October 21, 2010</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span>
-
-</div>
-  </header> <div class="toc">
-    <details >
-        <summary accesskey="c" title="(Alt + C)">
-            <span class="details">Table of Contents</span>
-        </summary>
-
-        <div class="inner"><ul>
-                <li>
-                    <a href="#" aria-label="How does it look?">How does it look?</a></li>
-                <li>
-                    <a href="#" aria-label="Performance consideration">Performance consideration</a></li>
-                <li>
-                    <a href="#" aria-label="Conclusion">Conclusion</a>
-                </li>
-            </ul>
-        </div>
-    </details>
-</div>
-
-  <div class="post-content">
-<div class='post'>
-<table border="0">
-<tr><td>
-<p>In an ideal world all the standards fit well into their places. It is sufficient to use just one serious standard, because all the problems can be solved with it - the standardization processes is there for some reason. But that happens only in ideal
-world, which we're not living in. </p></td> <td><img src="http://blog.innovative-labs.com/blog/simpson_schematron.png" width="100"/>
-</td></tr></table>
-
-<p>In ideal world, when dealing with XML instances you'd be more than fulfilled using XML Schema, or RelaxNG, or any other simple xml formal  definition language to declare your data structure. With that you get rigid rules as to how XML documents should look like. There doesn't seem to be much space to deviate from specs. Well, in fact there is.</p>
-
-<EXCERPT/>
-
-<p>The main problem of XML, aside its verbosity, is the inability to create concise rules for the input or output document as a whole. Perhaps it's a nice feature, because XML Schema should only be used to describe a data structure, not to infer business rules on it. Perhaps not. Nevertheless it's not what I needed in one of the projects I've worked on.</p>
-
-<p>My need was to actually check the business validity of such documents. This was used in a Web Service environment, a pretty stupid WS, which sole role was to fetch data from database and pack it into appropriate XML structures. Errors might occur in database's views or in WS - as usual. They might be data multiplication or appearance of some elements while they shouldn't. Resulting documents were correctly validated with the xml schema, but the result was simply wrong from the business point of view.</p>
-
-<p>What I needed an XML formalization language, an ability to write rules that would assert some rules, report on not meeting stated rules. I was in need of a tool to write business rules to tame such XML entities.</p>
-
-<p>The simplest way I found to solve this was to use <a href="http://www.schematron.com/">Schematron!</a> - "a language for making assertions about patterns found in XML documents". This neat tool is a set of XSL templates, that you use in conjunction with a rule set on documents to check. As a result of the check you get another XML document with test assertions - whether failed or succeeded.</p>
-
-<p>With Schematron you write a set of rules you expect the document to assert, than you use Schematron XSL template to produce XSL rules specific for your case. Now you only need to use newly generated XSL rules template on your XML document to check rules compliance. Easy, if not, check the diagram below.</p>
-
-
-<img src="http://blog.innovative-labs.com/blog/schematron_flow.png"
-width="600"/>
-
-<h2>How does it look?</h2>
-
-The rules' file may look like this:
-
-<pre class="brush: xml">
-<?xml version="1.0" encoding="iso-8859-1"?>
-<iso:schema    xmlns="http://purl.oclc.org/dsdl/schematron" 
-           xmlns:iso="http://purl.oclc.org/dsdl/schematron" 
-           xmlns:sch="http://www.ascc.net/xml/schematron"
-           xmlns:dp ="http://www.dpawson.co.uk/ns#"
-           xmlns:pc="http://example.com/pc/type"
-           queryBinding='xslt2'
-           schemaVersion="ISO19757-3">
+<iso:schema xmlns=http://purl.oclc.org/dsdl/schematron xmlns:iso=http://purl.oclc.org/dsdl/schematron xmlns:sch=http://www.ascc.net/xml/schematron xmlns:dp=http://www.dpawson.co.uk/ns# xmlns:pc=http://example.com/pc/type querybinding=xslt2 schemaversion=ISO19757-3>
   <iso:title>TouK Schematron test harness</iso:title>
 
-  <iso:ns prefix="pc" uri="http://example.com/pc/types" />  
+  <iso:ns prefix="pc" uri=http://example.com/pc/types>  
 
 
-<iso:pattern id="pc.getMigrationOffers">
+<iso:pattern id=pc.getMigrationOffers>
   <iso:title>checking GetMigrationOffers</iso:title>
-  <iso:rule context="pc:getMigrationOffersResponse">
-    <iso:report test="true()">Report date.<iso:value-of select="current-dateTime()"/></iso:report>
-    <iso:assert test="count(//@offerId[. = current()/@offerId]) = 1" >Unique offers allowed.</iso:assert>
+  <iso:rule context=pc:getMigrationOffersResponse>
+    <iso:report test=true()>Report date.<iso:value-of select=current-dateTime()></iso:report>
+    <iso:assert test="count(//@offerId[. = current()/@offerId]) = 1">Unique offers allowed.</iso:assert>
     <iso:assert test="count(//@asb) = 1">Each offer has to have an @abc attribute </iso:assert>
   </iso:rule>
-  <iso:rule context="pc:offer">
+  <iso:rule context=pc:offer>
     <iso:assert test="count(pc:tariff) = 1">Each offer has to have a tariff</iso:assert>
     <iso:assert test="count(pc:offerPromotion) = 1">Each offer has to have a promotion</iso:assert>
   </iso:rule>
 </iso:pattern>
 
-<iso:pattern id="pc.getAllPhones">
+<iso:pattern id=pc.getAllPhones>
   <iso:title>checking GetAllPhones</iso:title>
-  <iso:rule context="pc:tac">
+  <iso:rule context=pc:tac>
     <iso:assert test="count(parent::node()/pc:tac[. = current()]) = 1">
-        TACs should be unique. TAC: <iso:value-of select="."/>, 
-        handsetId: <iso:value-of select="parent::node()/@handsetId"/>
-        offerId: <iso:value-of select="parent::node()/@offerId"/>
+        TACs should be unique. TAC: <iso:value-of select=.>, 
+        handsetId: <iso:value-of select=parent::node()/@handsetId>
+        offerId: <iso:value-of select=parent::node()/@offerId>
     </iso:assert>
   </iso:rule>
 </iso:pattern>
 
 </iso:schema>
-</pre>
-
-<p>Here we see two rules, one named <b>getMigrationOffers</b> and the other <b>getAllPhones</b>. The rules - mainly their asserts seem pretty self explanatory, but for the sake of completeness I'll describe the rules for <b>getAllPhones</b>.</p>
-
-<p>There is one rule, which checks the uniqueness of <b>tac</b> elements. This rule tries to ensure that each handset should have a list of unique tac elements as its children. However there may appear tac elements of the same value in different handset elements.</p>
-
-<p>Given an input XML in the form of:</p>
-
-<pre class="brush: xml">
-<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
-   <soap:Body>
-      <getAllPhonesResponse xmlns="http://example.com/pc/types">
-         <handset endDate="2010-12-31T00:00:00.000+01:00" grossPrice="399" handsetId="95" isAllPhones="true" isPhone="true" manufacturer="SonyEricsson " materialSymbol="TE-SE-XW980-NS1-00" name=" Sony Ericsson W980, Open Market 48H" netPrice="327.04" offerId="103021" priceListId="5912" startDate="2010-03-22T00:00:00.000+01:00">
+</pre><p>Here we see two rules, one named <b>getMigrationOffers</b> and the other <b>getAllPhones</b>. The rules - mainly their asserts seem pretty self explanatory, but for the sake of completeness I'll describe the rules for <b>getAllPhones</b>.</p><p>There is one rule, which checks the uniqueness of <b>tac</b> elements. This rule tries to ensure that each handset should have a list of unique tac elements as its children. However there may appear tac elements of the same value in different handset elements.</p><p>Given an input XML in the form of:</p><pre class="brush: xml">
+<soap:envelope xmlns:soap=http://www.w3.org/2003/05/soap-envelope>
+   <soap:body>
+      <getallphonesresponse xmlns=http://example.com/pc/types>
+         <handset enddate=2010-12-31T00:00:00.000+01:00 grossprice=399 handsetid=95 isallphones=true isphone=true manufacturer="SonyEricsson " materialsymbol=TE-SE-XW980-NS1-00 name=" Sony Ericsson W980, Open Market 48H" netprice=327.04 offerid=103021 pricelistid=5912 startdate=2010-03-22T00:00:00.000+01:00>
             <tac>12028006</tac>
             <tac>20070705</tac>
             <tac>35535302</tac>
             <tac>01216100</tac>
             <tac>01216100</tac>
          </handset>
-         <handset endDate="2010-12-31T00:00:00.000+01:00" grossPrice="399" handsetId="95" isAllPhones="true" isPhone="true" manufacturer="SonyEricsson " materialSymbol="TE-SE-XW980-NS1-00" name=" Sony Ericsson W980, Open Market 48H" netPrice="327.04" offerId="103056" priceListId="5912" startDate="2010-03-22T00:00:00.000+01:00">
+         <handset enddate=2010-12-31T00:00:00.000+01:00 grossprice=399 handsetid=95 isallphones=true isphone=true manufacturer="SonyEricsson " materialsymbol=TE-SE-XW980-NS1-00 name=" Sony Ericsson W980, Open Market 48H" netprice=327.04 offerid=103056 pricelistid=5912 startdate=2010-03-22T00:00:00.000+01:00>
             <tac>12028006</tac>
             <tac>20070705</tac>
             <tac>35535302</tac>
             <tac>01216100</tac>
          </handset>
-         <handset endDate="2010-12-31T00:00:00.000+01:00" grossPrice="399" handsetId="95" isAllPhones="true" isPhone="true" manufacturer="SonyEricsson " materialSymbol="TE-SE-XW980-NS1-00" name=" Sony Ericsson W980, Open Market 48H" netPrice="327.04" offerId="103032" priceListId="5912" startDate="2010-03-22T00:00:00.000+01:00">
+         <handset enddate=2010-12-31T00:00:00.000+01:00 grossprice=399 handsetid=95 isallphones=true isphone=true manufacturer="SonyEricsson " materialsymbol=TE-SE-XW980-NS1-00 name=" Sony Ericsson W980, Open Market 48H" netprice=327.04 offerid=103032 pricelistid=5912 startdate=2010-03-22T00:00:00.000+01:00>
             <tac>12028006</tac>
             <tac>20070705</tac>
             <tac>35535302</tac>
             <tac>01216100</tac>
          </handset>
-       </getAllPhonesResponse>
-   </soap:Body>
-</soap:Envelope>
-</pre>
+       </getallphonesresponse>
+   </soap:body>
+</soap:envelope>
+</pre>And passing those two files through the processing pipeline you get a report:<pre class="brush: xml">
 
-And passing those two files through the processing pipeline you get a report:
-
-<pre class="brush: xml">
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<svrl:schematron-output xmlns:schold="http://www.ascc.net/xml/schematron"
-                        xmlns:iso="http://purl.oclc.org/dsdl/schematron"
-                        xmlns:saxon="http://saxon.sf.net/"
-                        xmlns:pc="http://example.com/pc/types"
-                        xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                        xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-                        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-                        title="TouK Schematron test harness"
-                        schemaVersion="ISO19757-3">
+<svrl:schematron-output xmlns:schold=http://www.ascc.net/xml/schematron xmlns:iso=http://purl.oclc.org/dsdl/schematron xmlns:saxon=http://saxon.sf.net/ xmlns:pc=http://example.com/pc/types xmlns:xs=http://www.w3.org/2001/XMLSchema xmlns:svrl=http://purl.oclc.org/dsdl/svrl xmlns:xhtml=http://www.w3.org/1999/xhtml xmlns:xsd=http://www.w3.org/2001/XMLSchema title="TouK Schematron test harness" schemaversion=ISO19757-3>
     
-   <svrl:ns-prefix-in-attribute-values uri="http://example.com/pc/types" prefix="pc"/>
-   <svrl:active-pattern document="file:/tmp/schematron/getAllPhones.xml" id="pc.getMigrationOffers"
-                        name="checking GetMigrationOffers"/>
-   <svrl:active-pattern document="file:/tmp/schematron/getAllPhones.xml" id="pc.getAllPhones"
-                        name="checking GetAllPhones"/>
-   <svrl:fired-rule context="pc:tac"/>
-   <svrl:fired-rule context="pc:tac"/>
-   <svrl:fired-rule context="pc:tac"/>
-   <svrl:fired-rule context="pc:tac"/>
-   <svrl:failed-assert test="count(parent::node()/pc:tac[. = current()]) = 1"
-                       location="/*:Envelope[namespace-uri()='http://www.w3.org/2003/05/soap-envelope'][1]/*:Body[namespace-uri()='http://www.w3.org/2003/05/soap-envelope'][1]/*:getAllPhonesResponse[namespace-uri()='http://example.com/pc/types'][1]/*:handset[namespace-uri()='http://example.com/pc/types'][1]/*:tac[namespace-uri()='http://example.com/pc/types'][4]">
+   <svrl:ns-prefix-in-attribute-values uri=http://example.com/pc/types prefix="pc">
+   <svrl:active-pattern document=file:/tmp/schematron/getAllPhones.xml id=pc.getMigrationOffers name="checking GetMigrationOffers">
+   <svrl:active-pattern document=file:/tmp/schematron/getAllPhones.xml id=pc.getAllPhones name="checking GetAllPhones">
+   <svrl:fired-rule context=pc:tac>
+   <svrl:fired-rule context=pc:tac>
+   <svrl:fired-rule context=pc:tac>
+   <svrl:fired-rule context=pc:tac>
+   <svrl:failed-assert test="count(parent::node()/pc:tac[. = current()]) = 1" location="/*:Envelope[namespace-uri()='http://www.w3.org/2003/05/soap-envelope'][1]/*:Body[namespace-uri()='http://www.w3.org/2003/05/soap-envelope'][1]/*:getAllPhonesResponse[namespace-uri()='http://example.com/pc/types'][1]/*:handset[namespace-uri()='http://example.com/pc/types'][1]/*:tac[namespace-uri()='http://example.com/pc/types'][4]">
       <svrl:text>
         TACs should be unique. TAC: 01216100, 
         handsetId: 95
         offerId: 103021</svrl:text>
    </svrl:failed-assert>
-   <svrl:fired-rule context="pc:tac"/>
-   <svrl:failed-assert test="count(parent::node()/pc:tac[. = current()]) = 1"
-                       location="/*:Envelope[namespace-uri()='http://www.w3.org/2003/05/soap-envelope'][1]/*:Body[namespace-uri()='http://www.w3.org/2003/05/soap-envelope'][1]/*:getAllPhonesResponse[namespace-uri()='http://example.com/pc/types'][1]/*:handset[namespace-uri()='http://example.com/pc/types'][1]/*:tac[namespace-uri()='http://example.com/pc/types'][5]">
+   <svrl:fired-rule context=pc:tac>
+   <svrl:failed-assert test="count(parent::node()/pc:tac[. = current()]) = 1" location="/*:Envelope[namespace-uri()='http://www.w3.org/2003/05/soap-envelope'][1]/*:Body[namespace-uri()='http://www.w3.org/2003/05/soap-envelope'][1]/*:getAllPhonesResponse[namespace-uri()='http://example.com/pc/types'][1]/*:handset[namespace-uri()='http://example.com/pc/types'][1]/*:tac[namespace-uri()='http://example.com/pc/types'][5]">
       <svrl:text>
         TACs should be unique. TAC: 01216100, 
         handsetId: 95
         offerId: 103021</svrl:text>
    </svrl:failed-assert>
-   <svrl:fired-rule context="pc:tac"/>
-   <svrl:fired-rule context="pc:tac"/>
-   <svrl:fired-rule context="pc:tac"/>
-   <svrl:fired-rule context="pc:tac"/>
+   <svrl:fired-rule context=pc:tac>
+   <svrl:fired-rule context=pc:tac>
+   <svrl:fired-rule context=pc:tac>
+   <svrl:fired-rule context=pc:tac>
 [...]
 </svrl:schematron-output>
-</pre>
-
-<p>After running the validation, the report presents us with the result. It shows that there are actually non-unique tacs. Unfortunately the rule itself is not so optimal, as it is executed for each tac node. The better case would be to create a rule operating only on groups of tacs - having a rule for each handset's tacs would be much better.
-
-<h2>Performance consideration</h2>
-
-<p>As you may have seen, Schematron gives quite a potential, if it comes to rules building - maybe not the easiest to comprehend, since written with XPath, but good enough.</p>
-
-<p>However, with all the XML processing involved in the process, it may take some considerable amount of time to execute such validations. For example, processing rules for file <b>getMigrationOffers.xml</b> takes about 2.296s - the file has 82 offer elements, which the rules operate on. But validating the other file, <b>getAllPhones.xml</b> takes 5.324s, with 3113 tac elements, and the rule iterating all of them.</p>
-
-<p>This overhead is too much in most of the situations. That's why this solution is rather not for use in normal execution pipeline - it would be unwise to put Schematron to check each request, thus entangle it into my Web Services normal flow.</p>
-
-<p>What may be more desirable is to deploy a continuous integration server, with a project querying such Web Service and checking the rules in this manner.</p>
-
-<h2>Conclusion</h2>
-
-<p>So, what's so great about having one XML generate another XML? Perhaps nothing, I think it would took just about a day to write some shell, python, &lt;other text processing tool&gt; that would perform equally (or even better). However, we loose technology homogeneity, and employ some other environments, not specific to our primary target platform, and that seems bad. Of course using some powerful text processing tool to impose the same rules might be much more efficient, thou less coherent.</p>
-
-<p>What is your approach to such situations? Have you used Schematron or any other similar tool?</p>
-
-<p><font size="-2">Code for this example is available on GitHub - <a
-href="http://github.com/zygm0nt/schematron-example">http://github.com/zygm0nt/schematron-example</a>.</font></p></div>
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-    </ul>
-<nav class="paginav">
-  <a class="prev" href="https://marcin.cylke.com.pl/2010/11/06/best-pigsticking-ever/">
-    <span class="title">« Prev</span>
-    <br>
-    <span>Best pigsticking, EVER!</span>
-  </a>
-  <a class="next" href="https://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/">
-    <span class="title">Next »</span>
-    <br>
-    <span>Complex flows with Apache Camel</span>
-  </a>
-</nav>
-
-  </footer><script src="https://utteranc.es/client.js"
-        repo="zygm0nt/hugo-blog-incarnation"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
-
-</article>
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></span> · 
-
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
-</script>
-</body>
-
-</html>
+</pre><p>After running the validation, the report presents us with the result. It shows that there are actually non-unique tacs. Unfortunately the rule itself is not so optimal, as it is executed for each tac node. The better case would be to create a rule operating only on groups of tacs - having a rule for each handset's tacs would be much better.<h2>Performance consideration</h2><p>As you may have seen, Schematron gives quite a potential, if it comes to rules building - maybe not the easiest to comprehend, since written with XPath, but good enough.</p><p>However, with all the XML processing involved in the process, it may take some considerable amount of time to execute such validations. For example, processing rules for file <b>getMigrationOffers.xml</b> takes about 2.296s - the file has 82 offer elements, which the rules operate on. But validating the other file, <b>getAllPhones.xml</b> takes 5.324s, with 3113 tac elements, and the rule iterating all of them.</p><p>This overhead is too much in most of the situations. That's why this solution is rather not for use in normal execution pipeline - it would be unwise to put Schematron to check each request, thus entangle it into my Web Services normal flow.</p><p>What may be more desirable is to deploy a continuous integration server, with a project querying such Web Service and checking the rules in this manner.</p><h2>Conclusion</h2><p>So, what's so great about having one XML generate another XML? Perhaps nothing, I think it would took just about a day to write some shell, python, &lt;other text processing tool> that would perform equally (or even better). However, we loose technology homogeneity, and employ some other environments, not specific to our primary target platform, and that seems bad. Of course using some powerful text processing tool to impose the same rules might be much more efficient, thou less coherent.</p><p>What is your approach to such situations? Have you used Schematron or any other similar tool?</p><p><font size=-2>Code for this example is available on GitHub - <a href=http://github.com/zygm0nt/schematron-example>http://github.com/zygm0nt/schematron-example</a>.</font></p></div></div><footer class=post-footer><ul class=post-tags></ul><nav class=paginav><a class=prev href=https://marcin.cylke.com.pl/2010/11/06/best-pigsticking-ever/><span class=title>« Prev</span><br><span>Best pigsticking, EVER!</span>
+</a><a class=next href=https://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/><span class=title>Next »</span><br><span>Complex flows with Apache Camel</span></a></nav></footer><script src=https://utteranc.es/client.js repo=zygm0nt/hugo-blog-incarnation issue-term=pathname theme=github-light crossorigin=anonymous async></script></article></main><footer class=footer><span>&copy; 2026 <a href=https://marcin.cylke.com.pl/>Tech ramblings by Marcin</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

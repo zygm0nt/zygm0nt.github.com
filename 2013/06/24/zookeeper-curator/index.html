@@ -1,260 +1,10 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
-
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Zookeeper &#43; Curator = Distributed sync | Tech ramblings by Marcin</title>
-<meta name="keywords" content="">
-<meta name="description" content="
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Zookeeper + Curator = Distributed sync | Tech ramblings by Marcin</title><meta name=keywords content><meta name=description content="
     An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system&rsquo;s components. Since I had already a few separate components I didn&rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I&rsquo;ve decided to go that way with my solution.
 What is Zookeeper?Just a crude distributed synchronization framework. However, it implements Paxos-style algorithms (http://en.wikipedia.org/wiki/Paxos_(computer_science)) to ensure no split-brain scenarios would occur. This is quite an important feature, since I don&rsquo;t have to care about that kind of problems while using this app. You just need to create an ensemble of a couple of its instances - to ensure high availability. It is basically a virtual filesystem, with files, directories and stuff. One could ask why another filesystem? Well this one is a rather special one, especially for distributed systems. The reason why creating all the locking algorithms on top of Zookeeper is easy is its Ephemeral Nodes - which are just files that exist as long as connection for them exists. After it disconnects - such file disappears. 
-">
-<meta name="author" content="Marcin Cylke">
-<link rel="canonical" href="https://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://marcin.cylke.com.pl/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://marcin.cylke.com.pl/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://marcin.cylke.com.pl/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://marcin.cylke.com.pl/apple-touch-icon.png">
-<link rel="mask-icon" href="https://marcin.cylke.com.pl/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-        @media (prefers-color-scheme: light) {
-            .list::-webkit-scrollbar-thumb {
-                border-color: var(--code-bg);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><link rel="stylesheet" href="/css/book_section.css">
-<meta property="og:url" content="https://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/">
-  <meta property="og:site_name" content="Tech ramblings by Marcin">
-  <meta property="og:title" content="Zookeeper &#43; Curator = Distributed sync">
-  <meta property="og:description" content="An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system’s components. Since I had already a few separate components I didn’t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I’ve decided to go that way with my solution. What is Zookeeper?Just a crude distributed synchronization framework. However, it implements Paxos-style algorithms (http://en.wikipedia.org/wiki/Paxos_(computer_science)) to ensure no split-brain scenarios would occur. This is quite an important feature, since I don’t have to care about that kind of problems while using this app. You just need to create an ensemble of a couple of its instances - to ensure high availability. It is basically a virtual filesystem, with files, directories and stuff. One could ask why another filesystem? Well this one is a rather special one, especially for distributed systems. The reason why creating all the locking algorithms on top of Zookeeper is easy is its Ephemeral Nodes - which are just files that exist as long as connection for them exists. After it disconnects - such file disappears.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2013-06-24T00:00:00+00:00">
-    <meta property="article:modified_time" content="2013-06-24T00:00:00+00:00">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Zookeeper &#43; Curator = Distributed sync">
-  <meta name="twitter:description" content="An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system’s components. Since I had already a few separate components I didn’t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I’ve decided to go that way with my solution. What is Zookeeper?Just a crude distributed synchronization framework. However, it implements Paxos-style algorithms (http://en.wikipedia.org/wiki/Paxos_(computer_science)) to ensure no split-brain scenarios would occur. This is quite an important feature, since I don’t have to care about that kind of problems while using this app. You just need to create an ensemble of a couple of its instances - to ensure high availability. It is basically a virtual filesystem, with files, directories and stuff. One could ask why another filesystem? Well this one is a rather special one, especially for distributed systems. The reason why creating all the locking algorithms on top of Zookeeper is easy is its Ephemeral Nodes - which are just files that exist as long as connection for them exists. After it disconnects - such file disappears.">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://marcin.cylke.com.pl/post/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Zookeeper + Curator = Distributed sync",
-      "item": "https://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Zookeeper + Curator = Distributed sync",
-  "name": "Zookeeper \u002b Curator = Distributed sync",
-  "description": "\nAn application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system\u0026rsquo;s components. Since I had already a few separate components I didn\u0026rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I\u0026rsquo;ve decided to go that way with my solution. What is Zookeeper?Just a crude distributed synchronization framework. However, it implements Paxos-style algorithms (http://en.wikipedia.org/wiki/Paxos_(computer_science)) to ensure no split-brain scenarios would occur. This is quite an important feature, since I don\u0026rsquo;t have to care about that kind of problems while using this app. You just need to create an ensemble of a couple of its instances - to ensure high availability. It is basically a virtual filesystem, with files, directories and stuff. One could ask why another filesystem? Well this one is a rather special one, especially for distributed systems. The reason why creating all the locking algorithms on top of Zookeeper is easy is its Ephemeral Nodes - which are just files that exist as long as connection for them exists. After it disconnects - such file disappears. ",
-  "keywords": [
-    
-  ],
-  "articleBody": " An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system’s components. Since I had already a few separate components I didn’t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I’ve decided to go that way with my solution. What is Zookeeper?Just a crude distributed synchronization framework. However, it implements Paxos-style algorithms (http://en.wikipedia.org/wiki/Paxos_(computer_science)) to ensure no split-brain scenarios would occur. This is quite an important feature, since I don’t have to care about that kind of problems while using this app. You just need to create an ensemble of a couple of its instances - to ensure high availability. It is basically a virtual filesystem, with files, directories and stuff. One could ask why another filesystem? Well this one is a rather special one, especially for distributed systems. The reason why creating all the locking algorithms on top of Zookeeper is easy is its Ephemeral Nodes - which are just files that exist as long as connection for them exists. After it disconnects - such file disappears. With such paradigms in place it’s fairly easy to create some high level algorithms for synchronization. Having that in place, it can safely integrate multiple services ensuring loose coupling in a distributed way. Zookeeper from developer’s POV With all the base services for Zookeeper started, it seems there is nothing else, than just connect to it and start implementing necessary algorithms. Unfortunately, the API is quite basic and offers files and directories abstractions with the addition of different node type (file types) - ephemeral and sequence. It is also possible to watch a node for changes. Using bare Zookeeper is hard!Creating connections is tedious - and there is lots of things to take care of. Handling an established connection is hard - when establishing connection to ensemble, it’s necessary to negotiate a session also. During the whole process a number of exceptions can occur - these are “recoverable” exceptions, that can be gracefully handled and not break the connection.\nSo, Zookeeper API is hard.\nEven if one is proficient with that API, then there come recipes. The reason for using Zookeeper is to be able to implement some more sophisticated algorithms on top of it. Unfortunately those aren’t trivial and it is again quite hard to implement them without bugs. And since distributed systems are hard, why would anyone want another difficult to handle tool? Enter CuratorHappily, guys from Netflix implemented a nice abstraction for dealing with Zookeeper internals. They called it Curator and use it extensively in the company’s environment. Curator offers consistent API for Zookeeper’s functionality. It even implements a couple of recipes for distributed systems. File read/writeThe basic use of Zookeeper is as a distributed configuration repository. For this scenario I only need read/write capabilities, to be able to write and read files from the Zookeeper filesystem. This code snippet writes a sample json to a file on ZK filesystem. EnsurePath ensurePath = new EnsurePath(markerPath); ensurePath.ensure(client.getZookeeperClient()); String json = “...”; if (client.checkExists().forPath(statusFile(core)) != null) client.setData().forPath(statusFile(core), json.getBytes()); else client.create().forPath(statusFile(core), json.getBytes()); Distributed locking Having multiple systems there may be a need of using an exclusive lock for some resource, or perhaps some big system requires it’s components to synchronize based on locks. This “recipe” is an ideal match for those situations.\nlock = new InterProcessSemaphoreMutex(client, lockPath); lock.acquire(5, TimeUnit.MINUTES); … do sth … lock.release(); (from https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/LockingRemotely.java) Sevice AdvertisementThis is quite an interesting use case. With many small services on different servers it is not wise to exchange ip addresses and ports between them. When some of those services may go down, while other will try to replace them - the task gets even harder. That’s why, with Zookeeper in place, it can be utilised as a registry of existing services. If a service starts, it registers into the ServiceRegistry, offering basic information, like it’s purpose, role, address, and port. Services that want to use a specific kind of service request an access to some instance. This way of configuring easily decouples services from their configuration. Basically this scenario needs ? steps:\n1. Service starts and registers its presence (https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerAdvertiser.java#L44): ServiceDiscovery discovery = getDiscovery(); discovery.start(); ServiceInstance si = getInstance(); log.info(si); discovery.registerService(si); 2. Another service - on another host or in another JVM on the same machine tries to discover who is implementing the service (https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerFinder.java#L50): instances = discovery.queryForInstances(serviceName); The whole concept here is ridiculously simple - the service advertising its presence just stores a file with its whereabouts. The service that is looking for service providers just look into specific directory and read stored definitions. In my example, the structure advertised by services looks like this (+ some getters and constructor - the rest is here: https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/model/WorkerMetadata.java): public final class WorkerMetadata { private final UUID workerId; private final String listenAddress; private final int listenPort; } Source codeThe above recipes are available in Curator library (http://curator.incubator.apache.org/). Recipes’ usage examples are in my github repo at https://github.com/zygm0nt/curator-playground ConclusionIf you’re in need of a reliable platform for exchanging data and managing synchronization, and you need to do it in a distributed fashion - just choose Zookeeper. Then add Curator for the ease of using it. Enjoy! image comes from: http://www.flickr.com/photos/jfgallery/2993361148 all source code fragments taken from this repo: https://github.com/zygm0nt/curator-playground ",
-  "wordCount" : "887",
-  "inLanguage": "en",
-  "datePublished": "2013-06-24T00:00:00Z",
-  "dateModified": "2013-06-24T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Marcin Cylke"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Tech ramblings by Marcin",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://marcin.cylke.com.pl/favicon.ico"
-    }
-  }
-}
-</script>
-</head>
-<body id="top">
-    <header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="https://marcin.cylke.com.pl/" accesskey="h" title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu">
-            <li>
-                <a href="https://marcin.cylke.com.pl/about/" title="About">
-                    <span>About</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://marcin.cylke.com.pl/tags/" title="Tags">
-                    <span>Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://marcin.cylke.com.pl/categories/" title="Categories">
-                    <span>Categories</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://marcin.cylke.com.pl/archives/" title="Archives">
-                    <span>Archives</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main">
-
-<article class="post-single">
-  <header class="post-header">
-    <div class="breadcrumbs"><a href="https://marcin.cylke.com.pl/">Home</a>&nbsp;»&nbsp;<a href="https://marcin.cylke.com.pl/post/">Posts</a></div>
-    <h1 class="post-title entry-hint-parent">
-      Zookeeper &#43; Curator = Distributed sync
-    </h1>
-    <div class="post-meta"><span title='2013-06-24 00:00:00 +0000 UTC'>June 24, 2013</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span>
-
-</div>
-  </header> <div class="toc">
-    <details >
-        <summary accesskey="c" title="(Alt + C)">
-            <span class="details">Table of Contents</span>
-        </summary>
-
-        <div class="inner"><ul>
-                <li>
-                    <a href="#" aria-label="What is Zookeeper?">What is Zookeeper?</a></li>
-                <li>
-                    <a href="#" aria-label="Using bare Zookeeper is hard!">Using bare Zookeeper is hard!</a></li>
-                <li>
-                    <a href="#" aria-label="Enter Curator">Enter Curator</a></li>
-                <li>
-                    <a href="#" aria-label="File read/write">File read/write</a></li>
-                <li>
-                    <a href="#" aria-label="Distributed locking">Distributed locking</a></li>
-                <li>
-                    <a href="#" aria-label="Sevice Advertisement">Sevice Advertisement</a></li>
-                <li>
-                    <a href="#" aria-label="Source code">Source code</a></li>
-                <li>
-                    <a href="#" aria-label="Conclusion">Conclusion</a>
-                </li>
-            </ul>
-        </div>
-    </details>
-</div>
-
-  <div class="post-content">
-<p class="c8"><img height="300" src="/assets/2013-06-24-zookeeper-curator.jpg"></p><p class="c1"><span></span></p><p class="c8">
-    <span>An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system&rsquo;s components. Since I had already a few separate components I didn&rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I&rsquo;ve decided to go that way with my solution.</span>
-</p><h2 class="c8"><a name="h.v629433u6utf"></a><span>What is Zookeeper?</span></h2><p class="c8"><span>Just a crude distributed synchronization framework. However, it implements Paxos-style algorithms (</span><span
-        class="c5"><a class="c0" href="http://en.wikipedia.org/wiki/Paxos_(computer_science)">http://en.wikipedia.org/wiki/Paxos_(computer_science)</a></span><span>) to ensure no split-brain scenarios would occur. This is quite an important feature, since I don&rsquo;t have to care about that kind of problems while using this app. You just need to create an ensemble of a couple of its instances - to ensure high availability. It is basically a virtual filesystem, with files, directories and stuff. One could ask why another filesystem? Well this one is a rather special one, especially for distributed systems. The reason why creating all the locking algorithms on top of Zookeeper is easy is its Ephemeral Nodes - which are just files that exist as long as connection for them exists. After it disconnects - such file disappears. </span>
-</p><p class="c8"><span>With such paradigms in place it&rsquo;s fairly easy to create some high level algorithms for synchronization.</span>
-</p><p class="c1"><span></span></p><p class="c8"><span>Having that in place, it</span><span>&nbsp;can</span><span>&nbsp;safely integrate multiple services ensuring loose coupling in a distributed way.</span>
-</p><p class="c1"><span></span></p><h2 class="c8"><a name="h.ppqvt63vg53w"></a><span>Zookeeper from developer&rsquo;s POV</span>
-</h2><p class="c8"><span>With all the base services for Zookeeper started, it seems there is nothing else, than just connect to it and start implementing necessary algorithms. Unfortunately, the API is quite basic and offers files and directories abstractions with the addition of different node type (file types) - ephemeral and sequence. It is also possible to watch a node for changes.</span>
-</p><h2 class="c8"><a name="h.lgfultrxupbf"></a><span>Using bare Zookeeper is hard!</span></h2><p class="c8"><span>Creating connections is tedious - and there is lots of things to take care of. Handling an established connection is hard - when establishing connection to ensemble, it&rsquo;s necessary to negotiate a session also. During the whole process a number of exceptions can occur - these are &ldquo;recoverable&rdquo;
-    exceptions, that can be gracefully handled and not break the connection.</span></p><p class="c1"><span></span></p><p
-        class="c8"><span>So, Zookeeper API is hard.</span></p><p class="c1"><span></span></p><p class="c8"><span>Even if one is proficient with that API, then there come recipes. The reason for using Zookeeper is to be able to implement some more sophisticated algorithms on top of it. Unfortunately those aren&rsquo;t trivial and it is again quite hard to implement them without bugs.</span>
-</p><p class="c1"><span></span></p><p class="c8"><span>And since distributed systems are hard, why would anyone want another difficult to handle tool? </span>
-</p><p class="c1"><span></span></p><h2 class="c8"><a name="h.8n72xils1l1f"></a><span>Enter Curator</span></h2><p
-        class="c8"><span>Happily, guys from Netflix implemented a nice abstraction for dealing with Zookeeper internals. They called it Curator and use it extensively in the company&rsquo;s environment. Curator offers consistent API for Zookeeper&rsquo;s functionality. It even implements a couple of recipes for distributed systems.</span>
-</p><p class="c1"><span></span></p><h2 class="c8"><a name="h.k63iku7qitza"></a><span>File read/write</span></h2><p
-        class="c8"><span>The basic use of Zookeeper is as a distributed configuration repository. For this scenario I only need read/write capabilities, to be able to write and read files from the Zookeeper filesystem. This code snippet writes a sample json to a file on ZK filesystem.</span>
-</p><p class="c1"><span></span></p><a href="#" name="fb1072a0c295459e23a47b12e8c09952a5ab3768"></a><a href="#"
-                                                                                                      name="0"></a>
-<pre>
+"><meta name=author content="Marcin Cylke"><link rel=canonical href=https://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/><link crossorigin=anonymous href=/assets/css/stylesheet.2ef88c6e9b91917ba47ee47c08eceac58e4063f58023c5794d790144e14eeb83.css integrity="sha256-LviMbpuRkXukfuR8COzqxY5AY/WAI8V5TXkBROFO64M=" rel="preload stylesheet" as=style><link rel=icon href=https://marcin.cylke.com.pl/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://marcin.cylke.com.pl/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://marcin.cylke.com.pl/favicon-32x32.png><link rel=apple-touch-icon href=https://marcin.cylke.com.pl/apple-touch-icon.png><link rel=mask-icon href=https://marcin.cylke.com.pl/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><link rel=stylesheet href=/css/book_section.css><link rel=stylesheet href=/css/on_this_day.css><link rel=stylesheet href=/css/til.css><script defer src=/js/code-highlight.js></script><meta property="og:url" content="https://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/"><meta property="og:site_name" content="Tech ramblings by Marcin"><meta property="og:title" content="Zookeeper + Curator = Distributed sync"><meta property="og:description" content="An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system’s components. Since I had already a few separate components I didn’t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I’ve decided to go that way with my solution. What is Zookeeper?Just a crude distributed synchronization framework. However, it implements Paxos-style algorithms (http://en.wikipedia.org/wiki/Paxos_(computer_science)) to ensure no split-brain scenarios would occur. This is quite an important feature, since I don’t have to care about that kind of problems while using this app. You just need to create an ensemble of a couple of its instances - to ensure high availability. It is basically a virtual filesystem, with files, directories and stuff. One could ask why another filesystem? Well this one is a rather special one, especially for distributed systems. The reason why creating all the locking algorithms on top of Zookeeper is easy is its Ephemeral Nodes - which are just files that exist as long as connection for them exists. After it disconnects - such file disappears."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2013-06-24T00:00:00+00:00"><meta property="article:modified_time" content="2013-06-24T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Zookeeper + Curator = Distributed sync"><meta name=twitter:description content="An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system’s components. Since I had already a few separate components I didn’t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I’ve decided to go that way with my solution. What is Zookeeper?Just a crude distributed synchronization framework. However, it implements Paxos-style algorithms (http://en.wikipedia.org/wiki/Paxos_(computer_science)) to ensure no split-brain scenarios would occur. This is quite an important feature, since I don’t have to care about that kind of problems while using this app. You just need to create an ensemble of a couple of its instances - to ensure high availability. It is basically a virtual filesystem, with files, directories and stuff. One could ask why another filesystem? Well this one is a rather special one, especially for distributed systems. The reason why creating all the locking algorithms on top of Zookeeper is easy is its Ephemeral Nodes - which are just files that exist as long as connection for them exists. After it disconnects - such file disappears."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://marcin.cylke.com.pl/post/"},{"@type":"ListItem","position":2,"name":"Zookeeper + Curator = Distributed sync","item":"https://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Zookeeper + Curator = Distributed sync","name":"Zookeeper \u002b Curator = Distributed sync","description":"\nAn application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system\u0026rsquo;s components. Since I had already a few separate components I didn\u0026rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I\u0026rsquo;ve decided to go that way with my solution. What is Zookeeper?Just a crude distributed synchronization framework. However, it implements Paxos-style algorithms (http://en.wikipedia.org/wiki/Paxos_(computer_science)) to ensure no split-brain scenarios would occur. This is quite an important feature, since I don\u0026rsquo;t have to care about that kind of problems while using this app. You just need to create an ensemble of a couple of its instances - to ensure high availability. It is basically a virtual filesystem, with files, directories and stuff. One could ask why another filesystem? Well this one is a rather special one, especially for distributed systems. The reason why creating all the locking algorithms on top of Zookeeper is easy is its Ephemeral Nodes - which are just files that exist as long as connection for them exists. After it disconnects - such file disappears. ","keywords":[],"articleBody":" An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system’s components. Since I had already a few separate components I didn’t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I’ve decided to go that way with my solution. What is Zookeeper?Just a crude distributed synchronization framework. However, it implements Paxos-style algorithms (http://en.wikipedia.org/wiki/Paxos_(computer_science)) to ensure no split-brain scenarios would occur. This is quite an important feature, since I don’t have to care about that kind of problems while using this app. You just need to create an ensemble of a couple of its instances - to ensure high availability. It is basically a virtual filesystem, with files, directories and stuff. One could ask why another filesystem? Well this one is a rather special one, especially for distributed systems. The reason why creating all the locking algorithms on top of Zookeeper is easy is its Ephemeral Nodes - which are just files that exist as long as connection for them exists. After it disconnects - such file disappears. With such paradigms in place it’s fairly easy to create some high level algorithms for synchronization. Having that in place, it can safely integrate multiple services ensuring loose coupling in a distributed way. Zookeeper from developer’s POV With all the base services for Zookeeper started, it seems there is nothing else, than just connect to it and start implementing necessary algorithms. Unfortunately, the API is quite basic and offers files and directories abstractions with the addition of different node type (file types) - ephemeral and sequence. It is also possible to watch a node for changes. Using bare Zookeeper is hard!Creating connections is tedious - and there is lots of things to take care of. Handling an established connection is hard - when establishing connection to ensemble, it’s necessary to negotiate a session also. During the whole process a number of exceptions can occur - these are “recoverable” exceptions, that can be gracefully handled and not break the connection.\nSo, Zookeeper API is hard.\nEven if one is proficient with that API, then there come recipes. The reason for using Zookeeper is to be able to implement some more sophisticated algorithms on top of it. Unfortunately those aren’t trivial and it is again quite hard to implement them without bugs. And since distributed systems are hard, why would anyone want another difficult to handle tool? Enter CuratorHappily, guys from Netflix implemented a nice abstraction for dealing with Zookeeper internals. They called it Curator and use it extensively in the company’s environment. Curator offers consistent API for Zookeeper’s functionality. It even implements a couple of recipes for distributed systems. File read/writeThe basic use of Zookeeper is as a distributed configuration repository. For this scenario I only need read/write capabilities, to be able to write and read files from the Zookeeper filesystem. This code snippet writes a sample json to a file on ZK filesystem. EnsurePath ensurePath = new EnsurePath(markerPath); ensurePath.ensure(client.getZookeeperClient()); String json = “...”; if (client.checkExists().forPath(statusFile(core)) != null) client.setData().forPath(statusFile(core), json.getBytes()); else client.create().forPath(statusFile(core), json.getBytes()); Distributed locking Having multiple systems there may be a need of using an exclusive lock for some resource, or perhaps some big system requires it’s components to synchronize based on locks. This “recipe” is an ideal match for those situations.\nlock = new InterProcessSemaphoreMutex(client, lockPath); lock.acquire(5, TimeUnit.MINUTES); … do sth … lock.release(); (from https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/LockingRemotely.java) Sevice AdvertisementThis is quite an interesting use case. With many small services on different servers it is not wise to exchange ip addresses and ports between them. When some of those services may go down, while other will try to replace them - the task gets even harder. That’s why, with Zookeeper in place, it can be utilised as a registry of existing services. If a service starts, it registers into the ServiceRegistry, offering basic information, like it’s purpose, role, address, and port. Services that want to use a specific kind of service request an access to some instance. This way of configuring easily decouples services from their configuration. Basically this scenario needs ? steps:\n1. Service starts and registers its presence (https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerAdvertiser.java#L44): ServiceDiscovery discovery = getDiscovery(); discovery.start(); ServiceInstance si = getInstance(); log.info(si); discovery.registerService(si); 2. Another service - on another host or in another JVM on the same machine tries to discover who is implementing the service (https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerFinder.java#L50): instances = discovery.queryForInstances(serviceName); The whole concept here is ridiculously simple - the service advertising its presence just stores a file with its whereabouts. The service that is looking for service providers just look into specific directory and read stored definitions. In my example, the structure advertised by services looks like this (+ some getters and constructor - the rest is here: https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/model/WorkerMetadata.java): public final class WorkerMetadata { private final UUID workerId; private final String listenAddress; private final int listenPort; } Source codeThe above recipes are available in Curator library (http://curator.incubator.apache.org/). Recipes’ usage examples are in my github repo at https://github.com/zygm0nt/curator-playground ConclusionIf you’re in need of a reliable platform for exchanging data and managing synchronization, and you need to do it in a distributed fashion - just choose Zookeeper. Then add Curator for the ease of using it. Enjoy! image comes from: http://www.flickr.com/photos/jfgallery/2993361148 all source code fragments taken from this repo: https://github.com/zygm0nt/curator-playground ","wordCount":"887","inLanguage":"en","datePublished":"2013-06-24T00:00:00Z","dateModified":"2013-06-24T00:00:00Z","author":{"@type":"Person","name":"Marcin Cylke"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/"},"publisher":{"@type":"Organization","name":"Tech ramblings by Marcin","logo":{"@type":"ImageObject","url":"https://marcin.cylke.com.pl/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://marcin.cylke.com.pl/ accesskey=h title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://marcin.cylke.com.pl/about/ title=About><span>About</span></a></li><li><a href=https://marcin.cylke.com.pl/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://marcin.cylke.com.pl/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://marcin.cylke.com.pl/archives/ title=Archives><span>Archives</span></a></li><li><a href=https://marcin.cylke.com.pl/travels/ title=Travels><span>Travels</span></a></li><li><a href=https://marcin.cylke.com.pl/til/ title=TIL><span>TIL</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://marcin.cylke.com.pl/>Home</a>&nbsp;»&nbsp;<a href=https://marcin.cylke.com.pl/post/>Posts</a></div><h1 class="post-title entry-hint-parent">Zookeeper + Curator = Distributed sync</h1><div class=post-meta><span title='2013-06-24 00:00:00 +0000 UTC'>June 24, 2013</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=# aria-label="What is Zookeeper?">What is Zookeeper?</a></li><li><a href=# aria-label="Using bare Zookeeper is hard!">Using bare Zookeeper is hard!</a></li><li><a href=# aria-label="Enter Curator">Enter Curator</a></li><li><a href=# aria-label="File read/write">File read/write</a></li><li><a href=# aria-label="Distributed locking">Distributed locking</a></li><li><a href=# aria-label="Sevice Advertisement">Sevice Advertisement</a></li><li><a href=# aria-label="Source code">Source code</a></li><li><a href=# aria-label=Conclusion>Conclusion</a></li></ul></div></details></div><div class=post-content><p class=c8><img height=300 src=/assets/2013-06-24-zookeeper-curator.jpg></p><p class=c1><span></span></p><p class=c8><span>An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system&rsquo;s components. Since I had already a few separate components I didn&rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I&rsquo;ve decided to go that way with my solution.</span></p><h2 class=c8><a name=h.v629433u6utf></a><span>What is Zookeeper?</span></h2><p class=c8><span>Just a crude distributed synchronization framework. However, it implements Paxos-style algorithms (</span><span class=c5><a class=c0 href=http://en.wikipedia.org/wiki/Paxos_(computer_science)>http://en.wikipedia.org/wiki/Paxos_(computer_science)</a></span><span>) to ensure no split-brain scenarios would occur. This is quite an important feature, since I don&rsquo;t have to care about that kind of problems while using this app. You just need to create an ensemble of a couple of its instances - to ensure high availability. It is basically a virtual filesystem, with files, directories and stuff. One could ask why another filesystem? Well this one is a rather special one, especially for distributed systems. The reason why creating all the locking algorithms on top of Zookeeper is easy is its Ephemeral Nodes - which are just files that exist as long as connection for them exists. After it disconnects - such file disappears.</span></p><p class=c8><span>With such paradigms in place it&rsquo;s fairly easy to create some high level algorithms for synchronization.</span></p><p class=c1><span></span></p><p class=c8><span>Having that in place, it</span><span>&nbsp;can</span><span>&nbsp;safely integrate multiple services ensuring loose coupling in a distributed way.</span></p><p class=c1><span></span></p><h2 class=c8><a name=h.ppqvt63vg53w></a><span>Zookeeper from developer&rsquo;s POV</span></h2><p class=c8><span>With all the base services for Zookeeper started, it seems there is nothing else, than just connect to it and start implementing necessary algorithms. Unfortunately, the API is quite basic and offers files and directories abstractions with the addition of different node type (file types) - ephemeral and sequence. It is also possible to watch a node for changes.</span></p><h2 class=c8><a name=h.lgfultrxupbf></a><span>Using bare Zookeeper is hard!</span></h2><p class=c8><span>Creating connections is tedious - and there is lots of things to take care of. Handling an established connection is hard - when establishing connection to ensemble, it&rsquo;s necessary to negotiate a session also. During the whole process a number of exceptions can occur - these are &ldquo;recoverable&rdquo;
+exceptions, that can be gracefully handled and not break the connection.</span></p><p class=c1><span></span></p><p class=c8><span>So, Zookeeper API is hard.</span></p><p class=c1><span></span></p><p class=c8><span>Even if one is proficient with that API, then there come recipes. The reason for using Zookeeper is to be able to implement some more sophisticated algorithms on top of it. Unfortunately those aren&rsquo;t trivial and it is again quite hard to implement them without bugs.</span></p><p class=c1><span></span></p><p class=c8><span>And since distributed systems are hard, why would anyone want another difficult to handle tool?</span></p><p class=c1><span></span></p><h2 class=c8><a name=h.8n72xils1l1f></a><span>Enter Curator</span></h2><p class=c8><span>Happily, guys from Netflix implemented a nice abstraction for dealing with Zookeeper internals. They called it Curator and use it extensively in the company&rsquo;s environment. Curator offers consistent API for Zookeeper&rsquo;s functionality. It even implements a couple of recipes for distributed systems.</span></p><p class=c1><span></span></p><h2 class=c8><a name=h.k63iku7qitza></a><span>File read/write</span></h2><p class=c8><span>The basic use of Zookeeper is as a distributed configuration repository. For this scenario I only need read/write capabilities, to be able to write and read files from the Zookeeper filesystem. This code snippet writes a sample json to a file on ZK filesystem.</span></p><p class=c1><span></span></p><a href=# name=fb1072a0c295459e23a47b12e8c09952a5ab3768></a><a href=# name=0></a><pre>
 <code>
 EnsurePath ensurePath = new EnsurePath(markerPath);
 ensurePath.ensure(client.getZookeeperClient());
@@ -265,14 +15,8 @@ else
      client.create().forPath(statusFile(core), json.getBytes());
 
 </code>
-</pre>
-
-<p class="c1"><span></span></p><h2 class="c8"><a name="h.ikl4cn73c5uw"></a><span>Distributed locking</span></h2>
-<p class="c8"><span>Having multiple systems there may be a need of using an exclusive lock for some resource, or perhaps some big system requires it&rsquo;s components to synchronize based on locks. This &ldquo;recipe&rdquo;
-    is an ideal match for those situations.</span></p><p class="c1"><span></span></p><a href="#"
-                                                                                        name="b0329bbbf14b79ffaba1139881914aea887ef6a3"></a>
-<a href="#" name="1"></a>
-<pre>
+</pre><p class=c1><span></span></p><h2 class=c8><a name=h.ikl4cn73c5uw></a><span>Distributed locking</span></h2><p class=c8><span>Having multiple systems there may be a need of using an exclusive lock for some resource, or perhaps some big system requires it&rsquo;s components to synchronize based on locks. This &ldquo;recipe&rdquo;
+is an ideal match for those situations.</span></p><p class=c1><span></span></p><a href=# name=b0329bbbf14b79ffaba1139881914aea887ef6a3></a><a href=# name=1></a><pre>
 <code>
 
 lock = new InterProcessSemaphoreMutex(client, lockPath);
@@ -281,24 +25,10 @@ lock.acquire(5, TimeUnit.MINUTES);
 lock.release();
 
 </code>
-</pre>
-
-<p class="c8"><span>&nbsp;(from </span><span class="c5"><a class="c0"
-                                                                   href="https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/LockingRemotely.java">https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/LockingRemotely.java</a></span><span>)</span>
-</p><p class="c1"><span></span></p><h2 class="c8"><a name="h.ck92kse5nam2"></a><span>Sevice Advertisement</span></h2><p
-        class="c8"><span>This is quite an interesting use case. With many small services on different servers it is not wise to exchange ip addresses and ports between them. When some of those services may go down, while other will try to replace them - the task gets even harder. </span>
-</p><p class="c8"><span>That&rsquo;s why, with Zookeeper in place, it can be utilised as a registry of existing services.</span>
-</p><p class="c1"><span></span></p><p class="c8"><span>If a service starts, it registers into the ServiceRegistry, offering basic information, like it&rsquo;s purpose, role, address, and port. </span>
-</p><p class="c8"><span>Services that want to use a specific kind of service request an access to some instance. This way of configuring easily decouples services from their configuration.</span>
-</p><p class="c1"><span></span></p><p class="c8"><span>Basically this scenario needs ? steps:</span></p><p class="c8">
-    <span>1. Service starts and registers its presence (</span><span class="c5"><a class="c0"
-                                                                                   href="https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerAdvertiser.java#L44">https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerAdvertiser.java#L44</a></span><span>)</span><span>:</span>
-</p><p class="c1"><span></span></p><a href="#" name="1c67229d451cd2d82dddaf1fb12af1aed4a8ecb0"></a>
-
-<pre>
+</pre><p class=c8><span>&nbsp;(from </span><span class=c5><a class=c0 href=https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/LockingRemotely.java>https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/LockingRemotely.java</a></span><span>)</span></p><p class=c1><span></span></p><h2 class=c8><a name=h.ck92kse5nam2></a><span>Sevice Advertisement</span></h2><p class=c8><span>This is quite an interesting use case. With many small services on different servers it is not wise to exchange ip addresses and ports between them. When some of those services may go down, while other will try to replace them - the task gets even harder.</span></p><p class=c8><span>That&rsquo;s why, with Zookeeper in place, it can be utilised as a registry of existing services.</span></p><p class=c1><span></span></p><p class=c8><span>If a service starts, it registers into the ServiceRegistry, offering basic information, like it&rsquo;s purpose, role, address, and port.</span></p><p class=c8><span>Services that want to use a specific kind of service request an access to some instance. This way of configuring easily decouples services from their configuration.</span></p><p class=c1><span></span></p><p class=c8><span>Basically this scenario needs ? steps:</span></p><p class=c8><span>1. Service starts and registers its presence (</span><span class=c5><a class=c0 href=https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerAdvertiser.java#L44>https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerAdvertiser.java#L44</a></span><span>)</span><span>:</span></p><p class=c1><span></span></p><a href=# name=1c67229d451cd2d82dddaf1fb12af1aed4a8ecb0></a><pre>
 <code>
 
-ServiceDiscovery<WorkerMetadata> discovery = getDiscovery();
+ServiceDiscovery<workermetadata> discovery = getDiscovery();
             discovery.start();
             ServiceInstance si = getInstance();
             log.info(si);
@@ -306,25 +36,11 @@ ServiceDiscovery<WorkerMetadata> discovery = getDiscovery();
 
 
 </code>
-</pre>
-<p class="c1"><span></span></p><p class="c8"><span>2. Another service - on another host or in another JVM on the same machine tries to discover who is implementing the service (</span><span
-        class="c5"><a class="c0"
-                      href="https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerFinder.java#L50">https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerFinder.java#L50</a></span><span>)</span><span>:</span>
-</p><p class="c1"><span></span></p><a href="#" name="0e430a074ab36c8eea3f84fae3d0cffb400dd281"></a><a href="#"
-                                                                                                      name="3"></a>
-<pre>
+</pre><p class=c1><span></span></p><p class=c8><span>2. Another service - on another host or in another JVM on the same machine tries to discover who is implementing the service (</span><span class=c5><a class=c0 href=https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerFinder.java#L50>https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/curator/WorkerFinder.java#L50</a></span><span>)</span><span>:</span></p><p class=c1><span></span></p><a href=# name=0e430a074ab36c8eea3f84fae3d0cffb400dd281></a><a href=# name=3></a><pre>
 <code>
 instances = discovery.queryForInstances(serviceName);
 </code>
-</pre>
-
-<p class="c8"><span>The whole concept here is ridiculously simple - the service advertising its presence just stores a file with its whereabouts. The service that is looking for service providers just look into specific directory and read stored definitions.</span>
-</p><p class="c1"><span></span></p><p class="c8"><span>In my example, the structure advertised by services looks like this (+ some getters and constructor - the rest is here: </span><span
-        class="c5"><a class="c0"
-                      href="https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/model/WorkerMetadata.java">https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/model/WorkerMetadata.java</a></span><span>):</span>
-</p><p class="c1"><span></span></p><a href="#" name="c0131478bfab43e60b5e077f3170a172a909d199"></a>
-
-<pre>
+</pre><p class=c8><span>The whole concept here is ridiculously simple - the service advertising its presence just stores a file with its whereabouts. The service that is looking for service providers just look into specific directory and read stored definitions.</span></p><p class=c1><span></span></p><p class=c8><span>In my example, the structure advertised by services looks like this (+ some getters and constructor - the rest is here: </span><span class=c5><a class=c0 href=https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/model/WorkerMetadata.java>https://github.com/zygm0nt/curator-playground/blob/master/src/main/java/pl/touk/model/WorkerMetadata.java</a></span><span>):</span></p><p class=c1><span></span></p><a href=# name=c0131478bfab43e60b5e077f3170a172a909d199></a><pre>
 <code>
 
 public final class WorkerMetadata {
@@ -334,177 +50,10 @@ public final class WorkerMetadata {
 }
 
 </code>
-</pre>
-<p class="c1"><span></span></p><h2 class="c8"><a name="h.qvt6wa2m15sm"></a><span>Source code</span></h2><p
-        class="c8"><span>The above recipes are available in Curator library (</span><span class="c5"><a class="c0"
-                                                                                                        href="http://curator.incubator.apache.org/">http://curator.incubator.apache.org/</a></span><span>). Recipes&rsquo;
-    usage examples are in my github repo at </span><span class="c5"><a class="c0"
-                                                                       href="https://github.com/zygm0nt/curator-playground">https://github.com/zygm0nt/curator-playground</a></span>
-</p><p class="c1"><span></span></p><h2 class="c8"><a name="h.o1zkosbrwpah"></a><span>Conclusion</span></h2><p
-        class="c8"><span>If you&rsquo;re in need of a reliable platform for exchanging data and managing synchronization, and you need to do it in a distributed fashion - just choose Zookeeper. Then add Curator for the ease of using it. Enjoy!</span>
-</p><p class="c1"><span></span></p><p class="c1"><span></span></p>
-<hr><p class="c1"><span></span></p>
-<ol class="c13" start="1">
-    <li class="c7"><span>image comes from: </span><span class="c5"><a class="c0"
-                                                                      href="http://www.flickr.com/photos/jfgallery/2993361148">http://www.flickr.com/photos/jfgallery/2993361148</a></span>
-    </li>
-    <li class="c7"><span>all source code fragments taken from this repo: </span><span class="c5"><a class="c0"
-                                                                                                    href="https://github.com/zygm0nt/curator-playground">https://github.com/zygm0nt/curator-playground</a></span>
-    </li>
-</ol>
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-    </ul>
-<nav class="paginav">
-  <a class="prev" href="https://marcin.cylke.com.pl/2013/08/12/recently-at-storm-users/">
-    <span class="title">« Prev</span>
-    <br>
-    <span>Recently at storm-users</span>
-  </a>
-  <a class="next" href="https://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/">
-    <span class="title">Next »</span>
-    <br>
-    <span>Operational problems with Zookeeper</span>
-  </a>
-</nav>
-
-  </footer><script src="https://utteranc.es/client.js"
-        repo="zygm0nt/hugo-blog-incarnation"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
-
-</article>
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></span> · 
-
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
-</script>
-</body>
-
-</html>
+</pre><p class=c1><span></span></p><h2 class=c8><a name=h.qvt6wa2m15sm></a><span>Source code</span></h2><p class=c8><span>The above recipes are available in Curator library (</span><span class=c5><a class=c0 href=http://curator.incubator.apache.org/>http://curator.incubator.apache.org/</a></span><span>). Recipes&rsquo;
+usage examples are in my github repo at </span><span class=c5><a class=c0 href=https://github.com/zygm0nt/curator-playground>https://github.com/zygm0nt/curator-playground</a></span></p><p class=c1><span></span></p><h2 class=c8><a name=h.o1zkosbrwpah></a><span>Conclusion</span></h2><p class=c8><span>If you&rsquo;re in need of a reliable platform for exchanging data and managing synchronization, and you need to do it in a distributed fashion - just choose Zookeeper. Then add Curator for the ease of using it. Enjoy!</span></p><p class=c1><span></span></p><p class=c1><span></span></p><hr><p class=c1><span></span></p><ol class=c13 start=1><li class=c7><span>image comes from: </span><span class=c5><a class=c0 href=http://www.flickr.com/photos/jfgallery/2993361148>http://www.flickr.com/photos/jfgallery/2993361148</a></span></li><li class=c7><span>all source code fragments taken from this repo: </span><span class=c5><a class=c0 href=https://github.com/zygm0nt/curator-playground>https://github.com/zygm0nt/curator-playground</a></span></li></ol></div><footer class=post-footer><ul class=post-tags></ul><nav class=paginav><a class=prev href=https://marcin.cylke.com.pl/2013/08/12/recently-at-storm-users/><span class=title>« Prev</span><br><span>Recently at storm-users</span>
+</a><a class=next href=https://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/><span class=title>Next »</span><br><span>Operational problems with Zookeeper</span></a></nav></footer><script src=https://utteranc.es/client.js repo=zygm0nt/hugo-blog-incarnation issue-term=pathname theme=github-light crossorigin=anonymous async></script></article></main><footer class=footer><span>&copy; 2026 <a href=https://marcin.cylke.com.pl/>Tech ramblings by Marcin</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
