@@ -1,6 +1,15 @@
-<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>OVal - validate your models quickly and effortlessly! | Tech ramblings by Marcin</title><meta name=keywords content><meta name=description content="
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>OVal - validate your models quickly and effortlessly! | Tech ramblings by Marcin</title>
+<meta name="keywords" content="">
+<meta name="description" content="
 Some time ago one of the projects at work required me to validate
-some Java POJOs. Theses were my model classes and I've been creating
+some Java POJOs. Theses were my model classes and I&#39;ve been creating
 them from incoming WebService requests. One would say that XSD would be
 sufficient for the task, for parts of this validations - sure, it would.
 But there were some advanced rules XSD would not handle, or would render
@@ -10,63 +19,524 @@ Rules I needed to express were like:
 
 
 
-person's first_name and last_name should be of appropriate length -
+person&#39;s first_name and last_name should be of appropriate length -
 between 2 and 20, and additionally one could pass a zero-length string
 just to remove the previous value
 state field should consist only defined values - as in
-dictionary value - this one would be completable with XSD's
+dictionary value - this one would be completable with XSD&#39;s
 enumerations, but would require often changing schema files and
 redistributing them to interested parties :(
 
 
-The library I've decided to use for this task is OVal and it came out really nice! Read on
-to find out the details!"><meta name=author content="Marcin Cylke"><link rel=canonical href=https://marcin.cylke.com.pl/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/><link crossorigin=anonymous href=/assets/css/stylesheet.2ef88c6e9b91917ba47ee47c08eceac58e4063f58023c5794d790144e14eeb83.css integrity="sha256-LviMbpuRkXukfuR8COzqxY5AY/WAI8V5TXkBROFO64M=" rel="preload stylesheet" as=style><link rel=icon href=https://marcin.cylke.com.pl/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://marcin.cylke.com.pl/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://marcin.cylke.com.pl/favicon-32x32.png><link rel=apple-touch-icon href=https://marcin.cylke.com.pl/apple-touch-icon.png><link rel=mask-icon href=https://marcin.cylke.com.pl/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://marcin.cylke.com.pl/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><link rel=stylesheet href=/css/book_section.css><link rel=stylesheet href=/css/on_this_day.css><link rel=stylesheet href=/css/til.css><script defer src=/js/code-highlight.js></script><meta property="og:url" content="https://marcin.cylke.com.pl/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/"><meta property="og:site_name" content="Tech ramblings by Marcin"><meta property="og:title" content="OVal - validate your models quickly and effortlessly!"><meta property="og:description" content="Some time ago one of the projects at work required me to validate some Java POJOs. Theses were my model classes and I've been creating them from incoming WebService requests. One would say that XSD would be sufficient for the task, for parts of this validations - sure, it would. But there were some advanced rules XSD would not handle, or would render the schema document very complicated.
-Rules I needed to express were like: person's first_name and last_name should be of appropriate length - between 2 and 20, and additionally one could pass a zero-length string just to remove the previous value state field should consist only defined values - as in dictionary value - this one would be completable with XSD's enumerations, but would require often changing schema files and redistributing them to interested parties :( The library I've decided to use for this task is OVal and it came out really nice! Read on to find out the details!"><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2011-07-14T08:25:19+00:00"><meta property="article:modified_time" content="2011-07-14T08:25:19+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="OVal - validate your models quickly and effortlessly!"><meta name=twitter:description content="Some time ago one of the projects at work required me to validate some Java POJOs. Theses were my model classes and I've been creating them from incoming WebService requests. One would say that XSD would be sufficient for the task, for parts of this validations - sure, it would. But there were some advanced rules XSD would not handle, or would render the schema document very complicated.
-Rules I needed to express were like: person's first_name and last_name should be of appropriate length - between 2 and 20, and additionally one could pass a zero-length string just to remove the previous value state field should consist only defined values - as in dictionary value - this one would be completable with XSD's enumerations, but would require often changing schema files and redistributing them to interested parties :( The library I've decided to use for this task is OVal and it came out really nice! Read on to find out the details!"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://marcin.cylke.com.pl/post/"},{"@type":"ListItem","position":2,"name":"OVal - validate your models quickly and effortlessly!","item":"https://marcin.cylke.com.pl/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"OVal - validate your models quickly and effortlessly!","name":"OVal - validate your models quickly and effortlessly!","description":" Some time ago one of the projects at work required me to validate some Java POJOs. Theses were my model classes and I've been creating them from incoming WebService requests. One would say that XSD would be sufficient for the task, for parts of this validations - sure, it would. But there were some advanced rules XSD would not handle, or would render the schema document very complicated.\nRules I needed to express were like: person's first_name and last_name should be of appropriate length - between 2 and 20, and additionally one could pass a zero-length string just to remove the previous value state field should consist only defined values - as in dictionary value - this one would be completable with XSD's enumerations, but would require often changing schema files and redistributing them to interested parties :( The library I've decided to use for this task is OVal and it came out really nice! Read on to find out the details!\n","keywords":[],"articleBody":" Some time ago one of the projects at work required me to validate some Java POJOs. Theses were my model classes and I've been creating them from incoming WebService requests. One would say that XSD would be sufficient for the task, for parts of this validations - sure, it would. But there were some advanced rules XSD would not handle, or would render the schema document very complicated.\nRules I needed to express were like: person's first_name and last_name should be of appropriate length - between 2 and 20, and additionally one could pass a zero-length string just to remove the previous value state field should consist only defined values - as in dictionary value - this one would be completable with XSD's enumerations, but would require often changing schema files and redistributing them to interested parties :( The library I've decided to use for this task is OVal and it came out really nice! Read on to find out the details!\nOval is quite mature library that allows POJO validation, but is not JSR303 (bean validation) implementation. It has converters that enable it to understand those annotations, but I'm not sure about the compatibility.\nI've tried only a subset of the available checks, among which were:\nNotNull NotEmpty Length There are many more, and their attributes give interesting ways to configure the validation process. But using them was rather easy and did not require to much brainstorming. What I really needed were custom checks. And in this area OVal shows it's strength. Implementing a check is really easy.\nI needed an annotation that would check a field against some values in a dictionary. If field's value was in the given set, than the validation would succeed, if not, an exception would be thrown. To accomplish this task it is required to implement two classes: annotation class and check class - called by the validation engine on a given field.\nLet's start with our new annotation:\nIn the above snippet I've defined a check-annotation, that would be used like this: You can pass file - containing dictionary values for this field. There is also message field in the annotation which is an error message returned by the validation engine of failed check - pretty handy. And can be expressed in .properties file as: Placeholder, like context, will be replaced with correct values supplied by the validation engine.\nAnnotating a field is not enough. It is also needed to create a validator for this kind of check. The name of the class is already defined in DictionaryValue annotation, it is called DictionaryValueCheck and I've done this check this way: What this basically does is: when file is set - read dictionary content from the file into map upon check request just lookup value in dictionary parsed from the input file And that's it!\nFor me Oval is really great tool. With it at ones disposal it is extremely easy to create any imaginable validation you need. This library is really easy to use and offers lots of handy features.\nBut perhaps I'm reinventing the wheel and all this can be done easily with some other library? Share Your opinion!\nComments Marcin Now that's a great question. I've forgotten to write about this, but OVal offers profiles, which you can disable or enable whenever you like. You set a profile for a specific annotation. In your case let's assume You have two operations: add and update. Your model has field annotated with @NotNull(profile=\"UPDATE\"), which means we don't want null values on it when updating. In _add_ operation you disable the profile called UPDATE, so the annotation is also disabled. When calling _update_ you enable the profile and the validation is performed. More on this here: http://oval.sourceforge.net/userguide.html#d4e561\nquerial Question:\nSay, we have an object with a primary key, that is mandatory (in the database), but described as AUTOINCREMENT. When client sends new object data, the primary key is obviously null, but we need to validate it for not-nullity in other cases.\nDoea OVal handle variations / directions of validation?\n","wordCount":"676","inLanguage":"en","datePublished":"2011-07-14T08:25:19Z","dateModified":"2011-07-14T08:25:19Z","author":{"@type":"Person","name":"Marcin Cylke"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://marcin.cylke.com.pl/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/"},"publisher":{"@type":"Organization","name":"Tech ramblings by Marcin","logo":{"@type":"ImageObject","url":"https://marcin.cylke.com.pl/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://marcin.cylke.com.pl/ accesskey=h title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
-<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://marcin.cylke.com.pl/about/ title=About><span>About</span></a></li><li><a href=https://marcin.cylke.com.pl/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://marcin.cylke.com.pl/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://marcin.cylke.com.pl/archives/ title=Archives><span>Archives</span></a></li><li><a href=https://marcin.cylke.com.pl/travels/ title=Travels><span>Travels</span></a></li><li><a href=https://marcin.cylke.com.pl/til/ title=TIL><span>TIL</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://marcin.cylke.com.pl/>Home</a>&nbsp;»&nbsp;<a href=https://marcin.cylke.com.pl/post/>Posts</a></div><h1 class="post-title entry-hint-parent">OVal - validate your models quickly and effortlessly!</h1><div class=post-meta><span title='2011-07-14 08:25:19 +0000 UTC'>July 14, 2011</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=# aria-label=Comments>Comments</a></li></ul></div></details></div><div class=post-content><div class=post><p>Some time ago one of the projects at work required me to validate
+The library I&#39;ve decided to use for this task is OVal and it came out really nice! Read on
+to find out the details!">
+<meta name="author" content="Marcin Cylke">
+<link rel="canonical" href="http://localhost:1313/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.2ef88c6e9b91917ba47ee47c08eceac58e4063f58023c5794d790144e14eeb83.css" integrity="sha256-LviMbpuRkXukfuR8COzqxY5AY/WAI8V5TXkBROFO64M=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/book_section.css">
+<link rel="stylesheet" href="/css/on_this_day.css">
+<link rel="stylesheet" href="/css/til.css">
+<script defer src="/js/code-highlight.js"></script>
+<meta property="og:url" content="http://localhost:1313/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/">
+  <meta property="og:site_name" content="Tech ramblings by Marcin">
+  <meta property="og:title" content="OVal - validate your models quickly and effortlessly!">
+  <meta property="og:description" content="Some time ago one of the projects at work required me to validate some Java POJOs. Theses were my model classes and I&#39;ve been creating them from incoming WebService requests. One would say that XSD would be sufficient for the task, for parts of this validations - sure, it would. But there were some advanced rules XSD would not handle, or would render the schema document very complicated.
+Rules I needed to express were like: person&#39;s first_name and last_name should be of appropriate length - between 2 and 20, and additionally one could pass a zero-length string just to remove the previous value state field should consist only defined values - as in dictionary value - this one would be completable with XSD&#39;s enumerations, but would require often changing schema files and redistributing them to interested parties :( The library I&#39;ve decided to use for this task is OVal and it came out really nice! Read on to find out the details!">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2011-07-14T08:25:19+00:00">
+    <meta property="article:modified_time" content="2011-07-14T08:25:19+00:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="OVal - validate your models quickly and effortlessly!">
+  <meta name="twitter:description" content="Some time ago one of the projects at work required me to validate some Java POJOs. Theses were my model classes and I&#39;ve been creating them from incoming WebService requests. One would say that XSD would be sufficient for the task, for parts of this validations - sure, it would. But there were some advanced rules XSD would not handle, or would render the schema document very complicated.
+Rules I needed to express were like: person&#39;s first_name and last_name should be of appropriate length - between 2 and 20, and additionally one could pass a zero-length string just to remove the previous value state field should consist only defined values - as in dictionary value - this one would be completable with XSD&#39;s enumerations, but would require often changing schema files and redistributing them to interested parties :( The library I&#39;ve decided to use for this task is OVal and it came out really nice! Read on to find out the details!">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "OVal - validate your models quickly and effortlessly!",
+      "item": "http://localhost:1313/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "OVal - validate your models quickly and effortlessly!",
+  "name": "OVal - validate your models quickly and effortlessly!",
+  "description": " Some time ago one of the projects at work required me to validate some Java POJOs. Theses were my model classes and I've been creating them from incoming WebService requests. One would say that XSD would be sufficient for the task, for parts of this validations - sure, it would. But there were some advanced rules XSD would not handle, or would render the schema document very complicated.\nRules I needed to express were like: person's first_name and last_name should be of appropriate length - between 2 and 20, and additionally one could pass a zero-length string just to remove the previous value state field should consist only defined values - as in dictionary value - this one would be completable with XSD's enumerations, but would require often changing schema files and redistributing them to interested parties :( The library I've decided to use for this task is OVal and it came out really nice! Read on to find out the details!\n",
+  "keywords": [
+    
+  ],
+  "articleBody": " Some time ago one of the projects at work required me to validate some Java POJOs. Theses were my model classes and I've been creating them from incoming WebService requests. One would say that XSD would be sufficient for the task, for parts of this validations - sure, it would. But there were some advanced rules XSD would not handle, or would render the schema document very complicated.\nRules I needed to express were like: person's first_name and last_name should be of appropriate length - between 2 and 20, and additionally one could pass a zero-length string just to remove the previous value state field should consist only defined values - as in dictionary value - this one would be completable with XSD's enumerations, but would require often changing schema files and redistributing them to interested parties :( The library I've decided to use for this task is OVal and it came out really nice! Read on to find out the details!\nOval is quite mature library that allows POJO validation, but is not JSR303 (bean validation) implementation. It has converters that enable it to understand those annotations, but I'm not sure about the compatibility.\nI've tried only a subset of the available checks, among which were:\nNotNull NotEmpty Length There are many more, and their attributes give interesting ways to configure the validation process. But using them was rather easy and did not require to much brainstorming. What I really needed were custom checks. And in this area OVal shows it's strength. Implementing a check is really easy.\nI needed an annotation that would check a field against some values in a dictionary. If field's value was in the given set, than the validation would succeed, if not, an exception would be thrown. To accomplish this task it is required to implement two classes: annotation class and check class - called by the validation engine on a given field.\nLet's start with our new annotation:\nIn the above snippet I've defined a check-annotation, that would be used like this: You can pass file - containing dictionary values for this field. There is also message field in the annotation which is an error message returned by the validation engine of failed check - pretty handy. And can be expressed in .properties file as: Placeholder, like context, will be replaced with correct values supplied by the validation engine.\nAnnotating a field is not enough. It is also needed to create a validator for this kind of check. The name of the class is already defined in DictionaryValue annotation, it is called DictionaryValueCheck and I've done this check this way: What this basically does is: when file is set - read dictionary content from the file into map upon check request just lookup value in dictionary parsed from the input file And that's it!\nFor me Oval is really great tool. With it at ones disposal it is extremely easy to create any imaginable validation you need. This library is really easy to use and offers lots of handy features.\nBut perhaps I'm reinventing the wheel and all this can be done easily with some other library? Share Your opinion!\nComments Marcin Now that's a great question. I've forgotten to write about this, but OVal offers profiles, which you can disable or enable whenever you like. You set a profile for a specific annotation. In your case let's assume You have two operations: add and update. Your model has field annotated with @NotNull(profile=\"UPDATE\"), which means we don't want null values on it when updating. In _add_ operation you disable the profile called UPDATE, so the annotation is also disabled. When calling _update_ you enable the profile and the validation is performed. More on this here: http://oval.sourceforge.net/userguide.html#d4e561\nquerial Question:\nSay, we have an object with a primary key, that is mandatory (in the database), but described as AUTOINCREMENT. When client sends new object data, the primary key is obviously null, but we need to validate it for not-nullity in other cases.\nDoea OVal handle variations / directions of validation?\n",
+  "wordCount" : "676",
+  "inLanguage": "en",
+  "datePublished": "2011-07-14T08:25:19Z",
+  "dateModified": "2011-07-14T08:25:19Z",
+  "author":{
+    "@type": "Person",
+    "name": "Marcin Cylke"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tech ramblings by Marcin",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/travels/" title="Travels">
+                    <span>Travels</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/til/" title="TIL">
+                    <span>TIL</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/post/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      OVal - validate your models quickly and effortlessly!
+    </h1>
+    <div class="post-meta"><span title='2011-07-14 08:25:19 +0000 UTC'>July 14, 2011</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#" aria-label="Comments">Comments</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content">
+<div class='post'>
+<p>Some time ago one of the projects at work required me to validate
 some Java POJOs. Theses were my model classes and I've been creating
 them from incoming WebService requests. One would say that XSD would be
 sufficient for the task, for parts of this validations - sure, it would.
 But there were some advanced rules XSD would not handle, or would render
-the schema document very complicated.</p><p>Rules I needed to express were like:<ul><li>person's <i>first_name</i> and <i>last_name</i> should be of appropriate length -
+the schema document very complicated.</p>
+
+<p>Rules I needed to express were like:
+
+<ul>
+
+<li>person's <i>first_name</i> and <i>last_name</i> should be of appropriate length -
 between 2 and 20, and additionally one could pass a zero-length string
-just to remove the previous value</li><li><i>state</i> field should consist only defined values - as in
+just to remove the previous value</li>
+<li><i>state</i> field should consist only defined values - as in
 dictionary value - this one would be completable with XSD's
 enumerations, but would require often changing schema files and
-redistributing them to interested parties :(</li></ul><p>The library I've decided to use for this task is <a href=http://oval.sf.net>OVal</a> and it came out really nice! Read on
-to find out the details!</p><excerpt><p>Oval is quite mature library that allows POJO validation, but is not
+redistributing them to interested parties :(</li>
+</ul>
+
+<p>The library I've decided to use for this task is <a
+href="http://oval.sf.net">OVal</a> and it came out really nice! Read on
+to find out the details!</p>
+
+<EXCERPT>
+
+<p>Oval is quite mature library that allows POJO validation, but is not
 JSR303 (bean validation) implementation. It has converters that enable
 it to understand those annotations, but I'm not sure about the
-compatibility.</p><p>I've tried only a subset of the available checks, among which
-were:</p><ul><li>NotNull</li><li>NotEmpty</li><li>Length</li></ul><p>There are many more, and their attributes give interesting ways to
+compatibility.</p>
+
+<p>I've tried only a subset of the available checks, among which
+were:</p>
+
+<ul>
+<li>NotNull</li>
+<li>NotEmpty</li>
+<li>Length</li>
+</ul>
+
+<p>There are many more, and their attributes give interesting ways to
 configure the validation process. But using them was rather easy and did
 not require to much brainstorming. What I really needed were custom
 checks. And in this area OVal shows it's strength. Implementing a check
-is really easy.</p><p>I needed an annotation that would check a field against some values in
+is really easy.</p>
+
+<p>I needed an annotation that would check a field against some values in
 a dictionary. If field's value was in the given set, than the validation
 would succeed, if not, an exception would be thrown. To accomplish this
 task it is required to implement two classes: annotation class and check
-class - called by the validation engine on a given field.</p><p>Let's start with our new annotation:</p><script src="https://gist.github.com/zygm0nt/1077516.js?file=DictionaryValue.java"></script>In the above snippet I've defined a check-annotation, that would be used like
+class - called by the validation engine on a given field.</p>
+
+<p>Let's start with our new annotation:</p>
+
+<script src="https://gist.github.com/zygm0nt/1077516.js?file=DictionaryValue.java"></script>
+ 
+
+In the above snippet I've defined a check-annotation, that would be used like
 this:
-<script src="https://gist.github.com/zygm0nt/1077516.js?file=sample.java"></script>You can pass <i>file</i> - containing dictionary values for this field.
+
+<script src="https://gist.github.com/zygm0nt/1077516.js?file=sample.java"></script>
+ 
+
+You can pass <i>file</i> - containing dictionary values for this field.
 There is also <i>message</i> field in the annotation which is an error
 message returned by the validation engine of failed check - pretty
 handy. And can be expressed in <i>.properties</i> file as:
-<script src="https://gist.github.com/zygm0nt/1077516.js?file=validation.properties"></script><p>Placeholder, like <i>context</i>, will be replaced with correct values supplied by the
-validation engine.</p>Annotating a field is not enough. It is also needed to create a validator
+
+<script src="https://gist.github.com/zygm0nt/1077516.js?file=validation.properties"></script>
+ 
+
+<p>Placeholder, like <i>context</i>, will be replaced with correct values supplied by the
+validation engine.</p>
+
+Annotating a field is not enough. It is also needed to create a validator
 for this kind of check. The name of the class is already defined in
 <i>DictionaryValue</i> annotation, it is called
 <i>DictionaryValueCheck</i> and I've done this check this way:
-<script src="https://gist.github.com/zygm0nt/1077516.js?file=DictionaryValueCheck.java"></script>What this basically does is:<ol><li>when <i>file</i> is set - read dictionary content from the file into
-map</li><li>upon check request just lookup value in dictionary parsed from the
-input file</li></ol><p>And that's it!</p><p>For me Oval is really great tool. With it at ones disposal it is extremely easy to create any
+
+<script src="https://gist.github.com/zygm0nt/1077516.js?file=DictionaryValueCheck.java"></script>
+
+
+What this basically does is:
+<ol>
+<li>when <i>file</i> is set - read dictionary content from the file into
+map</li>
+<li>upon check request just lookup value in dictionary parsed from the
+input file</li>
+</ol>
+
+<p>And that's it!</p>
+
+<p>For me Oval is really great tool. With it at ones disposal it is extremely easy to create any
 imaginable validation you need. This library is really easy to use and
-offers lots of handy features.</p><p>But perhaps I'm reinventing the wheel and all this can be done easily
-with some other library? Share Your opinion!</p></div><h2>Comments</h2><div class=comments><div class=comment><div class=author><a href=http://mcl.jogger.pl>Marcin</a></div><div class=content><p>Now that's a great question. I've forgotten to write about this, but OVal offers profiles, which you can disable or enable whenever you like. You set a profile for a specific annotation. In your case let's assume You have two operations: add and update. Your model has field annotated with @NotNull(profile="UPDATE"), which means we don't want null values on it when updating. In _add_ operation you disable the profile called UPDATE, so the annotation is also disabled. When calling _update_ you enable the profile and the validation is performed.<br><br>More on this here: http://oval.sourceforge.net/userguide.html#d4e561</p></div></div><div class=comment><div class=author><a href>querial</a></div><div class=content><p>Question:<br>Say, we have an object with a primary key, that is mandatory (in the database), but described as AUTOINCREMENT. When client sends new object data, the primary key is obviously null, but we need to validate it for not-nullity in other cases.<br><br>Doea OVal handle variations / directions of validation?</p></div></div></div></div><footer class=post-footer><ul class=post-tags></ul><nav class=paginav><a class=prev href=https://marcin.cylke.com.pl/2011/08/07/great-many-ways-to-enjoy-life/><span class=title>« Prev</span><br><span>Great many ways to enjoy life!</span>
-</a><a class=next href=https://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/><span class=title>Next »</span><br><span>Geecon 2011 - day 2</span></a></nav></footer><div class=on-this-day><h3>On this day in other years</h3><ul><li><span class=on-this-day-year>2014</span>
-<a href=https://marcin.cylke.com.pl/2014/07/14/super-confitura-man/>Super Confitura Man</a></li></ul></div><script src=https://utteranc.es/client.js repo=zygm0nt/hugo-blog-incarnation issue-term=pathname theme=github-light crossorigin=anonymous async></script></article></main><footer class=footer><span>&copy; 2026 <a href=https://marcin.cylke.com.pl/>Tech ramblings by Marcin</a></span> ·
-<span>Powered by
-<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
-</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
+offers lots of handy features.</p>
+
+<p>But perhaps I'm reinventing the wheel and all this can be done easily
+with some other library? Share Your opinion!</p>
+</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin</a></div>
+<div class='content'>
+<p>Now that's a great question. I've forgotten to write about this, but OVal offers profiles, which you can disable or enable whenever you like. You set a profile for a specific annotation. In your case let's assume You have two operations: add and update. Your model has field annotated with @NotNull(profile=&quot;UPDATE&quot;), which means we don't want null values on it when updating. In _add_ operation you disable the profile called UPDATE, so the annotation is also disabled. When calling _update_ you enable the profile and the validation is performed. <br />
+<br />
+More on this here: http://oval.sourceforge.net/userguide.html#d4e561</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="">querial</a></div>
+<div class='content'>
+<p>Question:<br />
+Say, we have an object with a primary key, that is mandatory (in the database), but described as AUTOINCREMENT. When client sends new object data, the primary key is obviously null, but we need to validate it for not-nullity in other cases.<br />
+<br />
+Doea OVal handle variations / directions of validation?</p></div>
+</div>
+</div>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/2011/08/07/great-many-ways-to-enjoy-life/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Great many ways to enjoy life!</span>
+  </a>
+  <a class="next" href="http://localhost:1313/2011/05/22/geecon-2011-day-2/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Geecon 2011 - day 2</span>
+  </a>
+</nav>
+
+  </footer>
+<div class="on-this-day">
+  <h3>On this day in other years</h3>
+  <ul>
+    <li>
+      <span class="on-this-day-year">2014</span>
+      <a href="http://localhost:1313/2014/07/14/super-confitura-man/">Super Confitura Man</a>
+    </li>
+  </ul>
+</div>
+<script src="https://utteranc.es/client.js"
+        repo="zygm0nt/hugo-blog-incarnation"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">Tech ramblings by Marcin</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

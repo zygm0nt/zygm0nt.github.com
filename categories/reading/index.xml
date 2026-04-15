@@ -1,130 +1,188 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Reading on Tech ramblings by Marcin</title><link>https://marcin.cylke.com.pl/categories/reading/</link><description>Recent content in Reading on Tech ramblings by Marcin</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 16 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/reading/index.xml" rel="self" type="application/rss+xml"/><item><title>books I read - Oct - Dec 2024</title><link>https://marcin.cylke.com.pl/2025/01/16/books-i-read-oct-dec-2024/</link><pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2025/01/16/books-i-read-oct-dec-2024/</guid><description>&lt;h2 id="books"&gt;Books&lt;/h2&gt;
-&lt;div class="review-container"&gt;
-&lt;div class="book-cover"&gt;
-&lt;img src="https://marcin.cylke.com.pl/post_images/books-i-read-oct-dec-2024-0.png" alt="Czysta Ameryka. Przemilczana historia eugeniki Book Cover" /&gt;
-&lt;/div&gt;
-&lt;div class="review-text"&gt;
-&lt;h2&gt;Book Review: &lt;em&gt;Czysta Ameryka. Przemilczana historia eugeniki&lt;/em&gt; by Elizabeth Catte&lt;/h2&gt;
-&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reading on Tech ramblings by Marcin</title>
+    <link>http://localhost:1313/categories/reading/</link>
+    <description>Recent content in Reading on Tech ramblings by Marcin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 16 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/reading/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>books I read - Oct - Dec 2024</title>
+      <link>http://localhost:1313/2025/01/16/books-i-read-oct-dec-2024/</link>
+      <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2025/01/16/books-i-read-oct-dec-2024/</guid>
+      <description>&lt;h2 id=&#34;books&#34;&gt;Books&lt;/h2&gt;
+&lt;div class=&#34;review-container&#34;&gt;
+    &lt;div class=&#34;book-cover&#34;&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-oct-dec-2024-0.png&#34; alt=&#34;Czysta Ameryka. Przemilczana historia eugeniki Book Cover&#34; /&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;review-text&#34;&gt;
+        &lt;h2&gt;Book Review: &lt;em&gt;Czysta Ameryka. Przemilczana historia eugeniki&lt;/em&gt; by Elizabeth Catte&lt;/h2&gt;
+
+        &lt;ul&gt;
 &lt;li&gt;Many interesting observations and a clearly presented opinion on eugenics and its history in the USA. It&amp;rsquo;s quite difficult to get through due to the many facts specific to USA internal politics. It also explores topics loosely connected to eugenics, which may feel tangential but provide a broader context. There is certainly a lot of personal opinions here, referring to the author&amp;rsquo;s hometown. It makes the book less valuable as an objective study of the subject, and more just a personal exploration based on local facts.&amp;quot;&lt;/li&gt;
 &lt;/ul&gt;
+
+    &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="review-container"&gt;
-&lt;div class="book-cover"&gt;
-&lt;img src="https://marcin.cylke.com.pl/post_images/books-i-read-oct-dec-2024-1.png" alt="Zakamarki Białego Domu Book Cover" /&gt;
-&lt;/div&gt;
-&lt;div class="review-text"&gt;
-&lt;h2&gt;Book Review: &lt;em&gt;Zakamarki Białego Domu&lt;/em&gt; by Marek Wałkuski&lt;/h2&gt;
-&lt;ul&gt;
+
+&lt;div class=&#34;review-container&#34;&gt;
+    &lt;div class=&#34;book-cover&#34;&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-oct-dec-2024-1.png&#34; alt=&#34;Zakamarki Białego Domu Book Cover&#34; /&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;review-text&#34;&gt;
+        &lt;h2&gt;Book Review: &lt;em&gt;Zakamarki Białego Domu&lt;/em&gt; by Marek Wałkuski&lt;/h2&gt;
+
+        &lt;ul&gt;
 &lt;li&gt;written as a concise trivia book about US White House. The author, polish correspondent working in the Presidential Press Pool shares a lot of his personal experiences, but also adds a lot of smaller research to that. The mix of personal anecdotes and research makes the book both engaging and informative. However, Some sections feel less compelling and might serve more as filler. While accurate, the repeated mention of being the only Polish reporter near the US President can feel overemphasized.&lt;/li&gt;
 &lt;/ul&gt;
+
+    &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="review-container"&gt;
-&lt;div class="book-cover"&gt;
-&lt;img src="https://marcin.cylke.com.pl/post_images/books-i-read-oct-dec-2024-2.png" alt="The coming wave Book Cover" /&gt;
-&lt;/div&gt;
-&lt;div class="review-text"&gt;
-&lt;h2&gt;Book Review: &lt;em&gt;The coming wave&lt;/em&gt; by Mustafa Suleyman&lt;/h2&gt;
-&lt;ul&gt;
+
+&lt;div class=&#34;review-container&#34;&gt;
+    &lt;div class=&#34;book-cover&#34;&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-oct-dec-2024-2.png&#34; alt=&#34;The coming wave Book Cover&#34; /&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;review-text&#34;&gt;
+        &lt;h2&gt;Book Review: &lt;em&gt;The coming wave&lt;/em&gt; by Mustafa Suleyman&lt;/h2&gt;
+
+        &lt;ul&gt;
 &lt;li&gt;how AI is changing the world, and what will be its future influence. Written by an influential person, a co-founder of DeepMind. The book presents thought-provoking insights, particularly on societies&amp;rsquo; approach to that new paradigm (AI). Given the rapid evolution of AI, some ideas in the book have already become outdated. Some ideas in the book are already out of sync with what&amp;rsquo;s happening in the industry. This book has been a good, relaxing exercise for the mind. While it&amp;rsquo;s an engaging read, some ideas may feel more speculative than definitive.&lt;/li&gt;
 &lt;/ul&gt;
+
+    &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="review-container"&gt;
-&lt;div class="book-cover"&gt;
-&lt;img src="https://marcin.cylke.com.pl/post_images/books-i-read-oct-dec-2024-3.png" alt="Umbrella Academy Book Cover" /&gt;
-&lt;/div&gt;
-&lt;div class="review-text"&gt;
-&lt;h2&gt;Book Review: &lt;em&gt;Umbrella Academy&lt;/em&gt; by Gerard Way, Gabriel Bá&lt;/h2&gt;
-&lt;ul&gt;
+
+&lt;div class=&#34;review-container&#34;&gt;
+    &lt;div class=&#34;book-cover&#34;&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-oct-dec-2024-3.png&#34; alt=&#34;Umbrella Academy Book Cover&#34; /&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;review-text&#34;&gt;
+        &lt;h2&gt;Book Review: &lt;em&gt;Umbrella Academy&lt;/em&gt; by Gerard Way, 	Gabriel Bá&lt;/h2&gt;
+
+        &lt;ul&gt;
 &lt;li&gt;before the Netflix series there&amp;rsquo;s been a comic version of the story about the patchwork family of super-children, born on the same day all around the world. I really liked the Netflix adaptation, after enjoying the Netflix adaptation, I was inspired to explore the original comic. And that&amp;rsquo;s been a good decision, I must say. In fact, The comic offers richer character development and a more intricate storyline compared to the Netflix adaptation. The unique art style and imaginative storytelling made it a thoroughly enjoyable read.&lt;/li&gt;
 &lt;/ul&gt;
+
+    &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="review-container"&gt;
-&lt;div class="book-cover"&gt;
-&lt;img src="https://marcin.cylke.com.pl/post_images/books-i-read-oct-dec-2024-4.png" alt="Futuro Darko Book Cover" /&gt;
-&lt;/div&gt;
-&lt;div class="review-text"&gt;
-&lt;h2&gt;Book Review: &lt;em&gt;Futuro Darko&lt;/em&gt; by Krzysztof Nowak&lt;/h2&gt;
-&lt;ul&gt;
+
+&lt;div class=&#34;review-container&#34;&gt;
+    &lt;div class=&#34;book-cover&#34;&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-oct-dec-2024-4.png&#34; alt=&#34;Futuro Darko Book Cover&#34; /&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;review-text&#34;&gt;
+        &lt;h2&gt;Book Review: &lt;em&gt;Futuro Darko&lt;/em&gt; by Krzysztof Nowak&lt;/h2&gt;
+
+        &lt;ul&gt;
 &lt;li&gt;A post-apocalyptic comic with a distinctly Polish twist. The album contains a bunch of separate stories connected by the main characters. I enjoyed the style of the comics. Also, the comic-inspired soundtrack adds an immersive dimension to the reading experience.! Neat idea!&lt;/li&gt;
 &lt;/ul&gt;
+
+    &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;h2 id="articles"&gt;Articles&lt;/h2&gt;
+
+&lt;h2 id=&#34;articles&#34;&gt;Articles&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.wsj.com/world/russia/evan-gershkovich-russia-putin-arrests-spies-9a75e1c3"&gt;Tracking Putin’s Most Feared Secret Agency—From Inside a Russian Prison and Beyond&lt;/a&gt; - a investigative piece from Evan Gershkovich, WSJ reporter held in Russian Prison, recently released&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.wsj.com/world/russia/evan-gershkovich-russia-putin-arrests-spies-9a75e1c3&#34;&gt;Tracking Putin’s Most Feared Secret Agency—From Inside a Russian Prison and Beyond&lt;/a&gt; - a investigative piece from Evan Gershkovich, WSJ reporter held in Russian Prison, recently released&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="interesting-video"&gt;Interesting video&lt;/h2&gt;
+&lt;h2 id=&#34;interesting-video&#34;&gt;Interesting video&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://youtu.be/vz8zU1-SVcc?feature=shared"&gt;Czy wszyscy 110-latkowie to oszuści? IgNobel z demografii 2024 | Czytamy naturę&lt;/a&gt; - a super interesting presentation about people supposedly living more than 100 years.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=2l1lVBdmNIQ"&gt;Spotify&amp;rsquo;s Approach to Distributed LLM Training with Ray on GKE | Ray Summit 2024&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>books I read - September 2024</title><link>https://marcin.cylke.com.pl/2024/11/05/books-i-read-september-2024/</link><pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2024/11/05/books-i-read-september-2024/</guid><description>&lt;h2 id="books"&gt;Books&lt;/h2&gt;
-&lt;div class="review-container"&gt;
-&lt;div class="book-cover"&gt;
-&lt;img src="https://marcin.cylke.com.pl/post_images/books-i-read-september-2024-0.png" alt="Stany podzielone Ameryki Book Cover" /&gt;
-&lt;/div&gt;
-&lt;div class="review-text"&gt;
-&lt;h2&gt;Book Review: &lt;em&gt;Stany podzielone Ameryki&lt;/em&gt; by Lukasz Pawłowski&lt;/h2&gt;
-&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/vz8zU1-SVcc?feature=shared&#34;&gt;Czy wszyscy 110-latkowie to oszuści? IgNobel z demografii 2024 | Czytamy naturę&lt;/a&gt; - a super interesting presentation about people supposedly living more than 100 years.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=2l1lVBdmNIQ&#34;&gt;Spotify&amp;rsquo;s Approach to Distributed LLM Training with Ray on GKE | Ray Summit 2024&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>books I read - September 2024</title>
+      <link>http://localhost:1313/2024/11/05/books-i-read-september-2024/</link>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2024/11/05/books-i-read-september-2024/</guid>
+      <description>&lt;h2 id=&#34;books&#34;&gt;Books&lt;/h2&gt;
+&lt;div class=&#34;review-container&#34;&gt;
+    &lt;div class=&#34;book-cover&#34;&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-september-2024-0.png&#34; alt=&#34;Stany podzielone Ameryki Book Cover&#34; /&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;review-text&#34;&gt;
+        &lt;h2&gt;Book Review: &lt;em&gt;Stany podzielone Ameryki&lt;/em&gt; by Lukasz Pawłowski&lt;/h2&gt;
+
+        &lt;ul&gt;
 &lt;li&gt;Written by one of the podcasters from &amp;ldquo;Podcast amerykański,&amp;rdquo; and my great experience with this book was largely due to this connection. The book is fascinating and feels refreshingly objective.&lt;/li&gt;
 &lt;li&gt;Additionally, it offers an insightful analysis of the current state of American society, particularly from a European perspective, providing a unique outsider&amp;rsquo;s view of the country&amp;rsquo;s complexities.&lt;/li&gt;
 &lt;/ul&gt;
+
+    &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="review-container"&gt;
-&lt;div class="book-cover"&gt;
-&lt;img src="https://marcin.cylke.com.pl/post_images/books-i-read-september-2024-1.png" alt="Persepolis Book Cover" /&gt;
-&lt;/div&gt;
-&lt;div class="review-text"&gt;
-&lt;h2&gt;Book Review: &lt;em&gt;Persepolis&lt;/em&gt; by Marjane Satrapi&lt;/h2&gt;
-&lt;ul&gt;
+
+&lt;div class=&#34;review-container&#34;&gt;
+    &lt;div class=&#34;book-cover&#34;&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-september-2024-1.png&#34; alt=&#34;Persepolis Book Cover&#34; /&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;review-text&#34;&gt;
+        &lt;h2&gt;Book Review: &lt;em&gt;Persepolis&lt;/em&gt; by Marjane Satrapi&lt;/h2&gt;
+
+        &lt;ul&gt;
 &lt;li&gt;A classic. This graphic novel chronicles the experience of growing up and living in Iran before, during, and after the Islamic Revolution. The most vivid and shocking part of the story takes place in Iran.&lt;/li&gt;
 &lt;li&gt;The second part, about living in Austria as an immigrant, is less engaging. I found it most enjoyable when the action returned to Iran, highlighting the stark contrast between the two countries, and more importantly, the people.&lt;/li&gt;
 &lt;li&gt;Highly recommended!&lt;/li&gt;
 &lt;/ul&gt;
+
+    &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="review-container"&gt;
-&lt;div class="book-cover"&gt;
-&lt;img src="https://marcin.cylke.com.pl/post_images/books-i-read-september-2024-2.png" alt="Blankets Book Cover" /&gt;
-&lt;/div&gt;
-&lt;div class="review-text"&gt;
-&lt;h2&gt;Book Review: &lt;em&gt;Blankets&lt;/em&gt; by Craig Thompson&lt;/h2&gt;
-&lt;ul&gt;
+
+&lt;div class=&#34;review-container&#34;&gt;
+    &lt;div class=&#34;book-cover&#34;&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-september-2024-2.png&#34; alt=&#34;Blankets Book Cover&#34; /&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;review-text&#34;&gt;
+        &lt;h2&gt;Book Review: &lt;em&gt;Blankets&lt;/em&gt; by Craig Thompson&lt;/h2&gt;
+
+        &lt;ul&gt;
 &lt;li&gt;An autobiographical graphic novel that tells the story of growing up in a deeply religious family and how it shaped the author&amp;rsquo;s first love and transition to adulthood.&lt;/li&gt;
 &lt;li&gt;Not my favorite.&lt;/li&gt;
 &lt;/ul&gt;
+
+    &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="review-container"&gt;
-&lt;div class="book-cover"&gt;
-&lt;img src="https://marcin.cylke.com.pl/post_images/books-i-read-september-2024-3.png" alt="Ghostmoney Book Cover" /&gt;
-&lt;/div&gt;
-&lt;div class="review-text"&gt;
-&lt;h2&gt;Book Review: &lt;em&gt;Ghostmoney&lt;/em&gt; by Smolderen &amp;amp; Bertail&lt;/h2&gt;
-&lt;ul&gt;
+
+&lt;div class=&#34;review-container&#34;&gt;
+    &lt;div class=&#34;book-cover&#34;&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-september-2024-3.png&#34; alt=&#34;Ghostmoney Book Cover&#34; /&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;review-text&#34;&gt;
+        &lt;h2&gt;Book Review: &lt;em&gt;Ghostmoney&lt;/em&gt; by Smolderen &amp;amp; Bertail&lt;/h2&gt;
+
+        &lt;ul&gt;
 &lt;li&gt;I really enjoyed this graphic novel. It&amp;rsquo;s set in the near future and follows a wild chase for lost Al-Qaeda money. The story is told from multiple perspectives, involving politics and a somewhat exaggerated portrayal of shady U.S. dealings around the world.&lt;/li&gt;
 &lt;li&gt;The art style is atmospheric, with some parts being quite dark and gritty, while others depict futuristic, beautifully rendered Middle Eastern cities.&lt;/li&gt;
 &lt;li&gt;As for the plot—it&amp;rsquo;s not too deep, but it’s still enjoyable.&lt;/li&gt;
 &lt;/ul&gt;
+
+    &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="review-container"&gt;
-&lt;div class="book-cover"&gt;
-&lt;img src="https://marcin.cylke.com.pl/post_images/books-i-read-september-2024-4.png" alt="Sandworm Book Cover" /&gt;
-&lt;/div&gt;
-&lt;div class="review-text"&gt;
-&lt;h2&gt;Book Review: &lt;em&gt;Sandworm&lt;/em&gt; by Andy Greenberg&lt;/h2&gt;
-&lt;ul&gt;
+
+&lt;div class=&#34;review-container&#34;&gt;
+    &lt;div class=&#34;book-cover&#34;&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-september-2024-4.png&#34; alt=&#34;Sandworm Book Cover&#34; /&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;review-text&#34;&gt;
+        &lt;h2&gt;Book Review: &lt;em&gt;Sandworm&lt;/em&gt; by Andy Greenberg&lt;/h2&gt;
+
+        &lt;ul&gt;
 &lt;li&gt;A brilliant book that dives into the dangers of cyberwarfare. It covers nation-sponsored cyberattacks on infrastructure and emphasizes the urgent need for securing networks. The book paints a grim picture of potential future cyberattacks, especially with state-sponsored groups using zero-day vulnerabilities against individuals and institutions.&lt;/li&gt;
 &lt;li&gt;It reads like a thriller, except the stakes are real.&lt;/li&gt;
 &lt;li&gt;I&amp;rsquo;d compare it to Kim Zetter&amp;rsquo;s &lt;em&gt;Countdown to Zero Day&lt;/em&gt; about Stuxnet. Personally, I would have enjoyed more technical details, but it was a great read nonetheless.&lt;/li&gt;
 &lt;/ul&gt;
+
+    &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;h2 id="from-pocket"&gt;From Pocket&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Recent:&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>
+
+&lt;h2 id=&#34;from-pocket&#34;&gt;From Pocket&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Recent:&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

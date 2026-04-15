@@ -1,46 +1,395 @@
-<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Ogólne | Tech ramblings by Marcin</title><meta name=keywords content><meta name=description content="Tech ramblings by Marcin - software engineering, distributed systems, and more"><meta name=author content="Marcin Cylke"><link rel=canonical href=https://marcin.cylke.com.pl/categories/Og%C3%B3lne/><link crossorigin=anonymous href=/assets/css/stylesheet.2ef88c6e9b91917ba47ee47c08eceac58e4063f58023c5794d790144e14eeb83.css integrity="sha256-LviMbpuRkXukfuR8COzqxY5AY/WAI8V5TXkBROFO64M=" rel="preload stylesheet" as=style><link rel=icon href=https://marcin.cylke.com.pl/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://marcin.cylke.com.pl/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://marcin.cylke.com.pl/favicon-32x32.png><link rel=apple-touch-icon href=https://marcin.cylke.com.pl/apple-touch-icon.png><link rel=mask-icon href=https://marcin.cylke.com.pl/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate type=application/rss+xml href=https://marcin.cylke.com.pl/categories/Og%C3%B3lne/index.xml title=rss><link rel=alternate hreflang=en href=https://marcin.cylke.com.pl/categories/Og%C3%B3lne/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><link rel=stylesheet href=/css/book_section.css><link rel=stylesheet href=/css/on_this_day.css><link rel=stylesheet href=/css/til.css><script defer src=/js/code-highlight.js></script><meta property="og:url" content="https://marcin.cylke.com.pl/categories/Og%C3%B3lne/"><meta property="og:site_name" content="Tech ramblings by Marcin"><meta property="og:title" content="Ogólne"><meta property="og:description" content="Tech ramblings by Marcin - software engineering, distributed systems, and more"><meta property="og:locale" content="en_us"><meta property="og:type" content="website"><meta name=twitter:card content="summary"><meta name=twitter:title content="Ogólne"><meta name=twitter:description content="Tech ramblings by Marcin - software engineering, distributed systems, and more"></head><body class=list id=top><header class=header><nav class=nav><div class=logo><a href=https://marcin.cylke.com.pl/ accesskey=h title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
-<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://marcin.cylke.com.pl/about/ title=About><span>About</span></a></li><li><a href=https://marcin.cylke.com.pl/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://marcin.cylke.com.pl/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://marcin.cylke.com.pl/archives/ title=Archives><span>Archives</span></a></li><li><a href=https://marcin.cylke.com.pl/travels/ title=Travels><span>Travels</span></a></li><li><a href=https://marcin.cylke.com.pl/til/ title=TIL><span>TIL</span></a></li></ul></nav></header><main class=main><header class=page-header><div class=breadcrumbs><a href=https://marcin.cylke.com.pl/>Home</a>&nbsp;»&nbsp;<a href=https://marcin.cylke.com.pl/categories/>Categories</a></div><h1>Ogólne
-<a href=/categories/Og%C3%B3lne/index.xml title=RSS aria-label=RSS><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="23"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></h1></header><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Complex flows with Apache Camel</h2></header><div class=entry-content><p>At work, we're mainly integrating services and systems, and since we're on a constant lookout for new, better technologies, ways to do things easier, make them more sustainable, we're trying to Usually we use Apache Camel for this task, which is a Swiss-knife for integration engineer. What's more, this tools corresponds well with our approach to integration solutions: try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits, don't convert XML into Java classes back and forth and be worried with problems like XML conversion, try to get a simple flow of the process. However, at first sight Apache Camel seems to have some drawbacks mainly in the area of practical solutions ;-). It's very handy tool if you need to use it as a pipeline with some marginal processing of the data that passes through it. It gets a lot harder to wrap your head around if you consider some branching and intermediate calls to external services. This may be tricky to write properly in Camel's DSL. ...</p></div><footer class=entry-footer><span title='2010-08-26 20:23:52 +0000 UTC'>August 26, 2010</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Complex flows with Apache Camel" href=https://marcin.cylke.com.pl/2010/08/26/complex-flows-with-apache-camel/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Meetbsd 2010</h2></header><div class=entry-content><p>Some time ago, I've attended MeetBSD conference in Kraków. This BSD event is held yearly in either Warsaw, or Kraków. Due to relatively small group of people that registered there was only one track, which had both good and bad sides - you didn't have to choose from myriads of lectures, but there was no way to skip boring ones either. Well, I guess this kind of niche conference - about operating system :) - will not attract bigger attention.
-...</p></div><footer class=entry-footer><span title='2010-08-18 22:16:25 +0000 UTC'>August 18, 2010</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Meetbsd 2010" href=https://marcin.cylke.com.pl/2010/08/18/meetbsd-2010/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>6+ hour layover in Stockholm</h2></header><div class=entry-content><p>Last Monday, while coming home from Sweden, I had ~7h layover between my flights. Since Arlanda Airport does not offer a lot to do, at least not for me and not for 7h, I had decided to go to Stockholm. This post sums up a few nice places, that I'd like to visit on my next trip there.
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Ogólne | Tech ramblings by Marcin</title>
+<meta name="keywords" content="">
+<meta name="description" content="Tech ramblings by Marcin - software engineering, distributed systems, and more">
+<meta name="author" content="Marcin Cylke">
+<link rel="canonical" href="http://localhost:1313/categories/Og%C3%B3lne/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.2ef88c6e9b91917ba47ee47c08eceac58e4063f58023c5794d790144e14eeb83.css" integrity="sha256-LviMbpuRkXukfuR8COzqxY5AY/WAI8V5TXkBROFO64M=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/categories/Og%C3%B3lne/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/categories/Og%C3%B3lne/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/book_section.css">
+<link rel="stylesheet" href="/css/on_this_day.css">
+<link rel="stylesheet" href="/css/til.css">
+<script defer src="/js/code-highlight.js"></script>
+<meta property="og:url" content="http://localhost:1313/categories/Og%C3%B3lne/">
+  <meta property="og:site_name" content="Tech ramblings by Marcin">
+  <meta property="og:title" content="Ogólne">
+  <meta property="og:description" content="Tech ramblings by Marcin - software engineering, distributed systems, and more">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ogólne">
+  <meta name="twitter:description" content="Tech ramblings by Marcin - software engineering, distributed systems, and more">
+
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/travels/" title="Travels">
+                    <span>Travels</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/til/" title="TIL">
+                    <span>TIL</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/categories/">Categories</a></div>
+  <h1>
+    Ogólne
+    <a href="/categories/Og%C3%B3lne/index.xml" title="RSS" aria-label="RSS">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" height="23">
+        <path d="M4 11a9 9 0 0 1 9 9" />
+        <path d="M4 4a16 16 0 0 1 16 16" />
+        <circle cx="5" cy="19" r="1" />
+      </svg>
+    </a>
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Complex flows with Apache Camel
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> At work, we&#39;re mainly integrating services and systems, and since we&#39;re on a constant lookout for new, better technologies, ways to do things easier, make them more sustainable, we&#39;re trying to Usually we use Apache Camel for this task, which is a Swiss-knife for integration engineer. What&#39;s more, this tools corresponds well with our approach to integration solutions: try to operate on XML messages, so you get the advantage of XPaths, XSL and other benefits, don&#39;t convert XML into Java classes back and forth and be worried with problems like XML conversion, try to get a simple flow of the process. However, at first sight Apache Camel seems to have some drawbacks mainly in the area of practical solutions ;-). It&#39;s very handy tool if you need to use it as a pipeline with some marginal processing of the data that passes through it. It gets a lot harder to wrap your head around if you consider some branching and intermediate calls to external services. This may be tricky to write properly in Camel&#39;s DSL. ...</p>
+  </div>
+  <footer class="entry-footer"><span title='2010-08-26 20:23:52 +0000 UTC'>August 26, 2010</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Complex flows with Apache Camel" href="http://localhost:1313/2010/08/26/complex-flows-with-apache-camel/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Meetbsd 2010
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Some time ago, I&#39;ve attended MeetBSD conference in Kraków. This BSD event is held yearly in either Warsaw, or Kraków. Due to relatively small group of people that registered there was only one track, which had both good and bad sides - you didn&#39;t have to choose from myriads of lectures, but there was no way to skip boring ones either. Well, I guess this kind of niche conference - about operating system :) - will not attract bigger attention.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2010-08-18 22:16:25 +0000 UTC'>August 18, 2010</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Meetbsd 2010" href="http://localhost:1313/2010/08/18/meetbsd-2010/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">6&#43; hour layover in Stockholm
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Last Monday, while coming home from Sweden, I had ~7h layover between my flights. Since Arlanda Airport does not offer a lot to do, at least not for me and not for 7h, I had decided to go to Stockholm. This post sums up a few nice places, that I&#39;d like to visit on my next trip there.
 I took Arlanda Express, fast train that takes you directly from the airport to Stockholm. On board, you travel with 200km/h in good enough conditions. The trains takes you near the Central station in 20 minutes, which is great! The main venue I planned to see was Gamla Stan. All the attractions were also there, on the island.
-...</p></div><footer class=entry-footer><span title='2010-08-12 22:22:01 +0000 UTC'>August 12, 2010</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to 6+ hour layover in Stockholm" href=https://marcin.cylke.com.pl/2010/08/12/6-hour-layover-in-stockholm/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Generic Enum converter for iBatis</h2></header><div class=entry-content><p>My goal was to create a simple, extensible Enum converter that would work with iBatis. This seems like a trivial problem, but took me a while to find a proper solution.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2010-08-12 22:22:01 +0000 UTC'>August 12, 2010</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to 6&#43; hour layover in Stockholm" href="http://localhost:1313/2010/08/12/6-hour-layover-in-stockholm/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Generic Enum converter for iBatis
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> My goal was to create a simple, extensible Enum converter that would work with iBatis. This seems like a trivial problem, but took me a while to find a proper solution.
 There were some additional preconditions: all given Enums are jaxb generated objects - but any standard Java Enum should work conversion was 1-to-1, no special conditions and processing The example Enum for this problem looks like this one (copy&amp;paste from jaxb generated source):
-...</p></div><footer class=entry-footer><span title='2010-06-28 20:40:34 +0000 UTC'>June 28, 2010</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Generic Enum converter for iBatis" href=https://marcin.cylke.com.pl/2010/06/28/generic-enum-converter-for-ibatis/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Readability powala!</h2></header><div class=entry-content><p>Już dziś możecie skorzystać z "umilacza" czytania artykułów. Od zawsze denerwowało mnie rozpraszające badziewie na stronach z artykułami. Teraz z tym koniec. Odkąd odkryłem Readability -- strona bookmarkletu,. Wszelkie instrukcje na temat korzystania są dostępne na stronie projektu, tak więc warto sprawdzić.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2010-06-28 20:40:34 +0000 UTC'>June 28, 2010</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Generic Enum converter for iBatis" href="http://localhost:1313/2010/06/28/generic-enum-converter-for-ibatis/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Readability powala!
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Już dziś możecie skorzystać z &#34;umilacza&#34; czytania artykułów. Od zawsze denerwowało mnie rozpraszające badziewie na stronach z artykułami. Teraz z tym koniec. Odkąd odkryłem Readability -- strona bookmarkletu,. Wszelkie instrukcje na temat korzystania są dostępne na stronie projektu, tak więc warto sprawdzić.
 Comments Marcin Zgodnie z niektórymi źródłami, to jednak jest tam część kodu Readability. Polecam ten link:
 http://www.downloadsquad.com/2010/06/08/think-safari-reader-looks-familiar-thats-because-apple-used-op/
-Dominik Porada > Z tego co gdzieś tam czytałem, to nawet Apple wykorzystał kawałki kodu JS z tej strony w Safari nowym.
+Dominik Porada &gt; Z tego co gdzieś tam czytałem, to nawet Apple wykorzystał kawałki kodu JS z tej strony w Safari nowym.
 Wątpię, aczkolwiek Reader na pewno powstał dzięki inspiracji Readability.
-...</p></div><footer class=entry-footer><span title='2010-06-28 20:39:51 +0000 UTC'>June 28, 2010</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Readability powala!" href=https://marcin.cylke.com.pl/2010/06/28/readability-powala/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Javarsovia 2010</h2></header><div class=entry-content><p>This year's Javarsovia conference took place on 26th june. It was held at Centrum Konferencyjno-Kongresowe, Bobrowiecka Street, Warsaw.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2010-06-28 20:39:51 +0000 UTC'>June 28, 2010</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Readability powala!" href="http://localhost:1313/2010/06/28/readability-powala/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Javarsovia 2010
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> This year&#39;s Javarsovia conference took place on 26th june. It was held at Centrum Konferencyjno-Kongresowe, Bobrowiecka Street, Warsaw.
 First of all - the organization was very nice. Everything seemed smooth, maybe with the exception of conference registration, it was simply overcrowded. The agenda was split into four tracks, each hour 4 different presentations were given in different halls. So you just had to choose which one to attend. My path through the conference is described below, together with my views on each of the presentations I attended.
-...</p></div><footer class=entry-footer><span title='2010-06-27 15:08:43 +0000 UTC'>June 27, 2010</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Javarsovia 2010" href=https://marcin.cylke.com.pl/2010/06/27/javarsovia-2010/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>osnews.com - hobby projects</h2></header><div class=entry-content><p>Kilka dni temu na portalu OSNews pojawiła się notatka o skromym tytule: What Are You Working On?. Takie proste pytanie spowodowało lawinę komentarzy. Mnóstwo projektów, których ludzie się "dopuszczają" w czasie wolnym. Wszystkie można przeczytać tutaj: komentarze. Jest tam wiele do przeczytania, ale jeden komentarz naprawdę "zrobił mój dzień" :)
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2010-06-27 15:08:43 +0000 UTC'>June 27, 2010</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Javarsovia 2010" href="http://localhost:1313/2010/06/27/javarsovia-2010/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">osnews.com - hobby projects
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Kilka dni temu na portalu OSNews pojawiła się notatka o skromym tytule: What Are You Working On?. Takie proste pytanie spowodowało lawinę komentarzy. Mnóstwo projektów, których ludzie się &#34;dopuszczają&#34; w czasie wolnym. Wszystkie można przeczytać tutaj: komentarze. Jest tam wiele do przeczytania, ale jeden komentarz naprawdę &#34;zrobił mój dzień&#34; :)
 Come on people, you can do better than that. - trying to improve a tube theremin I built last year to get more linear response. - putting a webcam in the eye of a HAL9000 replica finished a while ago so it can stream fisheye video ;) - part of a team which put a 4m high black monolith in the pedestrian area of my home town :-D - working on a hardware/software solution so my iTunes can display the current track on the cheap LED display i got off eBay - organizing a visit from Tesla Coil Orchestra to play on their tesla coils ...and all that wile running a museum of old computers. I think I may be overstretching myself a bit, but it feels good. Comments Marcin Słuszna uwaga - zmienię może :)
-...</p></div><footer class=entry-footer><span title='2010-06-10 19:22:56 +0000 UTC'>June 10, 2010</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to osnews.com - hobby projects" href=https://marcin.cylke.com.pl/2010/06/10/osnews-com-hobby-projects/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Eclipse ecosystem</h2></header><div class=entry-content><p>Do you use Eclipse? Or perhaps you use other IDE but would like to try "the big E"? Well, that's OK, and completely understandable, because Eclipse is actually a great, versatile tool. But Eclipse is not just an IDE, in fact it is a comp let, extensible platform. What's even more important, there are tones of valuable Eclipse-related projects gathered around the platform.
-Yes, there are lots. Some are good, some are bad, but the usual, stock ones, signed by Eclipse, are worth taking a closer look. They're not a mere innovation to the way we write code with an IDE. Those tools provide new ways to _create_ our code. ...</p></div><footer class=entry-footer><span title='2010-05-07 09:55:59 +0000 UTC'>May 7, 2010</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Eclipse ecosystem" href=https://marcin.cylke.com.pl/2010/05/07/eclipse-ecosystem/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Dmesg z Openbsd/sgi</h2></header><div class=entry-content><p>Wracając do starego tematu OpenBSD na moim SGI O2, postanowiłem lekko odświeżyć tą maszynę. Dostałą uaktualnienie małe. Przysiedziałem również nad dostosowaniem systemu do swoich potrzeb, instalacji potrzebnego softu itp.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2010-06-10 19:22:56 +0000 UTC'>June 10, 2010</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to osnews.com - hobby projects" href="http://localhost:1313/2010/06/10/osnews-com-hobby-projects/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Eclipse ecosystem
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Do you use Eclipse? Or perhaps you use other IDE but would like to try &#34;the big E&#34;? Well, that&#39;s OK, and completely understandable, because Eclipse is actually a great, versatile tool. But Eclipse is not just an IDE, in fact it is a comp let, extensible platform. What&#39;s even more important, there are tones of valuable Eclipse-related projects gathered around the platform.
+Yes, there are lots. Some are good, some are bad, but the usual, stock ones, signed by Eclipse, are worth taking a closer look. They&#39;re not a mere innovation to the way we write code with an IDE. Those tools provide new ways to _create_ our code. ...</p>
+  </div>
+  <footer class="entry-footer"><span title='2010-05-07 09:55:59 +0000 UTC'>May 7, 2010</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Eclipse ecosystem" href="http://localhost:1313/2010/05/07/eclipse-ecosystem/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Dmesg z Openbsd/sgi
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Wracając do starego tematu OpenBSD na moim SGI O2, postanowiłem lekko odświeżyć tą maszynę. Dostałą uaktualnienie małe. Przysiedziałem również nad dostosowaniem systemu do swoich potrzeb, instalacji potrzebnego softu itp.
 Na początek dmesg z działąjącego systemu:
-[ using 433608 bytes of bsd ELF symbol table ] Copyright (c) 1982, 1986, 1989, 1991, 1993 The Regents of the University of California. All rights reserved. Copyright (c) 1995-2009 OpenBSD. All rights reserved. http://www.OpenBSD.org OpenBSD 4.6-current (GENERIC-IP32) #49: Fri Jul 31 05:07:50 MDT 2009 deraadt@sgi.openbsd.org:/usr/src/sys/arch/sgi/compile/GENERIC-IP32 real mem = 67108864 (64MB) rsvd mem = 7020544 (6MB) avail mem = 40771584 (38MB) mainbus0 at root cpu0 at mainbus0: MIPS R5000 CPU rev 2.1 180 MHz with R5000 based FPC rev 1.0 cpu0: cache L1-I 32KB D 32KB 2 way, L2 512KB direct clock0 at mainbus0: ticker on int5 using count register macebus0 at mainbus0: crime rev 10.1 macepcibr0 at macebus0: mace rev 1, host system O2 pci0 at macepcibr0 bus 0 ahc0 at pci0 dev 1 function 0 "Adaptec AIC-7880" rev 0x00: irq 9 ahc0: Host Adapter Bios disabled. Using default SCSI device parameters scsibus0 at ahc0: 16 targets, initiator 7 sd0 at scsibus0 targ 1 lun 0: SCSI2 0/direct fixed sd0: 4340MB, 512 bytes/sec, 8888543 sec total cd0 at scsibus0 targ 4 lun 0: SCSI2 5/cdrom removable ahc1 at pci0 dev 2 function 0 "Adaptec AIC-7880" rev 0x00: irq 10 ahc1: Host Adapter Bios disabled. Using default SCSI device parameters scsibus1 at ahc1: 16 targets, initiator 7 dsrtc0 at macebus0: DS1687 com0 at macebus0 base 0x00390000 irq 5: ns16550a, 16 byte fifo com1 at macebus0 base 0x00398000 irq 5: ns16550a, 16 byte fifo mec0 at macebus0 base 0x00280000 irq 4: MAC-110 rev 1, address 08:00:69:0c:98:fb nsphy0 at mec0 phy 11: DP83840 10/100 PHY, rev. 0 mavb0 at macebus0 base 0x00300000 irq 7: AD1843 rev 1 audio0 at mavb0 mkbc0 at macebus0 base 0x00320000 irq 6 pckbd0 at mkbc0 (kbd slot) wskbd0 at pckbd0: console keyboard power0 at macebus0 irq 6 gbe0 at mainbus0: rev 1, 8MB, 1280x1024 at 8 bits wsdisplay0 at gbe0 mux 1: console (std, vt100 emulation), using wskbd0 wsdisplay0: screen 1 added (std, vt100 emulation) softraid0 at root ahc0: target 1 using 16bit transfers ahc0: target 1 synchronous at 20.0MHz, offset = 0x8 boot device: sd0 root on sd0a swap on sd0b dump on sd0b Niby działa dobrze, z kilkoma wyjątkami:
-...</p></div><footer class=entry-footer><span title='2010-04-25 12:20:34 +0000 UTC'>April 25, 2010</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Dmesg z Openbsd/sgi" href=https://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Unicode w Pythonie</h2></header><div class=entry-content><p>Szlag by to trafił! Czemu tak ciężko jest obsługiwać unicode w pythonie? No niby wszystko jest ładnie konwertowane wewnętrznie na odpowiednie reprezentacje, ale jeśli przychodzi co do czego, i chcemy wypisać sobie taki ciąg znaków na ekran, to już jest ciężej.
+[ using 433608 bytes of bsd ELF symbol table ] Copyright (c) 1982, 1986, 1989, 1991, 1993 The Regents of the University of California. All rights reserved. Copyright (c) 1995-2009 OpenBSD. All rights reserved. http://www.OpenBSD.org OpenBSD 4.6-current (GENERIC-IP32) #49: Fri Jul 31 05:07:50 MDT 2009 deraadt@sgi.openbsd.org:/usr/src/sys/arch/sgi/compile/GENERIC-IP32 real mem = 67108864 (64MB) rsvd mem = 7020544 (6MB) avail mem = 40771584 (38MB) mainbus0 at root cpu0 at mainbus0: MIPS R5000 CPU rev 2.1 180 MHz with R5000 based FPC rev 1.0 cpu0: cache L1-I 32KB D 32KB 2 way, L2 512KB direct clock0 at mainbus0: ticker on int5 using count register macebus0 at mainbus0: crime rev 10.1 macepcibr0 at macebus0: mace rev 1, host system O2 pci0 at macepcibr0 bus 0 ahc0 at pci0 dev 1 function 0 &#34;Adaptec AIC-7880&#34; rev 0x00: irq 9 ahc0: Host Adapter Bios disabled. Using default SCSI device parameters scsibus0 at ahc0: 16 targets, initiator 7 sd0 at scsibus0 targ 1 lun 0: SCSI2 0/direct fixed sd0: 4340MB, 512 bytes/sec, 8888543 sec total cd0 at scsibus0 targ 4 lun 0: SCSI2 5/cdrom removable ahc1 at pci0 dev 2 function 0 &#34;Adaptec AIC-7880&#34; rev 0x00: irq 10 ahc1: Host Adapter Bios disabled. Using default SCSI device parameters scsibus1 at ahc1: 16 targets, initiator 7 dsrtc0 at macebus0: DS1687 com0 at macebus0 base 0x00390000 irq 5: ns16550a, 16 byte fifo com1 at macebus0 base 0x00398000 irq 5: ns16550a, 16 byte fifo mec0 at macebus0 base 0x00280000 irq 4: MAC-110 rev 1, address 08:00:69:0c:98:fb nsphy0 at mec0 phy 11: DP83840 10/100 PHY, rev. 0 mavb0 at macebus0 base 0x00300000 irq 7: AD1843 rev 1 audio0 at mavb0 mkbc0 at macebus0 base 0x00320000 irq 6 pckbd0 at mkbc0 (kbd slot) wskbd0 at pckbd0: console keyboard power0 at macebus0 irq 6 gbe0 at mainbus0: rev 1, 8MB, 1280x1024 at 8 bits wsdisplay0 at gbe0 mux 1: console (std, vt100 emulation), using wskbd0 wsdisplay0: screen 1 added (std, vt100 emulation) softraid0 at root ahc0: target 1 using 16bit transfers ahc0: target 1 synchronous at 20.0MHz, offset = 0x8 boot device: sd0 root on sd0a swap on sd0b dump on sd0b Niby działa dobrze, z kilkoma wyjątkami:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2010-04-25 12:20:34 +0000 UTC'>April 25, 2010</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Dmesg z Openbsd/sgi" href="http://localhost:1313/2010/04/25/dmesg-z-openbsd-sgi/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Unicode w Pythonie
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Szlag by to trafił! Czemu tak ciężko jest obsługiwać unicode w pythonie? No niby wszystko jest ładnie konwertowane wewnętrznie na odpowiednie reprezentacje, ale jeśli przychodzi co do czego, i chcemy wypisać sobie taki ciąg znaków na ekran, to już jest ciężej.
 Weźmy prosty przykład. Wczytywałem plik z polskimi znaczkami, o taki:
 Roger Macdonald;Człowiek w żelaznej masce;25 a potem w kodzie pythonowym robiłem sobie tak:
-for line in open(sys.argv[1],'r').readlines(): print line.decode('utf-8') (.... tu wysłanie do jakiegoś tam Web Service'u) ...</p></div><footer class=entry-footer><span title='2010-04-21 22:54:24 +0000 UTC'>April 21, 2010</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Unicode w Pythonie" href=https://marcin.cylke.com.pl/2010/04/21/unicode-w-pythonie/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Reaktywacja o-filmoramy?</h2></header><div class=entry-content><p>Mam nadzieję, że wreszcie jednak ruszę z blogiem filmowym, po raz kolejny należy mu się reaktywacja.
-http://o-filmorama.blogspot.com</p></div><footer class=entry-footer><span title='2010-04-21 18:01:59 +0000 UTC'>April 21, 2010</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Reaktywacja o-filmoramy?" href=https://marcin.cylke.com.pl/2010/04/21/reaktywacja-o-filmoramy/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Mass Effect</h2></header><div class=entry-content><p>Już dawno nie wciągnęła mnie tak żadna gra. To było olśnienie, ale dopiero za drugim razem wzięło mnie na dobre. Pierwsze podejście raczej mnie zniechęciło, bo choć fabuła zapowiadała się całkiem fajnie, to grając na XBoxie - przy użyciu pada - nie byłem w stanie poradzić sobie z celowaniem. Pewnie dziś byłoby lepiej, bo i technikę w tej dziedzinie podszkoliłem na licznych bijatykach i ef-pe-esach, ale i tak dorwałem werjsę na PC Mass Effect :D.
-...</p></div><footer class=entry-footer><span title='2010-04-21 17:59:39 +0000 UTC'>April 21, 2010</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Mass Effect " href=https://marcin.cylke.com.pl/2010/04/21/mass-effect/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Nokia bez certyfikatów :)</h2></header><div class=entry-content><p>Od kilku dni walczyłem z wyłączeniem sprawdzania certyfikatów w Nokii E51. Okazało się, że to trywialna sprawa. Wystarczy:
-Tools -> App mgr -> Options -> Settings. Zmienić "software installation" z "Signed Only" na "All" i "Onlline certificate check" na "Off" :D
+for line in open(sys.argv[1],&#39;r&#39;).readlines(): print line.decode(&#39;utf-8&#39;) (.... tu wysłanie do jakiegoś tam Web Service&#39;u) ...</p>
+  </div>
+  <footer class="entry-footer"><span title='2010-04-21 22:54:24 +0000 UTC'>April 21, 2010</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Unicode w Pythonie" href="http://localhost:1313/2010/04/21/unicode-w-pythonie/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Reaktywacja o-filmoramy?
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Mam nadzieję, że wreszcie jednak ruszę z blogiem filmowym, po raz kolejny należy mu się reaktywacja.
+http://o-filmorama.blogspot.com </p>
+  </div>
+  <footer class="entry-footer"><span title='2010-04-21 18:01:59 +0000 UTC'>April 21, 2010</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Reaktywacja o-filmoramy?" href="http://localhost:1313/2010/04/21/reaktywacja-o-filmoramy/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Mass Effect 
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Już dawno nie wciągnęła mnie tak żadna gra. To było olśnienie, ale dopiero za drugim razem wzięło mnie na dobre. Pierwsze podejście raczej mnie zniechęciło, bo choć fabuła zapowiadała się całkiem fajnie, to grając na XBoxie - przy użyciu pada - nie byłem w stanie poradzić sobie z celowaniem. Pewnie dziś byłoby lepiej, bo i technikę w tej dziedzinie podszkoliłem na licznych bijatykach i ef-pe-esach, ale i tak dorwałem werjsę na PC Mass Effect :D.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2010-04-21 17:59:39 +0000 UTC'>April 21, 2010</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Mass Effect " href="http://localhost:1313/2010/04/21/mass-effect/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Nokia bez certyfikatów :)
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Od kilku dni walczyłem z wyłączeniem sprawdzania certyfikatów w Nokii E51. Okazało się, że to trywialna sprawa. Wystarczy:
+Tools -&gt; App mgr -&gt; Options -&gt; Settings. Zmienić &#34;software installation&#34; z &#34;Signed Only&#34; na &#34;All&#34; i &#34;Onlline certificate check&#34; na &#34;Off&#34; :D
 Dzięki temu mogłem sobie zainstalować prostego i funkcjonalnego playera http://symbianoggplay.sourceforge.net/ i jest on o niebo lepszy niż ten domyślny dostarczany przez Nokie.
-Comments Marcin Cylke U mnie akurat zadziałąło :) a wszelkie próby korzystania z chińskich "rozwiązań" do odblokowywania Nokii poległy.
+Comments Marcin Cylke U mnie akurat zadziałąło :) a wszelkie próby korzystania z chińskich &#34;rozwiązań&#34; do odblokowywania Nokii poległy.
 Także jestem całkiem zadowolony.
 Oczywiście w świetle tego co napisałem, może się okazać, że to przez te szacher-machery z chińszczyzną dało się to łatwo odblokować w opisany przeze mnie sposób.
-...</p></div><footer class=entry-footer><span title='2010-04-18 23:13:47 +0000 UTC'>April 18, 2010</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Nokia bez certyfikatów :)" href=https://marcin.cylke.com.pl/2010/04/18/nokia-bez-certyfikatow/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Inteligentny mock w SoapUI</h2></header><div class=entry-content><p>Któż z nas nie testował WebService'ów, a któż z nas nie używał do tego SoapUI :) Ok, z rzeczami oczywistymi dyskutować nie będę, ale przy okazji jednego projekciku okazało się, że fajnie by było gdyby mój mock potrafił zrobić coś więcej niż tylko odpowiedzieć na nadesłany komunikat.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2010-04-18 23:13:47 +0000 UTC'>April 18, 2010</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Nokia bez certyfikatów :)" href="http://localhost:1313/2010/04/18/nokia-bez-certyfikatow/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Inteligentny mock w SoapUI
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Któż z nas nie testował WebService&#39;ów, a któż z nas nie używał do tego SoapUI :) Ok, z rzeczami oczywistymi dyskutować nie będę, ale przy okazji jednego projekciku okazało się, że fajnie by było gdyby mój mock potrafił zrobić coś więcej niż tylko odpowiedzieć na nadesłany komunikat.
 Oczywiście sam SoapUI posiada dosyć spory wachlarz możliwości, bo może wysłać losowy request spośród wprowadzonych, lub wysyłać wedle sekwencji, itp.
-Problem w tym, że moim wysublimowanym życzeniem było aby korelować komunikaty określonego typu na podstawie jednego pola z XMLa - nazwijmy je polem "X". Jeśli w polu X przyszła wartość, której do tej pory nie widzieliśmy - odpowiedz jednym komunikatem, jeśli ta wartość już została przez nas odebrana (ostatnio :) ), to prześlij trochę inną odpowiedź.
-...</p></div><footer class=entry-footer><span title='2009-11-18 22:20:57 +0000 UTC'>November 18, 2009</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Inteligentny mock w SoapUI" href=https://marcin.cylke.com.pl/2009/11/18/inteligentny-mock-w-soapui/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Czyżby BPEL wreszcie stał się bardziej użyteczny?</h2></header><div class=entry-content><p>Nieee... to po prostu udało mi się uruchomić BPEL Designera - plugin
-do Eclipse'a. Co prawda wymagało to grzebnięcia w źródłach, które nie
+Problem w tym, że moim wysublimowanym życzeniem było aby korelować komunikaty określonego typu na podstawie jednego pola z XMLa - nazwijmy je polem &#34;X&#34;. Jeśli w polu X przyszła wartość, której do tej pory nie widzieliśmy - odpowiedz jednym komunikatem, jeśli ta wartość już została przez nas odebrana (ostatnio :) ), to prześlij trochę inną odpowiedź.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2009-11-18 22:20:57 +0000 UTC'>November 18, 2009</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Inteligentny mock w SoapUI" href="http://localhost:1313/2009/11/18/inteligentny-mock-w-soapui/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Czyżby BPEL wreszcie stał się bardziej użyteczny?
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Nieee... to po prostu udało mi się uruchomić BPEL Designera - plugin
+do Eclipse&#39;a. Co prawda wymagało to grzebnięcia w źródłach, które nie
 były aktualizowane już od dłuższego czasu. Zmiany polegały głównie na
-poprawie zależności. Niemniej, plugin z wersją 3.5 Eclipse'a działa
+poprawie zależności. Niemniej, plugin z wersją 3.5 Eclipse&#39;a działa
 sprawnie. W poprzednich wersjach miał tendencje do zacinania się, a
 przyczyny tego nie udało mi się namierzyć.
 A co to jest BPEL?
-...</p></div><footer class=entry-footer><span title='2009-11-15 23:24:41 +0000 UTC'>November 15, 2009</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Czyżby BPEL wreszcie stał się bardziej użyteczny?" href=https://marcin.cylke.com.pl/2009/11/15/czyzby-bpel-wreszcie-stal-sie-bardziej-uzyteczny/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Solaris w TR</h2></header><div class=entry-content><p>Wczoraj byłem w TR (http://www.trwarszawa.pl/). Na wejściówki, po
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2009-11-15 23:24:41 +0000 UTC'>November 15, 2009</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Czyżby BPEL wreszcie stał się bardziej użyteczny?" href="http://localhost:1313/2009/11/15/czyzby-bpel-wreszcie-stal-sie-bardziej-uzyteczny/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Solaris w TR
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Wczoraj byłem w TR (http://www.trwarszawa.pl/). Na wejściówki, po
 taniości. Obejrzałem spektakl Solaris, bo to Lem, bo znam, bo jako jedną
 z niewielu rzeczy Lema czytałem. Powody były.
 Wrażenia? Bardzo fajnie się oglądało. Problem jedynie w tym, że z
@@ -48,32 +397,168 @@ wydawałoby się dosyć prostej fabularnie książki zrobiono spektakl,
 którego nie da się w całości zrozumieć z powodu niedopowiedzeń. Czy to
 jest domena nowoczesnych interpretacji teatralnych??
 Comments Marcin @Biały, tak, faktycznie. Ale ostatecznie na prawdę nie wyszło to tak źle. Akurat te aspekty, które wspomniałeś były ciekawie przedstawione.
-...</p></div><footer class=entry-footer><span title='2009-11-13 08:51:17 +0000 UTC'>November 13, 2009</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Solaris w TR" href=https://marcin.cylke.com.pl/2009/11/13/solaris-w-tr/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>&lt;p>Love - some kind of preview...&lt;/p></h2></header><div class=entry-content><p>Czytając mój ulubiony serwis o grach, czyli Rock-Paper-Shutgun dowiedziałem się, że osobnik znany jako Eskil Steenberg wypuścił nieinteraktywne preview swojego "multiplayer experience" - LOVE.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2009-11-13 08:51:17 +0000 UTC'>November 13, 2009</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Solaris w TR" href="http://localhost:1313/2009/11/13/solaris-w-tr/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">&lt;p&gt;Love - some kind of preview...&lt;/p&gt; 
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Czytając mój ulubiony serwis o grach, czyli Rock-Paper-Shutgun dowiedziałem się, że osobnik znany jako Eskil Steenberg wypuścił nieinteraktywne preview swojego &#34;multiplayer experience&#34; - LOVE.
 O co tyle szumu? Wystarczy spojrzeć na to jak gra wygląda. Nie chodzi w tym o jakąś wypasioną grafikę, a o frajdę z gry. Eskil pisze swoją grę w pojedynkę. Idzie mu to naprawdę sprawnie. A zestaw narzędzi jakich używa wprawia mnie za każdym razem w podziw. Chodzi mi z grubsza o narzędzia pokroju Verse (http://www.quelsolaar.com/verse/), które to jest rozproszonym edytorem modeli 3D. Pozwala na współpracę wielu osób i do tego integruje się chociażby z Blenderem. A to tylko wierzchołek tej góry :) Całość wygląda niesamowicie innowacyjnie i imponująco.
-...</p></div><footer class=entry-footer><span title='2009-09-24 23:06:05 +0000 UTC'>September 24, 2009</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Love - some kind of preview...
-" href=https://marcin.cylke.com.pl/2009/09/24/love-some-kind-of-preview/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Demotywator mój</h2></header><div class=entry-content><p>Z dwa tygodnie temu zrobiłem fotkę. Nadawała się na demotywator. Moim zdaniem przynajmnie :)
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2009-09-24 23:06:05 +0000 UTC'>September 24, 2009</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Love - some kind of preview...
+" href="http://localhost:1313/2009/09/24/love-some-kind-of-preview/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Demotywator mój
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Z dwa tygodnie temu zrobiłem fotkę. Nadawała się na demotywator. Moim zdaniem przynajmnie :)
 Umieściłem ją więc w serwisie odpowiednim - demotywatory.pl Raczej nie pieją ludzie z zachwytu, ale mam radochę i tak :D.
 Link do demotywatora - LINK.
 Comments Marcin @Voter101 - dzięki za słowa krytyki ;-)
 Jednak nadal dziwi mnie tak niesamowicie osobiste podejście do tego co ktoś sobie na blogu napisze. No ale trudno!
 A co do Twojej rady, żebym wracał do gimnazjum. Wydaje mi się, że ktoś tu tęskni za zeszłym rokiem, bo: http://voter101.jogger.pl/2009/09/08/liceum-nie-takie-straszne/
 :)
-...</p></div><footer class=entry-footer><span title='2009-09-22 21:59:20 +0000 UTC'>September 22, 2009</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Demotywator mój" href=https://marcin.cylke.com.pl/2009/09/22/demotywator-moj/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Open Suse jest upośledzone!</h2></header><div class=entry-content><p>Zarządzanie pakietami to droga przez mękę. Czemu? Proszę bardzo:
-marcin@byakshee:~> sudo zypper install f-spot
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2009-09-22 21:59:20 +0000 UTC'>September 22, 2009</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Demotywator mój" href="http://localhost:1313/2009/09/22/demotywator-moj/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Open Suse jest upośledzone!
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Zarządzanie pakietami to droga przez mękę. Czemu? Proszę bardzo:
+marcin@byakshee:~&gt; sudo zypper install f-spot
 Reading installed packages...
-'f-spot' is already installed.
+&#39;f-spot&#39; is already installed.
 Nothing to do.
 ale już jakbym chciał upgrade paczki zrobić, to inna rozmowa:
-marcin@byakshee:~> sudo zypper update f-spot
+marcin@byakshee:~&gt; sudo zypper update f-spot
 Reading installed packages...
-Package 'f-spot' is not installed.
+Package &#39;f-spot&#39; is not installed.
 Nothing to do.
 Wniosek z tego taki, że jak raz zetkniesz się z apt-getem, to już nic nie będzie później odpowiednie :D A OpenSuse oczywiście odradzam.
-...</p></div><footer class=entry-footer><span title='2009-09-20 14:45:13 +0000 UTC'>September 20, 2009</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Open Suse jest upośledzone!" href=https://marcin.cylke.com.pl/2009/09/20/open-suse-jest-uposledzone/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Przydatne programy zdjęciowe</h2></header><div class=entry-content><p>Od dawna używam hugina, który doskonale nadaje się do sklejania wielu zdjęć w panoramę. Robi to doskonale, wygładza, koryguje, dopasowuje. Wystarczy wrzucić sekwencję zdjęć w odpowiedniej kolejności, a program załatwi wszystko za mnie. Miód!
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2009-09-20 14:45:13 +0000 UTC'>September 20, 2009</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Open Suse jest upośledzone!" href="http://localhost:1313/2009/09/20/open-suse-jest-uposledzone/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Przydatne programy zdjęciowe
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Od dawna używam hugina, który doskonale nadaje się do sklejania wielu zdjęć w panoramę. Robi to doskonale, wygładza, koryguje, dopasowuje. Wystarczy wrzucić sekwencję zdjęć w odpowiedniej kolejności, a program załatwi wszystko za mnie. Miód!
 Dziś znalazłem natomiast programik o dziwnej conieco nazwie tintii. On z koleii służy do przerabiana zdjęc na czarnobiałe, zostawiając pewien obszar w kolorze. Robienie podobnej rzeczy w Gimpie nigdy nie wychodziło mi łatwo. Dzięki temu narzędziu wszystko idzie łatwo i przyjemnie!
-...</p></div><footer class=entry-footer><span title='2009-09-20 10:29:06 +0000 UTC'>September 20, 2009</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Przydatne programy zdjęciowe" href=https://marcin.cylke.com.pl/2009/09/20/przydatne-programy-zdjeciowe/></a></article><footer class=page-footer><nav class=pagination><a class=prev href=https://marcin.cylke.com.pl/categories/Og%C3%B3lne/>«&nbsp;Prev&nbsp;
-</a><a class=next href=https://marcin.cylke.com.pl/categories/Og%C3%B3lne/page/3/>Next&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2026 <a href=https://marcin.cylke.com.pl/>Tech ramblings by Marcin</a></span> ·
-<span>Powered by
-<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
-</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script></body></html>
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2009-09-20 10:29:06 +0000 UTC'>September 20, 2009</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Przydatne programy zdjęciowe" href="http://localhost:1313/2009/09/20/przydatne-programy-zdjeciowe/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="http://localhost:1313/categories/Og%C3%B3lne/">
+      «&nbsp;Prev&nbsp;
+    </a>
+    <a class="next" href="http://localhost:1313/categories/Og%C3%B3lne/page/3/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">Tech ramblings by Marcin</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

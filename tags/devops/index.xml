@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Devops on Tech ramblings by Marcin</title>
+    <link>http://localhost:1313/tags/devops/</link>
+    <description>Recent content in Devops on Tech ramblings by Marcin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SSH certificates: the better SSH experience</title>
+      <link>http://localhost:1313/til/2026-04-15-ssh-certificates/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/til/2026-04-15-ssh-certificates/</guid>
+      <description>&lt;p&gt;Inspired by &lt;a href=&#34;https://jpmens.net/2026/04/03/ssh-certificates-the-better-ssh-experience/&#34;&gt;this post by JP Mens&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Instead of distributing public keys to every server&amp;rsquo;s &lt;code&gt;authorized_keys&lt;/code&gt;, you
+can use a Certificate Authority (CA) to sign SSH keys. This eliminates
+&lt;code&gt;ssh-copy-id&lt;/code&gt;, manual &lt;code&gt;authorized_keys&lt;/code&gt; edits, and TOFU prompts for new hosts.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How it works:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Create a CA key pair on a secure machine&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;umask&lt;/span&gt; 077&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; mkdir CA
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh-keygen -t ecdsa -C &lt;span class=&#34;s2&#34;&gt;&amp;#34;My SSH CA&amp;#34;&lt;/span&gt; -f CA/ssh-ca
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Sign user public keys with the CA, specifying allowed principals (login names)&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

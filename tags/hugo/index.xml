@@ -1,2 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on Tech ramblings by Marcin</title><link>https://marcin.cylke.com.pl/tags/hugo/</link><description>Recent content in Hugo on Tech ramblings by Marcin</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 13 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo sections can have custom list layouts</title><link>https://marcin.cylke.com.pl/til/2026-03-13-sidenotes-demo/</link><pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/til/2026-03-13-sidenotes-demo/</guid><description>&lt;p&gt;You can override a section&amp;rsquo;s list template by placing a &lt;code&gt;list.html&lt;/code&gt; under &lt;code&gt;layouts/&amp;lt;section-name&amp;gt;/&lt;/code&gt;. Hugo will pick it up automatically, no frontmatter needed.&lt;/p&gt;
-&lt;p&gt;This makes it easy to create compact, title-only indexes for sections like TIL — different from the default card-style post listing.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Tech ramblings by Marcin</title>
+    <link>http://localhost:1313/tags/hugo/</link>
+    <description>Recent content in Hugo on Tech ramblings by Marcin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 13 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo sections can have custom list layouts</title>
+      <link>http://localhost:1313/til/2026-03-13-sidenotes-demo/</link>
+      <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/til/2026-03-13-sidenotes-demo/</guid>
+      <description>&lt;p&gt;You can override a section&amp;rsquo;s list template by placing a &lt;code&gt;list.html&lt;/code&gt; under &lt;code&gt;layouts/&amp;lt;section-name&amp;gt;/&lt;/code&gt;. Hugo will pick it up automatically, no frontmatter needed.&lt;/p&gt;
+&lt;p&gt;This makes it easy to create compact, title-only indexes for sections like TIL — different from the default card-style post listing.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

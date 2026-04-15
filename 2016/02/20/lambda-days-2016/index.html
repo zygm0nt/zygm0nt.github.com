@@ -1,4 +1,13 @@
-<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Lambda Days 2016 | Tech ramblings by Marcin</title><meta name=keywords content><meta name=description content="Lambda Days 2016 - Kraków
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Lambda Days 2016 | Tech ramblings by Marcin</title>
+<meta name="keywords" content="">
+<meta name="description" content="Lambda Days 2016 - Kraków
 This last two days I&rsquo;ve spend on a conference in Kraków. The topics
 revolved around functional programming, with all the experimental stuff,
 popular languages, etc. Here are the talks I&rsquo;ve been to and short summaries of those:
@@ -8,59 +17,503 @@ Day 1:
 Propositions as types - the keynote delivered by Philip Wadler - seen it already on YouTube. But the thing with Lambda t-shirt looked funny again :D
 
 
-Using &ldquo;Program shaping&rdquo; and algorithmic skeletons to parallelise an evolutionary multi-agent system in Erlang - pretty long title, huh :) The presentation, thou very academic was also quite interesting. The whole concept not being particularly new, but the set of tools used for refactorings into parallel code seemed interesting."><meta name=author content="Marcin Cylke"><link rel=canonical href=https://marcin.cylke.com.pl/2016/02/20/lambda-days-2016/><link crossorigin=anonymous href=/assets/css/stylesheet.2ef88c6e9b91917ba47ee47c08eceac58e4063f58023c5794d790144e14eeb83.css integrity="sha256-LviMbpuRkXukfuR8COzqxY5AY/WAI8V5TXkBROFO64M=" rel="preload stylesheet" as=style><link rel=icon href=https://marcin.cylke.com.pl/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://marcin.cylke.com.pl/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://marcin.cylke.com.pl/favicon-32x32.png><link rel=apple-touch-icon href=https://marcin.cylke.com.pl/apple-touch-icon.png><link rel=mask-icon href=https://marcin.cylke.com.pl/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://marcin.cylke.com.pl/2016/02/20/lambda-days-2016/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><link rel=stylesheet href=/css/book_section.css><link rel=stylesheet href=/css/on_this_day.css><link rel=stylesheet href=/css/til.css><script defer src=/js/code-highlight.js></script><meta property="og:url" content="https://marcin.cylke.com.pl/2016/02/20/lambda-days-2016/"><meta property="og:site_name" content="Tech ramblings by Marcin"><meta property="og:title" content="Lambda Days 2016"><meta property="og:description" content="Lambda Days 2016 - Kraków This last two days I’ve spend on a conference in Kraków. The topics revolved around functional programming, with all the experimental stuff, popular languages, etc. Here are the talks I’ve been to and short summaries of those:
+Using &ldquo;Program shaping&rdquo; and algorithmic skeletons to parallelise an evolutionary multi-agent system in Erlang - pretty long title, huh :) The presentation, thou very academic was also quite interesting. The whole concept not being particularly new, but the set of tools used for refactorings into parallel code seemed interesting.">
+<meta name="author" content="Marcin Cylke">
+<link rel="canonical" href="http://localhost:1313/2016/02/20/lambda-days-2016/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.2ef88c6e9b91917ba47ee47c08eceac58e4063f58023c5794d790144e14eeb83.css" integrity="sha256-LviMbpuRkXukfuR8COzqxY5AY/WAI8V5TXkBROFO64M=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/2016/02/20/lambda-days-2016/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/book_section.css">
+<link rel="stylesheet" href="/css/on_this_day.css">
+<link rel="stylesheet" href="/css/til.css">
+<script defer src="/js/code-highlight.js"></script>
+<meta property="og:url" content="http://localhost:1313/2016/02/20/lambda-days-2016/">
+  <meta property="og:site_name" content="Tech ramblings by Marcin">
+  <meta property="og:title" content="Lambda Days 2016">
+  <meta property="og:description" content="Lambda Days 2016 - Kraków This last two days I’ve spend on a conference in Kraków. The topics revolved around functional programming, with all the experimental stuff, popular languages, etc. Here are the talks I’ve been to and short summaries of those:
 Day 1: Propositions as types - the keynote delivered by Philip Wadler - seen it already on YouTube. But the thing with Lambda t-shirt looked funny again :D
-Using “Program shaping” and algorithmic skeletons to parallelise an evolutionary multi-agent system in Erlang - pretty long title, huh :) The presentation, thou very academic was also quite interesting. The whole concept not being particularly new, but the set of tools used for refactorings into parallel code seemed interesting."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2016-02-20T00:00:00+00:00"><meta property="article:modified_time" content="2016-02-20T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Lambda Days 2016"><meta name=twitter:description content="Lambda Days 2016 - Kraków This last two days I’ve spend on a conference in Kraków. The topics revolved around functional programming, with all the experimental stuff, popular languages, etc. Here are the talks I’ve been to and short summaries of those:
+Using “Program shaping” and algorithmic skeletons to parallelise an evolutionary multi-agent system in Erlang - pretty long title, huh :) The presentation, thou very academic was also quite interesting. The whole concept not being particularly new, but the set of tools used for refactorings into parallel code seemed interesting.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2016-02-20T00:00:00+00:00">
+    <meta property="article:modified_time" content="2016-02-20T00:00:00+00:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Lambda Days 2016">
+  <meta name="twitter:description" content="Lambda Days 2016 - Kraków This last two days I’ve spend on a conference in Kraków. The topics revolved around functional programming, with all the experimental stuff, popular languages, etc. Here are the talks I’ve been to and short summaries of those:
 Day 1: Propositions as types - the keynote delivered by Philip Wadler - seen it already on YouTube. But the thing with Lambda t-shirt looked funny again :D
-Using “Program shaping” and algorithmic skeletons to parallelise an evolutionary multi-agent system in Erlang - pretty long title, huh :) The presentation, thou very academic was also quite interesting. The whole concept not being particularly new, but the set of tools used for refactorings into parallel code seemed interesting."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://marcin.cylke.com.pl/post/"},{"@type":"ListItem","position":2,"name":"Lambda Days 2016","item":"https://marcin.cylke.com.pl/2016/02/20/lambda-days-2016/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Lambda Days 2016","name":"Lambda Days 2016","description":"Lambda Days 2016 - Kraków This last two days I\u0026rsquo;ve spend on a conference in Kraków. The topics revolved around functional programming, with all the experimental stuff, popular languages, etc. Here are the talks I\u0026rsquo;ve been to and short summaries of those:\nDay 1: Propositions as types - the keynote delivered by Philip Wadler - seen it already on YouTube. But the thing with Lambda t-shirt looked funny again :D\nUsing \u0026ldquo;Program shaping\u0026rdquo; and algorithmic skeletons to parallelise an evolutionary multi-agent system in Erlang - pretty long title, huh :) The presentation, thou very academic was also quite interesting. The whole concept not being particularly new, but the set of tools used for refactorings into parallel code seemed interesting.\n","keywords":[],"articleBody":"Lambda Days 2016 - Kraków This last two days I’ve spend on a conference in Kraków. The topics revolved around functional programming, with all the experimental stuff, popular languages, etc. Here are the talks I’ve been to and short summaries of those:\nDay 1: Propositions as types - the keynote delivered by Philip Wadler - seen it already on YouTube. But the thing with Lambda t-shirt looked funny again :D\nUsing “Program shaping” and algorithmic skeletons to parallelise an evolutionary multi-agent system in Erlang - pretty long title, huh :) The presentation, thou very academic was also quite interesting. The whole concept not being particularly new, but the set of tools used for refactorings into parallel code seemed interesting.\nStatic analysis to identify divide-and-conquer algorithms - how to find particular class of algorithms in existing programs? Interesting but shallow, due to time limitations.\nThe Mysteries of Dropbox - John Hughes of QuickCheck fame showed how to test a big system using blackbox approach. Nice presentation, with all the great insight he always brings into his talks.\nMuvr - Jan Machacek - that was a fun presentation. About how to build an app that detects your exercise routine and counts how many repeats you’ve done. There’ve been all:\nspark pipelining Swift code demo (it seemed like Swift IDE offers something similar to notebook-like programming, is it?), live coding Unfortunately due to WiFi’s proxy settings the live demo could not be finished, but the code for all this is available somewhere on Github, on this account. Embracing change - how to introduce Clojure into your company’s technology stack seamlessly - by Artur Skowroński. Hilarious presentation about adopting new languages. It wasn’t that groundbreaking, at least for me, but the way it was presented, and the slides with all the Cthulhu references in them, were great!\nDay 2: Things that matter by Bruce Tate - great energetic talk, with all the ideas about learning new languages. Bruce is the author of two excellent books: “Seven languages in seven weeks” and “Seven more languages in seven weeks” :) He went through languages mentioned in his books and summed up principles associated with their inception.\nI’ve almost decided to not come to this presentation, weighting between it and sleeping a little bit longer in my hotel room.\nThe Zen of Akka - delivered by a resident hakker at Typesafe - Konrad Malawski. Nice talk about Akka pitfalls, there were lots of recommendations and even some previously unknown to me features of Akka toolkit. Plus I loved the Japanese elements.\nCreating reactive components using ClojureScript React wrappers - by Konrad Szydlo introduced Rum as a wrapper for React, described part of the ecosystem and explained mechanics behind the technology. Fine presentation, very intense on content. Konrad had 111 slides, but managed to show all of them without being hasty.\nGetting started with Frege - Lech Glowiak, Frege seems to be a Haskell on the JVM, which in itself seems like a nice thing. But I treat such languages rather as nice experiments, than something useful. Especially its Java interop looks ugly. Nevertheless the presentation was given from the point of view of language contributor, which Lech is.\nPractical demystification of CRDT - by Dmitry Ivanov and Nami Naserazad - both of them from TomTom. Guys are working on TomTom’s NaviCloud product. Their presentation was a practical guide throught the world of CRDTs (link to wikipedia). They showed their failures in implementing the system, gave advices, etc. The whole thing is even uploaded to github, so everyone can check their code (http://github.com/ajantis/scala-crdt). I’ve really enjoyed this talk due to its technical approach. There were no formal definitions, no teortical considerations, just clean report from the trenches.\nPurely functiona Web Apps - by Michał Płachta - how to write Gitlab companion app in Haskell + Elm? Haskell for backend and Elm for frontend. This presentation showed great potential of Elm for frontend development. Moderatly approachable considering Friday afternoon and my lack of Haskell knowledge. Still, I plan to come back to this presentation later.\nWhat I haven’t seen but plan to as soon as videos are available Modeling your domain. What have we learned? Where do we go from here? - by Norbert Wójtowicz - about modeling domain in Clojurescript apps The F#orce awakend - by ewelina Gabasova - F# + geekery, the Twitter went nuts about that presentation, suppose not without reason LFE - a lisp flavour on the Erlang VM - by Robert Virding - don’t know why but it seems intriguing enough Conclusion As always, things you didn’t expect to be interesting were the best ones. Highlights being presentations by Bruce Tate, Jan Machacek and guys from TomTom (Dmitry Ivanov and Nami Naserazad)\nThanks to organisers for this conference. But I must say, that day 2 was a lot better than the first one. The talks were better structured and presented.\nOne idea for the organizers - please print the schedule on the back of conference badge. It was pretty annoying to have to take out the A4 sheets with whole day schedule each time I wanted to look at it\n","wordCount":"856","inLanguage":"en","datePublished":"2016-02-20T00:00:00Z","dateModified":"2016-02-20T00:00:00Z","author":{"@type":"Person","name":"Marcin Cylke"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://marcin.cylke.com.pl/2016/02/20/lambda-days-2016/"},"publisher":{"@type":"Organization","name":"Tech ramblings by Marcin","logo":{"@type":"ImageObject","url":"https://marcin.cylke.com.pl/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://marcin.cylke.com.pl/ accesskey=h title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
-<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://marcin.cylke.com.pl/about/ title=About><span>About</span></a></li><li><a href=https://marcin.cylke.com.pl/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://marcin.cylke.com.pl/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://marcin.cylke.com.pl/archives/ title=Archives><span>Archives</span></a></li><li><a href=https://marcin.cylke.com.pl/travels/ title=Travels><span>Travels</span></a></li><li><a href=https://marcin.cylke.com.pl/til/ title=TIL><span>TIL</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://marcin.cylke.com.pl/>Home</a>&nbsp;»&nbsp;<a href=https://marcin.cylke.com.pl/post/>Posts</a></div><h1 class="post-title entry-hint-parent">Lambda Days 2016</h1><div class=post-meta><span title='2016-02-20 00:00:00 +0000 UTC'>February 20, 2016</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=#lambda-days-2016---krak%c3%b3w aria-label="Lambda Days 2016 - Kraków">Lambda Days 2016 - Kraków</a><ul><li><a href=#day-1 aria-label="Day 1:">Day 1:</a></li><li><a href=#day-2 aria-label="Day 2:">Day 2:</a></li><li><a href=#what-i-havent-seen-but-plan-to-as-soon-as-videos-are-available aria-label="What I haven&rsquo;t seen but plan to as soon as videos are available">What I haven&rsquo;t seen but plan to as soon as videos are available</a></li><li><a href=#conclusion aria-label=Conclusion>Conclusion</a></li></ul></li></ul></div></details></div><div class=post-content><h1 id=lambda-days-2016---kraków>Lambda Days 2016 - Kraków<a hidden class=anchor aria-hidden=true href=#lambda-days-2016---kraków>#</a></h1><p>This last two days I&rsquo;ve spend on a conference in Kraków. The topics
+Using “Program shaping” and algorithmic skeletons to parallelise an evolutionary multi-agent system in Erlang - pretty long title, huh :) The presentation, thou very academic was also quite interesting. The whole concept not being particularly new, but the set of tools used for refactorings into parallel code seemed interesting.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Lambda Days 2016",
+      "item": "http://localhost:1313/2016/02/20/lambda-days-2016/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Lambda Days 2016",
+  "name": "Lambda Days 2016",
+  "description": "Lambda Days 2016 - Kraków This last two days I\u0026rsquo;ve spend on a conference in Kraków. The topics revolved around functional programming, with all the experimental stuff, popular languages, etc. Here are the talks I\u0026rsquo;ve been to and short summaries of those:\nDay 1: Propositions as types - the keynote delivered by Philip Wadler - seen it already on YouTube. But the thing with Lambda t-shirt looked funny again :D\nUsing \u0026ldquo;Program shaping\u0026rdquo; and algorithmic skeletons to parallelise an evolutionary multi-agent system in Erlang - pretty long title, huh :) The presentation, thou very academic was also quite interesting. The whole concept not being particularly new, but the set of tools used for refactorings into parallel code seemed interesting.\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "Lambda Days 2016 - Kraków This last two days I’ve spend on a conference in Kraków. The topics revolved around functional programming, with all the experimental stuff, popular languages, etc. Here are the talks I’ve been to and short summaries of those:\nDay 1: Propositions as types - the keynote delivered by Philip Wadler - seen it already on YouTube. But the thing with Lambda t-shirt looked funny again :D\nUsing “Program shaping” and algorithmic skeletons to parallelise an evolutionary multi-agent system in Erlang - pretty long title, huh :) The presentation, thou very academic was also quite interesting. The whole concept not being particularly new, but the set of tools used for refactorings into parallel code seemed interesting.\nStatic analysis to identify divide-and-conquer algorithms - how to find particular class of algorithms in existing programs? Interesting but shallow, due to time limitations.\nThe Mysteries of Dropbox - John Hughes of QuickCheck fame showed how to test a big system using blackbox approach. Nice presentation, with all the great insight he always brings into his talks.\nMuvr - Jan Machacek - that was a fun presentation. About how to build an app that detects your exercise routine and counts how many repeats you’ve done. There’ve been all:\nspark pipelining Swift code demo (it seemed like Swift IDE offers something similar to notebook-like programming, is it?), live coding Unfortunately due to WiFi’s proxy settings the live demo could not be finished, but the code for all this is available somewhere on Github, on this account. Embracing change - how to introduce Clojure into your company’s technology stack seamlessly - by Artur Skowroński. Hilarious presentation about adopting new languages. It wasn’t that groundbreaking, at least for me, but the way it was presented, and the slides with all the Cthulhu references in them, were great!\nDay 2: Things that matter by Bruce Tate - great energetic talk, with all the ideas about learning new languages. Bruce is the author of two excellent books: “Seven languages in seven weeks” and “Seven more languages in seven weeks” :) He went through languages mentioned in his books and summed up principles associated with their inception.\nI’ve almost decided to not come to this presentation, weighting between it and sleeping a little bit longer in my hotel room.\nThe Zen of Akka - delivered by a resident hakker at Typesafe - Konrad Malawski. Nice talk about Akka pitfalls, there were lots of recommendations and even some previously unknown to me features of Akka toolkit. Plus I loved the Japanese elements.\nCreating reactive components using ClojureScript React wrappers - by Konrad Szydlo introduced Rum as a wrapper for React, described part of the ecosystem and explained mechanics behind the technology. Fine presentation, very intense on content. Konrad had 111 slides, but managed to show all of them without being hasty.\nGetting started with Frege - Lech Glowiak, Frege seems to be a Haskell on the JVM, which in itself seems like a nice thing. But I treat such languages rather as nice experiments, than something useful. Especially its Java interop looks ugly. Nevertheless the presentation was given from the point of view of language contributor, which Lech is.\nPractical demystification of CRDT - by Dmitry Ivanov and Nami Naserazad - both of them from TomTom. Guys are working on TomTom’s NaviCloud product. Their presentation was a practical guide throught the world of CRDTs (link to wikipedia). They showed their failures in implementing the system, gave advices, etc. The whole thing is even uploaded to github, so everyone can check their code (http://github.com/ajantis/scala-crdt). I’ve really enjoyed this talk due to its technical approach. There were no formal definitions, no teortical considerations, just clean report from the trenches.\nPurely functiona Web Apps - by Michał Płachta - how to write Gitlab companion app in Haskell + Elm? Haskell for backend and Elm for frontend. This presentation showed great potential of Elm for frontend development. Moderatly approachable considering Friday afternoon and my lack of Haskell knowledge. Still, I plan to come back to this presentation later.\nWhat I haven’t seen but plan to as soon as videos are available Modeling your domain. What have we learned? Where do we go from here? - by Norbert Wójtowicz - about modeling domain in Clojurescript apps The F#orce awakend - by ewelina Gabasova - F# + geekery, the Twitter went nuts about that presentation, suppose not without reason LFE - a lisp flavour on the Erlang VM - by Robert Virding - don’t know why but it seems intriguing enough Conclusion As always, things you didn’t expect to be interesting were the best ones. Highlights being presentations by Bruce Tate, Jan Machacek and guys from TomTom (Dmitry Ivanov and Nami Naserazad)\nThanks to organisers for this conference. But I must say, that day 2 was a lot better than the first one. The talks were better structured and presented.\nOne idea for the organizers - please print the schedule on the back of conference badge. It was pretty annoying to have to take out the A4 sheets with whole day schedule each time I wanted to look at it\n",
+  "wordCount" : "856",
+  "inLanguage": "en",
+  "datePublished": "2016-02-20T00:00:00Z",
+  "dateModified": "2016-02-20T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Marcin Cylke"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/2016/02/20/lambda-days-2016/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tech ramblings by Marcin",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/travels/" title="Travels">
+                    <span>Travels</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/til/" title="TIL">
+                    <span>TIL</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/post/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Lambda Days 2016
+    </h1>
+    <div class="post-meta"><span title='2016-02-20 00:00:00 +0000 UTC'>February 20, 2016</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#lambda-days-2016---krak%c3%b3w" aria-label="Lambda Days 2016 - Kraków">Lambda Days 2016 - Kraków</a><ul>
+                        
+                <li>
+                    <a href="#day-1" aria-label="Day 1:">Day 1:</a></li>
+                <li>
+                    <a href="#day-2" aria-label="Day 2:">Day 2:</a></li>
+                <li>
+                    <a href="#what-i-havent-seen-but-plan-to-as-soon-as-videos-are-available" aria-label="What I haven&rsquo;t seen but plan to as soon as videos are available">What I haven&rsquo;t seen but plan to as soon as videos are available</a></li>
+                <li>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="lambda-days-2016---kraków">Lambda Days 2016 - Kraków<a hidden class="anchor" aria-hidden="true" href="#lambda-days-2016---kraków">#</a></h1>
+<p>This last two days I&rsquo;ve spend on a conference in Kraków. The topics
 revolved around functional programming, with all the experimental stuff,
-popular languages, etc. Here are the talks I&rsquo;ve been to and short summaries of those:</p><h2 id=day-1>Day 1:<a hidden class=anchor aria-hidden=true href=#day-1>#</a></h2><ul><li><p><strong>Propositions as types</strong> - the keynote delivered by Philip Wadler - seen it already on <a href="https://www.youtube.com/watch?v=IOiZatlZtGU">YouTube</a>. But the thing with Lambda t-shirt looked funny again :D</p></li><li><p><strong>Using &ldquo;Program shaping&rdquo; and algorithmic skeletons to parallelise an evolutionary multi-agent system in Erlang</strong> - pretty long title, huh :) The presentation, thou very academic was also quite interesting. The whole concept not being particularly new, but the set of tools used for refactorings into parallel code seemed interesting.</p></li><li><p><strong>Static analysis to identify divide-and-conquer algorithms</strong> - how to find particular class of algorithms in existing programs? Interesting but shallow, due to time limitations.</p></li><li><p><strong>The Mysteries of Dropbox</strong> - John Hughes of QuickCheck fame showed how
+popular languages, etc. Here are the talks I&rsquo;ve been to and short summaries of those:</p>
+<h2 id="day-1">Day 1:<a hidden class="anchor" aria-hidden="true" href="#day-1">#</a></h2>
+<ul>
+<li>
+<p><strong>Propositions as types</strong> - the keynote delivered by Philip Wadler - seen it already on <a href="https://www.youtube.com/watch?v=IOiZatlZtGU">YouTube</a>. But the thing with Lambda t-shirt looked funny again :D</p>
+</li>
+<li>
+<p><strong>Using &ldquo;Program shaping&rdquo; and algorithmic skeletons to parallelise an evolutionary multi-agent system in Erlang</strong> - pretty long title, huh :) The presentation, thou very academic was also quite interesting. The whole concept not being particularly new, but the set of tools used for refactorings into parallel code seemed interesting.</p>
+</li>
+<li>
+<p><strong>Static analysis to identify divide-and-conquer algorithms</strong> - how to find particular class of algorithms in existing programs? Interesting but shallow, due to time limitations.</p>
+</li>
+<li>
+<p><strong>The Mysteries of Dropbox</strong> - John Hughes of QuickCheck fame showed how
 to test a big system using blackbox approach. Nice presentation, with
-all the great insight he always brings into his talks.</p></li><li><p><strong>Muvr - Jan Machacek</strong> - that was a fun presentation. About how to build an app that detects your exercise routine and counts how many repeats you&rsquo;ve done. There&rsquo;ve been all:</p><ul><li>spark pipelining</li><li>Swift code demo (it seemed like Swift IDE offers something similar to notebook-like programming, is it?),</li><li>live coding
-Unfortunately due to WiFi&rsquo;s proxy settings the live demo could not be finished, but the code for all this is available somewhere on Github, on <a href=https://github.com/muvr>this account</a>.</li></ul></li><li><p><strong>Embracing change</strong> - how to introduce Clojure into your company&rsquo;s
+all the great insight he always brings into his talks.</p>
+</li>
+<li>
+<p><strong>Muvr - Jan Machacek</strong> - that was a fun presentation. About how to build an app that detects your exercise routine and counts how many repeats you&rsquo;ve done. There&rsquo;ve been all:</p>
+<ul>
+<li>spark pipelining</li>
+<li>Swift code demo (it seemed like Swift IDE offers something similar to notebook-like programming, is it?),</li>
+<li>live coding
+Unfortunately due to WiFi&rsquo;s proxy settings the live demo could not be finished, but the code for all this is available somewhere on Github, on <a href="https://github.com/muvr">this account</a>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Embracing change</strong> - how to introduce Clojure into your company&rsquo;s
 technology stack seamlessly - by <strong>Artur Skowroński.</strong>
 Hilarious presentation about adopting new languages. It wasn&rsquo;t that
 groundbreaking, at least for me, but the way it was presented, and the
-slides with all the Cthulhu references in them, were great!</p></li></ul><h2 id=day-2>Day 2:<a hidden class=anchor aria-hidden=true href=#day-2>#</a></h2><ul><li><p><strong>Things that matter by Bruce Tate</strong> - great energetic talk, with all the ideas about learning
+slides with all the Cthulhu references in them, were great!</p>
+</li>
+</ul>
+<h2 id="day-2">Day 2:<a hidden class="anchor" aria-hidden="true" href="#day-2">#</a></h2>
+<ul>
+<li>
+<p><strong>Things that matter by Bruce Tate</strong> - great energetic talk, with all the ideas about learning
 new languages. Bruce is the author of two excellent books: &ldquo;Seven
 languages in seven weeks&rdquo; and &ldquo;Seven more languages in seven weeks&rdquo; :)
 He went through languages mentioned in his books and summed up
-principles associated with their inception.</p><p>I&rsquo;ve almost decided to not come to this presentation,
-weighting between it and sleeping a little bit longer in my hotel room.</p></li><li><p><strong>The Zen of Akka</strong> - delivered by a resident hakker at Typesafe - Konrad
+principles associated with their inception.</p>
+<p>I&rsquo;ve almost decided to not come to this presentation,
+weighting between it and sleeping a little bit longer in my hotel room.</p>
+</li>
+<li>
+<p><strong>The Zen of Akka</strong> - delivered by a resident hakker at Typesafe - Konrad
 Malawski. Nice talk about Akka pitfalls, there were lots of
 recommendations and even some previously unknown to me features of Akka
-toolkit. Plus I loved the Japanese elements.</p></li><li><p><strong>Creating reactive components using ClojureScript React wrappers</strong> - by
+toolkit. Plus I loved the Japanese elements.</p>
+</li>
+<li>
+<p><strong>Creating reactive components using ClojureScript React wrappers</strong> - by
 Konrad Szydlo introduced Rum as a wrapper for React, described part of
 the ecosystem and explained mechanics behind the technology. Fine
 presentation, very intense on content. Konrad had 111 slides, but
-managed to show all of them without being hasty.</p></li><li><p><strong>Getting started with Frege</strong> - Lech Glowiak, Frege seems to be a Haskell
+managed to show all of them without being hasty.</p>
+</li>
+<li>
+<p><strong>Getting started with Frege</strong> - Lech Glowiak, Frege seems to be a Haskell
 on the JVM, which in itself seems like a nice thing. But I treat such
 languages rather as nice experiments, than something useful. Especially
 its Java interop looks ugly. Nevertheless the presentation was given
-from the point of view of language contributor, which Lech is.</p></li><li><p><strong>Practical demystification of CRDT</strong> - by Dmitry Ivanov and Nami
+from the point of view of language contributor, which Lech is.</p>
+</li>
+<li>
+<p><strong>Practical demystification of CRDT</strong> - by Dmitry Ivanov and Nami
 Naserazad - both of them from TomTom. Guys are working on TomTom&rsquo;s
 NaviCloud product. Their presentation was a practical guide throught the
 world of CRDTs (link to wikipedia). They showed their failures in
 implementing the system, gave advices, etc. The whole thing is even
 uploaded to github, so everyone can check their code
-(<a href=http://github.com/ajantis/scala-crdt)>http://github.com/ajantis/scala-crdt)</a>. I&rsquo;ve really enjoyed this talk
+(<a href="http://github.com/ajantis/scala-crdt)">http://github.com/ajantis/scala-crdt)</a>. I&rsquo;ve really enjoyed this talk
 due to its technical approach. There were no formal definitions, no
-teortical considerations, just clean report from the trenches.</p></li><li><p><strong>Purely functiona Web Apps</strong> - by Michał Płachta - how to write Gitlab
+teortical considerations, just clean report from the trenches.</p>
+</li>
+<li>
+<p><strong>Purely functiona Web Apps</strong> - by Michał Płachta - how to write Gitlab
 companion app in Haskell + Elm? Haskell for backend and Elm for
 frontend. This presentation showed great potential of Elm for frontend
 development. Moderatly approachable considering Friday afternoon and my
 lack of Haskell knowledge. Still, I plan to come back to this
-presentation later.</p></li></ul><h2 id=what-i-havent-seen-but-plan-to-as-soon-as-videos-are-available>What I haven&rsquo;t seen but plan to as soon as videos are available<a hidden class=anchor aria-hidden=true href=#what-i-havent-seen-but-plan-to-as-soon-as-videos-are-available>#</a></h2><ul><li><strong>Modeling your domain. What have we learned? Where do we go from here?</strong> - by Norbert Wójtowicz - about modeling domain in Clojurescript apps</li><li><strong>The F#orce awakend</strong> - by ewelina Gabasova - F# + geekery, the Twitter
-went nuts about that presentation, suppose not without reason</li><li><strong>LFE - a lisp flavour on the Erlang VM</strong> - by Robert Virding - don&rsquo;t know
-why but it seems intriguing enough</li></ul><h2 id=conclusion>Conclusion<a hidden class=anchor aria-hidden=true href=#conclusion>#</a></h2><p>As always, things you didn&rsquo;t expect to be interesting were the best
+presentation later.</p>
+</li>
+</ul>
+<h2 id="what-i-havent-seen-but-plan-to-as-soon-as-videos-are-available">What I haven&rsquo;t seen but plan to as soon as videos are available<a hidden class="anchor" aria-hidden="true" href="#what-i-havent-seen-but-plan-to-as-soon-as-videos-are-available">#</a></h2>
+<ul>
+<li><strong>Modeling your domain. What have we learned? Where do we go from here?</strong> - by Norbert Wójtowicz - about modeling domain in Clojurescript apps</li>
+<li><strong>The F#orce awakend</strong> - by ewelina Gabasova - F# + geekery, the Twitter
+went nuts about that presentation, suppose not without reason</li>
+<li><strong>LFE - a lisp flavour on the Erlang VM</strong> - by Robert Virding - don&rsquo;t know
+why but it seems intriguing enough</li>
+</ul>
+<h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>As always, things you didn&rsquo;t expect to be interesting were the best
 ones. Highlights being presentations by Bruce Tate, Jan Machacek and guys
-from TomTom (Dmitry Ivanov and Nami Naserazad)</p><p>Thanks to organisers for this conference. But I must say, that day 2 was a lot better than the first one. The talks were better structured and presented.</p><p>One idea for the organizers - please print the schedule on the back of
+from TomTom (Dmitry Ivanov and Nami Naserazad)</p>
+<p>Thanks to organisers for this conference. But I must say, that day 2 was a lot better than the first one. The talks were better structured and presented.</p>
+<p>One idea for the organizers - please print the schedule on the back of
 conference badge. It was pretty annoying to have to take out the A4
-sheets with whole day schedule each time I wanted to look at it</p></div><footer class=post-footer><ul class=post-tags></ul><nav class=paginav><a class=prev href=https://marcin.cylke.com.pl/2016/04/29/scalar-conf-2016/><span class=title>« Prev</span><br><span>Scalar Conf 2016</span>
-</a><a class=next href=https://marcin.cylke.com.pl/2016/01/22/ccc-interesting-videos/><span class=title>Next »</span><br><span>32c3 most interesting videos</span></a></nav></footer><script src=https://utteranc.es/client.js repo=zygm0nt/hugo-blog-incarnation issue-term=pathname theme=github-light crossorigin=anonymous async></script></article></main><footer class=footer><span>&copy; 2026 <a href=https://marcin.cylke.com.pl/>Tech ramblings by Marcin</a></span> ·
-<span>Powered by
-<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
-</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
+sheets with whole day schedule each time I wanted to look at it</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/2016/04/29/scalar-conf-2016/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Scalar Conf 2016</span>
+  </a>
+  <a class="next" href="http://localhost:1313/2016/01/22/ccc-interesting-videos/">
+    <span class="title">Next »</span>
+    <br>
+    <span>32c3 most interesting videos</span>
+  </a>
+</nav>
+
+  </footer>
+<script src="https://utteranc.es/client.js"
+        repo="zygm0nt/hugo-blog-incarnation"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">Tech ramblings by Marcin</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

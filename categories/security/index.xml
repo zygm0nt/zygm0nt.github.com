@@ -1,4 +1,41 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Security on Tech ramblings by Marcin</title><link>https://marcin.cylke.com.pl/categories/security/</link><description>Recent content in Security on Tech ramblings by Marcin</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 07 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/security/index.xml" rel="self" type="application/rss+xml"/><item><title>SolarWinds supply chain attack</title><link>https://marcin.cylke.com.pl/2024/04/07/solarwinds-supply-chain-attack/</link><pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2024/04/07/solarwinds-supply-chain-attack/</guid><description>&lt;p&gt;&lt;img alt=" Create an abstract, humorous illustration of the SolarWinds supply chain attack, incorporating elements of solar and wind in a playful manner. The scene should transform into an even more abstract and artistic representation, where the digital landscape of computers and servers intermingles with solar panels and wind turbines in a surreal composition. The sneaky figure trying to insert a USB drive should be stylized as a quirky, almost abstract character, blending into this whimsical world. Use bold, vibrant colors like magenta, orange, lime green, and electric blue to give the artwork an energetic and imaginative flair, moving away from realism and closer to an abstract art style. " loading="lazy" src="https://marcin.cylke.com.pl/post_images/solarwinds-supply-chain-attack-0.webp"&gt;&lt;/p&gt;</description></item><item><title>Git - conditional configs and commit signing</title><link>https://marcin.cylke.com.pl/2024/03/28/git-conditional/</link><pubDate>Thu, 28 Mar 2024 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2024/03/28/git-conditional/</guid><description>&lt;p&gt;&lt;img alt="An illustration depicting the concept of Git - conditional configurations and commit signing. Visualize a desktop with a computer screen displaying a stylized Git interface, highlighting conditional configurations. On the desk, there is a digital signature pad with a stylized pen on top, symbolizing commit signing. The background should subtly include digital elements and code snippets related to Git operations, creating an atmosphere that speaks to software development and version control. The color palette should be modern and tech-oriented, with blues, greens, and grays dominating." loading="lazy" src="https://marcin.cylke.com.pl/post_images/2024-03-28-git-conditional/git_conditional.webp"&gt;&lt;/p&gt;</description></item><item><title>Payload after load, really?!</title><link>https://marcin.cylke.com.pl/2024/02/29/payload-after-load/</link><pubDate>Thu, 29 Feb 2024 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2024/02/29/payload-after-load/</guid><description>&lt;p&gt;&lt;img alt="Alt text" loading="lazy" src="https://marcin.cylke.com.pl/post_images/Pasted_image_20240218223426.png"&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security on Tech ramblings by Marcin</title>
+    <link>http://localhost:1313/categories/security/</link>
+    <description>Recent content in Security on Tech ramblings by Marcin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 07 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SolarWinds supply chain attack</title>
+      <link>http://localhost:1313/2024/04/07/solarwinds-supply-chain-attack/</link>
+      <pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2024/04/07/solarwinds-supply-chain-attack/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34; Create an abstract, humorous illustration of the SolarWinds supply chain attack, incorporating elements of solar and wind in a playful manner. The scene should transform into an even more abstract and artistic representation, where the digital landscape of computers and servers intermingles with solar panels and wind turbines in a surreal composition. The sneaky figure trying to insert a USB drive should be stylized as a quirky, almost abstract character, blending into this whimsical world. Use bold, vibrant colors like magenta, orange, lime green, and electric blue to give the artwork an energetic and imaginative flair, moving away from realism and closer to an abstract art style.  &#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/post_images/solarwinds-supply-chain-attack-0.webp&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Git - conditional configs and commit signing</title>
+      <link>http://localhost:1313/2024/03/28/git-conditional/</link>
+      <pubDate>Thu, 28 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2024/03/28/git-conditional/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;An illustration depicting the concept of Git - conditional configurations and commit signing. Visualize a desktop with a computer screen displaying a stylized Git interface, highlighting conditional configurations. On the desk, there is a digital signature pad with a stylized pen on top, symbolizing commit signing. The background should subtly include digital elements and code snippets related to Git operations, creating an atmosphere that speaks to software development and version control. The color palette should be modern and tech-oriented, with blues, greens, and grays dominating.&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/post_images/2024-03-28-git-conditional/git_conditional.webp&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Payload after load, really?!</title>
+      <link>http://localhost:1313/2024/02/29/payload-after-load/</link>
+      <pubDate>Thu, 29 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2024/02/29/payload-after-load/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;Alt text&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/post_images/Pasted_image_20240218223426.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&amp;ldquo;source: Dall-E, prompt: generate an image for blogpost titled &amp;ldquo;breaking a paywall&amp;rdquo;, about exploiting newssite paywall using browser extension&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;Today&amp;rsquo;s internet is progressively becoming more and more hostile. It is actually a bunch of walled gardens, in the form of Facebook, Instagram, Linkedin, all the other social media outlets. Now, also news sites are increasingly becoming a payed instances.&lt;/p&gt;
-&lt;p&gt;I totally get it, authoring all that content is not cheap. If I want to read quality content, I also want authors to be paid adequately. That&amp;rsquo;s totally fine, and I&amp;rsquo;m paying for a myriad of news-related sites that are out there.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;I totally get it, authoring all that content is not cheap. If I want to read quality content, I also want authors to be paid adequately. That&amp;rsquo;s totally fine, and I&amp;rsquo;m paying for a myriad of news-related sites that are out there.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
