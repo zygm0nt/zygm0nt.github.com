@@ -1,19 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Hadoop on Tech ramblings by Marcin</title>
-    <link>http://localhost:1313/categories/hadoop/</link>
-    <description>Recent content in Hadoop on Tech ramblings by Marcin</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 10 Dec 2013 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/hadoop/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Distributed scans with HBase</title>
-      <link>http://localhost:1313/2013/12/10/distributed-scans-with-hbase/</link>
-      <pubDate>Tue, 10 Dec 2013 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2013/12/10/distributed-scans-with-hbase/</guid>
-      <description>&lt;p&gt;HBase is by design a columnar store, that is optimized for random reads.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hadoop on Tech ramblings by Marcin</title><link>https://marcin.cylke.com.pl/categories/hadoop/</link><description>Recent content in Hadoop on Tech ramblings by Marcin</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 10 Dec 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/hadoop/index.xml" rel="self" type="application/rss+xml"/><item><title>Distributed scans with HBase</title><link>https://marcin.cylke.com.pl/2013/12/10/distributed-scans-with-hbase/</link><pubDate>Tue, 10 Dec 2013 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2013/12/10/distributed-scans-with-hbase/</guid><description>&lt;p&gt;HBase is by design a columnar store, that is optimized for random reads.
 You just ask for a row using rowId as an identifier and you get your
 data instantaneously.&lt;/p&gt;
 &lt;p&gt;Performing a scan on part or whole table is a completely different thing.
@@ -21,54 +6,27 @@ First of all, it is sequential. Meaning it is rather slow, because it
 doesn&amp;rsquo;t use all the RegionServers at the same time. It is implemented
 that way to realize the contract of Scan command - which has to return
 results sorted by key.&lt;/p&gt;
-&lt;p&gt;So, how to do this efficiently?&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Simple HBase ORM</title>
-      <link>http://localhost:1313/2013/12/08/simple-hbase-orm/</link>
-      <pubDate>Sun, 08 Dec 2013 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2013/12/08/simple-hbase-orm/</guid>
-      <description>&lt;p&gt;When dealing with data stored in HBase, you are quick to come to a
+&lt;p&gt;So, how to do this efficiently?&lt;/p&gt;</description></item><item><title>Simple HBase ORM</title><link>https://marcin.cylke.com.pl/2013/12/08/simple-hbase-orm/</link><pubDate>Sun, 08 Dec 2013 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2013/12/08/simple-hbase-orm/</guid><description>&lt;p&gt;When dealing with data stored in HBase, you are quick to come to a
 conclusion, that it is extremaly inconvenient to reach to it
 via HBase native API. It is very verbose and you always need to convert
 between bytes and simple types - a pain.&lt;/p&gt;
 &lt;p&gt;While I was working on a project of mine, I thought, why not to easy
 those pains and fetch real objects from HBase.&lt;/p&gt;
 &lt;p&gt;And that&amp;rsquo;s how this simplistic, hackish ORM came to life. It is no match
-for projects like &lt;a href=&#34;https://github.com/impetus-opensource/Kundera&#34;&gt;Kundera&lt;/a&gt;
-(a JPA compliant solution), or &lt;a href=&#34;https://code.google.com/p/n-orm/&#34;&gt;n-orm&lt;/a&gt;. Nevertheless, it just suits my needs :)&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Zookeeper &#43; Curator = Distributed sync</title>
-      <link>http://localhost:1313/2013/06/24/zookeeper-curator/</link>
-      <pubDate>Mon, 24 Jun 2013 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2013/06/24/zookeeper-curator/</guid>
-      <description>&lt;p class=&#34;c8&#34;&gt;&lt;img height=&#34;300&#34; src=&#34;http://localhost:1313/assets/2013-06-24-zookeeper-curator.jpg&#34;&gt;&lt;/p&gt;&lt;p class=&#34;c1&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class=&#34;c8&#34;&gt;
-    &lt;span&gt;An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system&amp;rsquo;s components. Since I had already a few separate components I didn&amp;rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I&amp;rsquo;ve decided to go that way with my solution.&lt;/span&gt;
-&lt;/p&gt;&lt;h2 class=&#34;c8&#34;&gt;&lt;a name=&#34;h.v629433u6utf&#34;&gt;&lt;/a&gt;&lt;span&gt;What is Zookeeper?&lt;/span&gt;&lt;/h2&gt;&lt;p class=&#34;c8&#34;&gt;&lt;span&gt;Just a crude distributed synchronization framework. However, it implements Paxos-style algorithms (&lt;/span&gt;&lt;span
-        class=&#34;c5&#34;&gt;&lt;a class=&#34;c0&#34; href=&#34;http://en.wikipedia.org/wiki/Paxos_(computer_science)&#34;&gt;http://en.wikipedia.org/wiki/Paxos_(computer_science)&lt;/a&gt;&lt;/span&gt;&lt;span&gt;) to ensure no split-brain scenarios would occur. This is quite an important feature, since I don&amp;rsquo;t have to care about that kind of problems while using this app. You just need to create an ensemble of a couple of its instances - to ensure high availability. It is basically a virtual filesystem, with files, directories and stuff. One could ask why another filesystem? Well this one is a rather special one, especially for distributed systems. The reason why creating all the locking algorithms on top of Zookeeper is easy is its Ephemeral Nodes - which are just files that exist as long as connection for them exists. After it disconnects - such file disappears. &lt;/span&gt;
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Operational problems with Zookeeper</title>
-      <link>http://localhost:1313/2013/03/21/zookeeper-tips/</link>
-      <pubDate>Thu, 21 Mar 2013 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2013/03/21/zookeeper-tips/</guid>
-      <description>&lt;p&gt;This post is a summary of what has been presented by Kathleen Ting on
+for projects like &lt;a href="https://github.com/impetus-opensource/Kundera"&gt;Kundera&lt;/a&gt;
+(a JPA compliant solution), or &lt;a href="https://code.google.com/p/n-orm/"&gt;n-orm&lt;/a&gt;. Nevertheless, it just suits my needs :)&lt;/p&gt;</description></item><item><title>Zookeeper + Curator = Distributed sync</title><link>https://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/</link><pubDate>Mon, 24 Jun 2013 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2013/06/24/zookeeper-curator/</guid><description>&lt;p class="c8"&gt;&lt;img height="300" src="https://marcin.cylke.com.pl/assets/2013-06-24-zookeeper-curator.jpg"&gt;&lt;/p&gt;&lt;p class="c1"&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p class="c8"&gt;
+&lt;span&gt;An application developed for one of my recent projects at TouK involved multiple servers. There was a requirement to ensure failover for the system&amp;rsquo;s components. Since I had already a few separate components I didn&amp;rsquo;t want to add more of that, and since there already was a Zookeeper ensemble running - required by one of the services, I&amp;rsquo;ve decided to go that way with my solution.&lt;/span&gt;
+&lt;/p&gt;&lt;h2 class="c8"&gt;&lt;a name="h.v629433u6utf"&gt;&lt;/a&gt;&lt;span&gt;What is Zookeeper?&lt;/span&gt;&lt;/h2&gt;&lt;p class="c8"&gt;&lt;span&gt;Just a crude distributed synchronization framework. However, it implements Paxos-style algorithms (&lt;/span&gt;&lt;span
+class="c5"&gt;&lt;a class="c0" href="http://en.wikipedia.org/wiki/Paxos_(computer_science)"&gt;http://en.wikipedia.org/wiki/Paxos_(computer_science)&lt;/a&gt;&lt;/span&gt;&lt;span&gt;) to ensure no split-brain scenarios would occur. This is quite an important feature, since I don&amp;rsquo;t have to care about that kind of problems while using this app. You just need to create an ensemble of a couple of its instances - to ensure high availability. It is basically a virtual filesystem, with files, directories and stuff. One could ask why another filesystem? Well this one is a rather special one, especially for distributed systems. The reason why creating all the locking algorithms on top of Zookeeper is easy is its Ephemeral Nodes - which are just files that exist as long as connection for them exists. After it disconnects - such file disappears. &lt;/span&gt;
+&lt;/p&gt;</description></item><item><title>Operational problems with Zookeeper</title><link>https://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/</link><pubDate>Thu, 21 Mar 2013 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2013/03/21/zookeeper-tips/</guid><description>&lt;p&gt;This post is a summary of what has been presented by Kathleen Ting on
 StrangeLoop conference. You can watch the original here:
-&lt;a href=&#34;http://www.infoq.com/presentations/Misconfiguration-ZooKeeper&#34;&gt;http://www.infoq.com/presentations/Misconfiguration-ZooKeeper&lt;/a&gt;&lt;/p&gt;
+&lt;a href="http://www.infoq.com/presentations/Misconfiguration-ZooKeeper"&gt;http://www.infoq.com/presentations/Misconfiguration-ZooKeeper&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;ve decided to put this selection here for quick reference.&lt;/p&gt;
-&lt;h2 id=&#34;connection-mismanagement&#34;&gt;Connection mismanagement&lt;/h2&gt;
+&lt;h2 id="connection-mismanagement"&gt;Connection mismanagement&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;too many connections&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;  WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - Too many connections from /xx.x.xx.xxx - max is 60
+&lt;pre&gt;&lt;code&gt; WARN [NIOServerCxn.Factory: 0.0.0.0/0.0.0.0:2181:NIOServerCnxn$Factory@247] - Too many connections from /xx.x.xx.xxx - max is 60
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -87,31 +45,13 @@ StrangeLoop conference. You can watch the original here:
 &lt;/ul&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;connection closes prematurely&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>After WHUG meeting</title>
-      <link>http://localhost:1313/2012/11/30/after-whug/</link>
-      <pubDate>Fri, 30 Nov 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2012/11/30/after-whug/</guid>
-      <description>&lt;p&gt;Here are the slides from the talk a gave yesterday. If you have any
+&lt;p&gt;connection closes prematurely&lt;/p&gt;</description></item><item><title>After WHUG meeting</title><link>https://marcin.cylke.com.pl/2012/11/30/after-whug/</link><pubDate>Fri, 30 Nov 2012 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2012/11/30/after-whug/</guid><description>&lt;p&gt;Here are the slides from the talk a gave yesterday. If you have any
 questions, please ask.&lt;/p&gt;
-&lt;script async class=&#34;speakerdeck-embed&#34;
-data-id=&#34;cc18d5601d60013059a31231381554d7&#34; data-ratio=&#34;1.33333333333333&#34;
-src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;</description>
-    </item>
-    
-    <item>
-      <title>WHUG 8. Beyond Hadoop - checking other options</title>
-      <link>http://localhost:1313/2012/11/26/whug-8-beyond-hadoop/</link>
-      <pubDate>Mon, 26 Nov 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2012/11/26/whug-8-beyond-hadoop/</guid>
-      <description>&lt;p&gt;W najbliższy czwartek - czyli 29.11.2012 - poprowadzę prezentację w
+&lt;script async class="speakerdeck-embed"
+data-id="cc18d5601d60013059a31231381554d7" data-ratio="1.33333333333333"
+src="//speakerdeck.com/assets/embed.js"&gt;&lt;/script&gt;</description></item><item><title>WHUG 8. Beyond Hadoop - checking other options</title><link>https://marcin.cylke.com.pl/2012/11/26/whug-8-beyond-hadoop/</link><pubDate>Mon, 26 Nov 2012 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2012/11/26/whug-8-beyond-hadoop/</guid><description>&lt;p&gt;W najbliższy czwartek - czyli 29.11.2012 - poprowadzę prezentację w
 ramach Warsaw Hadoop User Group. Swoją obecność można odklinąć tu
-&lt;a href=&#34;http://www.meetup.com/warsaw-hug/&#34;&gt;http://www.meetup.com/warsaw-hug/&lt;/a&gt;&lt;/p&gt;
+&lt;a href="http://www.meetup.com/warsaw-hug/"&gt;http://www.meetup.com/warsaw-hug/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;A o czym będę mówił? Przeklejka ze strony WHUG:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Marcin skupi się na współpracy ekosystemu Hadoopa z innymi narzędziami.
@@ -120,24 +60,11 @@ Big Data, w czasie rzeczywistym. Poruszy również temat łatwiejszego
 tworzenia algorytmów Map-Reduce&lt;/p&gt;
 &lt;p&gt;Będzie to nieco mniej technicza (ale wciąż praktyczna) wycieczka po
 obrzeżach tematyki, która jest zwykle poruszana w połączeniu z
-Hadoop-em.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Hadoop HA setup</title>
-      <link>http://localhost:1313/2012/10/30/hadoop-ha/</link>
-      <pubDate>Tue, 30 Oct 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2012/10/30/hadoop-ha/</guid>
-      <description>&lt;p&gt;With the advent of Hadoop&amp;rsquo;s 2.x version, there finally is a working
+Hadoop-em.&lt;/p&gt;</description></item><item><title>Hadoop HA setup</title><link>https://marcin.cylke.com.pl/2012/10/30/hadoop-ha/</link><pubDate>Tue, 30 Oct 2012 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2012/10/30/hadoop-ha/</guid><description>&lt;p&gt;With the advent of Hadoop&amp;rsquo;s 2.x version, there finally is a working
 High-Availability solution. Even two of those. Now it really is easy to
 configure and use those solutions. It no longer require external
 components, like
-&lt;a href=&#34;http://blog.cloudera.com/blog/2009/07/hadoop-ha-configuration/&#34;&gt;DRBD&lt;/a&gt;.
+&lt;a href="http://blog.cloudera.com/blog/2009/07/hadoop-ha-configuration/"&gt;DRBD&lt;/a&gt;.
 It all is just neatly packed into Cloudera Hadoop distribution - the
 precursor of this solution.&lt;/p&gt;
-&lt;p&gt;Read on to find out how to use it.&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;Read on to find out how to use it.&lt;/p&gt;</description></item></channel></rss>

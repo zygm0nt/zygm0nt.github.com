@@ -1,135 +1,73 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Relacja on Tech ramblings by Marcin</title>
-    <link>http://localhost:1313/categories/relacja/</link>
-    <description>Recent content in Relacja on Tech ramblings by Marcin</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 22 May 2011 16:39:31 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/relacja/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Geecon 2011 - day 2</title>
-      <link>http://localhost:1313/2011/05/22/geecon-2011-day-2/</link>
-      <pubDate>Sun, 22 May 2011 16:39:31 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2011/05/22/geecon-2011-day-2/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Relacja on Tech ramblings by Marcin</title><link>https://marcin.cylke.com.pl/categories/relacja/</link><description>Recent content in Relacja on Tech ramblings by Marcin</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 22 May 2011 16:39:31 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/relacja/index.xml" rel="self" type="application/rss+xml"/><item><title>Geecon 2011 - day 2</title><link>https://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/</link><pubDate>Sun, 22 May 2011 16:39:31 +0000</pubDate><guid>https://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/</guid><description>&lt;div class='post'&gt;
 &lt;p&gt;And now for part 2 of my visit to Geecon 2011!&lt;/p&gt;
 &lt;EXCERPT&gt;
-&lt;h2&gt;1. &lt;a href=&#34;http://jim.webber.name/&#34;&gt;Jim Webber&lt;/a&gt; &#34;Revisiting SOA for the 21st
-century&#34;&lt;/h2&gt;
-
+&lt;h2&gt;1. &lt;a href="http://jim.webber.name/"&gt;Jim Webber&lt;/a&gt; "Revisiting SOA for the 21st
+century"&lt;/h2&gt;
 &lt;p&gt;Now this was awesome! Jim Webber, a former &lt;a
-href=&#34;http://www.thoughtworks.com/&#34;&gt;ThoughtWorks&lt;/a&gt; employee, now
-Neo4j evangelist (in &lt;a href=&#34;http://neotechnology.com/&#34;&gt;Neotechnology&lt;/a&gt;) described his views
+href="http://www.thoughtworks.com/"&gt;ThoughtWorks&lt;/a&gt; employee, now
+Neo4j evangelist (in &lt;a href="http://neotechnology.com/"&gt;Neotechnology&lt;/a&gt;) described his views
 on how SOA should look - according to him. This was presented
-previously, on other occasions as his &#34;Guerilla SOA&#34; talk - generally he
+previously, on other occasions as his "Guerilla SOA" talk - generally he
 advocated for REST based services, loose contracts (stating that WSDLs
-are too verbose and code generation is evil).&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Me on Hadoop on Parleys</title>
-      <link>http://localhost:1313/2011/03/20/me-on-hadoop-on-parleys/</link>
-      <pubDate>Sun, 20 Mar 2011 19:35:39 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2011/03/20/me-on-hadoop-on-parleys/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
-&lt;p&gt;Finally I&#39;ve managed to import my &lt;a href=&#34;http://mcl.jogger.pl/2011/02/17/hadoop-on-warsaw-jug/&#34;&gt;WarJUG presentation&lt;/a&gt; to parleys.com. See for yourself :)
+are too verbose and code generation is evil).&lt;/p&gt;</description></item><item><title>Me on Hadoop on Parleys</title><link>https://marcin.cylke.com.pl/2011/03/20/me-on-hadoop-on-parleys/</link><pubDate>Sun, 20 Mar 2011 19:35:39 +0000</pubDate><guid>https://marcin.cylke.com.pl/2011/03/20/me-on-hadoop-on-parleys/</guid><description>&lt;div class='post'&gt;
+&lt;p&gt;Finally I've managed to import my &lt;a href="http://mcl.jogger.pl/2011/02/17/hadoop-on-warsaw-jug/"&gt;WarJUG presentation&lt;/a&gt; to parleys.com. See for yourself :)
 &lt;/p&gt;
 &lt;EXCERPT&gt;
-
-&lt;object width=&#34;474&#34; height=&#34;443&#34;&gt;
-  &lt;param name=&#34;movie&#34; value=&#34;http://www.parleys.com/share/parleysshare2.swf?pageId=2316&#34;/&gt;
-  &lt;param name=&#34;allowFullScreen&#34; value=&#34;true&#34;/&gt;
-  &lt;param name=&#34;pageId&#34; value=&#34;2316&#34;/&gt;
-  &lt;embed src=&#34;http://www.parleys.com/share/parleysshare2.swf?pageId=2316&#34; type=&#34;application/x-shockwave-flash&#34; allowfullscreen=&#34;true&#34; width=&#34;474&#34; height=&#34;443&#34;/&gt;
+&lt;object width="474" height="443"&gt;
+&lt;param name="movie" value="http://www.parleys.com/share/parleysshare2.swf?pageId=2316"/&gt;
+&lt;param name="allowFullScreen" value="true"/&gt;
+&lt;param name="pageId" value="2316"/&gt;
+&lt;embed src="http://www.parleys.com/share/parleysshare2.swf?pageId=2316" type="application/x-shockwave-flash" allowfullscreen="true" width="474" height="443"/&gt;
 &lt;/object&gt;
-
 &lt;p&gt;
-If you&#39;ve got problems with opening the parleys&#39; version try the ones uploaded to youtube.
+If you've got problems with opening the parleys' version try the ones uploaded to youtube.
 &lt;/p&gt;
 &lt;p&gt;
 Here is part 1:
 &lt;/p&gt;
-&lt;object width=&#34;425&#34; height=&#34;344&#34;&gt;&lt;param name=&#34;movie&#34;                            
-value=&#34;http://www.youtube.com/v/oUFUhZtsUFI?hl=en&amp;fs=1&#34;&gt;&lt;/param&gt;&lt;param
-name=&#34;allowFullScreen&#34; value=&#34;true&#34;&gt;&lt;/param&gt;&lt;param
-name=&#34;allowscriptaccess&#34; value=&#34;always&#34;&gt;&lt;/param&gt;&lt;embed
-src=&#34;http://www.youtube.com/v/oUFUhZtsUFI?hl=en&amp;fs=1&#34;
-type=&#34;application/x-shockwave-flash&#34; allowscriptaccess=&#34;always&#34;
-allowfullscreen=&#34;true&#34; width=&#34;425&#34; height=&#34;344&#34;&gt;&lt;/embed&gt;&lt;/object&gt;
-
+&lt;object width="425" height="344"&gt;&lt;param name="movie"
+value="http://www.youtube.com/v/oUFUhZtsUFI?hl=en&amp;fs=1"&gt;&lt;/param&gt;&lt;param
+name="allowFullScreen" value="true"&gt;&lt;/param&gt;&lt;param
+name="allowscriptaccess" value="always"&gt;&lt;/param&gt;&lt;embed
+src="http://www.youtube.com/v/oUFUhZtsUFI?hl=en&amp;fs=1"
+type="application/x-shockwave-flash" allowscriptaccess="always"
+allowfullscreen="true" width="425" height="344"&gt;&lt;/embed&gt;&lt;/object&gt;
 &lt;p&gt;And here is part 2:&lt;/p&gt;
-
-&lt;object width=&#34;425&#34; height=&#34;344&#34;&gt;&lt;param name=&#34;movie&#34;
-value=&#34;http://www.youtube.com/v/LqhmOHXaQEU?hl=en&amp;fs=1&#34;&gt;&lt;/param&gt;&lt;param
-name=&#34;allowFullScreen&#34; value=&#34;true&#34;&gt;&lt;/param&gt;&lt;param
-name=&#34;allowscriptaccess&#34; value=&#34;always&#34;&gt;&lt;/param&gt;&lt;embed
-src=&#34;http://www.youtube.com/v/LqhmOHXaQEU?hl=en&amp;fs=1&#34;
-type=&#34;application/x-shockwave-flash&#34; allowscriptaccess=&#34;always&#34;
-allowfullscreen=&#34;true&#34; width=&#34;425&#34; height=&#34;344&#34;&gt;&lt;/embed&gt;&lt;/object&gt;
-
+&lt;object width="425" height="344"&gt;&lt;param name="movie"
+value="http://www.youtube.com/v/LqhmOHXaQEU?hl=en&amp;fs=1"&gt;&lt;/param&gt;&lt;param
+name="allowFullScreen" value="true"&gt;&lt;/param&gt;&lt;param
+name="allowscriptaccess" value="always"&gt;&lt;/param&gt;&lt;embed
+src="http://www.youtube.com/v/LqhmOHXaQEU?hl=en&amp;fs=1"
+type="application/x-shockwave-flash" allowscriptaccess="always"
+allowfullscreen="true" width="425" height="344"&gt;&lt;/embed&gt;&lt;/object&gt;
 &lt;/div&gt;
 &lt;h2&gt;Comments&lt;/h2&gt;
-&lt;div class=&#39;comments&#39;&gt;
-&lt;div class=&#39;comment&#39;&gt;
-&lt;div class=&#39;author&#39;&gt;&lt;a href=&#34;http://sigvatr.jogger.pl&#34;&gt;Sigvatr&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#39;content&#39;&gt;
-&lt;p&gt;I&#39;m sorry, but I don&#39;t understand  Polish :P&lt;/p&gt;&lt;/div&gt;
+&lt;div class='comments'&gt;
+&lt;div class='comment'&gt;
+&lt;div class='author'&gt;&lt;a href="http://sigvatr.jogger.pl"&gt;Sigvatr&lt;/a&gt;&lt;/div&gt;
+&lt;div class='content'&gt;
+&lt;p&gt;I'm sorry, but I don't understand Polish :P&lt;/p&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description>
-    </item>
-    
-    <item>
-      <title>Meetbsd 2010</title>
-      <link>http://localhost:1313/2010/08/18/meetbsd-2010/</link>
-      <pubDate>Wed, 18 Aug 2010 22:16:25 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2010/08/18/meetbsd-2010/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
+&lt;/div&gt;</description></item><item><title>Meetbsd 2010</title><link>https://marcin.cylke.com.pl/2010/08/18/meetbsd-2010/</link><pubDate>Wed, 18 Aug 2010 22:16:25 +0000</pubDate><guid>https://marcin.cylke.com.pl/2010/08/18/meetbsd-2010/</guid><description>&lt;div class='post'&gt;
 &lt;p&gt;
-Some time ago, I&#39;ve attended &lt;a href=&#34;http://meetbsd.org/&#34;&gt;MeetBSD&lt;/a&gt;
+Some time ago, I've attended &lt;a href="http://meetbsd.org/"&gt;MeetBSD&lt;/a&gt;
 conference in Kraków. This BSD event is held yearly in either Warsaw, or
 Kraków. Due to relatively small group of people that registered there
-was only one track, which had both good and bad sides - you didn&#39;t have
+was only one track, which had both good and bad sides - you didn't have
 to choose from myriads of lectures, but there was no way to skip boring
 ones either. Well, I guess this kind of niche conference - about
-operating system :) - will not attract bigger attention.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>6&#43; hour layover in Stockholm</title>
-      <link>http://localhost:1313/2010/08/12/6-hour-layover-in-stockholm/</link>
-      <pubDate>Thu, 12 Aug 2010 22:22:01 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2010/08/12/6-hour-layover-in-stockholm/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
+operating system :) - will not attract bigger attention.&lt;/p&gt;</description></item><item><title>6+ hour layover in Stockholm</title><link>https://marcin.cylke.com.pl/2010/08/12/6-hour-layover-in-stockholm/</link><pubDate>Thu, 12 Aug 2010 22:22:01 +0000</pubDate><guid>https://marcin.cylke.com.pl/2010/08/12/6-hour-layover-in-stockholm/</guid><description>&lt;div class='post'&gt;
 &lt;p&gt;Last Monday, while coming home from Sweden, I had ~7h layover between my
-flights. Since &lt;a href=&#34;http://www.arlanda.se/en/&#34;&gt;Arlanda Airport&lt;/a&gt; does not offer a lot to do, at least not
+flights. Since &lt;a href="http://www.arlanda.se/en/"&gt;Arlanda Airport&lt;/a&gt; does not offer a lot to do, at least not
 for me and not for 7h, I had decided to go to Stockholm. This post sums
-up a few nice places, that I&#39;d like to visit on my next trip there.&lt;/p&gt;
-&lt;EXCERPT&gt;&lt;p&gt;I took &lt;a href=&#34;http://www.arlandaexpress.com/start.aspx&#34;&gt;Arlanda
+up a few nice places, that I'd like to visit on my next trip there.&lt;/p&gt;
+&lt;EXCERPT&gt;&lt;p&gt;I took &lt;a href="http://www.arlandaexpress.com/start.aspx"&gt;Arlanda
 Express&lt;/a&gt;, fast train that takes you directly from the
 airport to Stockholm. On board, you travel with 200km/h in good enough
 conditions. The trains takes you near the Central station in 20 minutes,
 which is great! The main venue I planned to see was &lt;a
-href=&#34;http://www.old-town-stockholm.com/&#34;&gt;Gamla Stan&lt;/a&gt;. All the
-attractions were also there, on the island.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Javarsovia 2010</title>
-      <link>http://localhost:1313/2010/06/27/javarsovia-2010/</link>
-      <pubDate>Sun, 27 Jun 2010 15:08:43 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2010/06/27/javarsovia-2010/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
-&lt;p&gt;This year&#39;s &lt;a href=&#34;http://javarsovia.pl/&#34;&gt;Javarsovia&lt;/a&gt; conference took place on 26th june. It was held at Centrum Konferencyjno-Kongresowe,  Bobrowiecka Street,  Warsaw.&lt;/p&gt;
-
+href="http://www.old-town-stockholm.com/"&gt;Gamla Stan&lt;/a&gt;. All the
+attractions were also there, on the island.&lt;/p&gt;</description></item><item><title>Javarsovia 2010</title><link>https://marcin.cylke.com.pl/2010/06/27/javarsovia-2010/</link><pubDate>Sun, 27 Jun 2010 15:08:43 +0000</pubDate><guid>https://marcin.cylke.com.pl/2010/06/27/javarsovia-2010/</guid><description>&lt;div class='post'&gt;
+&lt;p&gt;This year's &lt;a href="http://javarsovia.pl/"&gt;Javarsovia&lt;/a&gt; conference took place on 26th june. It was held at Centrum Konferencyjno-Kongresowe, Bobrowiecka Street, Warsaw.&lt;/p&gt;
 &lt;p&gt;First of all - the organization was very nice. Everything seemed smooth, maybe with the exception of conference registration, it was simply overcrowded.
-The agenda was split into four tracks, each hour 4 different presentations were given in different halls. So you just had to choose which one to attend. My path through the conference is described below, together with my views on each of the presentations I attended.&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+The agenda was split into four tracks, each hour 4 different presentations were given in different halls. So you just had to choose which one to attend. My path through the conference is described below, together with my views on each of the presentations I attended.&lt;/p&gt;</description></item></channel></rss>

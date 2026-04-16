@@ -1,79 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Ogólne on Tech ramblings by Marcin</title>
-    <link>http://localhost:1313/categories/Og%C3%B3lne/</link>
-    <description>Recent content in Ogólne on Tech ramblings by Marcin</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 18 Jun 2012 09:08:09 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/Og%C3%B3lne/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hadoop for Enterprises</title>
-      <link>http://localhost:1313/2012/06/18/hadoop-for-enterprises/</link>
-      <pubDate>Mon, 18 Jun 2012 09:08:09 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2012/06/18/hadoop-for-enterprises/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
-&lt;p&gt;Hadoop&#39;s usage as a big data processing framework gains a lot of attention lately. Now, not only big players see, that they can embrace the data their sites or products are generating and develop their businesses on it. For that to happen two things are needed: the data itself and means of processing really big amounts of it.  &lt;/p&gt;
-
-&lt;p&gt;&lt;span class=&#34;image-wrap&#34; style=&#34;&#34;&gt;&lt;img src=&#34;http://blog.innovative-labs.com/blog/3488314950_453466f762_b.jpg&#34; style=&#34;border: 0px solid black; width: 400px;&#34; /&gt;&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;Gathering data is relatively easy. These are not necessarily structured data, you don&#39;t need to plan their usage at first. Just start collecting them and than you may experiment with their potential usage. If they&#39;ll come out as useless rubbish - deleting them won&#39;t be hard &lt;img class=&#34;emoticon&#34; src=&#34;http://localhost:1313/confluence/images/icons/emoticons/smile.gif&#34; height=&#34;20&#34; width=&#34;20&#34; align=&#34;absmiddle&#34; alt=&#34;&#34; border=&#34;0&#34;/&gt; But imagine the values it may contribute to your business:&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>SoapUI ext libs and its weirdness</title>
-      <link>http://localhost:1313/2011/11/02/soapui-ext-libs-and-its-weirdness/</link>
-      <pubDate>Wed, 02 Nov 2011 15:32:15 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2011/11/02/soapui-ext-libs-and-its-weirdness/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ogólne on Tech ramblings by Marcin</title><link>https://marcin.cylke.com.pl/categories/Og%C3%B3lne/</link><description>Recent content in Ogólne on Tech ramblings by Marcin</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 18 Jun 2012 09:08:09 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/Og%C3%B3lne/index.xml" rel="self" type="application/rss+xml"/><item><title>Hadoop for Enterprises</title><link>https://marcin.cylke.com.pl/2012/06/18/hadoop-for-enterprises/</link><pubDate>Mon, 18 Jun 2012 09:08:09 +0000</pubDate><guid>https://marcin.cylke.com.pl/2012/06/18/hadoop-for-enterprises/</guid><description>&lt;div class='post'&gt;
+&lt;p&gt;Hadoop's usage as a big data processing framework gains a lot of attention lately. Now, not only big players see, that they can embrace the data their sites or products are generating and develop their businesses on it. For that to happen two things are needed: the data itself and means of processing really big amounts of it. &lt;/p&gt;
+&lt;p&gt;&lt;span class="image-wrap" style=""&gt;&lt;img src="http://blog.innovative-labs.com/blog/3488314950_453466f762_b.jpg" style="border: 0px solid black; width: 400px;" /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Gathering data is relatively easy. These are not necessarily structured data, you don't need to plan their usage at first. Just start collecting them and than you may experiment with their potential usage. If they'll come out as useless rubbish - deleting them won't be hard &lt;img class="emoticon" src="https://marcin.cylke.com.pl/confluence/images/icons/emoticons/smile.gif" height="20" width="20" align="absmiddle" alt="" border="0"/&gt; But imagine the values it may contribute to your business:&lt;/p&gt;</description></item><item><title>SoapUI ext libs and its weirdness</title><link>https://marcin.cylke.com.pl/2011/11/02/soapui-ext-libs-and-its-weirdness/</link><pubDate>Wed, 02 Nov 2011 15:32:15 +0000</pubDate><guid>https://marcin.cylke.com.pl/2011/11/02/soapui-ext-libs-and-its-weirdness/</guid><description>&lt;div class='post'&gt;
 &lt;p&gt;Suppose you want to add some additional jars to your SoapUI installation. It all should work ok if you put them in &lt;b&gt;bin/ext&lt;/b&gt; directory. It is scanned at startup, and jars found there are automatically added to classpath.
 &lt;/p&gt;
-
 &lt;p&gt;
 However if you want to add some JDBC drivers, and happen to be using SoapUI version higher than 3.5.1 it is a bit more tricky.
 &lt;/p&gt;
 &lt;p&gt;You may face this NoClassDefFoundError:&lt;br/&gt;
-
 &lt;pre&gt;
 An error occured [oracle/jdbc/Driver], see error log for details
 java.lang.NoClassDefFoundError: oracle/jdbc/Driver
 &lt;/pre&gt;
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>What is NoSQL good for?</title>
-      <link>http://localhost:1313/2011/09/21/what-is-nosql-good-for/</link>
-      <pubDate>Wed, 21 Sep 2011 21:12:34 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2011/09/21/what-is-nosql-good-for/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
+&lt;/p&gt;</description></item><item><title>What is NoSQL good for?</title><link>https://marcin.cylke.com.pl/2011/09/21/what-is-nosql-good-for/</link><pubDate>Wed, 21 Sep 2011 21:12:34 +0000</pubDate><guid>https://marcin.cylke.com.pl/2011/09/21/what-is-nosql-good-for/</guid><description>&lt;div class='post'&gt;
 &lt;b&gt;... or how I ended up writing a CouchDB proof of concept app?&lt;/b&gt;
-
 &lt;p&gt;Once upon a time I set out on a journey to discover the NoSQL land.
-I&#39;ve decided that doing simple queries wouldn&#39;t be interesting enough.
-That&#39;s why I&#39;ve chose to create an app that would be based on some NoSQL
+I've decided that doing simple queries wouldn't be interesting enough.
+That's why I've chose to create an app that would be based on some NoSQL
 database.&lt;/p&gt;
-
 &lt;p&gt;
 The main idea was to create an app, that would dynamically update itself
 with geographic data flowing in. Since there are myriads of geo-data
 that are available on the internet, you can pick your favorite one and
 load them into your SQL database of choice.
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>5 best things to do with your Kindle</title>
-      <link>http://localhost:1313/2011/08/22/5-best-things-to-do-with-your-kindle/</link>
-      <pubDate>Mon, 22 Aug 2011 22:19:14 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2011/08/22/5-best-things-to-do-with-your-kindle/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
-
-
+&lt;/p&gt;</description></item><item><title>5 best things to do with your Kindle</title><link>https://marcin.cylke.com.pl/2011/08/22/5-best-things-to-do-with-your-kindle/</link><pubDate>Mon, 22 Aug 2011 22:19:14 +0000</pubDate><guid>https://marcin.cylke.com.pl/2011/08/22/5-best-things-to-do-with-your-kindle/</guid><description>&lt;div class='post'&gt;
 &lt;p&gt;
 I bought a Kindle (3rd generation, Wi-Fi only) some time ago - like half
 a year ago. Read some
@@ -81,154 +31,84 @@ books, done some web-browsing (awful, quite unpleasant). Gradually I
 became more and more curious of other things possible to achieve with
 this slate-looking piece of tech. These are my thoughts and ideas.
 &lt;/p&gt;
-
 &lt;p&gt;
 Got a Kindle? Use it every day? Feel like modding or extending your ways
 of usage? Great! Read on, and share your thoughts in comments!
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Great many ways to enjoy life!</title>
-      <link>http://localhost:1313/2011/08/07/great-many-ways-to-enjoy-life/</link>
-      <pubDate>Sun, 07 Aug 2011 22:44:39 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2011/08/07/great-many-ways-to-enjoy-life/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
+&lt;/p&gt;</description></item><item><title>Great many ways to enjoy life!</title><link>https://marcin.cylke.com.pl/2011/08/07/great-many-ways-to-enjoy-life/</link><pubDate>Sun, 07 Aug 2011 22:44:39 +0000</pubDate><guid>https://marcin.cylke.com.pl/2011/08/07/great-many-ways-to-enjoy-life/</guid><description>&lt;div class='post'&gt;
 This looks like a very nice art+video project. Look at those clips:
-
-
 &lt;ol&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://vimeo.com/27243869&#34;&gt;EAT&lt;/a&gt; from &lt;a href=&#34;http://vimeo.com/rickmereki&#34;&gt;Rick Mereki&lt;/a&gt; on &lt;a href=&#34;http://vimeo.com&#34;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;&lt;br/&gt;
-&lt;iframe src=&#34;http://player.vimeo.com/video/27243869?color=ffffff&#34; width=&#34;400&#34; height=&#34;225&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://vimeo.com/27243869"&gt;EAT&lt;/a&gt; from &lt;a href="http://vimeo.com/rickmereki"&gt;Rick Mereki&lt;/a&gt; on &lt;a href="http://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;&lt;br/&gt;
+&lt;iframe src="http://player.vimeo.com/video/27243869?color=ffffff" width="400" height="225" frameborder="0"&gt;&lt;/iframe&gt;
 &lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://vimeo.com/27244727&#34;&gt;LEARN&lt;/a&gt; from &lt;a href=&#34;http://vimeo.com/rickmereki&#34;&gt;Rick Mereki&lt;/a&gt; on &lt;a href=&#34;http://vimeo.com&#34;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;&lt;br/&gt;
-
-&lt;iframe src=&#34;http://player.vimeo.com/video/27244727?color=ffffff&#34; width=&#34;400&#34; height=&#34;225&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://vimeo.com/27244727"&gt;LEARN&lt;/a&gt; from &lt;a href="http://vimeo.com/rickmereki"&gt;Rick Mereki&lt;/a&gt; on &lt;a href="http://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;&lt;br/&gt;
+&lt;iframe src="http://player.vimeo.com/video/27244727?color=ffffff" width="400" height="225" frameborder="0"&gt;&lt;/iframe&gt;
 &lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://vimeo.com/27246366&#34;&gt;MOVE&lt;/a&gt; from &lt;a href=&#34;http://vimeo.com/rickmereki&#34;&gt;Rick Mereki&lt;/a&gt; on &lt;a href=&#34;http://vimeo.com&#34;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;&lt;br/&gt;
-&lt;iframe src=&#34;http://player.vimeo.com/video/27246366?color=ffffff&#34; width=&#34;400&#34; height=&#34;225&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://vimeo.com/27246366"&gt;MOVE&lt;/a&gt; from &lt;a href="http://vimeo.com/rickmereki"&gt;Rick Mereki&lt;/a&gt; on &lt;a href="http://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;&lt;br/&gt;
+&lt;iframe src="http://player.vimeo.com/video/27246366?color=ffffff" width="400" height="225" frameborder="0"&gt;&lt;/iframe&gt;
 &lt;/li&gt;
-
 &lt;/ol&gt;&lt;/div&gt;
 &lt;h2&gt;Comments&lt;/h2&gt;
-&lt;div class=&#39;comments&#39;&gt;
-&lt;/div&gt;</description>
-    </item>
-    
-    <item>
-      <title>OVal - validate your models quickly and effortlessly!</title>
-      <link>http://localhost:1313/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/</link>
-      <pubDate>Thu, 14 Jul 2011 08:25:19 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
+&lt;div class='comments'&gt;
+&lt;/div&gt;</description></item><item><title>OVal - validate your models quickly and effortlessly!</title><link>https://marcin.cylke.com.pl/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/</link><pubDate>Thu, 14 Jul 2011 08:25:19 +0000</pubDate><guid>https://marcin.cylke.com.pl/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/</guid><description>&lt;div class='post'&gt;
 &lt;p&gt;Some time ago one of the projects at work required me to validate
-some Java POJOs. Theses were my model classes and I&#39;ve been creating
+some Java POJOs. Theses were my model classes and I've been creating
 them from incoming WebService requests. One would say that XSD would be
 sufficient for the task, for parts of this validations - sure, it would.
 But there were some advanced rules XSD would not handle, or would render
 the schema document very complicated.&lt;/p&gt;
-
 &lt;p&gt;Rules I needed to express were like:
-
 &lt;ul&gt;
-
-&lt;li&gt;person&#39;s &lt;i&gt;first_name&lt;/i&gt; and &lt;i&gt;last_name&lt;/i&gt; should be of appropriate length -
+&lt;li&gt;person's &lt;i&gt;first_name&lt;/i&gt; and &lt;i&gt;last_name&lt;/i&gt; should be of appropriate length -
 between 2 and 20, and additionally one could pass a zero-length string
 just to remove the previous value&lt;/li&gt;
 &lt;li&gt;&lt;i&gt;state&lt;/i&gt; field should consist only defined values - as in
-dictionary value - this one would be completable with XSD&#39;s
+dictionary value - this one would be completable with XSD's
 enumerations, but would require often changing schema files and
 redistributing them to interested parties :(&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;The library I&#39;ve decided to use for this task is &lt;a
-href=&#34;http://oval.sf.net&#34;&gt;OVal&lt;/a&gt; and it came out really nice! Read on
-to find out the details!&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Geecon 2011 - day 2</title>
-      <link>http://localhost:1313/2011/05/22/geecon-2011-day-2/</link>
-      <pubDate>Sun, 22 May 2011 16:39:31 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2011/05/22/geecon-2011-day-2/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
+&lt;p&gt;The library I've decided to use for this task is &lt;a
+href="http://oval.sf.net"&gt;OVal&lt;/a&gt; and it came out really nice! Read on
+to find out the details!&lt;/p&gt;</description></item><item><title>Geecon 2011 - day 2</title><link>https://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/</link><pubDate>Sun, 22 May 2011 16:39:31 +0000</pubDate><guid>https://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/</guid><description>&lt;div class='post'&gt;
 &lt;p&gt;And now for part 2 of my visit to Geecon 2011!&lt;/p&gt;
 &lt;EXCERPT&gt;
-&lt;h2&gt;1. &lt;a href=&#34;http://jim.webber.name/&#34;&gt;Jim Webber&lt;/a&gt; &#34;Revisiting SOA for the 21st
-century&#34;&lt;/h2&gt;
-
+&lt;h2&gt;1. &lt;a href="http://jim.webber.name/"&gt;Jim Webber&lt;/a&gt; "Revisiting SOA for the 21st
+century"&lt;/h2&gt;
 &lt;p&gt;Now this was awesome! Jim Webber, a former &lt;a
-href=&#34;http://www.thoughtworks.com/&#34;&gt;ThoughtWorks&lt;/a&gt; employee, now
-Neo4j evangelist (in &lt;a href=&#34;http://neotechnology.com/&#34;&gt;Neotechnology&lt;/a&gt;) described his views
+href="http://www.thoughtworks.com/"&gt;ThoughtWorks&lt;/a&gt; employee, now
+Neo4j evangelist (in &lt;a href="http://neotechnology.com/"&gt;Neotechnology&lt;/a&gt;) described his views
 on how SOA should look - according to him. This was presented
-previously, on other occasions as his &#34;Guerilla SOA&#34; talk - generally he
+previously, on other occasions as his "Guerilla SOA" talk - generally he
 advocated for REST based services, loose contracts (stating that WSDLs
-are too verbose and code generation is evil).&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Geecon 2011 - day 1</title>
-      <link>http://localhost:1313/2011/05/19/geecon-2011-day-1/</link>
-      <pubDate>Thu, 19 May 2011 20:05:05 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2011/05/19/geecon-2011-day-1/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
-&lt;p&gt;Last week&#39;s Java conference - &lt;a href=&#34;http://2011.geecon.org&#34;&gt;Geecon&lt;/a&gt; was very
+are too verbose and code generation is evil).&lt;/p&gt;</description></item><item><title>Geecon 2011 - day 1</title><link>https://marcin.cylke.com.pl/2011/05/19/geecon-2011-day-1/</link><pubDate>Thu, 19 May 2011 20:05:05 +0000</pubDate><guid>https://marcin.cylke.com.pl/2011/05/19/geecon-2011-day-1/</guid><description>&lt;div class='post'&gt;
+&lt;p&gt;Last week's Java conference - &lt;a href="http://2011.geecon.org"&gt;Geecon&lt;/a&gt; was very
 interesting. It was well prepared, and gave an insight into the current
 Java related trends - concurrency, DSLs, polyglot programming. But not
 only that - there were also some pretty different talks from excellent
 speakers.&lt;/p&gt;
-
 &lt;p&gt;
 The whole event took 4 days:
 &lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;University day (wednesday)&lt;/li&gt;
 &lt;li&gt;2 regular conference days (Thursday + Friday) &lt;/li&gt;
 &lt;li&gt;hacker garden (Sunday)&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;
 I decided to attend only on Thursday and Friday - no time for more. Here
 is what interesting happened during those days.
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>JCE keystore and untrusted sites</title>
-      <link>http://localhost:1313/2011/05/02/jce-keystore-and-untrusted-sites/</link>
-      <pubDate>Mon, 02 May 2011 15:03:38 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2011/05/02/jce-keystore-and-untrusted-sites/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
+&lt;/p&gt;</description></item><item><title>JCE keystore and untrusted sites</title><link>https://marcin.cylke.com.pl/2011/05/02/jce-keystore-and-untrusted-sites/</link><pubDate>Mon, 02 May 2011 15:03:38 +0000</pubDate><guid>https://marcin.cylke.com.pl/2011/05/02/jce-keystore-and-untrusted-sites/</guid><description>&lt;div class='post'&gt;
 &lt;p&gt;Recently at work I was in need of connecting to a web service exposed via
-HTTPS. I&#39;ve been doing this from inside &lt;a href=&#34;http://servicemix.apache.org/home.html&#34;&gt;Servicemix 3.3.1&lt;/a&gt;, which may seem
-a bit inhibiting, but that was a requirement. Nevertheless I&#39;ve been
+HTTPS. I've been doing this from inside &lt;a href="http://servicemix.apache.org/home.html"&gt;Servicemix 3.3.1&lt;/a&gt;, which may seem
+a bit inhibiting, but that was a requirement. Nevertheless I've been
 trying my luck with the included &lt;em&gt;servicemix-http-2008.01&lt;/em&gt;
-component. I&#39;ve created a simple &lt;a
-href=&#34;http://servicemix.apache.org/working-with-service-units.html&#34;&gt;Service
+component. I've created a simple &lt;a
+href="http://servicemix.apache.org/working-with-service-units.html"&gt;Service
 Unit&lt;/a&gt; using that component and made connection attempt.
-Unfortunately I&#39;ve encountered issues with the SSL conversation
+Unfortunately I've encountered issues with the SSL conversation
 negotiation. I had to dig deeper into the &lt;em&gt;servicemix-http&lt;/em&gt; code
 to find out these had something to do with my &lt;a
-href=&#34;https://secure.wikimedia.org/wikipedia/en/wiki/Java_Cryptography_Extension&#34;&gt;JCE&lt;/a&gt;
-keystore. Read more to find out what happened!&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Advisory Messages to the rescue</title>
-      <link>http://localhost:1313/2011/04/01/advisory-messages-to-the-rescue/</link>
-      <pubDate>Fri, 01 Apr 2011 09:16:59 +0000</pubDate>
-      
-      <guid>http://localhost:1313/2011/04/01/advisory-messages-to-the-rescue/</guid>
-      <description>&lt;div class=&#39;post&#39;&gt;
+href="https://secure.wikimedia.org/wikipedia/en/wiki/Java_Cryptography_Extension"&gt;JCE&lt;/a&gt;
+keystore. Read more to find out what happened!&lt;/p&gt;</description></item><item><title>Advisory Messages to the rescue</title><link>https://marcin.cylke.com.pl/2011/04/01/advisory-messages-to-the-rescue/</link><pubDate>Fri, 01 Apr 2011 09:16:59 +0000</pubDate><guid>https://marcin.cylke.com.pl/2011/04/01/advisory-messages-to-the-rescue/</guid><description>&lt;div class='post'&gt;
 &lt;p&gt;
 The most crucial part of software development is testing. It should
 ensure us, that our code is correct, works according to given specs,
@@ -238,10 +118,6 @@ code and be able to check the state of the objects after the test.
 &lt;/p&gt;&lt;p&gt;
 This seems as rather easy task, but what if you have an integration
 end-to-end test to perform? In most cases asserting state in integration
-test is rather hard due to multiple systems interoperability. Let&#39;s
+test is rather hard due to multiple systems interoperability. Let's
 focus on a specific situation.
-&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;/p&gt;</description></item></channel></rss>
