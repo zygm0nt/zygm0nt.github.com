@@ -1,43 +1,568 @@
-<!doctype html><html lang=en dir=auto data-theme=auto><head><meta name=generator content="Hugo 0.150.0"><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Tech ramblings by Marcin</title><meta name=description content="Tech ramblings by Marcin - software engineering, distributed systems, and more"><meta name=author content="Marcin Cylke"><link rel=canonical href=https://marcin.cylke.com.pl/><link crossorigin=anonymous href=/assets/css/stylesheet.2ef88c6e9b91917ba47ee47c08eceac58e4063f58023c5794d790144e14eeb83.css integrity="sha256-LviMbpuRkXukfuR8COzqxY5AY/WAI8V5TXkBROFO64M=" rel="preload stylesheet" as=style><link rel=icon href=https://marcin.cylke.com.pl/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://marcin.cylke.com.pl/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://marcin.cylke.com.pl/favicon-32x32.png><link rel=apple-touch-icon href=https://marcin.cylke.com.pl/apple-touch-icon.png><link rel=mask-icon href=https://marcin.cylke.com.pl/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate type=application/rss+xml href=https://marcin.cylke.com.pl/index.xml title=rss><link rel=alternate hreflang=en href=https://marcin.cylke.com.pl/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><link rel=stylesheet href=/css/book_section.css><link rel=stylesheet href=/css/on_this_day.css><link rel=stylesheet href=/css/til.css><script defer src=/js/code-highlight.js></script><meta property="og:url" content="https://marcin.cylke.com.pl/"><meta property="og:site_name" content="Tech ramblings by Marcin"><meta property="og:title" content="Tech ramblings by Marcin"><meta property="og:description" content="Tech ramblings by Marcin - software engineering, distributed systems, and more"><meta property="og:locale" content="en_us"><meta property="og:type" content="website"><meta name=twitter:card content="summary"><meta name=twitter:title content="Tech ramblings by Marcin"><meta name=twitter:description content="Tech ramblings by Marcin - software engineering, distributed systems, and more"><script type=application/ld+json>{"@context":"https://schema.org","@type":"Organization","name":"Tech ramblings by Marcin","url":"https://marcin.cylke.com.pl/","description":"Tech ramblings by Marcin - software engineering, distributed systems, and more","logo":"https://marcin.cylke.com.pl/favicon.ico","sameAs":["https://github.com/zygm0nt","/index.xml"]}</script></head><body class=list id=top><header class=header><nav class=nav><div class=logo><a href=https://marcin.cylke.com.pl/ accesskey=h title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
-<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://marcin.cylke.com.pl/about/ title=About><span>About</span></a></li><li><a href=https://marcin.cylke.com.pl/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://marcin.cylke.com.pl/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://marcin.cylke.com.pl/archives/ title=Archives><span>Archives</span></a></li><li><a href=https://marcin.cylke.com.pl/travels/ title=Travels><span>Travels</span></a></li><li><a href=https://marcin.cylke.com.pl/til/ title=TIL><span>TIL</span></a></li></ul></nav></header><main class=main><article class="first-entry home-info"><header class=entry-header><h1>Tech ramblings by Marcin</h1></header><div class=entry-content>Software engineering, distributed systems, and trivia.</div><footer class=entry-footer><div class=social-icons><a href=https://github.com/zygm0nt target=_blank rel="noopener noreferrer me" title=Github><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg>
-</a><a href=/index.xml target=_blank rel="noopener noreferrer me" title=Rss><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></div></footer></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>Getting things done in a distracted world</h2></header><div class=entry-content><p>Many years ago I’ve written somewhat similar piece about navigating all the distractions of my life. You can read it here: https://marcin.cylke.com.pl/2016/07/24/it-minimalist/ Years have passed, and I want to revisit the topic. Let this post be a reflection on how my habits changed, but also a summary of techniques that work for me right now.
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head>
+	<meta name="generator" content="Hugo 0.150.0"><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Tech ramblings by Marcin</title>
+
+<meta name="description" content="Tech ramblings by Marcin - software engineering, distributed systems, and more">
+<meta name="author" content="Marcin Cylke">
+<link rel="canonical" href="https://marcin.cylke.com.pl/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.2ef88c6e9b91917ba47ee47c08eceac58e4063f58023c5794d790144e14eeb83.css" integrity="sha256-LviMbpuRkXukfuR8COzqxY5AY/WAI8V5TXkBROFO64M=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://marcin.cylke.com.pl/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://marcin.cylke.com.pl/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://marcin.cylke.com.pl/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://marcin.cylke.com.pl/apple-touch-icon.png">
+<link rel="mask-icon" href="https://marcin.cylke.com.pl/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://marcin.cylke.com.pl/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="https://marcin.cylke.com.pl/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/book_section.css">
+<link rel="stylesheet" href="/css/on_this_day.css">
+<link rel="stylesheet" href="/css/til.css">
+<script defer src="/js/code-highlight.js"></script>
+<meta property="og:url" content="https://marcin.cylke.com.pl/">
+  <meta property="og:site_name" content="Tech ramblings by Marcin">
+  <meta property="og:title" content="Tech ramblings by Marcin">
+  <meta property="og:description" content="Tech ramblings by Marcin - software engineering, distributed systems, and more">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Tech ramblings by Marcin">
+  <meta name="twitter:description" content="Tech ramblings by Marcin - software engineering, distributed systems, and more">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Tech ramblings by Marcin",
+  "url": "https://marcin.cylke.com.pl/",
+  "description": "Tech ramblings by Marcin - software engineering, distributed systems, and more",
+  "logo": "https://marcin.cylke.com.pl/favicon.ico",
+  "sameAs": [
+      "https://github.com/zygm0nt", "/index.xml"
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://marcin.cylke.com.pl/" accesskey="h" title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://marcin.cylke.com.pl/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/travels/" title="Travels">
+                    <span>Travels</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/til/" title="TIL">
+                    <span>TIL</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<article class="first-entry home-info">
+    <header class="entry-header">
+        <h1>Tech ramblings by Marcin</h1>
+    </header>
+    <div class="entry-content">
+        Software engineering, distributed systems, and trivia.
+    </div>
+    <footer class="entry-footer">
+        <div class="social-icons" >
+    <a href="https://github.com/zygm0nt" target="_blank" rel="noopener noreferrer me"
+        title="Github">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+    </a>
+    <a href="/index.xml" target="_blank" rel="noopener noreferrer me"
+        title="Rss">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+    </a>
+</div>
+
+    </footer>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Sidenotes: Marginalia for the Web
+      <span class="entry-hint" title="Draft">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" fill="currentColor">
+          <path
+            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+        </svg>
+      </span>
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Typography on the web has always lagged behind print. One of the most useful tools available to print designers — the marginal note — has been largely absent from web writing. This post demonstrates a pure-CSS sidenote implementation no JavaScript required The entire toggle mechanism on mobile works via the HTML checkbox hack: a hidden &lt;input type=&#34;checkbox&#34;&gt; paired with a &lt;label&gt;, toggled by the CSS :checked pseudo-selector. No JavaScript is loaded or executed. that works at any viewport size.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-03-13 00:00:00 +0000 UTC'>March 13, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Sidenotes: Marginalia for the Web" href="https://marcin.cylke.com.pl/2026/03/13/sidenotes-demo/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Getting things done in a distracted world
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Many years ago I’ve written somewhat similar piece about navigating all the distractions of my life. You can read it here: https://marcin.cylke.com.pl/2016/07/24/it-minimalist/ Years have passed, and I want to revisit the topic. Let this post be a reflection on how my habits changed, but also a summary of techniques that work for me right now.
 Let’s try to recap my stats for this day, as compared to year 2016 (noted in brackets)
-...</p></div><footer class=entry-footer><span title='2025-03-13 00:00:00 +0000 UTC'>March 13, 2025</span>&nbsp;·&nbsp;<span>8 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Getting things done in a distracted world" href=https://marcin.cylke.com.pl/2025/03/13/getting-things-done-in-a-distracted-world/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>books I read - Oct - Dec 2024</h2></header><div class=entry-content><p>Books Book Review: Czysta Ameryka. Przemilczana historia eugeniki by Elizabeth Catte Many interesting observations and a clearly presented opinion on eugenics and its history in the USA. It’s quite difficult to get through due to the many facts specific to USA internal politics. It also explores topics loosely connected to eugenics, which may feel tangential but provide a broader context. There is certainly a lot of personal opinions here, referring to the author’s hometown. It makes the book less valuable as an objective study of the subject, and more just a personal exploration based on local facts." Book Review: Zakamarki Białego Domu by Marek Wałkuski written as a concise trivia book about US White House. The author, polish correspondent working in the Presidential Press Pool shares a lot of his personal experiences, but also adds a lot of smaller research to that. The mix of personal anecdotes and research makes the book both engaging and informative. However, Some sections feel less compelling and might serve more as filler. While accurate, the repeated mention of being the only Polish reporter near the US President can feel overemphasized. Book Review: The coming wave by Mustafa Suleyman how AI is changing the world, and what will be its future influence. Written by an influential person, a co-founder of DeepMind. The book presents thought-provoking insights, particularly on societies’ approach to that new paradigm (AI). Given the rapid evolution of AI, some ideas in the book have already become outdated. Some ideas in the book are already out of sync with what’s happening in the industry. This book has been a good, relaxing exercise for the mind. While it’s an engaging read, some ideas may feel more speculative than definitive. Book Review: Umbrella Academy by Gerard Way, Gabriel Bá before the Netflix series there’s been a comic version of the story about the patchwork family of super-children, born on the same day all around the world. I really liked the Netflix adaptation, after enjoying the Netflix adaptation, I was inspired to explore the original comic. And that’s been a good decision, I must say. In fact, The comic offers richer character development and a more intricate storyline compared to the Netflix adaptation. The unique art style and imaginative storytelling made it a thoroughly enjoyable read. Book Review: Futuro Darko by Krzysztof Nowak A post-apocalyptic comic with a distinctly Polish twist. The album contains a bunch of separate stories connected by the main characters. I enjoyed the style of the comics. Also, the comic-inspired soundtrack adds an immersive dimension to the reading experience.! Neat idea! Articles Tracking Putin’s Most Feared Secret Agency—From Inside a Russian Prison and Beyond - a investigative piece from Evan Gershkovich, WSJ reporter held in Russian Prison, recently released Interesting video Czy wszyscy 110-latkowie to oszuści? IgNobel z demografii 2024 | Czytamy naturę - a super interesting presentation about people supposedly living more than 100 years. Spotify’s Approach to Distributed LLM Training with Ray on GKE | Ray Summit 2024</p></div><footer class=entry-footer><span title='2025-01-16 00:00:00 +0000 UTC'>January 16, 2025</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to books I read - Oct - Dec 2024" href=https://marcin.cylke.com.pl/2025/01/16/books-i-read-oct-dec-2024/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>books I read - September 2024</h2></header><div class=entry-content><p>Books Book Review: Stany podzielone Ameryki by Lukasz Pawłowski Written by one of the podcasters from “Podcast amerykański,” and my great experience with this book was largely due to this connection. The book is fascinating and feels refreshingly objective. Additionally, it offers an insightful analysis of the current state of American society, particularly from a European perspective, providing a unique outsider’s view of the country’s complexities. Book Review: Persepolis by Marjane Satrapi A classic. This graphic novel chronicles the experience of growing up and living in Iran before, during, and after the Islamic Revolution. The most vivid and shocking part of the story takes place in Iran. The second part, about living in Austria as an immigrant, is less engaging. I found it most enjoyable when the action returned to Iran, highlighting the stark contrast between the two countries, and more importantly, the people. Highly recommended! Book Review: Blankets by Craig Thompson An autobiographical graphic novel that tells the story of growing up in a deeply religious family and how it shaped the author’s first love and transition to adulthood. Not my favorite. Book Review: Ghostmoney by Smolderen & Bertail I really enjoyed this graphic novel. It’s set in the near future and follows a wild chase for lost Al-Qaeda money. The story is told from multiple perspectives, involving politics and a somewhat exaggerated portrayal of shady U.S. dealings around the world. The art style is atmospheric, with some parts being quite dark and gritty, while others depict futuristic, beautifully rendered Middle Eastern cities. As for the plot—it’s not too deep, but it’s still enjoyable. Book Review: Sandworm by Andy Greenberg A brilliant book that dives into the dangers of cyberwarfare. It covers nation-sponsored cyberattacks on infrastructure and emphasizes the urgent need for securing networks. The book paints a grim picture of potential future cyberattacks, especially with state-sponsored groups using zero-day vulnerabilities against individuals and institutions. It reads like a thriller, except the stakes are real. I’d compare it to Kim Zetter’s Countdown to Zero Day about Stuxnet. Personally, I would have enjoyed more technical details, but it was a great read nonetheless. From Pocket Recent:
-...</p></div><footer class=entry-footer><span title='2024-11-05 00:00:00 +0000 UTC'>November 5, 2024</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to books I read - September 2024" href=https://marcin.cylke.com.pl/2024/11/05/books-i-read-september-2024/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>Watercolor portrait - made by AI</h2></header><div class=entry-content><p>An example illustration
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-03-13 00:00:00 +0000 UTC'>March 13, 2025</span>&nbsp;·&nbsp;<span>8 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Getting things done in a distracted world" href="https://marcin.cylke.com.pl/2025/03/13/getting-things-done-in-a-distracted-world/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">books I read - Oct - Dec 2024
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Books Book Review: Czysta Ameryka. Przemilczana historia eugeniki by Elizabeth Catte Many interesting observations and a clearly presented opinion on eugenics and its history in the USA. It’s quite difficult to get through due to the many facts specific to USA internal politics. It also explores topics loosely connected to eugenics, which may feel tangential but provide a broader context. There is certainly a lot of personal opinions here, referring to the author’s hometown. It makes the book less valuable as an objective study of the subject, and more just a personal exploration based on local facts.&#34; Book Review: Zakamarki Białego Domu by Marek Wałkuski written as a concise trivia book about US White House. The author, polish correspondent working in the Presidential Press Pool shares a lot of his personal experiences, but also adds a lot of smaller research to that. The mix of personal anecdotes and research makes the book both engaging and informative. However, Some sections feel less compelling and might serve more as filler. While accurate, the repeated mention of being the only Polish reporter near the US President can feel overemphasized. Book Review: The coming wave by Mustafa Suleyman how AI is changing the world, and what will be its future influence. Written by an influential person, a co-founder of DeepMind. The book presents thought-provoking insights, particularly on societies’ approach to that new paradigm (AI). Given the rapid evolution of AI, some ideas in the book have already become outdated. Some ideas in the book are already out of sync with what’s happening in the industry. This book has been a good, relaxing exercise for the mind. While it’s an engaging read, some ideas may feel more speculative than definitive. Book Review: Umbrella Academy by Gerard Way, Gabriel Bá before the Netflix series there’s been a comic version of the story about the patchwork family of super-children, born on the same day all around the world. I really liked the Netflix adaptation, after enjoying the Netflix adaptation, I was inspired to explore the original comic. And that’s been a good decision, I must say. In fact, The comic offers richer character development and a more intricate storyline compared to the Netflix adaptation. The unique art style and imaginative storytelling made it a thoroughly enjoyable read. Book Review: Futuro Darko by Krzysztof Nowak A post-apocalyptic comic with a distinctly Polish twist. The album contains a bunch of separate stories connected by the main characters. I enjoyed the style of the comics. Also, the comic-inspired soundtrack adds an immersive dimension to the reading experience.! Neat idea! Articles Tracking Putin’s Most Feared Secret Agency—From Inside a Russian Prison and Beyond - a investigative piece from Evan Gershkovich, WSJ reporter held in Russian Prison, recently released Interesting video Czy wszyscy 110-latkowie to oszuści? IgNobel z demografii 2024 | Czytamy naturę - a super interesting presentation about people supposedly living more than 100 years. Spotify’s Approach to Distributed LLM Training with Ray on GKE | Ray Summit 2024 </p>
+  </div>
+  <footer class="entry-footer"><span title='2025-01-16 00:00:00 +0000 UTC'>January 16, 2025</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to books I read - Oct - Dec 2024" href="https://marcin.cylke.com.pl/2025/01/16/books-i-read-oct-dec-2024/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">books I read - September 2024
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Books Book Review: Stany podzielone Ameryki by Lukasz Pawłowski Written by one of the podcasters from “Podcast amerykański,” and my great experience with this book was largely due to this connection. The book is fascinating and feels refreshingly objective. Additionally, it offers an insightful analysis of the current state of American society, particularly from a European perspective, providing a unique outsider’s view of the country’s complexities. Book Review: Persepolis by Marjane Satrapi A classic. This graphic novel chronicles the experience of growing up and living in Iran before, during, and after the Islamic Revolution. The most vivid and shocking part of the story takes place in Iran. The second part, about living in Austria as an immigrant, is less engaging. I found it most enjoyable when the action returned to Iran, highlighting the stark contrast between the two countries, and more importantly, the people. Highly recommended! Book Review: Blankets by Craig Thompson An autobiographical graphic novel that tells the story of growing up in a deeply religious family and how it shaped the author’s first love and transition to adulthood. Not my favorite. Book Review: Ghostmoney by Smolderen &amp; Bertail I really enjoyed this graphic novel. It’s set in the near future and follows a wild chase for lost Al-Qaeda money. The story is told from multiple perspectives, involving politics and a somewhat exaggerated portrayal of shady U.S. dealings around the world. The art style is atmospheric, with some parts being quite dark and gritty, while others depict futuristic, beautifully rendered Middle Eastern cities. As for the plot—it’s not too deep, but it’s still enjoyable. Book Review: Sandworm by Andy Greenberg A brilliant book that dives into the dangers of cyberwarfare. It covers nation-sponsored cyberattacks on infrastructure and emphasizes the urgent need for securing networks. The book paints a grim picture of potential future cyberattacks, especially with state-sponsored groups using zero-day vulnerabilities against individuals and institutions. It reads like a thriller, except the stakes are real. I’d compare it to Kim Zetter’s Countdown to Zero Day about Stuxnet. Personally, I would have enjoyed more technical details, but it was a great read nonetheless. From Pocket Recent:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-11-05 00:00:00 +0000 UTC'>November 5, 2024</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to books I read - September 2024" href="https://marcin.cylke.com.pl/2024/11/05/books-i-read-september-2024/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Watercolor portrait - made by AI
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> An example illustration
 This article is inspired by a post I’ve stumbled upon on LinkedIn, by Guido Appenzeller
 Below you can find a reinterpretation of his post. With added details here, and there. The reason for that, is twofold - a) I really like the workflow, b) the original post is missing some details for a first-time user of those tools.
-...</p></div><footer class=entry-footer><span title='2024-10-04 00:00:00 +0000 UTC'>October 4, 2024</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Watercolor portrait - made by AI" href=https://marcin.cylke.com.pl/2024/10/04/watercolor-portrait-made-by-ai/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>Convenient search in my Obsidian notes</h2></header><div class=entry-content><p>I came across this idea of better search in Obsidian notes: https://simplyexplained.com/blog/how-i-use-alfred-to-search-obsidian-notes/
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-10-04 00:00:00 +0000 UTC'>October 4, 2024</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Watercolor portrait - made by AI" href="https://marcin.cylke.com.pl/2024/10/04/watercolor-portrait-made-by-ai/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Convenient search in my Obsidian notes
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>I came across this idea of better search in Obsidian notes: https://simplyexplained.com/blog/how-i-use-alfred-to-search-obsidian-notes/
 This should work nicely, but:
 it would require installing an additional tool Alfred, would bind even more to MacOS ecosystem - what if I want to use the same workflow on Linux, would not be too VCS friendly - hard to version those UI wizards So I’ve figured I can do better, with just CLI tools. That resulted in the following short script:
-...</p></div><footer class=entry-footer><span title='2024-09-24 00:00:00 +0000 UTC'>September 24, 2024</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Convenient search in my Obsidian notes" href=https://marcin.cylke.com.pl/2024/09/24/convenient-search-in-my-obsidian-notes/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>Youtube video - generate summary</h2></header><div class=entry-content><p>An influencer cooking a meal
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-09-24 00:00:00 +0000 UTC'>September 24, 2024</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Convenient search in my Obsidian notes" href="https://marcin.cylke.com.pl/2024/09/24/convenient-search-in-my-obsidian-notes/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Youtube video - generate summary
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> An influencer cooking a meal
 I really like watching some culinary channels on Youtube. Those can be roughly divided into two categories:
 people cooking some specific recipe people doing a review of a restaurant or a bunch of them It’s nice to watch, but after that not too much I can keep from that. If I like a specific recipe, and I’d like to cook that think it’s really counter productive to try cooking from the video. I’d constantly need to pause, rewind, replay specific fragments.
-...</p></div><footer class=entry-footer><span title='2024-09-17 00:00:00 +0000 UTC'>September 17, 2024</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Youtube video - generate summary" href=https://marcin.cylke.com.pl/2024/09/17/youtube-video-generate-summary/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>Extracting articles from Pocket - or ChatGPT for the needed but not interesting stuff</h2></header><div class=entry-content><p>Pocket is a nice service. It can save articles from the web for you to read later. Nice. It can even help in bypassing annoying paywalls (more on this here). With the ease of using it, I can quickly end up with a substantial backlog of articles to go through. Since reading long articles on a screen feels like a chore, I came up with the idea of exporting articles into EPub format and reading them on an e-reader.
-...</p></div><footer class=entry-footer><span title='2024-08-26 00:00:00 +0000 UTC'>August 26, 2024</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Extracting articles from Pocket - or ChatGPT for the needed but not interesting stuff" href=https://marcin.cylke.com.pl/2024/08/26/extracting-articles-from-pocket-or-chatgpt-for-the-needed-but-not-interesting-stuff/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>Tracers in the dark</h2></header><div class=entry-content><p>Disclaimer: This blogpost is not about a specific book, titled Tracers in the Dark: The Global Hunt for the Crime Lords of Cryptocurrency. It’s just about execution traces.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-09-17 00:00:00 +0000 UTC'>September 17, 2024</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Youtube video - generate summary" href="https://marcin.cylke.com.pl/2024/09/17/youtube-video-generate-summary/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Extracting articles from Pocket - or ChatGPT for the needed but not interesting stuff
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>
+Pocket is a nice service. It can save articles from the web for you to read later. Nice. It can even help in bypassing annoying paywalls (more on this here). With the ease of using it, I can quickly end up with a substantial backlog of articles to go through. Since reading long articles on a screen feels like a chore, I came up with the idea of exporting articles into EPub format and reading them on an e-reader.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-08-26 00:00:00 +0000 UTC'>August 26, 2024</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Extracting articles from Pocket - or ChatGPT for the needed but not interesting stuff" href="https://marcin.cylke.com.pl/2024/08/26/extracting-articles-from-pocket-or-chatgpt-for-the-needed-but-not-interesting-stuff/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Tracers in the dark
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Disclaimer: This blogpost is not about a specific book, titled Tracers in the Dark: The Global Hunt for the Crime Lords of Cryptocurrency. It’s just about execution traces.
 I wanted to explore a few techniques for visualising inter-dependencies between fragments of code, modules, etc. Say, you have multiple functions and you want to get some bearing on how much each execution of each of those functions takes. Or you have a complicated system, and you’d like to plot remote calls in this system.
-...</p></div><footer class=entry-footer><span title='2024-08-08 00:00:00 +0000 UTC'>August 8, 2024</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Tracers in the dark" href=https://marcin.cylke.com.pl/2024/08/08/tracers-in-the-dark/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>Get to your AWS host with ease</h2></header><div class=entry-content><p>If you deploy to cloud, ideally you should be able to analyze and debug your system using observability tools. There should be no need to log in to your hosts directly. But life is life, and there might be issues with this or that, and to debug them, direct access to a host is just much easier.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-08-08 00:00:00 +0000 UTC'>August 8, 2024</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Tracers in the dark" href="https://marcin.cylke.com.pl/2024/08/08/tracers-in-the-dark/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Get to your AWS host with ease
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>If you deploy to cloud, ideally you should be able to analyze and debug your system using observability tools. There should be no need to log in to your hosts directly. But life is life, and there might be issues with this or that, and to debug them, direct access to a host is just much easier.
 Instead of doing a long sequence of clicks through your WebUI in AWS console, you can also access your host with a script.
-...</p></div><footer class=entry-footer><span title='2024-06-27 00:00:00 +0000 UTC'>June 27, 2024</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Get to your AWS host with ease" href=https://marcin.cylke.com.pl/2024/06/27/get-to-your-aws-host-with-ease/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>Why Google Takeout is sooo bad!</h2></header><div class=entry-content><p>Author: IdeogramAI Prompt: The image shows a typical Google Takeout interface with a large error message indicating that the service is unavailable. In the background, there are frustrated users trying to download their data with unsuccessful attempts, represented by repeated “Failed” and “Retry” notifications.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-06-27 00:00:00 +0000 UTC'>June 27, 2024</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Get to your AWS host with ease" href="https://marcin.cylke.com.pl/2024/06/27/get-to-your-aws-host-with-ease/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Why Google Takeout is sooo bad!
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Author: IdeogramAI Prompt: The image shows a typical Google Takeout interface with a large error message indicating that the service is unavailable. In the background, there are frustrated users trying to download their data with unsuccessful attempts, represented by repeated “Failed” and “Retry” notifications.
 My current data setup is centered around Google Cloud as a place where I store my data. That’s also related to how I use the whole vendor ecosystem.
-...</p></div><footer class=entry-footer><span title='2024-06-16 00:00:00 +0000 UTC'>June 16, 2024</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Why Google Takeout is sooo bad!" href=https://marcin.cylke.com.pl/2024/06/16/why-google-takeout-is-sooo-bad/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>Updating Confluence page from Markdown</h2></header><div class=entry-content><p>Prompt: generate an image for blogpost titled “Moving markdown files to confluence”
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-06-16 00:00:00 +0000 UTC'>June 16, 2024</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Why Google Takeout is sooo bad!" href="https://marcin.cylke.com.pl/2024/06/16/why-google-takeout-is-sooo-bad/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Updating Confluence page from Markdown
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>
+Prompt: generate an image for blogpost titled “Moving markdown files to confluence”
 Assume you want to have your documentation close to the code. Ideally in your project’s repo. But then there’s always this request, that other people might want to look through that documentation, they’re not too tech savy, no nothing about Git.
 A few past companies I’ve worked for have had their internal wikis built on Atlassian Confluence. It seems there’s quite nice way to upload pages stored in repository to arbitrary location in Confluence.
-...</p></div><footer class=entry-footer><span title='2024-05-20 00:00:00 +0000 UTC'>May 20, 2024</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Updating Confluence page from Markdown" href=https://marcin.cylke.com.pl/2024/05/20/updating-confluence-page-from-markdown/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>Propaganda posters by GenAI</h2></header><div class=entry-content><p>generate a Chinese propaganda poster advocating for “all people should eat pringles”
-...</p></div><footer class=entry-footer><span title='2024-04-09 00:00:00 +0000 UTC'>April 9, 2024</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Propaganda posters by GenAI" href=https://marcin.cylke.com.pl/2024/04/09/propaganda-posters/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>SolarWinds supply chain attack</h2></header><div class=entry-content><p>...</p></div><footer class=entry-footer><span title='2024-04-07 00:00:00 +0000 UTC'>April 7, 2024</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to SolarWinds supply chain attack" href=https://marcin.cylke.com.pl/2024/04/07/solarwinds-supply-chain-attack/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>Git - conditional configs and commit signing</h2></header><div class=entry-content><p>...</p></div><footer class=entry-footer><span title='2024-03-28 00:00:00 +0000 UTC'>March 28, 2024</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Git - conditional configs and commit signing" href=https://marcin.cylke.com.pl/2024/03/28/git-conditional/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>Payload after load, really?!</h2></header><div class=entry-content><p>“source: Dall-E, prompt: generate an image for blogpost titled “breaking a paywall”, about exploiting newssite paywall using browser extension”
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-05-20 00:00:00 +0000 UTC'>May 20, 2024</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Updating Confluence page from Markdown" href="https://marcin.cylke.com.pl/2024/05/20/updating-confluence-page-from-markdown/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Propaganda posters by GenAI
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>generate a Chinese propaganda poster advocating for “all people should eat pringles”
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-04-09 00:00:00 +0000 UTC'>April 9, 2024</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Propaganda posters by GenAI" href="https://marcin.cylke.com.pl/2024/04/09/propaganda-posters/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">SolarWinds supply chain attack
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-04-07 00:00:00 +0000 UTC'>April 7, 2024</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to SolarWinds supply chain attack" href="https://marcin.cylke.com.pl/2024/04/07/solarwinds-supply-chain-attack/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Git - conditional configs and commit signing
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-03-28 00:00:00 +0000 UTC'>March 28, 2024</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Git - conditional configs and commit signing" href="https://marcin.cylke.com.pl/2024/03/28/git-conditional/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Payload after load, really?!
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>
+“source: Dall-E, prompt: generate an image for blogpost titled “breaking a paywall”, about exploiting newssite paywall using browser extension”
 Today’s internet is progressively becoming more and more hostile. It is actually a bunch of walled gardens, in the form of Facebook, Instagram, Linkedin, all the other social media outlets. Now, also news sites are increasingly becoming a payed instances.
 I totally get it, authoring all that content is not cheap. If I want to read quality content, I also want authors to be paid adequately. That’s totally fine, and I’m paying for a myriad of news-related sites that are out there.
-...</p></div><footer class=entry-footer><span title='2024-02-29 00:00:00 +0000 UTC'>February 29, 2024</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Payload after load, really?!" href=https://marcin.cylke.com.pl/2024/02/29/payload-after-load/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>useful CLI tools from other planet</h2></header><div class=entry-content><p>I’ve already written a short post about me using fzf on this blog. And I still use it, it still is awesome! :)
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-02-29 00:00:00 +0000 UTC'>February 29, 2024</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Payload after load, really?!" href="https://marcin.cylke.com.pl/2024/02/29/payload-after-load/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">useful CLI tools from other planet
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>I’ve already written a short post about me using fzf on this blog. And I still use it, it still is awesome! :)
 But there are more tools like that. Maybe this is just my optics, but with the recent (at least 2 last years) rust’s rise to popularity, there are a lot of small tools doing a single task, or focusing on specific kind of problems. And they of course target terminals! Because it’s obvious you can do many things on the web, but terminals are way cooler, and way more useful if you stick to them for the majority of your workflow.
-...</p></div><footer class=entry-footer><span title='2023-10-10 00:00:00 +0000 UTC'>October 10, 2023</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to useful CLI tools from other planet" href=https://marcin.cylke.com.pl/2023/10/10/useful-cli-tools-from-other-planet/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>git-commit script</h2></header><div class=entry-content><p>The organization I work in, has this practice of annotating commit messages with ticket numbers. From what I know this tends to be quite a common them all around the IT industry. It serves the purpose of accountability for future checks, current information for others on what the commit is actually about, etc. There may be many more things to add here - as an adventage of such a
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-10-10 00:00:00 +0000 UTC'>October 10, 2023</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to useful CLI tools from other planet" href="https://marcin.cylke.com.pl/2023/10/10/useful-cli-tools-from-other-planet/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">git-commit script
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>The organization I work in, has this practice of annotating commit messages with ticket numbers. From what I know this tends to be quite a common them all around the IT industry. It serves the purpose of accountability for future checks, current information for others on what the commit is actually about, etc. There may be many more things to add here - as an adventage of such a
 Some time ago I’ve started using this small snippet of code as my pre-commit hook. It’s main purpose is to free me from remembering or checking which JIRA ticket should I prepend to my Git message.
-...</p></div><footer class=entry-footer><span title='2023-06-27 00:00:00 +0000 UTC'>June 27, 2023</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to git-commit script" href=https://marcin.cylke.com.pl/2023/06/27/git-commit-script/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>an ode to fzf</h2></header><div class=entry-content><p>What is fzf? How could I’ve lived without it for so long?! It’s just a pretty little fuzzy search tool, written in go. You can find it here: https://github.com/junegunn/fzf
-Important features fuzzy search in a list of lines - thanks to that, it’s really easy to find something in a considerably big list of items it’s blazingly fast! very nice shell integrations many additional features - like preview for files (go here to see examples: https://github.com/junegunn/fzf#preview-window) Usages shell history my git-commit message script various CLI python tools, using this wrapper https://github.com/nk412/pyfzf Browsing through shell history This is simply the most useful feature for me. Previously, I’ve extensively used ctrl+r to search through the past commands, but doing this with fzf is much more powerful!
-...</p></div><footer class=entry-footer><span title='2023-05-29 00:00:00 +0000 UTC'>May 29, 2023</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to an ode to fzf" href=https://marcin.cylke.com.pl/2023/05/29/an-ode-to-fzf/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>running gamecube emulator on Linux</h2></header><div class=entry-content><p>I have a fondness for all the retro things in tech, and try to hone this when I have time with exploring old tech. This time I tried running one of the retro consoles’ emulators. I chose Nintendo Gamecube - because of many reasons, but one of them being I own a quite recent incarnation of the Nintendo spirit, namely Nintendo Switch. So with the older one I’ve wanted to see how the games look like back than and how much the landscape of gaming on Nintendo has changed with that big of an age gap.
-...</p></div><footer class=entry-footer><span title='2021-02-07 00:00:00 +0000 UTC'>February 7, 2021</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to running gamecube emulator on Linux" href=https://marcin.cylke.com.pl/2021/02/07/running-gamecube-on-linux/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>awesome WM and how to handle multiple monitors</h2></header><div class=entry-content><p>Recently I’ve started using new window manager. Since I’ve always wanted to try some kind of tiling window manager I thought that a fresh installation of an OS on a new machine is good time to have a go at that.
-From the multitude of possibilities I’ve chosen AwesomeWM. It’s reasonable enough in its standard configuration so I’ve decided to stick with it at least for the time being. In fact the only important feature I look for in a tiling window manager is the tiling behavior. All the other features are somewhat… uninteresting. Even more’ the multitude of config options is rather too much for me as I don’t want to focus on configuring my work environment.
-...</p></div><footer class=entry-footer><span title='2021-02-06 00:00:00 +0000 UTC'>February 6, 2021</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to awesome WM and how to handle multiple monitors" href=https://marcin.cylke.com.pl/2021/02/06/awesomewm-multiple-monitors/></a></article><footer class=page-footer><nav class=pagination><a class=next href=https://marcin.cylke.com.pl/page/2/>Next&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2026 <a href=https://marcin.cylke.com.pl/>Tech ramblings by Marcin</a></span> ·
-<span>Powered by
-<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
-</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script></body></html>
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-06-27 00:00:00 +0000 UTC'>June 27, 2023</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to git-commit script" href="https://marcin.cylke.com.pl/2023/06/27/git-commit-script/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">an ode to fzf
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>What is fzf? How could I’ve lived without it for so long?! It’s just a pretty little fuzzy search tool, written in go. You can find it here: https://github.com/junegunn/fzf
+Important features fuzzy search in a list of lines - thanks to that, it’s really easy to find something in a considerably big list of items it’s blazingly fast! very nice shell integrations many additional features - like preview for files (go here to see examples: https://github.com/junegunn/fzf#preview-window) Usages shell history my git-commit message script various CLI python tools, using this wrapper https://github.com/nk412/pyfzf Browsing through shell history This is simply the most useful feature for me. Previously, I’ve extensively used ctrl&#43;r to search through the past commands, but doing this with fzf is much more powerful!
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-05-29 00:00:00 +0000 UTC'>May 29, 2023</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to an ode to fzf" href="https://marcin.cylke.com.pl/2023/05/29/an-ode-to-fzf/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">running gamecube emulator on Linux
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>I have a fondness for all the retro things in tech, and try to hone this when I have time with exploring old tech. This time I tried running one of the retro consoles’ emulators. I chose Nintendo Gamecube - because of many reasons, but one of them being I own a quite recent incarnation of the Nintendo spirit, namely Nintendo Switch. So with the older one I’ve wanted to see how the games look like back than and how much the landscape of gaming on Nintendo has changed with that big of an age gap.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-02-07 00:00:00 +0000 UTC'>February 7, 2021</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to running gamecube emulator on Linux" href="https://marcin.cylke.com.pl/2021/02/07/running-gamecube-on-linux/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="next" href="https://marcin.cylke.com.pl/page/2/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

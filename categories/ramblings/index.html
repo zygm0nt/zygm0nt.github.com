@@ -1,11 +1,261 @@
-<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Ramblings | Tech ramblings by Marcin</title><meta name=keywords content><meta name=description content="Tech ramblings by Marcin - software engineering, distributed systems, and more"><meta name=author content="Marcin Cylke"><link rel=canonical href=https://marcin.cylke.com.pl/categories/ramblings/><link crossorigin=anonymous href=/assets/css/stylesheet.2ef88c6e9b91917ba47ee47c08eceac58e4063f58023c5794d790144e14eeb83.css integrity="sha256-LviMbpuRkXukfuR8COzqxY5AY/WAI8V5TXkBROFO64M=" rel="preload stylesheet" as=style><link rel=icon href=https://marcin.cylke.com.pl/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://marcin.cylke.com.pl/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://marcin.cylke.com.pl/favicon-32x32.png><link rel=apple-touch-icon href=https://marcin.cylke.com.pl/apple-touch-icon.png><link rel=mask-icon href=https://marcin.cylke.com.pl/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate type=application/rss+xml href=https://marcin.cylke.com.pl/categories/ramblings/index.xml title=rss><link rel=alternate hreflang=en href=https://marcin.cylke.com.pl/categories/ramblings/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><link rel=stylesheet href=/css/book_section.css><link rel=stylesheet href=/css/on_this_day.css><link rel=stylesheet href=/css/til.css><script defer src=/js/code-highlight.js></script><meta property="og:url" content="https://marcin.cylke.com.pl/categories/ramblings/"><meta property="og:site_name" content="Tech ramblings by Marcin"><meta property="og:title" content="Ramblings"><meta property="og:description" content="Tech ramblings by Marcin - software engineering, distributed systems, and more"><meta property="og:locale" content="en_us"><meta property="og:type" content="website"><meta name=twitter:card content="summary"><meta name=twitter:title content="Ramblings"><meta name=twitter:description content="Tech ramblings by Marcin - software engineering, distributed systems, and more"></head><body class=list id=top><header class=header><nav class=nav><div class=logo><a href=https://marcin.cylke.com.pl/ accesskey=h title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
-<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://marcin.cylke.com.pl/about/ title=About><span>About</span></a></li><li><a href=https://marcin.cylke.com.pl/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://marcin.cylke.com.pl/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://marcin.cylke.com.pl/archives/ title=Archives><span>Archives</span></a></li><li><a href=https://marcin.cylke.com.pl/travels/ title=Travels><span>Travels</span></a></li><li><a href=https://marcin.cylke.com.pl/til/ title=TIL><span>TIL</span></a></li></ul></nav></header><main class=main><header class=page-header><div class=breadcrumbs><a href=https://marcin.cylke.com.pl/>Home</a>&nbsp;»&nbsp;<a href=https://marcin.cylke.com.pl/categories/>Categories</a></div><h1>Ramblings
-<a href=/categories/ramblings/index.xml title=RSS aria-label=RSS><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="23"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></h1></header><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Payload after load, really?!</h2></header><div class=entry-content><p>“source: Dall-E, prompt: generate an image for blogpost titled “breaking a paywall”, about exploiting newssite paywall using browser extension”
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Ramblings | Tech ramblings by Marcin</title>
+<meta name="keywords" content="">
+<meta name="description" content="Tech ramblings by Marcin - software engineering, distributed systems, and more">
+<meta name="author" content="Marcin Cylke">
+<link rel="canonical" href="https://marcin.cylke.com.pl/categories/ramblings/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.2ef88c6e9b91917ba47ee47c08eceac58e4063f58023c5794d790144e14eeb83.css" integrity="sha256-LviMbpuRkXukfuR8COzqxY5AY/WAI8V5TXkBROFO64M=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://marcin.cylke.com.pl/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://marcin.cylke.com.pl/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://marcin.cylke.com.pl/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://marcin.cylke.com.pl/apple-touch-icon.png">
+<link rel="mask-icon" href="https://marcin.cylke.com.pl/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://marcin.cylke.com.pl/categories/ramblings/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="https://marcin.cylke.com.pl/categories/ramblings/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/book_section.css">
+<link rel="stylesheet" href="/css/on_this_day.css">
+<link rel="stylesheet" href="/css/til.css">
+<script defer src="/js/code-highlight.js"></script>
+<meta property="og:url" content="https://marcin.cylke.com.pl/categories/ramblings/">
+  <meta property="og:site_name" content="Tech ramblings by Marcin">
+  <meta property="og:title" content="Ramblings">
+  <meta property="og:description" content="Tech ramblings by Marcin - software engineering, distributed systems, and more">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ramblings">
+  <meta name="twitter:description" content="Tech ramblings by Marcin - software engineering, distributed systems, and more">
+
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://marcin.cylke.com.pl/" accesskey="h" title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://marcin.cylke.com.pl/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/travels/" title="Travels">
+                    <span>Travels</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/til/" title="TIL">
+                    <span>TIL</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="https://marcin.cylke.com.pl/">Home</a>&nbsp;»&nbsp;<a href="https://marcin.cylke.com.pl/categories/">Categories</a></div>
+  <h1>
+    Ramblings
+    <a href="/categories/ramblings/index.xml" title="RSS" aria-label="RSS">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" height="23">
+        <path d="M4 11a9 9 0 0 1 9 9" />
+        <path d="M4 4a16 16 0 0 1 16 16" />
+        <circle cx="5" cy="19" r="1" />
+      </svg>
+    </a>
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Payload after load, really?!
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>
+“source: Dall-E, prompt: generate an image for blogpost titled “breaking a paywall”, about exploiting newssite paywall using browser extension”
 Today’s internet is progressively becoming more and more hostile. It is actually a bunch of walled gardens, in the form of Facebook, Instagram, Linkedin, all the other social media outlets. Now, also news sites are increasingly becoming a payed instances.
 I totally get it, authoring all that content is not cheap. If I want to read quality content, I also want authors to be paid adequately. That’s totally fine, and I’m paying for a myriad of news-related sites that are out there.
-...</p></div><footer class=entry-footer><span title='2024-02-29 00:00:00 +0000 UTC'>February 29, 2024</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer><a class=entry-link aria-label="post link to Payload after load, really?!" href=https://marcin.cylke.com.pl/2024/02/29/payload-after-load/></a></article></main><footer class=footer><span>&copy; 2026 <a href=https://marcin.cylke.com.pl/>Tech ramblings by Marcin</a></span> ·
-<span>Powered by
-<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
-</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script></body></html>
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-02-29 00:00:00 +0000 UTC'>February 29, 2024</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></footer>
+  <a class="entry-link" aria-label="post link to Payload after load, really?!" href="https://marcin.cylke.com.pl/2024/02/29/payload-after-load/"></a>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

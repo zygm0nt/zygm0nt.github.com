@@ -1,25 +1,62 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fzf on Tech ramblings by Marcin</title><link>https://marcin.cylke.com.pl/categories/fzf/</link><description>Recent content in Fzf on Tech ramblings by Marcin</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 24 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/fzf/index.xml" rel="self" type="application/rss+xml"/><item><title>Convenient search in my Obsidian notes</title><link>https://marcin.cylke.com.pl/2024/09/24/convenient-search-in-my-obsidian-notes/</link><pubDate>Tue, 24 Sep 2024 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2024/09/24/convenient-search-in-my-obsidian-notes/</guid><description>&lt;p&gt;I came across this idea of better search in Obsidian notes: &lt;a href="https://simplyexplained.com/blog/how-i-use-alfred-to-search-obsidian-notes/"&gt;https://simplyexplained.com/blog/how-i-use-alfred-to-search-obsidian-notes/&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fzf on Tech ramblings by Marcin</title>
+    <link>https://marcin.cylke.com.pl/categories/fzf/</link>
+    <description>Recent content in Fzf on Tech ramblings by Marcin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/fzf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Convenient search in my Obsidian notes</title>
+      <link>https://marcin.cylke.com.pl/2024/09/24/convenient-search-in-my-obsidian-notes/</link>
+      <pubDate>Tue, 24 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/2024/09/24/convenient-search-in-my-obsidian-notes/</guid>
+      <description>&lt;p&gt;I came across this idea of better search in Obsidian notes: &lt;a href=&#34;https://simplyexplained.com/blog/how-i-use-alfred-to-search-obsidian-notes/&#34;&gt;https://simplyexplained.com/blog/how-i-use-alfred-to-search-obsidian-notes/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;This should work nicely, but:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;it would require installing an additional tool Alfred,&lt;/li&gt;
 &lt;li&gt;would bind even more to MacOS ecosystem - what if I want to use the same workflow on Linux,&lt;/li&gt;
 &lt;li&gt;would not be too VCS friendly - hard to version those UI wizards&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;So I&amp;rsquo;ve figured I can do better, with just CLI tools. That resulted in the following short script:&lt;/p&gt;</description></item><item><title>git-commit script</title><link>https://marcin.cylke.com.pl/2023/06/27/git-commit-script/</link><pubDate>Tue, 27 Jun 2023 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2023/06/27/git-commit-script/</guid><description>&lt;p&gt;The organization I work in, has this practice of annotating commit messages with ticket numbers. From what I know this tends to be quite a common them all around the IT industry. It serves the purpose of accountability for future checks, current information for others on what the commit is actually about, etc.
+&lt;p&gt;So I&amp;rsquo;ve figured I can do better, with just CLI tools. That resulted in the following short script:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>git-commit script</title>
+      <link>https://marcin.cylke.com.pl/2023/06/27/git-commit-script/</link>
+      <pubDate>Tue, 27 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/2023/06/27/git-commit-script/</guid>
+      <description>&lt;p&gt;The organization I work in, has this practice of annotating commit messages with ticket numbers. From what I know this tends to be quite a common them all around the IT industry. It serves the purpose of accountability for future checks, current information for others on what the commit is actually about, etc.
 There may be many more things to add here - as an adventage of such a&lt;/p&gt;
-&lt;p&gt;Some time ago I&amp;rsquo;ve started using this small snippet of code as my &lt;code&gt;pre-commit&lt;/code&gt; hook. It&amp;rsquo;s main purpose is to free me from remembering or checking which JIRA ticket should I prepend to my Git message.&lt;/p&gt;</description></item><item><title>an ode to fzf</title><link>https://marcin.cylke.com.pl/2023/05/29/an-ode-to-fzf/</link><pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2023/05/29/an-ode-to-fzf/</guid><description>&lt;p&gt;What is &lt;code&gt;fzf&lt;/code&gt;? How could I&amp;rsquo;ve lived without it for so long?! It&amp;rsquo;s just a pretty little fuzzy search tool, written in go. You can find it here: &lt;a href="https://github.com/junegunn/fzf"&gt;https://github.com/junegunn/fzf&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id="important-features"&gt;Important features&lt;/h2&gt;
+&lt;p&gt;Some time ago I&amp;rsquo;ve started using this small snippet of code as my &lt;code&gt;pre-commit&lt;/code&gt; hook. It&amp;rsquo;s main purpose is to free me from remembering or checking which JIRA ticket should I prepend to my Git message.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>an ode to fzf</title>
+      <link>https://marcin.cylke.com.pl/2023/05/29/an-ode-to-fzf/</link>
+      <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/2023/05/29/an-ode-to-fzf/</guid>
+      <description>&lt;p&gt;What is &lt;code&gt;fzf&lt;/code&gt;? How could I&amp;rsquo;ve lived without it for so long?! It&amp;rsquo;s just a pretty little fuzzy search tool, written in go. You can find it here: &lt;a href=&#34;https://github.com/junegunn/fzf&#34;&gt;https://github.com/junegunn/fzf&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;important-features&#34;&gt;Important features&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;fuzzy search in a list of lines - thanks to that, it&amp;rsquo;s really easy to find something in a considerably big list of items&lt;/li&gt;
 &lt;li&gt;it&amp;rsquo;s blazingly fast!&lt;/li&gt;
 &lt;li&gt;very nice shell integrations&lt;/li&gt;
-&lt;li&gt;many additional features - like preview for files (go here to see examples: &lt;a href="https://github.com/junegunn/fzf#preview-window"&gt;https://github.com/junegunn/fzf#preview-window&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;many additional features - like preview for files (go here to see examples: &lt;a href=&#34;https://github.com/junegunn/fzf#preview-window&#34;&gt;https://github.com/junegunn/fzf#preview-window&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="usages"&gt;Usages&lt;/h2&gt;
+&lt;h2 id=&#34;usages&#34;&gt;Usages&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;shell history&lt;/li&gt;
 &lt;li&gt;my git-commit message script&lt;/li&gt;
-&lt;li&gt;various CLI python tools, using this wrapper &lt;a href="https://github.com/nk412/pyfzf"&gt;https://github.com/nk412/pyfzf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;various CLI python tools, using this wrapper &lt;a href=&#34;https://github.com/nk412/pyfzf&#34;&gt;https://github.com/nk412/pyfzf&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="browsing-through-shell-history"&gt;Browsing through shell history&lt;/h3&gt;
-&lt;p&gt;This is simply &lt;strong&gt;the&lt;/strong&gt; most useful feature for me. Previously, I&amp;rsquo;ve extensively used &lt;code&gt;ctrl+r&lt;/code&gt; to search through the past commands, but doing this with &lt;code&gt;fzf&lt;/code&gt; is much more powerful!&lt;/p&gt;</description></item></channel></rss>
+&lt;h3 id=&#34;browsing-through-shell-history&#34;&gt;Browsing through shell history&lt;/h3&gt;
+&lt;p&gt;This is simply &lt;strong&gt;the&lt;/strong&gt; most useful feature for me. Previously, I&amp;rsquo;ve extensively used &lt;code&gt;ctrl+r&lt;/code&gt; to search through the past commands, but doing this with &lt;code&gt;fzf&lt;/code&gt; is much more powerful!&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

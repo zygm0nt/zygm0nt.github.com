@@ -1,1 +1,30 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>It on Tech ramblings by Marcin</title><link>https://marcin.cylke.com.pl/tags/it/</link><description>Recent content in It on Tech ramblings by Marcin</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 07 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/tags/it/index.xml" rel="self" type="application/rss+xml"/><item><title>SolarWinds supply chain attack</title><link>https://marcin.cylke.com.pl/2024/04/07/solarwinds-supply-chain-attack/</link><pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate><guid>https://marcin.cylke.com.pl/2024/04/07/solarwinds-supply-chain-attack/</guid><description>&lt;p&gt;&lt;img alt=" Create an abstract, humorous illustration of the SolarWinds supply chain attack, incorporating elements of solar and wind in a playful manner. The scene should transform into an even more abstract and artistic representation, where the digital landscape of computers and servers intermingles with solar panels and wind turbines in a surreal composition. The sneaky figure trying to insert a USB drive should be stylized as a quirky, almost abstract character, blending into this whimsical world. Use bold, vibrant colors like magenta, orange, lime green, and electric blue to give the artwork an energetic and imaginative flair, moving away from realism and closer to an abstract art style. " loading="lazy" src="https://marcin.cylke.com.pl/post_images/solarwinds-supply-chain-attack-0.webp"&gt;&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>It on Tech ramblings by Marcin</title>
+    <link>https://marcin.cylke.com.pl/tags/it/</link>
+    <description>Recent content in It on Tech ramblings by Marcin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 28 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/tags/it/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>paper-age</title>
+      <link>https://marcin.cylke.com.pl/til/2026-04-28-til-paper-age/</link>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/til/2026-04-28-til-paper-age/</guid>
+      <description>&lt;p&gt;My laptop is gone. My password manager database lives in the cloud - but the cloud storage password is a random 40-character string that only exists inside that password manager. Classic chicken-and-egg. My solution: print the password on paper, encrypted.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;%5Bhttps://github.com/matiaskorhonen/paper-age%5D&#34;&gt;&lt;code&gt;paper-age&lt;/code&gt;&lt;/a&gt; is a tool that takes any secret and produces a printable PDF containing a QR code with the data encrypted using &lt;a href=&#34;https://age-encryption.org/&#34;&gt;age&lt;/a&gt; - passphrase-based symmetric encryption. One passphrase to remember, everything else on paper.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>SolarWinds supply chain attack</title>
+      <link>https://marcin.cylke.com.pl/2024/04/07/solarwinds-supply-chain-attack/</link>
+      <pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://marcin.cylke.com.pl/2024/04/07/solarwinds-supply-chain-attack/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34; Create an abstract, humorous illustration of the SolarWinds supply chain attack, incorporating elements of solar and wind in a playful manner. The scene should transform into an even more abstract and artistic representation, where the digital landscape of computers and servers intermingles with solar panels and wind turbines in a surreal composition. The sneaky figure trying to insert a USB drive should be stylized as a quirky, almost abstract character, blending into this whimsical world. Use bold, vibrant colors like magenta, orange, lime green, and electric blue to give the artwork an energetic and imaginative flair, moving away from realism and closer to an abstract art style.  &#34; loading=&#34;lazy&#34; src=&#34;https://marcin.cylke.com.pl/post_images/solarwinds-supply-chain-attack-0.webp&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

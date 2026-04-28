@@ -1,4 +1,13 @@
-<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Dmesg z Openbsd/sgi | Tech ramblings by Marcin</title><meta name=keywords content><meta name=description content='
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Dmesg z Openbsd/sgi | Tech ramblings by Marcin</title>
+<meta name="keywords" content="">
+<meta name="description" content="
 Wracając do starego tematu OpenBSD na moim SGI O2, postanowiłem lekko odświeżyć tą maszynę. Dostałą uaktualnienie małe. Przysiedziałem również nad dostosowaniem systemu do swoich potrzeb, instalacji potrzebnego softu itp.
 Na początek dmesg z działąjącego systemu:
 
@@ -20,13 +29,13 @@ clock0 at mainbus0: ticker on int5 using count register
 macebus0 at mainbus0: crime rev 10.1
 macepcibr0 at macebus0: mace rev 1, host system O2
 pci0 at macepcibr0 bus 0
-ahc0 at pci0 dev 1 function 0 "Adaptec AIC-7880" rev 0x00: irq 9
+ahc0 at pci0 dev 1 function 0 &#34;Adaptec AIC-7880&#34; rev 0x00: irq 9
 ahc0: Host Adapter Bios disabled.  Using default SCSI device parameters
 scsibus0 at ahc0: 16 targets, initiator 7
 sd0 at scsibus0 targ 1 lun 0:  SCSI2 0/direct fixed
 sd0: 4340MB, 512 bytes/sec, 8888543 sec total
 cd0 at scsibus0 targ 4 lun 0:  SCSI2 5/cdrom removable
-ahc1 at pci0 dev 2 function 0 "Adaptec AIC-7880" rev 0x00: irq 10
+ahc1 at pci0 dev 2 function 0 &#34;Adaptec AIC-7880&#34; rev 0x00: irq 10
 ahc1: Host Adapter Bios disabled.  Using default SCSI device parameters
 scsibus1 at ahc1: 16 targets, initiator 7
 dsrtc0 at macebus0: DS1687
@@ -50,13 +59,240 @@ boot device: sd0
 root on sd0a swap on sd0b dump on sd0b
 
 
-Niby działa dobrze, z kilkoma wyjątkami:'><meta name=author content="Marcin Cylke"><link rel=canonical href=https://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/><link crossorigin=anonymous href=/assets/css/stylesheet.2ef88c6e9b91917ba47ee47c08eceac58e4063f58023c5794d790144e14eeb83.css integrity="sha256-LviMbpuRkXukfuR8COzqxY5AY/WAI8V5TXkBROFO64M=" rel="preload stylesheet" as=style><link rel=icon href=https://marcin.cylke.com.pl/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://marcin.cylke.com.pl/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://marcin.cylke.com.pl/favicon-32x32.png><link rel=apple-touch-icon href=https://marcin.cylke.com.pl/apple-touch-icon.png><link rel=mask-icon href=https://marcin.cylke.com.pl/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><link rel=stylesheet href=/css/book_section.css><link rel=stylesheet href=/css/on_this_day.css><link rel=stylesheet href=/css/til.css><script defer src=/js/code-highlight.js></script><meta property="og:url" content="https://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/"><meta property="og:site_name" content="Tech ramblings by Marcin"><meta property="og:title" content="Dmesg z Openbsd/sgi"><meta property="og:description" content='Wracając do starego tematu OpenBSD na moim SGI O2, postanowiłem lekko odświeżyć tą maszynę. Dostałą uaktualnienie małe. Przysiedziałem również nad dostosowaniem systemu do swoich potrzeb, instalacji potrzebnego softu itp.
+Niby działa dobrze, z kilkoma wyjątkami:">
+<meta name="author" content="Marcin Cylke">
+<link rel="canonical" href="https://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.2ef88c6e9b91917ba47ee47c08eceac58e4063f58023c5794d790144e14eeb83.css" integrity="sha256-LviMbpuRkXukfuR8COzqxY5AY/WAI8V5TXkBROFO64M=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://marcin.cylke.com.pl/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://marcin.cylke.com.pl/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://marcin.cylke.com.pl/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://marcin.cylke.com.pl/apple-touch-icon.png">
+<link rel="mask-icon" href="https://marcin.cylke.com.pl/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/book_section.css">
+<link rel="stylesheet" href="/css/on_this_day.css">
+<link rel="stylesheet" href="/css/til.css">
+<script defer src="/js/code-highlight.js"></script>
+<meta property="og:url" content="https://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/">
+  <meta property="og:site_name" content="Tech ramblings by Marcin">
+  <meta property="og:title" content="Dmesg z Openbsd/sgi">
+  <meta property="og:description" content="Wracając do starego tematu OpenBSD na moim SGI O2, postanowiłem lekko odświeżyć tą maszynę. Dostałą uaktualnienie małe. Przysiedziałem również nad dostosowaniem systemu do swoich potrzeb, instalacji potrzebnego softu itp.
 Na początek dmesg z działąjącego systemu:
-[ using 433608 bytes of bsd ELF symbol table ] Copyright (c) 1982, 1986, 1989, 1991, 1993 The Regents of the University of California. All rights reserved. Copyright (c) 1995-2009 OpenBSD. All rights reserved. http://www.OpenBSD.org OpenBSD 4.6-current (GENERIC-IP32) #49: Fri Jul 31 05:07:50 MDT 2009 deraadt@sgi.openbsd.org:/usr/src/sys/arch/sgi/compile/GENERIC-IP32 real mem = 67108864 (64MB) rsvd mem = 7020544 (6MB) avail mem = 40771584 (38MB) mainbus0 at root cpu0 at mainbus0: MIPS R5000 CPU rev 2.1 180 MHz with R5000 based FPC rev 1.0 cpu0: cache L1-I 32KB D 32KB 2 way, L2 512KB direct clock0 at mainbus0: ticker on int5 using count register macebus0 at mainbus0: crime rev 10.1 macepcibr0 at macebus0: mace rev 1, host system O2 pci0 at macepcibr0 bus 0 ahc0 at pci0 dev 1 function 0 "Adaptec AIC-7880" rev 0x00: irq 9 ahc0: Host Adapter Bios disabled. Using default SCSI device parameters scsibus0 at ahc0: 16 targets, initiator 7 sd0 at scsibus0 targ 1 lun 0: SCSI2 0/direct fixed sd0: 4340MB, 512 bytes/sec, 8888543 sec total cd0 at scsibus0 targ 4 lun 0: SCSI2 5/cdrom removable ahc1 at pci0 dev 2 function 0 "Adaptec AIC-7880" rev 0x00: irq 10 ahc1: Host Adapter Bios disabled. Using default SCSI device parameters scsibus1 at ahc1: 16 targets, initiator 7 dsrtc0 at macebus0: DS1687 com0 at macebus0 base 0x00390000 irq 5: ns16550a, 16 byte fifo com1 at macebus0 base 0x00398000 irq 5: ns16550a, 16 byte fifo mec0 at macebus0 base 0x00280000 irq 4: MAC-110 rev 1, address 08:00:69:0c:98:fb nsphy0 at mec0 phy 11: DP83840 10/100 PHY, rev. 0 mavb0 at macebus0 base 0x00300000 irq 7: AD1843 rev 1 audio0 at mavb0 mkbc0 at macebus0 base 0x00320000 irq 6 pckbd0 at mkbc0 (kbd slot) wskbd0 at pckbd0: console keyboard power0 at macebus0 irq 6 gbe0 at mainbus0: rev 1, 8MB, 1280x1024 at 8 bits wsdisplay0 at gbe0 mux 1: console (std, vt100 emulation), using wskbd0 wsdisplay0: screen 1 added (std, vt100 emulation) softraid0 at root ahc0: target 1 using 16bit transfers ahc0: target 1 synchronous at 20.0MHz, offset = 0x8 boot device: sd0 root on sd0a swap on sd0b dump on sd0b Niby działa dobrze, z kilkoma wyjątkami:'><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2010-04-25T12:20:34+00:00"><meta property="article:modified_time" content="2010-04-25T12:20:34+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Dmesg z Openbsd/sgi"><meta name=twitter:description content='Wracając do starego tematu OpenBSD na moim SGI O2, postanowiłem lekko odświeżyć tą maszynę. Dostałą uaktualnienie małe. Przysiedziałem również nad dostosowaniem systemu do swoich potrzeb, instalacji potrzebnego softu itp.
+[ using 433608 bytes of bsd ELF symbol table ] Copyright (c) 1982, 1986, 1989, 1991, 1993 The Regents of the University of California. All rights reserved. Copyright (c) 1995-2009 OpenBSD. All rights reserved. http://www.OpenBSD.org OpenBSD 4.6-current (GENERIC-IP32) #49: Fri Jul 31 05:07:50 MDT 2009 deraadt@sgi.openbsd.org:/usr/src/sys/arch/sgi/compile/GENERIC-IP32 real mem = 67108864 (64MB) rsvd mem = 7020544 (6MB) avail mem = 40771584 (38MB) mainbus0 at root cpu0 at mainbus0: MIPS R5000 CPU rev 2.1 180 MHz with R5000 based FPC rev 1.0 cpu0: cache L1-I 32KB D 32KB 2 way, L2 512KB direct clock0 at mainbus0: ticker on int5 using count register macebus0 at mainbus0: crime rev 10.1 macepcibr0 at macebus0: mace rev 1, host system O2 pci0 at macepcibr0 bus 0 ahc0 at pci0 dev 1 function 0 &#34;Adaptec AIC-7880&#34; rev 0x00: irq 9 ahc0: Host Adapter Bios disabled. Using default SCSI device parameters scsibus0 at ahc0: 16 targets, initiator 7 sd0 at scsibus0 targ 1 lun 0: SCSI2 0/direct fixed sd0: 4340MB, 512 bytes/sec, 8888543 sec total cd0 at scsibus0 targ 4 lun 0: SCSI2 5/cdrom removable ahc1 at pci0 dev 2 function 0 &#34;Adaptec AIC-7880&#34; rev 0x00: irq 10 ahc1: Host Adapter Bios disabled. Using default SCSI device parameters scsibus1 at ahc1: 16 targets, initiator 7 dsrtc0 at macebus0: DS1687 com0 at macebus0 base 0x00390000 irq 5: ns16550a, 16 byte fifo com1 at macebus0 base 0x00398000 irq 5: ns16550a, 16 byte fifo mec0 at macebus0 base 0x00280000 irq 4: MAC-110 rev 1, address 08:00:69:0c:98:fb nsphy0 at mec0 phy 11: DP83840 10/100 PHY, rev. 0 mavb0 at macebus0 base 0x00300000 irq 7: AD1843 rev 1 audio0 at mavb0 mkbc0 at macebus0 base 0x00320000 irq 6 pckbd0 at mkbc0 (kbd slot) wskbd0 at pckbd0: console keyboard power0 at macebus0 irq 6 gbe0 at mainbus0: rev 1, 8MB, 1280x1024 at 8 bits wsdisplay0 at gbe0 mux 1: console (std, vt100 emulation), using wskbd0 wsdisplay0: screen 1 added (std, vt100 emulation) softraid0 at root ahc0: target 1 using 16bit transfers ahc0: target 1 synchronous at 20.0MHz, offset = 0x8 boot device: sd0 root on sd0a swap on sd0b dump on sd0b Niby działa dobrze, z kilkoma wyjątkami:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2010-04-25T12:20:34+00:00">
+    <meta property="article:modified_time" content="2010-04-25T12:20:34+00:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Dmesg z Openbsd/sgi">
+  <meta name="twitter:description" content="Wracając do starego tematu OpenBSD na moim SGI O2, postanowiłem lekko odświeżyć tą maszynę. Dostałą uaktualnienie małe. Przysiedziałem również nad dostosowaniem systemu do swoich potrzeb, instalacji potrzebnego softu itp.
 Na początek dmesg z działąjącego systemu:
-[ using 433608 bytes of bsd ELF symbol table ] Copyright (c) 1982, 1986, 1989, 1991, 1993 The Regents of the University of California. All rights reserved. Copyright (c) 1995-2009 OpenBSD. All rights reserved. http://www.OpenBSD.org OpenBSD 4.6-current (GENERIC-IP32) #49: Fri Jul 31 05:07:50 MDT 2009 deraadt@sgi.openbsd.org:/usr/src/sys/arch/sgi/compile/GENERIC-IP32 real mem = 67108864 (64MB) rsvd mem = 7020544 (6MB) avail mem = 40771584 (38MB) mainbus0 at root cpu0 at mainbus0: MIPS R5000 CPU rev 2.1 180 MHz with R5000 based FPC rev 1.0 cpu0: cache L1-I 32KB D 32KB 2 way, L2 512KB direct clock0 at mainbus0: ticker on int5 using count register macebus0 at mainbus0: crime rev 10.1 macepcibr0 at macebus0: mace rev 1, host system O2 pci0 at macepcibr0 bus 0 ahc0 at pci0 dev 1 function 0 "Adaptec AIC-7880" rev 0x00: irq 9 ahc0: Host Adapter Bios disabled. Using default SCSI device parameters scsibus0 at ahc0: 16 targets, initiator 7 sd0 at scsibus0 targ 1 lun 0: SCSI2 0/direct fixed sd0: 4340MB, 512 bytes/sec, 8888543 sec total cd0 at scsibus0 targ 4 lun 0: SCSI2 5/cdrom removable ahc1 at pci0 dev 2 function 0 "Adaptec AIC-7880" rev 0x00: irq 10 ahc1: Host Adapter Bios disabled. Using default SCSI device parameters scsibus1 at ahc1: 16 targets, initiator 7 dsrtc0 at macebus0: DS1687 com0 at macebus0 base 0x00390000 irq 5: ns16550a, 16 byte fifo com1 at macebus0 base 0x00398000 irq 5: ns16550a, 16 byte fifo mec0 at macebus0 base 0x00280000 irq 4: MAC-110 rev 1, address 08:00:69:0c:98:fb nsphy0 at mec0 phy 11: DP83840 10/100 PHY, rev. 0 mavb0 at macebus0 base 0x00300000 irq 7: AD1843 rev 1 audio0 at mavb0 mkbc0 at macebus0 base 0x00320000 irq 6 pckbd0 at mkbc0 (kbd slot) wskbd0 at pckbd0: console keyboard power0 at macebus0 irq 6 gbe0 at mainbus0: rev 1, 8MB, 1280x1024 at 8 bits wsdisplay0 at gbe0 mux 1: console (std, vt100 emulation), using wskbd0 wsdisplay0: screen 1 added (std, vt100 emulation) softraid0 at root ahc0: target 1 using 16bit transfers ahc0: target 1 synchronous at 20.0MHz, offset = 0x8 boot device: sd0 root on sd0a swap on sd0b dump on sd0b Niby działa dobrze, z kilkoma wyjątkami:'><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://marcin.cylke.com.pl/post/"},{"@type":"ListItem","position":2,"name":"Dmesg z Openbsd/sgi","item":"https://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Dmesg z Openbsd/sgi","name":"Dmesg z Openbsd\/sgi","description":" Wracając do starego tematu OpenBSD na moim SGI O2, postanowiłem lekko odświeżyć tą maszynę. Dostałą uaktualnienie małe. Przysiedziałem również nad dostosowaniem systemu do swoich potrzeb, instalacji potrzebnego softu itp.\nNa początek dmesg z działąjącego systemu:\n[ using 433608 bytes of bsd ELF symbol table ] Copyright (c) 1982, 1986, 1989, 1991, 1993 The Regents of the University of California. All rights reserved. Copyright (c) 1995-2009 OpenBSD. All rights reserved. http://www.OpenBSD.org OpenBSD 4.6-current (GENERIC-IP32) #49: Fri Jul 31 05:07:50 MDT 2009 deraadt@sgi.openbsd.org:/usr/src/sys/arch/sgi/compile/GENERIC-IP32 real mem = 67108864 (64MB) rsvd mem = 7020544 (6MB) avail mem = 40771584 (38MB) mainbus0 at root cpu0 at mainbus0: MIPS R5000 CPU rev 2.1 180 MHz with R5000 based FPC rev 1.0 cpu0: cache L1-I 32KB D 32KB 2 way, L2 512KB direct clock0 at mainbus0: ticker on int5 using count register macebus0 at mainbus0: crime rev 10.1 macepcibr0 at macebus0: mace rev 1, host system O2 pci0 at macepcibr0 bus 0 ahc0 at pci0 dev 1 function 0 \"Adaptec AIC-7880\" rev 0x00: irq 9 ahc0: Host Adapter Bios disabled. Using default SCSI device parameters scsibus0 at ahc0: 16 targets, initiator 7 sd0 at scsibus0 targ 1 lun 0: SCSI2 0/direct fixed sd0: 4340MB, 512 bytes/sec, 8888543 sec total cd0 at scsibus0 targ 4 lun 0: SCSI2 5/cdrom removable ahc1 at pci0 dev 2 function 0 \"Adaptec AIC-7880\" rev 0x00: irq 10 ahc1: Host Adapter Bios disabled. Using default SCSI device parameters scsibus1 at ahc1: 16 targets, initiator 7 dsrtc0 at macebus0: DS1687 com0 at macebus0 base 0x00390000 irq 5: ns16550a, 16 byte fifo com1 at macebus0 base 0x00398000 irq 5: ns16550a, 16 byte fifo mec0 at macebus0 base 0x00280000 irq 4: MAC-110 rev 1, address 08:00:69:0c:98:fb nsphy0 at mec0 phy 11: DP83840 10/100 PHY, rev. 0 mavb0 at macebus0 base 0x00300000 irq 7: AD1843 rev 1 audio0 at mavb0 mkbc0 at macebus0 base 0x00320000 irq 6 pckbd0 at mkbc0 (kbd slot) wskbd0 at pckbd0: console keyboard power0 at macebus0 irq 6 gbe0 at mainbus0: rev 1, 8MB, 1280x1024 at 8 bits wsdisplay0 at gbe0 mux 1: console (std, vt100 emulation), using wskbd0 wsdisplay0: screen 1 added (std, vt100 emulation) softraid0 at root ahc0: target 1 using 16bit transfers ahc0: target 1 synchronous at 20.0MHz, offset = 0x8 boot device: sd0 root on sd0a swap on sd0b dump on sd0b Niby działa dobrze, z kilkoma wyjątkami:\n","keywords":[],"articleBody":" Wracając do starego tematu OpenBSD na moim SGI O2, postanowiłem lekko odświeżyć tą maszynę. Dostałą uaktualnienie małe. Przysiedziałem również nad dostosowaniem systemu do swoich potrzeb, instalacji potrzebnego softu itp.\nNa początek dmesg z działąjącego systemu:\n[ using 433608 bytes of bsd ELF symbol table ] Copyright (c) 1982, 1986, 1989, 1991, 1993 The Regents of the University of California. All rights reserved. Copyright (c) 1995-2009 OpenBSD. All rights reserved. http://www.OpenBSD.org OpenBSD 4.6-current (GENERIC-IP32) #49: Fri Jul 31 05:07:50 MDT 2009 deraadt@sgi.openbsd.org:/usr/src/sys/arch/sgi/compile/GENERIC-IP32 real mem = 67108864 (64MB) rsvd mem = 7020544 (6MB) avail mem = 40771584 (38MB) mainbus0 at root cpu0 at mainbus0: MIPS R5000 CPU rev 2.1 180 MHz with R5000 based FPC rev 1.0 cpu0: cache L1-I 32KB D 32KB 2 way, L2 512KB direct clock0 at mainbus0: ticker on int5 using count register macebus0 at mainbus0: crime rev 10.1 macepcibr0 at macebus0: mace rev 1, host system O2 pci0 at macepcibr0 bus 0 ahc0 at pci0 dev 1 function 0 \"Adaptec AIC-7880\" rev 0x00: irq 9 ahc0: Host Adapter Bios disabled. Using default SCSI device parameters scsibus0 at ahc0: 16 targets, initiator 7 sd0 at scsibus0 targ 1 lun 0: SCSI2 0/direct fixed sd0: 4340MB, 512 bytes/sec, 8888543 sec total cd0 at scsibus0 targ 4 lun 0: SCSI2 5/cdrom removable ahc1 at pci0 dev 2 function 0 \"Adaptec AIC-7880\" rev 0x00: irq 10 ahc1: Host Adapter Bios disabled. Using default SCSI device parameters scsibus1 at ahc1: 16 targets, initiator 7 dsrtc0 at macebus0: DS1687 com0 at macebus0 base 0x00390000 irq 5: ns16550a, 16 byte fifo com1 at macebus0 base 0x00398000 irq 5: ns16550a, 16 byte fifo mec0 at macebus0 base 0x00280000 irq 4: MAC-110 rev 1, address 08:00:69:0c:98:fb nsphy0 at mec0 phy 11: DP83840 10/100 PHY, rev. 0 mavb0 at macebus0 base 0x00300000 irq 7: AD1843 rev 1 audio0 at mavb0 mkbc0 at macebus0 base 0x00320000 irq 6 pckbd0 at mkbc0 (kbd slot) wskbd0 at pckbd0: console keyboard power0 at macebus0 irq 6 gbe0 at mainbus0: rev 1, 8MB, 1280x1024 at 8 bits wsdisplay0 at gbe0 mux 1: console (std, vt100 emulation), using wskbd0 wsdisplay0: screen 1 added (std, vt100 emulation) softraid0 at root ahc0: target 1 using 16bit transfers ahc0: target 1 synchronous at 20.0MHz, offset = 0x8 boot device: sd0 root on sd0a swap on sd0b dump on sd0b Niby działa dobrze, z kilkoma wyjątkami:\nnie udało mi się uruchomić Xów z działającą myszką. To dlatego, że nie wiem jakie użądzenie powinienem utworzyć w /dev i jakie wpisać do xorg.conf pakiety binarne są dostępne w architekturze mips64 - co nie jest całkiem intuicyjne, ale działa :) coś jest na rzeczy z przełączaniem wirtualnych screenów w konsoli - nie działa CTRL+ALT+F? i nie wiem dlaczego, a wszelkie googlanie nie daje zadowalających efektów Jak narazie zainstalowałem podstawowe utilki ułatwiające pracę na konsoli - screen, vim, elinks, etc. Czas na zabawę z pf :)\nComments Marcin Cylke @pecet, czemu nie zapytasz \"po co sgi o2?\" przecież to też wydaje się pozbawione logiki :)\nA jeśli chodzi o OpenBSD - czy ogólnie inne BSD, to może warto najpierw coś o nich przeczytać i dowiedzieć się co to jest, i czemu niektórym się to może przydać, zamiast od razu flame'ować.\nmt3o @Pecet: Po to samo, po co na starym kompie ja zainstalowałem FBSD: aby poznać coś nowego. Linux nie zjadł wszystkich rozumów.\npecet Ale czemu BSD, po co się męczyć Linux stał się użyteczny ostatnimi latami, i obsługuje coraz więcej sprzętu, więc \"hakerzy\" go już nie lubią?\nMarcin Cylke No co Ty? :) przecież z jakiegoś powodu zainstalowałem właśnie OpenBSD :) nie po to żeby od razu przy jakiejś trudności się go pozbywać. Choć chętnie spróbowałbym teraz jak działa IRIX na tym sprzęcie.\nred Pecet: robisz się trochę nudny.\npecet Zainstaluj Gentoo\n","wordCount":"621","inLanguage":"en","datePublished":"2010-04-25T12:20:34Z","dateModified":"2010-04-25T12:20:34Z","author":{"@type":"Person","name":"Marcin Cylke"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/"},"publisher":{"@type":"Organization","name":"Tech ramblings by Marcin","logo":{"@type":"ImageObject","url":"https://marcin.cylke.com.pl/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://marcin.cylke.com.pl/ accesskey=h title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
-<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://marcin.cylke.com.pl/about/ title=About><span>About</span></a></li><li><a href=https://marcin.cylke.com.pl/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://marcin.cylke.com.pl/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://marcin.cylke.com.pl/archives/ title=Archives><span>Archives</span></a></li><li><a href=https://marcin.cylke.com.pl/travels/ title=Travels><span>Travels</span></a></li><li><a href=https://marcin.cylke.com.pl/til/ title=TIL><span>TIL</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://marcin.cylke.com.pl/>Home</a>&nbsp;»&nbsp;<a href=https://marcin.cylke.com.pl/post/>Posts</a></div><h1 class="post-title entry-hint-parent">Dmesg z Openbsd/sgi</h1><div class=post-meta><span title='2010-04-25 12:20:34 +0000 UTC'>April 25, 2010</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=# aria-label=Comments>Comments</a></li></ul></div></details></div><div class=post-content><div class=post><p>Wracając do starego tematu OpenBSD na moim SGI O2, postanowiłem lekko odświeżyć tą maszynę. Dostałą uaktualnienie małe. Przysiedziałem również nad dostosowaniem systemu do swoich potrzeb, instalacji potrzebnego softu itp.</p><excerpt><p>Na początek <code>dmesg</code> z działąjącego systemu:</p><pre>
+[ using 433608 bytes of bsd ELF symbol table ] Copyright (c) 1982, 1986, 1989, 1991, 1993 The Regents of the University of California. All rights reserved. Copyright (c) 1995-2009 OpenBSD. All rights reserved. http://www.OpenBSD.org OpenBSD 4.6-current (GENERIC-IP32) #49: Fri Jul 31 05:07:50 MDT 2009 deraadt@sgi.openbsd.org:/usr/src/sys/arch/sgi/compile/GENERIC-IP32 real mem = 67108864 (64MB) rsvd mem = 7020544 (6MB) avail mem = 40771584 (38MB) mainbus0 at root cpu0 at mainbus0: MIPS R5000 CPU rev 2.1 180 MHz with R5000 based FPC rev 1.0 cpu0: cache L1-I 32KB D 32KB 2 way, L2 512KB direct clock0 at mainbus0: ticker on int5 using count register macebus0 at mainbus0: crime rev 10.1 macepcibr0 at macebus0: mace rev 1, host system O2 pci0 at macepcibr0 bus 0 ahc0 at pci0 dev 1 function 0 &#34;Adaptec AIC-7880&#34; rev 0x00: irq 9 ahc0: Host Adapter Bios disabled. Using default SCSI device parameters scsibus0 at ahc0: 16 targets, initiator 7 sd0 at scsibus0 targ 1 lun 0: SCSI2 0/direct fixed sd0: 4340MB, 512 bytes/sec, 8888543 sec total cd0 at scsibus0 targ 4 lun 0: SCSI2 5/cdrom removable ahc1 at pci0 dev 2 function 0 &#34;Adaptec AIC-7880&#34; rev 0x00: irq 10 ahc1: Host Adapter Bios disabled. Using default SCSI device parameters scsibus1 at ahc1: 16 targets, initiator 7 dsrtc0 at macebus0: DS1687 com0 at macebus0 base 0x00390000 irq 5: ns16550a, 16 byte fifo com1 at macebus0 base 0x00398000 irq 5: ns16550a, 16 byte fifo mec0 at macebus0 base 0x00280000 irq 4: MAC-110 rev 1, address 08:00:69:0c:98:fb nsphy0 at mec0 phy 11: DP83840 10/100 PHY, rev. 0 mavb0 at macebus0 base 0x00300000 irq 7: AD1843 rev 1 audio0 at mavb0 mkbc0 at macebus0 base 0x00320000 irq 6 pckbd0 at mkbc0 (kbd slot) wskbd0 at pckbd0: console keyboard power0 at macebus0 irq 6 gbe0 at mainbus0: rev 1, 8MB, 1280x1024 at 8 bits wsdisplay0 at gbe0 mux 1: console (std, vt100 emulation), using wskbd0 wsdisplay0: screen 1 added (std, vt100 emulation) softraid0 at root ahc0: target 1 using 16bit transfers ahc0: target 1 synchronous at 20.0MHz, offset = 0x8 boot device: sd0 root on sd0a swap on sd0b dump on sd0b Niby działa dobrze, z kilkoma wyjątkami:">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://marcin.cylke.com.pl/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Dmesg z Openbsd/sgi",
+      "item": "https://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Dmesg z Openbsd/sgi",
+  "name": "Dmesg z Openbsd\/sgi",
+  "description": " Wracając do starego tematu OpenBSD na moim SGI O2, postanowiłem lekko odświeżyć tą maszynę. Dostałą uaktualnienie małe. Przysiedziałem również nad dostosowaniem systemu do swoich potrzeb, instalacji potrzebnego softu itp.\nNa początek dmesg z działąjącego systemu:\n[ using 433608 bytes of bsd ELF symbol table ] Copyright (c) 1982, 1986, 1989, 1991, 1993 The Regents of the University of California. All rights reserved. Copyright (c) 1995-2009 OpenBSD. All rights reserved. http://www.OpenBSD.org OpenBSD 4.6-current (GENERIC-IP32) #49: Fri Jul 31 05:07:50 MDT 2009 deraadt@sgi.openbsd.org:/usr/src/sys/arch/sgi/compile/GENERIC-IP32 real mem = 67108864 (64MB) rsvd mem = 7020544 (6MB) avail mem = 40771584 (38MB) mainbus0 at root cpu0 at mainbus0: MIPS R5000 CPU rev 2.1 180 MHz with R5000 based FPC rev 1.0 cpu0: cache L1-I 32KB D 32KB 2 way, L2 512KB direct clock0 at mainbus0: ticker on int5 using count register macebus0 at mainbus0: crime rev 10.1 macepcibr0 at macebus0: mace rev 1, host system O2 pci0 at macepcibr0 bus 0 ahc0 at pci0 dev 1 function 0 \"Adaptec AIC-7880\" rev 0x00: irq 9 ahc0: Host Adapter Bios disabled. Using default SCSI device parameters scsibus0 at ahc0: 16 targets, initiator 7 sd0 at scsibus0 targ 1 lun 0: SCSI2 0/direct fixed sd0: 4340MB, 512 bytes/sec, 8888543 sec total cd0 at scsibus0 targ 4 lun 0: SCSI2 5/cdrom removable ahc1 at pci0 dev 2 function 0 \"Adaptec AIC-7880\" rev 0x00: irq 10 ahc1: Host Adapter Bios disabled. Using default SCSI device parameters scsibus1 at ahc1: 16 targets, initiator 7 dsrtc0 at macebus0: DS1687 com0 at macebus0 base 0x00390000 irq 5: ns16550a, 16 byte fifo com1 at macebus0 base 0x00398000 irq 5: ns16550a, 16 byte fifo mec0 at macebus0 base 0x00280000 irq 4: MAC-110 rev 1, address 08:00:69:0c:98:fb nsphy0 at mec0 phy 11: DP83840 10/100 PHY, rev. 0 mavb0 at macebus0 base 0x00300000 irq 7: AD1843 rev 1 audio0 at mavb0 mkbc0 at macebus0 base 0x00320000 irq 6 pckbd0 at mkbc0 (kbd slot) wskbd0 at pckbd0: console keyboard power0 at macebus0 irq 6 gbe0 at mainbus0: rev 1, 8MB, 1280x1024 at 8 bits wsdisplay0 at gbe0 mux 1: console (std, vt100 emulation), using wskbd0 wsdisplay0: screen 1 added (std, vt100 emulation) softraid0 at root ahc0: target 1 using 16bit transfers ahc0: target 1 synchronous at 20.0MHz, offset = 0x8 boot device: sd0 root on sd0a swap on sd0b dump on sd0b Niby działa dobrze, z kilkoma wyjątkami:\n",
+  "keywords": [
+    
+  ],
+  "articleBody": " Wracając do starego tematu OpenBSD na moim SGI O2, postanowiłem lekko odświeżyć tą maszynę. Dostałą uaktualnienie małe. Przysiedziałem również nad dostosowaniem systemu do swoich potrzeb, instalacji potrzebnego softu itp.\nNa początek dmesg z działąjącego systemu:\n[ using 433608 bytes of bsd ELF symbol table ] Copyright (c) 1982, 1986, 1989, 1991, 1993 The Regents of the University of California. All rights reserved. Copyright (c) 1995-2009 OpenBSD. All rights reserved. http://www.OpenBSD.org OpenBSD 4.6-current (GENERIC-IP32) #49: Fri Jul 31 05:07:50 MDT 2009 deraadt@sgi.openbsd.org:/usr/src/sys/arch/sgi/compile/GENERIC-IP32 real mem = 67108864 (64MB) rsvd mem = 7020544 (6MB) avail mem = 40771584 (38MB) mainbus0 at root cpu0 at mainbus0: MIPS R5000 CPU rev 2.1 180 MHz with R5000 based FPC rev 1.0 cpu0: cache L1-I 32KB D 32KB 2 way, L2 512KB direct clock0 at mainbus0: ticker on int5 using count register macebus0 at mainbus0: crime rev 10.1 macepcibr0 at macebus0: mace rev 1, host system O2 pci0 at macepcibr0 bus 0 ahc0 at pci0 dev 1 function 0 \"Adaptec AIC-7880\" rev 0x00: irq 9 ahc0: Host Adapter Bios disabled. Using default SCSI device parameters scsibus0 at ahc0: 16 targets, initiator 7 sd0 at scsibus0 targ 1 lun 0: SCSI2 0/direct fixed sd0: 4340MB, 512 bytes/sec, 8888543 sec total cd0 at scsibus0 targ 4 lun 0: SCSI2 5/cdrom removable ahc1 at pci0 dev 2 function 0 \"Adaptec AIC-7880\" rev 0x00: irq 10 ahc1: Host Adapter Bios disabled. Using default SCSI device parameters scsibus1 at ahc1: 16 targets, initiator 7 dsrtc0 at macebus0: DS1687 com0 at macebus0 base 0x00390000 irq 5: ns16550a, 16 byte fifo com1 at macebus0 base 0x00398000 irq 5: ns16550a, 16 byte fifo mec0 at macebus0 base 0x00280000 irq 4: MAC-110 rev 1, address 08:00:69:0c:98:fb nsphy0 at mec0 phy 11: DP83840 10/100 PHY, rev. 0 mavb0 at macebus0 base 0x00300000 irq 7: AD1843 rev 1 audio0 at mavb0 mkbc0 at macebus0 base 0x00320000 irq 6 pckbd0 at mkbc0 (kbd slot) wskbd0 at pckbd0: console keyboard power0 at macebus0 irq 6 gbe0 at mainbus0: rev 1, 8MB, 1280x1024 at 8 bits wsdisplay0 at gbe0 mux 1: console (std, vt100 emulation), using wskbd0 wsdisplay0: screen 1 added (std, vt100 emulation) softraid0 at root ahc0: target 1 using 16bit transfers ahc0: target 1 synchronous at 20.0MHz, offset = 0x8 boot device: sd0 root on sd0a swap on sd0b dump on sd0b Niby działa dobrze, z kilkoma wyjątkami:\nnie udało mi się uruchomić Xów z działającą myszką. To dlatego, że nie wiem jakie użądzenie powinienem utworzyć w /dev i jakie wpisać do xorg.conf pakiety binarne są dostępne w architekturze mips64 - co nie jest całkiem intuicyjne, ale działa :) coś jest na rzeczy z przełączaniem wirtualnych screenów w konsoli - nie działa CTRL+ALT+F? i nie wiem dlaczego, a wszelkie googlanie nie daje zadowalających efektów Jak narazie zainstalowałem podstawowe utilki ułatwiające pracę na konsoli - screen, vim, elinks, etc. Czas na zabawę z pf :)\nComments Marcin Cylke @pecet, czemu nie zapytasz \"po co sgi o2?\" przecież to też wydaje się pozbawione logiki :)\nA jeśli chodzi o OpenBSD - czy ogólnie inne BSD, to może warto najpierw coś o nich przeczytać i dowiedzieć się co to jest, i czemu niektórym się to może przydać, zamiast od razu flame'ować.\nmt3o @Pecet: Po to samo, po co na starym kompie ja zainstalowałem FBSD: aby poznać coś nowego. Linux nie zjadł wszystkich rozumów.\npecet Ale czemu BSD, po co się męczyć Linux stał się użyteczny ostatnimi latami, i obsługuje coraz więcej sprzętu, więc \"hakerzy\" go już nie lubią?\nMarcin Cylke No co Ty? :) przecież z jakiegoś powodu zainstalowałem właśnie OpenBSD :) nie po to żeby od razu przy jakiejś trudności się go pozbywać. Choć chętnie spróbowałbym teraz jak działa IRIX na tym sprzęcie.\nred Pecet: robisz się trochę nudny.\npecet Zainstaluj Gentoo\n",
+  "wordCount" : "621",
+  "inLanguage": "en",
+  "datePublished": "2010-04-25T12:20:34Z",
+  "dateModified": "2010-04-25T12:20:34Z",
+  "author":{
+    "@type": "Person",
+    "name": "Marcin Cylke"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tech ramblings by Marcin",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://marcin.cylke.com.pl/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://marcin.cylke.com.pl/" accesskey="h" title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://marcin.cylke.com.pl/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/travels/" title="Travels">
+                    <span>Travels</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/til/" title="TIL">
+                    <span>TIL</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://marcin.cylke.com.pl/">Home</a>&nbsp;»&nbsp;<a href="https://marcin.cylke.com.pl/post/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Dmesg z Openbsd/sgi
+    </h1>
+    <div class="post-meta"><span title='2010-04-25 12:20:34 +0000 UTC'>April 25, 2010</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#" aria-label="Comments">Comments</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content">
+<div class='post'>
+<p>Wracając do starego tematu OpenBSD na moim SGI O2, postanowiłem lekko odświeżyć tą maszynę. Dostałą uaktualnienie małe. Przysiedziałem również nad dostosowaniem systemu do swoich potrzeb, instalacji potrzebnego softu itp.</p>
+<EXCERPT><p>Na początek <code>dmesg</code> z działąjącego systemu:</p>
+
+<pre>
 [ using 433608 bytes of bsd ELF symbol table ]
 Copyright (c) 1982, 1986, 1989, 1991, 1993
     The Regents of the University of California.  All rights reserved.
@@ -77,9 +313,9 @@ pci0 at macepcibr0 bus 0
 ahc0 at pci0 dev 1 function 0 "Adaptec AIC-7880" rev 0x00: irq 9
 ahc0: Host Adapter Bios disabled.  Using default SCSI device parameters
 scsibus0 at ahc0: 16 targets, initiator 7
-sd0 at scsibus0 targ 1 lun 0: <sgi, ibm dchs04y, 3030> SCSI2 0/direct fixed
+sd0 at scsibus0 targ 1 lun 0: <SGI, IBM DCHS04Y, 3030> SCSI2 0/direct fixed
 sd0: 4340MB, 512 bytes/sec, 8888543 sec total
-cd0 at scsibus0 targ 4 lun 0: <toshiba, cd-rom xm-5401ta, 3605> SCSI2 5/cdrom removable
+cd0 at scsibus0 targ 4 lun 0: <TOSHIBA, CD-ROM XM-5401TA, 3605> SCSI2 5/cdrom removable
 ahc1 at pci0 dev 2 function 0 "Adaptec AIC-7880" rev 0x00: irq 10
 ahc1: Host Adapter Bios disabled.  Using default SCSI device parameters
 scsibus1 at ahc1: 16 targets, initiator 7
@@ -102,9 +338,207 @@ ahc0: target 1 using 16bit transfers
 ahc0: target 1 synchronous at 20.0MHz, offset = 0x8
 boot device: sd0
 root on sd0a swap on sd0b dump on sd0b
-</pre><p>Niby działa dobrze, z kilkoma wyjątkami:</p><ul><li>nie udało mi się uruchomić Xów z działającą myszką. To dlatego, że nie wiem jakie użądzenie powinienem utworzyć w /dev i jakie wpisać do xorg.conf</li><li>pakiety binarne są dostępne w architekturze <code>mips64</code> - co nie jest całkiem intuicyjne, ale działa :)</li><li>coś jest na rzeczy z przełączaniem wirtualnych screenów w konsoli - nie działa CTRL+ALT+F? i nie wiem dlaczego, a wszelkie googlanie nie daje zadowalających efektów</li></ul><p>Jak narazie zainstalowałem podstawowe utilki ułatwiające pracę na konsoli - screen, vim, elinks, etc. Czas na zabawę z <code>pf</code> :)</p></div><h2>Comments</h2><div class=comments><div class=comment><div class=author><a href=http://mcl.jogger.pl>Marcin Cylke</a></div><div class=content><p>@pecet, czemu nie zapytasz "po co sgi o2?" przecież to też wydaje się pozbawione logiki :)<br><br>A jeśli chodzi o OpenBSD - czy ogólnie inne BSD, to może warto najpierw coś o nich przeczytać i dowiedzieć się co to jest, i czemu niektórym się to może przydać, zamiast od razu flame'ować.</p></div></div><div class=comment><div class=author><a href=http://mt3o.jogger.pl>mt3o</a></div><div class=content><p>@Pecet: Po to samo, po co na starym kompie ja zainstalowałem FBSD: aby poznać coś nowego. Linux nie zjadł wszystkich rozumów.</p></div></div><div class=comment><div class=author><a href=http://pecet.jogger.pl>pecet</a></div><div class=content><p>Ale czemu BSD, po co się męczyć Linux stał się użyteczny ostatnimi latami, i obsługuje coraz więcej sprzętu, więc "hakerzy" go już nie lubią?</p></div></div><div class=comment><div class=author><a href=http://mcl.jogger.pl>Marcin Cylke</a></div><div class=content><p>No co Ty? :) przecież z jakiegoś powodu zainstalowałem właśnie OpenBSD :) nie po to żeby od razu przy jakiejś trudności się go pozbywać. Choć chętnie spróbowałbym teraz jak działa IRIX na tym sprzęcie.</p></div></div><div class=comment><div class=author><a href=http://red.jogger.pl>red</a></div><div class=content><p>Pecet: robisz się trochę nudny.</p></div></div><div class=comment><div class=author><a href=http://pecet.jogger.pl>pecet</a></div><div class=content><p>Zainstaluj Gentoo</p></div></div></div></div><footer class=post-footer><ul class=post-tags></ul><nav class=paginav><a class=prev href=https://marcin.cylke.com.pl/2010/05/07/eclipse-ecosystem/><span class=title>« Prev</span><br><span>Eclipse ecosystem</span>
-</a><a class=next href=https://marcin.cylke.com.pl/2010/04/21/unicode-w-pythonie/><span class=title>Next »</span><br><span>Unicode w Pythonie</span></a></nav></footer><script src=https://utteranc.es/client.js repo=zygm0nt/hugo-blog-incarnation issue-term=pathname theme=github-light crossorigin=anonymous async></script></article></main><footer class=footer><span>&copy; 2026 <a href=https://marcin.cylke.com.pl/>Tech ramblings by Marcin</a></span> ·
-<span>Powered by
-<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
-</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
+</pre>
+
+<p>Niby działa dobrze, z kilkoma wyjątkami:</p>
+
+<ul>
+<li> nie udało mi się uruchomić Xów z działającą myszką. To dlatego, że nie wiem jakie użądzenie powinienem utworzyć w /dev i jakie wpisać do xorg.conf</li>
+<li> pakiety binarne są dostępne w architekturze <code>mips64</code> - co nie jest całkiem intuicyjne, ale działa :)</li>
+<li>coś jest na rzeczy z przełączaniem wirtualnych screenów w konsoli - nie działa CTRL+ALT+F? i nie wiem dlaczego, a wszelkie googlanie nie daje zadowalających efektów</li>
+</ul>
+
+<p>Jak narazie zainstalowałem podstawowe utilki ułatwiające pracę na konsoli - screen, vim, elinks, etc. Czas na zabawę z <code>pf</code> :)</p>
+</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin Cylke</a></div>
+<div class='content'>
+<p>@pecet, czemu nie zapytasz &quot;po co sgi o2?&quot; przecież to też wydaje się pozbawione logiki :)<br />
+<br />
+A jeśli chodzi o OpenBSD - czy ogólnie inne BSD, to może warto najpierw coś o nich przeczytać i dowiedzieć się co to jest, i czemu niektórym się to może przydać, zamiast od razu flame'ować.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://mt3o.jogger.pl">mt3o</a></div>
+<div class='content'>
+<p>@Pecet: Po to samo, po co na starym kompie ja zainstalowałem FBSD: aby poznać coś nowego. Linux nie zjadł wszystkich rozumów.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://pecet.jogger.pl">pecet</a></div>
+<div class='content'>
+<p>Ale czemu BSD, po co się męczyć Linux stał się użyteczny ostatnimi latami, i obsługuje coraz więcej sprzętu, więc &quot;hakerzy&quot; go już nie lubią?</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin Cylke</a></div>
+<div class='content'>
+<p>No co Ty? :) przecież z jakiegoś powodu zainstalowałem właśnie OpenBSD :) nie po to żeby od razu przy jakiejś trudności się go pozbywać. Choć chętnie spróbowałbym teraz jak działa IRIX na tym sprzęcie.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://red.jogger.pl">red</a></div>
+<div class='content'>
+<p>Pecet: robisz się trochę nudny.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://pecet.jogger.pl">pecet</a></div>
+<div class='content'>
+<p>Zainstaluj Gentoo</p></div>
+</div>
+</div>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://marcin.cylke.com.pl/2010/05/07/eclipse-ecosystem/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Eclipse ecosystem</span>
+  </a>
+  <a class="next" href="https://marcin.cylke.com.pl/2010/04/21/unicode-w-pythonie/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Unicode w Pythonie</span>
+  </a>
+</nav>
+
+  </footer>
+<script src="https://utteranc.es/client.js"
+        repo="zygm0nt/hugo-blog-incarnation"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

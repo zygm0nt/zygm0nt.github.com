@@ -1,17 +1,476 @@
-<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Why Google Takeout is sooo bad! | Tech ramblings by Marcin</title><meta name=keywords content><meta name=description content="
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Why Google Takeout is sooo bad! | Tech ramblings by Marcin</title>
+<meta name="keywords" content="">
+<meta name="description" content="
 Author: IdeogramAI Prompt: The image shows a typical Google Takeout interface with a large error message indicating that the service is unavailable. In the background, there are frustrated users trying to download their data with unsuccessful attempts, represented by repeated &ldquo;Failed&rdquo; and &ldquo;Retry&rdquo; notifications.
 
-My current data setup is centered around Google Cloud as a place where I store my data. That&rsquo;s also related to how I use the whole vendor ecosystem."><meta name=author content="Marcin Cylke"><link rel=canonical href=https://marcin.cylke.com.pl/2024/06/16/why-google-takeout-is-sooo-bad/><link crossorigin=anonymous href=/assets/css/stylesheet.2ef88c6e9b91917ba47ee47c08eceac58e4063f58023c5794d790144e14eeb83.css integrity="sha256-LviMbpuRkXukfuR8COzqxY5AY/WAI8V5TXkBROFO64M=" rel="preload stylesheet" as=style><link rel=icon href=https://marcin.cylke.com.pl/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://marcin.cylke.com.pl/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://marcin.cylke.com.pl/favicon-32x32.png><link rel=apple-touch-icon href=https://marcin.cylke.com.pl/apple-touch-icon.png><link rel=mask-icon href=https://marcin.cylke.com.pl/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://marcin.cylke.com.pl/2024/06/16/why-google-takeout-is-sooo-bad/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><link rel=stylesheet href=/css/book_section.css><link rel=stylesheet href=/css/on_this_day.css><link rel=stylesheet href=/css/til.css><script defer src=/js/code-highlight.js></script><meta property="og:url" content="https://marcin.cylke.com.pl/2024/06/16/why-google-takeout-is-sooo-bad/"><meta property="og:site_name" content="Tech ramblings by Marcin"><meta property="og:title" content="Why Google Takeout is sooo bad!"><meta property="og:description" content="Author: IdeogramAI Prompt: The image shows a typical Google Takeout interface with a large error message indicating that the service is unavailable. In the background, there are frustrated users trying to download their data with unsuccessful attempts, represented by repeated “Failed” and “Retry” notifications.
-My current data setup is centered around Google Cloud as a place where I store my data. That’s also related to how I use the whole vendor ecosystem."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2024-06-16T00:00:00+00:00"><meta property="article:modified_time" content="2024-06-16T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Why Google Takeout is sooo bad!"><meta name=twitter:description content="Author: IdeogramAI Prompt: The image shows a typical Google Takeout interface with a large error message indicating that the service is unavailable. In the background, there are frustrated users trying to download their data with unsuccessful attempts, represented by repeated “Failed” and “Retry” notifications.
-My current data setup is centered around Google Cloud as a place where I store my data. That’s also related to how I use the whole vendor ecosystem."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://marcin.cylke.com.pl/post/"},{"@type":"ListItem","position":2,"name":"Why Google Takeout is sooo bad!","item":"https://marcin.cylke.com.pl/2024/06/16/why-google-takeout-is-sooo-bad/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Why Google Takeout is sooo bad!","name":"Why Google Takeout is sooo bad!","description":" Author: IdeogramAI Prompt: The image shows a typical Google Takeout interface with a large error message indicating that the service is unavailable. In the background, there are frustrated users trying to download their data with unsuccessful attempts, represented by repeated \u0026ldquo;Failed\u0026rdquo; and \u0026ldquo;Retry\u0026rdquo; notifications.\nMy current data setup is centered around Google Cloud as a place where I store my data. That\u0026rsquo;s also related to how I use the whole vendor ecosystem.\n","keywords":[],"articleBody":" Author: IdeogramAI Prompt: The image shows a typical Google Takeout interface with a large error message indicating that the service is unavailable. In the background, there are frustrated users trying to download their data with unsuccessful attempts, represented by repeated “Failed” and “Retry” notifications.\nMy current data setup is centered around Google Cloud as a place where I store my data. That’s also related to how I use the whole vendor ecosystem.\nThe main issue I have with keeping the data only in Google Cloud is data safety. I just don’t want either identity theft or accidental block on my account (by Google) to cut me off from all of my previous photos. You might think it’s something close to impossible, but there are numerous examples of that happening to people - eg. look here https://www.nytimes.com/2022/08/21/technology/google-surveillance-toddler-photo.html And ok, this might be a reasonable approach from Google, but who knows what else can trigger that kind of blockage.\nSo, to be safe against anything similar or just any other data lose, it would be good to have some backup in place.\nAn ideal solution right now would be to:\ncopy all the photos to some other cloud have an offline copy of those files/photos Ideally both of those should happen automatically, according to some predefined schedule. Of course be as maintenance-free as possible.\nI have ~200GB of data that I would like backed up on a regular basis. I’d imagine this is not the biggest set of photos a person can have stored there.\nFirst attempts My first approach was to synchronize all the files and all the photos using some syncing tools. Store them on a local hard drive, for future use. But that was less then satisfying. Mainly due to how long the process would take for my size of data.\nThere’s this open-source python tool https://github.com/gilesknap/gphotos-sync - but I’m yet to try that. Although they also note on their project page issues with the backup process. Citing from there:\nVideos are transcoded to lower quality Raw or Original photos are converted to ‘High Quality’ GPS info is removed from photos metadata Bad, but I could live with that, if treating this as a backup.\nThere’s also a paid tool https://photovaultone.com/ - but it’s just another small vendor lock-in. I’d like to avoid getting deeper into other vendor to be protected from Google.\nSo there’s Google Takeout And yet, there’s this Google-offered option, that’s designed as a way to take all your data out of Google Cloud and potentially go to some other vendor, or host that on your own. Great idea! Of course Google, as other BigTech companies was coherced to implement it mainly due to GDPR restrictions - so that any user can take the data he/she owns and move out to other place. Actually, Google Takeout was created before GDPR restrictions - this comment brings some info on that: Naturally, I thought I’d use this approach to backup my data. This seemed even more amazing, as there’s an option to backup directly to other providers - the options are Dropbox, Microsoft OneDrive, Box.\nI thought that using Microsoft OneDrive is a good alternative! Especially in terms of provider diversification. Also, the options of the backup would allow me to create a couple of bigger files - and copying those to my local backup would be much easier then doing so with hundreds of thousands of photos.\nChoosing Microsoft OneDrive as an intermediate solution is just using another vendor. But the goal is to:\nhave the data backed up in another cloud be able to download the data in bigger chunks On the surface, it looks nice. You can create a scheduled backup process - that may happen at specified intervals, or you can do it one-time. You can select data you want to export - be it just Photos, or maybe whole Google Drive, and Calendar, Gmail. Everything is there.\nBut when it actually needs to happen - that’s where the issues happen.\nIssues the process always fails - no matter what’s the size of a chunk I choose the logs are kept only for some time, afer 7 days I’m not able to see what happened with the chunks. It’s easy to spot missing files - when you have parts from 1 to 10, but there’s a 7th missing. But what if there are 10 parts but should be 11? no logs of the process errors are very cryptic “Failed to backup” tech support is non-existent - I’ve reached out to the tech support, but they were just passing my issue between different support divisions. Ultimately there were hints like “reinstall your operating system”, “turn it off and on” All in all I don’t see this whole process as extremely hard. Also, I totally understand those things may fail. But we, as an industry, know what to do with that. There are retries, informative logging. And here I got none of the above.\nSo for me, this broadly looks like Google just does not want people to backup their data outside of their cloud, which is super bad!\nImportant considerations that I may have missed I share my photo collection with my closest family. I suspect that Google Takeout won’t backup those shared photos. But my purpose is to do also copy those.\nIf I’ll be able to make this process reliable, I’d need to think of data retention on target.\nRight now I backup just Google Photos - wanted to move to other parts of the ecosystem, when the backup issues are sorted out.\nFollow-up actions try other providers - I don’t want to use Dropbox, but perhaps Box would work better then OneDrive? are there tools that I’ve missed that might actually work? schedule separate backup processes for other parts of the data stored in Google - they’ll be smaller and maybe that will result in successful backups monitor the backup process state - based on target drive contents Closing notes So, for know I still do the backups. I accept the issues with Google Takeout. It’s just better to have majority of my data, then to not have any of that.\nDo you have any recommendations on better backup solutions for Google Photos? Leave your thoughts in the comments! Edited:\n2024-06-17 - correct reference to GDPR and Google Takeout comment from BXlnt2EachOther: I don’t think this can be correct. Takeout was released June 28, 2011. GDPR was passed April 14, 2016 and went into effect two years later. comment from jchw: Well, that’s just simply false. Google Takeout was in development and released much earlier than GDPR was published. It was an internal project of a weird Google team known publicly as the “Google Data Liberation Front”. I wasn’t actually at Google during any of this, but I recall Google Takeout from ages ago, and it’s hard to forget, in part because it seemed so novel for the time, and also the name “Data Liberation Front” stuck out as being surprisingly bold. ","wordCount":"1170","inLanguage":"en","datePublished":"2024-06-16T00:00:00Z","dateModified":"2024-06-16T00:00:00Z","author":{"@type":"Person","name":"Marcin Cylke"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://marcin.cylke.com.pl/2024/06/16/why-google-takeout-is-sooo-bad/"},"publisher":{"@type":"Organization","name":"Tech ramblings by Marcin","logo":{"@type":"ImageObject","url":"https://marcin.cylke.com.pl/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://marcin.cylke.com.pl/ accesskey=h title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
-<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://marcin.cylke.com.pl/about/ title=About><span>About</span></a></li><li><a href=https://marcin.cylke.com.pl/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://marcin.cylke.com.pl/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://marcin.cylke.com.pl/archives/ title=Archives><span>Archives</span></a></li><li><a href=https://marcin.cylke.com.pl/travels/ title=Travels><span>Travels</span></a></li><li><a href=https://marcin.cylke.com.pl/til/ title=TIL><span>TIL</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://marcin.cylke.com.pl/>Home</a>&nbsp;»&nbsp;<a href=https://marcin.cylke.com.pl/post/>Posts</a></div><h1 class="post-title entry-hint-parent">Why Google Takeout is sooo bad!</h1><div class=post-meta><span title='2024-06-16 00:00:00 +0000 UTC'>June 16, 2024</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=#first-attempts aria-label="First attempts">First attempts</a></li><li><a href=#so-theres-google-takeout aria-label="So there&rsquo;s Google Takeout">So there&rsquo;s Google Takeout</a></li><li><a href=#issues aria-label=Issues>Issues</a></li><li><a href=#important-considerations-that-i-may-have-missed aria-label="Important considerations that I may have missed">Important considerations that I may have missed</a></li><li><a href=#follow-up-actions aria-label="Follow-up actions">Follow-up actions</a></li><li><a href=#closing-notes aria-label="Closing notes">Closing notes</a></li><li><a href=#do-you-have-any-recommendations-on-better-backup-solutions-for-google-photos-leave-your-thoughts-in-the-comments aria-label="Do you have any recommendations on better backup solutions for Google Photos? Leave your thoughts in the comments!">Do you have any recommendations on better backup solutions for Google Photos? Leave your thoughts in the comments!</a></li></ul></div></details></div><div class=post-content><p><img alt=Image loading=lazy src=/post_images/why-google-takeout-is-sooo-bad-0.png>
-<em>Author: <a href=https://ideogram.ai>IdeogramAI</a> Prompt: The image shows a typical Google Takeout interface with a large error message indicating that the service is unavailable. In the background, there are frustrated users trying to download their data with unsuccessful attempts, represented by repeated &ldquo;Failed&rdquo; and &ldquo;Retry&rdquo; notifications.</em></p><hr><p>My current data setup is centered around Google Cloud as a place where I store my data. That&rsquo;s also related to how I use the whole vendor ecosystem.</p><p>The main issue I have with keeping the data only in Google Cloud is data safety. I just don&rsquo;t want either identity theft or accidental block on my account (by Google) to cut me off from all of my previous photos. You might think it&rsquo;s something close to impossible, but there are numerous examples of that happening to people - eg. look here <a href=https://www.nytimes.com/2022/08/21/technology/google-surveillance-toddler-photo.html>https://www.nytimes.com/2022/08/21/technology/google-surveillance-toddler-photo.html</a> And ok, this might be a reasonable approach from Google, but who knows what else can trigger that kind of blockage.</p><p>So, to be safe against anything similar or just any other data lose, it would be good to have some backup in place.</p><p>An ideal solution right now would be to:</p><ul><li>copy all the photos to some other cloud</li><li>have an offline copy of those files/photos</li></ul><p>Ideally both of those should happen automatically, according to some predefined schedule. Of course be as maintenance-free as possible.</p><p>I have ~200GB of data that I would like backed up on a regular basis. I&rsquo;d imagine this is not the biggest set of photos a person can have stored there.</p><h2 id=first-attempts>First attempts<a hidden class=anchor aria-hidden=true href=#first-attempts>#</a></h2><p>My first approach was to synchronize all the files and all the photos using some syncing tools. Store them on a local hard drive, for future use. But that was less then satisfying. Mainly due to how long the process would take for my size of data.</p><p>There&rsquo;s this open-source python tool <a href=https://github.com/gilesknap/gphotos-sync>https://github.com/gilesknap/gphotos-sync</a> - but I&rsquo;m yet to try that. Although they also note on their project page issues with the backup process. Citing from there:</p><ul><li>Videos are transcoded to lower quality</li><li>Raw or Original photos are converted to &lsquo;High Quality&rsquo;</li><li>GPS info is removed from photos metadata</li></ul><p>Bad, but I could live with that, if treating this as a backup.</p><p>There&rsquo;s also a paid tool <a href=https://photovaultone.com/>https://photovaultone.com/</a> - but it&rsquo;s just another small vendor lock-in. I&rsquo;d like to avoid getting deeper into other vendor to be protected from Google.</p><h2 id=so-theres-google-takeout>So there&rsquo;s Google Takeout<a hidden class=anchor aria-hidden=true href=#so-theres-google-takeout>#</a></h2><p>And yet, there&rsquo;s this Google-offered option, that&rsquo;s designed as a way to take all your data out of Google Cloud and potentially go to some other vendor, or host that on your own. Great idea! <del>Of course Google, as other BigTech companies was coherced to implement it mainly due to GDPR restrictions - so that any user can take the data he/she owns and move out to other place.</del> Actually, Google Takeout was created before GDPR restrictions - this comment brings some info on that:
+My current data setup is centered around Google Cloud as a place where I store my data. That&rsquo;s also related to how I use the whole vendor ecosystem.">
+<meta name="author" content="Marcin Cylke">
+<link rel="canonical" href="https://marcin.cylke.com.pl/2024/06/16/why-google-takeout-is-sooo-bad/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.2ef88c6e9b91917ba47ee47c08eceac58e4063f58023c5794d790144e14eeb83.css" integrity="sha256-LviMbpuRkXukfuR8COzqxY5AY/WAI8V5TXkBROFO64M=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://marcin.cylke.com.pl/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://marcin.cylke.com.pl/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://marcin.cylke.com.pl/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://marcin.cylke.com.pl/apple-touch-icon.png">
+<link rel="mask-icon" href="https://marcin.cylke.com.pl/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://marcin.cylke.com.pl/2024/06/16/why-google-takeout-is-sooo-bad/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/book_section.css">
+<link rel="stylesheet" href="/css/on_this_day.css">
+<link rel="stylesheet" href="/css/til.css">
+<script defer src="/js/code-highlight.js"></script>
+<meta property="og:url" content="https://marcin.cylke.com.pl/2024/06/16/why-google-takeout-is-sooo-bad/">
+  <meta property="og:site_name" content="Tech ramblings by Marcin">
+  <meta property="og:title" content="Why Google Takeout is sooo bad!">
+  <meta property="og:description" content="Author: IdeogramAI Prompt: The image shows a typical Google Takeout interface with a large error message indicating that the service is unavailable. In the background, there are frustrated users trying to download their data with unsuccessful attempts, represented by repeated “Failed” and “Retry” notifications.
+My current data setup is centered around Google Cloud as a place where I store my data. That’s also related to how I use the whole vendor ecosystem.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-06-16T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-06-16T00:00:00+00:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Why Google Takeout is sooo bad!">
+  <meta name="twitter:description" content="Author: IdeogramAI Prompt: The image shows a typical Google Takeout interface with a large error message indicating that the service is unavailable. In the background, there are frustrated users trying to download their data with unsuccessful attempts, represented by repeated “Failed” and “Retry” notifications.
+My current data setup is centered around Google Cloud as a place where I store my data. That’s also related to how I use the whole vendor ecosystem.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://marcin.cylke.com.pl/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Why Google Takeout is sooo bad!",
+      "item": "https://marcin.cylke.com.pl/2024/06/16/why-google-takeout-is-sooo-bad/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Why Google Takeout is sooo bad!",
+  "name": "Why Google Takeout is sooo bad!",
+  "description": " Author: IdeogramAI Prompt: The image shows a typical Google Takeout interface with a large error message indicating that the service is unavailable. In the background, there are frustrated users trying to download their data with unsuccessful attempts, represented by repeated \u0026ldquo;Failed\u0026rdquo; and \u0026ldquo;Retry\u0026rdquo; notifications.\nMy current data setup is centered around Google Cloud as a place where I store my data. That\u0026rsquo;s also related to how I use the whole vendor ecosystem.\n",
+  "keywords": [
+    
+  ],
+  "articleBody": " Author: IdeogramAI Prompt: The image shows a typical Google Takeout interface with a large error message indicating that the service is unavailable. In the background, there are frustrated users trying to download their data with unsuccessful attempts, represented by repeated “Failed” and “Retry” notifications.\nMy current data setup is centered around Google Cloud as a place where I store my data. That’s also related to how I use the whole vendor ecosystem.\nThe main issue I have with keeping the data only in Google Cloud is data safety. I just don’t want either identity theft or accidental block on my account (by Google) to cut me off from all of my previous photos. You might think it’s something close to impossible, but there are numerous examples of that happening to people - eg. look here https://www.nytimes.com/2022/08/21/technology/google-surveillance-toddler-photo.html And ok, this might be a reasonable approach from Google, but who knows what else can trigger that kind of blockage.\nSo, to be safe against anything similar or just any other data lose, it would be good to have some backup in place.\nAn ideal solution right now would be to:\ncopy all the photos to some other cloud have an offline copy of those files/photos Ideally both of those should happen automatically, according to some predefined schedule. Of course be as maintenance-free as possible.\nI have ~200GB of data that I would like backed up on a regular basis. I’d imagine this is not the biggest set of photos a person can have stored there.\nFirst attempts My first approach was to synchronize all the files and all the photos using some syncing tools. Store them on a local hard drive, for future use. But that was less then satisfying. Mainly due to how long the process would take for my size of data.\nThere’s this open-source python tool https://github.com/gilesknap/gphotos-sync - but I’m yet to try that. Although they also note on their project page issues with the backup process. Citing from there:\nVideos are transcoded to lower quality Raw or Original photos are converted to ‘High Quality’ GPS info is removed from photos metadata Bad, but I could live with that, if treating this as a backup.\nThere’s also a paid tool https://photovaultone.com/ - but it’s just another small vendor lock-in. I’d like to avoid getting deeper into other vendor to be protected from Google.\nSo there’s Google Takeout And yet, there’s this Google-offered option, that’s designed as a way to take all your data out of Google Cloud and potentially go to some other vendor, or host that on your own. Great idea! Of course Google, as other BigTech companies was coherced to implement it mainly due to GDPR restrictions - so that any user can take the data he/she owns and move out to other place. Actually, Google Takeout was created before GDPR restrictions - this comment brings some info on that: Naturally, I thought I’d use this approach to backup my data. This seemed even more amazing, as there’s an option to backup directly to other providers - the options are Dropbox, Microsoft OneDrive, Box.\nI thought that using Microsoft OneDrive is a good alternative! Especially in terms of provider diversification. Also, the options of the backup would allow me to create a couple of bigger files - and copying those to my local backup would be much easier then doing so with hundreds of thousands of photos.\nChoosing Microsoft OneDrive as an intermediate solution is just using another vendor. But the goal is to:\nhave the data backed up in another cloud be able to download the data in bigger chunks On the surface, it looks nice. You can create a scheduled backup process - that may happen at specified intervals, or you can do it one-time. You can select data you want to export - be it just Photos, or maybe whole Google Drive, and Calendar, Gmail. Everything is there.\nBut when it actually needs to happen - that’s where the issues happen.\nIssues the process always fails - no matter what’s the size of a chunk I choose the logs are kept only for some time, afer 7 days I’m not able to see what happened with the chunks. It’s easy to spot missing files - when you have parts from 1 to 10, but there’s a 7th missing. But what if there are 10 parts but should be 11? no logs of the process errors are very cryptic “Failed to backup” tech support is non-existent - I’ve reached out to the tech support, but they were just passing my issue between different support divisions. Ultimately there were hints like “reinstall your operating system”, “turn it off and on” All in all I don’t see this whole process as extremely hard. Also, I totally understand those things may fail. But we, as an industry, know what to do with that. There are retries, informative logging. And here I got none of the above.\nSo for me, this broadly looks like Google just does not want people to backup their data outside of their cloud, which is super bad!\nImportant considerations that I may have missed I share my photo collection with my closest family. I suspect that Google Takeout won’t backup those shared photos. But my purpose is to do also copy those.\nIf I’ll be able to make this process reliable, I’d need to think of data retention on target.\nRight now I backup just Google Photos - wanted to move to other parts of the ecosystem, when the backup issues are sorted out.\nFollow-up actions try other providers - I don’t want to use Dropbox, but perhaps Box would work better then OneDrive? are there tools that I’ve missed that might actually work? schedule separate backup processes for other parts of the data stored in Google - they’ll be smaller and maybe that will result in successful backups monitor the backup process state - based on target drive contents Closing notes So, for know I still do the backups. I accept the issues with Google Takeout. It’s just better to have majority of my data, then to not have any of that.\nDo you have any recommendations on better backup solutions for Google Photos? Leave your thoughts in the comments! Edited:\n2024-06-17 - correct reference to GDPR and Google Takeout comment from BXlnt2EachOther: I don’t think this can be correct. Takeout was released June 28, 2011. GDPR was passed April 14, 2016 and went into effect two years later. comment from jchw: Well, that’s just simply false. Google Takeout was in development and released much earlier than GDPR was published. It was an internal project of a weird Google team known publicly as the “Google Data Liberation Front”. I wasn’t actually at Google during any of this, but I recall Google Takeout from ages ago, and it’s hard to forget, in part because it seemed so novel for the time, and also the name “Data Liberation Front” stuck out as being surprisingly bold. ",
+  "wordCount" : "1170",
+  "inLanguage": "en",
+  "datePublished": "2024-06-16T00:00:00Z",
+  "dateModified": "2024-06-16T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Marcin Cylke"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://marcin.cylke.com.pl/2024/06/16/why-google-takeout-is-sooo-bad/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tech ramblings by Marcin",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://marcin.cylke.com.pl/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://marcin.cylke.com.pl/" accesskey="h" title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://marcin.cylke.com.pl/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/travels/" title="Travels">
+                    <span>Travels</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/til/" title="TIL">
+                    <span>TIL</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://marcin.cylke.com.pl/">Home</a>&nbsp;»&nbsp;<a href="https://marcin.cylke.com.pl/post/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Why Google Takeout is sooo bad!
+    </h1>
+    <div class="post-meta"><span title='2024-06-16 00:00:00 +0000 UTC'>June 16, 2024</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#first-attempts" aria-label="First attempts">First attempts</a></li>
+                <li>
+                    <a href="#so-theres-google-takeout" aria-label="So there&rsquo;s Google Takeout">So there&rsquo;s Google Takeout</a></li>
+                <li>
+                    <a href="#issues" aria-label="Issues">Issues</a></li>
+                <li>
+                    <a href="#important-considerations-that-i-may-have-missed" aria-label="Important considerations that I may have missed">Important considerations that I may have missed</a></li>
+                <li>
+                    <a href="#follow-up-actions" aria-label="Follow-up actions">Follow-up actions</a></li>
+                <li>
+                    <a href="#closing-notes" aria-label="Closing notes">Closing notes</a></li>
+                <li>
+                    <a href="#do-you-have-any-recommendations-on-better-backup-solutions-for-google-photos-leave-your-thoughts-in-the-comments" aria-label="Do you have any recommendations on better backup solutions for Google Photos? Leave your thoughts in the comments!">Do you have any recommendations on better backup solutions for Google Photos? Leave your thoughts in the comments!</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p><img alt="Image" loading="lazy" src="/post_images/why-google-takeout-is-sooo-bad-0.png">
+<em>Author: <a href="https://ideogram.ai">IdeogramAI</a> Prompt: The image shows a typical Google Takeout interface with a large error message indicating that the service is unavailable. In the background, there are frustrated users trying to download their data with unsuccessful attempts, represented by repeated &ldquo;Failed&rdquo; and &ldquo;Retry&rdquo; notifications.</em></p>
+<hr>
+<p>My current data setup is centered around Google Cloud as a place where I store my data. That&rsquo;s also related to how I use the whole vendor ecosystem.</p>
+<p>The main issue I have with keeping the data only in Google Cloud is data safety. I just don&rsquo;t want either identity theft or accidental block on my account (by Google) to cut me off from all of my previous photos. You might think it&rsquo;s something close to impossible, but there are numerous examples of that happening to people - eg. look here <a href="https://www.nytimes.com/2022/08/21/technology/google-surveillance-toddler-photo.html">https://www.nytimes.com/2022/08/21/technology/google-surveillance-toddler-photo.html</a> And ok, this might be a reasonable approach from Google, but who knows what else can trigger that kind of blockage.</p>
+<p>So, to be safe against anything similar or just any other data lose, it would be good to have some backup in place.</p>
+<p>An ideal solution right now would be to:</p>
+<ul>
+<li>copy all the photos to some other cloud</li>
+<li>have an offline copy of those files/photos</li>
+</ul>
+<p>Ideally both of those should happen automatically, according to some predefined schedule. Of course be as maintenance-free as possible.</p>
+<p>I have ~200GB of data that I would like backed up on a regular basis. I&rsquo;d imagine this is not the biggest set of photos a person can have stored there.</p>
+<h2 id="first-attempts">First attempts<a hidden class="anchor" aria-hidden="true" href="#first-attempts">#</a></h2>
+<p>My first approach was to synchronize all the files and all the photos using some syncing tools. Store them on a local hard drive, for future use. But that was less then satisfying. Mainly due to how long the process would take for my size of data.</p>
+<p>There&rsquo;s this open-source python tool <a href="https://github.com/gilesknap/gphotos-sync">https://github.com/gilesknap/gphotos-sync</a> - but I&rsquo;m yet to try that. Although they also note on their project page issues with the backup process. Citing from there:</p>
+<ul>
+<li>Videos are transcoded to lower quality</li>
+<li>Raw or Original photos are converted to &lsquo;High Quality&rsquo;</li>
+<li>GPS info is removed from photos metadata</li>
+</ul>
+<p>Bad, but I could live with that, if treating this as a backup.</p>
+<p>There&rsquo;s also a paid tool <a href="https://photovaultone.com/">https://photovaultone.com/</a> - but it&rsquo;s just another small vendor lock-in. I&rsquo;d like to avoid getting deeper into other vendor to be protected from Google.</p>
+<h2 id="so-theres-google-takeout">So there&rsquo;s Google Takeout<a hidden class="anchor" aria-hidden="true" href="#so-theres-google-takeout">#</a></h2>
+<p>And yet, there&rsquo;s this Google-offered option, that&rsquo;s designed as a way to take all your data out of Google Cloud and potentially go to some other vendor, or host that on your own. Great idea! <del>Of course Google, as other BigTech companies was coherced to implement it mainly due to GDPR restrictions - so that any user can take the data he/she owns and move out to other place.</del> Actually, Google Takeout was created before GDPR restrictions - this comment brings some info on that:
 Naturally, I thought I&rsquo;d use this approach to backup my data.
-This seemed even more amazing, as there&rsquo;s an option to backup directly to other providers - the options are Dropbox, Microsoft OneDrive, Box.</p><p>I thought that using Microsoft OneDrive is a good alternative! Especially in terms of provider diversification. Also, the options of the backup would allow me to create a couple of bigger files - and copying those to my local backup would be much easier then doing so with hundreds of thousands of photos.</p><p>Choosing Microsoft OneDrive as an intermediate solution is just using another vendor. But the goal is to:</p><ul><li>have the data backed up in another cloud</li><li>be able to download the data in bigger chunks</li></ul><p>On the surface, it looks nice. You can create a scheduled backup process - that may happen at specified intervals, or you can do it one-time.
-You can select data you want to export - be it just Photos, or maybe whole Google Drive, and Calendar, Gmail. Everything is there.</p><p>But when it actually needs to happen - that&rsquo;s where the issues happen.</p><h2 id=issues>Issues<a hidden class=anchor aria-hidden=true href=#issues>#</a></h2><ul><li>the process always fails - no matter what&rsquo;s the size of a chunk I choose</li><li>the logs are kept only for some time, afer 7 days I&rsquo;m not able to see what happened with the chunks. It&rsquo;s easy to spot missing files - when you have parts from 1 to 10, but there&rsquo;s a 7th missing. But what if there are 10 parts but should be 11?</li><li>no logs of the process</li><li>errors are very cryptic &ldquo;Failed to backup&rdquo;</li><li>tech support is non-existent - I&rsquo;ve reached out to the tech support, but they were just passing my issue between different support divisions. Ultimately there were hints like &ldquo;reinstall your operating system&rdquo;, &ldquo;turn it off and on&rdquo;</li></ul><p>All in all I don&rsquo;t see this whole process as <strong>extremely</strong> hard. Also, I totally understand those things may fail. But we, as an industry, know what to do with that. There are retries, informative logging. And here I got none of the above.</p><p>So for me, this broadly looks like Google just does not want people to backup their data outside of their cloud, which is super bad!</p><h2 id=important-considerations-that-i-may-have-missed>Important considerations that I may have missed<a hidden class=anchor aria-hidden=true href=#important-considerations-that-i-may-have-missed>#</a></h2><p>I share my photo collection with my closest family. I suspect that Google Takeout won&rsquo;t backup those shared photos. But my purpose <strong>is</strong> to do also copy those.</p><p>If I&rsquo;ll be able to make this process reliable, I&rsquo;d need to think of data retention on target.</p><p>Right now I backup just Google Photos - wanted to move to other parts of the ecosystem, when the backup issues are sorted out.</p><h2 id=follow-up-actions>Follow-up actions<a hidden class=anchor aria-hidden=true href=#follow-up-actions>#</a></h2><ul><li>try other providers - I don&rsquo;t want to use Dropbox, but perhaps Box would work better then OneDrive?</li><li>are there tools that I&rsquo;ve missed that might actually work?</li><li>schedule separate backup processes for other parts of the data stored in Google - they&rsquo;ll be smaller and maybe that will result in successful backups</li><li>monitor the backup process state - based on target drive contents</li></ul><h2 id=closing-notes>Closing notes<a hidden class=anchor aria-hidden=true href=#closing-notes>#</a></h2><p>So, for know I still do the backups. I accept the issues with Google Takeout. It&rsquo;s just better to have majority of my data, then to not have any of that.</p><h2 id=do-you-have-any-recommendations-on-better-backup-solutions-for-google-photos-leave-your-thoughts-in-the-comments>Do you have any recommendations on better backup solutions for Google Photos? Leave your thoughts in the comments!<a hidden class=anchor aria-hidden=true href=#do-you-have-any-recommendations-on-better-backup-solutions-for-google-photos-leave-your-thoughts-in-the-comments>#</a></h2><p><em>Edited:</em></p><ul><li><em>2024-06-17 - correct reference to GDPR and Google Takeout</em><ul><li>comment from <code>BXlnt2EachOther</code>: <em>I don&rsquo;t think this can be correct. Takeout was released June 28, 2011. GDPR was passed April 14, 2016 and went into effect two years later.</em></li><li>comment from <code>jchw</code>: <em>Well, that&rsquo;s just simply false. Google Takeout was in development and released much earlier than GDPR was published. It was an internal project of a weird Google team known publicly as the &ldquo;Google Data Liberation Front&rdquo;. I wasn&rsquo;t actually at Google during any of this, but I recall Google Takeout from ages ago, and it&rsquo;s hard to forget, in part because it seemed so novel for the time, and also the name &ldquo;Data Liberation Front&rdquo; stuck out as being surprisingly bold.</em></li></ul></li></ul></div><footer class=post-footer><ul class=post-tags></ul><nav class=paginav><a class=prev href=https://marcin.cylke.com.pl/2024/06/27/get-to-your-aws-host-with-ease/><span class=title>« Prev</span><br><span>Get to your AWS host with ease</span>
-</a><a class=next href=https://marcin.cylke.com.pl/2024/05/20/updating-confluence-page-from-markdown/><span class=title>Next »</span><br><span>Updating Confluence page from Markdown</span></a></nav></footer><script src=https://utteranc.es/client.js repo=zygm0nt/hugo-blog-incarnation issue-term=pathname theme=github-light crossorigin=anonymous async></script></article></main><footer class=footer><span>&copy; 2026 <a href=https://marcin.cylke.com.pl/>Tech ramblings by Marcin</a></span> ·
-<span>Powered by
-<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
-</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
+This seemed even more amazing, as there&rsquo;s an option to backup directly to other providers - the options are Dropbox, Microsoft OneDrive, Box.</p>
+<p>I thought that using Microsoft OneDrive is a good alternative! Especially in terms of provider diversification. Also, the options of the backup would allow me to create a couple of bigger files - and copying those to my local backup would be much easier then doing so with hundreds of thousands of photos.</p>
+<p>Choosing Microsoft OneDrive as an intermediate solution is just using another vendor. But the goal is to:</p>
+<ul>
+<li>have the data backed up in another cloud</li>
+<li>be able to download the data in bigger chunks</li>
+</ul>
+<p>On the surface, it looks nice. You can create a scheduled backup process - that may happen at specified intervals, or you can do it one-time.
+You can select data you want to export - be it just Photos, or maybe whole Google Drive, and Calendar, Gmail. Everything is there.</p>
+<p>But when it actually needs to happen - that&rsquo;s where the issues happen.</p>
+<h2 id="issues">Issues<a hidden class="anchor" aria-hidden="true" href="#issues">#</a></h2>
+<ul>
+<li>the process always fails - no matter what&rsquo;s the size of a chunk I choose</li>
+<li>the logs are kept only for some time, afer 7 days I&rsquo;m not able to see what happened with the chunks. It&rsquo;s easy to spot missing files - when you have parts from 1 to 10, but there&rsquo;s a 7th missing. But what if there are 10 parts but should be 11?</li>
+<li>no logs of the process</li>
+<li>errors are very cryptic &ldquo;Failed to backup&rdquo;</li>
+<li>tech support is non-existent - I&rsquo;ve reached out to the tech support, but they were just passing my issue between different support divisions. Ultimately there were hints like &ldquo;reinstall your operating system&rdquo;, &ldquo;turn it off and on&rdquo;</li>
+</ul>
+<p>All in all I don&rsquo;t see this whole process as <strong>extremely</strong> hard. Also, I totally understand those things may fail. But we, as an industry, know what to do with that. There are retries, informative logging. And here I got none of the above.</p>
+<p>So for me, this broadly looks like Google just does not want people to backup their data outside of their cloud, which is super bad!</p>
+<h2 id="important-considerations-that-i-may-have-missed">Important considerations that I may have missed<a hidden class="anchor" aria-hidden="true" href="#important-considerations-that-i-may-have-missed">#</a></h2>
+<p>I share my photo collection with my closest family. I suspect that Google Takeout won&rsquo;t backup those shared photos. But my purpose <strong>is</strong> to do also copy those.</p>
+<p>If I&rsquo;ll be able to make this process reliable, I&rsquo;d need to think of data retention on target.</p>
+<p>Right now I backup just Google Photos - wanted to move to other parts of the ecosystem, when the backup issues are sorted out.</p>
+<h2 id="follow-up-actions">Follow-up actions<a hidden class="anchor" aria-hidden="true" href="#follow-up-actions">#</a></h2>
+<ul>
+<li>try other providers - I don&rsquo;t want to use Dropbox, but perhaps Box would work better then OneDrive?</li>
+<li>are there tools that I&rsquo;ve missed that might actually work?</li>
+<li>schedule separate backup processes for other parts of the data stored in Google - they&rsquo;ll be smaller and maybe that will result in successful backups</li>
+<li>monitor the backup process state - based on target drive contents</li>
+</ul>
+<h2 id="closing-notes">Closing notes<a hidden class="anchor" aria-hidden="true" href="#closing-notes">#</a></h2>
+<p>So, for know I still do the backups. I accept the issues with Google Takeout. It&rsquo;s just better to have majority of my data, then to not have any of that.</p>
+<h2 id="do-you-have-any-recommendations-on-better-backup-solutions-for-google-photos-leave-your-thoughts-in-the-comments">Do you have any recommendations on better backup solutions for Google Photos? Leave your thoughts in the comments!<a hidden class="anchor" aria-hidden="true" href="#do-you-have-any-recommendations-on-better-backup-solutions-for-google-photos-leave-your-thoughts-in-the-comments">#</a></h2>
+<p><em>Edited:</em></p>
+<ul>
+<li><em>2024-06-17 - correct reference to GDPR and Google Takeout</em>
+<ul>
+<li>comment from <code>BXlnt2EachOther</code>: <em>I don&rsquo;t think this can be correct. Takeout was released June 28, 2011. GDPR was passed April 14, 2016 and went into effect two years later.</em></li>
+<li>comment from <code>jchw</code>: <em>Well, that&rsquo;s just simply false. Google Takeout was in development and released much earlier than GDPR was published. It was an internal project of a weird Google team known publicly as the &ldquo;Google Data Liberation Front&rdquo;. I wasn&rsquo;t actually at Google during any of this, but I recall Google Takeout from ages ago, and it&rsquo;s hard to forget, in part because it seemed so novel for the time, and also the name &ldquo;Data Liberation Front&rdquo; stuck out as being surprisingly bold.</em></li>
+</ul>
+</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://marcin.cylke.com.pl/2024/06/27/get-to-your-aws-host-with-ease/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Get to your AWS host with ease</span>
+  </a>
+  <a class="next" href="https://marcin.cylke.com.pl/2024/05/20/updating-confluence-page-from-markdown/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Updating Confluence page from Markdown</span>
+  </a>
+</nav>
+
+  </footer>
+<script src="https://utteranc.es/client.js"
+        repo="zygm0nt/hugo-blog-incarnation"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

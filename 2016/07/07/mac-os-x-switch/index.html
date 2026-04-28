@@ -1,13 +1,445 @@
-<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Should you switch to Mac? | Tech ramblings by Marcin</title><meta name=keywords content><meta name=description content="by Flick user raneko
-Who would have thought? Me switching to Mac? But it actually happened. I&rsquo;ve been a long time Linux user, so why actually do the switch now? Or ever? Have a look at my thoughts and insights of novice Mac user."><meta name=author content="Marcin Cylke"><link rel=canonical href=https://marcin.cylke.com.pl/2016/07/07/mac-os-x-switch/><link crossorigin=anonymous href=/assets/css/stylesheet.2ef88c6e9b91917ba47ee47c08eceac58e4063f58023c5794d790144e14eeb83.css integrity="sha256-LviMbpuRkXukfuR8COzqxY5AY/WAI8V5TXkBROFO64M=" rel="preload stylesheet" as=style><link rel=icon href=https://marcin.cylke.com.pl/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://marcin.cylke.com.pl/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://marcin.cylke.com.pl/favicon-32x32.png><link rel=apple-touch-icon href=https://marcin.cylke.com.pl/apple-touch-icon.png><link rel=mask-icon href=https://marcin.cylke.com.pl/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://marcin.cylke.com.pl/2016/07/07/mac-os-x-switch/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><link rel=stylesheet href=/css/book_section.css><link rel=stylesheet href=/css/on_this_day.css><link rel=stylesheet href=/css/til.css><script defer src=/js/code-highlight.js></script><meta property="og:url" content="https://marcin.cylke.com.pl/2016/07/07/mac-os-x-switch/"><meta property="og:site_name" content="Tech ramblings by Marcin"><meta property="og:title" content="Should you switch to Mac?"><meta property="og:description" content="by Flick user raneko
-Who would have thought? Me switching to Mac? But it actually happened. I’ve been a long time Linux user, so why actually do the switch now? Or ever? Have a look at my thoughts and insights of novice Mac user."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2016-07-07T00:00:00+00:00"><meta property="article:modified_time" content="2016-07-07T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Should you switch to Mac?"><meta name=twitter:description content="by Flick user raneko
-Who would have thought? Me switching to Mac? But it actually happened. I’ve been a long time Linux user, so why actually do the switch now? Or ever? Have a look at my thoughts and insights of novice Mac user."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://marcin.cylke.com.pl/post/"},{"@type":"ListItem","position":2,"name":"Should you switch to Mac?","item":"https://marcin.cylke.com.pl/2016/07/07/mac-os-x-switch/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Should you switch to Mac?","name":"Should you switch to Mac?","description":"by Flick user raneko\nWho would have thought? Me switching to Mac? But it actually happened. I\u0026rsquo;ve been a long time Linux user, so why actually do the switch now? Or ever? Have a look at my thoughts and insights of novice Mac user.\n","keywords":[],"articleBody":"by Flick user raneko\nWho would have thought? Me switching to Mac? But it actually happened. I’ve been a long time Linux user, so why actually do the switch now? Or ever? Have a look at my thoughts and insights of novice Mac user.\nIn the beginning My humble beginnings were with RedHat 6.0 on a AMD Duron 600Mhz PC machine. With a dialup connection. And setting that thing to connect into Poland’s national provider TPSA was rather painful. After some time using Linux, going from RedHat to Slackware I’ve decided things weren’t tough enough and switched to BSDs. That was really fun! I’ve used Free and Open flavors for a few years which very really great. Than switched back to Linux. I’ve used those *nix systems for all-things-computer. At home and at work.\nThe switch And than came the new job and I had to choose: regular Dell or Macbook? Blue pill or red pill? I chose the later.\nThe switch wasn’t that painful, but mainly thanks to superb hardware Apple offers. Having to get used to a completely new OS was quite another story. It’s not that I was shocked by it. As a long time Linux user all the concepts are known to me. It’s the other way around - there are a lot of things missing that I learned to require from my tool of work.\nWhat I really appreciate is the known userland tools - it’s BSD at the heart of it. Well, of course the kernel is some whacky Mach microkernel, but as for the userland I’m happy :) You can read more about the kernel and system’s design history on wikipedia (Os X, Darwin XNU)\nOne of the biggest disappointments was the filesystem and the way it’s presented to users. Mac OS X comes with HFS+ (link) filesystem which is case insensitive!!! To me this seems like an abomination. Plus there are multiple shortcuts taken by Apple engineers, like its endiannes: primarily Macs used PowerPC chips which are BigEndian by desing, but after switching to Intel processors everything is LittleEndian now. AFAIK HFS+ has to still switch bytes when reading metadata.\nReally neat thing I’ve found out recently is that under the hood OS X uses PF (OpenBSD’s packet filter) as a firewalling solution. I don’t know which version is in the current release and how does it compare against the original implementation, but since PF has such a nice syntax and performance it’s great to have it on board. There are numerous blog posts about setting a decent firewall on OS X with PF so go have a look. Also you can play with PF by means of a set of apps called Murus.\nUseful tools Brew - basic application provider, offers all the things I’ve become used to when on Linux, Amethyst - allows window tiling with keyboard shortcuts and has focus-follows-mouse :D I love this feature, although with all the windows popping all over the place I must admit it sometimes gets messy. MenuMeters - have a bunch of those geeky meters all over the place (no longer usable with El Capitan) Alfred - seems like a nice app, Spotlight on steroids. It’s free and you can download it via ITunes Flashlight - add more providers to Spotlight - unfortunately with recent introduction of rootless mac partition it’s no longer possible to use this tool Hacking Spotlight Spotlight is just that neat little thing out there that seems like indexing all the things and runs installed programs. But it can also serve as a calculator and …\nYou can also read the contents of its cache file.\nUp until version 10.10.4 of OS X it was possible to have additions to spotlight, but now this behaviour is blocked by the system. http://mac-how-to.wonderhowto.com/how-to/customize-spotlight-search-mac-os-x-yosemite-0160786/\nScript setup Setup your mac with this shell script - but be very careful and read through this file first! https://gist.github.com/brandonb927/3195465\nby Flickr user blakespot\nNeat things And it is quite positive, that Mac OS X developers care about small, but extremely important things - like building OpenSSH with LibreSSL support!\nDTrace Recently I’ve experienced a huge slowdown on my Mac. The It support’s solution was to reinstall the OS. I refused, this seemed like a barbaric method and also I just wanted to use this opportunity to delve deeper into internals of this OS.\nI’ve started with analysing system behaviour with DTrace - probing interface originating from Solaris\nUseful introductory links are here:\nhttp://dtrace.org/blogs/brendan/2011/10/10/top-10-dtrace-scripts-for-mac-os-x/ http://dtrace.org/blogs/brendan/2012/11/14/dtracing-in-anger/ Conclusion All in all the switch was relatively painless, and with tools and tricks described here I feel very comfortable using this system.\n","wordCount":"771","inLanguage":"en","datePublished":"2016-07-07T00:00:00Z","dateModified":"2016-07-07T00:00:00Z","author":{"@type":"Person","name":"Marcin Cylke"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://marcin.cylke.com.pl/2016/07/07/mac-os-x-switch/"},"publisher":{"@type":"Organization","name":"Tech ramblings by Marcin","logo":{"@type":"ImageObject","url":"https://marcin.cylke.com.pl/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://marcin.cylke.com.pl/ accesskey=h title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
-<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://marcin.cylke.com.pl/about/ title=About><span>About</span></a></li><li><a href=https://marcin.cylke.com.pl/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://marcin.cylke.com.pl/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://marcin.cylke.com.pl/archives/ title=Archives><span>Archives</span></a></li><li><a href=https://marcin.cylke.com.pl/travels/ title=Travels><span>Travels</span></a></li><li><a href=https://marcin.cylke.com.pl/til/ title=TIL><span>TIL</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://marcin.cylke.com.pl/>Home</a>&nbsp;»&nbsp;<a href=https://marcin.cylke.com.pl/post/>Posts</a></div><h1 class="post-title entry-hint-parent">Should you switch to Mac?</h1><div class=post-meta><span title='2016-07-07 00:00:00 +0000 UTC'>July 7, 2016</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=#in-the-beginning aria-label="In the beginning">In the beginning</a></li><li><a href=#the-switch aria-label="The switch">The switch</a></li><li><a href=#useful-tools aria-label="Useful tools">Useful tools</a></li><li><a href=#hacking-spotlight aria-label="Hacking Spotlight">Hacking Spotlight</a></li><li><a href=#script-setup aria-label="Script setup">Script setup</a></li><li><a href=#neat-things aria-label="Neat things">Neat things</a></li><li><a href=#dtrace aria-label=DTrace>DTrace</a></li><li><a href=#conclusion aria-label=Conclusion>Conclusion</a></li></ul></div></details></div><div class=post-content><p><img alt="enter image description here" loading=lazy src=https://farm9.staticflickr.com/8064/8229071681_02ffdb91dc_z_d.jpg><em>by Flick user <a href=https://www.flickr.com/photos/raneko/8229071681/in/photolist-dxb9je-sEQEP-5gDCSr-PE6FE-7Pa2t3-5yhFqq-MsHbZ-tEVFv-kBEvsd-5uPrGV-a5wisf-Ea1We-5tX2pp-22ybhw-ivTix6-5yk9cA-kBCugR-gcSkD-8cdXjv-asK9Y-7ZM66R-8N4eSG-4mchWA-4pjwaT-Gy8BR-7HPwfe-dxb9hv-4rXMuz-h6gJgm-9jULZ6-5SPsfu-kBECo7-6UUwCT-5whRwW-4rujwZ-8Kye5Q-9hN1d6-5utN7V-k9drqQ-4QPsUy-8VEazh-8UB7Ms-8VEaEq-neQih-8EHChx-ecth3o-8yrLUn-o7oNS-kBCXKM-6UYBrs>raneko</a></em></p><p>Who would have thought? Me switching to Mac? But it actually happened. I&rsquo;ve been a long time Linux user, so why actually do the switch now? Or ever? Have a look at my thoughts and insights of novice Mac user.</p><h2 id=in-the-beginning>In the beginning<a hidden class=anchor aria-hidden=true href=#in-the-beginning>#</a></h2><p>My humble beginnings were with RedHat 6.0 on a AMD Duron 600Mhz PC machine. With a dialup connection. And setting that thing to connect into Poland&rsquo;s national provider TPSA was rather painful. After some time using Linux, going from RedHat to Slackware I&rsquo;ve decided things weren&rsquo;t tough enough and switched to BSDs. That was really fun! I&rsquo;ve used Free and Open flavors for a few years which very really great. Than switched back to Linux. I&rsquo;ve used those *nix systems for all-things-computer. At home and at work.</p><h2 id=the-switch>The switch<a hidden class=anchor aria-hidden=true href=#the-switch>#</a></h2><p>And than came the new job and I had to choose: regular Dell or Macbook? Blue pill or red pill? I chose the later.</p><p>The switch wasn&rsquo;t that painful, but mainly thanks to superb hardware Apple offers. Having to get used to a completely new OS was quite another story. It&rsquo;s not that I was shocked by it. As a long time Linux user all the concepts are known to me. It&rsquo;s the other way around - there are a lot of things missing that I learned to require from my tool of work.</p><p>What I really appreciate is the known userland tools - it&rsquo;s BSD at the heart of it. Well, of course the kernel is some whacky Mach microkernel, but as for the userland I&rsquo;m happy :) You can read more about the kernel and system&rsquo;s design history on wikipedia (<a href=https://en.wikipedia.org/wiki/OS_X>Os X</a>, <a href=https://en.wikipedia.org/wiki/Darwin_(operating_system)>Darwin</a> <a href=https://en.wikipedia.org/wiki/XNU>XNU</a>)</p><p>One of the biggest disappointments was the filesystem and the way it&rsquo;s presented to users. Mac OS X comes with HFS+ (<a href=https://en.wikipedia.org/wiki/HFS_Plus>link</a>) filesystem which is case insensitive!!! To me this seems like an abomination. Plus there are multiple shortcuts taken by Apple engineers, like its endiannes: primarily Macs used PowerPC chips which are BigEndian by desing, but after switching to Intel processors everything is LittleEndian now. AFAIK HFS+ has to still switch bytes when reading metadata.</p><p>Really neat thing I&rsquo;ve found out recently is that under the hood OS X uses PF (OpenBSD&rsquo;s packet filter) as a firewalling solution.
-I don&rsquo;t know which version is in the current release and how does it compare against the original implementation, but since PF has such a nice syntax and performance it&rsquo;s great to have it on board. There are numerous blog posts about setting a decent firewall on OS X with PF so go have a look. Also you can play with PF by means of a set of apps called <a href=http://www.murusfirewall.com/>Murus</a>.</p><h2 id=useful-tools>Useful tools<a hidden class=anchor aria-hidden=true href=#useful-tools>#</a></h2><ul><li><a href=http://brew.sh/>Brew</a> - basic application provider, offers all the things I&rsquo;ve become used to when on Linux,</li><li><a href=https://github.com/ianyh/Amethyst>Amethyst</a> - allows window tiling with keyboard shortcuts and has focus-follows-mouse :D I love this feature, although with all the windows popping all over the place I must admit it sometimes gets messy.</li><li><a href=https://www.ragingmenace.com/software/menumeters/>MenuMeters</a> - have a bunch of those geeky meters all over the place (no longer usable with El Capitan)</li><li>Alfred - seems like a nice app, Spotlight on steroids. It&rsquo;s free and you can download it via <a href="https://itunes.apple.com/au/app/alfred/id405843582?mt=12">ITunes</a></li><li>Flashlight - add more providers to Spotlight - unfortunately with recent introduction of rootless mac partition it&rsquo;s no longer possible to use this tool</li></ul><h2 id=hacking-spotlight>Hacking Spotlight<a hidden class=anchor aria-hidden=true href=#hacking-spotlight>#</a></h2><p>Spotlight is just that neat little thing out there that seems like indexing all the things and runs installed programs. But it can also serve as a calculator and &mldr;</p><p>You can also read the contents of its cache file.</p><p>Up until version 10.10.4 of OS X it was possible to have additions to spotlight, but now this behaviour is blocked by the system.
-<a href=http://mac-how-to.wonderhowto.com/how-to/customize-spotlight-search-mac-os-x-yosemite-0160786/>http://mac-how-to.wonderhowto.com/how-to/customize-spotlight-search-mac-os-x-yosemite-0160786/</a></p><h2 id=script-setup>Script setup<a hidden class=anchor aria-hidden=true href=#script-setup>#</a></h2><p>Setup your mac with this shell script - but be very careful and read through this file first! <a href=https://gist.github.com/brandonb927/3195465>https://gist.github.com/brandonb927/3195465</a></p><p><img alt="One sneaky image" loading=lazy src=https://farm6.staticflickr.com/5168/5263917715_6c8217fcfe_z_d.jpg><em>by Flickr user <a href=https://www.flickr.com/photos/blakespot/5263917715/in/photolist-929XkZ-fJwTR-8Me2LN-8qSP9F-6UD2Ce-fM51y-ARaAo-BJXFt-iE8ep-4rXScB-bX3z7w-6npV8P-5Eamox-33QA9W-5EXuR9-mQDnb-6UqpxG-6UqF7m-69b4jp-oytZCJ-4rXGFP-6xweAZ-ACukt-aZfi5-6QouE3-5CAQgW-8MeHqC-5QBeu1-L4qEw-4s35hq-4w9tXh-67Ymah-4s33cu-jjDFo-6J3zqD-8N4tSh-kbFD4-sESfP-66GAT5-9FUKfq-d3BrPG-4rXPZt-8N1aLa-6UCTvi-kBCzsH-2SXDWe-5CGTEq-5zogZ2-5JAGsk-kkAgZK>blakespot</a></em></p><h2 id=neat-things>Neat things<a hidden class=anchor aria-hidden=true href=#neat-things>#</a></h2><p>And it is quite positive, that Mac OS X developers care about small, but extremely important things - like building OpenSSH with LibreSSL support!</p><h2 id=dtrace>DTrace<a hidden class=anchor aria-hidden=true href=#dtrace>#</a></h2><p>Recently I&rsquo;ve experienced a huge slowdown on my Mac. The It support&rsquo;s solution was to reinstall the OS. I refused, this seemed like a barbaric method and also I just wanted to use this opportunity to delve deeper into internals of this OS.</p><p>I&rsquo;ve started with analysing system behaviour with <a href=https://en.wikipedia.org/wiki/DTrace>DTrace</a> - probing interface originating from Solaris</p><p>Useful introductory links are here:</p><ul><li><a href=http://dtrace.org/blogs/brendan/2011/10/10/top-10-dtrace-scripts-for-mac-os-x/>http://dtrace.org/blogs/brendan/2011/10/10/top-10-dtrace-scripts-for-mac-os-x/</a></li><li><a href=http://dtrace.org/blogs/brendan/2012/11/14/dtracing-in-anger/>http://dtrace.org/blogs/brendan/2012/11/14/dtracing-in-anger/</a></li></ul><h2 id=conclusion>Conclusion<a hidden class=anchor aria-hidden=true href=#conclusion>#</a></h2><p>All in all the switch was relatively painless, and with tools and tricks described here I feel very comfortable using this system.</p></div><footer class=post-footer><ul class=post-tags></ul><nav class=paginav><a class=prev href=https://marcin.cylke.com.pl/2016/07/24/it-minimalist/><span class=title>« Prev</span><br><span>IT minimalist</span>
-</a><a class=next href=https://marcin.cylke.com.pl/2016/04/29/scalar-conf-2016/><span class=title>Next »</span><br><span>Scalar Conf 2016</span></a></nav></footer><script src=https://utteranc.es/client.js repo=zygm0nt/hugo-blog-incarnation issue-term=pathname theme=github-light crossorigin=anonymous async></script></article></main><footer class=footer><span>&copy; 2026 <a href=https://marcin.cylke.com.pl/>Tech ramblings by Marcin</a></span> ·
-<span>Powered by
-<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
-</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Should you switch to Mac? | Tech ramblings by Marcin</title>
+<meta name="keywords" content="">
+<meta name="description" content="by Flick user raneko
+Who would have thought? Me switching to Mac? But it actually happened. I&rsquo;ve been a long time Linux user, so why actually do the switch now? Or ever? Have a look at my thoughts and insights of novice Mac user.">
+<meta name="author" content="Marcin Cylke">
+<link rel="canonical" href="https://marcin.cylke.com.pl/2016/07/07/mac-os-x-switch/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.2ef88c6e9b91917ba47ee47c08eceac58e4063f58023c5794d790144e14eeb83.css" integrity="sha256-LviMbpuRkXukfuR8COzqxY5AY/WAI8V5TXkBROFO64M=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://marcin.cylke.com.pl/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://marcin.cylke.com.pl/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://marcin.cylke.com.pl/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://marcin.cylke.com.pl/apple-touch-icon.png">
+<link rel="mask-icon" href="https://marcin.cylke.com.pl/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://marcin.cylke.com.pl/2016/07/07/mac-os-x-switch/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/book_section.css">
+<link rel="stylesheet" href="/css/on_this_day.css">
+<link rel="stylesheet" href="/css/til.css">
+<script defer src="/js/code-highlight.js"></script>
+<meta property="og:url" content="https://marcin.cylke.com.pl/2016/07/07/mac-os-x-switch/">
+  <meta property="og:site_name" content="Tech ramblings by Marcin">
+  <meta property="og:title" content="Should you switch to Mac?">
+  <meta property="og:description" content="by Flick user raneko
+Who would have thought? Me switching to Mac? But it actually happened. I’ve been a long time Linux user, so why actually do the switch now? Or ever? Have a look at my thoughts and insights of novice Mac user.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2016-07-07T00:00:00+00:00">
+    <meta property="article:modified_time" content="2016-07-07T00:00:00+00:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Should you switch to Mac?">
+  <meta name="twitter:description" content="by Flick user raneko
+Who would have thought? Me switching to Mac? But it actually happened. I’ve been a long time Linux user, so why actually do the switch now? Or ever? Have a look at my thoughts and insights of novice Mac user.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://marcin.cylke.com.pl/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Should you switch to Mac?",
+      "item": "https://marcin.cylke.com.pl/2016/07/07/mac-os-x-switch/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Should you switch to Mac?",
+  "name": "Should you switch to Mac?",
+  "description": "by Flick user raneko\nWho would have thought? Me switching to Mac? But it actually happened. I\u0026rsquo;ve been a long time Linux user, so why actually do the switch now? Or ever? Have a look at my thoughts and insights of novice Mac user.\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "by Flick user raneko\nWho would have thought? Me switching to Mac? But it actually happened. I’ve been a long time Linux user, so why actually do the switch now? Or ever? Have a look at my thoughts and insights of novice Mac user.\nIn the beginning My humble beginnings were with RedHat 6.0 on a AMD Duron 600Mhz PC machine. With a dialup connection. And setting that thing to connect into Poland’s national provider TPSA was rather painful. After some time using Linux, going from RedHat to Slackware I’ve decided things weren’t tough enough and switched to BSDs. That was really fun! I’ve used Free and Open flavors for a few years which very really great. Than switched back to Linux. I’ve used those *nix systems for all-things-computer. At home and at work.\nThe switch And than came the new job and I had to choose: regular Dell or Macbook? Blue pill or red pill? I chose the later.\nThe switch wasn’t that painful, but mainly thanks to superb hardware Apple offers. Having to get used to a completely new OS was quite another story. It’s not that I was shocked by it. As a long time Linux user all the concepts are known to me. It’s the other way around - there are a lot of things missing that I learned to require from my tool of work.\nWhat I really appreciate is the known userland tools - it’s BSD at the heart of it. Well, of course the kernel is some whacky Mach microkernel, but as for the userland I’m happy :) You can read more about the kernel and system’s design history on wikipedia (Os X, Darwin XNU)\nOne of the biggest disappointments was the filesystem and the way it’s presented to users. Mac OS X comes with HFS+ (link) filesystem which is case insensitive!!! To me this seems like an abomination. Plus there are multiple shortcuts taken by Apple engineers, like its endiannes: primarily Macs used PowerPC chips which are BigEndian by desing, but after switching to Intel processors everything is LittleEndian now. AFAIK HFS+ has to still switch bytes when reading metadata.\nReally neat thing I’ve found out recently is that under the hood OS X uses PF (OpenBSD’s packet filter) as a firewalling solution. I don’t know which version is in the current release and how does it compare against the original implementation, but since PF has such a nice syntax and performance it’s great to have it on board. There are numerous blog posts about setting a decent firewall on OS X with PF so go have a look. Also you can play with PF by means of a set of apps called Murus.\nUseful tools Brew - basic application provider, offers all the things I’ve become used to when on Linux, Amethyst - allows window tiling with keyboard shortcuts and has focus-follows-mouse :D I love this feature, although with all the windows popping all over the place I must admit it sometimes gets messy. MenuMeters - have a bunch of those geeky meters all over the place (no longer usable with El Capitan) Alfred - seems like a nice app, Spotlight on steroids. It’s free and you can download it via ITunes Flashlight - add more providers to Spotlight - unfortunately with recent introduction of rootless mac partition it’s no longer possible to use this tool Hacking Spotlight Spotlight is just that neat little thing out there that seems like indexing all the things and runs installed programs. But it can also serve as a calculator and …\nYou can also read the contents of its cache file.\nUp until version 10.10.4 of OS X it was possible to have additions to spotlight, but now this behaviour is blocked by the system. http://mac-how-to.wonderhowto.com/how-to/customize-spotlight-search-mac-os-x-yosemite-0160786/\nScript setup Setup your mac with this shell script - but be very careful and read through this file first! https://gist.github.com/brandonb927/3195465\nby Flickr user blakespot\nNeat things And it is quite positive, that Mac OS X developers care about small, but extremely important things - like building OpenSSH with LibreSSL support!\nDTrace Recently I’ve experienced a huge slowdown on my Mac. The It support’s solution was to reinstall the OS. I refused, this seemed like a barbaric method and also I just wanted to use this opportunity to delve deeper into internals of this OS.\nI’ve started with analysing system behaviour with DTrace - probing interface originating from Solaris\nUseful introductory links are here:\nhttp://dtrace.org/blogs/brendan/2011/10/10/top-10-dtrace-scripts-for-mac-os-x/ http://dtrace.org/blogs/brendan/2012/11/14/dtracing-in-anger/ Conclusion All in all the switch was relatively painless, and with tools and tricks described here I feel very comfortable using this system.\n",
+  "wordCount" : "771",
+  "inLanguage": "en",
+  "datePublished": "2016-07-07T00:00:00Z",
+  "dateModified": "2016-07-07T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Marcin Cylke"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://marcin.cylke.com.pl/2016/07/07/mac-os-x-switch/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tech ramblings by Marcin",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://marcin.cylke.com.pl/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://marcin.cylke.com.pl/" accesskey="h" title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://marcin.cylke.com.pl/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/travels/" title="Travels">
+                    <span>Travels</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/til/" title="TIL">
+                    <span>TIL</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://marcin.cylke.com.pl/">Home</a>&nbsp;»&nbsp;<a href="https://marcin.cylke.com.pl/post/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Should you switch to Mac?
+    </h1>
+    <div class="post-meta"><span title='2016-07-07 00:00:00 +0000 UTC'>July 7, 2016</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#in-the-beginning" aria-label="In the beginning">In the beginning</a></li>
+                <li>
+                    <a href="#the-switch" aria-label="The switch">The switch</a></li>
+                <li>
+                    <a href="#useful-tools" aria-label="Useful tools">Useful tools</a></li>
+                <li>
+                    <a href="#hacking-spotlight" aria-label="Hacking Spotlight">Hacking Spotlight</a></li>
+                <li>
+                    <a href="#script-setup" aria-label="Script setup">Script setup</a></li>
+                <li>
+                    <a href="#neat-things" aria-label="Neat things">Neat things</a></li>
+                <li>
+                    <a href="#dtrace" aria-label="DTrace">DTrace</a></li>
+                <li>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p><img alt="enter image description here" loading="lazy" src="https://farm9.staticflickr.com/8064/8229071681_02ffdb91dc_z_d.jpg"><em>by Flick user <a href="https://www.flickr.com/photos/raneko/8229071681/in/photolist-dxb9je-sEQEP-5gDCSr-PE6FE-7Pa2t3-5yhFqq-MsHbZ-tEVFv-kBEvsd-5uPrGV-a5wisf-Ea1We-5tX2pp-22ybhw-ivTix6-5yk9cA-kBCugR-gcSkD-8cdXjv-asK9Y-7ZM66R-8N4eSG-4mchWA-4pjwaT-Gy8BR-7HPwfe-dxb9hv-4rXMuz-h6gJgm-9jULZ6-5SPsfu-kBECo7-6UUwCT-5whRwW-4rujwZ-8Kye5Q-9hN1d6-5utN7V-k9drqQ-4QPsUy-8VEazh-8UB7Ms-8VEaEq-neQih-8EHChx-ecth3o-8yrLUn-o7oNS-kBCXKM-6UYBrs">raneko</a></em></p>
+<p>Who would have thought? Me switching to Mac? But it actually happened. I&rsquo;ve been a long time Linux user, so why actually do the switch now? Or ever? Have a look at my thoughts and insights of novice Mac user.</p>
+<h2 id="in-the-beginning">In the beginning<a hidden class="anchor" aria-hidden="true" href="#in-the-beginning">#</a></h2>
+<p>My humble beginnings were with RedHat 6.0 on a AMD Duron 600Mhz PC machine. With a dialup connection. And setting that thing to connect into Poland&rsquo;s national provider TPSA was rather painful. After some time using Linux, going from RedHat to Slackware I&rsquo;ve decided things weren&rsquo;t tough enough and switched to BSDs. That was really fun! I&rsquo;ve used Free and Open flavors for a few years which very really great. Than switched back to Linux. I&rsquo;ve used those *nix systems for all-things-computer. At home and at work.</p>
+<h2 id="the-switch">The switch<a hidden class="anchor" aria-hidden="true" href="#the-switch">#</a></h2>
+<p>And than came the new job and I had to choose: regular Dell or Macbook? Blue pill or red pill? I chose the later.</p>
+<p>The switch wasn&rsquo;t that painful, but mainly thanks to superb hardware Apple offers. Having to get used to a completely new OS was quite another story. It&rsquo;s not that I was shocked by it. As a long time Linux user all the concepts are known to me. It&rsquo;s the other way around - there are a lot of things missing that I learned to require from my tool of work.</p>
+<p>What I really appreciate is the known userland tools - it&rsquo;s BSD at the heart of it. Well, of course the kernel is some whacky Mach microkernel, but as for the userland I&rsquo;m happy :) You can read more about the kernel and system&rsquo;s design history on wikipedia (<a href="https://en.wikipedia.org/wiki/OS_X">Os X</a>, <a href="https://en.wikipedia.org/wiki/Darwin_(operating_system)">Darwin</a> <a href="https://en.wikipedia.org/wiki/XNU">XNU</a>)</p>
+<p>One of the biggest disappointments was the filesystem and the way it&rsquo;s presented to users. Mac OS X comes with HFS+ (<a href="https://en.wikipedia.org/wiki/HFS_Plus">link</a>) filesystem which is case insensitive!!! To me this seems like an abomination. Plus there are multiple shortcuts taken by Apple engineers, like its endiannes: primarily Macs used PowerPC chips which are BigEndian by desing, but after switching to Intel processors everything is LittleEndian now. AFAIK HFS+ has to still switch bytes when reading metadata.</p>
+<p>Really neat thing I&rsquo;ve found out recently is that under the hood OS X uses PF (OpenBSD&rsquo;s packet filter) as a firewalling solution.
+I don&rsquo;t know which version is in the current release and how does it compare against the original implementation, but since PF has such a nice syntax and performance it&rsquo;s great to have it on board. There are numerous blog posts about setting a decent firewall on OS X with PF so go have a look. Also you can play with PF by means of a set of apps called <a href="http://www.murusfirewall.com/">Murus</a>.</p>
+<h2 id="useful-tools">Useful tools<a hidden class="anchor" aria-hidden="true" href="#useful-tools">#</a></h2>
+<ul>
+<li><a href="http://brew.sh/">Brew</a> - basic application provider, offers all the things I&rsquo;ve become used to when on Linux,</li>
+<li><a href="https://github.com/ianyh/Amethyst">Amethyst</a> - allows window tiling with keyboard shortcuts and has focus-follows-mouse :D I love this feature, although with all the windows popping all over the place I must admit it sometimes gets messy.</li>
+<li><a href="https://www.ragingmenace.com/software/menumeters/">MenuMeters</a> - have a bunch of those geeky meters all over the place (no longer usable with El Capitan)</li>
+<li>Alfred - seems like a nice app, Spotlight on steroids. It&rsquo;s free and you can download it via <a href="https://itunes.apple.com/au/app/alfred/id405843582?mt=12">ITunes</a></li>
+<li>Flashlight - add more providers to Spotlight - unfortunately with recent introduction of rootless mac partition it&rsquo;s no longer possible to use this tool</li>
+</ul>
+<h2 id="hacking-spotlight">Hacking Spotlight<a hidden class="anchor" aria-hidden="true" href="#hacking-spotlight">#</a></h2>
+<p>Spotlight is just that neat little thing out there that seems like indexing all the things and runs installed programs. But it can also serve as a calculator and &hellip;</p>
+<p>You can also read the contents of its cache file.</p>
+<p>Up until version 10.10.4 of OS X it was possible to have additions to spotlight, but now this behaviour is blocked by the system.
+<a href="http://mac-how-to.wonderhowto.com/how-to/customize-spotlight-search-mac-os-x-yosemite-0160786/">http://mac-how-to.wonderhowto.com/how-to/customize-spotlight-search-mac-os-x-yosemite-0160786/</a></p>
+<h2 id="script-setup">Script setup<a hidden class="anchor" aria-hidden="true" href="#script-setup">#</a></h2>
+<p>Setup your mac with this shell script - but be very careful and read through this file first! <a href="https://gist.github.com/brandonb927/3195465">https://gist.github.com/brandonb927/3195465</a></p>
+<p><img alt="One sneaky image" loading="lazy" src="https://farm6.staticflickr.com/5168/5263917715_6c8217fcfe_z_d.jpg"><em>by Flickr user <a href="https://www.flickr.com/photos/blakespot/5263917715/in/photolist-929XkZ-fJwTR-8Me2LN-8qSP9F-6UD2Ce-fM51y-ARaAo-BJXFt-iE8ep-4rXScB-bX3z7w-6npV8P-5Eamox-33QA9W-5EXuR9-mQDnb-6UqpxG-6UqF7m-69b4jp-oytZCJ-4rXGFP-6xweAZ-ACukt-aZfi5-6QouE3-5CAQgW-8MeHqC-5QBeu1-L4qEw-4s35hq-4w9tXh-67Ymah-4s33cu-jjDFo-6J3zqD-8N4tSh-kbFD4-sESfP-66GAT5-9FUKfq-d3BrPG-4rXPZt-8N1aLa-6UCTvi-kBCzsH-2SXDWe-5CGTEq-5zogZ2-5JAGsk-kkAgZK">blakespot</a></em></p>
+<h2 id="neat-things">Neat things<a hidden class="anchor" aria-hidden="true" href="#neat-things">#</a></h2>
+<p>And it is quite positive, that Mac OS X developers care about small, but extremely important things - like building OpenSSH with LibreSSL support!</p>
+<h2 id="dtrace">DTrace<a hidden class="anchor" aria-hidden="true" href="#dtrace">#</a></h2>
+<p>Recently I&rsquo;ve experienced a huge slowdown on my Mac. The It support&rsquo;s solution was to reinstall the OS. I refused, this seemed like a barbaric method and also I just wanted to use this opportunity to delve deeper into internals of this OS.</p>
+<p>I&rsquo;ve started with analysing system behaviour with <a href="https://en.wikipedia.org/wiki/DTrace">DTrace</a> - probing interface originating from Solaris</p>
+<p>Useful introductory links are here:</p>
+<ul>
+<li><a href="http://dtrace.org/blogs/brendan/2011/10/10/top-10-dtrace-scripts-for-mac-os-x/">http://dtrace.org/blogs/brendan/2011/10/10/top-10-dtrace-scripts-for-mac-os-x/</a></li>
+<li><a href="http://dtrace.org/blogs/brendan/2012/11/14/dtracing-in-anger/">http://dtrace.org/blogs/brendan/2012/11/14/dtracing-in-anger/</a></li>
+</ul>
+<h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>All in all the switch was relatively painless, and with tools and tricks described here I feel very comfortable using this system.</p>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://marcin.cylke.com.pl/2016/07/24/it-minimalist/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>IT minimalist</span>
+  </a>
+  <a class="next" href="https://marcin.cylke.com.pl/2016/04/29/scalar-conf-2016/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Scalar Conf 2016</span>
+  </a>
+</nav>
+
+  </footer>
+<script src="https://utteranc.es/client.js"
+        repo="zygm0nt/hugo-blog-incarnation"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

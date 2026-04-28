@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Typography on Tech ramblings by Marcin</title>
-    <link>http://localhost:1313/tags/typography/</link>
+    <link>https://marcin.cylke.com.pl/tags/typography/</link>
     <description>Recent content in Typography on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/typography/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/tags/typography/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sidenotes: Marginalia for the Web</title>
-      <link>http://localhost:1313/2026/03/13/sidenotes-demo/</link>
+      <link>https://marcin.cylke.com.pl/2026/03/13/sidenotes-demo/</link>
       <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/2026/03/13/sidenotes-demo/</guid>
+      <guid>https://marcin.cylke.com.pl/2026/03/13/sidenotes-demo/</guid>
       <description>&lt;p&gt;Typography on the web has always lagged behind print. One of the most useful tools available to print designers — the marginal note — has been largely absent from web writing. This post demonstrates a pure-CSS sidenote implementation&lt;span class=&#34;sidenote&#34;&gt;
   &lt;label class=&#34;sidenote-label&#34; for=&#34;sn-no-js&#34;&gt;no JavaScript required&lt;/label&gt;
   &lt;input class=&#34;sidenote-checkbox&#34; type=&#34;checkbox&#34; id=&#34;sn-no-js&#34;&gt;

@@ -1,4 +1,13 @@
-<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Unicode w Pythonie | Tech ramblings by Marcin</title><meta name=keywords content><meta name=description content="
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Unicode w Pythonie | Tech ramblings by Marcin</title>
+<meta name="keywords" content="">
+<meta name="description" content="
 Szlag by to trafił! Czemu tak ciężko jest obsługiwać unicode w pythonie? 
 
 No niby wszystko jest ładnie konwertowane wewnętrznie na odpowiednie reprezentacje, ale jeśli przychodzi co do czego, i chcemy wypisać sobie taki ciąg znaków na ekran, to już jest ciężej.
@@ -12,20 +21,533 @@ Roger Macdonald;Człowiek w żelaznej masce;25
 a potem w kodzie pythonowym robiłem sobie tak:
 
 
-for line in open(sys.argv[1],'r').readlines():
-      print line.decode('utf-8')
-    (.... tu wysłanie do jakiegoś tam Web Service'u)
-"><meta name=author content="Marcin Cylke"><link rel=canonical href=https://marcin.cylke.com.pl/2010/04/21/unicode-w-pythonie/><link crossorigin=anonymous href=/assets/css/stylesheet.2ef88c6e9b91917ba47ee47c08eceac58e4063f58023c5794d790144e14eeb83.css integrity="sha256-LviMbpuRkXukfuR8COzqxY5AY/WAI8V5TXkBROFO64M=" rel="preload stylesheet" as=style><link rel=icon href=https://marcin.cylke.com.pl/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://marcin.cylke.com.pl/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://marcin.cylke.com.pl/favicon-32x32.png><link rel=apple-touch-icon href=https://marcin.cylke.com.pl/apple-touch-icon.png><link rel=mask-icon href=https://marcin.cylke.com.pl/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://marcin.cylke.com.pl/2010/04/21/unicode-w-pythonie/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><link rel=stylesheet href=/css/book_section.css><link rel=stylesheet href=/css/on_this_day.css><link rel=stylesheet href=/css/til.css><script defer src=/js/code-highlight.js></script><meta property="og:url" content="https://marcin.cylke.com.pl/2010/04/21/unicode-w-pythonie/"><meta property="og:site_name" content="Tech ramblings by Marcin"><meta property="og:title" content="Unicode w Pythonie"><meta property="og:description" content="Szlag by to trafił! Czemu tak ciężko jest obsługiwać unicode w pythonie? No niby wszystko jest ładnie konwertowane wewnętrznie na odpowiednie reprezentacje, ale jeśli przychodzi co do czego, i chcemy wypisać sobie taki ciąg znaków na ekran, to już jest ciężej.
+for line in open(sys.argv[1],&#39;r&#39;).readlines():
+      print line.decode(&#39;utf-8&#39;)
+    (.... tu wysłanie do jakiegoś tam Web Service&#39;u)
+">
+<meta name="author" content="Marcin Cylke">
+<link rel="canonical" href="https://marcin.cylke.com.pl/2010/04/21/unicode-w-pythonie/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.2ef88c6e9b91917ba47ee47c08eceac58e4063f58023c5794d790144e14eeb83.css" integrity="sha256-LviMbpuRkXukfuR8COzqxY5AY/WAI8V5TXkBROFO64M=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://marcin.cylke.com.pl/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://marcin.cylke.com.pl/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://marcin.cylke.com.pl/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://marcin.cylke.com.pl/apple-touch-icon.png">
+<link rel="mask-icon" href="https://marcin.cylke.com.pl/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://marcin.cylke.com.pl/2010/04/21/unicode-w-pythonie/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/book_section.css">
+<link rel="stylesheet" href="/css/on_this_day.css">
+<link rel="stylesheet" href="/css/til.css">
+<script defer src="/js/code-highlight.js"></script>
+<meta property="og:url" content="https://marcin.cylke.com.pl/2010/04/21/unicode-w-pythonie/">
+  <meta property="og:site_name" content="Tech ramblings by Marcin">
+  <meta property="og:title" content="Unicode w Pythonie">
+  <meta property="og:description" content="Szlag by to trafił! Czemu tak ciężko jest obsługiwać unicode w pythonie? No niby wszystko jest ładnie konwertowane wewnętrznie na odpowiednie reprezentacje, ale jeśli przychodzi co do czego, i chcemy wypisać sobie taki ciąg znaków na ekran, to już jest ciężej.
 Weźmy prosty przykład. Wczytywałem plik z polskimi znaczkami, o taki:
 Roger Macdonald;Człowiek w żelaznej masce;25 a potem w kodzie pythonowym robiłem sobie tak:
-for line in open(sys.argv[1],'r').readlines(): print line.decode('utf-8') (.... tu wysłanie do jakiegoś tam Web Service'u)"><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2010-04-21T22:54:24+00:00"><meta property="article:modified_time" content="2010-04-21T22:54:24+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Unicode w Pythonie"><meta name=twitter:description content="Szlag by to trafił! Czemu tak ciężko jest obsługiwać unicode w pythonie? No niby wszystko jest ładnie konwertowane wewnętrznie na odpowiednie reprezentacje, ale jeśli przychodzi co do czego, i chcemy wypisać sobie taki ciąg znaków na ekran, to już jest ciężej.
+for line in open(sys.argv[1],&#39;r&#39;).readlines(): print line.decode(&#39;utf-8&#39;) (.... tu wysłanie do jakiegoś tam Web Service&#39;u)">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2010-04-21T22:54:24+00:00">
+    <meta property="article:modified_time" content="2010-04-21T22:54:24+00:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Unicode w Pythonie">
+  <meta name="twitter:description" content="Szlag by to trafił! Czemu tak ciężko jest obsługiwać unicode w pythonie? No niby wszystko jest ładnie konwertowane wewnętrznie na odpowiednie reprezentacje, ale jeśli przychodzi co do czego, i chcemy wypisać sobie taki ciąg znaków na ekran, to już jest ciężej.
 Weźmy prosty przykład. Wczytywałem plik z polskimi znaczkami, o taki:
 Roger Macdonald;Człowiek w żelaznej masce;25 a potem w kodzie pythonowym robiłem sobie tak:
-for line in open(sys.argv[1],'r').readlines(): print line.decode('utf-8') (.... tu wysłanie do jakiegoś tam Web Service'u)"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://marcin.cylke.com.pl/post/"},{"@type":"ListItem","position":2,"name":"Unicode w Pythonie","item":"https://marcin.cylke.com.pl/2010/04/21/unicode-w-pythonie/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Unicode w Pythonie","name":"Unicode w Pythonie","description":" Szlag by to trafił! Czemu tak ciężko jest obsługiwać unicode w pythonie? No niby wszystko jest ładnie konwertowane wewnętrznie na odpowiednie reprezentacje, ale jeśli przychodzi co do czego, i chcemy wypisać sobie taki ciąg znaków na ekran, to już jest ciężej.\nWeźmy prosty przykład. Wczytywałem plik z polskimi znaczkami, o taki:\nRoger Macdonald;Człowiek w żelaznej masce;25 a potem w kodzie pythonowym robiłem sobie tak:\nfor line in open(sys.argv[1],'r').readlines(): print line.decode('utf-8') (.... tu wysłanie do jakiegoś tam Web Service'u) ","keywords":[],"articleBody":" Szlag by to trafił! Czemu tak ciężko jest obsługiwać unicode w pythonie? No niby wszystko jest ładnie konwertowane wewnętrznie na odpowiednie reprezentacje, ale jeśli przychodzi co do czego, i chcemy wypisać sobie taki ciąg znaków na ekran, to już jest ciężej.\nWeźmy prosty przykład. Wczytywałem plik z polskimi znaczkami, o taki:\nRoger Macdonald;Człowiek w żelaznej masce;25 a potem w kodzie pythonowym robiłem sobie tak:\nfor line in open(sys.argv[1],'r').readlines(): print line.decode('utf-8') (.... tu wysłanie do jakiegoś tam Web Service'u) i wszystko się pięknie wysypywało z komunikatem:\nUnicodeDecodeError: 'ascii' codec can't decode byte 0xc5 in position 549: ordinal not in range(128) Błąd był niby zwracany przez bibliotekę do WS'ów, ale co z tego? Oczywiście słuszność miał python, że rzucił takim wyjątkiem, bo kodowanie źle miałęm ustawione:\n\u003e\u003e\u003e import sys \u003e\u003e\u003e sys.getdefaultencoding() 'ascii' \u003e\u003e\u003e Żeby temu zaradzić należało:\nstworzyć plik _sitecustomize.py_ z zawartością jak niżej: #sitecustomize.py import sys sys.setdefaultencoding('utf-8') ustawić _PYTHONPATH=._ bo inaczej interpreter nie wczytywał pliku. Strasznie to zagmatwane i hakerskie. Więcej o problemie jest tutaj:\nrozdział z *Dive in Python* Blog koleżki na temat tego problemu Comments jabollo dajcie spokoj... python 2.7 nie potrafi dodac do siebie dwoch unicodow - to jest porazka - w 2 dekadzie 21 wieku nie mozna dodac do siebie dwoch zmiennych tego samego typu?\nehh\ndemikaze Niestety musisz się przyzwyczaić, że często podczas używania pythona będziesz zmuszony rozwiązywać problemy których w normalnych językach zwyczajnie nie ma.\nMarcin Cylke @Lionix: a to byłby dobry trop, nawet nie wiedziałem, że tak można robić, tyle że w nagłówku pliku mam taki wpis:\n#!/usr/bin/env/python\n# -*- coding: utf-8 -*-\na i tak zaraz po starcie skryptu dostaję 'ascii' przy wywołaniu sys.getdefaultencoding()\nLionix \u003eBłąd był niby zwracany przez bibliotekę do WS'ów, ale co z tego? A no wszystko z tego, to nie wina Pythona że ta biblioteka przeładowując sys.stdout zmienia domyślne kodowanie UNICODE na ASCII.\nInna sprawa że konwerter ASCII zamiast wypisywać np '?' wywala błąd, ale akurat ja to uznaje za plus bo nie chciał byś widzieć chyba ? zamiast polskich literek i szukać gdzie one się tworzą?\ndemikaze @balon777: jak się otwiera stronę w przeglądarce i zabiera za jej czytanie odrobinę później, to może się zdarzyć że lista komentarzy na niej jest już trochę nieaktualna... ale widać że o tym samym pomyśleliśmy ;)\nP.S.\nW pythonie 3.x parametr encoding obsługuje standardowa funkcja open(), nie trzeba korzystać z modułu codecs\nbalon777 @demikaze: Widzę, że czytałeś poprzednie komenty ;)\ndemikaze Piszę z pamięci więc potraktuj to jedynie jako wskazówkę, ale zakładając że plik z polskimi znaczkami zakodowany jest w utf8 to w twoim przykładzie należałoby go otworzyć w taki sposób:\nimport codecs\n...\nfor line in codecs.open(sys.argv[1],'r',encoding='utf-8').readlines():\n...\nbalon777 Jeśli plik z polskimi znaczkami jest w kodowaniu cp1250 to wystarczy:\nimport codecs, sys\nfor line in codecs.open(sys.argv[1],\"r\", \"cp1250\"):\n# teraz line to obiekt klasy unicode\nprint line.encode(\"utf8\")\nmarines w 2.6 też \"coding: utf-8\" załatwia sprawę ;)\nRemigiusz 'lRem' Modrzejewski Trzeba używać Pythona \u003e=3.0, albo Perla nie więcej niż ośmioletniego :\u003e\nDeeTah Hm, mi w Pythonie 2.6 setdefaultencoding nie działało jak wrzuciłem w kod. Trzeba do oddzielnego pliku?\nsl3dziu Już dawno w Pythonie nie siedzę i nie mam jak tego sprawdzić ale zwykłe wrzucenie w nagłówek # -*- coding: utf-8 -*- nie rozwiązuje Twojego problemu?\n","wordCount":"533","inLanguage":"en","datePublished":"2010-04-21T22:54:24Z","dateModified":"2010-04-21T22:54:24Z","author":{"@type":"Person","name":"Marcin Cylke"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://marcin.cylke.com.pl/2010/04/21/unicode-w-pythonie/"},"publisher":{"@type":"Organization","name":"Tech ramblings by Marcin","logo":{"@type":"ImageObject","url":"https://marcin.cylke.com.pl/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=https://marcin.cylke.com.pl/ accesskey=h title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
-<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://marcin.cylke.com.pl/about/ title=About><span>About</span></a></li><li><a href=https://marcin.cylke.com.pl/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://marcin.cylke.com.pl/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://marcin.cylke.com.pl/archives/ title=Archives><span>Archives</span></a></li><li><a href=https://marcin.cylke.com.pl/travels/ title=Travels><span>Travels</span></a></li><li><a href=https://marcin.cylke.com.pl/til/ title=TIL><span>TIL</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://marcin.cylke.com.pl/>Home</a>&nbsp;»&nbsp;<a href=https://marcin.cylke.com.pl/post/>Posts</a></div><h1 class="post-title entry-hint-parent">Unicode w Pythonie</h1><div class=post-meta><span title='2010-04-21 22:54:24 +0000 UTC'>April 21, 2010</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=# aria-label=Comments>Comments</a></li></ul></div></details></div><div class=post-content><div class=post><p>Szlag by to trafił! Czemu tak ciężko jest obsługiwać unicode w pythonie?</p><p>No niby wszystko jest ładnie konwertowane wewnętrznie na odpowiednie reprezentacje, ale jeśli przychodzi co do czego, i chcemy wypisać sobie taki ciąg znaków na ekran, to już jest ciężej.</p><excerpt><p>Weźmy prosty przykład. Wczytywałem plik z polskimi znaczkami, o taki:</p><p><code>Roger Macdonald;Człowiek w żelaznej masce;25</code></p><p>a potem w kodzie pythonowym robiłem sobie tak:</p><p><code>for line in open(sys.argv[1],'r').readlines():<br>print line.decode('utf-8')<br>(.... tu wysłanie do jakiegoś tam Web Service'u)<br></code></p><p>i wszystko się pięknie wysypywało z komunikatem:</p><p><code>UnicodeDecodeError: 'ascii' codec can't decode byte 0xc5 in position 549: ordinal not in range(128)</code></p><p>Błąd był niby zwracany przez bibliotekę do WS'ów, ale co z tego? Oczywiście słuszność miał python, że rzucił takim wyjątkiem, bo kodowanie źle miałęm ustawione:</p><p><code>>>> import sys<br>>>> sys.getdefaultencoding()<br>'ascii'<br>>>><br></code></p><p>Żeby temu zaradzić należało:</p><ul><li>stworzyć plik _sitecustomize.py_ z zawartością jak niżej:<p><code>#sitecustomize.py<br>import sys<br>sys.setdefaultencoding('utf-8')<br></code></p></li><li>ustawić _PYTHONPATH=._ bo inaczej interpreter nie wczytywał pliku.</li></ul><p>Strasznie to zagmatwane i hakerskie. Więcej o problemie jest tutaj:</p><ul><li><a href=http://diveintopython.org/xml_processing/unicode.html>rozdział z *Dive in Python*</a></li><li><a href=http://blog.ianbicking.org/illusive-setdefaultencoding.html>Blog koleżki na temat tego problemu</a></li></ul></div><h2>Comments</h2><div class=comments><div class=comment><div class=author><a href>jabollo</a></div><div class=content><p>dajcie spokoj... python 2.7 nie potrafi dodac do siebie dwoch unicodow - to jest porazka - w 2 dekadzie 21 wieku nie mozna dodac do siebie dwoch zmiennych tego samego typu?<br>ehh</p></div></div><div class=comment><div class=author><a href>demikaze</a></div><div class=content><p>Niestety musisz się przyzwyczaić, że często podczas używania pythona będziesz zmuszony rozwiązywać problemy których w normalnych językach zwyczajnie nie ma.</p></div></div><div class=comment><div class=author><a href=http://mcl.jogger.pl>Marcin Cylke</a></div><div class=content><p>@Lionix: a to byłby dobry trop, nawet nie wiedziałem, że tak można robić, tyle że w nagłówku pliku mam taki wpis:<br><br>#!/usr/bin/env/python<br># -*- coding: utf-8 -*-<br><br>a i tak zaraz po starcie skryptu dostaję 'ascii' przy wywołaniu sys.getdefaultencoding()</p></div></div><div class=comment><div class=author><a href>Lionix</a></div><div class=content><p>>Błąd był niby zwracany przez bibliotekę do WS'ów, ale co z tego?<br><br>A no wszystko z tego, to nie wina Pythona że ta biblioteka przeładowując sys.stdout zmienia domyślne kodowanie UNICODE na ASCII.<br><br>Inna sprawa że konwerter ASCII zamiast wypisywać np '?' wywala błąd, ale akurat ja to uznaje za plus bo nie chciał byś widzieć chyba ? zamiast polskich literek i szukać gdzie one się tworzą?</p></div></div><div class=comment><div class=author><a href>demikaze</a></div><div class=content><p>@balon777: jak się otwiera stronę w przeglądarce i zabiera za jej czytanie odrobinę później, to może się zdarzyć że lista komentarzy na niej jest już trochę nieaktualna... ale widać że o tym samym pomyśleliśmy ;)<br><br>P.S.<br>W pythonie 3.x parametr encoding obsługuje standardowa funkcja open(), nie trzeba korzystać z modułu codecs</p></div></div><div class=comment><div class=author><a href>balon777</a></div><div class=content><p>@demikaze: Widzę, że czytałeś poprzednie komenty ;)</p></div></div><div class=comment><div class=author><a href>demikaze</a></div><div class=content><p>Piszę z pamięci więc potraktuj to jedynie jako wskazówkę, ale zakładając że plik z polskimi znaczkami zakodowany jest w utf8 to w twoim przykładzie należałoby go otworzyć w taki sposób:<br><br>import codecs<br>...<br>for line in codecs.open(sys.argv[1],'r',encoding='utf-8').readlines():<br>...</p></div></div><div class=comment><div class=author><a href>balon777</a></div><div class=content><p>Jeśli plik z polskimi znaczkami jest w kodowaniu cp1250 to wystarczy:<br><br>import codecs, sys<br><br>for line in codecs.open(sys.argv[1],"r", "cp1250"):<br># teraz line to obiekt klasy unicode<br>print line.encode("utf8")</p></div></div><div class=comment><div class=author><a href=http://marines.jogger.pl>marines</a></div><div class=content><p>w 2.6 też "coding: utf-8" załatwia sprawę ;)</p></div></div><div class=comment><div class=author><a href=http://blog.lrem.net>Remigiusz 'lRem' Modrzejewski</a></div><div class=content><p>Trzeba używać Pythona >=3.0, albo Perla nie więcej niż ośmioletniego :></p></div></div><div class=comment><div class=author><a href=http://deetah.jogger.pl>DeeTah</a></div><div class=content><p>Hm, mi w Pythonie 2.6 setdefaultencoding nie działało jak wrzuciłem w kod. Trzeba do oddzielnego pliku?</p></div></div><div class=comment><div class=author><a href=http://sl3dziu.jogger.pl>sl3dziu</a></div><div class=content><p>Już dawno w Pythonie nie siedzę i nie mam jak tego sprawdzić ale zwykłe wrzucenie w nagłówek # -*- coding: utf-8 -*- nie rozwiązuje Twojego problemu?</p></div></div></div></div><footer class=post-footer><ul class=post-tags></ul><nav class=paginav><a class=prev href=https://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/><span class=title>« Prev</span><br><span>Dmesg z Openbsd/sgi</span>
-</a><a class=next href=https://marcin.cylke.com.pl/2010/04/21/reaktywacja-o-filmoramy/><span class=title>Next »</span><br><span>Reaktywacja o-filmoramy?</span></a></nav></footer><script src=https://utteranc.es/client.js repo=zygm0nt/hugo-blog-incarnation issue-term=pathname theme=github-light crossorigin=anonymous async></script></article></main><footer class=footer><span>&copy; 2026 <a href=https://marcin.cylke.com.pl/>Tech ramblings by Marcin</a></span> ·
-<span>Powered by
-<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
-</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
+for line in open(sys.argv[1],&#39;r&#39;).readlines(): print line.decode(&#39;utf-8&#39;) (.... tu wysłanie do jakiegoś tam Web Service&#39;u)">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://marcin.cylke.com.pl/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Unicode w Pythonie",
+      "item": "https://marcin.cylke.com.pl/2010/04/21/unicode-w-pythonie/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Unicode w Pythonie",
+  "name": "Unicode w Pythonie",
+  "description": " Szlag by to trafił! Czemu tak ciężko jest obsługiwać unicode w pythonie? No niby wszystko jest ładnie konwertowane wewnętrznie na odpowiednie reprezentacje, ale jeśli przychodzi co do czego, i chcemy wypisać sobie taki ciąg znaków na ekran, to już jest ciężej.\nWeźmy prosty przykład. Wczytywałem plik z polskimi znaczkami, o taki:\nRoger Macdonald;Człowiek w żelaznej masce;25 a potem w kodzie pythonowym robiłem sobie tak:\nfor line in open(sys.argv[1],'r').readlines(): print line.decode('utf-8') (.... tu wysłanie do jakiegoś tam Web Service'u) ",
+  "keywords": [
+    
+  ],
+  "articleBody": " Szlag by to trafił! Czemu tak ciężko jest obsługiwać unicode w pythonie? No niby wszystko jest ładnie konwertowane wewnętrznie na odpowiednie reprezentacje, ale jeśli przychodzi co do czego, i chcemy wypisać sobie taki ciąg znaków na ekran, to już jest ciężej.\nWeźmy prosty przykład. Wczytywałem plik z polskimi znaczkami, o taki:\nRoger Macdonald;Człowiek w żelaznej masce;25 a potem w kodzie pythonowym robiłem sobie tak:\nfor line in open(sys.argv[1],'r').readlines(): print line.decode('utf-8') (.... tu wysłanie do jakiegoś tam Web Service'u) i wszystko się pięknie wysypywało z komunikatem:\nUnicodeDecodeError: 'ascii' codec can't decode byte 0xc5 in position 549: ordinal not in range(128) Błąd był niby zwracany przez bibliotekę do WS'ów, ale co z tego? Oczywiście słuszność miał python, że rzucił takim wyjątkiem, bo kodowanie źle miałęm ustawione:\n\u003e\u003e\u003e import sys \u003e\u003e\u003e sys.getdefaultencoding() 'ascii' \u003e\u003e\u003e Żeby temu zaradzić należało:\nstworzyć plik _sitecustomize.py_ z zawartością jak niżej: #sitecustomize.py import sys sys.setdefaultencoding('utf-8') ustawić _PYTHONPATH=._ bo inaczej interpreter nie wczytywał pliku. Strasznie to zagmatwane i hakerskie. Więcej o problemie jest tutaj:\nrozdział z *Dive in Python* Blog koleżki na temat tego problemu Comments jabollo dajcie spokoj... python 2.7 nie potrafi dodac do siebie dwoch unicodow - to jest porazka - w 2 dekadzie 21 wieku nie mozna dodac do siebie dwoch zmiennych tego samego typu?\nehh\ndemikaze Niestety musisz się przyzwyczaić, że często podczas używania pythona będziesz zmuszony rozwiązywać problemy których w normalnych językach zwyczajnie nie ma.\nMarcin Cylke @Lionix: a to byłby dobry trop, nawet nie wiedziałem, że tak można robić, tyle że w nagłówku pliku mam taki wpis:\n#!/usr/bin/env/python\n# -*- coding: utf-8 -*-\na i tak zaraz po starcie skryptu dostaję 'ascii' przy wywołaniu sys.getdefaultencoding()\nLionix \u003eBłąd był niby zwracany przez bibliotekę do WS'ów, ale co z tego? A no wszystko z tego, to nie wina Pythona że ta biblioteka przeładowując sys.stdout zmienia domyślne kodowanie UNICODE na ASCII.\nInna sprawa że konwerter ASCII zamiast wypisywać np '?' wywala błąd, ale akurat ja to uznaje za plus bo nie chciał byś widzieć chyba ? zamiast polskich literek i szukać gdzie one się tworzą?\ndemikaze @balon777: jak się otwiera stronę w przeglądarce i zabiera za jej czytanie odrobinę później, to może się zdarzyć że lista komentarzy na niej jest już trochę nieaktualna... ale widać że o tym samym pomyśleliśmy ;)\nP.S.\nW pythonie 3.x parametr encoding obsługuje standardowa funkcja open(), nie trzeba korzystać z modułu codecs\nbalon777 @demikaze: Widzę, że czytałeś poprzednie komenty ;)\ndemikaze Piszę z pamięci więc potraktuj to jedynie jako wskazówkę, ale zakładając że plik z polskimi znaczkami zakodowany jest w utf8 to w twoim przykładzie należałoby go otworzyć w taki sposób:\nimport codecs\n...\nfor line in codecs.open(sys.argv[1],'r',encoding='utf-8').readlines():\n...\nbalon777 Jeśli plik z polskimi znaczkami jest w kodowaniu cp1250 to wystarczy:\nimport codecs, sys\nfor line in codecs.open(sys.argv[1],\"r\", \"cp1250\"):\n# teraz line to obiekt klasy unicode\nprint line.encode(\"utf8\")\nmarines w 2.6 też \"coding: utf-8\" załatwia sprawę ;)\nRemigiusz 'lRem' Modrzejewski Trzeba używać Pythona \u003e=3.0, albo Perla nie więcej niż ośmioletniego :\u003e\nDeeTah Hm, mi w Pythonie 2.6 setdefaultencoding nie działało jak wrzuciłem w kod. Trzeba do oddzielnego pliku?\nsl3dziu Już dawno w Pythonie nie siedzę i nie mam jak tego sprawdzić ale zwykłe wrzucenie w nagłówek # -*- coding: utf-8 -*- nie rozwiązuje Twojego problemu?\n",
+  "wordCount" : "533",
+  "inLanguage": "en",
+  "datePublished": "2010-04-21T22:54:24Z",
+  "dateModified": "2010-04-21T22:54:24Z",
+  "author":{
+    "@type": "Person",
+    "name": "Marcin Cylke"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://marcin.cylke.com.pl/2010/04/21/unicode-w-pythonie/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tech ramblings by Marcin",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://marcin.cylke.com.pl/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://marcin.cylke.com.pl/" accesskey="h" title="Tech ramblings by Marcin (Alt + H)">Tech ramblings by Marcin</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://marcin.cylke.com.pl/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/travels/" title="Travels">
+                    <span>Travels</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://marcin.cylke.com.pl/til/" title="TIL">
+                    <span>TIL</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://marcin.cylke.com.pl/">Home</a>&nbsp;»&nbsp;<a href="https://marcin.cylke.com.pl/post/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Unicode w Pythonie
+    </h1>
+    <div class="post-meta"><span title='2010-04-21 22:54:24 +0000 UTC'>April 21, 2010</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Marcin Cylke</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#" aria-label="Comments">Comments</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content">
+<div class='post'>
+<p>Szlag by to trafił! Czemu tak ciężko jest obsługiwać unicode w pythonie? </p>
+
+<p>No niby wszystko jest ładnie konwertowane wewnętrznie na odpowiednie reprezentacje, ale jeśli przychodzi co do czego, i chcemy wypisać sobie taki ciąg znaków na ekran, to już jest ciężej.</p>
+<EXCERPT><p>Weźmy prosty przykład. Wczytywałem plik z polskimi znaczkami, o taki:</p>
+
+<p><code>
+Roger Macdonald;Człowiek w żelaznej masce;25
+</code>
+</p>
+
+<p>a potem w kodzie pythonowym robiłem sobie tak:</p>
+
+<p><code>
+for line in open(sys.argv[1],'r').readlines():<br/>
+      print line.decode('utf-8')<br/>
+    (.... tu wysłanie do jakiegoś tam Web Service'u)<br/>
+</code></p>
+
+<p>i wszystko się pięknie wysypywało z komunikatem:</p>
+
+<p><code>
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xc5 in position 549: ordinal not in range(128)
+</code></p>
+
+<p>Błąd był niby zwracany przez bibliotekę do WS'ów, ale co z tego? Oczywiście słuszność miał python, że rzucił takim wyjątkiem, bo kodowanie źle miałęm ustawione:</p>
+
+<p><code>
+&gt;&gt;&gt; import sys<br/>
+&gt;&gt;&gt; sys.getdefaultencoding()<br/>
+'ascii'<br/>
+&gt;&gt;&gt;<br/> 
+</code></p>
+
+<p>Żeby temu zaradzić należało:</p>
+
+<ul>
+<li> stworzyć plik _sitecustomize.py_ z zawartością jak niżej:
+<p><code>
+#sitecustomize.py<br/>                                                                                                                              
+import sys<br/>
+sys.setdefaultencoding('utf-8')<br/>
+</code></p></li>
+<li> ustawić _PYTHONPATH=._ bo inaczej interpreter nie wczytywał pliku.</li>
+</ul>
+
+<p>Strasznie to zagmatwane i hakerskie. Więcej o problemie jest tutaj:</p>
+
+<ul>
+<li> <a href="http://diveintopython.org/xml_processing/unicode.html">rozdział z *Dive in Python*</a></li>
+<li> <a href="http://blog.ianbicking.org/illusive-setdefaultencoding.html">Blog koleżki na temat tego problemu</a></li></ul>
+</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'><a href="">jabollo</a></div>
+<div class='content'>
+<p>dajcie spokoj... python 2.7 nie potrafi dodac do siebie dwoch unicodow - to jest porazka - w 2 dekadzie 21 wieku nie mozna dodac do siebie dwoch zmiennych tego samego typu?<br />
+ehh</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="">demikaze</a></div>
+<div class='content'>
+<p>Niestety musisz się przyzwyczaić, że często podczas używania pythona będziesz zmuszony rozwiązywać problemy których w normalnych językach zwyczajnie nie ma.</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://mcl.jogger.pl">Marcin Cylke</a></div>
+<div class='content'>
+<p>@Lionix: a to byłby dobry trop, nawet nie wiedziałem, że tak można robić, tyle że w nagłówku pliku mam taki wpis:<br />
+<br />
+#!/usr/bin/env/python<br />
+# -*- coding: utf-8 -*-<br />
+<br />
+a i tak zaraz po starcie skryptu dostaję 'ascii' przy wywołaniu sys.getdefaultencoding()</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="">Lionix</a></div>
+<div class='content'>
+<p>&gt;Błąd był niby zwracany przez bibliotekę do WS'ów, ale co z tego? <br />
+<br />
+A no wszystko z tego, to nie wina Pythona że ta biblioteka przeładowując sys.stdout  zmienia domyślne kodowanie  UNICODE na ASCII.<br />
+<br />
+Inna sprawa że konwerter ASCII zamiast wypisywać np '?' wywala błąd, ale akurat ja to uznaje za plus bo nie chciał byś widzieć chyba ? zamiast polskich literek i szukać gdzie one się tworzą?</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="">demikaze</a></div>
+<div class='content'>
+<p>@balon777: jak się otwiera stronę w przeglądarce i zabiera za jej czytanie odrobinę później, to może się zdarzyć że lista komentarzy na niej jest już trochę nieaktualna... ale widać że o tym samym pomyśleliśmy ;)<br />
+<br />
+P.S.<br />
+W pythonie 3.x parametr encoding obsługuje standardowa funkcja open(), nie trzeba korzystać z modułu codecs</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="">balon777</a></div>
+<div class='content'>
+<p>@demikaze: Widzę, że czytałeś poprzednie komenty ;)</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="">demikaze</a></div>
+<div class='content'>
+<p>Piszę z pamięci więc potraktuj to jedynie jako wskazówkę, ale zakładając że plik z polskimi znaczkami zakodowany jest w utf8 to w twoim przykładzie należałoby go otworzyć w taki sposób:<br />
+<br />
+import codecs<br />
+...<br />
+for line in codecs.open(sys.argv[1],'r',encoding='utf-8').readlines():<br />
+...</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="">balon777</a></div>
+<div class='content'>
+<p>Jeśli plik z polskimi znaczkami jest w kodowaniu cp1250 to wystarczy:<br />
+<br />
+import codecs, sys<br />
+<br />
+for line in codecs.open(sys.argv[1],&quot;r&quot;, &quot;cp1250&quot;):<br />
+        # teraz line to obiekt klasy unicode<br />
+	print line.encode(&quot;utf8&quot;)</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://marines.jogger.pl">marines</a></div>
+<div class='content'>
+<p>w 2.6 też &quot;coding: utf-8&quot; załatwia sprawę ;)</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://blog.lrem.net">Remigiusz 'lRem' Modrzejewski</a></div>
+<div class='content'>
+<p>Trzeba używać Pythona &gt;=3.0, albo Perla nie więcej niż ośmioletniego :&gt;</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://deetah.jogger.pl">DeeTah</a></div>
+<div class='content'>
+<p>Hm, mi w Pythonie 2.6 setdefaultencoding nie działało jak wrzuciłem w kod. Trzeba do oddzielnego pliku?</p></div>
+</div>
+<div class='comment'>
+<div class='author'><a href="http://sl3dziu.jogger.pl">sl3dziu</a></div>
+<div class='content'>
+<p>Już dawno w Pythonie nie siedzę i nie mam jak tego sprawdzić ale zwykłe wrzucenie w nagłówek # -*- coding: utf-8 -*- nie rozwiązuje Twojego problemu?</p></div>
+</div>
+</div>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://marcin.cylke.com.pl/2010/04/25/dmesg-z-openbsd-sgi/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Dmesg z Openbsd/sgi</span>
+  </a>
+  <a class="next" href="https://marcin.cylke.com.pl/2010/04/21/reaktywacja-o-filmoramy/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Reaktywacja o-filmoramy?</span>
+  </a>
+</nav>
+
+  </footer>
+<script src="https://utteranc.es/client.js"
+        repo="zygm0nt/hugo-blog-incarnation"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://marcin.cylke.com.pl/">Tech ramblings by Marcin</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
