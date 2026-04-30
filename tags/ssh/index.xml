@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ssh on Tech ramblings by Marcin</title>
-    <link>https://marcin.cylke.com.pl/tags/ssh/</link>
+    <link>http://localhost:1313/tags/ssh/</link>
     <description>Recent content in Ssh on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SSH certificates: the better SSH experience</title>
-      <link>https://marcin.cylke.com.pl/til/2026-04-15-ssh-certificates/</link>
+      <link>http://localhost:1313/til/2026-04-15-ssh-certificates/</link>
       <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/til/2026-04-15-ssh-certificates/</guid>
+      <guid>http://localhost:1313/til/2026-04-15-ssh-certificates/</guid>
       <description>&lt;p&gt;Inspired by &lt;a href=&#34;https://jpmens.net/2026/04/03/ssh-certificates-the-better-ssh-experience/&#34;&gt;this post by JP Mens&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Instead of distributing public keys to every server&amp;rsquo;s &lt;code&gt;authorized_keys&lt;/code&gt;, you
 can use a Certificate Authority (CA) to sign SSH keys. This eliminates
@@ -30,10 +30,10 @@ can use a Certificate Authority (CA) to sign SSH keys. This eliminates
     
     <item>
       <title>Github: show me the keys!</title>
-      <link>https://marcin.cylke.com.pl/til/2026-03-22-github-keys/</link>
+      <link>http://localhost:1313/til/2026-03-22-github-keys/</link>
       <pubDate>Sun, 22 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/til/2026-03-22-github-keys/</guid>
+      <guid>http://localhost:1313/til/2026-03-22-github-keys/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve picked this up from a tutorial on using &lt;code&gt;age&lt;/code&gt; - encryption tool.&lt;/p&gt;
 &lt;p&gt;A particular example there, in the docs is:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl https://github.com/zygm0nt.keys | age -R ...

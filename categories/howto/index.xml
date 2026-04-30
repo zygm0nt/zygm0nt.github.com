@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Howto on Tech ramblings by Marcin</title>
-    <link>https://marcin.cylke.com.pl/categories/howto/</link>
+    <link>http://localhost:1313/categories/howto/</link>
     <description>Recent content in Howto on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/howto/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/howto/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Watercolor portrait - made by AI</title>
-      <link>https://marcin.cylke.com.pl/2024/10/04/watercolor-portrait-made-by-ai/</link>
+      <link>http://localhost:1313/2024/10/04/watercolor-portrait-made-by-ai/</link>
       <pubDate>Fri, 04 Oct 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2024/10/04/watercolor-portrait-made-by-ai/</guid>
+      <guid>http://localhost:1313/2024/10/04/watercolor-portrait-made-by-ai/</guid>
       <description>&lt;figure style=&#34;text-align: center; display: flex; flex-direction: column; align-items: center;&#34; class=&#34;blog-post-image&#34;&gt;
   
-    &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/watercolor-portrait-made-by-ai-0.png&#34; style=&#34;max-height: 300px; width: auto;&#34;  /&gt;
+    &lt;img src=&#34;http://localhost:1313/post_images/watercolor-portrait-made-by-ai-0.png&#34; style=&#34;max-height: 300px; width: auto;&#34;  /&gt;
     
     
       &lt;figcaption&gt;

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Reading on Tech ramblings by Marcin</title>
-    <link>https://marcin.cylke.com.pl/categories/reading/</link>
+    <link>http://localhost:1313/categories/reading/</link>
     <description>Recent content in Reading on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/reading/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/reading/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>books I read - Oct - Dec 2024</title>
-      <link>https://marcin.cylke.com.pl/2025/01/16/books-i-read-oct-dec-2024/</link>
+      <link>http://localhost:1313/2025/01/16/books-i-read-oct-dec-2024/</link>
       <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2025/01/16/books-i-read-oct-dec-2024/</guid>
+      <guid>http://localhost:1313/2025/01/16/books-i-read-oct-dec-2024/</guid>
       <description>&lt;h2 id=&#34;books&#34;&gt;Books&lt;/h2&gt;
 &lt;div class=&#34;review-container&#34;&gt;
     &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-oct-dec-2024-0.png&#34; alt=&#34;Czysta Ameryka. Przemilczana historia eugeniki Book Cover&#34; /&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-oct-dec-2024-0.png&#34; alt=&#34;Czysta Ameryka. Przemilczana historia eugeniki Book Cover&#34; /&gt;
     &lt;/div&gt;
     &lt;div class=&#34;review-text&#34;&gt;
         &lt;h2&gt;Book Review: &lt;em&gt;Czysta Ameryka. Przemilczana historia eugeniki&lt;/em&gt; by Elizabeth Catte&lt;/h2&gt;
@@ -30,7 +30,7 @@
 
 &lt;div class=&#34;review-container&#34;&gt;
     &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-oct-dec-2024-1.png&#34; alt=&#34;Zakamarki Białego Domu Book Cover&#34; /&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-oct-dec-2024-1.png&#34; alt=&#34;Zakamarki Białego Domu Book Cover&#34; /&gt;
     &lt;/div&gt;
     &lt;div class=&#34;review-text&#34;&gt;
         &lt;h2&gt;Book Review: &lt;em&gt;Zakamarki Białego Domu&lt;/em&gt; by Marek Wałkuski&lt;/h2&gt;
@@ -44,7 +44,7 @@
 
 &lt;div class=&#34;review-container&#34;&gt;
     &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-oct-dec-2024-2.png&#34; alt=&#34;The coming wave Book Cover&#34; /&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-oct-dec-2024-2.png&#34; alt=&#34;The coming wave Book Cover&#34; /&gt;
     &lt;/div&gt;
     &lt;div class=&#34;review-text&#34;&gt;
         &lt;h2&gt;Book Review: &lt;em&gt;The coming wave&lt;/em&gt; by Mustafa Suleyman&lt;/h2&gt;
@@ -58,7 +58,7 @@
 
 &lt;div class=&#34;review-container&#34;&gt;
     &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-oct-dec-2024-3.png&#34; alt=&#34;Umbrella Academy Book Cover&#34; /&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-oct-dec-2024-3.png&#34; alt=&#34;Umbrella Academy Book Cover&#34; /&gt;
     &lt;/div&gt;
     &lt;div class=&#34;review-text&#34;&gt;
         &lt;h2&gt;Book Review: &lt;em&gt;Umbrella Academy&lt;/em&gt; by Gerard Way, 	Gabriel Bá&lt;/h2&gt;
@@ -72,7 +72,7 @@
 
 &lt;div class=&#34;review-container&#34;&gt;
     &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-oct-dec-2024-4.png&#34; alt=&#34;Futuro Darko Book Cover&#34; /&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-oct-dec-2024-4.png&#34; alt=&#34;Futuro Darko Book Cover&#34; /&gt;
     &lt;/div&gt;
     &lt;div class=&#34;review-text&#34;&gt;
         &lt;h2&gt;Book Review: &lt;em&gt;Futuro Darko&lt;/em&gt; by Krzysztof Nowak&lt;/h2&gt;
@@ -97,14 +97,14 @@
     
     <item>
       <title>books I read - September 2024</title>
-      <link>https://marcin.cylke.com.pl/2024/11/05/books-i-read-september-2024/</link>
+      <link>http://localhost:1313/2024/11/05/books-i-read-september-2024/</link>
       <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2024/11/05/books-i-read-september-2024/</guid>
+      <guid>http://localhost:1313/2024/11/05/books-i-read-september-2024/</guid>
       <description>&lt;h2 id=&#34;books&#34;&gt;Books&lt;/h2&gt;
 &lt;div class=&#34;review-container&#34;&gt;
     &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-september-2024-0.png&#34; alt=&#34;Stany podzielone Ameryki Book Cover&#34; /&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-september-2024-0.png&#34; alt=&#34;Stany podzielone Ameryki Book Cover&#34; /&gt;
     &lt;/div&gt;
     &lt;div class=&#34;review-text&#34;&gt;
         &lt;h2&gt;Book Review: &lt;em&gt;Stany podzielone Ameryki&lt;/em&gt; by Lukasz Pawłowski&lt;/h2&gt;
@@ -119,7 +119,7 @@
 
 &lt;div class=&#34;review-container&#34;&gt;
     &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-september-2024-1.png&#34; alt=&#34;Persepolis Book Cover&#34; /&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-september-2024-1.png&#34; alt=&#34;Persepolis Book Cover&#34; /&gt;
     &lt;/div&gt;
     &lt;div class=&#34;review-text&#34;&gt;
         &lt;h2&gt;Book Review: &lt;em&gt;Persepolis&lt;/em&gt; by Marjane Satrapi&lt;/h2&gt;
@@ -135,7 +135,7 @@
 
 &lt;div class=&#34;review-container&#34;&gt;
     &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-september-2024-2.png&#34; alt=&#34;Blankets Book Cover&#34; /&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-september-2024-2.png&#34; alt=&#34;Blankets Book Cover&#34; /&gt;
     &lt;/div&gt;
     &lt;div class=&#34;review-text&#34;&gt;
         &lt;h2&gt;Book Review: &lt;em&gt;Blankets&lt;/em&gt; by Craig Thompson&lt;/h2&gt;
@@ -150,7 +150,7 @@
 
 &lt;div class=&#34;review-container&#34;&gt;
     &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-september-2024-3.png&#34; alt=&#34;Ghostmoney Book Cover&#34; /&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-september-2024-3.png&#34; alt=&#34;Ghostmoney Book Cover&#34; /&gt;
     &lt;/div&gt;
     &lt;div class=&#34;review-text&#34;&gt;
         &lt;h2&gt;Book Review: &lt;em&gt;Ghostmoney&lt;/em&gt; by Smolderen &amp;amp; Bertail&lt;/h2&gt;
@@ -166,7 +166,7 @@
 
 &lt;div class=&#34;review-container&#34;&gt;
     &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-september-2024-4.png&#34; alt=&#34;Sandworm Book Cover&#34; /&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-september-2024-4.png&#34; alt=&#34;Sandworm Book Cover&#34; /&gt;
     &lt;/div&gt;
     &lt;div class=&#34;review-text&#34;&gt;
         &lt;h2&gt;Book Review: &lt;em&gt;Sandworm&lt;/em&gt; by Andy Greenberg&lt;/h2&gt;

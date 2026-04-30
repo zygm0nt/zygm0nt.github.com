@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ogólne on Tech ramblings by Marcin</title>
-    <link>https://marcin.cylke.com.pl/categories/Og%C3%B3lne/</link>
+    <link>http://localhost:1313/categories/Og%C3%B3lne/</link>
     <description>Recent content in Ogólne on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Jun 2012 09:08:09 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/Og%C3%B3lne/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Jun 2012 09:08:09 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/Og%C3%B3lne/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hadoop for Enterprises</title>
-      <link>https://marcin.cylke.com.pl/2012/06/18/hadoop-for-enterprises/</link>
+      <link>http://localhost:1313/2012/06/18/hadoop-for-enterprises/</link>
       <pubDate>Mon, 18 Jun 2012 09:08:09 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2012/06/18/hadoop-for-enterprises/</guid>
+      <guid>http://localhost:1313/2012/06/18/hadoop-for-enterprises/</guid>
       <description>&lt;div class=&#39;post&#39;&gt;
 &lt;p&gt;Hadoop&#39;s usage as a big data processing framework gains a lot of attention lately. Now, not only big players see, that they can embrace the data their sites or products are generating and develop their businesses on it. For that to happen two things are needed: the data itself and means of processing really big amounts of it.  &lt;/p&gt;
 
 &lt;p&gt;&lt;span class=&#34;image-wrap&#34; style=&#34;&#34;&gt;&lt;img src=&#34;http://blog.innovative-labs.com/blog/3488314950_453466f762_b.jpg&#34; style=&#34;border: 0px solid black; width: 400px;&#34; /&gt;&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;Gathering data is relatively easy. These are not necessarily structured data, you don&#39;t need to plan their usage at first. Just start collecting them and than you may experiment with their potential usage. If they&#39;ll come out as useless rubbish - deleting them won&#39;t be hard &lt;img class=&#34;emoticon&#34; src=&#34;https://marcin.cylke.com.pl/confluence/images/icons/emoticons/smile.gif&#34; height=&#34;20&#34; width=&#34;20&#34; align=&#34;absmiddle&#34; alt=&#34;&#34; border=&#34;0&#34;/&gt; But imagine the values it may contribute to your business:&lt;/p&gt;</description>
+&lt;p&gt;Gathering data is relatively easy. These are not necessarily structured data, you don&#39;t need to plan their usage at first. Just start collecting them and than you may experiment with their potential usage. If they&#39;ll come out as useless rubbish - deleting them won&#39;t be hard &lt;img class=&#34;emoticon&#34; src=&#34;http://localhost:1313/confluence/images/icons/emoticons/smile.gif&#34; height=&#34;20&#34; width=&#34;20&#34; align=&#34;absmiddle&#34; alt=&#34;&#34; border=&#34;0&#34;/&gt; But imagine the values it may contribute to your business:&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>SoapUI ext libs and its weirdness</title>
-      <link>https://marcin.cylke.com.pl/2011/11/02/soapui-ext-libs-and-its-weirdness/</link>
+      <link>http://localhost:1313/2011/11/02/soapui-ext-libs-and-its-weirdness/</link>
       <pubDate>Wed, 02 Nov 2011 15:32:15 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2011/11/02/soapui-ext-libs-and-its-weirdness/</guid>
+      <guid>http://localhost:1313/2011/11/02/soapui-ext-libs-and-its-weirdness/</guid>
       <description>&lt;div class=&#39;post&#39;&gt;
 &lt;p&gt;Suppose you want to add some additional jars to your SoapUI installation. It all should work ok if you put them in &lt;b&gt;bin/ext&lt;/b&gt; directory. It is scanned at startup, and jars found there are automatically added to classpath.
 &lt;/p&gt;
@@ -45,10 +45,10 @@ java.lang.NoClassDefFoundError: oracle/jdbc/Driver
     
     <item>
       <title>What is NoSQL good for?</title>
-      <link>https://marcin.cylke.com.pl/2011/09/21/what-is-nosql-good-for/</link>
+      <link>http://localhost:1313/2011/09/21/what-is-nosql-good-for/</link>
       <pubDate>Wed, 21 Sep 2011 21:12:34 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2011/09/21/what-is-nosql-good-for/</guid>
+      <guid>http://localhost:1313/2011/09/21/what-is-nosql-good-for/</guid>
       <description>&lt;div class=&#39;post&#39;&gt;
 &lt;b&gt;... or how I ended up writing a CouchDB proof of concept app?&lt;/b&gt;
 
@@ -67,10 +67,10 @@ load them into your SQL database of choice.
     
     <item>
       <title>5 best things to do with your Kindle</title>
-      <link>https://marcin.cylke.com.pl/2011/08/22/5-best-things-to-do-with-your-kindle/</link>
+      <link>http://localhost:1313/2011/08/22/5-best-things-to-do-with-your-kindle/</link>
       <pubDate>Mon, 22 Aug 2011 22:19:14 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2011/08/22/5-best-things-to-do-with-your-kindle/</guid>
+      <guid>http://localhost:1313/2011/08/22/5-best-things-to-do-with-your-kindle/</guid>
       <description>&lt;div class=&#39;post&#39;&gt;
 
 
@@ -90,10 +90,10 @@ of usage? Great! Read on, and share your thoughts in comments!
     
     <item>
       <title>Great many ways to enjoy life!</title>
-      <link>https://marcin.cylke.com.pl/2011/08/07/great-many-ways-to-enjoy-life/</link>
+      <link>http://localhost:1313/2011/08/07/great-many-ways-to-enjoy-life/</link>
       <pubDate>Sun, 07 Aug 2011 22:44:39 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2011/08/07/great-many-ways-to-enjoy-life/</guid>
+      <guid>http://localhost:1313/2011/08/07/great-many-ways-to-enjoy-life/</guid>
       <description>&lt;div class=&#39;post&#39;&gt;
 This looks like a very nice art+video project. Look at those clips:
 
@@ -121,10 +121,10 @@ This looks like a very nice art+video project. Look at those clips:
     
     <item>
       <title>OVal - validate your models quickly and effortlessly!</title>
-      <link>https://marcin.cylke.com.pl/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/</link>
+      <link>http://localhost:1313/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/</link>
       <pubDate>Thu, 14 Jul 2011 08:25:19 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/</guid>
+      <guid>http://localhost:1313/2011/07/14/oval-validate-your-models-quickly-and-effortlessly/</guid>
       <description>&lt;div class=&#39;post&#39;&gt;
 &lt;p&gt;Some time ago one of the projects at work required me to validate
 some Java POJOs. Theses were my model classes and I&#39;ve been creating
@@ -153,10 +153,10 @@ to find out the details!&lt;/p&gt;</description>
     
     <item>
       <title>Geecon 2011 - day 2</title>
-      <link>https://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/</link>
+      <link>http://localhost:1313/2011/05/22/geecon-2011-day-2/</link>
       <pubDate>Sun, 22 May 2011 16:39:31 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/</guid>
+      <guid>http://localhost:1313/2011/05/22/geecon-2011-day-2/</guid>
       <description>&lt;div class=&#39;post&#39;&gt;
 &lt;p&gt;And now for part 2 of my visit to Geecon 2011!&lt;/p&gt;
 &lt;EXCERPT&gt;
@@ -174,10 +174,10 @@ are too verbose and code generation is evil).&lt;/p&gt;</description>
     
     <item>
       <title>Geecon 2011 - day 1</title>
-      <link>https://marcin.cylke.com.pl/2011/05/19/geecon-2011-day-1/</link>
+      <link>http://localhost:1313/2011/05/19/geecon-2011-day-1/</link>
       <pubDate>Thu, 19 May 2011 20:05:05 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2011/05/19/geecon-2011-day-1/</guid>
+      <guid>http://localhost:1313/2011/05/19/geecon-2011-day-1/</guid>
       <description>&lt;div class=&#39;post&#39;&gt;
 &lt;p&gt;Last week&#39;s Java conference - &lt;a href=&#34;http://2011.geecon.org&#34;&gt;Geecon&lt;/a&gt; was very
 interesting. It was well prepared, and gave an insight into the current
@@ -203,10 +203,10 @@ is what interesting happened during those days.
     
     <item>
       <title>JCE keystore and untrusted sites</title>
-      <link>https://marcin.cylke.com.pl/2011/05/02/jce-keystore-and-untrusted-sites/</link>
+      <link>http://localhost:1313/2011/05/02/jce-keystore-and-untrusted-sites/</link>
       <pubDate>Mon, 02 May 2011 15:03:38 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2011/05/02/jce-keystore-and-untrusted-sites/</guid>
+      <guid>http://localhost:1313/2011/05/02/jce-keystore-and-untrusted-sites/</guid>
       <description>&lt;div class=&#39;post&#39;&gt;
 &lt;p&gt;Recently at work I was in need of connecting to a web service exposed via
 HTTPS. I&#39;ve been doing this from inside &lt;a href=&#34;http://servicemix.apache.org/home.html&#34;&gt;Servicemix 3.3.1&lt;/a&gt;, which may seem
@@ -224,10 +224,10 @@ keystore. Read more to find out what happened!&lt;/p&gt;</description>
     
     <item>
       <title>Advisory Messages to the rescue</title>
-      <link>https://marcin.cylke.com.pl/2011/04/01/advisory-messages-to-the-rescue/</link>
+      <link>http://localhost:1313/2011/04/01/advisory-messages-to-the-rescue/</link>
       <pubDate>Fri, 01 Apr 2011 09:16:59 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2011/04/01/advisory-messages-to-the-rescue/</guid>
+      <guid>http://localhost:1313/2011/04/01/advisory-messages-to-the-rescue/</guid>
       <description>&lt;div class=&#39;post&#39;&gt;
 &lt;p&gt;
 The most crucial part of software development is testing. It should

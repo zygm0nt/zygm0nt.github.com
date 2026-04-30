@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tech ramblings by Marcin</title>
-    <link>https://marcin.cylke.com.pl/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>paper-age</title>
-      <link>https://marcin.cylke.com.pl/til/2026-04-28-til-paper-age/</link>
+      <link>http://localhost:1313/til/2026-04-28-til-paper-age/</link>
       <pubDate>Tue, 28 Apr 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/til/2026-04-28-til-paper-age/</guid>
+      <guid>http://localhost:1313/til/2026-04-28-til-paper-age/</guid>
       <description>&lt;p&gt;My laptop is gone. My password manager database lives in the cloud - but the cloud storage password is a random 40-character string that only exists inside that password manager. Classic chicken-and-egg. My solution: print the password on paper, encrypted.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;%5Bhttps://github.com/matiaskorhonen/paper-age%5D&#34;&gt;&lt;code&gt;paper-age&lt;/code&gt;&lt;/a&gt; is a tool that takes any secret and produces a printable PDF containing a QR code with the data encrypted using &lt;a href=&#34;https://age-encryption.org/&#34;&gt;age&lt;/a&gt; - passphrase-based symmetric encryption. One passphrase to remember, everything else on paper.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>SSH certificates: the better SSH experience</title>
-      <link>https://marcin.cylke.com.pl/til/2026-04-15-ssh-certificates/</link>
+      <link>http://localhost:1313/til/2026-04-15-ssh-certificates/</link>
       <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/til/2026-04-15-ssh-certificates/</guid>
+      <guid>http://localhost:1313/til/2026-04-15-ssh-certificates/</guid>
       <description>&lt;p&gt;Inspired by &lt;a href=&#34;https://jpmens.net/2026/04/03/ssh-certificates-the-better-ssh-experience/&#34;&gt;this post by JP Mens&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Instead of distributing public keys to every server&amp;rsquo;s &lt;code&gt;authorized_keys&lt;/code&gt;, you
 can use a Certificate Authority (CA) to sign SSH keys. This eliminates
@@ -40,10 +40,10 @@ can use a Certificate Authority (CA) to sign SSH keys. This eliminates
     
     <item>
       <title>Github: show me the keys!</title>
-      <link>https://marcin.cylke.com.pl/til/2026-03-22-github-keys/</link>
+      <link>http://localhost:1313/til/2026-03-22-github-keys/</link>
       <pubDate>Sun, 22 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/til/2026-03-22-github-keys/</guid>
+      <guid>http://localhost:1313/til/2026-03-22-github-keys/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve picked this up from a tutorial on using &lt;code&gt;age&lt;/code&gt; - encryption tool.&lt;/p&gt;
 &lt;p&gt;A particular example there, in the docs is:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl https://github.com/zygm0nt.keys | age -R ...
@@ -54,54 +54,38 @@ nowadays, but I believe you&amp;rsquo;re using the service for some things.&lt;/
     
     <item>
       <title>Hugo sections can have custom list layouts</title>
-      <link>https://marcin.cylke.com.pl/til/2026-03-13-sidenotes-demo/</link>
+      <link>http://localhost:1313/til/2026-03-13-sidenotes-demo/</link>
       <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/til/2026-03-13-sidenotes-demo/</guid>
+      <guid>http://localhost:1313/til/2026-03-13-sidenotes-demo/</guid>
       <description>&lt;p&gt;You can override a section&amp;rsquo;s list template by placing a &lt;code&gt;list.html&lt;/code&gt; under &lt;code&gt;layouts/&amp;lt;section-name&amp;gt;/&lt;/code&gt;. Hugo will pick it up automatically, no frontmatter needed.&lt;/p&gt;
 &lt;p&gt;This makes it easy to create compact, title-only indexes for sections like TIL — different from the default card-style post listing.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Sidenotes: Marginalia for the Web</title>
-      <link>https://marcin.cylke.com.pl/2026/03/13/sidenotes-demo/</link>
-      <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
-      
-      <guid>https://marcin.cylke.com.pl/2026/03/13/sidenotes-demo/</guid>
-      <description>&lt;p&gt;Typography on the web has always lagged behind print. One of the most useful tools available to print designers — the marginal note — has been largely absent from web writing. This post demonstrates a pure-CSS sidenote implementation&lt;span class=&#34;sidenote&#34;&gt;
-  &lt;label class=&#34;sidenote-label&#34; for=&#34;sn-no-js&#34;&gt;no JavaScript required&lt;/label&gt;
-  &lt;input class=&#34;sidenote-checkbox&#34; type=&#34;checkbox&#34; id=&#34;sn-no-js&#34;&gt;
-  &lt;span class=&#34;sidenote-content sidenote-right&#34;&gt;
-The entire toggle mechanism on mobile works via the HTML checkbox hack: a hidden &lt;code&gt;&amp;lt;input type=&#34;checkbox&#34;&amp;gt;&lt;/code&gt; paired with a &lt;code&gt;&amp;lt;label&amp;gt;&lt;/code&gt;, toggled by the CSS &lt;code&gt;:checked&lt;/code&gt; pseudo-selector. No JavaScript is loaded or executed.
-&lt;/span&gt;
-&lt;/span&gt;
- that works at any viewport size.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Travels</title>
-      <link>https://marcin.cylke.com.pl/travels/</link>
+      <link>http://localhost:1313/travels/</link>
       <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/travels/</guid>
+      <guid>http://localhost:1313/travels/</guid>
       <description>Places I&amp;rsquo;ve visited around the world</description>
     </item>
     
     <item>
       <title>Fiction</title>
-      <link>https://marcin.cylke.com.pl/fiction/</link>
+      <link>http://localhost:1313/fiction/</link>
       <pubDate>Mon, 05 May 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/fiction/</guid>
+      <guid>http://localhost:1313/fiction/</guid>
       <description>&lt;p&gt;Test - lem punk.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Getting things done in a distracted world</title>
-      <link>https://marcin.cylke.com.pl/2025/03/13/getting-things-done-in-a-distracted-world/</link>
+      <link>http://localhost:1313/2025/03/13/getting-things-done-in-a-distracted-world/</link>
       <pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2025/03/13/getting-things-done-in-a-distracted-world/</guid>
+      <guid>http://localhost:1313/2025/03/13/getting-things-done-in-a-distracted-world/</guid>
       <description>&lt;p&gt;Many years ago I&amp;rsquo;ve written somewhat similar piece about navigating all the distractions of my life. You can read it here: &lt;a href=&#34;https://marcin.cylke.com.pl/2016/07/24/it-minimalist/&#34;&gt;https://marcin.cylke.com.pl/2016/07/24/it-minimalist/&lt;/a&gt;
 Years have passed, and I want to revisit the topic. Let this post be a reflection on how my habits changed, but also a summary of techniques that work for me right now.&lt;/p&gt;
 &lt;p&gt;Let&amp;rsquo;s try to recap my stats for this day, as compared to year 2016 (noted in brackets)&lt;/p&gt;</description>
@@ -109,14 +93,14 @@ Years have passed, and I want to revisit the topic. Let this post be a reflectio
     
     <item>
       <title>books I read - Oct - Dec 2024</title>
-      <link>https://marcin.cylke.com.pl/2025/01/16/books-i-read-oct-dec-2024/</link>
+      <link>http://localhost:1313/2025/01/16/books-i-read-oct-dec-2024/</link>
       <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2025/01/16/books-i-read-oct-dec-2024/</guid>
+      <guid>http://localhost:1313/2025/01/16/books-i-read-oct-dec-2024/</guid>
       <description>&lt;h2 id=&#34;books&#34;&gt;Books&lt;/h2&gt;
 &lt;div class=&#34;review-container&#34;&gt;
     &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-oct-dec-2024-0.png&#34; alt=&#34;Czysta Ameryka. Przemilczana historia eugeniki Book Cover&#34; /&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-oct-dec-2024-0.png&#34; alt=&#34;Czysta Ameryka. Przemilczana historia eugeniki Book Cover&#34; /&gt;
     &lt;/div&gt;
     &lt;div class=&#34;review-text&#34;&gt;
         &lt;h2&gt;Book Review: &lt;em&gt;Czysta Ameryka. Przemilczana historia eugeniki&lt;/em&gt; by Elizabeth Catte&lt;/h2&gt;
@@ -130,7 +114,7 @@ Years have passed, and I want to revisit the topic. Let this post be a reflectio
 
 &lt;div class=&#34;review-container&#34;&gt;
     &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-oct-dec-2024-1.png&#34; alt=&#34;Zakamarki Białego Domu Book Cover&#34; /&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-oct-dec-2024-1.png&#34; alt=&#34;Zakamarki Białego Domu Book Cover&#34; /&gt;
     &lt;/div&gt;
     &lt;div class=&#34;review-text&#34;&gt;
         &lt;h2&gt;Book Review: &lt;em&gt;Zakamarki Białego Domu&lt;/em&gt; by Marek Wałkuski&lt;/h2&gt;
@@ -144,7 +128,7 @@ Years have passed, and I want to revisit the topic. Let this post be a reflectio
 
 &lt;div class=&#34;review-container&#34;&gt;
     &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-oct-dec-2024-2.png&#34; alt=&#34;The coming wave Book Cover&#34; /&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-oct-dec-2024-2.png&#34; alt=&#34;The coming wave Book Cover&#34; /&gt;
     &lt;/div&gt;
     &lt;div class=&#34;review-text&#34;&gt;
         &lt;h2&gt;Book Review: &lt;em&gt;The coming wave&lt;/em&gt; by Mustafa Suleyman&lt;/h2&gt;
@@ -158,7 +142,7 @@ Years have passed, and I want to revisit the topic. Let this post be a reflectio
 
 &lt;div class=&#34;review-container&#34;&gt;
     &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-oct-dec-2024-3.png&#34; alt=&#34;Umbrella Academy Book Cover&#34; /&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-oct-dec-2024-3.png&#34; alt=&#34;Umbrella Academy Book Cover&#34; /&gt;
     &lt;/div&gt;
     &lt;div class=&#34;review-text&#34;&gt;
         &lt;h2&gt;Book Review: &lt;em&gt;Umbrella Academy&lt;/em&gt; by Gerard Way, 	Gabriel Bá&lt;/h2&gt;
@@ -172,7 +156,7 @@ Years have passed, and I want to revisit the topic. Let this post be a reflectio
 
 &lt;div class=&#34;review-container&#34;&gt;
     &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-oct-dec-2024-4.png&#34; alt=&#34;Futuro Darko Book Cover&#34; /&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-oct-dec-2024-4.png&#34; alt=&#34;Futuro Darko Book Cover&#34; /&gt;
     &lt;/div&gt;
     &lt;div class=&#34;review-text&#34;&gt;
         &lt;h2&gt;Book Review: &lt;em&gt;Futuro Darko&lt;/em&gt; by Krzysztof Nowak&lt;/h2&gt;
@@ -197,14 +181,14 @@ Years have passed, and I want to revisit the topic. Let this post be a reflectio
     
     <item>
       <title>books I read - September 2024</title>
-      <link>https://marcin.cylke.com.pl/2024/11/05/books-i-read-september-2024/</link>
+      <link>http://localhost:1313/2024/11/05/books-i-read-september-2024/</link>
       <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2024/11/05/books-i-read-september-2024/</guid>
+      <guid>http://localhost:1313/2024/11/05/books-i-read-september-2024/</guid>
       <description>&lt;h2 id=&#34;books&#34;&gt;Books&lt;/h2&gt;
 &lt;div class=&#34;review-container&#34;&gt;
     &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-september-2024-0.png&#34; alt=&#34;Stany podzielone Ameryki Book Cover&#34; /&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-september-2024-0.png&#34; alt=&#34;Stany podzielone Ameryki Book Cover&#34; /&gt;
     &lt;/div&gt;
     &lt;div class=&#34;review-text&#34;&gt;
         &lt;h2&gt;Book Review: &lt;em&gt;Stany podzielone Ameryki&lt;/em&gt; by Lukasz Pawłowski&lt;/h2&gt;
@@ -219,7 +203,7 @@ Years have passed, and I want to revisit the topic. Let this post be a reflectio
 
 &lt;div class=&#34;review-container&#34;&gt;
     &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-september-2024-1.png&#34; alt=&#34;Persepolis Book Cover&#34; /&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-september-2024-1.png&#34; alt=&#34;Persepolis Book Cover&#34; /&gt;
     &lt;/div&gt;
     &lt;div class=&#34;review-text&#34;&gt;
         &lt;h2&gt;Book Review: &lt;em&gt;Persepolis&lt;/em&gt; by Marjane Satrapi&lt;/h2&gt;
@@ -235,7 +219,7 @@ Years have passed, and I want to revisit the topic. Let this post be a reflectio
 
 &lt;div class=&#34;review-container&#34;&gt;
     &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-september-2024-2.png&#34; alt=&#34;Blankets Book Cover&#34; /&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-september-2024-2.png&#34; alt=&#34;Blankets Book Cover&#34; /&gt;
     &lt;/div&gt;
     &lt;div class=&#34;review-text&#34;&gt;
         &lt;h2&gt;Book Review: &lt;em&gt;Blankets&lt;/em&gt; by Craig Thompson&lt;/h2&gt;
@@ -250,7 +234,7 @@ Years have passed, and I want to revisit the topic. Let this post be a reflectio
 
 &lt;div class=&#34;review-container&#34;&gt;
     &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-september-2024-3.png&#34; alt=&#34;Ghostmoney Book Cover&#34; /&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-september-2024-3.png&#34; alt=&#34;Ghostmoney Book Cover&#34; /&gt;
     &lt;/div&gt;
     &lt;div class=&#34;review-text&#34;&gt;
         &lt;h2&gt;Book Review: &lt;em&gt;Ghostmoney&lt;/em&gt; by Smolderen &amp;amp; Bertail&lt;/h2&gt;
@@ -266,7 +250,7 @@ Years have passed, and I want to revisit the topic. Let this post be a reflectio
 
 &lt;div class=&#34;review-container&#34;&gt;
     &lt;div class=&#34;book-cover&#34;&gt;
-        &lt;img src=&#34;https://marcin.cylke.com.pl/post_images/books-i-read-september-2024-4.png&#34; alt=&#34;Sandworm Book Cover&#34; /&gt;
+        &lt;img src=&#34;http://localhost:1313/post_images/books-i-read-september-2024-4.png&#34; alt=&#34;Sandworm Book Cover&#34; /&gt;
     &lt;/div&gt;
     &lt;div class=&#34;review-text&#34;&gt;
         &lt;h2&gt;Book Review: &lt;em&gt;Sandworm&lt;/em&gt; by Andy Greenberg&lt;/h2&gt;
@@ -282,6 +266,29 @@ Years have passed, and I want to revisit the topic. Let this post be a reflectio
 
 &lt;h2 id=&#34;from-pocket&#34;&gt;From Pocket&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Recent:&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Watercolor portrait - made by AI</title>
+      <link>http://localhost:1313/2024/10/04/watercolor-portrait-made-by-ai/</link>
+      <pubDate>Fri, 04 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2024/10/04/watercolor-portrait-made-by-ai/</guid>
+      <description>&lt;figure style=&#34;text-align: center; display: flex; flex-direction: column; align-items: center;&#34; class=&#34;blog-post-image&#34;&gt;
+  
+    &lt;img src=&#34;http://localhost:1313/post_images/watercolor-portrait-made-by-ai-0.png&#34; style=&#34;max-height: 300px; width: auto;&#34;  /&gt;
+    
+    
+      &lt;figcaption&gt;
+        &lt;p style=&#34;font-size: 0.8em; color: #888; margin-top: 0.3em; font-style: italic;&#34;&gt;An example illustration&lt;/p&gt;
+        
+      &lt;/figcaption&gt;
+  
+&lt;/figure&gt;
+
+
+&lt;p&gt;This article is inspired by a post I&amp;rsquo;ve stumbled upon on LinkedIn, by &lt;a href=&#34;https://www.linkedin.com/posts/appenz_flux-is-incredibly-good-to-generate-profile-activity-7231716430889541632-0XL8&#34;&gt;Guido Appenzeller&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Below you can find a reinterpretation of his post. With added details here, and there. The reason for that, is twofold - a) I really like the workflow, b) the original post is missing some details for a first-time user of those tools.&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Relacja on Tech ramblings by Marcin</title>
-    <link>https://marcin.cylke.com.pl/categories/relacja/</link>
+    <link>http://localhost:1313/categories/relacja/</link>
     <description>Recent content in Relacja on Tech ramblings by Marcin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 May 2011 16:39:31 +0000</lastBuildDate><atom:link href="https://marcin.cylke.com.pl/categories/relacja/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 May 2011 16:39:31 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/relacja/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Geecon 2011 - day 2</title>
-      <link>https://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/</link>
+      <link>http://localhost:1313/2011/05/22/geecon-2011-day-2/</link>
       <pubDate>Sun, 22 May 2011 16:39:31 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2011/05/22/geecon-2011-day-2/</guid>
+      <guid>http://localhost:1313/2011/05/22/geecon-2011-day-2/</guid>
       <description>&lt;div class=&#39;post&#39;&gt;
 &lt;p&gt;And now for part 2 of my visit to Geecon 2011!&lt;/p&gt;
 &lt;EXCERPT&gt;
@@ -30,10 +30,10 @@ are too verbose and code generation is evil).&lt;/p&gt;</description>
     
     <item>
       <title>Me on Hadoop on Parleys</title>
-      <link>https://marcin.cylke.com.pl/2011/03/20/me-on-hadoop-on-parleys/</link>
+      <link>http://localhost:1313/2011/03/20/me-on-hadoop-on-parleys/</link>
       <pubDate>Sun, 20 Mar 2011 19:35:39 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2011/03/20/me-on-hadoop-on-parleys/</guid>
+      <guid>http://localhost:1313/2011/03/20/me-on-hadoop-on-parleys/</guid>
       <description>&lt;div class=&#39;post&#39;&gt;
 &lt;p&gt;Finally I&#39;ve managed to import my &lt;a href=&#34;http://mcl.jogger.pl/2011/02/17/hadoop-on-warsaw-jug/&#34;&gt;WarJUG presentation&lt;/a&gt; to parleys.com. See for yourself :)
 &lt;/p&gt;
@@ -83,10 +83,10 @@ allowfullscreen=&#34;true&#34; width=&#34;425&#34; height=&#34;344&#34;&gt;&lt;/
     
     <item>
       <title>Meetbsd 2010</title>
-      <link>https://marcin.cylke.com.pl/2010/08/18/meetbsd-2010/</link>
+      <link>http://localhost:1313/2010/08/18/meetbsd-2010/</link>
       <pubDate>Wed, 18 Aug 2010 22:16:25 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2010/08/18/meetbsd-2010/</guid>
+      <guid>http://localhost:1313/2010/08/18/meetbsd-2010/</guid>
       <description>&lt;div class=&#39;post&#39;&gt;
 &lt;p&gt;
 Some time ago, I&#39;ve attended &lt;a href=&#34;http://meetbsd.org/&#34;&gt;MeetBSD&lt;/a&gt;
@@ -100,10 +100,10 @@ operating system :) - will not attract bigger attention.&lt;/p&gt;</description>
     
     <item>
       <title>6&#43; hour layover in Stockholm</title>
-      <link>https://marcin.cylke.com.pl/2010/08/12/6-hour-layover-in-stockholm/</link>
+      <link>http://localhost:1313/2010/08/12/6-hour-layover-in-stockholm/</link>
       <pubDate>Thu, 12 Aug 2010 22:22:01 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2010/08/12/6-hour-layover-in-stockholm/</guid>
+      <guid>http://localhost:1313/2010/08/12/6-hour-layover-in-stockholm/</guid>
       <description>&lt;div class=&#39;post&#39;&gt;
 &lt;p&gt;Last Monday, while coming home from Sweden, I had ~7h layover between my
 flights. Since &lt;a href=&#34;http://www.arlanda.se/en/&#34;&gt;Arlanda Airport&lt;/a&gt; does not offer a lot to do, at least not
@@ -120,10 +120,10 @@ attractions were also there, on the island.&lt;/p&gt;</description>
     
     <item>
       <title>Javarsovia 2010</title>
-      <link>https://marcin.cylke.com.pl/2010/06/27/javarsovia-2010/</link>
+      <link>http://localhost:1313/2010/06/27/javarsovia-2010/</link>
       <pubDate>Sun, 27 Jun 2010 15:08:43 +0000</pubDate>
       
-      <guid>https://marcin.cylke.com.pl/2010/06/27/javarsovia-2010/</guid>
+      <guid>http://localhost:1313/2010/06/27/javarsovia-2010/</guid>
       <description>&lt;div class=&#39;post&#39;&gt;
 &lt;p&gt;This year&#39;s &lt;a href=&#34;http://javarsovia.pl/&#34;&gt;Javarsovia&lt;/a&gt; conference took place on 26th june. It was held at Centrum Konferencyjno-Kongresowe,  Bobrowiecka Street,  Warsaw.&lt;/p&gt;
 
